@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>An Open Boat Invite to Every Citizen of the World – Gaza 2026</title>
+<meta name="description" content="An independent American invites every citizen of the world to join the 2026 Gaza aid flotilla. No governments. No parties. Just people who refuse to look away.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body,html{margin:0;height:100%;background:#000;overflow:hidden;display:flex;justify-content:center;align-items:center;}
+#wax{position:fixed;inset:0;background:radial-gradient(circle at 15% 12%, #532 0%,#000 60%);opacity:0;transition:opacity 3s;pointer-events:none;}
+#candle{position:fixed;top:8vh;left:clamp(10px,12vw,80px);width:90px;opacity:0;transition:opacity 2s;z-index:10;}
+.flame{transform-origin:50% 100%;animation:flicker 3s infinite;}
+@keyframes flicker{0%,100%{opacity:0.95;transform:scale(1);}50%{opacity:0.75;transform:scale(1.06);}}
+#scroll-container{width:100vw;max-width:900px;height:100vh;padding:0 5vw;box-sizing:border-box;perspective:1200px;display:flex;justify-content:center;}
+#scroll{position:relative;width:100%;max-width:800px;min-height:100%;max-height:80vh;padding:8vh 6vw 10vh;background:url('https://www.transparenttextures.com/patterns/old-wall.png'), linear-gradient(135deg, #fbeec1 0%, #e2c98f 100%);background-blend-mode:lighten,multiply;box-shadow:0 0 120px rgba(100,50,0,0.9),inset 0 0 200px rgba(0,0,0,0.25);border-radius:18px;border:6px solid #c2b280;font-family:'Crimson Text',serif;color:#3a2200;line-height:1.7;font-size:clamp(1rem,2vw,1.3rem);text-align:justify;hyphens:auto;box-sizing:border-box;transform:translateY(120%) rotateX(28deg);transform-origin:bottom;animation:unroll 2.5s 1s forwards;animation-play-state:paused;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#c2b280 #fbeec1;}
+h1{font-size:clamp(2.8rem,8vw,7rem);text-align:center;margin:0.4em 0 0.2em;letter-spacing:4px;}
+.byline{text-align:center;font-style:italic;margin-bottom:2.5em;opacity:0.9;}
+.dropcap{float:left;font-size:5em;line-height:0.8;margin-right:0.15em;font-weight:700;}
+.end{text-align:center;font-size:2.2em;font-weight:900;margin:4em 0 2em;letter-spacing:2px;}
+@keyframes unroll{to{transform:translateY(0) rotateX(0deg);}}
+@keyframes flash{0%,100%{opacity:0}20%{opacity:1}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="wax"></div>
+<svg id="candle" viewBox="0 0 90 140" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="45" cy="120" rx="18" ry="28" fill="#fff8dc"/>
+<rect x="36" y="100" width="18" height="40" fill="#deb887"/>
+<ellipse class="flame" cx="45" cy="92" rx="12" ry="26" fill="#ffd700"/>
+<ellipse class="flame" cx="45" cy="78" rx="8" ry="16" fill="#ffa500"/>
+<ellipse class="flame" cx="45" cy="70" rx="4" ry="8" fill="#ff4500"/>
+</svg>
+
+<div id="scroll-container">
+<div id="scroll">
+<h1>AN OPEN BOAT INVITE<br>TO EVERY CITIZEN<br>OF THE WORLD</h1>
+<div class="byline">Gaza 2026<br>Written by an American Nobody</div>
+
+<p><span class="dropcap">P</span>resident Trump has been invited.<br></p>
+
+<p>Now I’m inviting <strong>YOU</strong> — yes, you reading this at 2 a.m. on a cracked phone.</p>
+
+<p>You don’t need permission from any government.<br>
+You just need an ineternet connection, a conscience, and the willingness to sail with regular people who refuse to let children starve behind a blockade.</p>
+
+<p>Global Sumud Flotilla 2026 — ports still closed, genocide contuines, famine still engineered.</p>
+
+<p>The live tracker and chat will be back.<br>
+Bring your phone, your rage, your receipts.<br>
+We have room for every American Nobody and every global somebody who’s done watching humanity suffer.</p>
+
+<p style="text-align:center;margin:4em 0;">
+<strong><a href="https://globalsumudflotilla.org" target="_blank" style="font-size:1.4em;color:#8B0000;">
+I’M IN — TAKE ME TO THE FLOTILLA SITE →</a></strong>
+</p>
+
+<p class="end">The boat leaves with or without the world leaders.<br>
+It will not leave without us.</p>
+
+</div>
+</div>
+
+<audio id="match" src="https://freesound.org/data/previews/612/612617_5674468-lq.mp3" preload="auto"></audio>
+<audio id="wick" src="https://freesound.org/data/previews/259/259671_4486188-lq.mp3" preload="auto"></audio>
+<script>
+const match = document.getElementById('match');
+const wick = document.getElementById('wick');
+function ignite(){
+  if(match.paused){
+    match.play();
+    const flash=document.createElement('div');
+    flash.style.cssText=`position:fixed;inset:0;background:radial-gradient(circle at 15% 15%,#ffaa33 0%,#000 70%);opacity:0;animation:flash 0.9s forwards;z-index:9999;pointer-events:none;`;
+    document.body.appendChild(flash);
+    setTimeout(()=>{wick.play();document.getElementById('candle').style.opacity='1';document.getElementById('wax').style.opacity='0.85';},600);
+    setTimeout(()=>document.getElementById('scroll').style.animationPlayState='running',1600);
+  }
+}
+setTimeout(ignite,1000);
+document.body.addEventListener('click',ignite,{once:true});
+</script>
+</body>
+</html>
