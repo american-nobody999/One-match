@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<style>
+			@keyframes flame-flicker {
+				0% { transform: scaleY(1) scaleX(1) translateY(0); opacity: 1; }
+				20% { transform: scaleY(1.08) scaleX(0.96) translateY(-2px); opacity: 0.92; }
+				40% { transform: scaleY(0.95) scaleX(1.04) translateY(2px); opacity: 0.98; }
+				60% { transform: scaleY(1.1) scaleX(0.92) translateY(-3px); opacity: 0.9; }
+				80% { transform: scaleY(0.97) scaleX(1.03) translateY(1px); opacity: 0.96; }
+				100% { transform: scaleY(1) scaleX(1) translateY(0); opacity: 1; }
+			}
+			.flame-flicker {
+				transform-origin: 50% 100%;
+				animation: flame-flicker 1.3s infinite;
+			}
+		</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Faces Scrapbook</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #fbeec1;
+			font-family: 'Inter', sans-serif;
+			color: #2d1a00;
+		}
+		h1 {
+			text-align: center;
+			font-size: 2.5rem;
+			margin: 2rem 0 1.5rem;
+			letter-spacing: 2px;
+			font-family: 'Libre Baskerville', serif;
+		}
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1.2rem;
+			max-width: 1100px;
+			margin: 0 auto 2.5rem;
+			padding: 0 1.5rem;
+		}
+		.grid img {
+			width: 100%;
+			display: block;
+			border-radius: 10px;
+			box-shadow: 0 2px 12px #0002, 0 0 0 6px #fff;
+			background: #fff;
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+		.grid img:hover {
+			transform: scale(1.04) rotate(-1deg);
+			box-shadow: 0 6px 24px #ce1126, 0 0 0 6px #fff, 0 0 20px #007a3d44;
+		}
+		@media (max-width: 800px) {
+			.grid { grid-template-columns: 1fr 1fr; }
+		}
+		@media (max-width: 500px) {
+			.grid { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+<div style="display:flex;flex-direction:column;align-items:center;margin-top:2.5rem;">
+	<svg width="120" height="240" viewBox="0 0 60 120" xmlns="http://www.w3.org/2000/svg">
+		<ellipse cx="30" cy="110" rx="18" ry="10" fill="#b97a56"/>
+		<rect x="18" y="40" width="24" height="70" rx="12" fill="#ffe4b2" stroke="#deb887" stroke-width="2"/>
+		<ellipse cx="30" cy="40" rx="12" ry="8" fill="#fff8dc"/>
+		<ellipse cx="30" cy="40" rx="8" ry="5" fill="#ffe4b2"/>
+		<g>
+			<ellipse class="flame-flicker" cx="30" cy="28" rx="7" ry="16" fill="#ffd700"/>
+			<ellipse class="flame-flicker" cx="30" cy="18" rx="4" ry="8" fill="#ffa500"/>
+			<ellipse class="flame-flicker" cx="30" cy="12" rx="2" ry="4" fill="#ff4500"/>
+		</g>
+	</svg>
+	<p style="text-align: center; max-width: 800px; margin: 1.5rem auto 2.5rem; font-size: 1.1rem; line-height: 1.6; opacity: 0.9;">
+		These are the faces and voices of Palestinian People.<br> This was created in honor of the journalists bravely documenting truth from within Gaza and Palestine.  
+		I do not know all their names, and even if I did, I would never share them—protecting them is the priority.  
+		This Website is my gift to the future State of Palestine.  
+		When the day comes that it is safe, I will transfer full ownership of everything I have saved to its rightful people.
+	</p>
+</div>
+	<h1>Faces of The State of Palestine</h1>
+	<div class="grid">
+		<img src="images/24.jpg" alt="Face 1">
+		<img src="images/25.jpg" alt="Face 2">
+		<img src="images/26.jpg" alt="Face 3">
+		<img src="images/27.jpg" alt="Face 4">
+		<img src="images/28.jpg" alt="Face 5">
+		<img src="images/29.jpg" alt="Face 6">
+		<img src="images/30.jpg" alt="Face 7">
+		<img src="images/31.jpg" alt="Face 8">
+		<img src="images/32.jpg" alt="Face 9">
+		<img src="images/33.jpg" alt="Face 10">
+		<img src="images/34.jpg" alt="Face 11">
+		<img src="images/35.jpg" alt="Face 12">
+		<img src="images/36.jpg" alt="Face 13">
+		<img src="images/37.jpg" alt="Face 14">
+		<img src="images/38.jpg" alt="Face 15">
+	</div>
+</body>
+</div>
+
+<div style="display:flex;justify-content:center;margin:2.5rem 0 1.5rem 0;">
+	<svg id="pal-flag" width="120" height="70" viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg" style="box-shadow:0 2px 8px #0002;border-radius:4px;overflow:visible;">
+		<rect width="48" height="28" fill="#fff"/>
+		<rect y="0" width="48" height="9.33" fill="#111"/>
+		<rect y="18.67" width="48" height="9.33" fill="#007a3d"/>
+		<polygon points="0,0 14,14 0,28" fill="#ce1126"/>
+		<g id="flag-waves">
+			<rect width="48" height="28" fill="transparent"/>
+		</g>
+	</svg>
+</div>
+<div style="text-align:center; margin-bottom:2.5rem;">
+	<span style="color:#007a3d; font-weight:bold; font-size:1.2rem; font-family:'Inter',sans-serif;">We are still here. We shall remain.</span>
+</div>
+<style>
+@keyframes flag-wave {
+	0% { transform: skewY(0deg) translateY(0); }
+	20% { transform: skewY(-2deg) translateY(-1px); }
+	40% { transform: skewY(2deg) translateY(1.5px); }
+	60% { transform: skewY(-1.5deg) translateY(-1px); }
+	80% { transform: skewY(1deg) translateY(1px); }
+	100% { transform: skewY(0deg) translateY(0); }
+}
+#pal-flag { will-change: transform; }
+#pal-flag rect, #pal-flag polygon {
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+	animation: flag-wave 2.2s infinite linear;
+}
+</style>
+</html>
