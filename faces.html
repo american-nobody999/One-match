@@ -1,200 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-		<style>
-			@keyframes flame-flicker {
-				0% { transform: scaleY(1) scaleX(1) translateY(0); opacity: 1; }
-				20% { transform: scaleY(1.08) scaleX(0.96) translateY(-2px); opacity: 0.92; }
-				40% { transform: scaleY(0.95) scaleX(1.04) translateY(2px); opacity: 0.98; }
-				60% { transform: scaleY(1.1) scaleX(0.92) translateY(-3px); opacity: 0.9; }
-				80% { transform: scaleY(0.97) scaleX(1.03) translateY(1px); opacity: 0.96; }
-				100% { transform: scaleY(1) scaleX(1) translateY(0); opacity: 1; }
-			}
-			.flame-flicker {
-				transform-origin: 50% 100%;
-				animation: flame-flicker 1.3s infinite;
-			}
-		</style>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Faces Scrapbook</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			background: #fbeec1;
-			font-family: 'Inter', sans-serif;
-			color: #2d1a00;
-		}
-		h1 {
-			text-align: center;
-			font-size: 2.5rem;
-			margin: 2rem 0 1.5rem;
-			letter-spacing: 2px;
-			font-family: 'Libre Baskerville', serif;
-		}
-		.grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 1.2rem;
-			max-width: 1100px;
-			margin: 0 auto 2.5rem;
-			padding: 0 1.5rem;
-		}
-		.grid img {
-			width: 100%;
-			display: block;
-			border-radius: 10px;
-			box-shadow: 0 2px 12px #0002, 0 0 0 6px #fff;
-			background: #fff;
-			transition: transform 0.2s, box-shadow 0.2s;
-		}
-		.grid img:hover {
-			transform: scale(1.04) rotate(-1deg);
-			box-shadow: 0 6px 24px #ce1126, 0 0 0 6px #fff, 0 0 20px #007a3d44;
-		}
-		@media (max-width: 800px) {
-			.grid { grid-template-columns: 1fr 1fr; }
-		}
-		@media (max-width: 500px) {
-			.grid { grid-template-columns: 1fr; }
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faces of Palestine</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      /* Scrapbook-style background */
+      background-color: #f3e9d2;
+      background-image:
+        repeating-linear-gradient(135deg, #e2cfa5 0 2px, transparent 2px 40px),
+        repeating-linear-gradient(45deg, #e2cfa5 0 2px, transparent 2px 40px),
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-blend-mode: multiply;
+      color: #222;
+      transition: background 0.3s;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.92);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(80,60,30,0.13), 0 1.5px 0 #e2cfa5 inset;
+      padding: 2rem 2.5rem;
+      border: 3px dashed #c2a97e;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      text-align: center;
+      color: #017329;
+      margin-bottom: 1.5rem;
+      
+    }
+    h2 {
+      color: #017329;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Button Row */
+    #button-row {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #button-row button, #button-row a button {
+      padding: 10px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 2px solid #017329;
+      background: #fff;
+      color: #017329;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: bold;
+    }
+    #button-row button:hover {
+      background: #017329;
+      color: white;
+    }
+    #back-btn {
+      text-decoration: none;
+    }
+
+    /* Gallery */
+    .gallery {
+      margin-bottom: 2.5rem;
+      border: 3px solid #017329;
+      border-radius: 12px;
+      padding: 1rem;
+      transition: box-shadow 0.3s;
+    }
+    .gallery:hover {
+      box-shadow: 0 0 0 6px #CF1127;
+    }
+    .gallery-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      scroll-snap-type: x mandatory;
+      scrollbar-color: #000 #e0e0e0;
+    }
+    .gallery-row img {
+      flex: 0 0 300px;           /* Better for mobile: fixed width */
+      max-width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #eee;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery-row img:hover {
+      transform: scale(1.05);
+    }
+    .gallery-row img:active {
+      transform: scale(0.98);
+    }
+
+    /* Custom scrollbar */
+    .gallery-row::-webkit-scrollbar {
+      height: 14px;
+    }
+    .gallery-row::-webkit-scrollbar-track {
+      background: #e0e0e0;
+      border-radius: 8px;
+    }
+    .gallery-row::-webkit-scrollbar-thumb {
+      background: #000;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+    }
+
+    /* RTL support for Arabic */
+    [dir="rtl"] .container {
+      text-align: right;
+    }
+    [dir="rtl"] #button-row {
+      justify-content: flex-end;
+    }
+  </style>
 </head>
 <body>
-<div style="display:flex;flex-direction:column;align-items:center;margin-top:2.5rem;">
-	<svg width="120" height="240" viewBox="0 0 60 120" xmlns="http://www.w3.org/2000/svg">
-		<ellipse cx="30" cy="110" rx="18" ry="10" fill="#b97a56"/>
-		<rect x="18" y="40" width="24" height="70" rx="12" fill="#ffe4b2" stroke="#deb887" stroke-width="2"/>
-		<ellipse cx="30" cy="40" rx="12" ry="8" fill="#fff8dc"/>
-		<ellipse cx="30" cy="40" rx="8" ry="5" fill="#ffe4b2"/>
-		<g>
-			<ellipse class="flame-flicker" cx="30" cy="28" rx="7" ry="16" fill="#ffd700"/>
-			<ellipse class="flame-flicker" cx="30" cy="18" rx="4" ry="8" fill="#ffa500"/>
-			<ellipse class="flame-flicker" cx="30" cy="12" rx="2" ry="4" fill="#ff4500"/>
-		</g>
-	</svg>
-	<p style="text-align: center; max-width: 800px; margin: 1.5rem auto 2.5rem; font-size: 1.1rem; line-height: 1.6; opacity: 0.9;">
-		These are the faces and voices of Palestinian People.<br> This was created in honor of the journalists bravely documenting truth from within Gaza and Palestine.  
-		I do not know all their names, and even if I did, I would never share them—protecting them is the priority.  
-		This Website is my gift to the future State of Palestine.  
-		When the day comes that it is safe, I will transfer full ownership of everything I have saved to its rightful people.
-	</p>
-</div>
-	<h1>Faces of The State of Palestine</h1>
-	<div class="grid">
-		<img src="images/24.jpg" alt="Face 1">
-		<img src="images/25.jpg" alt="Face 2">
-		<img src="images/26.jpg" alt="Face 3">
-		<img src="images/27.jpg" alt="Face 4">
-		<img src="images/28.jpg" alt="Face 5">
-		<img src="images/29.jpg" alt="Face 6">
-		<img src="images/30.jpg" alt="Face 7">
-		<img src="images/31.jpg" alt="Face 8">
-		<img src="images/32.jpg" alt="Face 9">
-		<img src="images/33.jpg" alt="Face 10">
-		<img src="images/34.jpg" alt="Face 11">
-		<img src="images/35.jpg" alt="Face 12">
-		<img src="images/36.jpg" alt="Face 13">
-		<img src="images/37.jpg" alt="Face 14">
-		<img src="images/38.jpg" alt="Face 15">
-		<img src="images/42.jpg" alt="Face 16">
-		<img src="images/45.jpg" alt="Face 17">
-		<img src="images/49.jpg" alt="Face 18">
-		<img src="images/50.jpg" alt="Face 19">
-		<img src="images/59.jpg" alt="Face 20">
-		<img src="images/57.jpg" alt="Face 21">
-		<img src="images/47.jpg" alt="Face 22">
-		<img src="images/65.jpg" alt="Face 23">
-		<img src="images/81.jpg" alt="Face 24">
-		<img src="images/75.jpg" alt="Face 25">
-		<img src="images/74.jpg" alt="Face 26">
-		<img src="images/72.jpg" alt="Face 27">
-		<img src="images/82.jpg" alt="Face 28">
-		<img src="images/79.jpg" alt="Face 29">
-		<img src="images/77.jpg" alt="Face 30">
-		<img src="images/86.jpg" alt="Face 31">
-		<img src="images/89.jpg" alt="Face 32">
-		<img src="images/83.jpg" alt="Face 33">
-		<img src="images/78.jpg" alt="Face 34">
-		<img src="images/69.jpg" alt="Face 35">
-		<img src="images/123.jpg" alt="face 23">
-		<img src="images/126.jpg" alt="face 24">
-		<img src="images/125.jpg" alt="face 25">
-		<img src="images/185.jpg" alt="face 26">
-		<img src="images/186.jpg" alt="face 27">
-		<img src="images/142.jpg" alt="face 23">
-		<img src="images/144.jpg" alt="face 24">
-		<img src="images/158.jpg" alt="face 25">
-		<img src="images/188.jpg" alt="face 26">
-		<img src="images/98.jpg" alt="face 27">
-		<img src="images/97.jpg" alt="face 23">
-		<img src="images/116.jpg" alt="face 24">
-		<img src="images/174.jpg" alt="face 25">
-		<img src="images/106.jpg" alt="face 26">
-		<img src="images/107.jpg" alt="face 27">
-	</div>
-	<footer>
-    <div style="display: flex; flex-direction: column; align-items: center;">
-  <img src="images/40.jpg" alt="Footer Image" style="max-width: 180px; margin-bottom: 1.2rem;">
-  <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: nowrap;">
-    <!-- Left ribbon SVG here -->
-    <!-- Text and right ribbon SVG here -->
-  </div>
-</div>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: nowrap;">
-        <!-- Left ribbon -->
-        <svg width="80" height="110" viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg" class="ribbon">
-            <!-- Classic awareness ribbon path -->
-            <path d="M40 20 Q40 5 40 5 Q40 20 30 30 Q20 40 20 60 Q20 80 40 95 Q60 80 60 60 Q60 40 50 30 Q40 20 40 5 Z" fill="#c00"/>
-            <!-- Crossover highlight for depth -->
-            <path d="M40 25 Q40 15 40 15 Q40 25 35 35 Q30 45 30 55 Q30 65 40 75 Q50 65 50 55 Q50 45 45 35 Q40 25 40 15 Z" fill="#fff" opacity="0.3"/>
-        </svg>
 
-        <span style="font-family: 'Libre Baskerville', serif; font-size: 1.6rem; font-weight: 700; color: #532508; text-align: center;">
-            From the ashes, A State rises
-        </span>
+  <div class="container">
+    <h1 id="main-title">The Faces of the State of Palestine</h1>
 
-        <!-- Right ribbon (perfectly mirrored) -->
-        <svg width="80" height="110" viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg" class="ribbon" style="transform: scaleX(-1);">
-            <path d="M40 20 Q40 5 40 5 Q40 20 30 30 Q20 40 20 60 Q20 80 40 95 Q60 80 60 60 Q60 40 50 30 Q40 20 40 5 Z" fill="#c00"/>
-            <path d="M40 25 Q40 15 40 15 Q40 25 35 35 Q30 45 30 55 Q30 65 40 75 Q50 65 50 55 Q50 45 45 35 Q40 25 40 15 Z" fill="#fff" opacity="0.3"/>
-        </svg>
+    <div id="button-row">
+      <a id="back-btn" href="index.html">
+        <button type="button">
+          <span class="en">Back to Home</span>
+          <span class="ar" style="display:none;">العودة للرئيسية</span>
+        </button>
+      </a>
+      <button id="lang-toggle" type="button">
+        <span class="en">عربي</span>
+        <span class="ar" style="display:none;">English</span>
+      </button>
     </div>
-</footer>
 
+    <p class="en">These are the courageous faces and voices of Palestine.</p>
+    <p class="ar" style="display:none;">هذه هي الوجوه والأصوات الشجاعة للشعب الفلسطيني.</p>
+
+    <div class="gallery" id="gallery1">
+        <h2>
+          <span class="en">Lets go to School</span>
+          <span class="ar" style="display:none;">هيا نذهب إلى المدرسة</span>
+        </h2>
+      <div class="gallery-row">
+        <img src="images/15.jpg" alt="Gallery 1 Image 1" />
+        <img src="images/244.jpg" alt="Gallery 1 Image 2" />
+        <img src="images/285.jpg" alt="Gallery 1 Image 3" />
+        <img src="images/288.jpg" alt="Gallery 1 Image 4" />
+        <img src="images/289.jpg" alt="Gallery 1 Image 5" />
+        <img src="images/310.jpg" alt="Gallery 1 Image 6" />
+        " alt="Gallery 1 Image 6" />
+        <img src="images/339.jpg" alt="Gallery 1 Image 7" />
+        <img src="images/350.jpg" alt="Gallery 1 Image 8" />
+        <img src="images/367.jpg" alt="Gallery 1 Image 9" />
+        <img src="images/405.jpg" alt="Gallery 1 Image 10" />
+        <img src="images/5.jpg" alt="Gallery 1 Image 11" />
+        <img src="images/174.jpg" alt="Gallery 1 Image 12" />
+        <img src="images/255.jpg" alt="Gallery 1 Image 13" />
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery2">
+         <h2>
+           <span class="en">Smiles</span>
+           <span class="ar" style="display:none;">ابتسامات</span>
+         </h2>
+      <div class="gallery-row">
+        <img src="images/22.jpg" alt="Gallery 2 Image 1" />
+        <img src="images/53.jpg" alt="Gallery 2 Image 2" />
+        <img src="images/57.jpg" alt="Gallery 2 Image 3" />
+        <img src="images/58.jpg" alt="Gallery 2 Image 4" />
+        <img src="images/59.jpg" alt="Gallery 2 Image 5" />
+        <img src="images/63.jpg" alt="Gallery 2 Image 6" />
+        <img src="images/65.jpg" alt="Gallery 2 Image 7" />
+        <img src="images/73.jpg" alt="Gallery 2 Image 8" />
+        <img src="images/75.jpg" alt="Gallery 2 Image 9" />
+        <img src="images/82.jpg" alt="Gallery 2 Image 10" />
+        <img src="images/85.jpg" alt="Gallery 2 Image 11" />
+        <img src="images/86.jpg" alt="Gallery 2 Image 12" />
+        <img src="images/89.jpg" alt="Gallery 2 Image 13" />
+        <img src="images/106.jpg" alt="Gallery 2 Image 14" />
+        <img src="images/116.jpg" alt="Gallery 2 Image 15" />
+        <img src="images/125.jpg" alt="Gallery 2 Image 16" />
+        <img src="images/129.jpg" alt="Gallery 2 Image 17" />
+        <img src="images/177.jpg" alt="Gallery 2 Image 19" />
+        <img src="images/280.jpg" alt="Gallery 2 Image 20" />
+        <img src="images/281.jpg" alt="Gallery 2 Image 21" />
+        <img src="images/290.jpg" alt="Gallery 2 Image 22" />
+        <img src="images/291.jpg" alt="Gallery 2 Image 23" />
+        <img src="images/294.jpg" alt="Gallery 2 Image 24" />
+        <img src="images/296.jpg" alt="Gallery 2 Image 25" />
+        <img src="images/300.jpg" alt="Gallery 2 Image 26" />
+        <img src="images/337.jpg" alt="Gallery 2 Image 27" />
+        <img src="images/355.jpg" alt="Gallery 2 Image 28" />
+        <img src="images/342.jpg" alt="Gallery 2 Image 29" />
+        
+        <img src="images/356.jpg" alt="Gallery 2 Image 30" />
+        <img src="images/377.jpg" alt="Gallery 2 Image 31" />
+        <img src="images/380.jpg" alt="Gallery 2 Image 32" />
+        <img src="images/388.jpg" alt="Gallery 2 Image 33" />
+        <img src="images/393.jpg" alt="Gallery 2 Image 34" />
+        <img src="images/394.jpg" alt="Gallery 2 Image 35" />
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery3">
+         <h2>
+           <span class="en">Future is Bright</span>
+           <span class="ar" style="display:none;">المستقبل مشرق</span>
+         </h2>
+      <div class="gallery-row">
+        <img src="images/185.jpg" alt="Gallery 3 Image 1" />
+        <img src="images/186.jpg" alt="Gallery 3 Image 2" />
+        <img src="images/209.jpg" alt="Gallery 3 Image 3" />
+        <img src="images/211.jpg" alt="Gallery 3 Image 4" />
+        <img src="images/212.jpg" alt="Gallery 3 Image 5" />
+        <img src="images/214.jpg" alt="Gallery 3 Image 6" />
+        <img src="images/215.jpg" alt="Gallery 3 Image 7" />
+        <img src="images/226.jpg" alt="Gallery 3 Image 8" />
+        <img src="images/233.jpg" alt="Gallery 3 Image 9" />
+        <img src="images/234.jpg" alt="Gallery 3 Image 10" />
+        <img src="images/235.jpg" alt="Gallery 3 Image 11" />
+        <img src="images/237.jpg" alt="Gallery 3 Image 12" />
+        <img src="images/215.jpg" alt="Gallery 3 Image 13" />
+        <img src="images/245.jpg" alt="Gallery 3 Image 14" />
+        <img src="images/254.jpg" alt="Gallery 3 Image 15" />
+        <img src="images/256.jpg" alt="Gallery 3 Image 16" />
+        <img src="images/262.jpg" alt="Gallery 3 Image 17" />
+         <img src="images/263.jpg" alt="Gallery 3 Image 18" />
+          <img src="images/265.jpg" alt="Gallery 3 Image 19" />
+           <img src="images/268.jpg" alt="Gallery 3 Image 20" />
+            <img src="images/269.jpg" alt="Gallery 3 Image 21" />
+             <img src="images/270.jpg" alt="Gallery 3 Image 22" />
+             <img src="images/302.jpg" alt="Gallery 3 Image 23" />
+		  <img src="images/303.jpg" alt="Gallery 3 Image 24" />
+		  <img src="images/307.jpg" alt="Gallery 3 Image 25" />
+		  <img src="images/311.jpg" alt="Gallery 3 Image 26" />
+		  <img src="images/315.jpg" alt="Gallery 3 Image 27" />
+             <img src="images/319.jpg" alt="Gallery 3 Image 28" />
+             <img src="images/320.jpg" alt="Gallery 3 Image 29" />
+             <img src="images/321.jpg" alt="Gallery 3 Image 30" />
+             <img src="images/359.jpg" alt="Gallery 3 Image 31" />
+             <img src="images/360.jpg" alt="Gallery 3 Image 32" />
+             <img src="images/363.jpg" alt="Gallery 3 Image 33" />
+             <img src="images/369.jpg" alt="Gallery 3 Image 34" />
+             <img src="images/321.jpg" alt="Gallery 3 Image 35" />
+             <img src="images/395.jpg" alt="Gallery 3 Image 36" />
+             <img src="images/399.jpg" alt="Gallery 3 Image 37" />
+             <img src="images/400.jpg" alt="Gallery 3 Image 38" />
+             <img src="images/401.jpg" alt="Gallery 3 Image 39" />
+             <img src="images/406.jpg" alt="Gallery 3 Image 40" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const langToggle = document.getElementById('lang-toggle');
+    let isArabic = false;
+
+    langToggle.addEventListener('click', () => {
+      isArabic = !isArabic;
+
+      document.querySelectorAll('.en').forEach(el => {
+        el.style.display = isArabic ? 'none' : 'inline-block';
+      });
+      document.querySelectorAll('.ar').forEach(el => {
+        el.style.display = isArabic ? 'inline-block' : 'none';
+      });
+
+      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      document.documentElement.lang = isArabic ? 'ar' : 'en';
+
+      document.getElementById('main-title').innerText = isArabic ? 'معرض التدريب' : 'Practice Gallery';
+    });
+  </script>
 </body>
-</div>
-
-<div style="display:flex;justify-content:center;margin:2.5rem 0 1.5rem 0;">
-	<svg id="pal-flag" width="120" height="70" viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg" style="box-shadow:0 2px 8px #0002;border-radius:4px;overflow:visible;">
-		<rect width="48" height="28" fill="#fff"/>
-		<rect y="0" width="48" height="9.33" fill="#111"/>
-		<rect y="18.67" width="48" height="9.33" fill="#007a3d"/>
-		<polygon points="0,0 14,14 0,28" fill="#ce1126"/>
-		<g id="flag-waves">
-			<rect width="48" height="28" fill="transparent"/>
-		</g>
-	</svg>
-</div>
-<div style="text-align:center; margin-bottom:2.5rem;">
-	<span style="color:#007a3d; font-weight:bold; font-size:1.2rem; font-family:'Inter',sans-serif;">We are still here. We shall remain.</span>
-</div>
-	
-<style>
-@keyframes flag-wave {
-	0% { transform: skewY(0deg) translateY(0); }
-	20% { transform: skewY(-2deg) translateY(-1px); }
-	40% { transform: skewY(2deg) translateY(1.5px); }
-	60% { transform: skewY(-1.5deg) translateY(-1px); }
-	80% { transform: skewY(1deg) translateY(1px); }
-	100% { transform: skewY(0deg) translateY(0); }
-}
-#pal-flag { will-change: transform; }
-#pal-flag rect, #pal-flag polygon {
-	transform-box: fill-box;
-	transform-origin: 50% 50%;
-	animation: flag-wave 2.2s infinite linear;
-}
-</style>
 </html>
+	
+
+      
