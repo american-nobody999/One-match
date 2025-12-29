@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faces of Palestine</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      /* Scrapbook-style background */
+      background-color: #f3e9d2;
+      background-image:
+        repeating-linear-gradient(135deg, #e2cfa5 0 2px, transparent 2px 40px),
+        repeating-linear-gradient(45deg, #e2cfa5 0 2px, transparent 2px 40px),
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-blend-mode: multiply;
+      color: #222;
+      transition: background 0.3s;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.92);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(80,60,30,0.13), 0 1.5px 0 #e2cfa5 inset;
+      padding: 1rem 1.5rem;
+      border: 3px dashed #c2a97e;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      text-align: center;
+      color: #017329;
+      margin-bottom: 1.5rem;
+      
+    }
+    h2 {
+      color: #017329;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
 
+    /* Button Row */
+    #button-row {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #button-row button, #button-row a button {
+      padding: 10px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 2px solid #017329;
+      background: #fff;
+      color: #017329;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: bold;
+    }
+    #button-row button:hover {
+      background: #017329;
+      color: white;
+    }
+    #back-btn {
+      text-decoration: none;
+    }
+
+    /* Gallery */
+    .gallery {
+      margin-bottom: 1.2rem;
+      border: 3px solid #017329;
+      border-radius: 12px;
+      padding: 0.5rem;
+      transition: box-shadow 0.3s;
+    }
+    .gallery:hover {
+      box-shadow: 0 0 0 6px #CF1127;
+    }
+    .gallery-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      scroll-snap-type: x mandatory;
+      scrollbar-color: #000 #e0e0e0;
+    }
+    .gallery-row img {
+      flex: 0 0 308px;           /* Added 0.5rem (8px) to width */
+      max-width: 308px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #eee;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery-row img:hover {
+      transform: scale(1.05);
+    }
+    .gallery-row img:active {
+      transform: scale(0.98);
+    }
+
+    /* Custom scrollbar */
+    .gallery-row::-webkit-scrollbar {
+      height: 14px;
+    }
+    .gallery-row::-webkit-scrollbar-track {
+      background: #e0e0e0;
+      border-radius: 8px;
+    }
+    .gallery-row::-webkit-scrollbar-thumb {
+      background: #000;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+    }
+
+    /* RTL support for Arabic */
+    [dir="rtl"] .container {
+      text-align: right;
+    }
+    [dir="rtl"] #button-row {
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="main-title">The Faces of the State of Palestine</h1>
+
+    <div id="button-row">
+      <a id="back-btn" href="index.html">
+        <button type="button">
+          <span class="en">Back to Home</span>
+          <span class="ar" style="display:none;">العودة للرئيسية</span>
+        </button>
+      </a>
+      <button id="lang-toggle" type="button">
+        <span class="en">عربي</span>
+        <span class="ar" style="display:none;">English</span>
+      </button>
+    </div>
+
+    <p class="en">The Art of Palestine.</p>
+    <p class="ar" style="display:none;">فن فلسطين.</p>
+
+    <div class="gallery" id="gallery1">
+      <div class="gallery-row">
+        <img src="images/62.jpg" alt="Gallery 1 Image 1" />
+        <img src="images/64.jpg" alt="Gallery 1 Image 2" />
+        <img src="images/87.jpg" alt="Gallery 1 Image 3" />
+        <img src="images/115.jpg" alt="Gallery 1 Image 4" />
+        <img src="images/141.jpg" alt="Gallery 1 Image 5" />
+        <img src="images/202.jpg" alt="Gallery 1 Image 6" />
+        <img src="images/207.jpg" alt="Gallery 1 Image 7" />
+        <img src="images/219.jpg" alt="Gallery 1 Image 8" />
+        <img src="images/223.jpg" alt="Gallery 1 Image 9" />
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery2">
+      <div class="gallery-row">
+        <img src="images/225.jpg" alt="Gallery 2 Image 1" />
+        <img src="images/241.jpg" alt="Gallery 2 Image 2" />
+        <img src="images/282.jpg" alt="Gallery 2 Image 3" />
+        <img src="images/284.jpg" alt="Gallery 2 Image 4" />
+        <img src="images/299.jpg" alt="Gallery 2 Image 5" />
+        <img src="images/284.jpg" alt="Gallery 2 Image 6" />
+        <img src="images/299.jpg" alt="Gallery 2 Image 7" />
+        <img src="images/384.jpg" alt="Gallery 2 Image 8" />
+        <img src="images/386.jpg" alt="Gallery 2 Image 9" />
+        <img src="images/387.jpg" alt="Gallery 2 Image 10" />
+        <img src="images/390.jpg" alt="Gallery 2 Image 11" />
+        <img src="images/403.jpg" alt="Gallery 2 Image 12" />
+    
+    </div>
+  </div>
+
+  <script>
+    const langToggle = document.getElementById('lang-toggle');
+    let isArabic = false;
+
+    langToggle.addEventListener('click', () => {
+      isArabic = !isArabic;
+
+      document.querySelectorAll('.en').forEach(el => {
+        el.style.display = isArabic ? 'none' : 'inline-block';
+      });
+      document.querySelectorAll('.ar').forEach(el => {
+        el.style.display = isArabic ? 'inline-block' : 'none';
+      });
+
+      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      document.documentElement.lang = isArabic ? 'ar' : 'en';
+
+      document.getElementById('main-title').innerText = isArabic ? 'معرض التدريب' : 'Practice Gallery';
+    });
+  </script>
+</body>
+</html>
+    
