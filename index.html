@@ -1,129 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>An Open Boat Invite – Gaza 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-    /* Black overlay for intro effect */
-    #blackout {
-        position: fixed;
-        inset: 0;
-        background: #000;
-        z-index: 9999;
-        opacity: 1;
-        transition: opacity 1.5s cubic-bezier(.4,0,.2,1);
-        pointer-events: all;
-    }
-    body{margin:0;padding:0;min-height:100vh;background:linear-gradient(180deg,#8B4513 0%,#A0522D 8%,#D2B48C 50%,#A0522D 92%,#8B4513 100%);background-size:100% 200%;animation:p 16s linear infinite;font-family:'Inter',sans-serif;color:#000;line-height:1.7}
-    @keyframes p{0%{background-position:0 0}100%{background-position:0 200%}}
-    .candle-header{height:70vh;min-height:520px;display:flex;align-items:center;justify-content:center;position:relative}
-    .candle {
-        width: 180px;
-        height: 320px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        animation: breath 3.5s infinite ease-in-out;
-        position: relative;
-        filter: brightness(0.5);
-        transition: filter 1.2s cubic-bezier(.4,0,.2,1);
-    }
-    .candle img {
-        width: 100%;
-        height: auto;
-        display: block;
-        filter: drop-shadow(0 0 50px #ff4400) drop-shadow(0 0 100px #ff8800);
-        animation: flame 1.8s infinite alternate;
-    }
-    .ribbon {
-    animation: pulse 2s infinite ease-in-out;
-}
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.9;
-    }
-    50% {
-        transform: scale(1.12);
-        opacity: 1;
-    }
-}
-    @keyframes breath {0%,100%{opacity:0.9;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
-    @keyframes flame {0%{transform:scale(1)}100%{transform:scale(1.15) translateY(-10px)}}
-    .content{max-width:920px;margin:-12vh auto 4rem;padding:2rem 3rem;background:rgba(210,180,140,0.25);border-radius:15px;box-shadow:inset 0 0 60px rgba(210,180,140,0.3)}
-    h1{font-family:'Libre Baskerville',serif;text-align:center;font-size:3rem;margin:0 0 2.5rem;font-weight:700}
-    .text{font-size:1.55rem;text-align:center;max-width:820px;margin:0 auto 1.5rem}
-    .text strong{font-weight:600;color:#900}
-    .link{color:#c00;text-decoration:underline;font-weight:600}
-    .scrapbook-link{display:block;margin:3.5rem auto 0;text-align:center;font-size:2rem;font-weight:600;color:#000;text-decoration:none;border-bottom:4px solid #000;padding-bottom:8px;width:max-content}
-    .scrapbook-link:hover{color:#c00;border-color:#c00}
-    .end{font-size:1.9rem;font-weight:600;margin:2.5rem 0}
-    footer{text-align:center;padding:3rem 1rem;color:#532508;font-size:1.1rem}
-</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>State of Palestine</title>
+	<style>
+						.mobile-menu a {
+							color: #017329;
+							text-decoration: none;
+							font-weight: bold;
+							font-size: 1.1rem;
+							margin: 0.5rem 0;
+							transition: color 0.2s;
+						}
+						.mobile-menu a:hover {
+							color: #CF1127;
+						}
+				.menu-toggle {
+					display: none;
+				}
+				.hamburger {
+					display: none;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 40px;
+					height: 40px;
+					background: #f6e7b4;
+					border: 2px solid #017329;
+					border-radius: 8px;
+					cursor: pointer;
+					margin: 0.5rem auto;
+					z-index: 1001;
+				}
+				.hamburger span {
+					display: block;
+					width: 24px;
+					height: 4px;
+					margin: 3px 0;
+					background: #017329;
+					border-radius: 2px;
+					transition: 0.3s;
+				}
+				.mobile-menu {
+					display: none;
+					flex-direction: column;
+					align-items: center;
+					background: #f6e7b4;
+					border-radius: 0 0 18px 18px;
+					box-shadow: 0 8px 24px #0002;
+					padding: 1rem 0;
+					position: absolute;
+					top: 60px;
+					left: 0;
+					width: 100vw;
+					z-index: 1000;
+				}
+				.menu-toggle:checked + .hamburger + .mobile-menu {
+					display: flex;
+				}
+				@media (max-width: 700px) {
+					.hamburger {
+						display: flex;
+					}
+					.sidebar {
+						display: none !important;
+					}
+				}
+		/* Hamburger styles */
+		.hamburger {
+			display: none;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			height: 40px;
+			background: #f6e7b4;
+			border: 2px solid #017329;
+			border-radius: 8px;
+			cursor: pointer;
+			margin: 0.5rem auto 0.5rem auto;
+			z-index: 1001;
+		}
+		.hamburger span {
+			display: block;
+			width: 24px;
+			height: 4px;
+			margin: 3px 0;
+			background: #017329;
+			border-radius: 2px;
+			transition: 0.3s;
+		}
+
+		@media (max-width: 700px) {
+			.container {
+				flex-direction: column;
+				gap: 0;
+				margin-top: 0;
+			}
+			.sidebar {
+				position: absolute;
+				top: 60px;
+				left: 0;
+				width: 100vw;
+				max-width: 100vw;
+				min-height: unset;
+				border-radius: 0 0 18px 18px;
+				box-shadow: 0 8px 24px #0002;
+				z-index: 1000;
+				display: none;
+				margin-right: 0;
+				padding: 18px 0 18px 0;
+				align-items: stretch;
+			}
+			.sidebar.open {
+				display: flex;
+			}
+			.main-content {
+				padding: 18px 6px 18px 6px;
+				border-radius: 12px;
+				margin-bottom: 10px;
+			}
+			.hamburger {
+				display: flex;
+			}
+		}
+		   h1 {
+			   color: #000 !important;
+			   text-shadow: 0 2px 12px #017329;
+		   }
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			display: flex;
+			min-height: 100vh;
+			flex-direction: column;
+			/* Add your background image below. Replace 'your-image.jpg' with your file name. */
+			background-image: url('your-image.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.container {
+			display: flex;
+			flex: 1;
+		}
+		.sidebar {
+			width: 220px;
+			background: #f6e7b4; /* candlelight gold */
+			color: #6b4f1d; /* warm brown */
+			padding: 20px 10px;
+			min-height: 100vh;
+			font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif;
+			font-weight: bold;
+			font-size: 1.15rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-right: 0.5rem;
+		}
+		@media (max-width: 700px) {
+			.sidebar {
+				display: none !important;
+			}
+			.hamburger {
+				display: flex !important;
+			}
+		}
+		   .sidebar ul {
+			   list-style: none;
+			   padding: 0;
+			   margin: 0;
+			   width: 100%;
+			   display: flex;
+			   flex-direction: column;
+			   gap: 18px;
+			   align-items: center;
+		   }
+		   .sidebar ul li {
+			   width: 100%;
+			   display: flex;
+			   justify-content: center;
+		   }
+		   .sidebar a {
+			   display: inline-block;
+			   background: #ffe7b0;
+			   color: #017329; /* green font */
+			   border: 2.5px solid #017329; /* green border */
+			   border-radius: 8px;
+			   padding: 10px 24px;
+			   text-decoration: none;
+			   font-weight: bold;
+			   font-size: 1rem;
+			   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+			   box-shadow: 0 2px 8px #0001;
+		   }
+		   .sidebar a:hover {
+			   background: #f6e7b4;
+			   color: #017329;
+			   border-color: #017329;
+			   box-shadow: 0 6px 18px #CF1127, 0 2px 8px #0001;
+			   transform: translateY(-4px) scale(1.04);
+		   }
+		.main-content {
+			flex: 1;
+			padding: 30px;
+			background: #f4f4f4;
+		}
+		   footer {
+			   background: #f3ecd9; /* old paper */
+			   color: #6b4f1d; /* warm brown */
+			   text-align: center;
+			   padding: 10px 0;
+			   font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif;
+			   font-weight: bold;
+			   font-size: 0.95rem;
+			   margin-top: 0.5rem;
+		   }
+		header {
+			background: #f3ecd9; /* old paper */
+			color: #6b4f1d; /* warm brown */
+			padding: 20px;
+			text-align: center;
+			font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif;
+			font-weight: bold;
+			font-size: 1.35rem;
+			margin-bottom: 0.5rem;
+		}
+	</style>
 </head>
-<body>
+	<header>
+				   <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+				   <label for="menu-toggle" class="hamburger" id="hamburger-menu" aria-label="Open menu" tabindex="0">
+					   <span></span>
+					   <span></span>
+					   <span></span>
+				   </label>
+				   <nav class="mobile-menu">
+					   <div id="mobile-menu-en" style="display:flex; flex-direction:column;">
+						<a href="#">Palestine Art</a>
+						<a href="#">Palestine Speak</a>
+						<a href="#">Palestine Faces</a>
+						<a href="#">Palestine Faith</a>
+						<a href="#">Palestine State</a>
+						<a href="#">Palestine Pursuit</a>
+						<a href="/common.html">To Palestine, with love</a>
+						<a href="/index.com">Boat Invite</a>
+					</div>
+					   <div id="mobile-menu-ar" style="display:none; flex-direction:column; direction:rtl;" lang="ar">
+						<a href="#">الفن الفلسطيني</a>
+						<a href="#">تحدث فلسطين</a>
+						<a href="#">وجوه فلسطين</a>
+						<a href="#">إيمان فلسطين</a>
+						<a href="#">دولة فلسطين</a>
+						<a href="#">سعي فلسطين</a>
+					</div>
+				</nav>
+		<h1 id="header-en">The State of Palestine</h1>
+		<h1 id="header-ar" style="display:none; direction:rtl;" lang="ar">رأس صفحة التدريب</h1>
+		<button id="lang-toggle" style="margin-top:10px;">العربية | English</button>
+	</header>
+	<div class="container">
+		<nav class="sidebar" id="sidebar-nav">
+			<ul id="sidebar-list-en">
+				<li><a href="#" style="color: #000;">Palestine Art</a></li>
+				<li><a href="#" style="color: #000;">Palestine Speak</a></li>
+				<li><a href="#" style="color: #000;">Palestine Faces</a></li>
+				<li><a href="#" style="color: #000;">Palestine Faith</a></li>
+				<li><a href="#" style="color: #000;">Palestine State</a></li>
+				<li><a href="#" style="color: #000;">Palestine Pursuit</a></li>
+				<li><a href="/common.html" style="color: #000;">To Palestine,<br> with love</a></li>
+				<li><a href="/index.html" style="color: #000;">Boat Invite</a></li>
+			</ul>
+			<ul id="sidebar-list-ar" style="display:none; direction:rtl;" lang="ar">
+				   <li><a href="#" style="color: #000;">فن فلسطين</a></li>
+				   <li><a href="#" style="color: #000;">تحدث فلسطين</a></li>
+				   <li><a href="#" style="color: #000;">وجوه فلسطين</a></li>
+				   <li><a href="#" style="color: #000;">إيمان فلسطين</a></li>
+				   <li><a href="#" style="color: #000;">دولة فلسطين</a></li>
+				   <li><a href="#" style="color: #000;">سعي فلسطين</a></li>
+				   <li><a href="/common.html" style="color: #000;">إلى فلسطين، مع الحب</a></li>
+				<li><a href="/index.html" style="color: #000;">دعوة القارب</a></li>
+			</ul>
+		</nav>
+		<main class="main-content">
+			<div id="main-en">
+			<div style="max-width: 1100px; margin: 0 auto 2.5rem; padding: 0 1.5rem;">
+		<video controls width="100%" poster="images/thumbnail.jpg" preload="metadata" playsinline style="border-radius: 10px; box-shadow: 0 2px 12px #0002;">
+			<source src="video/VID_20251220_213925.mp4" type="video/mp4">
+			Your browser doesn't support video playback.
+		</video>
+		<div style="margin-top: 1.2rem; text-align: center; font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; font-size: 1.2rem; color: #017329;">
+			Coming soon Gaza 2026
+		</div>
+		<div class="invite" style="margin-top: 1.2rem; text-align: center; font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; font-size: 1.2rem; color: #111111;">
+			<p>This is an open invitation to every single human being on this planet we call Earth.<br>
+A flotilla of unbreakable hope is sailing for Gaza in 2026 — not as heroes, not as saviors, but as the raw, living voice of humanity itself.<br>
+You don’t need a government’s permission.<br>
 
-<div id="blackout"></div>
+All you need is an internet connection, a conscience that still works, and the guts to sail alongside ordinary people who refuse to let children be starved behind an illegal blockade.<br>
+These humanitarians represent the world's Pursuit of the State of Palestine.<br>
+These boats carry no weapons. They don’t need any.
 
-<div class="candle-header">
-        <div class="candle" id="candle-svg">
-                <svg viewBox="0 0 60 120" width="120" height="240" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="30" cy="100" rx="12" ry="20" fill="#fff8dc"/>
-                    <rect x="24" y="100" width="12" height="20" fill="#deb887"/>
-                    <ellipse class="flame" cx="30" cy="90" rx="8" ry="18" fill="#ffd700"/>
-                    <ellipse class="flame" cx="30" cy="80" rx="5" ry="10" fill="#ffa500"/>
-                    <ellipse class="flame" cx="30" cy="75" rx="2.5" ry="5" fill="#ff4500"/>
-                </svg>
-        </div>
-</div>
+Peace, defiance, and truth are weapons the empire has never figured out how to stop.<br>
+Global Gaza Flotilla 2026.<br>
 
-<div class="content">
-    <h1>An Open Boat Invite to Every Citizen of the World – Gaza 2026</h1>
-    <div class="text">
-        <p>This is an open <strong>invitation</strong> to every citizen of this world, we call Earth.</p>
-        <p>A flotilla of hope sails toward Gaza in 2026 — not as saviors, but as representation of all humanity.</p>
-        <p>You don’t need permission from any government.<br>
-        You just need an internet connection, a conscience, and the willingness to sail with regular people who refuse to let children starve behind a blockade.</p>
-        <p>They carry no weapons, they do not need them, for Peace is much more powerful.</p>
-        <p>Global Sumud Flotilla 2026 — ports still closed, genocide continues, famine still engineered.</p>
-        <p>The live tracker and chat will be back.<br>
-        Bring your phone, your rage, your receipts.<br>
-        They have room for every single Nobody and every global somebody who’s done watching humanity suffer.</p>
-        <p class="end">The boat leaves with or without the world leaders.<br>
-        It will not leave without us.</p>
-        
-        <p style="margin:2rem 0">
-            <a href="https://freedomflotilla.org" target="_blank" class="link">
-                https://freedomflotilla.org
-            </a>
-        </p>
-        
-        <p style="font-style:italic;margin-top:1.5rem">
-            They carry no weapons, just the burning echo of humanity, we said no more.
-        </p>
-        
-        <p style="margin-top:2rem;font-size:2.1rem;font-weight:600">
-                        <span style="display:inline-block;vertical-align:middle;">
-                            <svg width="48" height="28" viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg" style="box-shadow:0 2px 8px #0002;border-radius:3px;vertical-align:middle;">
-                                <rect width="48" height="28" fill="#fff"/>
-                                <rect y="0" width="48" height="9.33" fill="#111"/>
-                                <rect y="18.67" width="48" height="9.33" fill="#007a3d"/>
-                                <polygon points="0,0 14,14 0,28" fill="#ce1126"/>
-                            </svg>
-                        </span>
-        </p>
-        
-        <a href="scrapbook.html" class="scrapbook-link">The Gaza: Rise from the Rubble</a>
-        <a href="faces.html" class="scrapbook-link">Faces of the State of Palestine</a>
-        <a href="this.html" class="scrapbook-link">This is the State of Palestine</a>
-        <a href="speak.html" class="scrapbook-link">Palestine Speaks</a>
-        <a href="wedding.html" class="scrapbook-link">Pursuit of the State of Palestine</a>
-    </div>
-</div>
-<footer>
+Ports still sealed. Genocide still raging. Famine still deliberately engineered.<br>
+A mulitple teir system of justice still in in place under the guise of dipolomatic negotiations and dmeocracy.<br>
+The live tracker returns. The chat returns.<br>
+
+Bring your phone. Bring your rage. Bring your receipts.<br>
+There is room on deck for every Nobody who’s sick of silence and every global Somebody who’s finally done watching.<br>
+The boats leave with or without the world leaders.<br>
+
+They will not leave without us.</p>
+		   <button id="invite-link-btn" style="margin-top: 0.8rem; padding: 6px 18px; font-size: 0.95rem; background: #017329; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; font-weight: 600;">
+			   <a href="#" style="color: #fff; text-decoration: none; text-shadow: 0 2px 8px #CF1127, 0 0px 2px #CF1127;">Learn More</a>
+		   </button>
+		</div>
+	</div>	
+			</div>
+			<div id="main-ar" style="display:none; direction:rtl;" lang="ar">
+				   <div style="max-width: 1100px; margin: 0 auto 2.5rem; padding: 0 1.5rem;">
+					   <video controls width="100%" poster="images/thumbnail.jpg" preload="metadata" playsinline style="border-radius: 10px; box-shadow: 0 2px 12px #0002;">
+						   <source src="video/VID_20251220_213925.mp4" type="video/mp4">
+						   متصفحك لا يدعم تشغيل الفيديو.
+					   </video>
+					   <div style="margin-top: 1.2rem; text-align: center; font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; font-size: 1.2rem; color: #017329;">
+						   قريباً غزة 2026
+					   </div>
+					   <div class="invite" style="margin-top: 1.2rem; text-align: center; font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; font-size: 1.2rem; color: #111111;">
+						   <p>هذه دعوة مفتوحة لكل إنسان على هذا الكوكب الذي نسميه الأرض.<br>
+	أسطول من الأمل الذي لا ينكسر يبحر إلى غزة في عام 2026 — ليس كأبطال، وليس كمخلصين، بل كصوت حي خام للإنسانية نفسها.<br>
+	لا تحتاج إلى إذن من أي حكومة.<br>
+	كل ما تحتاجه هو اتصال بالإنترنت، وضمير لا يزال يعمل، وجرأة للإبحار جنباً إلى جنب مع أناس عاديين يرفضون ترك الأطفال يتضورون جوعاً خلف حصار غير قانوني.<br>
+	هؤلاء الإنسانيون يمثلون سعي العالم لدولة فلسطين.<br>
+	هذه القوارب لا تحمل أسلحة. فهي لا تحتاج إلى أي منها.<br>
+	السلام والتحدي والحق هي أسلحة لم يستطع الإمبراطورية إيقافها أبداً.<br>
+	أسطول غزة العالمي 2026.<br>
+	الموانئ لا تزال مغلقة. الإبادة الجماعية لا تزال مستمرة. المجاعة لا تزال تُدبَّر عمداً.<br>
+	نظام العدالة متعدد المستويات لا يزال قائماً تحت ستار المفاوضات الدبلوماسية والديمقراطية.<br>
+	المتتبع المباشر يعود. الدردشة تعود.<br>
+	أحضر هاتفك. أحضر غضبك. أحضر إيصالاتك.<br>
+	هناك مكان على السطح لكل "لا أحد" سئم من الصمت ولكل "شخص عالمي" قرر أخيراً أن يكتفي بالمشاهدة.<br>
+	القوارب ستغادر مع أو بدون قادة العالم.<br>
+	لن تغادر بدوننا.</p>
+						   <button id="invite-link-btn-ar" style="margin-top: 0.8rem; padding: 6px 18px; font-size: 0.95rem; background: #017329; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; font-weight: 600;">
+							   <a href="www.freedomflotilla.org" style="color: #fff; text-decoration: none; text-shadow: 0 2px 8px #CF1127, 0 0px 2px #CF1127;">اعرف المزيد</a>
+						   </button>
+					   </div>
+				   </div>
+			</div>
+		</main>
+	</div>
+	<footer>
     <div style="display: flex; flex-direction: column; align-items: center;">
   <img src="images/40.jpg" alt="Footer Image" style="max-width: 180px; margin-bottom: 1.2rem;">
   <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: nowrap;">
@@ -140,7 +370,7 @@
             <path d="M40 25 Q40 15 40 15 Q40 25 35 35 Q30 45 30 55 Q30 65 40 75 Q50 65 50 55 Q50 45 45 35 Q40 25 40 15 Z" fill="#fff" opacity="0.3"/>
         </svg>
 
-        <span style="font-family: 'Libre Baskerville', serif; font-size: 1.6rem; font-weight: 700; color: #532508; text-align: center;">
+        <span style="font-family: 'Libre Baskerville', serif; font-size: 1.rem; font-weight: 700; color: #532508; text-align: center;">
             From the ashes, A State rises
         </span>
 
@@ -150,26 +380,65 @@
             <path d="M40 25 Q40 15 40 15 Q40 25 35 35 Q30 45 30 55 Q30 65 40 75 Q50 65 50 55 Q50 45 45 35 Q40 25 40 15 Z" fill="#fff" opacity="0.3"/>
         </svg>
     </div>
-</footer>
-
-
-<script>
-// Blackout overlay and candle lighting effect
-window.addEventListener('DOMContentLoaded', () => {
-    const blackout = document.getElementById('blackout');
-    const candle = document.getElementById('candle-svg');
-    setTimeout(() => {
-        candle.style.filter = 'brightness(1.2) drop-shadow(0 0 60px #ffd700)';
-        blackout.style.opacity = '0';
-        blackout.style.pointerEvents = 'none';
-        setTimeout(() => {
-            candle.style.filter = '';
-        }, 1200);
-    }, 1200); // Candle "lights" after 1.2s, then blackout fades
-});
-</script>
-
+		<span id="footer-en">&copy; 2025 American Nobody999</span>
+		<span id="footer-ar" style="display:none; direction:rtl;" lang="ar">جميع الحقوق محفوظة 2025 أمريكان نوبودي 999</span>
+	</footer>
+	<script>
+				   // Hamburger menu functionality
+				   const hamburger = document.getElementById('hamburger-menu');
+				   const sidebar = document.getElementById('sidebar-nav');
+				   if (hamburger && sidebar) {
+					   hamburger.addEventListener('click', () => {
+						   sidebar.classList.toggle('open');
+					   });
+					   hamburger.addEventListener('keypress', (e) => {
+						   if (e.key === 'Enter' || e.key === ' ') {
+							   sidebar.classList.toggle('open');
+						   }
+					   });
+					   // Close sidebar when clicking outside on mobile
+					   document.addEventListener('click', (e) => {
+						   if (window.innerWidth <= 700 && sidebar.classList.contains('open')) {
+							   if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+								   sidebar.classList.remove('open');
+							   }
+						   }
+					   });
+				   }
+		const toggleBtn = document.getElementById('lang-toggle');
+		let isArabic = false;
+		toggleBtn.addEventListener('click', () => {
+			isArabic = !isArabic;
+			document.documentElement.lang = isArabic ? 'ar' : 'en';
+			document.body.dir = isArabic ? 'rtl' : 'ltr';
+			// Header
+			document.getElementById('header-en').style.display = isArabic ? 'none' : '';
+			document.getElementById('header-ar').style.display = isArabic ? '' : 'none';
+			// Sidebar (desktop)
+			const sidebarEn = document.getElementById('sidebar-list-en');
+			const sidebarAr = document.getElementById('sidebar-list-ar');
+			if (sidebarEn && sidebarAr) {
+				sidebarEn.style.display = isArabic ? 'none' : '';
+				sidebarAr.style.display = isArabic ? '' : 'none';
+			}
+			// Mobile menu
+			const mobileMenuEn = document.getElementById('mobile-menu-en');
+			const mobileMenuAr = document.getElementById('mobile-menu-ar');
+			if (mobileMenuEn && mobileMenuAr) {
+				mobileMenuEn.style.display = isArabic ? 'none' : 'flex';
+				mobileMenuAr.style.display = isArabic ? 'flex' : 'none';
+			}
+			// Main
+			document.getElementById('main-en').style.display = isArabic ? 'none' : '';
+			document.getElementById('main-ar').style.display = isArabic ? '' : 'none';
+			// Footer
+			document.getElementById('footer-en').style.display = isArabic ? 'none' : '';
+			if (document.getElementById('footer-ar')) {
+				document.getElementById('footer-ar').style.display = isArabic ? '' : 'none';
+			}
+		});
+	</script>
 </body>
-</html>
 
-
+       
+       
