@@ -2,85 +2,85 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Common Sense 2025</title>
+<title>To Palestine, with love 2025</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  body,html{margin:0;height:100%;background:#000;overflow:hidden;display:flex;justify-content:center;align-items:center;}
-  
-  /* Wax glow that appears after match strike */
-  #wax{
-    position:fixed;inset:0;
-    background:radial-gradient(circle at 15% 12%, #532 0%,#000 60%);
-    opacity:0;transition:opacity 3s;
-    pointer-events:none;
-  }
-  
-  /* Candle – fixed position, beautiful SVG flame */
-  #candle{
-    position:fixed;top:8vh;left:clamp(10px,12vw,80px);width:90px;opacity:0;transition:opacity 2s;z-index:10;
-  }
-  .flame{transform-origin:50% 100%;animation:flicker 3s infinite;}
-  @keyframes flicker{
-    0%,100%{opacity:0.95;transform:scale(1);}
-    50%{opacity:0.75;transform:scale(1.06);}
-  }
-  
-  /* Scroll container – full viewport but with safe margins */
-  #scroll-container{
-    width:100vw;
-    max-width:900px;
-    height:100vh;
-    padding:0 5vw;
-    box-sizing:border-box;
-    perspective:1200px;
-    display:flex;
-    justify-content:center;
-  }
-  
-  /* The parchment itself – never overflows */
-  #scroll{
-  position:relative;
-  width:100%;
-  max-width:800px;
-  min-height:100%;
-  max-height:80vh;
-  padding:8vh 6vw 10vh;
-  background:url('https://www.transparenttextures.com/patterns/old-wall.png'), linear-gradient(135deg, #fbeec1 0%, #e2c98f 100%);
+/* Language toggle button */
+#lang-toggle, #lang-toggle-ar {
+  margin: 1.5em auto 1em;
+  background: #CF1127;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 3px 10px rgba(207,17,39,0.6);
+}
+#lang-toggle:hover, #lang-toggle-ar:hover {
+  background: #a30d1d;
+  transform: translateY(-1px);
+}
+
+body,html{margin:0;height:100%;background:#000;overflow:hidden;display:flex;justify-content:center;align-items:center;}
+
+/* Wax glow */
+#wax{
+  position:fixed;inset:0;
+  background:radial-gradient(circle at 15% 12%, #532 0%,#000 60%);
+  opacity:0;transition:opacity 3s;
+  pointer-events:none;
+}
+
+/* Candle */
+#candle{
+  position:fixed;top:8vh;left:clamp(10px,12vw,80px);width:90px;opacity:0;transition:opacity 2s;z-index:10;
+}
+.flame{transform-origin:50% 100%;animation:flicker 3s infinite;}
+@keyframes flicker{
+  0%,100%{opacity:0.95;transform:scale(1);}
+  50%{opacity:0.75;transform:scale(1.06);}
+}
+
+/* Scroll container */
+#scroll-container{
+  width:100vw;max-width:900px;height:100vh;padding:0 5vw;box-sizing:border-box;
+  perspective:1200px;display:flex;justify-content:center;align-items:flex-start;
+}
+
+/* The parchment – ALL the magic lives here */
+#scroll{
+  position:relative;width:100%;max-width:800px;min-height:100%;max-height:85vh;
+  padding:8vh 6vw 10vh;background:url('https://www.transparenttextures.com/patterns/old-wall.png'), linear-gradient(135deg, #fbeec1 0%, #e2c98f 100%);
   background-blend-mode: lighten, multiply;
   box-shadow:0 0 120px rgba(100,50,0,0.9),inset 0 0 200px rgba(0,0,0,0.25);
-  border-radius:18px;
-  border: 6px solid #c2b280;
-  font-family:'Crimson Text',serif;
-  color:#3a2200;
-  line-height:1.7;
-  font-size:clamp(1rem,2vw,1.3rem);
-  text-align:justify;
-  hyphens:auto;
-  box-sizing:border-box;
+  border-radius:18px;border:6px solid #c2b280;
+  font-family:'Crimson Text',serif;color:#3a2200;line-height:1.7;
+  font-size:clamp(1rem,2vw,1.3rem);text-align:justify;hyphens:auto;
+  box-sizing:border-box;overflow-y:auto;overflow-x:hidden;
+  scrollbar-width:thin;scrollbar-color:#c2b280 #fbeec1;
+  
+  /* Unroll animation */
   transform:translateY(120%) rotateX(28deg);
   transform-origin:bottom;
   animation:unroll 2.5s 1s forwards;
   animation-play-state:paused;
-  overflow-y:auto;
-  overflow-x:hidden;
-  scrollbar-width:thin;
-  scrollbar-color:#c2b280 #fbeec1;
-  }
-  
-  h1{font-size:clamp(2.8rem,8vw,7rem);text-align:center;margin:0.4em 0 0.2em;letter-spacing:4px;}
-  .byline{text-align:center;font-style:italic;margin-bottom:2.5em;opacity:0.9;}
-  .dropcap{float:left;font-size:5em;line-height:0.8;margin-right:0.15em;font-weight:700;}
-  .end{text-align:center;font-size:2.2em;font-weight:900;margin:4em 0 2em;letter-spacing:2px;}
-  
-  @keyframes unroll{
-    to{transform:translateY(0) rotateX(0deg);}
-  }
-  @keyframes flash{0%,100%{opacity:0}20%{opacity:1}}
+}
+
+h1{font-size:clamp(2.8rem,8vw,7rem);text-align:center;margin:0.4em 0 0.2em;letter-spacing:4px;}
+.byline{text-align:center;font-style:italic;margin-bottom:2.5em;opacity:0.9;}
+.end{text-align:center;font-size:2.2em;font-weight:900;margin:4em 0 2em;letter-spacing:2px;}
+
+@keyframes unroll{
+  to{transform:translateY(0) rotateX(0deg);}
+}
+@keyframes flash{0%,100%{opacity:0}20%{opacity:1}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
 <div id="wax"></div>
 
 <svg id="candle" viewBox="0 0 90 140" xmlns="http://www.w3.org/2000/svg">
@@ -93,53 +93,111 @@
 
 <div id="scroll-container">
   <div id="scroll">
-    <h1>COMMON SENSE<br>2025</h1>
-    <div class="byline">Addressed to the Inhabitants of the World<br> Written by: American Nobody</div>
-    <p><span class="dropcap">T</span>hese are the times that try men’s souls… and expose them.</p>
-    <p>An Israeli soldier, in the full light of social media, photographs bound and blindfolded Palestinians and captions them “FOR SALE.”<br>
-    He laughs. His comrades press “like.” The Army shrugs.</p>
+    <!-- English Content -->
+    <div id="en-content">
+      <h1>To Palestine, with love<br>2025</h1>
+      <div style="display:flex;justify-content:center;">
+        <button id="lang-toggle">العربية | English</button>
+      </div>
+      <div class="byline">My gift, to the great State of Palestine<br>
+        In Honor of the brave men and women, the journalists, the truth tellers who have fallen in their efforts to document the struggle of Palestine, and the ones still there who will not let the truth be buried. I will tranfer full ownship of this website to State of Palestine when the time is safe.</div>
+      <p>My Beloved Palestians<br>
+        My name is Leslie, I am an American nobody. How we got here is a very long story, and I don't know where to begin, either.<br>
+        When I began to to educate myself, to really listen to you, the Palestian voices trying to be heard over the cacophony of propaganda, I was horrified at what I learned. I was ashamed of my country, and of myself for being so ignorant for so long.<br>
+        When I found out everything I didn't know, how deep, and long you have suffered, how it has been justified and for why, it broke my heart in such a way, its reached my very soul.<br>
+        I began to understand the depth of your suffering, the injustice you face daily, and the resilience you show in the face of such adversity. It hurts my heart to see how the world has turned a blind eye to your plight for so long.<br>
+        I wanted to do something, anything, to help. So I started small, sharing your stories on social media, educating my friends and family about the realities of life under occupation. But I knew that wasn't enough.<br>
+        I searched your voices out, the ones that were buried deep.
+        I found artists, writers, activists, and everyday people who were bravely speaking out against the occupation. I amplified their voices, shared their stories, and helped to bring attention to the injustices you face. As best as I could, as best as I can, for this my own solidarity movement.<br>
+        I didn't mean to start a movement, I just heard your voices through the Flotillas, I sought them out, found them, and have been with them this whole time. They didn't know I was there. And you, you haunt me, for you have been in my dreams every night since. I just started moving and I haven't stopped. You are in my every thought for these longs months now. I have felt your pain, your hope, and your resilience. I have been inspired by your strength and determination to fight for your rights and freedom. I am blinded by the brightness of the Future state of Palestine, fighting to just live and the right to exist.<br>
+        So here I am, a lone voice in the wilderness, trying to make a difference in any way I can.<br>
+        I am the sole designer, developer, and I am the only one with access to this website. In honor of the great Palestian voices I have found, I have created this website as a platform to share your stories with the world. It is my hope that through this website, more people will learn about your struggle and be inspired to take action.<br>
+        I do not fully understand your faith, for I know no religion, and our countries are so different, I struggle over every word I speak for you, that it should represent your people, and not my interpretation of you, or how as I, a wild true american would react if I were you. I am just learning the depths and beauty of your rich history and culture.<br>
+        I do understand the universal desire for freedom, justice, and dignity. And I stand with you in your fight for these basic human rights.<br>
+        My american human heart is with you, my beloved Palestians. May we one day live in a world where all people are free to live with dignity and respect. Stay in touch.<br>
+        With love and solidarity,<br>
+        Still here.<br>
+        Leslie
+      </p>
+    </div>
 
-    <p>Very well.</p>
-    <p>If they are property, then property can be purchased.<br>
-    If they are not citizens of this world, not humans, not protected persons, then they are chattel.<br>
-    Chattel changes hands.</p>
-    <p>I therefore publicly announce my intention to buy every Palestinian man, woman, and child currently detained by the IDF or its proxies in Gaza and the West Bank.</p>
-    <p>Cash on delivery. Clean title. Immediate transfer.<br>
-    No tariffs, no deportation clauses, no bullshit.</p>
-    <p>Price: one United States dollar per soul, payable in gold or bitcoin, whichever is more convenient to the seller.</p>
-    <p>The moment the transaction clears, these human beings become my legal property under the laws the occupation itself has invoked.</p>
-    <p>And under no law, divine or man-made, will I ever surrender, deport, or harm what is mine.</p>
-    <p>Let the occupation attempt to expel my property.<br>
-    Let them explain to the world why they are stealing from an American citizen.</p>
-    <p>They opened a slave market in the year 2025.<br>
-    I simply outbid them.</p>
-    <p class="footnote">
-      <em>The original post and offer of sale is preserved here:<br>
-      <a href="https://t.me/royanewsenglish" target="_blank">t.me/royanewsenglish</a></em>
-    </p>
-    <p class="end">Check,<br> Tel Aviv,<br> your move.</p>
+    <!-- Arabic Content -->
+    <div id="ar-content" style="display:none; direction:rtl; text-align:right;">
+      <h1>إلى فلسطين، مع الحب<br>2025</h1>
+      <div style="display:flex;justify-content:center;">
+        <button id="lang-toggle-ar">English | العربية</button>
+      </div>
+      <div class="byline">هديتي إلى دولة فلسطين العظيمة<br>
+        تكريماً للرجال والنساء الشجعان، الصحفيين، رواة الحقيقة الذين سقطوا في جهودهم لتوثيق نضال فلسطين، وأولئك الذين ما زالوا هناك ولن يسمحوا بدفن الحقيقة. سأقوم بنقل ملكية هذا الموقع بالكامل إلى دولة فلسطين عندما يحين الوقت الآمن.</div>
+      <p>أحبتي الفلسطينيين<br>
+        اسمي ليزلي، أنا أمريكية عادية. كيف وصلنا إلى هنا قصة طويلة جداً، ولا أعرف من أين أبدأ أيضاً.<br>
+        عندما بدأت أتعلم حقاً، وأستمع إليكم، إلى الأصوات الفلسطينية التي تحاول أن تُسمع وسط ضجيج الدعاية، صُدمت مما علمته. شعرت بالخجل من بلدي، ومن نفسي لجهلي الطويل.<br>
+        عندما اكتشفت كل ما لم أكن أعرفه، وعمق معاناتكم وطولها، وكيف تم تبريرها ولماذا، انكسر قلبي بطريقة وصلت إلى روحي.<br>
+        بدأت أفهم عمق معاناتكم، والظلم الذي تواجهونه يومياً، والمرونة التي تظهرونها في وجه الشدائد. يؤلمني أن أرى كيف أدار العالم ظهره لمعاناتكم طويلاً.<br>
+        أردت أن أفعل شيئاً، أي شيء، لأساعد. بدأت صغيراً، أشارك قصصكم على وسائل التواصل الاجتماعي، وأثقف أصدقائي وعائلتي حول واقع الحياة تحت الاحتلال. لكنني علمت أن ذلك ليس كافياً.<br>
+        بحثت عن أصواتكم، تلك المدفونة عميقاً.
+        وجدت فنانين وكتّاباً ونشطاء وأناساً عاديين يتحدثون بشجاعة ضد الاحتلال. قمت بتضخيم أصواتهم، وشاركت قصصهم، وساعدت في لفت الانتباه إلى الظلم الذي تواجهونه. بقدر ما أستطيع، هذه حركتي التضامنية الخاصة.<br>
+        لم أقصد أن أبدأ حركة، فقط سمعت أصواتكم من خلال القوافل البحرية، بحثت عنها، وجدتها، وكنت معكم طوال هذا الوقت. لم يعرفوا أنني كنت هناك. وأنتم، تطاردونني، فقد كنتم في أحلامي كل ليلة منذ ذلك الحين. بدأت أتحرك ولم أتوقف. أنتم في كل أفكاري طوال هذه الأشهر الطويلة. شعرت بألمكم، وأملكم، ومرونتكم. ألهمتني قوتكم وإصراركم على النضال من أجل حقوقكم وحريتكم. أنا منبهرة بمستقبل فلسطين المشرق، الذي يقاتل فقط ليعيش وله الحق في الوجود.<br>
+        ها أنا هنا، صوت وحيد في البرية، أحاول أن أحدث فرقاً بأي طريقة أستطيع.<br>
+        أنا المصممة والمطورة الوحيدة، وأنا الوحيدة التي لديها حق الوصول إلى هذا الموقع. تكريماً للأصوات الفلسطينية العظيمة التي وجدتها، أنشأت هذا الموقع كمنصة لمشاركة قصصكم مع العالم. آمل أن يتعلم المزيد من الناس عن نضالكم ويستلهموا العمل.<br>
+        لا أفهم دينكم بالكامل، فأنا لا أعرف ديناً، وبلداننا مختلفة جداً، أجهد في كل كلمة أقولها لكم، حتى تمثل شعبكم، وليس تفسيري لكم، أو كيف سأتصرف أنا كأمريكية حرة لو كنت مكانكم. أنا فقط أتعلم أعماق وجمال تاريخكم وثقافتكم الغنية.<br>
+        لكنني أفهم الرغبة العالمية في الحرية والعدالة والكرامة. وأنا أقف معكم في نضالكم من أجل هذه الحقوق الإنسانية الأساسية.<br>
+        قلبي الإنساني الأمريكي معكم، أحبتي الفلسطينيين. لعلنا نعيش يوماً في عالم يكون فيه جميع الناس أحراراً ليعيشوا بكرامة واحترام. ابقوا على تواصل.<br>
+        مع الحب والتضامن،<br>
+        ما زلت هنا.<br>
+        ليزلي
+      </p>
+    </div>
   </div>
 </div>
 
 <audio id="match" src="https://freesound.org/data/previews/612/612617_5674468-lq.mp3" preload="auto"></audio>
-<audio id="wick"  src="https://freesound.org/data/previews/259/259671_4486188-lq.mp3" preload="auto"></audio>
+<audio id="wick" src="https://freesound.org/data/previews/259/259671_4486188-lq.mp3" preload="auto"></audio>
 
 <script>
-  const match = document.getElementById('match');
-  const wick  = document.getElementById('wick');
+// Bilingual toggle
+const enContent = document.getElementById('en-content');
+const arContent = document.getElementById('ar-content');
+const html = document.documentElement;
 
-  function ignite(){
-    if(match.paused){
-      match.play();
-      const flash=document.createElement('div');
-      flash.style.cssText=`position:fixed;inset:0;background:radial-gradient(circle at 15% 15%,#ffaa33 0%,#000 70%);opacity:0;animation:flash 0.9s forwards;z-index:9999;pointer-events:none;`;
-      document.body.appendChild(flash);
-      setTimeout(()=>{wick.play();document.getElementById('candle').style.opacity='1';document.getElementById('wax').style.opacity='0.85';},600);
-      setTimeout(()=>document.getElementById('scroll').style.animationPlayState='running',1600);
-    }
+document.getElementById('lang-toggle')?.addEventListener('click', () => {
+  enContent.style.display = 'none';
+  arContent.style.display = 'block';
+  html.lang = 'ar';
+  // Only apply RTL to the parchment content, not the whole body (prevents candle flip)
+  document.getElementById('scroll').style.direction = 'rtl';
+});
+
+document.getElementById('lang-toggle-ar')?.addEventListener('click', () => {
+  enContent.style.display = 'block';
+  arContent.style.display = 'none';
+  html.lang = 'en';
+  document.getElementById('scroll').style.direction = 'ltr';
+});
+
+// Ignition sequence
+const match = document.getElementById('match');
+const wick = document.getElementById('wick');
+
+function ignite(){
+  if(match.paused){
+    match.play();
+    const flash = document.createElement('div');
+    flash.style.cssText = `position:fixed;inset:0;background:radial-gradient(circle at 15% 12%,#ffaa33 0%,#000 70%);opacity:0;animation:flash 0.9s forwards;z-index:9999;pointer-events:none;`;
+    document.body.appendChild(flash);
+    setTimeout(() => {
+      wick.play();
+      document.getElementById('candle').style.opacity = '1';
+      document.getElementById('wax').style.opacity = '0.85';
+    }, 600);
+    setTimeout(() => {
+      document.getElementById('scroll').style.animationPlayState = 'running';
+    }, 1600);
   }
-  setTimeout(ignite,1000);
-  document.body.addEventListener('click',ignite,{once:true});
+}
+
+setTimeout(ignite, 1000);
+document.body.addEventListener('click', ignite, {once: true});
 </script>
 </body>
 </html>
