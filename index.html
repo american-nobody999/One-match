@@ -1,418 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>State of Palestine</title>
-	<style>
-						.mobile-menu a {
-							color: #017329;
-							text-decoration: none;
-							font-weight: bold;
-							font-size: 1.1rem;
-							margin: 0.5rem 0;
-							transition: color 0.2s;
-						}
-						.mobile-menu a:hover {
-							color: #CF1127;
-						}
-				.menu-toggle {
-					display: none;
-				}
-				.hamburger {
-					display: none;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					width: 40px;
-					height: 40px;
-					background: #f6e7b4;
-					border: 2px solid #017329;
-					border-radius: 8px;
-					cursor: pointer;
-					margin: 0.5rem auto;
-					z-index: 1001;
-				}
-				.hamburger span {
-					display: block;
-					width: 24px;
-					height: 4px;
-					margin: 3px 0;
-					background: #017329;
-					border-radius: 2px;
-					transition: 0.3s;
-				}
-				.mobile-menu {
-					display: none;
-					flex-direction: column;
-					align-items: center;
-					background: #f6e7b4;
-					border-radius: 0 0 18px 18px;
-					box-shadow: 0 8px 24px #0002;
-					padding: 1rem 0;
-					position: absolute;
-					top: 60px;
-					left: 0;
-					width: 100vw;
-					z-index: 1000;
-				}
-				.menu-toggle:checked + .hamburger + .mobile-menu {
-					display: flex;
-				}
-				@media (max-width: 700px) {
-					.hamburger {
-						display: flex;
-					}
-					.sidebar {
-						display: none !important;
-					}
-				}
-		/* Hamburger styles */
-		.hamburger {
-			display: none;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			width: 40px;
-			height: 40px;
-			background: #f6e7b4;
-			border: 2px solid #017329;
-			border-radius: 8px;
-			cursor: pointer;
-			margin: 0.5rem auto 0.5rem auto;
-			z-index: 1001;
-		}
-		.hamburger span {
-			display: block;
-			width: 24px;
-			height: 4px;
-			margin: 3px 0;
-			background: #017329;
-			border-radius: 2px;
-			transition: 0.3s;
-		}
-
-		@media (max-width: 700px) {
-			.container {
-				flex-direction: column;
-				gap: 0;
-				margin-top: 0;
-			}
-			.sidebar {
-				position: absolute;
-				top: 60px;
-				left: 0;
-				width: 100vw;
-				max-width: 100vw;
-				min-height: unset;
-				border-radius: 0 0 18px 18px;
-				box-shadow: 0 8px 24px #0002;
-				z-index: 1000;
-				display: none;
-				margin-right: 0;
-				padding: 18px 0 18px 0;
-				align-items: stretch;
-			}
-			.sidebar.open {
-				display: flex;
-			}
-			.main-content {
-				padding: 18px 6px 18px 6px;
-				border-radius: 12px;
-				margin-bottom: 10px;
-			}
-			.hamburger {
-				display: flex;
-			}
-		}
-		   h1 {
-			   color: #000 !important;
-			   text-shadow: 0 2px 12px #017329;
-		   }
-		body {
-			margin: 0;
-			font-family: Arial, sans-serif;
-			display: flex;
-			min-height: 100vh;
-			flex-direction: column;
-			/* Add your background image below. Replace 'your-image.jpg' with your file name. */
-			background-image: url('your-image.jpg');
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center center;
-		}
-		.container {
-			display: flex;
-			flex: 1;
-		}
-		.sidebar {
-			width: 220px;
-			background: #f6e7b4; /* candlelight gold */
-			color: #6b4f1d; /* warm brown */
-			padding: 20px 10px;
-			min-height: 100vh;
-			font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif;
-			font-weight: bold;
-			font-size: 1.15rem;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-right: 0.5rem;
-		}
-		@media (max-width: 700px) {
-			.sidebar {
-				display: none !important;
-			}
-			.hamburger {
-				display: flex !important;
-			}
-		}
-		   .sidebar ul {
-			   list-style: none;
-			   padding: 0;
-			   margin: 0;
-			   width: 100%;
-			   display: flex;
-			   flex-direction: column;
-			   gap: 18px;
-			   align-items: center;
-		   }
-		   .sidebar ul li {
-			   width: 100%;
-			   display: flex;
-			   justify-content: center;
-		   }
-		   .sidebar a {
-			   display: inline-block;
-			   background: #ffe7b0;
-			   color: #017329; /* green font */
-			   border: 2.5px solid #017329; /* green border */
-			   border-radius: 8px;
-			   padding: 10px 24px;
-			   text-decoration: none;
-			   font-weight: bold;
-			   font-size: 1rem;
-			   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-			   box-shadow: 0 2px 8px #0001;
-		   }
-		   .sidebar a:hover {
-			   background: #f6e7b4;
-			   color: #017329;
-			   border-color: #017329;
-			   box-shadow: 0 6px 18px #CF1127, 0 2px 8px #0001;
-			   transform: translateY(-4px) scale(1.04);
-		   }
-		.main-content {
-			flex: 1;
-			padding: 30px;
-			background: #f4f4f4;
-		}
-		   footer {
-			   background: #f3ecd9; /* old paper */
-			   color: #6b4f1d; /* warm brown */
-			   text-align: center;
-			   padding: 10px 0;
-			   font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif;
-			   font-weight: bold;
-			   font-size: 0.95rem;
-			   margin-top: 0.5rem;
-		   }
-		header {
-			background: #f3ecd9; /* old paper */
-			color: #6b4f1d; /* warm brown */
-			padding: 20px;
-			text-align: center;
-			font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif;
-			font-weight: bold;
-			font-size: 1.35rem;
-			margin-bottom: 0.5rem;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State of Palestine</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
 </head>
-	<header>
-				   <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-				   <label for="menu-toggle" class="hamburger" id="hamburger-menu" aria-label="Open menu" tabindex="0">
-					   <span></span>
-					   <span></span>
-					   <span></span>
-				   </label>
-				  <nav class="mobile-menu">
-  <!-- ENGLISH MOBILE MENU -->
-  <div id="mobile-menu-en" style="display:flex; flex-direction:column; gap:1.5rem; padding:1.5rem;">
-    <a href="art.html">Palestine Art</a>
-    <a href="speak.html">Palestine Speak</a>
-    <a href="face.html">Palestine Faces</a>
-    <a href="faith.html">Palestine Faith</a>
-    <a href="scrapbook.html">Palestine State</a>
-    <a href="#">Palestine Pursuit</a>
-    <a href="common.html">To Palestine, with love</a>
-    <a href="index.html">Boat Invite</a>
-	<a href="this.html">This is Palestine</a>
-	<a href="memory.html">In Memory, In Honor</a>
-	<a href="01062026.html">Update</a>  
+<body>
+
+    <header>
+      <h1>
+        <span id="h1-en">State of Palestine</span>
+        <span id="h1-ar" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">دولة فلسطين</span>
+      </h1>
+      <div class="header-btns">
+        <button id="lang-toggle" class="lang-toggle">English | العربية</button>
+        <a href="index.html">
+          <button class="header-home-btn">
+            <span class="home-en">Home</span>
+            <span class="home-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">الرئيسية</span>
+          </button>
+        </a>
+      </div>
+    </header>
+  <div id="image-section">
+    <img src="images/002.jpg" alt="flag flying infront of tree">
   </div>
 
-  <!-- ARABIC MOBILE MENU -->
-  <div id="mobile-menu-ar" style="display:none; flex-direction:column; direction:rtl; gap:1.5rem; padding:1.5rem;" lang="ar">
-    <a href="art.html">الفن الفلسطيني</a>
-    <a href="speak.html">تحدث فلسطين</a>
-    <a href="faces.html">وجوه فلسطين</a>
-    <a href="faith.html">إيمان فلسطين</a>
-    <a href="scrapbook.html">دولة فلسطين</a>
-    <a href="#">سعي فلسطين</a>
-    <a href="common.html">إلى فلسطين، مع الحب</a>
-	<a href="index.html">دعوة الأسطول المفتوحة</a>
-	<a href="this.html">هذه هي فلسطين</a>
-	<a href="memory.html">في الذكرى، في الشرف</a>
-	<a href="01062026.html.html">تحديث/a>
-  </div>
-</nav>
-		<h1 id="header-en">The State of Palestine</h1>
-		<h1 id="header-ar" style="display:none; direction:rtl;" lang="ar">رأس صفحة التدريب</h1>
-		<button id="lang-toggle" style="margin-top:10px;">العربية | English</button>
-	</header>
-	<div class="container">
-		<nav class="sidebar" id="sidebar-nav">
-			<ul id="sidebar-list-en">
-				<li><a href="art.html" style="color: #000;">Palestine Art</a></li>
-				<li><a href="speak.html" style="color: #000;">Palestine Speak</a></li>
-				<li><a href="faces.html" style="color: #000;">Palestine Faces</a></li>
-				<li><a href="faith.html" style="color: #000;">Palestine Faith</a></li>
-				<li><a href="scrapbook.html" style="color: #000;">Palestine State</a></li>
-				<li><a href="#" style="color: #000;">Palestine Pursuit</a></li>
-				<li><a href="common.html" style="color: #000;">To Palestine,<br> with love</a></li>
-				<li><a href="this.html" style="color: #000;">This is Palestine</a></li>
-				<li><a href="memory.html" style="color: #000;">In Memory, In Honor</a></li>
-				<li><a href="01062026.html" style="color: #000;">Update</a></li>
-			</ul>
-			<ul id="sidebar-list-ar" style="display:none; direction:rtl;" lang="ar">
-				   <li><a href="art.html" style="color: #000;">فن فلسطين</a></li>
-				   <li><a href="speak.html" style="color: #000;">تحدث فلسطين</a></li>
-				   <li><a href="faces.html" style="color: #000;">وجوه فلسطين</a></li>
-				   <li><a href="faith.html" style="color: #000;">إيمان فلسطين</a></li>
-				   <li><a href="scrapbook.html" style="color: #000;">دولة فلسطين</a></li>
-				   <li><a href="#" style="color: #000;">سعي فلسطين</a></li>
-				   <li><a href="common.html" style="color: #000;">إلى فلسطين، مع الحب</a></li>
-				<li><a href="index.html" style="color: #000;">دعوة القارب</a></li>
-				<li><a href="this.html" style="color: #000;">هذه هي فلسطين</a></li>
-				<li><a href="memory.html" style="color: #000;">في الذكرى، في الشرف</a></li>
-				<li><a href="01062026.html" style="color: #000;">تحديث<</a></li>
-			</ul>
-		</nav>
-		<main class="main-content">
-			<div id="main-en">
-			<div style="max-width: 1100px; margin: 0 auto 2.5rem; padding: 0 1.5rem;">
-		<img src="images/001.jpg" alt="eagle" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-		<div style="margin-top: 1.2rem; text-align: center; font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; font-size: 1.2rem; color: #017329;">
-			Coming soon 
-		</div>
-		<div class="invite" style="margin-top: 1.2rem; text-align: center; font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; font-size: 1.2rem; color: #111111;">
-			<p>update pending, please stand by</p>
-		</div>
-	</div>	
-			</div>
-			<div id="main-ar" style="display:none; direction:rtl;" lang="ar">
-				   <div style="max-width: 1100px; margin: 0 auto 2.5rem; padding: 0 1.5rem;">
-					   <div style="margin-top: 1.2rem; text-align: center; font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; font-size: 1.2rem; color: #017329;">
-						   قريباً غزة 2026
-					   </div>
-					   <div class="invite" style="margin-top: 1.2rem; text-align: center; font-family: 'Fredoka', 'Comic Sans MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; font-size: 1.2rem; color: #111111;">
-						   <button id="invite-link-btn-ar" style="margin-top: 0.8rem; padding: 6px 18px; font-size: 0.95rem; background: #017329; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; font-weight: 600;">
-							   <a href="www.freedomflotilla.org" style="color: #fff; text-decoration: none; text-shadow: 0 2px 8px #CF1127, 0 0px 2px #CF1127;">اعرف المزيد</a>
-						   </button>
-					   </div>
-				   </div>
-			</div>
-		</main>
-	</div>
-	<footer>
-    <div style="display: flex; flex-direction: column; align-items: center;">
-	<img src="images/40.jpg" alt="Footer Image" style="display: block; margin: 0 auto 1.2rem auto; max-width: 180px; height: auto;">
-  <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: nowrap;">
-    <!-- Left ribbon SVG here -->
-    <!-- Text and right ribbon SVG here -->
-  </div>
+  <div id="section-dedication">
+    <h2>
+      <span id="h2-en">My Gift to the Great State of Palestine</span>
+      <span id="h2-ar" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">هديتي إلى دولة فلسطين العظيمة</span>
+    </h2>
+    <p>
+      <span id="p-en">
+        In Honor of the brave men and women, the journalists, the truth tellers who have fallen in their efforts to document the struggle of the great people of the State of Palestine, and the ones still there who will not let the truth be buried.<br>
+        I will transfer full ownership of this website to the State of Palestine when the time is safe.<br><br>
+        This website is designed, developed, and maintained by one single American human voice.<br>
+        The content within this site is the voices of the future of Palestine as they fight for their existence, their right to live, at the same time rising and rebuilding a bright nation.
+      </span>
+      <span id="p-ar" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">
+        تكريماً للرجال والنساء الشجعان، الصحفيين، رواة الحقيقة الذين سقطوا أثناء توثيقهم لنضال شعب فلسطين العظيم، وأولئك الذين ما زالوا هناك ولن يسمحوا بدفن الحقيقة.<br>
+        سأقوم بنقل ملكية هذا الموقع بالكامل إلى دولة فلسطين عندما يحين الوقت الآمن.<br><br>
+        تم تصميم وتطوير وصيانة هذا الموقع بواسطة صوت أمريكي واحد فقط.<br>
+        المحتوى الموجود في هذا الموقع هو أصوات مستقبل فلسطين وهم يقاتلون من أجل وجودهم وحقهم في الحياة، وفي الوقت نفسه ينهضون ويبنون أمة مشرقة.
+      </span>
+    </p>
 </div>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: nowrap;">
-        <!-- Left ribbon -->
-        <svg width="80" height="110" viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg" class="ribbon">
-            <!-- Classic awareness ribbon path -->
-            <path d="M40 20 Q40 5 40 5 Q40 20 30 30 Q20 40 20 60 Q20 80 40 95 Q60 80 60 60 Q60 40 50 30 Q40 20 40 5 Z" fill="#c00"/>
-            <!-- Crossover highlight for depth -->
-            <path d="M40 25 Q40 15 40 15 Q40 25 35 35 Q30 45 30 55 Q30 65 40 75 Q50 65 50 55 Q50 45 45 35 Q40 25 40 15 Z" fill="#fff" opacity="0.3"/>
-        </svg>
+  </div>
 
-        <span style="font-family: 'Libre Baskerville', serif; font-size: 1.rem; font-weight: 700; color: #532508; text-align: center;">
-            From the ashes, A State rises
-        </span>
+  <div id="links-section">
+    <a href="progress.html">
+      <button>
+        <span class="btn-en">The Art of Palestine</span>
+        <span class="btn-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">فن فلسطين</span>
+      </button>
+    </a>
+    <a href="progress.html">
+      <button>
+        <span class="btn-en">In Honor, In Memory</span>
+        <span class="btn-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">تكريماً وذكراً</span>
+      </button>
+    </a>
+    <a href="progrss.html">
+      <button>
+        <span class="btn-en">Faces of Palestine</span>
+        <span class="btn-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">وجوه فلسطين</span>
+      </button>
+    </a>
+    <a href="progress.html">
+      <button>
+        <span class="btn-en">Palestine speaks</span>
+        <span class="btn-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">فلسطين تتكلم</span>
+      </button>
+    </a>
+    <a href="progress.html">
+      <button>
+        <span class="btn-en">This is the State of Palestine</span>
+        <span class="btn-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">هذه هي دولة فلسطين</span>
+      </button>
+    </a>
+    <a href="progress.html">
+      <button>
+        <span class="btn-en">Faith of Palestine</span>
+        <span class="btn-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">إيمان فلسطين</span>
+      </button>
+    </a>
+    <a href="progress.html">
+      <button>
+        <span class="btn-en">Worlds Pursuit of Palestine</span>
+        <span class="btn-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">سعي العالم لفلسطين</span>
+      </button>
+    </a>
+    <a href="progress.html">
+      <button>
+        <span class="btn-en">To Palestine, with love</span>
+        <span class="btn-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">إلى فلسطين، مع الحب</span>
+      </button>
+    </a>
+  </div>
 
-        <!-- Right ribbon (perfectly mirrored) -->
-        <svg width="80" height="110" viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg" class="ribbon" style="transform: scaleX(-1);">
-            <path d="M40 20 Q40 5 40 5 Q40 20 30 30 Q20 40 20 60 Q20 80 40 95 Q60 80 60 60 Q60 40 50 30 Q40 20 40 5 Z" fill="#c00"/>
-            <path d="M40 25 Q40 15 40 15 Q40 25 35 35 Q30 45 30 55 Q30 65 40 75 Q50 65 50 55 Q50 45 45 35 Q40 25 40 15 Z" fill="#fff" opacity="0.3"/>
-        </svg>
+  <footer>
+    <div id="footer-content">
+      <img src="images/40.jpg" alt="Footer symbolic image" class="footer-img">
+      <span id="footer-text-en-main">From the Ashes, A State rises</span>
+      <span id="footer-text-ar-main" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">من الرماد، تنهض دولة</span>
+      <span id="footer-text-en-copy">© 2026 American Nobody999</span>
+      <span id="footer-text-ar-copy" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">© 2026 أمريكي Nobody999</span>
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4C24 4 14 16 14 24C14 32 24 44 24 44C24 44 34 32 34 24C34 16 24 4 24 4Z" fill="#CF1127"/>
+        <path d="M24 14C24 14 18 22 18 27C18 32 24 40 24 40C24 40 30 32 30 27C30 22 24 14 24 14Z" fill="#FFB300"/>
+      </svg>
     </div>
-		<span id="footer-en">&copy; 2025 American Nobody999</span>
-		<span id="footer-ar" style="display:none; direction:rtl;" lang="ar">جميع الحقوق محفوظة 2025 أمريكان نوبودي 999</span>
-	</footer>
-	<script>
-				   // Hamburger menu functionality
-				   const hamburger = document.getElementById('hamburger-menu');
-				   const sidebar = document.getElementById('sidebar-nav');
-				   if (hamburger && sidebar) {
-					   hamburger.addEventListener('click', () => {
-						   sidebar.classList.toggle('open');
-					   });
-					   hamburger.addEventListener('keypress', (e) => {
-						   if (e.key === 'Enter' || e.key === ' ') {
-							   sidebar.classList.toggle('open');
-						   }
-					   });
-					   // Close sidebar when clicking outside on mobile
-					   document.addEventListener('click', (e) => {
-						   if (window.innerWidth <= 700 && sidebar.classList.contains('open')) {
-							   if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-								   sidebar.classList.remove('open');
-							   }
-						   }
-					   });
-				   }
-		const toggleBtn = document.getElementById('lang-toggle');
-		let isArabic = false;
-		toggleBtn.addEventListener('click', () => {
-			isArabic = !isArabic;
-			document.documentElement.lang = isArabic ? 'ar' : 'en';
-			document.body.dir = isArabic ? 'rtl' : 'ltr';
-			// Header
-			document.getElementById('header-en').style.display = isArabic ? 'none' : '';
-			document.getElementById('header-ar').style.display = isArabic ? '' : 'none';
-			// Sidebar (desktop)
-			const sidebarEn = document.getElementById('sidebar-list-en');
-			const sidebarAr = document.getElementById('sidebar-list-ar');
-			if (sidebarEn && sidebarAr) {
-				sidebarEn.style.display = isArabic ? 'none' : '';
-				sidebarAr.style.display = isArabic ? '' : 'none';
-			}
-			// Mobile menu
-			const mobileMenuEn = document.getElementById('mobile-menu-en');
-			const mobileMenuAr = document.getElementById('mobile-menu-ar');
-			if (mobileMenuEn && mobileMenuAr) {
-				mobileMenuEn.style.display = isArabic ? 'none' : 'flex';
-				mobileMenuAr.style.display = isArabic ? 'flex' : 'none';
-			}
-			// Main
-			document.getElementById('main-en').style.display = isArabic ? 'none' : '';
-			document.getElementById('main-ar').style.display = isArabic ? '' : 'none';
-			// Footer
-			document.getElementById('footer-en').style.display = isArabic ? 'none' : '';
-			if (document.getElementById('footer-ar')) {
-				document.getElementById('footer-ar').style.display = isArabic ? '' : 'none';
-			}
-		});
-	</script>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
-
-       
+</html>
        
 
        
