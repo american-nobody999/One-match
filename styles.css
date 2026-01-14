@@ -191,3 +191,45 @@ footer::before {
 footer::after {
 	bottom: 0;
 }
+
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-container {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 768px) {
+  .video-container {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+  }
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.video-caption {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.video-gallery-section {
+  padding: 40px 20px;
+}
+
+.video-gallery-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
