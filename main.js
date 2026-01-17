@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-//speak//
+
 const langToggle = document.getElementById('lang-toggle');
 
 langToggle.addEventListener('click', () => {
