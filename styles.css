@@ -97,7 +97,7 @@ button:hover {
 	color: #fff;
 }
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Amiri', serif;
 	margin: 0;
 	background: #ffffff;
 }
@@ -194,21 +194,23 @@ footer::after {
 
 .video-gallery {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 20px;
-  justify-content: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
 }
 
 .video-container {
-  flex: 1 1 100%;
-  max-width: 100%;
+  flex: 0 0 calc(33.333% - 14px);
+  min-width: calc(33.333% - 14px);
 }
 
-/* Desktop: 3 columns */
-@media (min-width: 768px) {
+/* Mobile: show 1 image at a time */
+@media (max-width: 768px) {
   .video-container {
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
+    flex: 0 0 calc(100% - 20px);
+    min-width: calc(100% - 20px);
   }
 }
 
@@ -216,6 +218,15 @@ footer::after {
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.video-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+  aspect-ratio: 2/3;
 }
 
 .video-caption {
@@ -226,6 +237,11 @@ footer::after {
 
 .video-gallery-section {
   padding: 40px 20px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 12px #CF1127;
 }
 
 .video-gallery-section h2 {
@@ -233,3 +249,4 @@ footer::after {
   margin-bottom: 30px;
   font-size: 2rem;
 }
+
