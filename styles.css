@@ -298,6 +298,33 @@ footer::after {
   margin: 0;
 }
 
+#letter-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#letter-content h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+#letter-content .letter-img {
+  display: block;
+  max-width: 100%;
+  width: 600px;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#letter-content p {
+  line-height: 1.8;
+  text-align: justify;
+}
+
 
 
 
