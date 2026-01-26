@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('lang-toggle');
   // All English and Arabic elements
-  const enElements = document.querySelectorAll('#h1-en, #h2-en, #p-en, .btn-en, #footer-text-en-main, #footer-text-en-copy, .home-en, #progress-en, #letter-en, .gallery-title-en, .caption-en, .intro-en, .learn-en, .disclaimer-en');
-  const arElements = document.querySelectorAll('#h1-ar, #h2-ar, #p-ar, .btn-ar, #footer-text-ar-main, #footer-text-ar-copy, .home-ar, #progress-ar, #letter-ar, .gallery-title-ar, .caption-ar, .intro-ar, .learn-ar, .disclaimer-ar');
+  const enElements = document.querySelectorAll('#h1-en, #h2-en, #p-en, .btn-en, #footer-text-en-main, #footer-text-en-copy, .home-en, #progress-en, #letter-en, .gallery-title-en, .caption-en, .intro-en, .learn-en, .disclaimer-en, .video-title-en');
+  const arElements = document.querySelectorAll('#h1-ar, #h2-ar, #p-ar, .btn-ar, #footer-text-ar-main, #footer-text-ar-copy, .home-ar, #progress-ar, #letter-ar, .gallery-title-ar, .caption-ar, .intro-ar, .learn-ar, .disclaimer-ar, .video-title-ar');
   let isArabic = false;
 
   toggleBtn.addEventListener('click', () => {
