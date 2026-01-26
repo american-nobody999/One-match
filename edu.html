@@ -33,7 +33,15 @@
       <span class="video-title-en">Push Play: For Little Palestine</span>
       <span class="video-title-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">شغّل الفيديو: من أجل فلسطين الصغيرة</span>
     </p>
-    <iframe width="560" height="315" src="https:www.youtube-nocookie.com/embed/an0j7_zu9vI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-wrapper">
+      <iframe id="edu-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/an0j7_zu9vI?rel=0&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div id="video-overlay" class="video-overlay hidden">
+        <button id="replay-btn" class="replay-btn">
+          <span class="replay-en">▶ Watch Again</span>
+          <span class="replay-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">▶ شاهد مرة أخرى</span>
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="video-gallery-section">
