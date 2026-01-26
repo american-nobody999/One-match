@@ -42,6 +42,34 @@
 .hidden {
 	display: none !important;
 }
+
+/* Arabic text styling */
+.arabic-text {
+	direction: rtl;
+	font-family: 'Amiri', serif;
+}
+
+/* Gallery intro section */
+.gallery-intro {
+	text-align: center;
+	margin: 20px 0;
+}
+
+/* Button container */
+.button-container {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.button-container .disclaimer {
+	font-size: 0.75rem;
+	color: #666;
+	margin-top: 10px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* Main image in progress.html */
 .main-img {
 	max-width: 220px;
@@ -198,12 +226,89 @@ footer::after {
   gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
+
+/* Card Gallery */
+.card-gallery-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 2rem 0;
+  scroll-behavior: smooth;
+}
+
+.card-gallery {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  min-width: max-content;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-width: 280px;
+  max-width: 280px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #000;
+}
+
+.card h3 {
+  font-family: 'Amiri', serif;
+  font-size: 1.3rem;
+  color: #111;
+  margin: 1rem 1rem 0.5rem 1rem;
+  text-align: center;
+}
+
+.card p {
+  font-family: 'Amiri', serif;
+  font-size: 1.2rem;
+  color: #333;
+  padding: 0 1rem 1rem 1rem;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Scrollbar styling for card gallery */
+.card-gallery-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-gallery-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.card-gallery-container::-webkit-scrollbar-thumb {
+  background: #009736;
+  border-radius: 10px;
+}
+
+.card-gallery-container::-webkit-scrollbar-thumb:hover {
+  background: #CF1127;
+}
   padding-bottom: 10px;
 }
 
 .video-container {
   flex: 0 0 calc(33.333% - 14px);
   min-width: calc(33.333% - 14px);
+  border: 2px solid #000;
+  box-shadow: 0 4px 8px rgba(0, 151, 54, 0.6);
 }
 
 /* Mobile: show 1 image at a time */
@@ -223,10 +328,48 @@ footer::after {
 .video-container img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 25px;
   object-fit: contain;
   display: block;
   aspect-ratio: 2/3;
+}
+
+.video-container p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.video-container a {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  color: #009736;
+  text-decoration: underline;
+  font-family: 'Amiri', serif;
+  font-size: 1rem;
+}
+
+.video-container a:hover {
+  color: #CF1127;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.social-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.social-link img {
+  width: 20px;
+  height: auto;
+  display: block;
 }
 
 .video-caption {
@@ -248,6 +391,13 @@ footer::after {
   text-align: center;
   margin-bottom: 30px;
   font-size: 2rem;
+}
+
+.video-gallery-section > a {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 /* Parchment scroll styling for letter */
@@ -324,7 +474,6 @@ footer::after {
   line-height: 1.8;
   text-align: justify;
 }
-
 
 
 
