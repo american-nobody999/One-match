@@ -46,4 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
       videoTimeout = setTimeout(showOverlay, 133000);
     });
   }
+
+  // Main video replay overlay control
+  const mainVideo = document.getElementById('main-video');
+  const replayOverlay = document.getElementById('video-replay-overlay');
+  const videoReplayBtn = document.getElementById('video-replay-btn');
+  
+  if (mainVideo && replayOverlay && videoReplayBtn) {
+    mainVideo.addEventListener('ended', () => {
+      replayOverlay.classList.remove('hidden');
+    });
+    
+    videoReplayBtn.addEventListener('click', () => {
+      replayOverlay.classList.add('hidden');
+      mainVideo.currentTime = 0;
+      mainVideo.play();
+    });
+  }
 });
