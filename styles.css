@@ -510,6 +510,23 @@ footer::after {
   font-size: 2rem;
 }
 
+/* Hide YouTube logo */
+.video-wrapper {
+  position: relative;
+}
+
+.video-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 80px;
+  height: 60px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .video-gallery-section > a {
   display: block;
   text-align: center;
@@ -591,5 +608,6 @@ footer::after {
   line-height: 1.8;
   text-align: justify;
 }
+
 
 
