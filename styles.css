@@ -43,6 +43,52 @@
 	display: none !important;
 }
 
+/* Video container and replay overlay */
+#video-container {
+	position: relative;
+	width: 100%;
+	max-width: 800px;
+	margin: 20px auto;
+}
+
+#main-video {
+	width: 100%;
+	display: block;
+}
+
+#video-replay-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.95);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: all;
+}
+
+#video-replay-overlay.hidden {
+	pointer-events: none;
+}
+
+#video-replay-btn {
+	padding: 15px 30px;
+	font-size: 1.2rem;
+	background-color: #fff;
+	color: #000;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+#video-replay-btn:hover {
+	background-color: #f0f0f0;
+	transform: scale(1.05);
+}
+
 /* Arabic text styling */
 .arabic-text {
 	direction: rtl;
