@@ -7,23 +7,23 @@ They will not be published on this website at this time out of repsect for the P
 
 //Developer notes//
 1. currently bringing code up to professional standards (im making it work)
-2. reformatting and redoing all images for lighter weight to fit more, faster loading
-3. reformatting videos for size and compression--better quality/ quality still low
-4. improving user friendliness, clarity, translation, speed, performance, relability
-5. collecting content that remains within the boundries and purpose, and audience of the website
-6. futher research and verification, permissions to promote organizations and pro-palestian charities
+2. reformatting and redoing all images for lighter weight to fit more, faster loading (can do better)
+3. exploring different hosting options for better maintaince, developing, and more options
+4. improving user friendliness, clarity, translation, speed, performance, relability always 
+6. collecting content that remains within the boundries and purpose, and audience of the website
+7. futher research and verification, permissions to promote organizations and pro-palestian charities
    --security an issue, expolitation an issue, validity an issue (further reasearch)
 8. futher research and verification for future history section
-9. 01/10--Two match and three match successfully depolyed
-10. add speak--slowly 2 gallerys with 3 vids each, more recents first
-11. css tweaks and index issues with ux, media keys off--translation off still-use abc/arabic cheetsheet
-    !important right to left right to left right to left
-13. Priority:
-    1.speak
-    2.faith
-    3.faces
-    4.this is
-    5.in memory
-    6.art
-    7.world
-    8.love letters
+
+   Jan 30 Update notes
+
+   1. monitoring social media platforms and adding new links/pages and influencers
+   2. established line of communication with the Palestians to add or remove content found on pubilc forums and influencers
+   3. established a postive civic line of information and communication between Board of Peace and State of Palestine People
+   4. focus on establishing a organized trello workload for this
+   5. each day will be a specific page update with more content, the Gaza Peace Board every two days at least as announcements are made
+   6. emails should be read and answered daily--this is going to be interesting--established boundries
+   7. art page includes vid and collected Oalestine art organized into catacgories with artist intials for client privacy
+   8. use intials with poetry, essays, prayer, and with the journalists,
+   9. add journalist links to social media platforms to their cards--visual of where they are being targeted and censored
+
