@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('lang-toggle');
   // All English and Arabic elements
-  const enElements = document.querySelectorAll('#h1-en, #h2-en, #p-en, .btn-en, #footer-text-en-main, #footer-text-en-copy, .home-en, #progress-en, #letter-en, .gallery-title-en, .caption-en, .intro-en, .learn-en, .disclaimer-en, .video-title-en, .replay-en, .h3-en, .p-en, .coming-soon-en, .h2-en');
-  const arElements = document.querySelectorAll('#h1-ar, #h2-ar, #p-ar, .btn-ar, #footer-text-ar-main, #footer-text-ar-copy, .home-ar, #progress-ar, #letter-ar, .gallery-title-ar, .caption-ar, .intro-ar, .learn-ar, .disclaimer-ar, .video-title-ar, .replay-ar, .h3-ar, .p-ar, .coming-soon-ar, .h2-ar');
+  const enElements = document.querySelectorAll('#h1-en, #h2-en, #p-en, .btn-en, #footer-text-en-main, #footer-text-en-copy, .home-en, #progress-en, #letter-en, .gallery-title-en, .caption-en, .intro-en, .learn-en, .disclaimer-en, .video-title-en, .replay-en, .h3-en, .p-en, .coming-soon-en, .h2-en, .warning-en, .card-name-en');
+  const arElements = document.querySelectorAll('#h1-ar, #h2-ar, #p-ar, .btn-ar, #footer-text-ar-main, #footer-text-ar-copy, .home-ar, #progress-ar, #letter-ar, .gallery-title-ar, .caption-ar, .intro-ar, .learn-ar, .disclaimer-ar, .video-title-ar, .replay-ar, .h3-ar, .p-ar, .coming-soon-ar, .h2-ar, .warning-ar, .card-name-ar');
   let isArabic = false;
 
   toggleBtn.addEventListener('click', () => {
@@ -63,4 +63,52 @@ document.addEventListener('DOMContentLoaded', () => {
       mainVideo.play();
     });
   }
+
+  // Video gallery overlay controls (for speak.html)
+  const videoContainers = document.querySelectorAll('.video-container');
+  
+  videoContainers.forEach(container => {
+    const video = container.querySelector('video');
+    const overlay = container.querySelector('.video-overlay');
+    const initialPlayBtn = container.querySelector('.initial-play-btn');
+    const warningOverlay = container.querySelector('.warning-overlay');
+    
+    // Handle warning overlay (viewer discretion)
+    if (warningOverlay) {
+      warningOverlay.addEventListener('click', () => {
+        warningOverlay.classList.add('hidden');
+      });
+    }
+    
+    if (video) {
+      // Set up initial play button if it exists
+      if (initialPlayBtn) {
+        // Hide initial play button and play video when clicked
+        initialPlayBtn.addEventListener('click', () => {
+          initialPlayBtn.classList.add('hidden');
+          video.play();
+        });
+        
+        // Hide initial play button when video starts playing
+        video.addEventListener('play', () => {
+          initialPlayBtn.classList.add('hidden');
+        });
+      }
+      
+      // Show overlay with replay button when video ends
+      if (overlay) {
+        video.addEventListener('ended', () => {
+          overlay.classList.remove('hidden');
+        });
+        
+        // When overlay is clicked, hide it and replay video
+        overlay.addEventListener('click', () => {
+          overlay.classList.add('hidden');
+          video.currentTime = 0;
+          video.play();
+        });
+      }
+    }
+  });
 });
+
