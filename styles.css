@@ -690,6 +690,10 @@ footer span#footer-text-en-copy {
   object-fit: contain;
 }
 
+.face-page .image-container img {
+  object-fit: contain;
+}
+
 @media (max-width: 768px) {
   .image-container {
     flex: 0 0 100%;
@@ -1337,7 +1341,6 @@ h4 + p {
 .video-container.no-initial-overlay::before {
 	display: none;
 }
-
 
 
 
