@@ -189,7 +189,7 @@ footer span#footer-text-en-copy {
 	left: -70px;
 	right: -70px;
 	bottom: 0;
-	background-image: url('https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0019.jpg');
+	background-image: url('../images/0019.jpg');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -944,7 +944,8 @@ body.gentle-page #section-dedication #p-ar p {
 }
 
 .cards-section .card:first-child > img,
-.cards-section .card:nth-child(2) > img {
+.cards-section .card:nth-child(2) > img,
+.cards-section .card:nth-child(3) > img {
 	object-fit: contain;
 }
 
