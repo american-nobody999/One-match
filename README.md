@@ -7,13 +7,12 @@ They will not be published on this website at this time out of repsect for the P
 
 //Developer notes//
 1. currently bringing code up to professional standards (im making it work)
-2. reformatting and redoing all images for lighter weight to fit more, faster loading (can do better)
-3. exploring different hosting options for better maintaince, developing, and more options
-4. improving user friendliness, clarity, translation, speed, performance, relability always 
-6. collecting content that remains within the boundries and purpose, and audience of the website
-7. futher research and verification, permissions to promote organizations and pro-palestian charities
+2.. exploring different hosting options for better maintaince, developing, and more options
+3. improving user friendliness, clarity, translation, speed, performance, relability always 
+4. collecting content that remains within the boundries and purpose, and audience of the website
+5. futher research and verification, permissions to promote organizations and pro-palestian charities
    --security an issue, expolitation an issue, validity an issue (further reasearch)
-8. futher research and verification for future history section
+
 
    Jan 30 Update notes
 
@@ -26,4 +25,18 @@ They will not be published on this website at this time out of repsect for the P
    7. art page includes vid and collected Oalestine art organized into catacgories with artist intials for client privacy
    8. use intials with poetry, essays, prayer, and with the journalists,
    9. add journalist links to social media platforms to their cards--visual of where they are being targeted and censored
+
+   Feb 05 Update notes
+
+   1. move all this week to new viewer descretion adised page
+   2. countuine research to upade Board of Peace
+   3. focus on adding more influencers and sources
+   4. focus on ux and design/css
+   5. add notes to love letter asking for account managers to keep the social media up to date
+   6. some accounts are being censored and targeted
+   7. account managers need to set goals as high as they can
+   8. no request for the memorial accounts to be taken down
+   9. add disclaimer about how some of the accounts are memorial accounts, be respectful
+   10. start recording the find the errors but do not add to the commit notes--
+   
 
