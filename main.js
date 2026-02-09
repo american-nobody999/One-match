@@ -5,6 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const arElements = document.querySelectorAll('#h1-ar, #h2-ar, #p-ar, .btn-ar, #footer-text-ar-main, #footer-text-ar-copy, .home-ar, #progress-ar, #letter-ar, .gallery-title-ar, .caption-ar, .intro-ar, .learn-ar, .disclaimer-ar, .video-title-ar, .replay-ar, .h3-ar, .p-ar, .coming-soon-ar, .h2-ar, .warning-ar, .card-name-ar');
   let isArabic = false;
 
+  const updateOverlayText = () => {
+    const overlayElements = document.querySelectorAll('[data-overlay-en][data-overlay-ar]');
+    overlayElements.forEach(el => {
+      const newText = isArabic ? el.getAttribute('data-overlay-ar') : el.getAttribute('data-overlay-en');
+      if (newText) {
+        el.setAttribute('data-overlay', newText);
+      }
+    });
+  };
+
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       isArabic = !isArabic;
@@ -13,8 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
       enElements.forEach(el => el.classList.toggle('hidden', isArabic));
       arElements.forEach(el => el.classList.toggle('hidden', !isArabic));
       toggleBtn.textContent = isArabic ? 'العربية | English' : 'English | العربية';
+      updateOverlayText();
     });
   }
+
+  updateOverlayText();
 
   // YouTube video overlay control
   const overlay = document.getElementById('video-overlay');
