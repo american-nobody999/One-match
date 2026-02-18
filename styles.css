@@ -87,12 +87,185 @@
 .scroll-panel-body {
 	overflow-y: visible;
 	padding-right: 0;
-	line-height: 1.5;
+	line-height: 1.65;
+}
+
+.scroll-panel-body p {
+	margin: 0 0 1rem 0;
+	text-align: left;
+	text-indent: 0;
 }
 
 .scroll-panel-body ul {
-	margin: 0.5rem 0 0 1.1rem;
+	margin: 0.5rem 0 1rem 1.5rem;
 	padding: 0;
+	list-style-type: disc;
+}
+
+.scroll-panel-body li {
+	margin-bottom: 0.8rem;
+	line-height: 1.65;
+}
+
+@media (max-width: 720px) {
+	.leslie-page {
+		margin: 1.2rem auto 2rem auto;
+		padding: 0 1rem;
+	}
+
+	.scroll-panels {
+		gap: 1rem;
+		width: 100%;
+	}
+
+	.scroll-panel {
+		padding: 0.85rem 0.9rem 1rem 0.9rem;
+	}
+
+	.scroll-panel h2 {
+		font-size: 1.3rem;
+	}
+
+	.scroll-panel h3 {
+		font-size: 1rem;
+	}
+
+	.scroll-panel h4 {
+		font-size: 1.05rem;
+	}
+
+	.scroll-panel-body {
+		line-height: 1.6;
+		font-size: 0.95rem;
+	}
+
+	.scroll-panel-body ul {
+		margin-left: 1.2rem;
+	}
+
+	.contribution-list,
+	.job-duties,
+	.skills-list {
+		margin-left: 1.2rem !important;
+	}
+
+	.resume-photo {
+		max-width: 150px;
+		margin: 0.75rem auto 1.2rem auto;
+	}
+
+	.resume-header h3 {
+		font-size: 1.5rem;
+	}
+
+	.cover-letter-img {
+		max-width: 100%;
+		margin: 0.6rem auto 0.9rem auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.scroll-panel h2 {
+		font-size: 1.15rem;
+	}
+
+	.scroll-panel-body {
+		font-size: 0.9rem;
+	}
+
+	.letter-header p,
+	.resume-header p {
+		font-size: 0.9rem;
+	}
+}
+
+/* Letter specific styling */
+.letter-header {
+	margin-bottom: 1.5rem;
+}
+
+.letter-header p {
+	margin: 0.3rem 0;
+}
+
+.letter-greeting {
+	margin-top: 1rem !important;
+	margin-bottom: 1.2rem !important;
+}
+
+.contribution-list {
+	margin: 0.8rem 0 1.2rem 1.8rem !important;
+}
+
+.contribution-list li {
+	margin-bottom: 1rem;
+}
+
+.letter-closing {
+	margin-top: 1.5rem !important;
+}
+
+/* Resume specific styling */
+.resume-photo {
+	display: block;
+	max-width: 180px;
+	width: 100%;
+	margin: 1rem auto 1.5rem auto;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 151, 54, 0.4);
+	border: 3px solid #009736;
+}
+
+.resume-header {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 2px solid #009736;
+}
+
+.resume-header h3 {
+	margin: 0 0 0.5rem 0 !important;
+	font-size: 1.8rem;
+}
+
+.resume-header p {
+	margin: 0;
+	font-size: 0.95rem;
+}
+
+.scroll-panel h4 {
+	margin: 1.5rem 0 0.8rem 0;
+	font-size: 1.2rem;
+	color: #009736;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 0.3rem;
+}
+
+.job-entry {
+	margin: 1rem 0 1.5rem 0;
+}
+
+.job-title {
+	margin-bottom: 0.8rem !important;
+	line-height: 1.5;
+}
+
+.job-duties {
+	margin: 0.8rem 0 0 1.8rem !important;
+}
+
+.job-duties li {
+	margin-bottom: 0.9rem;
+}
+
+.skills-list {
+	margin: 0.8rem 0 1rem 1.8rem !important;
+	columns: 1;
+}
+
+.skills-list li {
+	margin-bottom: 0.6rem;
+	break-inside: avoid;
 }
 
 .timeline-list li {
@@ -1732,4 +1905,5 @@ h4 + p {
 .video-container.no-initial-overlay::before {
 	display: none;
 }
+
 
