@@ -1228,6 +1228,47 @@ footer span#footer-text-en-copy {
   object-fit: contain;
 }
 
+.image-gallery-section > .image-gallery-scroll {
+	display: flex;
+	gap: 12px;
+	overflow-x: auto;
+	padding: 10px 12px;
+	scroll-snap-type: x mandatory;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.image-gallery-section > .image-gallery-scroll::-webkit-scrollbar {
+	height: 10px;
+}
+
+.image-gallery-section > .image-gallery-scroll::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 10px;
+}
+
+.image-gallery-section > .image-gallery-scroll::-webkit-scrollbar-thumb {
+	background: #009736;
+	border-radius: 10px;
+}
+
+.image-gallery-section > .image-gallery-scroll::-webkit-scrollbar-thumb:hover {
+	background: #CF1127;
+}
+
+.image-gallery-section > .image-gallery-scroll img {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: min(100%, 420px);
+	height: auto;
+	max-height: 70vh;
+	object-fit: contain;
+	background: #000;
+	border-radius: 8px;
+	scroll-snap-align: start;
+	display: block;
+}
+
 .poetry-gallery .image-container img {
   object-fit: cover;
 }
@@ -1905,5 +1946,6 @@ h4 + p {
 .video-container.no-initial-overlay::before {
 	display: none;
 }
+
 
 
