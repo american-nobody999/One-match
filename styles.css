@@ -1579,6 +1579,66 @@ h2 {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+.faith-page .faith-link-panel {
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+	padding: 40px 24px;
+	margin: 0 auto 40px auto;
+	max-width: 1200px;
+	min-height: 500px;
+	border: 4px solid black;
+	border-radius: 12px;
+	box-shadow: 0 0 25px rgba(255, 215, 0, 0.5), 0 10px 24px rgba(0, 0, 0, 0.35);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0026.jpg");
+	background-size: cover;
+	background-position: center;
+	color: #d6d6d6;
+	text-shadow: 2px 2px 6px black;
+}
+
+.faith-page .faith-link-item {
+	display: block;
+	width: 200px;
+	border: 3px solid #ffffff;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+	transition: transform 0.25s ease;
+	color: #d6d6d6;
+	text-shadow: 2px 2px 6px black;
+}
+
+.faith-page .faith-link-item:hover {
+	transform: translateY(-4px) scale(1.02);
+}
+
+.faith-page .faith-link-item img {
+	display: block;
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+}
+
+@media (max-width: 768px) {
+	.faith-page .faith-link-panel {
+		justify-content: center;
+		flex-wrap: wrap;
+		min-height: 400px;
+	}
+
+	.faith-page .faith-link-item {
+		width: 100%;
+		max-width: 200px;
+	}
+
+	.faith-page .faith-link-item img {
+		height: 160px;
+	}
+}
+
 .scrollable-gallery {
 	display: flex;
 	gap: 20px;
@@ -1946,6 +2006,7 @@ h4 + p {
 .video-container.no-initial-overlay::before {
 	display: none;
 }
+
 
 
 
