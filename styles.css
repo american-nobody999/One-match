@@ -1,4 +1,4 @@
-/* Header button group */
+ /* Header button group */
 .header-btns {
 	display: flex;
 	gap: 0.5rem;
@@ -1582,9 +1582,9 @@ h2 {
 .faith-page .faith-link-panel {
 	display: flex;
 	gap: 20px;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	padding: 40px 24px;
 	margin: 0 auto 40px auto;
 	max-width: 1200px;
@@ -1597,6 +1597,14 @@ h2 {
 	background-position: center;
 	color: #d6d6d6;
 	text-shadow: 2px 2px 6px black;
+}
+
+.faith-page .faith-link-panel > p {
+	width: 100%;
+	text-align: center;
+	margin: 0 0 10px 0;
+	font-size: 1rem;
+	line-height: 1.6;
 }
 
 .faith-page .faith-link-item {
@@ -2006,6 +2014,8 @@ h4 + p {
 .video-container.no-initial-overlay::before {
 	display: none;
 }
+
+
 
 
 
