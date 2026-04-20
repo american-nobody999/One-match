@@ -14,17 +14,21 @@ They will not be published on this website at this time out of repsect for the P
    --security an issue, expolitation an issue, validity an issue (further reasearch)
 
 
-   Jan 30 Update notes
+   April 19th Updated Notes
+   1. adding new features for Palestine support biz (permission is still needed for some)
+   2. adding new infulencers by request and verification/cross references
+   3. Disclaimer: If you are a scam, or lie to me, and you get passed me, I will find out,
+      I will find you and I will hand deliver you to anyone I have to to seek justice for victimizing the Palestians through fraud.
+      This website is for the Palestians, they going through enough.
+      Have some respect and don't waist my time.
+   5. MPGA is still a soliatry movement focused on peacefully resoulutions and awareness, working together,
+      and giving the State of Palestine a path to their Soverignity, justice,
+      and basic human rights through consistant action and perservence.
+   6. We will never give up. We will never surrender.
+   7. I have the US constitution in my back pocket, and I have the decleration of Indpendence in my purse.
+   
+      
 
-   1. monitoring social media platforms and adding new links/pages and influencers
-   2. established line of communication with the Palestians to add or remove content found on pubilc forums and influencers
-   3. established a postive civic line of information and communication between Board of Peace and State of Palestine People
-   4. focus on establishing a organized trello workload for this
-   5. each day will be a specific page update with more content, the Gaza Peace Board every two days at least as announcements are made
-   6. emails should be read and answered daily--this is going to be interesting--established boundries
-   7. art page includes vid and collected Oalestine art organized into catacgories with artist intials for client privacy
-   8. use intials with poetry, essays, prayer, and with the journalists,
-   9. add journalist links to social media platforms to their cards--visual of where they are being targeted and censored
 
    Feb 05 Update notes
 
@@ -38,5 +42,17 @@ They will not be published on this website at this time out of repsect for the P
    8. no request for the memorial accounts to be taken down
    9. add disclaimer about how some of the accounts are memorial accounts, be respectful
    10. start recording the find the errors but do not add to the commit notes--
+  
+    Jan 30 Update notes
+
+   1. monitoring social media platforms and adding new links/pages and influencers
+   2. established line of communication with the Palestians to add or remove content found on pubilc forums and influencers
+   3. established a postive civic line of information and communication between Board of Peace and State of Palestine People
+   4. focus on establishing a organized trello workload for this
+   5. each day will be a specific page update with more content, the Gaza Peace Board every two days at least as announcements are made
+   6. emails should be read and answered daily--this is going to be interesting--established boundries
+   7. art page includes vid and collected Oalestine art organized into catacgories with artist intials for client privacy
+   8. use intials with poetry, essays, prayer, and with the journalists,
+   9. add journalist links to social media platforms to their cards--visual of where they are being targeted and censored
    
 
