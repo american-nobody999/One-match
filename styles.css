@@ -34,6 +34,46 @@
 	text-align: center;
 }
 
+.journal-entry {
+	padding: 12px 14px;
+	background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0035.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.journal-entry h3,
+.journal-entry h4 {
+	font-family: "Amiri", serif;
+	font-weight: 700;
+	text-align: center;
+	margin: 0;
+}
+
+.journal-entry h3 {
+	font-size: 1.35rem;
+	letter-spacing: 0.02em;
+}
+
+.journal-entry h4 {
+	font-size: 1.05rem;
+	margin-top: 0.2rem;
+	margin-bottom: 0.85rem;
+}
+
+.journal-entry p {
+	margin: 0;
+	padding-left: 1rem;
+	line-height: 1.7;
+	font-weight: 600;
+}
+
+.journal-entry p br {
+	display: block;
+	content: "";
+	margin-bottom: 0.3rem;
+}
+
 /* Leslie page scroll panels */
 .leslie-page {
 	margin: 2rem auto 3rem auto;
@@ -1315,6 +1355,13 @@ footer span#footer-text-en-copy {
   position: relative;
 }
 
+.faith-page #letter-content {
+	background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0035.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 #letter-content::before,
 #letter-content::after {
   content: "";
@@ -2014,7 +2061,6 @@ h4 + p {
 .video-container.no-initial-overlay::before {
 	display: none;
 }
-
 
 
 
