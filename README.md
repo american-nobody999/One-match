@@ -13,6 +13,16 @@ They will not be published on this website at this time out of repsect for the P
 5. futher research and verification, permissions to promote organizations and pro-palestian charities
    --security an issue, expolitation an issue, validity an issue (further reasearch)
 
+   June 4 2026 Update:
+   1.We have to move fast now, everyone get in the water.
+   2.Because github just decided to cut the knees of developers world wide with their unfair practices of changing how we pay,
+   knowing full well, the only one who can afford those token counts are big coorporations, we moving this week.
+   3. I have to fit class work, professional portfolio, and the pursuit of the State of Palestine into one.
+   4. please be advised over the next several days there will down maintaince on the site as reorganize.
+   5. MPGA remains a single solitary voice for the advocacy of the future state of Palestine and its great people.
+   6. They stained my American Flag with Palestian blood. 
+   7. Buckle up buttercups
+
 
    April 19th Updated Notes
    1. adding new features for Palestine support biz (permission is still needed for some)
