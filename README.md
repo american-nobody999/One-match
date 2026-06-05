@@ -22,6 +22,7 @@ They will not be published on this website at this time out of repsect for the P
    5. MPGA remains a single solitary voice for the advocacy of the future state of Palestine and its great people.
    6. They stained my American Flag with Palestian blood. 
    7. Buckle up buttercups
+   8. Yes. I know. github messing with the format. work with what we have
 
 
    April 19th Updated Notes
