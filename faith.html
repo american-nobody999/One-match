@@ -1,208 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>State of Palestine</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="American Nobody999">
+    <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
+    <title>Make Palestine Great Again - MPGA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="faith-page">
+     <header class="site-header">
+        <div class="header-container">
+            
+<!-- Logo - Left Side-waiting for logo contest from Palestinians -->
+            <div class="header-logo">
+                <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
+            </div>
 
-    <header>
-      <h1>
-        <span id="h1-en">State of Palestine</span>
-        <span id="h1-ar" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">دولة فلسطين</span>
-      </h1>
-      <div class="header-btns">
-        <button id="lang-toggle" class="lang-toggle">English | العربية</button>
-        <a href="index.html">
-          <button class="header-home-btn">
-            <span class="home-en">Home</span>
-            <span class="home-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">الرئيسية</span>
-          </button>
-        </a>
-      </div>
+<!-- Center Content, don't touch this for now -->
+<!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
+            <div class="header-center">
+                <h1 class="site-title">
+                    <span class="lang-en">State of Palestine</span>
+                    <span class="lang-ar">دولة فلسطين</span>
+                </h1>
+                
+<!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    English | العربية
+                </button>
+
+<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
+ <!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-btn active">
+                            <span class="lang-en">Home</span>
+                            <span class="lang-ar">الرئيسية</span>
+                        </a></li>
+                        <li><a href="mpga.html" class="nav-btn">
+                            <span class="lang-en">MPGA</span>
+                            <span class="lang-ar">MPGA</span>
+                        </a></li>
+<!--progress.html needs to be replaced with united.html-->
+                        <li><a href="progress.html" class="nav-btn">
+                            <span class="lang-en">United</span>
+                            <span class="lang-ar">متحدون</span>
+                        </a></li>
+<!--progress.html needs to be replaced with leslie.html-->
+                        <li><a href="progress.html" class="nav-btn">
+                            <span class="lang-en">Leslie</span>
+                            <span class="lang-ar">ليزلي</span>
+                        </a></li>
+<!--progress.html needs to be replaced with about.html-->
+                        <li><a href="progress.html" class="nav-btn">
+                            <span class="lang-en">About Us</span>
+                            <span class="lang-ar">من نحن</span>
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Hamburger for Mobile -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
     </header>
-<div class="pillar-section">
-  <h2>
-    <span class="h2-en">The Pillars of Faith of Palestine</span>
-    <span class="h2-ar hidden">إيمان فلسطين</span>
-  </h2>
+    <main>
+        <section class="section faith-intro">
+            <h2 class="section-title">
+                <span class="lang-en">The Pillars of Faith of Palestine</span>
+                <span class="lang-ar">ركائز الإيمان في فلسطين</span>
+            </h2>
 
-  <div class="faith-link-panel" role="region" aria-label="Faith links panel">
-    <p>
-      <span class="p-en">As an atheist exploring the foundational texts of the three Abrahamic faiths, I present each tradition separately with respect for their sacred significance. I wish to thank all of my teachers and fellow students in these faiths. The continued dialogue and understanding fostered through this exploration are invaluable. The dialogue must remain open and respectful.</span>
-      <span class="p-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">بصفتي ملحداً يستكشف النصوص التأسيسية للديانات الإبراهيمية الثلاث، فأنا أقدّم كل تقليدٍ على حدة مع احترام دلالته المقدسة. وأود أن أشكر جميع معلميّ وزملائي من الدارسين في هذه الأديان. إن الحوار المستمر والفهم الذي تنمّيه هذه الرحلة أمران لا يُقدّران بثمن. ويجب أن يظل هذا الحوار مفتوحاً ومحترماً.</span>
-    </p>
-    <a href="faithi.html" class="faith-link-item">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0027.jpg" alt="Faith link image 1" loading="lazy">
-    </a>
-    <a href="faithc.html" class="faith-link-item">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0028.jpg" alt="Faith link image 2" loading="lazy">
-    </a>
-    <a href="faithj.html" class="faith-link-item">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0029.jpg" alt="Faith link image 3" loading="lazy">
-    </a>
-  </div>
-</div>
- 
-   
-   
-<div id="letter-content">
-    <h2>
-      <span id="h2-en">Friday Prayer</span>
-      <span id="h2-ar" class="hidden">صلاة الجمعة</span>
-    </h2>
-    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/718.jpg" alt="Quaran Quote" class="letter-img" loading="lazy">
-     <p>
-    <span id="letter-en">
-      Dear Stars in the Sky,<br>
-      Thank you for the blessing you gave the world that is Palestine.<br>
-      Thank you for every single beautiful moment you allow us to experience with them. Those beautiful, raw, truthful moments of a great people who are so deep in the darkness of pain, loss, and grief, yet still radiate the brightest light of hope, love, and resilience.<br>
-      I always want to start with this.<br>
-     
-      Oh my creator, my love, my love to the purest one,the one who is the keeper of all truth, the one I walk for, the one I stand with, if your will be to lead my steps your way, can I just lay my weary heart at your feet a moment. The broken peices, the peices still a fire and burning. This great bond between us can not be broken, not by any human.<br>
+            <div class="text-content faith-intro-copy">
+                <div class="lang-en">
+                    <p>As an atheist exploring the foundational texts of the three Abrahamic faiths, I present each tradition separately with respect for their sacred significance. I wish to thank all of my teachers and fellow students in these faiths. The continued dialogue and understanding fostered through this exploration are invaluable. The dialogue must remain open and respectful.</p>
+                </div>
+                <div class="lang-ar hidden">
+                    <p>بصفتي ملحدًا يستكشف النصوص التأسيسية للديانات الإبراهيمية الثلاث، فأنا أقدّم كل تقليد على حدة مع احترام دلالته المقدسة. وأود أن أشكر جميع معلميّ وزملائي من الدارسين في هذه الأديان. إن الحوار المستمر والفهم الذي تنمّيه هذه الرحلة أمران لا يُقدّران بثمن. ويجب أن يظل هذا الحوار مفتوحًا ومحترمًا.</p>
+                </div>
+            </div>
 
-      I look at the weight of the world, I look at my all my fellow humans, raising their voices to you on this great Friday, and may you forgive me, but please hear their prayers first, for they are so much better at this than me, than this beginning believer, so much more deserving. They have all the perfect words, and the urgent need. They have perfected the way to your grace. Please find it in the way, that they may find ease and that their prayers in your workings.<br>
+            <div class="faith-link-grid" role="region" aria-label="Faith links panel">
+                <a href="faithi.html" class="faith-link-item">
+                    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0027.jpg" alt="Islam faith link" loading="lazy">
+                </a>
+                <a href="faithj.html" class="faith-link-item">
+                    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0028.jpg" alt="Judaism faith link" loading="lazy">
+                </a>
+                <a href="faithc.html" class="faith-link-item">
+                    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0029.jpg" alt="Christianity faith link" loading="lazy">
+                </a>
+            </div>
+        </section>
 
-      Forgive me, for it is cold, and it is indeed bitter, and the void and the silence can be so loud. Everything we say and do can hurt us all so much. As the evil of this world thinks it is growing and its close to winning against you, people are rememering how powerfully good and final you are. That in itself is a blessing. Did you not touch this athesists heart, did you not take the smallest kernal of faith, and declare, no, promise through the great teachers, that it would be more than enough?<br>
+        <section class="section prayer-section">
+            <h2 class="section-title">
+                <span class="lang-en">Friday Prayer</span>
+                <span class="lang-ar">صلاة الجمعة</span>
+            </h2>
+            <h3 class="section-date">
+                <span class="lang-en">Friday, June 14, 2024</span>
+                <span class="lang-ar">الجمعة، 14 يونيو 2024</span>
+            </h3>
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/718.jpg" alt="Quran quote" class="prayer-image" loading="lazy">
+            <div class="prayer-body">
+                <div class="lang-en prayer-copy">
+                    <p>Dear Stars in the Sky,</p>
+                    <p>Thank you for the blessing you gave the world that is Palestine.</p>
+                    <p>Thank you for every single beautiful moment you allow us to experience with them. Those beautiful, raw, truthful moments of a great people who are so deep in the darkness of pain, loss, and grief, yet still radiate the brightest light of hope, love, and resilience.</p>
+                    <p>I always want to start with this.</p>
+                    <p>My beloved Creator, my calmness in the storms, my wisdom in the choas, my strength, it is Friday. How grateful I am it is Friday, for all humanity, if they could pause today in a moment, then we would all be togther, with you, on this beautiful Friday.</p>
+                    <p>How easy it is to sing praise and be grateful when things are going the way we think is right, but the truthful faifthful believers know, it is when we face those hardships, that our faith means the most to you.</p>
+                    <p>The hardships of yesterday were blessing for us to face the struggles of today, and the hardships of today are blessings for us to face the struggles of tomorrow. We are so grateful for the hardships, because they are the blessings that bring us closer to you, and closer to our people, and closer to our true selves.</p>
+                    <p>We are so grateful for the hardships, because they are the blessings that make us stronger, wiser, more compassionate, more resilient, and more united.</p>
+                    <p>We are so grateful for the hardships, because they are the blessings that help us grow in faith, hope, love, and solidarity. We are so grateful for the hardships, because they are the blessings that remind us of our humanity, our dignity, our rights, and our responsibilities. We are so grateful for the hardships, because they are the blessings that inspire us to keep fighting for justice, freedom, peace, and a better future for</p>
+                    <p>For the faithful believers, those devoted, and those who have been tested and still stumble on their path to you, as I do, we are all your creations. Brothers and Sisters.</p>
+                    <p>This week may we love each other a little bit more, and remember that. You made each of us, and you made us to be together, and to love each other, and to support each other, and to fight for each other. We are all your children. No one above the other after the grave, except for measurement of his deeds and his faith. You promise you will measure us by hearts and deeds, not the words that came off our tongues.</p>
+                    <p>May our leaders and heroes sleep well, so they may be refreshed from wounds this week. May our people find ease in a thousand ways. May healing come quick to minds, bodies, and hearts of the broken and bleeding. May we find the way forward together in our life path journey to you.</p>
+                    <p>There is great evil in this world, and if we should encounter it, may your name on our hearts be a shield, and may our service be to you as is your will for us. There is only one way, and may that way for me, lead to you.</p>
+                    <p> Many blessing to the beatiful souls you called back from this world, the people, the prophets, the teachers. I have not reached my grave yet, but I want to tell you, they were so kind to me. So very kind in a world where I have experienced very little of it, and they had no earthly reason to.</p>
+                    <p>Time to go work my great one. Beloved Palestine remains. Humanity remains.</p>
+                    <p>I love you so much. And I love our people so much. Let's keep going.</p><br>
+                    <p>L</p>
+                </div>
+                <div class="lang-ar prayer-copy hidden">
+                    <p>يا نجوم السماء،</p>
+                    <p>شكرًا لكم على النعمة التي وهبتموها للعالم، والتي هي فلسطين.</p>
+                    <p>شكرًا لكم على كل لحظة جميلة تسمحون لنا بأن نعيشها معهم. تلك اللحظات الجميلة الصادقة والعفوية لشعب عظيم، غارق في ظلمات الألم والفقد والحزن، ومع ذلك ما زال يشع بأشد أنوار الأمل والمحبة والصمود سطوعًا.</p>
+                    <p>أود دائمًا أن أبدأ بهذا.</p>
+                    <p>يا خالقي الحبيب، يا سكينتي في العواصف، يا حكمتي وسط الفوضى، يا قوتي، إنه يوم الجمعة. ما أعظم امتناني لأن اليوم هو الجمعة. لو أن البشرية كلّها توقفت لحظة اليوم، لكنا جميعًا معك في هذا اليوم المبارك.</p>
+                    <p>كم يكون سهلًا أن نسبح بحمدك ونشعر بالامتنان حين تسير الأمور كما نرى، لكن المؤمنين الصادقين يعرفون أن الإيمان يكون أعظم معنى في لحظات الشدة.</p>
+                    <p>إن مشقات الأمس كانت بركة لنواجه بها صراعات اليوم، ومشقات اليوم بركة لنواجه بها صراعات الغد. ونحن ممتنون للمشقات لأنها تقربنا منك، وتقربنا من أهلنا، وتقربنا من حقيقتنا.</p>
+                    <p>ونحن ممتنون للمشقات لأنها تجعلنا أقوى، وأكثر حكمة، وأكثر رحمة، وأكثر صمودًا، وأكثر اتحادًا.</p>
+                    <p>ونحن ممتنون للمشقات لأنها تنمّي فينا الإيمان والرجاء والمحبة والتضامن. وهي تذكّرنا بإنسانيتنا وكرامتنا وحقوقنا ومسؤولياتنا. وهي تلهمنا أن نستمر في النضال من أجل العدل والحرية والسلام ومستقبل أفضل.</p>
+                    <p>أما المؤمنون الصادقون، أولئك المخلصون، وحتى من يتعثرون في طريقهم إليك كما أتعثر أنا، فنحن جميعًا من خلقك، إخوة وأخوات.</p>
+                    <p>في هذا الأسبوع، لنعط بعضنا محبة أكثر، ولنتذكر أنك خلقتنا لنكون معًا، ونحب بعضنا، ونسند بعضنا، وندافع عن بعضنا. كلنا أبناؤك. لا فضل لأحد على أحد بعد القبر إلا بمقدار عمله وإيمانه. وأنت وعدتنا أنك تزننا بالقلوب والأعمال لا بالكلمات العابرة.</p>
+                    <p>اللهم امنح قادتنا وأبطالنا راحةً في النوم حتى يتجددوا من جراحهم هذا الأسبوع. اللهم ارزق أهلنا السكينة بألف صورة. اللهم عجّل شفاء العقول والأجساد والقلوب المكسورة النازفة. اللهم دلّنا على الطريق إلى الأمام معًا في رحلتنا إليك.</p>
+                    <p>في هذا العالم شر عظيم، وإذا واجهناه، فليكن اسمك في قلوبنا درعًا، ولتكن خدمتنا لك كما أردت لنا. ليس إلا طريق واحد، وأسأل أن يقودني إليك.</p>
+                    <p>بركات كثيرة للأرواح الجميلة التي دعوتها من هذا العالم: الناس، والأنبياء، والمعلمين. لم أصل قبري بعد، لكني أريد أن أقول لك: كانوا لطفاء جدًا معي، في عالم لم ألق فيه كثيرًا من اللطف، ولم يكن لهم أي سبب دنيوي لذلك.</p>
+                    <p>حان وقت العمل يا عظيمي. فلسطين الحبيبة باقية، والإنسانية باقية.</p>
+                    <p>أحبك جدًا، وأحب أهلنا جدًا. فلنواصل المسير.</p>
+                    <p>ل</p>
+                </div>
+            </div>
+        </section>
 
-      If you said those things, then I believe you. I believe them not because they were written in a book, but I feel them in my heart and soul. That is enough for me to keep going. That is enough that we have gotten this far in your way, and it enough for my broken heart to heal to keep moving forward.<br>
+        <section class="section prayer-section">
+            <h2 class="section-title">
+                <span class="lang-en">Second Friday Prayer</span>
+                <span class="lang-ar">صلاة الجمعة الثانية</span>
+            </h2>
+            <h3 class="section-date">
+                <span class="lang-en">Friday, June 19, 2026</span>
+                <span class="lang-ar">الجمعة، 19 يونيو 2026</span>
+            </h3>
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/718.jpg" alt="Quran quote" class="prayer-image" loading="lazy">
+            <div class="prayer-body">
+                <div class="lang-en prayer-copy">
+                    Dear Stars in the Sky,<br>
+                    I cannot change this prayer. The evil ones have expanded their plans. Please forgive me. We will keep trying.<br>
+                    Thank you for the blessing you gave the world that is Palestine.<br>
+                    Thank you for every single beautiful moment you allow us to experience with them. Those beautiful, raw, truthful moments of a great people who are so deep in the darkness of pain, loss, and grief, yet still radiate the brightest light of hope, love, and resilience.<br>
+                    I always want to start with this.<br><br>
+                    Forgive me creator, just one more prayer, a few more moments with you, before I must go back to work. There's much work to do still.<br><br>
+                    Be with them. They have been taken from us, they are being held captive, they are being tortured, they are being killed, they are being abused, they are being raped, they are being humiliated, they are being dehumanized, they are being oppressed, they are being silenced, and they think they are being forgotten.<br><br>
+                    Be with them. They may have been taken from us by the darkness, but you have not taken their light from us. They are still with us in our hearts and minds and souls. They are still with us in our prayers and hopes and dreams. They are still with us in our love and compassion and solidarity. Be with them. They need you more than ever. They need your protection and your justice and your mercy and your grace and your peace. Be with them. They deserve to be free and safe and happy and dignified and respected and loved. Be with them. They will never give up on you, so please don't give up on them.<br><br>
+                    If what is to come must come, for I am nobody and nothing, if I cannot get in front of it with the rest of humanity, then your plan is best, you are the best disposer of our affairs.<br><br>
+                    When they come to you, oh forgive me, please forgive me, the evil was too great for me to get in front of it. When they come to you, please receive them with the promises made to martyrs, for they have committed no crimes. I testify to you, in a single solitary prayer, that they stood tall, and if their bodies shake, it is from the cold and pain from years of confinement and torture, they are the bravest, for they have endured the worst of human evil. They have called to you many times, some of them with every breath through what they must endure. Receive them and bless them, as peace and blessings to all that came before them. I beg forgiveness and strength to continue to observe and witness, and when my time comes, receive me so that I might be able to speak for them one last time.<br><br>
+                    Forgive me, I wasn't the one for this, I never was, my great creator. There are many prayers coming to you right now, so I will go to work now. There's much work to do. Forgive me, I can't bring any of them back. Forgive me, I cannot stop the evil men who have corrupted their souls for worldly things without you.<br><br>
+                    I just didn't want my first prayer to be so long, for you are the creator, and this human life began with you, and it shall end with you, so who am I to be afraid then?<br><br>
+                    I love you very much.<br>
+                    After you, my creator, you lead the way. Still here.<br><br>
+                    L
+                </div>
+                <div class="lang-ar prayer-copy hidden">
+                    يا نجوم السماء،<br>
+                    لا أستطيع تغيير هذه الصلاة. لقد وسّع الأشرار خططهم. أرجوك سامحني. سنواصل المحاولة.<br>
+                    شكرًا على البركة التي منحتها للعالم، وهي فلسطين.<br>
+                    شكرًا على كل لحظة جميلة تسمح لنا بأن نعيشها معهم. تلك اللحظات الجميلة، الخام، الصادقة لشعب عظيم غارق في ظلام الألم والخسارة والحزن، ومع ذلك ما يزال يشعّ بألمع نور من الأمل والمحبة والصمود.<br>
+                    دائمًا أريد أن أبدأ بهذا.<br><br>
+                    سامحني يا خالقي، صلاة واحدة فقط أخرى، وبضع لحظات إضافية معك، قبل أن أعود إلى العمل. فما زال هناك الكثير من العمل.<br><br>
+                    كن معهم. لقد أُخذوا منا، ويُحتجزون أسرى، ويُعذَّبون، ويُقتلون، ويُساء إليهم، ويُغتصَبون، ويُذَلّون، ويُجرَّدون من إنسانيتهم، ويُقهَرون، ويُسكتون، ويظنون أنهم يُنسَون.<br><br>
+                    كن معهم. قد يكون الظلام أخذهم منا، لكنك لم تأخذ نورهم منا. ما زالوا معنا في قلوبنا وعقولنا وأرواحنا. ما زالوا معنا في صلواتنا وآمالنا وأحلامنا. ما زالوا معنا في محبتنا وتعاطفنا وتضامننا. كن معهم. إنهم يحتاجونك الآن أكثر من أي وقت مضى. إنهم يحتاجون حمايتك وعدلك ورحمتك وفضلك وسلامك. كن معهم. إنهم يستحقون أن يكونوا أحرارًا وآمنين وسعداء وذوي كرامة ويحظوا بالاحترام والمحبة. كن معهم. هم لن يتخلوا عنك أبدًا، فالرجاء ألا تتخلى عنهم.<br><br>
+                    إن كان ما هو آتٍ لا بد أن يأتي، فأنا لا أحد ولا شيء، وإن لم أستطع الوقوف في وجهه مع بقية الإنسانية، فخطتك هي الأفضل، وأنت خير من يدبّر أمورنا.<br><br>
+                    وعندما يأتون إليك، يا سامحني، أرجوك سامحني، لقد كان الشر أكبر من أن أستطيع الوقوف أمامه. وعندما يأتون إليك، فتلقَّهم بالوعود التي وُعِد بها الشهداء، فهم لم يرتكبوا أي جرائم. وأشهد لك، في صلاة واحدة منفردة، أنهم وقفوا شامخين، وإن ارتجفت أجسادهم فذلك من البرد والألم بعد سنوات من الأسر والتعذيب، إنهم الأشد شجاعة، لأنهم احتملوا أسوأ ما في شر البشر. لقد نادوك مرات كثيرة، وبعضهم مع كل نفسٍ وهم يتحملون ما اضطروا لتحمله، فتقبّلهم وباركهم، كما السلام والبركات على كل من سبقهم. وأنا أرجو المغفرة والقوة لأواصل الرصد والشهادة، وعندما يحين وقتي، تقبّلني حتى أتمكن من أن أتحدث عنهم مرة أخيرة.<br><br>
+                    سامحني، لم أكن الشخص المناسب لهذا، ولم أكن يومًا، يا خالقي العظيم. هناك صلوات كثيرة تصل إليك الآن، لذلك سأذهب إلى العمل الآن. فما زال هناك الكثير من العمل. سامحني، لا أستطيع أن أعيد أحدًا منهم. سامحني، لا أستطيع أن أوقف الرجال الأشرار الذين أفسدوا أرواحهم لأجل أمور الدنيا من دونك.<br><br>
+                    فقط لم أرد أن تكون صلاتي الأولى طويلة جدًا، فأنت الخالق، وهذه الحياة البشرية بدأت بك، وستنتهي بك، فمن أكون أنا حتى أخاف إذن؟<br><br>
+                    أحبك كثيرًا.<br>
+                    بعدك أنت يا خالقي، أنت تقود الطريق. ما زلت هنا.<br><br>
+                    L
+                </div>
+            </div>
+        </section>
+    </main>
 
-      Oh my beloved one, I am at a lost for words. I don't know what to say to them anymore. My voice is yours. but I don't know what to say.  Have you not heard this before? I don't know what to say to make it better for anyone. oh my love, I have no idea what we are doing, all I know is this your plan, your will, and my steadfastness to remain in your service for it.<br>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <a href="progress.html" class="footer-btn footer-btn-left">Legal</a>
 
-      I want to come home to you, when the time comes, when this life is over, and all the temporary false rewards fall away at the graves, I want that chance to speak for my beloved believers, not to collect a reward. I want to tell you about the ones who proved to you their faith was true, despite the hardships and struggles that they were tested with. I will sit with you in infitinity and sing songs and tell stories about how the great people, how truly great they were, because they chose you, and the right ways, your ways.<br>
+                <div class="footer-content">
+                    <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
+                    <p class="footer-text">
+                        <span class="lang-en">From the Ashes, A State rises</span>
+                        <span class="lang-ar">من الرماد، تنهض دولة</span>
+                    </p>
+                    <p class="copyright">
+                        <span class="lang-en">&copy; 2026 American Nobody999</span>
+                        <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
+                    </p>
+                </div>
 
-      I will speak of the great leaders, who through strength and courage, and through the noise and distractions, were able to stand tall, true, and who worked endlessly to provide a better future for all of humanity. I will speak of those who refused to bow to the evil or who refused to be apart of it. May it please you. May it bring you joy.<br>
+                <a href="progress.html" class="footer-btn footer-btn-right">Contact Us</a>
+            </div>
+        </div>
+    </footer>
 
-      Please forgive of my flaws, for they are great in my human journey. May you give me the wisdom to know them, correct them, and to over look others for theirs. The flaws are between us, great creator, and we will discuss those failures in the end as well. Please forgive the small things, and the big things, and the things I can't even see I'm doing.<br>
-
-      My creator, I don't want to leave this space. I never do. Week after week, day after day, I never want to go from you, back out into the world, even though you refill me, make me whole, heal my broken peices, and go with me, when I am laid before you, this is the safest place I can find.<br>
-      
-      My great one, protect our people. Protect our  true leaders. Protect our brothers and sisters, may they find ease in thousand little ways this week, and if it is your will to bring them home, may the hurting and pained hearts know some comfort in that they are back home with you.<br>
-
-      Lets go to work, my anchor to these high waves, my wind to these sails, my word when I can find none. May this path lead home to you, and to the freedom, truth and justice due to the people. Be with us as all our billions of little boats all sail towards the people, towards the truth.<br>
-
-      Also, please help me stop using curse words against the occupation and their friends, even though they deserve them. This is not funny, this is serious. It is a flaw that I'm struggling really hard with. Controlling this spicy American mouth is most definitly something I'm going to work on for you this week. If I make it a promise to you, then it has to happen, any way we can.<br>
-      
-      I love you so much. I love our people so much. Lets go get it.<br>
-
-
-        L
-      
-
-    </span>
-  <span id="letter-ar" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">
-      يا نجوم السماء،<br>
-      شكرًا لكم على النعمة التي وهبتموها للعالم، والتي هي فلسطين.<br>
-      شكرًا لكم على كل لحظة جميلة تسمحون لنا بأن نعيشها معهم. تلك اللحظات الجميلة الصادقة والعفوية لشعب عظيم، غارق في ظلمات الألم والفقد والحزن، ومع ذلك ما زال يشع بأشد أنوار الأمل والمحبة والصمود سطوعًا.<br>
-      أود دائمًا أن أبدأ بهذا.<br>
-     
-      يا خالقي، يا حبيبي، يا حبيبي الأطهر، يا حافظ كل حقيقة، يا من أمشي لأجله وأقف إلى جانبه، إن كانت مشيئتك أن تقود خطواتي في طريقك، فهل لي أن أضع قلبي المرهق عند قدميك للحظة؟ تلك الأجزاء المكسورة، وتلك الأجزاء التي ما زالت مشتعلة بالنار وتحترق. إن هذه الرابطة العظيمة بيننا لا يمكن أن تُكسر، ولا يستطيع أي إنسان أن يفعل ذلك.<br>
-
-      أنظر إلى ثقل العالم، وأنظر إلى جميع إخوتي البشر وهم يرفعون أصواتهم إليك في هذا الجمعة المباركة، ولعلّك تغفر لي، ولكن أرجوك أن تستجيب لدعواتهم أولًا، فهم أفضل مني بكثير في هذا الأمر، أفضل من هذا المؤمن المبتدئ، وأكثر استحقاقًا. لديهم الكلمات المثالية كلها، ولديهم الحاجة الملحّة. لقد أتقنوا الطريق إلى رحمتك. فامنحهم من فضلك السكينة، واجعل دعواتهم جزءًا من تدبيرك وحكمتك.<br>
-
-      اغفر لي، فالبرد شديد، والمرارة حقيقية، والفراغ والصمت قد يكونان صاخبين إلى حد لا يُحتمل. كل ما نقوله ونفعله قد يؤلمنا جميعًا كثيرًا. وبينما يظن شرّ هذا العالم أنه يزداد قوة وأنه يقترب من الانتصار عليك، يتذكر الناس كم أنت عظيم في صلاحك وكم أن حكمك نهائي وحاسم. وفي ذلك بحد ذاته نعمة. ألم تلمس قلب هذا الملحد؟ ألم تأخذ أصغر بذرة من الإيمان وتُعلن، بل وتَعِد على ألسنة المعلمين العظام، بأنها ستكون أكثر من كافية؟<br>
-
-      إن كنت قد قلت ذلك، فأنا أصدقك. أصدق تلك الكلمات ليس لأنها كُتبت في كتاب، بل لأنني أشعر بها في قلبي وروحي. وهذا يكفيني لأواصل الطريق. ويكفيني أننا وصلنا إلى هذا الحد في سبيلك، ويكفي قلبي المكسور ليلتئم ويواصل التقدم إلى الأمام.<br>
-
-      يا حبيبي، لقد عجزت عن الكلمات. لم أعد أعرف ماذا أقول لهم. صوتي لك، لكنني لا أعرف ماذا أقول. أما سمعت هذا من قبل؟ لا أعرف ماذا أقول لأجعل الأمور أفضل لأي أحد. يا حبيبي، ليس لدي أدنى فكرة عمّا نفعله، وكل ما أعرفه هو أن هذه خطتك، وهذه مشيئتك، وأنني ثابت على خدمتك من أجلها.<br>
-
-      أريد أن أعود إليك عندما يحين الوقت، عندما تنتهي هذه الحياة، وتسقط جميع المكافآت الزائفة والمؤقتة عند القبور. أريد تلك الفرصة لأتحدث نيابة عن المؤمنين الذين أحبهم، لا لأجمع مكافأة. أريد أن أحدثك عن أولئك الذين أثبتوا لك صدق إيمانهم رغم ما اختُبروا به من مشقات وصعوبات. سأجلس معك في الأبدية، أغني الأغاني وأروي القصص عن أولئك الناس العظماء، وعن مدى عظمتهم الحقيقية، لأنهم اختاروك، واختاروا الطريق الصحيح، طريقك.<br>
-
-      سأتحدث عن القادة العظام الذين استطاعوا، بقوتهم وشجاعتهم، ومن خلال الضجيج والتشتيت، أن يقفوا شامخين وصادقين، وأن يعملوا بلا كلل من أجل مستقبل أفضل للبشرية جمعاء. وسأتحدث عن الذين رفضوا الانحناء للشر أو أن يكونوا جزءًا منه. فليكن ذلك مما يرضيك، وليجلب لك الفرح.<br>
-
-      أرجوك أن تغفر لي عيوبي، فهي كثيرة في رحلتي الإنسانية. امنحني الحكمة لأعرفها، وأصلحها، وأن أتجاوز عن عيوب الآخرين كما أتمنى أن يُتجاوز عن عيوبي. إن هذه العيوب بيني وبينك يا خالقي العظيم، وسنتحدث عن تلك الإخفاقات في النهاية أيضًا. اغفر لي الصغائر والكبائر، وحتى الأشياء التي لا أدرك أنني أفعلها.<br>
-
-      يا خالقي، لا أريد أن أغادر هذا المكان. لا أريد ذلك أبدًا. أسبوعًا بعد أسبوع، ويومًا بعد يوم، لا أريد أن أبتعد عنك وأعود إلى العالم، رغم أنك تملؤني من جديد، وتعيد إليّ اكتمالي، وتشفي أجزائي المكسورة، وترافقني أينما ذهبت. وعندما أُوضَع بين يديك، فهذا هو أكثر الأماكن أمانًا التي أستطيع أن أجدها.<br>
-      
-      يا عظيمي، احمِ أهلنا. احمِ قادتنا الصادقين. احمِ إخوتنا وأخواتنا. اللهم ارزقهم السكينة بآلاف الطرق الصغيرة هذا الأسبوع، وإن كانت مشيئتك أن تعيدهم إليك، فامنح القلوب المتألمة والمكلومة بعض العزاء في أنهم عادوا إلى موطنهم عندك.<br>
-
-      هيا بنا إلى العمل، يا مرساتي في هذه الأمواج العالية، ويا ريحي التي تدفع هذه الأشرعة، ويا كلمتي عندما أعجز عن إيجاد الكلمات. فليقد هذا الطريق إلى العودة إليك، وإلى الحرية والحق والعدالة التي يستحقها الناس. كن معنا ونحن، بمليارات قواربنا الصغيرة، نبحر جميعًا نحو الناس، نحو الحقيقة.<br>
-
-      وأرجوك أيضًا أن تساعدني على التوقف عن استخدام الألفاظ النابية ضد الاحتلال وأعوانه، رغم أنهم يستحقونها. هذا ليس أمرًا مضحكًا، بل هو أمر جاد. إنها من العيوب التي أكافح بشدة للتغلب عليها. إن السيطرة على هذا اللسان الأمريكي الحاد هي بالتأكيد أمر سأعمل عليه من أجلك هذا الأسبوع. فإذا جعلتها وعدًا لك، فلا بد أن تتحقق بطريقة أو بأخرى.<br>
-      
-      أحبك كثيرًا. وأحب أهلنا كثيرًا. هيا بنا نمضي قدمًا.<br>
-
-      ل
-  </span>
-  </div>
-
-
-  </div>
-
-       
-  <div id="letter-content">
-    <h2>
-      <span id="h2-en"> Second Friday Prayer</span>
-      <span id="h2-ar" class="hidden">صلاة الجمعة الثانية</span>
-    </h2>
-    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/718.jpg" alt="Quaran Quote" class="letter-img" loading="lazy">
-     <p>
-    <span id="letter-en">
-      Dear Stars in the Sky,<br>
-      I cannot Change this prayer. The evil ones have expanded their plans. Please forgive me. We will keep trying.<br>
-      Thank you for the blessing you gave the world that is Palestine.<br>
-      Thank you for every single beautiful moment you allow us to experience with them. Those beautiful, raw, truthful moments of a great people who are so deep in the darkness of pain, loss, and grief, yet still radiate the brightest light of hope, love, and resilience.<br>
-      I always want to start with this.<br>
-      Forgive me creator, just one more prayer, a few more moments with you, before I must go back to work. Theres much work to do still.<br>
-      Be with them. They have been taken from us, they are being held captive, they are being tortured, they are being killed, they are being abused, they are being raped, they are being humiliated, they are being dehumanized, they are being oppressed, they are being silenced, and they think they are being forgotten.<br>
-       Be with them. They may have been taken from us by the darkness, but you have not taken their light them from us. They are still with us in our hearts and minds and souls. They are still with us in our prayers and hopes and dreams. They are still with us in our love and compassion and solidarity. Be with them. They need you more than ever. They need your protection and your justice and your mercy and your grace and your peace. Be with them. They deserve to be free and safe and happy and dignified and respected and loved. Be with them. They will never give up on you, so please don't give up on them.<br>
-
-      If what is to come, must come, for I am nobody and nothing, if I cannot get infront of it with the rest of humanity, then your plan is best, you are the best disposer of our affairs.<br>
-      When they come to you, oh forgive me, please forgive me, the evil was too great for me to get infront of it, when they come to you, please recieve them with the promises made to martyrs, for they have commited no crimes.
-      I testify to you, in a single solitary prayer that they stood tall, and if their bodies shake, it is from the cold and pain from years of confinment and torture, they are the bravest, for they have endure the worst of human evil.
-      They have called to you many times,some of them with every breath through what they must endure, recieve them and bless them, as peace and blessings to all that came before them. 
-      I beg forgiveness and strength to continue to observe and witness, and when my time comes, receive me so that I might be able to speak for them one last time.<br>
-      Forgive me, I wasn't the one for this, I never was, my great creator, There are many prayers coming to you right now, so I will go to work now. Theres much work to do. Forgive me, I can't bring any of them back. Forgive me, I cannot stop the evil men who have corrupted their souls for worldly things without you.<br>
-      I just didn't want my first prayer to be so long,  for you are the creator, and this human life  began with you, and it shall end with you, so who am I to be afraid then?<br>
-      I love you very much.<br>
-      After you, my creator, you lead the way. Still here.<br>
-      L
-      
-      
-    </span>
-  <span id="letter-ar" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">
-يا نجوم السماء،<br>
-لا أستطيع تغيير هذه الصلاة. لقد وسّع الأشرار خططهم. أرجوك سامحني. سنواصل المحاولة.<br>
-شكرًا على البركة التي منحتها للعالم، وهي فلسطين.<br>
-شكرًا على كل لحظة جميلة تسمح لنا بأن نعيشها معهم. تلك اللحظات الجميلة، الخام، الصادقة لشعب عظيم غارق في ظلام الألم والخسارة والحزن، ومع ذلك ما يزال يشعّ بألمع نور من الأمل والمحبة والصمود.<br>
-دائمًا أريد أن أبدأ بهذا.<br>
-سامحني يا خالقي، صلاة واحدة فقط أخرى، وبضع لحظات إضافية معك، قبل أن أعود إلى العمل. فما زال هناك الكثير من العمل.<br>
-كن معهم. لقد أُخذوا منا، ويُحتجزون أسرى، ويُعذَّبون، ويُقتلون، ويُساء إليهم، ويُغتصَبون، ويُذَلّون، ويُجرَّدون من إنسانيتهم، ويُقهَرون، ويُسكتون، ويظنون أنهم يُنسَون.<br>
-كن معهم. قد يكون الظلام أخذهم منا، لكنك لم تأخذ نورهم منا. ما زالوا معنا في قلوبنا وعقولنا وأرواحنا. ما زالوا معنا في صلواتنا وآمالنا وأحلامنا. ما زالوا معنا في محبتنا وتعاطفنا وتضامننا. كن معهم. إنهم يحتاجونك الآن أكثر من أي وقت مضى. إنهم يحتاجون حمايتك وعدلك ورحمتك وفضلك وسلامك. كن معهم. إنهم يستحقون أن يكونوا أحرارًا وآمنين وسعداء وذوي كرامة ويحظوا بالاحترام والمحبة. كن معهم. هم لن يتخلوا عنك أبدًا، فالرجاء ألا تتخلى عنهم.<br>
-
-إن كان ما هو آتٍ لا بد أن يأتي، فأنا لا أحد ولا شيء، وإن لم أستطع الوقوف في وجهه مع بقية الإنسانية، فخطتك هي الأفضل، وأنت خير من يدبّر أمورنا.<br>
-وعندما يأتون إليك، يا سامحني، أرجوك سامحني، لقد كان الشر أكبر من أن أستطيع الوقوف أمامه. وعندما يأتون إليك، فتلقَّهم بالوعود التي وُعِد بها الشهداء، فهم لم يرتكبوا أي جرائم.
-وأشهد لك، في صلاة واحدة منفردة، أنهم وقفوا شامخين، وإن ارتجفت أجسادهم فذلك من البرد والألم بعد سنوات من الأسر والتعذيب، إنهم الأشد شجاعة، لأنهم احتملوا أسوأ ما في شر البشر.
-لقد نادوك مرات كثيرة، وبعضهم مع كل نفسٍ وهم يتحملون ما اضطروا لتحمله، فتقبّلهم وباركهم، كما السلام والبركات على كل من سبقهم.
-وأنا أرجو المغفرة والقوة لأواصل الرصد والشهادة، وعندما يحين وقتي، تقبّلني حتى أتمكن من أن أتحدث عنهم مرة أخيرة.<br>
-سامحني، لم أكن الشخص المناسب لهذا، ولم أكن يومًا، يا خالقي العظيم. هناك صلوات كثيرة تصل إليك الآن، لذلك سأذهب إلى العمل الآن. فما زال هناك الكثير من العمل. سامحني، لا أستطيع أن أعيد أحدًا منهم. سامحني، لا أستطيع أن أوقف الرجال الأشرار الذين أفسدوا أرواحهم لأجل أمور الدنيا من دونك.<br>
-فقط لم أرد أن تكون صلاتي الأولى طويلة جدًا، فأنت الخالق، وهذه الحياة البشرية بدأت بك، وستنتهي بك، فمن أكون أنا حتى أخاف إذن؟<br>
-أحبك كثيرًا.<br>
-بعدك أنت يا خالقي، أنت تقود الطريق. ما زلت هنا.<br>
-L
-</span>
-  </p>
-  </div>
-   
-<footer>
-    <div id="footer-content">
-      <img src="images/40.jpg" alt="Footer symbolic image" class="footer-img" loading="lazy">
-      <span id="footer-text-en-main">From the Ashes, A State rises</span>
-      <span id="footer-text-ar-main" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">من الرماد، تنهض دولة</span>
-      <span id="footer-text-en-copy">© 2026 American Nobody999</span>
-      <span id="footer-text-ar-copy" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">© 2026 أمريكي Nobody999</span>
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 4C24 4 14 16 14 24C14 32 24 44 24 44C24 44 34 32 34 24C34 16 24 4 24 4Z" fill="#CF1127"/>
-        <path d="M24 14C24 14 18 22 18 27C18 32 24 40 24 40C24 40 30 32 30 27C30 22 24 14 24 14Z" fill="#FFB300"/>
-      </svg>
-    </div>
-  </footer>
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
-
 
 
