@@ -1,97 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MPGA</title>
-  <!--I have to add the stylesheets link for the css, so the navigation works, also, eventually going to add a styles css anyway and remove inline styles for better website loading and funcationality-->
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
-  </head>
-  <!--I have to add the header without the CSS in for the home button navigation button-->
-  <header>
-      <h1>
-        <span id="h1-en">State of Palestine</span>
-        <span id="h1-ar" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">دولة فلسطين</span>
-      </h1>
-      <div class="header-btns">
-        <button id="lang-toggle" class="lang-toggle">English | العربية</button>
-        <a href="index.html">
-          <button class="header-home-btn">
-            <span class="home-en">Home</span>
-            <span class="home-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">الرئيسية</span>
-          </button>
-        </a>
-      </div>
-  </header>
-  <body>
-    <!--I have to try and be professional now with the comments. I'm on the fence with it. Part of it was no one had a clue what I was doing.
-    1. no css, no design, we starting from wireframe
-    2. action items are included for next steps
-    3. Fine-- how detailed do they want these notes?
-       h1 for heading, following with h2 (heiarchy, gotta go 1 through 6)
-       each item is broke into <p> or paragraphs
-       action item for next steps and descritptions of pages for purpose clairty
-       in line styles for indention and placement until css is introduced in chapter material.
-       and it is ugly. -->
-    <h1>MPGA Website Outline</h1><br>
-    <h2>Completed By: Leslie Brockman</h2><br>
-    <p style="text-indent: 2em; margin-left: 30px;">1) Home Page: The Home Page will include information about the purpose of Make Palestine Great Again. It will also include the mission statement, which is to adovate for the palestian people, rebuliding and restoring basic human rights, promoting and creating a network and expanding the movement within the United States that truly relfect values, morals, and ethics. I want the State of Palestine recognized, an embassy and amabassdor in Washington, and for Palestine to have the same diplomatic equality and rights as the rest of the countries. (This needs work).</p><br>
-    <p style="text-indent: 2em; margin-left: 30px;">2) About Us Page: This about us page will provide information about MPGA. (this is so redunant. Why cant the contact us and the about us be the same since its the same information, I don't know Palestine, This our website, we can do what we want, I'll leave it up to you.) </p><br><br>
-    <p style="text-indent: 2em; margin-left: 30px;">3) Partnership Page: The partnership page will provide information about volunteer opportunities, ways to donate, and sponsorship opportunities, and networking of humantarians.(I am reaching out, this is pending) Permission is needed. Enhancing communication skills for clarity and efficency.</p> <br><br>
-    <p style="text-indent: 2em; margin-left: 30px;">4) Gallery Page: The gallery page will will include archived materials, the goal is to combine state, faces, and heros. This page will also link subpages to videos. There will be a red door with a caution and disclaimer of volience, and war crimes will be included. This red door is to be respectful of website audience, as well as allowing the Palestian people to move forward in their greiveing process with the truth of their testimonies while also giving evidence for accountability and future prosecution of crimes.</p><br><br>
-    <p style="text-indent: 2em; margin-left: 30px;">5) FAQs Page: The FAQ page will provide visitors with many frequently asked questions and answers. I need to do two, one me for MPGA and one for Palestine, but we in this together, so I'm going to play with it.</p><br><br>
-    <p style="text-indent: 2em; margin-left: 30px;">6) Contact Us Page: The contact us page will include the organization's contact information, and provide a real US citizen human face to the movement. All I ever had to offer was myself. Also, for my Palestian web dvelopers, I want to bulid wonderful website, I do not want build website by their rules or industry standards. How do I explain that? I am going to need Palestine to pick up some slack here. Talking to you developers.</p><br><br>
-    <p style="text-indent: 2em; margin-left: 30px;">7) Legal Page: This is important. This describes to people exactly how this movement and this website concur with my American civic duty and responsibilties to protect ansure my American leaders and governement officials are upholding their obligations to the people who they serve and represent. My governement is suppose to work for me, not the other way around.</p><br><br>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="American Nobody999">
 
+<!--For SQL and better accesibility-->
+    <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
+    <title>Make Palestine Great Again - MPGA</title>
+    
+<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    
+<!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            
+<!-- Logo - Left Side-waiting for logo contest from Palestinians -->
+            <div class="header-logo">
+                <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
+            </div>
+
+<!-- Center Content, don't touch this for now -->
+<!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
+            <div class="header-center">
+                <h1 class="site-title">
+                    <span class="lang-en">State of Palestine</span>
+                    <span class="lang-ar">دولة فلسطين</span>
+                </h1>
+                
+<!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    English | العربية
+                </button>
+
+<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
+ <!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-btn">
+                            <span class="lang-en">Home</span>
+                            <span class="lang-ar">الرئيسية</span>
+                        </a></li>
+                        <li><a href="mpga.html" class="nav-btn active">
+                            <span class="lang-en">MPGA</span>
+                            <span class="lang-ar">MPGA</span>
+                        </a></li>
+<!--progress.html needs to be replaced with united.html-->
+                        <li><a href="progress.html" class="nav-btn">
+                            <span class="lang-en">United</span>
+                            <span class="lang-ar">متحدون</span>
+                        </a></li>
+<!--progress.html needs to be replaced with leslie.html-->
+                        <li><a href="progress.html" class="nav-btn">
+                            <span class="lang-en">Leslie</span>
+                            <span class="lang-ar">ليزلي</span>
+                        </a></li>
+<!--progress.html needs to be replaced with about.html-->
+                        <li><a href="progress.html" class="nav-btn">
+                            <span class="lang-en">About Us</span>
+                            <span class="lang-ar">من نحن</span>
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Hamburger for Mobile -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+    <main>
+    <!--This page will develop as MPGA moves forward as a credible, legal, and aknowledge solidarity movement with in the United States of America-->
+
+    <section class="section mpga-section-1">
+    <div class="lang-en">
+    <h1>MPGA Mission Statement</h1>
+    <p>MPGA is a single American voice advocating for the Palestian people, rebuliding and restoring their basic human rights, promoting and creating a network to expand the movement within the United States and with other peaceful global partners that truly relfect values, morals, and ethics which we hold as a society</p>
+    <p>I want the State of Palestine recognized, an embassy and amabassdor in Washington, and for Palestine to have the same diplomatic equality and rights as the rest of the countries.</p>
+     <p>We demand the two state solution, redrawing and reinforcement of the borders back to 1967 agreement. We demand free and fair elections of the Palestian civilians to elected leaders who will respected and protected just like any other world leaders.</p>
+     <p>What do the people want? That is where the legticimacy to any further discussions or deals will be found. We demand and end to the targeting of Humantarian organizations, journalists, healthcare workers, and all of the Palestian hostages returned. Theres about 10,000 of them in prisions without charges, trials, lawyers, food, water, medicine, and they are being subjected to constant mental and physcial abuse.</p>
+     <p>(This needs work)</p>
+    </div>
+    </section>
+
+    <section class="section mpga-section-2">
+    <h2>Build Priorities</h2>
+    <ul>
+        <li>Keep each page connected to the bilingual toggle and shared navigation.</li>
+        <li>Expand educational and humanitarian content in clear, organized sections.</li>
+        <li>Improve accessibility, readability, and section-based layout consistency.</li>
+        <li>Avoid occupation targeting, cyber attacks, or any form of volience that couold be cultivated from my movement or who may infiltrate it. I am trying to calm the emotional idiots down. I do not know how to explain how hard that is. We are peaceful for accountability. We are solid for the truth, informed facts, research, engagement and polite civic engagement and discussion which will open further dialogue and problem-solving opportunities for our society to move forward together. </li>
+    </ul>
+    </section>
+
+    <section class="section website-outline mpga-section-3">
+    <div class ="purpose">
+    <h2>MPGA Website Outline Purpose</h2>
+    <p>Make Palestine Great Again (MPGA) is a people-centered platform focused on advocacy, education, and practical solidarity. This page organizes the project vision so visitors and collaborators can quickly understand where the site is headed.</p>
+    </div>
+    <div class ="pages">
+    <h3>Completed By: Leslie Brockman</h3>
+    <p class="outline-paragraph">1) Home Page:<br> The Home Page will include which is to adovate for the palestian people, </p>
+    <p class="outline-paragraph">2) About Us Page:<br> This about us page will provide information about MPGA. (this is so redunant. Why cant the contact us and the about us be the same since its the same information, I don't know Palestine, This our website, we can do what we want, I'll leave it up to you.)  </p>
+    <p class="outline-paragraph">3) Partnership Page:<br> The partnership page will provide information about volunteer opportunities, ways to donate, and sponsorship opportunities, and networking of humantarians.<br>
+    (I am reaching out, this is pending, I survived 43 days in globalsumudflotilla.org with those crazy lefty loonies, I disagree with all of them on some issue. Thats fine. You don't have to agree with someone to love them. Having said that, I would still push some of them off the boat. My turn now Flotillas, mind your bussiness, your supposed to be healing.)<br>
+    Permission is needed. Enhancing communication skills for clarity and efficency.</p> 
+    <p class="outline-paragraph">4) Gallery Page:<br> The gallery page will will include archived materials, the goal is to combine state, faces, and heros. This page will also link subpages to videos. There will be a red door with a caution and disclaimer of volience, and war crimes will be included. This red door is to be respectful of website audience, as well as allowing the Palestian people to move forward in their greiveing process with the truth of their testimonies while also giving evidence for accountability and future prosecution of crimes.<br>
+    Update: We made this into a Explore Gallery Div on the index, images need refitting, small things, but this is the main content of the website. It needs to be upfront.Palestine. We need to do some things with this.</p>
+    <p class="outline-paragraph">5) FAQs Page:<br> The FAQ page will provide visitors with many frequently asked questions and answers. I need to do two, one me for MPGA and one for Palestine, but we in this together, so I'm going to play with it.<br>
+    Update: I haven't added this yet.</p>
+    <p class="outline-paragraph">6) Contact Us Page<br> The contact us page will include the organization's contact information, and provide a real US citizen human face to the movement. All I ever had to offer was myself. Also, for my Palestian web dvelopers, I want to bulid wonderful website, I do not want build website by their rules or industry standards. How do I explain that? I am going to need Palestine to pick up some slack here. Talking to you developers.<br>
+    Update: I am making it through the CSS chapter this week loves, found some major understanding. I love my college for real, the format of the circulumn is so easy to navigate and find understanding.</p>
+    <p class="outline-paragraph">7) Legal Page:<br> This is important. This describes to people exactly how this movement and this website concur with my American civic duty and responsibilties to protect ansure my American leaders and governement officials are upholding their obligations to the people who they serve and represent. My governement is suppose to work for me, not the other way around.</p>
+    </div>
+    <div class="subpages">
     <h2> Sub Page Ideas</h2>
     <ul>
+        <!--Tadpoles 12 image scroll perfect, gives accrediation to the Palestine Action Movement, a protected source for a long time. There are certian humantarians MPGA follows on a multiude of platforms, and once information is shared for educational purposes, those sources are concidered safe to be acknowledged.-->
         <li>This is the State of Palestine--current affairs of beloved Palestine.</li>
-        <li>Friendly Burn Notice-- page deciated to corrupt leaders, westerern media, and "friends"</li>
-        <li>Online Palestine School-- education and material age appropiate to help suppilment gaps in      learning and support educators</li>
-        <li>Faith of Palestine--We will keep the faiths of the devoted ones seperate out of respect.</li>
+        <li>Friendly Burn Notice-- page deciated to corrupt leaders, westerern media, and "friends".<br> (This is suggested at this point, lets all keep doing the right things for the future of us all, and we can keep it a idea.</li>
+        <li>Online Palestine School-- education and material age appropiate to help suppilment gaps in learning and support educators.</li>
+        <li>Faith of Palestine--We will keep the faiths of the devoted ones seperate out of respect.<br>
+        Friday has become a personal day for all humanity to breath and lift up prayers in there faiths. I would never miss a Friday prayer. To be a part of a collective whole, all believeing together, thats something to look forward to every week.</li>
         <li>For Palestine Only-- This will be our communications, love letters, and daily updates</li>
         <li>Humanity--This is a place for communication between humantarians. We aren't alone anymore. United.</li>
         <li>Leslie's Page--I'll stick all my crap in here, notes, pending research projects, sources with citations.</li>
-
     </ul>
-<!-- I don't have the toggle set up on this yet, I have to pretent I don't know what it is for assignment requirements. That H1 had to go to H2 for heiarchy and H2 had to go to H3 for hierarchy -->
-    <h2>مخطط موقع MPGA</h2><br>
+    </div>
+    </section>
+  
 
-<h3>إعداد: ليزلي بروكمان</h3><br>
+    <div class="lang-ar hidden" dir="rtl">
+    <section class="section mpga-section-1">
+    <h1>بيان مهمة MPGA</h1>
+    <p>MPGA هو صوت أمريكي مستقل يدافع عن الشعب الفلسطيني، ويعمل على استعادة الحقوق الإنسانية الأساسية، وبناء شبكة توسّع هذا التحرك داخل الولايات المتحدة ومع شركاء عالميين سلميين يلتزمون بالقيم والأخلاق والمبادئ الإنسانية.</p>
+    <p>أريد الاعتراف بدولة فلسطين رسميًا، ووجود سفارة وسفير لها في واشنطن، وأن تحصل فلسطين على المساواة الدبلوماسية والحقوق نفسها التي تتمتع بها بقية دول العالم.</p>
+    <p>نطالب بحل الدولتين، وإعادة ترسيم وتعزيز الحدود وفق اتفاق عام 1967. كما نطالب بانتخابات حرة ونزيهة للفلسطينيين لاختيار قيادات منتخبة تحظى بالاحترام والحماية مثل أي قادة في العالم.</p>
+    <p>ماذا يريد الناس؟ هنا تكمن شرعية أي نقاشات أو اتفاقات لاحقة. نطالب بوقف استهداف المنظمات الإنسانية والصحفيين والعاملين في الرعاية الصحية، وإعادة جميع الرهائن الفلسطينيين. يوجد نحو 10,000 منهم في السجون دون تهم أو محاكمات أو محامين، مع نقص في الغذاء والماء والدواء، ويتعرضون لإساءة نفسية وجسدية مستمرة.</p>
+    <p>(هذا القسم يحتاج إلى تطوير)</p>
+    </section>
 
-<p style="text-indent: 2em; margin-left: 30px;">1) الصفحة الرئيسية: ستتضمن الصفحة الرئيسية معلومات حول الهدف من مبادرة "اجعلوا فلسطين عظيمة من جديد". كما ستتضمن بيان الرسالة، والمتمثل في الدفاع عن الشعب الفلسطيني، والمساهمة في إعادة البناء واستعادة الحقوق الإنسانية الأساسية، وتعزيز وتوسيع شبكة الحركة داخل الولايات المتحدة بما يعكس القيم والأخلاق والمبادئ الإنسانية الحقيقية. كما أسعى إلى الاعتراف بدولة فلسطين، ووجود سفارة وسفير لها في واشنطن، وأن تتمتع فلسطين بالمساواة الدبلوماسية والحقوق نفسها التي تتمتع بها بقية دول العالم.</p><br>
+    <section class="section mpga-section-2">
+    <h2>أولويات البناء</h2>
+    <ul>
+        <li>إبقاء كل صفحة مرتبطة بتبديل اللغة الثنائي وبنظام التنقل الموحد.</li>
+        <li>توسيع المحتوى التعليمي والإنساني ضمن أقسام واضحة ومنظمة.</li>
+        <li>تحسين سهولة الوصول وسهولة القراءة واتساق تنسيق الأقسام.</li>
+        <li>رفض أي استهداف أو هجمات إلكترونية أو أي شكل من أشكال العنف قد يُنسب إلى حركتنا أو من يحاول اختراقها. هدفنا هو المساءلة السلمية، والتمسك بالحقيقة والحقائق الموثقة والبحث والحوار المدني المحترم لفتح مسارات واقعية للحلول والتقدم الجماعي.</li>
+    </ul>
+    </section>
 
-<p style="text-indent: 2em; margin-left: 30px;">2) صفحة من نحن: ستوفر هذه الصفحة معلومات حول منظمة MPGA وأهدافها ورسالتها، بالإضافة إلى التعريف بالمبادرة وأسباب إنشائها ودورها في دعم القضية الفلسطينية.</p><br><br>
+    <section class="section website-outline mpga-section-3">
+    <div class="purpose">
+    <h2>هدف مخطط موقع MPGA</h2>
+    <p>منصة MPGA تتمحور حول الناس، وتركز على المناصرة والتعليم والتضامن العملي. تنظم هذه الصفحة رؤية المشروع حتى يتمكن الزوار والمتعاونون من فهم اتجاه الموقع بسرعة ووضوح.</p>
+    </div>
 
-<p style="text-indent: 2em; margin-left: 30px;">3) صفحة الشراكات: ستقدم صفحة الشراكات معلومات حول فرص التطوع، وطرق التبرع، وفرص الرعاية والدعم، بالإضافة إلى بناء شبكات التواصل بين العاملين في المجال الإنساني. كما ستُستخدم هذه الصفحة لتطوير التعاون وتعزيز التواصل الفعال من أجل تحقيق الأهداف المشتركة.</p><br><br>
+    <div class="pages">
+    <h3>إعداد: ليزلي بروكمان</h3>
+    <p class="outline-paragraph">1) الصفحة الرئيسية:<br> ستتضمن الصفحة الرئيسية جوهر الرسالة، وهو الدفاع عن الشعب الفلسطيني.</p>
+    <p class="outline-paragraph">2) صفحة من نحن:<br> ستقدم هذه الصفحة معلومات عن MPGA. (هناك تكرار مع صفحة "اتصل بنا" وقد تتم إعادة تنظيم المحتوى لاحقًا.)</p>
+    <p class="outline-paragraph">3) صفحة الشراكات:<br> ستعرض فرص التطوع وطرق التبرع وفرص الرعاية وبناء شبكات العمل الإنساني.<br>
+    (هذا الجزء ما زال قيد المتابعة والتواصل.)<br>
+    المطلوب: الحصول على الأذونات اللازمة وتحسين مهارات التواصل من أجل الوضوح والكفاءة.</p>
+    <p class="outline-paragraph">4) صفحة المعرض:<br> ستضم الصفحة موادًا مؤرشفة، وتهدف إلى الجمع بين الدولة والوجوه والرموز. وسترتبط بصفحات فرعية للفيديو. كما ستتضمن تحذيرًا واضحًا من محتوى العنف وجرائم الحرب، احترامًا للجمهور، مع الحفاظ على الحقيقة والشهادات والأدلة لأغراض المساءلة مستقبلًا.<br>
+    تحديث: تم تحويل هذا الجزء إلى قسم "استكشاف المعرض" في الصفحة الرئيسية، وما زالت هناك تحسينات مطلوبة على عرض الصور.</p>
+    <p class="outline-paragraph">5) صفحة الأسئلة الشائعة:<br> ستوفر إجابات عن الأسئلة المتكررة، مع جزء يتعلق بـ MPGA وجزء يتعلق بفلسطين.<br>
+    تحديث: لم تتم إضافتها بعد.</p>
+    <p class="outline-paragraph">6) صفحة اتصل بنا:<br> ستتضمن معلومات التواصل الخاصة بالمبادرة، وتوفر حضورًا إنسانيًا مباشرًا داخل الولايات المتحدة، مع مساحة للتواصل مع المطورين والمساهمين.<br>
+    تحديث: هناك تقدم جيد في دراسة CSS هذا الأسبوع وفهم أفضل لبنية الموقع.</p>
+    <p class="outline-paragraph">7) الصفحة القانونية:<br> هذه الصفحة مهمة لأنها توضح كيف ينسجم هذا التحرك والموقع مع الواجبات المدنية الأمريكية، وكيفية محاسبة المسؤولين والجهات الحكومية على التزاماتهم تجاه الشعب.</p>
+    </div>
 
-<p style="text-indent: 2em; margin-left: 30px;">4) صفحة المعرض: ستتضمن صفحة المعرض مواد ووثائق مؤرشفة تهدف إلى توثيق تاريخ فلسطين وشعبها وشخصياتها الملهمة. كما ستحتوي على صفحات فرعية مرتبطة بمقاطع الفيديو. وسيتم تضمين تحذير واضح ومسبق بشأن المحتوى الذي يتناول مشاهد العنف وجرائم الحرب، احترامًا لزوار الموقع، مع إتاحة مساحة للشعب الفلسطيني لتوثيق شهاداته وحفظ الحقيقة وتقديم الأدلة التي قد تسهم في المساءلة وتحقيق العدالة مستقبلاً.</p><br><br>
+    <div class="subpages">
+    <h2>أفكار لصفحات فرعية</h2>
+    <ul>
+        <li>هذه هي دولة فلسطين: صفحة للشؤون والأحداث الجارية في فلسطين.</li>
+        <li>تنبيه ودي: صفحة تناقش أداء القادة الفاسدين والإعلام الغربي وبعض "الأصدقاء" نقديًا.</li>
+        <li>المدرسة الفلسطينية الإلكترونية: محتوى تعليمي مناسب للأعمار المختلفة لسد الفجوات التعليمية ودعم المعلمين.</li>
+        <li>إيمان فلسطين: إبراز الأديان في فلسطين باحترام متبادل، مع مساحة روحية جامعة.</li>
+        <li>لفلسطين فقط: مساحة للتواصل والرسائل والتحديثات اليومية.</li>
+        <li>الإنسانية: مساحة للتواصل بين العاملين في المجال الإنساني وتوحيد الجهود.</li>
+        <li>صفحة ليزلي: ملاحظات شخصية ومشاريع بحثية قيد العمل ومصادر موثقة.</li>
+    </ul>
+    </div>
+    </section>
+    </div>
+</main>
 
-<p style="text-indent: 2em; margin-left: 30px;">5) صفحة الأسئلة الشائعة: ستوفر صفحة الأسئلة الشائعة إجابات عن أكثر الأسئلة التي يطرحها الزوار. وستشمل معلومات تتعلق بمبادرة MPGA، بالإضافة إلى أسئلة وأجوبة عامة حول فلسطين والقضية الفلسطينية.</p><br><br>
+ <footer class="site-footer">
+        <div class="footer-container">
+        <div class="footer-row">
+<!--progress.html needs to be replaced with legal.html-->
+          <a href="progress.html" class="footer-btn footer-btn-left">Legal</a>
 
-<p style="text-indent: 2em; margin-left: 30px;">6) صفحة اتصل بنا: ستتضمن صفحة "اتصل بنا" معلومات التواصل الخاصة بالمنظمة، كما ستوفر وسيلة مباشرة للتواصل مع القائمين على المبادرة. وتهدف الصفحة إلى تعزيز التواصل والتعاون مع المطورين والمساهمين والداعمين الراغبين في المشاركة في تطوير الموقع ومشاريعه المستقبلية.</p><br><br>
+          <div class="footer-content">
+            <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, A State rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 American Nobody999</span>
+              <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
+            </p>
+          </div>
+<!--progress.html needs to be replaced with contact us.html-->
+<!--When this page goes live, this communcation avenue needs to be left alone, gentle request. This message is not for everyone.-->
+          <a href="progress.html" class="footer-btn footer-btn-right">Contact Us</a>
+            </div>
+        </div>
+    </footer>
 
-<p style="text-indent: 2em; margin-left: 30px;">7) الصفحة القانونية: تُعد هذه الصفحة من الصفحات المهمة، حيث توضح الأسس القانونية والمدنية التي تستند إليها هذه المبادرة، وتشرح كيفية توافق أنشطة الموقع والحركة مع المسؤوليات والواجبات المدنية للمواطنين، بما يضمن المساءلة والشفافية واحترام المبادئ الديمقراطية.</p><br><br>
-
-<h3>أفكار لصفحات فرعية</h3>
-
-<ul>
-    <li>هذه هي دولة فلسطين — صفحة مخصصة للشؤون والأحداث الجارية المتعلقة بفلسطين.</li>
-
-    <li>إشعار ودي — صفحة مخصصة لمناقشة أداء القادة والمسؤولين ووسائل الإعلام الغربية والعلاقات السياسية المختلفة من منظور نقدي.</li>
-
-    <li>المدرسة الفلسطينية الإلكترونية — مواد تعليمية ومصادر مناسبة للفئات العمرية المختلفة تهدف إلى سد الفجوات التعليمية ودعم المعلمين والطلاب.</li>
-
-    <li>إيمان فلسطين — صفحة مخصصة للتعريف بالتقاليد والمعتقدات الدينية المختلفة في فلسطين مع الحفاظ على الاحترام المتبادل بين الجميع.</li>
-
-    <li>لفلسطين فقط — مساحة للتواصل والرسائل والتحديثات اليومية الموجهة إلى المجتمع الفلسطيني.</li>
-
-    <li>الإنسانية — مساحة للتواصل بين العاملين في المجال الإنساني والداعمين للقضايا الإنسانية حول العالم، تأكيدًا على التضامن والوحدة.</li>
-
-    <li>صفحة ليزلي — صفحة شخصية تتضمن الملاحظات والمشاريع البحثية قيد العمل والمصادر والمراجع الموثقة.</li>
-</ul>
-    <!--had to add the java to so the toggle works on the nav-->
     <script src="main.js"></script>
 </body>
 </html>
