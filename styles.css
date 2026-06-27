@@ -533,7 +533,7 @@ main p {
 }
 
 .hero-media > img {
-    max-width: 320px;
+    max-width: 420px;
     width: 100%;
     object-fit: cover;
 }
@@ -544,7 +544,7 @@ main p {
 }
 
 .hero-media .social-link img {
-    max-width: 130px;
+    max-width: 70px;
     width: 100%;
 }
 
@@ -574,7 +574,7 @@ main p {
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    gap: 0;
+    gap: 1rem;
     width: 100%;
     max-width: 100%;
     scrollbar-width: thin;
@@ -582,7 +582,7 @@ main p {
 }
 
 .hero-gallery .video-container {
-    min-width: 100%;
+    min-width: calc(100% - 1rem);
     flex-shrink: 0;
     max-width: 100%;
     height: 400px;
@@ -628,12 +628,12 @@ main p {
         max-width: none;
         width: 100%;
         flex: 1;
-        min-height: 260px;
+        min-height: 340px;
         object-fit: cover;
     }
 
     .hero-media .social-link img {
-        max-width: 110px;
+        max-width: 60px;
     }
 
     .hero-gallery .video-gallery {
@@ -727,6 +727,71 @@ main p {
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 151, 54, 0.5);
+}
+
+/* Play and Replay Button Styling */
+.initial-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary-green);
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.initial-play-btn:hover {
+    background: var(--accent-red);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    gap: 1rem;
+}
+
+.replay-btn {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent-red);
+    color: white;
+    font-size: 2.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.replay-btn:hover {
+    background: var(--primary-green);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 .links-gallery {
@@ -915,6 +980,51 @@ main p {
         font-size: 1.9rem;
     }
 
+    .day-journal .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .day-journal .quote-of-day,
+    .day-journal .quote-text {
+        max-width: 100%;
+    }
+
+    .day-journal .quote-title {
+        font-size: 1.15rem;
+    }
+
+    .day-journal .section-date {
+        font-size: 1.1rem;
+    }
+
+    .content-grid,
+    .hero-grid {
+        gap: 1rem;
+    }
+
+    .text-content {
+        padding: 1rem;
+    }
+
+    .media-content {
+        min-height: auto;
+    }
+
+    .ok-humanity .media-grid {
+        gap: 1rem;
+        padding-right: 0;
+    }
+
+    .ok-humanity .media-grid img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero-media {
+        align-items: center;
+    }
+
     .footer-row {
         flex-direction: column;
     }
@@ -936,11 +1046,38 @@ main p {
     }
 
     .hero-media > img {
-        max-width: 220px;
+        max-width: 100%;
+        width: 100%;
     }
 
     .hero-media .social-link img {
-        max-width: 160px;
+        max-width: 72px;
+    }
+
+    .hero-bio {
+        padding: 1rem;
+    }
+
+    .hero-gallery .video-gallery {
+        padding: 0.5rem 0 0.75rem;
+        scroll-snap-type: x mandatory;
+    }
+
+    .hero-gallery .video-container {
+        min-width: 100%;
+        height: 250px;
+        scroll-snap-align: start;
+    }
+
+    .hero-gallery .video-container video {
+        object-fit: cover;
+    }
+
+    .video-embed-section {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 1.25rem;
+        max-width: 100%;
     }
 
     .faith-link-item {
@@ -961,9 +1098,70 @@ main p {
 }
 
 @media (max-width: 480px) {
+    .header-container {
+        gap: 1rem;
+    }
+
+    .site-title {
+        font-size: 1.8rem;
+    }
+
+    .lang-toggle {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 0.55rem 1rem;
+    }
+
+    .section {
+        padding: 1.4rem 0.85rem;
+        margin: 1.25rem auto;
+    }
+
+    .section-title {
+        font-size: 1.55rem;
+    }
+
+    .day-journal .section-title {
+        font-size: 1.7rem;
+    }
+
+    .day-journal .quote-text,
+    .text-content .lang-en p,
+    .text-content .lang-ar p,
+    main p {
+        font-size: 0.98rem;
+        line-height: 1.5;
+    }
+
+    .content-grid,
+    .hero-grid {
+        gap: 0.85rem;
+    }
+
     .video-container,
     .image-container {
-        flex: 0 0 260px;
+        flex: 0 0 100%;
+    }
+
+    .hero-gallery .video-container {
+        height: 220px;
+    }
+
+    .initial-play-btn {
+        width: 68px;
+        height: 68px;
+        font-size: 2rem;
+    }
+
+    .replay-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.9rem;
+    }
+
+    .video-embed-section iframe,
+    .video-wrapper {
+        border-radius: 10px;
     }
 
     .faith-link-item {
