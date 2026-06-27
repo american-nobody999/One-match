@@ -66,7 +66,7 @@ document.querySelectorAll('.lang-ar').forEach(el => el.classList.add('hidden'));
                 initialPlayBtn.addEventListener('click', () => {
                     video.play();
                     initialPlayBtn.style.display = 'none';
-                    if (overlay) overlay.classList.remove('hidden');
+                    if (overlay) overlay.classList.add('hidden');
                 });
             }
 
@@ -74,14 +74,15 @@ document.querySelectorAll('.lang-ar').forEach(el => el.classList.add('hidden'));
             if (replayBtn) {
                 replayBtn.addEventListener('click', () => {
                     video.currentTime = 0;
+                    if (overlay) overlay.classList.add('hidden');
                     video.play();
                 });
             }
 
-            // Hide overlay when video ends
+            // Show replay only when the video has ended
             video.addEventListener('ended', () => {
-                if (overlay) overlay.classList.add('hidden');
-                if (initialPlayBtn) initialPlayBtn.style.display = 'block';
+                if (overlay) overlay.classList.remove('hidden');
+                if (initialPlayBtn) initialPlayBtn.style.display = 'none';
             });
         });
     }
@@ -130,3 +131,5 @@ document.querySelectorAll('.lang-ar').forEach(el => el.classList.add('hidden'));
         }, 150);
     });
 });
+
+
