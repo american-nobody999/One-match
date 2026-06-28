@@ -1533,11 +1533,30 @@ main h2 {
 }
 
 /* ================ LINK.HTML PAGE ================ */
+.link-page-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 0.75rem 1.25rem;
+}
+
 .link-page header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.25rem 1rem;
     text-align: center;
+}
+
+.link-page .header-center {
+    width: 100%;
+}
+
+.link-page .main-nav {
+    width: 100%;
+}
+
+.link-page .nav-menu {
+    justify-content: center;
 }
 
 .link-page .header-btns {
@@ -1689,6 +1708,10 @@ main h2 {
 }
 
 @media (max-width: 768px) {
+    .link-page-main {
+        padding: 0 0.5rem 1rem;
+    }
+
     .link-page header {
         padding: 1rem 0.75rem;
     }
@@ -1724,9 +1747,18 @@ main h2 {
 }
 
 @media (max-width: 480px) {
+    .link-page-main {
+        padding: 0 0.35rem 0.85rem;
+    }
+
     .link-page .header-btns {
         flex-direction: column;
         gap: 0.6rem;
+    }
+
+    .link-page .lang-toggle {
+        width: 100%;
+        max-width: 320px;
     }
 
     .link-page .header-btns .lang-toggle,
@@ -1736,84 +1768,3 @@ main h2 {
         max-width: 320px;
     }
 
-    .link-page .gallery-intro h2 {
-        font-size: 1.3rem;
-    }
-
-    .link-page .image-container {
-        flex: 0 0 82vw;
-        min-height: 390px;
-    }
-
-    .link-page .image-container > img {
-        height: 190px;
-    }
-
-    .link-page .disclaimer {
-        font-size: 0.94rem;
-    }
-}
-
-/* ================ GLOBAL MOBILE HARDENING ================ */
-@media (max-width: 768px) {
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-    .section,
-    .legal-section,
-    .video-gallery-section,
-    .image-gallery-section,
-    .links-gallery-section,
-    .scrollable-gallery {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .video-gallery,
-    .links-gallery,
-    .scrollable-gallery,
-    .faith-link-grid,
-    .state-image-gallery {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    .hero-grid,
-    .content-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .gallery-item,
-    .gallery-card,
-    .faith-link-item {
-        flex: 0 0 clamp(220px, 75vw, 320px);
-    }
-
-    .gallery-item img,
-    .gallery-card img {
-        height: auto;
-        aspect-ratio: 4 / 3;
-        object-fit: contain;
-        background: #fff;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-btn,
-    .footer-btn {
-        width: 100%;
-        max-width: 320px;
-        text-align: center;
-    }
-
-    .gallery-item,
-    .gallery-card {
-        flex: 0 0 82vw;
-    }
-
-    .caption {
-        min-height: auto;
-    }
-}
