@@ -1,6 +1,7 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
-/* Author: Leslie Brockman                       */
+/* Author: Leslie Brockman.                      */
+/* Updated  06-27-2026                           */
 /* ============================================= */
 
 /* ================ quick developer notes ================ */
@@ -8,6 +9,7 @@
 /* color pallet and design will change per Palestinen culture and aesthetics */
 /*logo pending for contest among the youth designers of Palestine.*/
 /*once the entire layout is set, I will go through and add more specific styles to each section and element, reorganize the css to avoid the rules interfering with eachother.*/
+/*class names will be changed to be more specific and descriptive, and the css will be organized into sections for easier navigation.*/
 
 :root {
     /* Color Palette */
@@ -194,6 +196,128 @@ a {
     font-size: 2.2rem;
     margin-bottom: 2rem;
     color: var(--dark);
+}
+
+/* ================ LEGAL PAGE ================ */
+.legal-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 1.5rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45),
+                0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.legal-section h2 {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.legal-box {
+    min-height: 90px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #f8f8f8;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45);
+}
+
+.legal-box:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section-3 .legal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.25rem;
+}
+
+.legal-section-3 .legal-box a,
+.legal-section-3 .legal-box img,
+.legal-section-3 .legal-box p,
+.legal-section-3 .legal-box h2,
+.legal-section-3 .legal-box h3 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.legal-section-2 .legal-box-4 a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.legal-section-2 .legal-box-4 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.legal-section-2 .legal-box-6 .scrollable-gallery {
+    margin: 0;
+    max-width: 100%;
+}
+
+.legal-section-2 .legal-box-6 .gallery-item {
+    flex: 0 0 240px;
+}
+
+.legal-section-2 .legal-box-6 .gallery-item img {
+    height: 190px;
+}
+
+@media (min-width: 768px) {
+    .legal-section-1 .legal-box-1,
+    .legal-section-1 .legal-box-2,
+    .legal-section-1 .legal-box-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1.25rem;
+    }
+
+    .legal-section-1 .legal-box-1 p,
+    .legal-section-1 .legal-box-2 p,
+    .legal-section-1 .legal-box-3 p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .legal-section-2 .legal-box-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1.25rem;
+    }
+
+    .legal-section-2 .legal-box-4 a {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .legal-section-2 .legal-box-4 img {
+        margin: 0 auto;
+    }
+
+    .legal-section-2 .legal-box-5 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1.25rem;
+    }
 }
 
 /* ================ MAIN CONTENT ================ */
@@ -908,6 +1032,53 @@ main p {
 
 /* ================ RESPONSIVE ================ */
 @media (max-width: 768px) {
+    .legal-section {
+        margin: 1.25rem auto;
+        padding: 1rem;
+    }
+
+    .legal-section h2,
+    .legal-box h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.85rem;
+    }
+
+    .legal-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .legal-box {
+        min-height: auto;
+        padding: 0.85rem;
+    }
+
+    .legal-box p {
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .legal-section-2 .legal-box-4 img,
+    .legal-section-3 .legal-box-7 img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    .legal-section-2 .legal-box-6 .scrollable-gallery {
+        padding: 0.75rem;
+        gap: 0.75rem;
+        border-width: 3px;
+    }
+
+    .legal-section-2 .legal-box-6 .gallery-item {
+        flex: 0 0 200px;
+    }
+
+    .legal-section-2 .legal-box-6 .gallery-item img {
+        height: 160px;
+    }
+
     .site-header {
         position: static;
     }
@@ -1098,6 +1269,38 @@ main p {
 }
 
 @media (max-width: 480px) {
+    .legal-section {
+        padding: 0.85rem;
+        margin: 1rem auto;
+    }
+
+    .legal-section h2,
+    .legal-box h2 {
+        font-size: 1.3rem;
+    }
+
+    .legal-box h3 {
+        font-size: 1.05rem;
+    }
+
+    .legal-box p {
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    .legal-section-2 .legal-box-6 .scrollable-gallery {
+        padding: 0.6rem;
+        gap: 0.6rem;
+    }
+
+    .legal-section-2 .legal-box-6 .gallery-item {
+        flex: 0 0 170px;
+    }
+
+    .legal-section-2 .legal-box-6 .gallery-item img {
+        height: 135px;
+    }
+
     .header-container {
         gap: 1rem;
     }
