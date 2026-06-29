@@ -344,6 +344,162 @@ main p {
     line-height: 1.6;
 }
 
+.contact-page {
+    background:
+        linear-gradient(180deg, rgba(0, 151, 54, 0.08) 0%, rgba(255, 255, 255, 0.96) 22%, rgba(207, 17, 39, 0.08) 100%);
+}
+
+.contact-main {
+    width: 100%;
+    padding: 3rem 1.5rem 4rem;
+}
+
+.contact-wrapper {
+    width: min(100%, 860px);
+    margin: 0 auto;
+    padding: 2rem;
+    border: 4px solid var(--dark);
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(0, 151, 54, 0.08), rgba(255, 255, 255, 0.96) 35%, rgba(207, 17, 39, 0.12));
+    box-shadow: 0 12px 30px rgba(17, 17, 17, 0.18),
+                0 8px 18px rgba(207, 17, 39, 0.22);
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.contact-form h2 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.contact-page .contact-form p {
+    margin: 0 auto 1.75rem;
+    max-width: 640px;
+}
+
+.contact-form-fields {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-form-fields label {
+    display: grid;
+    gap: 0.45rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.contact-page .lang-ar {
+    text-align: right;
+}
+
+.contact-form-fields .lang-ar {
+    justify-self: end;
+}
+
+.contact-form-fields input,
+.contact-form-fields textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 3px solid var(--dark);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--dark);
+    font: inherit;
+    box-shadow: 0 4px 0 rgba(17, 17, 17, 0.18);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.contact-form-fields textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.status-message {
+    min-height: 1.75rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.status-message.success {
+    color: var(--primary-green);
+}
+
+.status-message.error {
+    color: var(--accent-red);
+}
+
+.contact-form-fields input:focus,
+.contact-form-fields textarea:focus {
+    outline: none;
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 4px rgba(207, 17, 39, 0.18);
+    transform: translateY(-1px);
+}
+
+.contact-form-fields button {
+    justify-self: center;
+    min-width: 180px;
+    padding: 0.9rem 1.8rem;
+    border: 3px solid var(--dark);
+    border-radius: 8px;
+    background: var(--primary-green);
+    color: var(--dark);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 0 var(--dark);
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form-fields button:hover,
+.contact-form-fields button:focus-visible {
+    background: var(--accent-red);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 var(--primary-green);
+}
+
+@media (max-width: 768px) {
+    .contact-main {
+        padding: 2rem 1rem 3rem;
+    }
+
+    .contact-wrapper {
+        padding: 1.5rem;
+    }
+
+    .contact-page .contact-form p {
+        font-size: 1.1rem;
+    }
+
+    .contact-form-fields button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .contact-wrapper {
+        padding: 1.2rem 1rem;
+        border-radius: 14px;
+    }
+
+    .contact-form h2 {
+        font-size: 1.75rem;
+    }
+
+    .contact-form-fields input,
+    .contact-form-fields textarea,
+    .contact-form-fields button {
+        padding: 0.85rem 0.9rem;
+    }
+}
+
 .mpga-section-2 {
     text-align: left;
 }
@@ -1768,3 +1924,84 @@ main h2 {
         max-width: 320px;
     }
 
+    .link-page .gallery-intro h2 {
+        font-size: 1.3rem;
+    }
+
+    .link-page .image-container {
+        flex: 0 0 82vw;
+        min-height: 390px;
+    }
+
+    .link-page .image-container > img {
+        height: 190px;
+    }
+
+    .link-page .disclaimer {
+        font-size: 0.94rem;
+    }
+}
+
+/* ================ GLOBAL MOBILE HARDENING ================ */
+@media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .section,
+    .legal-section,
+    .video-gallery-section,
+    .image-gallery-section,
+    .links-gallery-section,
+    .scrollable-gallery {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .video-gallery,
+    .links-gallery,
+    .scrollable-gallery,
+    .faith-link-grid,
+    .state-image-gallery {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .hero-grid,
+    .content-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gallery-item,
+    .gallery-card,
+    .faith-link-item {
+        flex: 0 0 clamp(220px, 75vw, 320px);
+    }
+
+    .gallery-item img,
+    .gallery-card img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        background: #fff;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-btn,
+    .footer-btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .gallery-item,
+    .gallery-card {
+        flex: 0 0 82vw;
+    }
+
+    .caption {
+        min-height: auto;
+    }
+}
