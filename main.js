@@ -132,4 +132,108 @@ document.querySelectorAll('.lang-ar').forEach(el => el.classList.add('hidden'));
     });
 });
 
+// Contact form submission
+const form = document.getElementById('contactForm');
+const statusMessage = document.getElementById('statusMessage');
+const submitBtn = document.getElementById('submitBtn');
+const submitBtnEn = document.getElementById('submitBtnEn');
+const submitBtnAr = document.getElementById('submitBtnAr');
+
+function getContactCopy() {
+    return {
+        sending: {
+            en: 'Sending...',
+            ar: 'جارٍ الإرسال...'
+        },
+        idle: {
+            en: 'Send Message',
+            ar: 'إرسال الرسالة'
+        },
+        success: {
+            en: 'Thank you! Your message has been sent.',
+            ar: 'شكراً لكم. تم إرسال رسالتكم بنجاح.'
+        },
+        error: {
+            en: 'Sorry, something went wrong. Please try again.',
+            ar: 'عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى.'
+        },
+        network: {
+            en: 'Network error. Please check your connection.',
+            ar: 'خطأ في الشبكة. يرجى التحقق من الاتصال.'
+        }
+    };
+}
+
+function setContactStatus(message, state) {
+    if (!statusMessage) {
+        return;
+    }
+
+    statusMessage.textContent = message;
+    statusMessage.className = state ? `status-message ${state}` : 'status-message';
+}
+
+function getCurrentLanguage() {
+    return document.documentElement.lang === 'ar' ? 'ar' : 'en';
+}
+
+function getLocalizedText(copyBlock) {
+    return copyBlock[getCurrentLanguage()];
+}
+
+function setSubmitButtonLabel(copyBlock) {
+    if (!submitBtnEn || !submitBtnAr) {
+        return;
+    }
+
+    submitBtnEn.textContent = copyBlock.en;
+    submitBtnAr.textContent = copyBlock.ar;
+}
+
+if (form && statusMessage && submitBtn && submitBtnEn && submitBtnAr) {
+    setContactStatus('', '');
+    setSubmitButtonLabel(getContactCopy().idle);
+
+    form.addEventListener('submit', async event => {
+        event.preventDefault();
+
+        const copy = getContactCopy();
+        submitBtn.disabled = true;
+        setSubmitButtonLabel(copy.sending);
+        setContactStatus('', '');
+
+        const data = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    Accept: 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                form.reset();
+                setContactStatus(getLocalizedText(copy.success), 'success');
+            } else {
+                setContactStatus(getLocalizedText(copy.error), 'error');
+            }
+        } catch (error) {
+            setContactStatus(getLocalizedText(copy.network), 'error');
+        }
+
+        submitBtn.disabled = false;
+        setSubmitButtonLabel(copy.idle);
+    });
+
+    document.getElementById('lang-toggle')?.addEventListener('click', () => {
+        if (!submitBtn.disabled) {
+            const copy = getContactCopy();
+            setSubmitButtonLabel(copy.idle);
+        }
+    });
+}
+
+
 
