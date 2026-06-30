@@ -1,73 +1,89 @@
- <!DOCTYPE html>
+<!--
+MPAG: Jewish Faith page
+Leslie Brockman
+Date last modified: 2026-06-29
+-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>State of Palestine</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
-</head>
-<body class="faith-page">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="American Nobody999">
 
-     <header class="site-header">
-        <div class="header-container">
+<!--For SQL and better accesibility-->
+    <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
+    <title>Make Palestine Great Again - MPGA</title>
+    
+<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    
+<!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    
+    <header class="site-header">
+    <div class="header-container">
             
 <!-- Logo - Left Side-waiting for logo contest from Palestinians -->
-            <div class="header-logo">
+       <div class="header-logo">
                 <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
-            </div>
+        </div>
 
 <!-- Center Content, don't touch this for now -->
 <!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
-            <div class="header-center">
-                <h1 class="site-title">
-                    <span class="lang-en">State of Palestine</span>
-                    <span class="lang-ar">دولة فلسطين</span>
-                </h1>
+        <div class="header-center">
+            <h1 class="site-title">
+                <span class="lang-en">State of Palestine</span>
+                <span class="lang-ar">دولة فلسطين</span>
+            </h1>
                 
 <!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
-                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
                     English | العربية
-                </button>
+              </button>
 
 <!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
- <!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
-                <nav class="main-nav" aria-label="Main navigation">
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="nav-btn active">
-                            <span class="lang-en">Home</span>
-                            <span class="lang-ar">الرئيسية</span>
-                        </a></li>
-                        <li><a href="mpga.html" class="nav-btn">
-                            <span class="lang-en">MPGA</span>
-                            <span class="lang-ar">MPGA</span>
-                        </a></li>
+<!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
+              <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn active">
+                      <span class="lang-en">Home</span>
+                      <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                        <span class="lang-en">MPGA</span>
+                        <span class="lang-ar">MPGA</span>
+                  </a></li>
 <!--progress.html needs to be replaced with united.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">United</span>
-                            <span class="lang-ar">متحدون</span>
-                        </a></li>
+                  <li><a href="progress.html" class="nav-btn">
+                      <span class="lang-en">United</span>
+                      <span class="lang-ar">متحدون</span>
+                </a></li>
 <!--progress.html needs to be replaced with leslie.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">Leslie</span>
-                            <span class="lang-ar">ليزلي</span>
-                        </a></li>
+                  <li><a href="progress.html" class="nav-btn">
+                    <span class="lang-en">Leslie</span>
+                    <span class="lang-ar">ليزلي</span>
+                  </a></li>
 <!--progress.html needs to be replaced with about.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">About Us</span>
-                            <span class="lang-ar">من نحن</span>
-                        </a></li>
-                    </ul>
-                </nav>
+                    <li><a href="about.html" class="nav-btn">
+                      <span class="lang-en">About Us</span>
+                      <span class="lang-ar">من نحن</span>
+                    </a></li>
+                  </ul>
+              </nav>
             </div>
 
-            <!-- Hamburger for Mobile -->
+<!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
             <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 ☰
             </button>
 
         </div>
     </header>
+
+  <main>
  <h2>
     <span class="h2-en">The Faith of Palestine</span>
     <span class="h2-ar hidden">إيمان فلسطين</span>
@@ -107,28 +123,37 @@
       <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/721.jpg" alt="Gallery 3 Image 1" loading="lazy">
     </div>
   </div>
-
-  <footer class="site-footer">
+  </main>
+    footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-row">
-                <a href="progress.html" class="footer-btn footer-btn-left">Legal</a>
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
 
-                <div class="footer-content">
-                    <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
-                    <p class="footer-text">
-                        <span class="lang-en">From the Ashes, A State rises</span>
-                        <span class="lang-ar">من الرماد، تنهض دولة</span>
-                    </p>
-                    <p class="copyright">
-                        <span class="lang-en">&copy; 2026 American Nobody999</span>
-                        <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
-                    </p>
-                </div>
-
-                <a href="progress.html" class="footer-btn footer-btn-right">Contact Us</a>
+          <div class="footer-content">
+            <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, A State rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 American Nobody999</span>
+              <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
+            </p>
+          </div>
+<!--progress.html needs to be replaced with contact us.html-->
+<!--When this page goes live, this communcation avenue needs to be left alone, gentle request. This message is not for everyone.-->
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
             </div>
         </div>
-    </footer>
-  <script src="main.js"></script>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
+
