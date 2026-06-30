@@ -1,53 +1,107 @@
+<!--
+MPAG:Home page
+Leslie Brockman
+Date last modified: 2026-06-29
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>State of Palestine</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="American Nobody999">
 
-    <header>
-      <h1>
-        <span id="h1-en">State of Palestine</span>
-        <span id="h1-ar" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">دولة فلسطين</span>
-      </h1>
-      <div class="header-btns">
-        <button id="lang-toggle" class="lang-toggle">English | العربية</button>
-        <a href="index.html">
-          <button class="header-home-btn">
-            <span class="home-en">Home</span>
-            <span class="home-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">الرئيسية</span>
-          </button>
-        </a>
-      </div>
+<!--For SQL and better accesibility-->
+    <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
+    <title>Make Palestine Great Again - MPGA</title>
+    
+<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    
+<!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="edu-page">
+
+    <header class="site-header">
+     <div class="header-container">
+            
+<!-- Logo - Left Side-waiting for logo contest from Palestinians -->
+       <div class="header-logo">
+                <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
+        </div>
+
+<!-- Center Content, don't touch this for now -->
+<!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
+        <div class="header-center">
+            <h1 class="site-title">
+                <span class="lang-en">State of Palestine</span>
+                <span class="lang-ar">دولة فلسطين</span>
+            </h1>
+                
+<!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    English | العربية
+              </button>
+
+<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
+<!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
+              <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn active">
+                      <span class="lang-en">Home</span>
+                      <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                        <span class="lang-en">MPGA</span>
+                        <span class="lang-ar">MPGA</span>
+                  </a></li>
+<!--progress.html needs to be replaced with united.html-->
+                  <li><a href="progress.html" class="nav-btn">
+                      <span class="lang-en">United</span>
+                      <span class="lang-ar">متحدون</span>
+                </a></li>
+<!--progress.html needs to be replaced with leslie.html-->
+                  <li><a href="progress.html" class="nav-btn">
+                    <span class="lang-en">Leslie</span>
+                    <span class="lang-ar">ليزلي</span>
+                  </a></li>
+<!--progress.html needs to be replaced with about.html-->
+                    <li><a href="about.html" class="nav-btn">
+                      <span class="lang-en">About Us</span>
+                      <span class="lang-ar">من نحن</span>
+                    </a></li>
+                  </ul>
+              </nav>
+            </div>
+
+<!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
     </header>
-  <div id="image-section">
+
+  <main class="edu-main">
+    <div class="edu-content">
+      <h2>
+        <span class="edu-title-en">Education and Advocacy</span>
+        <span class="edu-title-ar hidden">التعليم والدعوة</span>
+        </h2>
+        <p>
+        <span class="edu-text-en">Welcome to MPGA's online educational platform. Here, you will find a variety of resources designed to support learning and advocacy efforts. We must continue to strive to provide Palestinian Youth opportunities for growth in any way we can.</span>
+        <span class="edu-text-ar hidden">مرحبًا بكم في منصتنا التعليمية والدعوية ثنائية اللغة. هنا، ستجدون مجموعة متنوعة من الموارد المصممة لدعم جهود التعلم والدعوة. يجب أن نستمر في السعي لتوفير فرص للنمو للشباب الفلسطينيين بأي طريقة ممكنة.</span>
+        </p>
+    <div id="image-section">
     <img src="images/002.jpg" alt="flag flying infront of tree" loading="lazy">
   </div>
   
-  <div class="video-embed-section">
-    <p>
-      <span class="video-title-en">Push Play: For Little Palestine</span>
-      <span class="video-title-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">شغّل الفيديو: من أجل فلسطين الصغيرة</span>
-    </p>
-    <div class="video-wrapper">
-      <iframe id="edu-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/an0j7_zu9vI?rel=0&modestbranding=1&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <div id="video-overlay" class="video-overlay hidden">
-        <button id="replay-btn" class="replay-btn">
-          <span class="replay-en">▶ Watch Again</span>
-          <span class="replay-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">▶ شاهد مرة أخرى</span>
-        </button>
-      </div>
-    </div>
-  </div>
 
   <div class="image-gallery-section">
     <h2>
       <span class="gallery-title-en">Education Gallery</span>
-      <span class="gallery-title-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">معرض التعليم</span>
+      <span class="gallery-title-ar hidden">معرض التعليم</span>
     </h2>
     <div class="image-gallery">
       <div class="image-container">
@@ -80,7 +134,7 @@
   <div class="video-gallery-section">
     <h2>
       <span class="gallery-title-en">Animals are too Funny</span>
-      <span class="gallery-title-ar hidden" style="direction:rtl; font-family:'Amiri', serif;">الحيوانات مضحكة جدًا</span>
+      <span class="gallery-title-ar hidden">الحيوانات مضحكة جدًا</span>
     </h2>
     <div class="video-gallery">
       <div class="video-container">
@@ -196,19 +250,103 @@
     </div>
   </div>
 
-  <footer>
-    <div id="footer-content">
-      <img src="images/40.jpg" alt="Footer symbolic image" class="footer-img" loading="lazy">
-      <span id="footer-text-en-main">From the Ashes, A State rises</span>
-      <span id="footer-text-ar-main" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">من الرماد، تنهض دولة</span>
-      <span id="footer-text-en-copy">© 2026 American Nobody999</span>
-      <span id="footer-text-ar-copy" class="hidden" style="direction:rtl; font-family:'Amiri', serif;">© 2026 أمريكي Nobody999</span>
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 4C24 4 14 16 14 24C14 32 24 44 24 44C24 44 34 32 34 24C34 16 24 4 24 4Z" fill="#CF1127"/>
-        <path d="M24 14C24 14 18 22 18 27C18 32 24 40 24 40C24 40 30 32 30 27C30 22 24 14 24 14Z" fill="#FFB300"/>
-      </svg>
+  <div class="edu-content-section">
+    <h3>
+      <span class="lang-en">Palestinian History and Culture</span>
+      <span class="lang-ar hidden">التاريخ والثقافة الفلسطينية</span>
+    </h3>
+    <p>
+      <span class="lang-en">Palestine has a rich and ancient history spanning thousands of years. From the Canaanite civilization to the modern Palestinian state, this land has been a cradle of culture, spirituality, and human achievement. Our educational resources explore the layers of history, highlighting the contributions of Palestinian people to art, science, literature, and philosophy.</span>
+      <span class="lang-ar hidden">فلسطين لديها تاريخ عريق وعريق يمتد لآلاف السنين. من حضارة كنعان إلى الدولة الفلسطينية الحديثة، كانت هذه الأرض مهد الثقافة والروحانية والإنجاز الإنساني. تستكشف مواردنا التعليمية طبقات التاريخ، مع تسليط الضوء على مساهمات الشعب الفلسطيني في الفن والعلم والأدب والفلسفة.</span>
+    </p>
+    <div class="image-gallery">
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Culture" loading="lazy">
+      </div>
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Heritage" loading="lazy">
+      </div>
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Tradition" loading="lazy">
+      </div>
     </div>
+  </div>
+
+  <div class="edu-content-section">
+    <h3>
+      <span class="lang-en">Educational Online Learning</span>
+      <span class="lang-ar hidden">التعلم عبر الإنترنت</span>
+    </h3>
+    <p>
+      <span class="lang-en">This section will feature age appropriate supplemental resources for online learning. This is meant to be a tool, and fun learning process to allow young learners to explore and engage with educational content in an interactive way.</span>
+      <span class="lang-ar hidden">ستحتوي هذه القسم على موارد تعليمية إضافية مناسبة للعمر للتعلم عبر الإنترنت. الهدف هو توفير أداة وعملية تعلم ممتعة تسمح للمتعلمين الصغار باستكشاف المحتوى التعليمي والتفاعل معه بطريقة تفاعلية.</span>
+    </p>
+    <div class="image-gallery">
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Voices" loading="lazy">
+      </div>
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Stories" loading="lazy">
+      </div>
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Community" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-content-section">
+    <h3>
+      <span class="lang-en">Building a Better Future</span>
+      <span class="lang-ar hidden">بناء مستقبل أفضل</span>
+    </h3>
+    <p>
+      <span class="lang-en">Education is the foundation for building a sustainable and equitable future. Our platform is dedicated to supporting Palestinian educational initiatives, youth development, and community empowerment. By sharing knowledge, fostering dialogue, and celebrating achievements, we contribute to a vision of peace and prosperity for all Palestinians.</span>
+      <span class="lang-ar hidden">التعليم هو الأساس لبناء مستقبل مستدام وعادل. تكرس منصتنا نفسها لدعم المبادرات التعليمية الفلسطينية وتطوير الشباب وتمكين المجتمع. من خلال تبادل المعرفة وتعزيز الحوار والاحتفال بالإنجازات، نساهم في رؤية السلام والازدهار لجميع الفلسطينيين.</span>
+    </p>
+    <div class="image-gallery">
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Future" loading="lazy">
+      </div>
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Education" loading="lazy">
+      </div>
+      <div class="image-container">
+        <img src="images/001.jpg" alt="Palestinian Youth" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+ </main>
+
+  <footer class="site-footer">
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, A State rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 American Nobody999</span>
+              <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
+            </p>
+          </div>
+<!--progress.html needs to be replaced with contact us.html-->
+<!--When this page goes live, this communcation avenue needs to be left alone, gentle request. This message is not for everyone.-->
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
   </footer>
+
   <script src="main.js"></script>
 </body>
 </html>
