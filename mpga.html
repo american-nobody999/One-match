@@ -1,3 +1,8 @@
+<!--
+MPAG: MPGA page
+Leslie Brockman
+Date last modified: 2026-06-29
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,62 +18,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
     
 <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
+    
     <header class="site-header">
-        <div class="header-container">
+    <div class="header-container">
             
 <!-- Logo - Left Side-waiting for logo contest from Palestinians -->
-            <div class="header-logo">
+       <div class="header-logo">
                 <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
-            </div>
+        </div>
 
 <!-- Center Content, don't touch this for now -->
 <!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
-            <div class="header-center">
-                <h1 class="site-title">
-                    <span class="lang-en">State of Palestine</span>
-                    <span class="lang-ar">دولة فلسطين</span>
-                </h1>
+        <div class="header-center">
+            <h1 class="site-title">
+                <span class="lang-en">State of Palestine</span>
+                <span class="lang-ar">دولة فلسطين</span>
+            </h1>
                 
 <!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
-                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
                     English | العربية
-                </button>
+              </button>
 
 <!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
- <!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
-                <nav class="main-nav" aria-label="Main navigation">
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="nav-btn">
-                            <span class="lang-en">Home</span>
-                            <span class="lang-ar">الرئيسية</span>
-                        </a></li>
-                        <li><a href="mpga.html" class="nav-btn active">
-                            <span class="lang-en">MPGA</span>
-                            <span class="lang-ar">MPGA</span>
-                        </a></li>
+<!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
+              <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn active">
+                      <span class="lang-en">Home</span>
+                      <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                        <span class="lang-en">MPGA</span>
+                        <span class="lang-ar">MPGA</span>
+                  </a></li>
 <!--progress.html needs to be replaced with united.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">United</span>
-                            <span class="lang-ar">متحدون</span>
-                        </a></li>
+                  <li><a href="progress.html" class="nav-btn">
+                      <span class="lang-en">United</span>
+                      <span class="lang-ar">متحدون</span>
+                </a></li>
 <!--progress.html needs to be replaced with leslie.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">Leslie</span>
-                            <span class="lang-ar">ليزلي</span>
-                        </a></li>
+                  <li><a href="progress.html" class="nav-btn">
+                    <span class="lang-en">Leslie</span>
+                    <span class="lang-ar">ليزلي</span>
+                  </a></li>
 <!--progress.html needs to be replaced with about.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">About Us</span>
-                            <span class="lang-ar">من نحن</span>
-                        </a></li>
-                    </ul>
-                </nav>
+                    <li><a href="about.html" class="nav-btn">
+                      <span class="lang-en">About Us</span>
+                      <span class="lang-ar">من نحن</span>
+                    </a></li>
+                  </ul>
+              </nav>
             </div>
 
-            <!-- Hamburger for Mobile -->
+<!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
             <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 ☰
             </button>
@@ -195,11 +202,13 @@
     </div>
 </main>
 
- <footer class="site-footer">
+<footer class="site-footer">
         <div class="footer-container">
         <div class="footer-row">
-<!--progress.html needs to be replaced with legal.html-->
-          <a href="progress.html" class="footer-btn footer-btn-left">Legal</a>
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
 
           <div class="footer-content">
             <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
@@ -214,11 +223,15 @@
           </div>
 <!--progress.html needs to be replaced with contact us.html-->
 <!--When this page goes live, this communcation avenue needs to be left alone, gentle request. This message is not for everyone.-->
-          <a href="progress.html" class="footer-btn footer-btn-right">Contact Us</a>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
             </div>
         </div>
-    </footer>
+  </footer>
 
-    <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
+
