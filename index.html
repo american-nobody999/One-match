@@ -1,3 +1,8 @@
+<!--
+MPAG:Home page
+Leslie Brockman
+Date last modified: 2026-06-29
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,59 +22,59 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-container">
+  <header class="site-header">
+    <div class="header-container">
             
 <!-- Logo - Left Side-waiting for logo contest from Palestinians -->
-            <div class="header-logo">
+       <div class="header-logo">
                 <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
-            </div>
+        </div>
 
 <!-- Center Content, don't touch this for now -->
 <!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
-            <div class="header-center">
-                <h1 class="site-title">
-                    <span class="lang-en">State of Palestine</span>
-                    <span class="lang-ar">دولة فلسطين</span>
-                </h1>
+        <div class="header-center">
+            <h1 class="site-title">
+                <span class="lang-en">State of Palestine</span>
+                <span class="lang-ar">دولة فلسطين</span>
+            </h1>
                 
 <!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
-                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
                     English | العربية
-                </button>
+              </button>
 
 <!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
- <!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
-                <nav class="main-nav" aria-label="Main navigation">
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="nav-btn active">
-                            <span class="lang-en">Home</span>
-                            <span class="lang-ar">الرئيسية</span>
-                        </a></li>
-                        <li><a href="mpga.html" class="nav-btn">
-                            <span class="lang-en">MPGA</span>
-                            <span class="lang-ar">MPGA</span>
-                        </a></li>
+<!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
+              <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn active">
+                      <span class="lang-en">Home</span>
+                      <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                        <span class="lang-en">MPGA</span>
+                        <span class="lang-ar">MPGA</span>
+                  </a></li>
 <!--progress.html needs to be replaced with united.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">United</span>
-                            <span class="lang-ar">متحدون</span>
-                        </a></li>
+                  <li><a href="progress.html" class="nav-btn">
+                      <span class="lang-en">United</span>
+                      <span class="lang-ar">متحدون</span>
+                </a></li>
 <!--progress.html needs to be replaced with leslie.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">Leslie</span>
-                            <span class="lang-ar">ليزلي</span>
-                        </a></li>
+                  <li><a href="progress.html" class="nav-btn">
+                    <span class="lang-en">Leslie</span>
+                    <span class="lang-ar">ليزلي</span>
+                  </a></li>
 <!--progress.html needs to be replaced with about.html-->
-                        <li><a href="progress.html" class="nav-btn">
-                            <span class="lang-en">About Us</span>
-                            <span class="lang-ar">من نحن</span>
-                        </a></li>
-                    </ul>
-                </nav>
+                    <li><a href="about.html" class="nav-btn">
+                      <span class="lang-en">About Us</span>
+                      <span class="lang-ar">من نحن</span>
+                    </a></li>
+                  </ul>
+              </nav>
             </div>
 
-            <!-- Hamburger for Mobile -->
+<!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
             <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 ☰
             </button>
@@ -77,27 +82,17 @@
         </div>
     </header>
 
-    <main>
+  <main>
         
-    <!-- Section 1: Daily Hey Palestine -->
-<section class="section day-journal" id="daily-journal">
+<!-- Section 1: Daily Hey Palestine -->
+      <section class="section day-journal" id="daily-journal">
   <div class="section-header">
     <h2 class="section-title">
       <span class="lang-en">Hey, Palestine</span>
       <span class="lang-ar">يا فلسطين</span>
     </h2>
 
-    
-
-    <!-- Media Content -->
-    <div class="media-content">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" 
-           alt="Palestine Flag" 
-           class="div-img" 
-           loading="lazy">
-    </div>
-  </div>
-<div class="quote-of-day">
+    <div class="quote-of-day">
       <h3 class="quote-title">
         <span class="lang-en">Quote of the Day</span>
         <span class="lang-ar hidden">اقتباس اليوم</span>
@@ -117,6 +112,7 @@
     </h3>
   </div>
 
+  <div class="content-grid">
     <!-- Text Content -->
     <div class="text-content">
       <div class="lang-en">
@@ -142,12 +138,22 @@
         <p>ليزلي، أمريكان نوبودي999</p>
       </div>
     </div>
+
+    <!-- Media Content -->
+    <div class="media-content">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" 
+           alt="Palestine Flag" 
+           class="div-img" 
+           loading="lazy">
+    </div>
+  </div>
+
   <!-- Video Embed -->
   <div class="video-embed-section">
     <div class="video-wrapper">
       <iframe id="song-video"
-        src="https://www.youtube-nocookie.com/embed/gADKbbuICeE"
-        title="Song dedication toPalestine"
+        src="https://www.youtube-nocookie.com/embed/YbS5pMzSg"
+        title="Song dedication to Palestine"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
@@ -155,11 +161,10 @@
       </iframe>
     </div>
   </div>
-</section>
+      </section>
 
-        <!-- Section 2: OK Humanity -->
-       <!-- Section 2: OK Humanity -->
-        <section class="section ok-humanity" id="ok-humanity">
+<!-- Section 2: OK Humanity -->
+      <section class="section ok-humanity" id="ok-humanity">
             <h3 class="section-title">
                 <span class="lang-en">OK, Humanity</span>
                 <span class="lang-ar">حسنًا، أيها البشرية</span>
@@ -198,9 +203,10 @@
                     <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10001.jpg" alt="X account with MPGA demands" class="div-img" loading="lazy">
                 </div>
             </div>
-        </section>
-        <!-- Section 3: Featured Hero -->
-        <section class="section feature-hero" id="featured-hero">
+      </section>
+
+<!-- Section 3: Featured Hero -->
+      <section class="section feature-hero" id="featured-hero">
             <h3 class="section-title">Featured Hero</h3>
             
             <div class="hero-grid">
@@ -211,7 +217,7 @@
                     </a>
                 </div>
                 
-               <div class="hero-bio">
+                <div class="hero-bio">
                     <div class="lang-en">
                         <h3>Andrey X: Andrey Ilyich Khrzhanovskiy</h3>
                         <p>Since 2023, Andrey X has gained prominence as an independent journalist and human rights advocate documenting Israeli settler attacks, military actions, and alleged ethnic cleansing in the occupied West Bank and during the Gaza war. He reports on-the-ground via platforms like Instagram (@the.andrey.x, with hundreds of thousands of followers), X (@the_andrey_x), Facebook, and his website, often highlighting Palestinian experiences and criticizing occupation policies.</p>
@@ -221,6 +227,7 @@
                         <p>منذ عام 2023، اكتسب أندريه إكس شهرة كصحفي مستقل ومناصر لحقوق الإنسان يوثق الهجمات الاستيطانية الإسرائيلية والإجراءات العسكرية والتطهير العرقي المزعوم في الضفة الغربية المحتلة وخلال حرب غزة. يقدم تقارير على الأرض عبر منصات مثل Instagram (@the.andrey.x، يتابعه مئات الآلاف من الأشخاص)، X (@the_andrey_x)، Facebook، وموقعه الإلكتروني، غالباً ما يركز على تجارب الفلسطينيين وينتقد سياسات الاحتلال.</p>
                     </div>
                 </div>
+                
                 <!-- Video Gallery -->
                 <div class="video-gallery-section hero-gallery">
                   <h4 class="gallery-title">Recent Work</h4>
@@ -228,7 +235,6 @@
                     <div class="video-container">
                       <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_28.mp4" controls preload="none" loading="lazy"></video>
                       <div class="video-overlay hidden">
-                        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
                         <button class="replay-btn">⟲</button>
                       </div>
                       <button class="initial-play-btn">▶</button>
@@ -236,7 +242,6 @@
                     <div class="video-container">
                       <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_43.mp4" controls preload="none" loading="lazy"></video>
                       <div class="video-overlay hidden">
-                        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
                         <button class="replay-btn">⟲</button>
                       </div>
                       <button class="initial-play-btn">▶</button>
@@ -244,7 +249,6 @@
                     <div class="video-container">
                       <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_33.mp4" controls preload="none" loading="lazy"></video>
                       <div class="video-overlay hidden">
-                        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
                         <button class="replay-btn">⟲</button>
                       </div>
                       <button class="initial-play-btn">▶</button>
@@ -252,7 +256,6 @@
                     <div class="video-container">
                       <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_5.mp4" controls preload="none" loading="lazy"></video>
                       <div class="video-overlay hidden">
-                        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
                         <button class="replay-btn">⟲</button>
                       </div>
                       <button class="initial-play-btn">▶</button>
@@ -260,9 +263,9 @@
                   </div>
                 </div>
             </div>
-        </section>
+      </section>
 
-       <!-- Section 4: Links Gallery -->
+<!-- Section 4: Links Gallery -->
 <section class="section links-gallery-section" id="links">
   <h3 class="section-title">Explore</h3>
   
@@ -403,15 +406,16 @@
           </div>
         </div>
         </section>
+  
+  </main>
 
-
-    </main>
-
-    <footer class="site-footer">
+  <footer class="site-footer">
         <div class="footer-container">
         <div class="footer-row">
-<!--progress.html needs to be replaced with legal.html-->
-          <a href="legal.html" class="footer-btn footer-btn-left">Legal</a>
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
 
           <div class="footer-content">
             <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
@@ -426,16 +430,17 @@
           </div>
 <!--progress.html needs to be replaced with contact us.html-->
 <!--When this page goes live, this communcation avenue needs to be left alone, gentle request. This message is not for everyone.-->
-          <a href="contact.html" class="footer-btn footer-btn-right">Contact Us</a>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
             </div>
         </div>
-    </footer>
+  </footer>
 
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
-
-
 
        
        
