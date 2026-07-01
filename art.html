@@ -1,7 +1,7 @@
 <!--
 MPAG: Art page
 Leslie Brockman
-Date last modified: 2026-06-29
+Date last modified: 2026-06-30
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +21,7 @@ Date last modified: 2026-06-29
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-  
-<body class ="art-page">
+  <body class ="art-page">
 
    <header class="site-header">
     <div class="header-container">
@@ -58,12 +57,12 @@ Date last modified: 2026-06-29
                         <span class="lang-ar">MPGA</span>
                   </a></li>
 <!--progress.html needs to be replaced with united.html-->
-                  <li><a href="progress.html" class="nav-btn">
+                  <li><a href="united.html" class="nav-btn">
                       <span class="lang-en">United</span>
                       <span class="lang-ar">متحدون</span>
                 </a></li>
 <!--progress.html needs to be replaced with leslie.html-->
-                  <li><a href="progress.html" class="nav-btn">
+                  <li><a href="leslie.html" class="nav-btn">
                     <span class="lang-en">Leslie</span>
                     <span class="lang-ar">ليزلي</span>
                   </a></li>
@@ -82,14 +81,25 @@ Date last modified: 2026-06-29
             </button>
 
         </div>
-    </header>
+   </header>
 
-<main>
-    <div class="video-gallery-section">
+  <main class="art-main">
+    
+    <!-- Section 1: Artists Video Gallery -->
+    <section class="section video-gallery-section">
+
       <h2>
         <span class="gallery-title-en">Artists of Palestine</span>
         <span class="gallery-title-ar hidden">فنانو فلسطين</span>
       </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Featured Artists</span>
+        <span class="lang-ar hidden">فنانون مميزون</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">A rotating gallery of visual stories and artist voices from Palestine.</span>
+        <span class="lang-ar hidden">معرض متجدد لقصص بصرية وأصوات فنية من فلسطين.</span>
+      </p>
       <div class="video-gallery">
         <div class="video-container">
           <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_50.mp4" controls preload="none"></video>
@@ -133,13 +143,22 @@ Date last modified: 2026-06-29
         </div>
         
       </div>
-    </div>
+    </section>
 
-    <div class="video-gallery-section">
+   <!-- Section 2: Digital Art Video Gallery --> 
+    <section class="section video-gallery-section">
       <h2>
         <span class="gallery-title-en">Digital Art of Palestine</span>
         <span class="gallery-title-ar hidden">الفن الرقمي لفلسطين</span>
       </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Digital Visions</span>
+        <span class="lang-ar hidden">رؤى رقمية</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">Creative digital works documenting memory, resistance, and identity.</span>
+        <span class="lang-ar hidden">أعمال رقمية توثق الذاكرة والمقاومة والهوية.</span>
+      </p>
       <div class="video-gallery">
         <div class="video-container">
           <video controls preload="none">
@@ -175,13 +194,21 @@ Date last modified: 2026-06-29
           <button class="initial-play-btn">▶</button>
         </div>
       </div>
-    </div>
-
-    <div class="image-gallery-section">
-      <h2>
-        <span class="gallery-title-en">Folk Art of Palestine</span>
-        <span class="gallery-title-ar hidden">الفن الشعبي الفلسطيني</span>
+    </section>
+  <!-- Section 3: Folk Art Image Gallery -->
+    <section class="section image-gallery-section">
+      <h2 class="section-title">
+        <span class="lang-en">Folk Art of Palestine</span>
+        <span class="lang-ar hidden">الفن الشعبي الفلسطيني</span>
       </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Folk Tradition</span>
+        <span class="lang-ar hidden">التراث الشعبي</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">Traditional styles and symbols that carry community memory across generations.</span>
+        <span class="lang-ar hidden">أساليب ورموز تراثية تحمل ذاكرة المجتمع عبر الأجيال.</span>
+      </p>
       <div class="image-gallery">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/924.jpg" alt="Folk Art" loading="lazy">
@@ -220,13 +247,21 @@ Date last modified: 2026-06-29
           </p>
         </div>
       </div>
-    </div>
-
-    <div class="image-gallery-section">
-      <h2>
-        <span class="gallery-title-en">Mixed Media Art of Palestine</span>
-        <span class="gallery-title-ar hidden">الفن متعدد الوسائط لفلسطين</span>
+    </section>
+  <!-- Section 4: Mixed Media Image Gallery -->
+    <section class="section image-gallery-section">
+      <h2 class="section-title">
+        <span class="lang-en">Mixed Media Art of Palestine</span>
+        <span class="lang-ar hidden">الفن متعدد الوسائط لفلسطين</span>
       </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Mixed Media Showcase</span>
+        <span class="lang-ar hidden">عرض الوسائط المتعددة</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">Layered work combining painting, collage, and experimentation.</span>
+        <span class="lang-ar hidden">أعمال تجمع بين الرسم والكولاج والتجريب الفني.</span>
+      </p>
       <div class="image-gallery">
          <div class="image-container">
           <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/931.jpg" alt="Mixed Media Art" loading="lazy">
@@ -321,13 +356,22 @@ Date last modified: 2026-06-29
           </p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="image-gallery-section">
+    <!-- Section 5: Photography Image Gallery -->
+    <section class="section image-gallery-section">
       <h2>
         <span class="gallery-title-en">Photography of Palestine</span>
         <span class="gallery-title-ar hidden">التصوير الفوتوغرافي لفلسطين</span>
       </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Photo Archive</span>
+        <span class="lang-ar hidden">أرشيف الصور</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">A visual record of daily life, landscape, and witness in Palestine.</span>
+        <span class="lang-ar hidden">سجل بصري للحياة اليومية والمشهد والشهادة في فلسطين.</span>
+      </p>
       <div class="image-gallery">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/911.jpg" alt="Photography" loading="lazy">
@@ -386,13 +430,22 @@ Date last modified: 2026-06-29
           </h3>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="image-gallery-section poetry-gallery">
+    <!-- Section 6: Poetry Image Gallery -->
+    <section class="section image-gallery-section poetry-gallery">
       <h2>
         <span class="gallery-title-en">Poetry From Palestine</span>
         <span class="gallery-title-ar hidden">الشعر من فلسطين</span>
       </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Poetry Collection</span>
+        <span class="lang-ar hidden">مجموعة شعرية</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">Poems and spoken lines carrying longing, faith, and steadfastness.</span>
+        <span class="lang-ar hidden">قصائد ونصوص تحمل الشوق والإيمان والصمود.</span>
+      </p>
       <div class="image-gallery">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/906.jpg" alt="poetry" loading="lazy">
@@ -428,13 +481,22 @@ Date last modified: 2026-06-29
           </p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="video-gallery-section">
+    <!-- Section 7: Music Video Gallery -->
+    <section class="section video-gallery-section">
       <h2>
         <span class="gallery-title-en">Music From Palestine</span>
         <span class="gallery-title-ar hidden">الموسيقى من فلسطين</span>
       </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Music Sessions</span>
+        <span class="lang-ar hidden">جلسات موسيقية</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">Songs and performances rooted in culture, grief, and hope.</span>
+        <span class="lang-ar hidden">أغانٍ وعروض متجذرة في الثقافة والحزن والأمل.</span>
+      </p>
       <div class="video-gallery">
         <div class="video-container">
           <video controls preload="none">
@@ -470,8 +532,9 @@ Date last modified: 2026-06-29
           <button class="initial-play-btn">▶</button>
         </div>
       </div>
-    </div>
-</main>
+    </section>
+    
+  </main>
 
    <footer class="site-footer">
         <div class="footer-container">
