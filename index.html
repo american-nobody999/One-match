@@ -1,8 +1,8 @@
 <!--
 MPAG:Home page
 Leslie Brockman
-Date last modified: 2026-06-29
--->
+Date last modified: 2026-06-30
+progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@ Date last modified: 2026-06-29
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="American Nobody999">
 
-<!--For SQL and better accesibility-->
+<!--For SQL and better accessibility-->
     <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
     <title>Make Palestine Great Again - MPGA</title>
     
@@ -23,180 +23,167 @@ Date last modified: 2026-06-29
 
 <body class="home-page">
     
-    <header class="site-header">
+<header class="site-header">
     <div class="header-container">
-            
 <!-- Logo - Left Side-waiting for logo contest from Palestinians -->
-    <div class="header-logo">
-        <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
-    </div>
-
+       <div class="header-logo">
+                <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
+        </div>
 <!-- Center Content, don't touch this for now -->
 <!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
-    <div class="header-center">
-        <h1 class="site-title">
-            <span class="lang-en">State of Palestine</span>
-            <span class="lang-ar">دولة فلسطين</span>
-        </h1>
-                
 <!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
-        <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">English | العربية
-        </button>
-
-<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
-<!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
-        <nav class="main-nav" aria-label="Main navigation">
-            <ul class="nav-menu">
+        <div class="header-center">
+            <h1 class="site-title">
+                <span class="lang-en">State of Palestine</span>
+                <span class="lang-ar">دولة فلسطين</span>
+            </h1>
+            <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    English | العربية
+            </button>
+<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change based on Palestine design-->
+            <nav class="main-nav" aria-label="Main navigation">
+              <ul class="nav-menu">
                 <li><a href="index.html" class="nav-btn active">
-                    <span class="lang-en">Home</span>
-                    <span class="lang-ar">الرئيسية</span>
+                      <span class="lang-en">Home</span>
+                      <span class="lang-ar">الرئيسية</span>
                 </a></li>
                 <li><a href="mpga.html" class="nav-btn">
                         <span class="lang-en">MPGA</span>
                         <span class="lang-ar">MPGA</span>
-                  </a></li>
-<!--progress.html needs to be replaced with united.html-->
-                  <li><a href="progress.html" class="nav-btn">
+                </a></li>
+                <li><a href="united.html" class="nav-btn">
                       <span class="lang-en">United</span>
                       <span class="lang-ar">متحدون</span>
                 </a></li>
-<!--progress.html needs to be replaced with leslie.html-->
-                  <li><a href="progress.html" class="nav-btn">
+                <li><a href="leslie.html" class="nav-btn">
                     <span class="lang-en">Leslie</span>
                     <span class="lang-ar">ليزلي</span>
-                  </a></li>
-<!--progress.html needs to be replaced with about.html-->
-                    <li><a href="about.html" class="nav-btn">
+                </a></li>
+                <li><a href="about.html" class="nav-btn">
                       <span class="lang-en">About Us</span>
                       <span class="lang-ar">من نحن</span>
-                    </a></li>
-                  </ul>
-              </nav>
-            </div>
-
+                </a></li>
+              </ul>
+            </nav>
+        </div>
 <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
             <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 ☰
             </button>
+      </div>
+</header>
 
-        </div>
-    </header>
-
-  <main>
-        
+  <main class="home-main">
 <!-- Section 1: Daily Hey Palestine -->
-      <section class="section day-journal" id="daily-journal">
-  <div class="section-header">
-    <h2 class="section-title">
-      <span class="lang-en">Hey, Palestine</span>
-      <span class="lang-ar">يا فلسطين</span>
-    </h2>
-
-    <div class="quote-of-day">
-      <h3 class="quote-title">
-        <span class="lang-en">Quote of the Day</span>
-        <span class="lang-ar hidden">اقتباس اليوم</span>
+    <section class="section day-journal" id="daily-journal">
+<!--Hey Palestine header(do this for spans?)-->
+        <div class="section-header">
+        <h2 class="section-title">
+        <span class="lang-en">Hey, Palestine</span>
+        <span class="lang-ar">يا فلسطين</span>
+        </h2>
+<!--Quote of the Day-->
+        <div class="quote-of-day">
+          <h3 class="quote-title">
+            <span class="lang-en">Quote of the Day</span>
+            <span class="lang-ar hidden">اقتباس اليوم</span>
+          </h3>
+          <p class="quote-text">
+          <span class="lang-en">"2026 is the year of the patriot. America is great, strong, and exceptional. The abundance of patriots who will answer the call to serve their countrymen is the true wealth of America."<br> President Donald A. Trump, 45/47</span>
+          <span class="lang-ar hidden">"2026 هو عام الوطني. أمريكا عظيمة، قوية، واستثنائية. وفرة الوطنيين الذين سيستجيبون للدعوة لخدمة مواطنيهم هي الثروة الحقيقية لأمريكا."<br>الرئيس دونالد أ. ترامب، 45/47</span>
+        </p>
+        <p class="quote-reply">
+          <span class="lang-en">I say to you, Sir, it is only June.<br>
+        American Nobody</span>
+          <span class="lang-ar hidden">أقول لك، سيدي، إنه فقط يونيو.<br>
+        أمريكي Nobody</span>
+        </p>
+      </div>
+      <h3 class="section-date">
+      <span class="lang-en">Tuesday, June 30, 2026</span>
+      <span class="lang-ar">الثلاثاء، 30 يونيو 2026</span>
+      <div class="day-counter">Day 282</div>
       </h3>
-      <p class="quote-text">
-        <span class="lang-en">"2026 is the year of the patriot. America is great, strong, and exceptional. The abundance of patriots who will answer the call to serve their countrymen is the true wealth of America."<br> President Donald A. Trump, 45/47</span>
-        <span class="lang-ar hidden">"2026 هو عام الوطني. أمريكا عظيمة، قوية، واستثنائية. وفرة الوطنيين الذين سيستجيبون للدعوة لخدمة مواطنيهم هي الثروة الحقيقية لأمريكا."<br>الرئيس دونالد أ. ترامب، 45/47</span>
-      </p>
-      <P>I say to you, Sir, it is only June.<br>
-      American Nobody</P>
-    </div>
-    
-    <h3 class="section-date">
-      <span class="lang-en">Tuesday, June 26, 2026</span>
-      <span class="lang-ar">الجمعة، 26 يونيو 2026</span>
-      <div class="day-counter">Day 275</div>
-    </h3>
-  </div>
-
-  <div class="content-grid">
-    <!-- Text Content -->
-    <div class="text-content">
-      <div class="lang-en">
-        <p> Hello sweethearts,</p>
-        <p>You need to protect yourselves and each other. We are trying hard on so many fronts to end the genocide. We know you're tired. I believe I can speak for humanity, we are all tired of it. All its ways.</p>
-        <p>This week we made major accomplishments. We are strengthening our voices, and we are seeing shifts in the propaganda. Social media has become one of the only ways left for honest discourse and communication.</p>
-        <p>Despite recent claims, we are not seeing any results or changes in the oppression or the restriction of Palestinian influencers or journalists. We have several areas of opportunity here.</p>
-        <p>The American people stand with the State of Palestine. We still have corrupt officials, but they are slowly losing power. We have been lied to, and our media is still occupied by those who seek to silence the truth. Our major threat is the attempts by corrupt congressmen trying to merge our sovereign military with the terror occupation. The American people do not want this, nor will we allow it.</p>
-        <p>Baby steps. I've got so many ideas, and I've been sharing them on social, millions of us have. It's like an award among the online community when Palestine or a humanitarian group uses your idea. True ones. Real ones. There's not enough time in the day. We all do this together. We are still here. So are you.</p>
-        <p>All my love,</p>
-        <p>Leslie, American Nobody999</p>
+        </div>
+        <div class="content-grid">
+         <div class="journal-media">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg"
+               alt="Palestine Flag"
+               class="div-img"
+               loading="lazy">
+          <div class="caption">
+            <span class="lang-en">Palestine Remains</span>
+            <span class="lang-ar hidden">علم فلسطين</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/108.jpg"
+               alt="Palestine Flag"
+               class="div-img"
+               loading="lazy">
+          <div class="caption">
+            <span class="lang-en">Record of the Palestinian Struggle from Albert Einstein, April 10, 1948.<br> They do not teach this in Western education. I couldn't find Palestine on a map a year ago. This is an epidemic of erasing history by the occupation and its allies.</span>
+            <span class="lang-ar hidden">سجل النضال الفلسطيني من ألبرت أينشتاين، 10 أبريل 1948.<br> هذا لا يُدرَّس في التعليم الغربي. قبل عام لم أستطع العثور على فلسطين في الخريطة. هذا وباء لمحو التاريخ من قبل الاحتلال وحلفائه.</span>
+          </div>
+         </div>
+         <div class="text-content">
+          <div class="lang-en">
+            <p> Hello sweethearts,</p>
+            <p>I know Palestine. You remain. We are working together now, so much louder, so much more together Palestine. The situation is dire, but we are resilient. This boat is still sailing to Palestine.</p>
+            <p>It's only Tuesday, and already, with the new Western media news cycle, the friends of the occupation are starting the propaganda. We must be vigilant in documenting and archiving the evidence this week.</p>
+           <p>Push it through the algorithm. I believe you're starting to see what we are going to do here. This has been a long process over the past ten months. I see them slaughtering you. Targeting the kids. I can do nothing but work on a website. So I will work on a website. Let's go to work.</p>
+            <p>The American people stand with the State of Palestine. We still have corrupt officials, but they are slowly losing power. We have been lied to, and our media is still occupied by those who seek to silence the truth. Our major threat is the attempts by corrupt congressmen trying to merge our sovereign military with the terror occupation. The American people do not want this, nor will we allow it.</p>
+            <p>Baby steps. I've got so many ideas, and I've been sharing them on social, millions of us have. It's like an award among the online community when Palestine or a humanitarian group uses your idea. True ones. Real ones. There's not enough time in the day. We all do this together. We are still here. So are you.</p>
+            <p>All my love,</p>
+            <p>Leslie, American Nobody999</p>
+        </div>
+        <div class="lang-ar hidden" dir="rtl">
+          <p>مرحبًا يا أحبّتي،</p>
+          <p>أنا أعرف فلسطين. أنتم باقون. نحن نعمل معًا الآن، بصوت أعلى وبوحدة أكبر من أي وقت مضى. الوضع خطير، لكننا صامدون. هذا القارب ما زال متجهًا إلى فلسطين.</p>
+          <p>إنه يوم الثلاثاء فقط، ومع دورة الأخبار الغربية الجديدة بدأ أصدقاء الاحتلال بنشر الدعاية. يجب أن نكون يقظين هذا الأسبوع في التوثيق والأرشفة وحفظ الأدلة.</p>
+          <p>ادفعوا هذا عبر الخوارزمية. أؤمن أنكم بدأتم ترون ما الذي سنفعله هنا. كانت عملية طويلة خلال الأشهر العشرة الماضية. أراهم يذبحونكم ويستهدفون الأطفال. لا أستطيع أن أفعل شيئًا سوى العمل على موقع، ولذلك سأعمل على هذا الموقع. هيا بنا إلى العمل.</p>
+          <p>الشعب الأمريكي يقف مع دولة فلسطين. ما زال لدينا مسؤولون فاسدون، لكنهم يفقدون قوتهم تدريجيًا. لقد كُذب علينا، وما زال إعلامنا تحت سيطرة من يسعون لإسكات الحقيقة. الخطر الأكبر هو محاولات بعض أعضاء الكونغرس الفاسدين دمج جيشنا السيادي مع احتلال إرهابي. الشعب الأمريكي لا يريد ذلك، ولن نسمح به.</p>
+          <p>خطوات صغيرة. لدي أفكار كثيرة جدًا، وقد شاركتها على المنصات الاجتماعية، وملايين منا يفعلون ذلك. أصبح الأمر كأنه تكريم داخل المجتمع الإلكتروني عندما تستخدم فلسطين أو مجموعة إنسانية فكرتك. أشخاص حقيقيون. لا يكفي الوقت في اليوم. نحن نفعل هذا معًا. نحن ما زلنا هنا. وأنتم كذلك.</p>
+          <p>كل حبي،</p>
+          <p>ليزلي، أمريكان نوبودي999</p>
       </div>
-
-    
-      <div class="lang-ar hidden" dir="rtl">
-        <p>ما زلتم هنا يا أحبتي؟ جيد، وأنا كذلك. حسنًا، ما رأيكم حتى الآن؟ أنا أتشاجر مع الكود. وهذا كافٍ لتحديث يوم الجمعة. أنجزت صلاة الجمعة، وأضافت التواريخ أيضًا حتى تعرفوا أنني هنا كل يوم. لن أذهب إلى أي مكان.</p>
-        <p>عليكم أن تواصلوا النشر، وعليكم أن تواصلوا المشاركة، وعليكم أن تواصلوا التفاعل. فلسطين، أنتم خط الدفاع الأخير لبقية العالم. لا يستطيع الاحتلال أن يصل إلى بقيتنا إذا لم يصل إليكم أولًا.</p>
-        <p>الجرائم المرتكبة بحق فلسطين كثيرة ومستمرة. والجرائم المرتكبة بحق الإنسانية وبحق من يقفون معنا مستمرة أيضًا. نحن ندفع حاليًا لإيقاف المستوطنات الإرهابية، ووقف تحريك الخط الأصفر، وإنهاء القمع المنهجي للشعب الفلسطيني. ونحن نحاول استعادة رهائننا الفلسطينيين.</p>
-        <p>هذه السفينة ما زالت متجهة إلى فلسطين. سأعود للتواصل معكم قريبًا يا أهلي. لقد أحرزنا تقدمًا كبيرًا خلال الأيام القليلة الماضية، ونمارس الضغط أينما استطعنا. لن نذهب إلى أي مكان، إلا إلى دولة فلسطين.</p>
-        <p>بقية البشرية لم تتخلَّ عنكم. نحن نتقدم بكل طرقنا، معًا ومتحدين، وبهدفٍ مشترك: الحرية والعدالة لفلسطين.</p><br>
-        <p>هذا الأسبوع سنبدأ بإضافة منظماتكم الإنسانية العاملة في فلسطين، وميزات أخرى تساعد في تخفيف بعض هذه الإحباطات. وسنواصل أيضًا التركيز على الذين يقفون في الطريق. أمامنا الكثير من العمل يا أحبتي. سننجح، يا دولة فلسطين.</p>
-        <p>كل حبي،</p>
-        <p>ليزلي، أمريكان نوبودي999</p>
-      </div>
     </div>
 
-    <!-- Media Content -->
-    <div class="media-content">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" 
-           alt="Palestine Flag" 
-           class="div-img" 
-           loading="lazy">
-    </div>
+   </div>
   </div>
-<!--
-  <!-- Video Embed 
-  <div class="video-embed-section">
-    <div class="video-wrapper">
-      <iframe id="song-video"
-        src="https://www.youtube-nocookie.com/embed/YbS5pMzSg"
-        title="Song dedication to Palestine"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
-      -->
-  </div>
-      </section>
+  </section>
 
 <!-- Section 2: OK Humanity -->
-      <section class="section ok-humanity" id="ok-humanity">
+    <section class="section ok-humanity" id="ok-humanity">
             <h3 class="section-title">
                 <span class="lang-en">OK, Humanity</span>
                 <span class="lang-ar">حسنًا، أيها البشرية</span>
             </h3>
             <div class="content-grid">
                 <div class="text-content">
-              <div class="lang-en">
-                <p>Good Evening, I am coming to you from the 8th front. Well, first of all, let's go! Palestinian journalists and prisoners are being released, what little gets through the social media censorship. We also have the 10 missing humanitarians back from the global sumud land convoy. You all should be healing. We are still missing 4 more in Tunisia, our Palestinian hostages, our beloved Doctor S.</p>
-                <p>Protest and right to speak for Palestine, to be heard about our issues and causes are being threatened, some cases taken.</p>
-                <p>I am an American. That's where I was born. That is the bubble I live under, the ideals and propaganda I was raised under. I was taught Arabs were all monsters hiding under our beds and black people were sub-human. It took a lot of good people and hard life experience to break those programming restraints.</p>
-                <p>I refused to allow my children to be limited by the same mindset that was bestowed on me.</p>
-                <p>Time to come together, we are human. We all bleed red. 46 chromosomes. Religion doesn't matter, each one of them says overlook each other's flaws, treat them as your brother, respect, friendship, love, forgiveness. They all also say mind your own business, worry about your own soul work, because no man or deed will be with you at the grave, or the conversation. I will have to ask my fellow religious students this week about this. Atheists can study religion and be in love with them. Mind your business. We do not have to agree with each other to love each other.</p>
-                <h4>Ideas for Palestine: Be productive</h4>
-                 <ul>
-                  <li>We need to highlight and promote the civic Palestian groups within Palestine that are making a positive impact. The more awareness, the more support, the more support, the more change we can create.</li>
-                  <li>We have got to remain peaceful and focused on constructive actions that can bring about real change. Finding the Palestians, communicating with them, creating relationships with the real humans they, will not only enrich your life, but will create a net for them.<br>
-                  For example, I am an American user of these platforms and am protected by user rights. So I have about 20 Palestians I stalk, and I directly address the platforms when those account face censorship and restriction. I wish I had time for more. Thats why unity and free sharing of ideas, and discussions are so important.</li>
-                 </ul>
+                  <div class="lang-en">
+                <p>Good Evening Humanity,</p>
+                <p>Going to be a bad week. While the world is distracted by communism invading America now. Distraction and targeting from the occupation continues, we must stay focused on our mission.</p>
+                <p>We are still missing 4 of our humanitarians in Tunisia, and Dr. S. We are still working to get them back. We have also recovered 10 of the missing humanitarian activists from the Global Convoy of Resilience. We must all heal.</p>
+                <p>If you're just tuning in, this website is a living, organic, single voice for the State of Palestine. We never miss Friday prayer. Give me a few more weeks to completely set up the platform and continue working in all our ways for Palestine.</p>
+                <ul>
+                  <li>We need to highlight the Palestinian prisoners and hostages.</li>
+                  <li>We need to promote civic groups and Palestinian humanitarian groups on the ground in Palestine.</li>
+                  <li>They need water, they need the occupation to stop killing them, they need food, basic healthcare, and education.</li>
+                </ul>
+                <p>I'll be in touch soon, and now that we're finally moving forward, unhindered, this website will continue to provide updates and support for our mission. We are moving from social media, folks. All my love, even if I disagree with you or don't like you.</p>
+                <p>Leslie, American Nobody999</p>
               </div>
               <div class="lang-ar hidden" dir="rtl">
-                <p>مساء الخير، أنا أكتب إليكم من الجبهة الثامنة. حسنًا، أولاً وقبل كل شيء، هيا بنا! يتم إطلاق سراح الصحفيين الفلسطينيين والسجناء، مهما كان القليل الذي يتسرب عبر الرقابة على وسائل التواصل الاجتماعي. لقد استعدنا أيضًا 10 من الناشطين الإنسانيين المفقودين من قافلة الصمود البرية العالمية. يجب أن تشفوا جميعًا. لا نزال نفقد 4 آخرين في تونس، رهائننا الفلسطينيين، والدكتور الحبيب س.</p>
-                <p>الاحتجاج والحق في الكلام من أجل فلسطين، والاستماع إلى قضايانا وأسبابنا يتعرضان للتهديد، وتم الاستيلاء على بعض الحالات.</p>
-                <p>أنا أمريكي. هنا وُلدت. هذه هي الفقاعة التي أعيش فيها، المثل والدعاية التي تربيت عليها. تم تعليمي أن العرب جميعهم وحوش يختبئون تحت أسرتنا وأن الأشخاص السود كانوا تحت البشريين. استغرق الأمر الكثير من الناس الطيبين والخبرة الحياتية الصعبة لكسر قيود هذه البرمجة.</p>
-                <p>رفضت السماح لأطفالي بأن يقتصروا على نفس العقلية التي فُرضت عليّ.</p>
-                <p>حان الوقت للاجتماع معًا، نحن بشر. نحن جميعًا ننزف أحمر. 46 كروموسوم. الدين لا يهم، فكل واحد منهم يقول تجاوز عيوب بعضنا البعض، عاملهم كأخيك، احترام، صداقة، حب، مسامحة. كلهم يقولون أيضًا اعتني بشؤونك الخاصة، قلق من عملك الروحي الخاص بك، لأن لا رجل ولا عمل سيكون معك في القبر أو المحادثة. سأضطر إلى سؤال زملائي الدينيين عن هذا هذا الأسبوع. الملحدون يمكنهم دراسة الدين والتعلق بهم. اعتني بشؤونك الخاصة. لا يتعين علينا أن نتفق مع بعضنا البعض لنحب بعضنا البعض.</p>
-                <h4>أفكار من أجل فلسطين: كن منتجًا</h4>
-                 <ul>
-                  <li>نحتاج إلى تسليط الضوء على وتعزيز مجموعات فلسطينية مدنية داخل فلسطين تحدث تأثيرًا إيجابيًا. زيادة الوعي، زيادة الدعم، المزيد من الدعم، المزيد من التغيير الذي يمكننا إحداثه.</li>
-                  <li>يجب أن نبقى سلميين وركزنا على الإجراءات البناءة التي يمكن أن تحقق تغييرًا حقيقيًا. العثور على الفلسطينيين والتواصل معهم وإنشاء علاقات مع البشر الحقيقيين، لن يغني حياتك فحسب، بل سينشئ شبكة لهم.<br>
-                  على سبيل المثال، أنا مستخدم أمريكي لهذه المنصات وأتمتع بحماية حقوق المستخدم. لذا لدي حوالي 20 فلسطينيًا أتابعهم، وأتعامل مباشرة مع المنصات عندما تواجه هذه الحسابات الرقابة والقيود. أتمنى لو كان لدي وقت للمزيد. لهذا السبب الوحدة والمشاركة الحرة للأفكار والنقاشات مهمة جدًا.</li>
-                 </ul>
+                <p>مساء الخير يا بشرية،</p>
+                <p>سيكون أسبوعًا صعبًا. بينما العالم منشغل بما يحدث في أمريكا، يستمر الإلهاء والاستهداف من طرف الاحتلال، ويجب أن نبقى مركزين على مهمتنا.</p>
+                <p>ما زلنا نفتقد 4 من العاملين الإنسانيين في تونس، إضافة إلى الدكتور س. وما زلنا نعمل على إعادتهم. كما استعدنا 10 من النشطاء الإنسانيين المفقودين من قافلة الصمود العالمية. علينا جميعًا أن نتعافى.</p>
+                <p>إذا كنتم تتابعوننا الآن، فهذا الموقع صوت حي وعضوي وموحد لدولة فلسطين. نحن لا نفوّت صلاة الجمعة. امنحوني بضعة أسابيع إضافية لإكمال تجهيز المنصة ومواصلة العمل بكل طرقنا من أجل فلسطين.</p>
+                <ul>
+                  <li>نحتاج إلى تسليط الضوء على الأسرى والرهائن الفلسطينيين.</li>
+                  <li>نحتاج إلى دعم المجموعات المدنية والمجموعات الإنسانية الفلسطينية العاملة على الأرض في فلسطين.</li>
+                  <li>هم بحاجة إلى الماء، وبحاجة إلى أن يتوقف الاحتلال عن قتلهم، وبحاجة إلى الطعام والرعاية الصحية الأساسية والتعليم.</li>
+                </ul>
+                <p>سأعود للتواصل قريبًا، والآن بعد أن بدأنا أخيرًا نتقدم بلا عوائق، سيواصل هذا الموقع تقديم التحديثات والدعم لمهمتنا. نحن ننتقل من وسائل التواصل الاجتماعي. كل حبي لكم، حتى إن اختلفت معكم أو لم أحب بعضكم.</p>
+                <p>ليزلي، أمريكان نوبودي999</p>
               </div>
                 </div>
                 <div class="media-grid">
@@ -204,11 +191,14 @@ Date last modified: 2026-06-29
                     <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10001.jpg" alt="X account with MPGA demands" class="div-img" loading="lazy">
                 </div>
             </div>
-      </section>
+    </section>
 
 <!-- Section 3: Featured Hero -->
-      <section class="section feature-hero" id="featured-hero">
-            <h3 class="section-title">Featured Hero</h3>
+    <section class="section feature-hero" id="featured-hero">
+            <h3 class="section-title">
+              <span class="lang-en">Featured Hero</span>
+              <span class="lang-ar hidden">البطل المميز</span>
+            </h3>
             
             <div class="hero-grid">
                 <div class="hero-media">
@@ -231,7 +221,10 @@ Date last modified: 2026-06-29
                 
                 <!-- Video Gallery -->
                 <div class="video-gallery-section hero-gallery">
-                  <h4 class="gallery-title">Recent Work</h4>
+                  <h4 class="gallery-title">
+                    <span class="lang-en">Recent Work</span>
+                    <span class="lang-ar hidden">أحدث الأعمال</span>
+                  </h4>
                   <div class="video-gallery">
                     <div class="video-container">
                       <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_28.mp4" controls preload="none" loading="lazy"></video>
@@ -264,15 +257,18 @@ Date last modified: 2026-06-29
                   </div>
                 </div>
             </div>
-      </section>
+    </section>
 
 <!-- Section 4: Links Gallery -->
-<section class="section links-gallery-section" id="links">
-  <h3 class="section-title">Explore</h3>
+    <section class="section links-gallery-section" id="links">
+  <h3 class="section-title">
+    <span class="lang-en">Explore</span>
+    <span class="lang-ar hidden">استكشف</span>
+  </h3>
   
   <div class="links-gallery scrollable-gallery">
     
-    <!-- Image Item 1 Influencers -->
+<!-- Image Item 1 Influencers -->
     <div class="gallery-item">
       <a href="link.html" target="_blank" class="gallery-link">
         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10003.jpg" 
@@ -285,9 +281,9 @@ Date last modified: 2026-06-29
       </div>
     </div>
 
-    <!-- Image Item 2  Heroes -->
+<!-- Image Item 2  Hero -->
     <div class="gallery-item">
-      <a href="progress.html" target="_blank" class="gallery-link">
+      <a href="hero.html" target="_blank" class="gallery-link">
         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10004.jpg" 
              alt="Explore Heroes" 
              loading="lazy">
@@ -298,7 +294,7 @@ Date last modified: 2026-06-29
       </div>
     </div>
 
-    <!-- Image Item 3  Speak-->
+<!-- Image Item 3  Speak-->
     <div class="gallery-item">
       <a href="face.html" target="_blank" class="gallery-link">
         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10005.jpg" 
@@ -311,7 +307,7 @@ Date last modified: 2026-06-29
       </div>
     </div>
 
-    <!-- Image Item 4  Faith-->
+<!-- Image Item 4  Faith-->
     <div class="gallery-item">
       <a href="faith.html" target="_blank" class="gallery-link">
         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10006.jpg" 
@@ -324,7 +320,7 @@ Date last modified: 2026-06-29
       </div>
     </div>
 
-    <!-- Image Item 5 Online school -->
+<!-- Image Item 5 Online school -->
     <div class="gallery-item">
       <a href="edu.html" target="_blank" class="gallery-link">
         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10008.jpg" 
@@ -337,7 +333,7 @@ Date last modified: 2026-06-29
       </div>
     </div>
 
-    <!-- Image Item 6 art-->
+<!-- Image Item 6 Art-->
     <div class="gallery-item">
       <a href="art.html" target="_blank" class="gallery-link">
         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10009.jpg" 
@@ -350,7 +346,7 @@ Date last modified: 2026-06-29
       </div>
     </div>
 
-    <!-- Image Item 7 Love letter -->
+<!-- Image Item 7 Love letter -->
     <div class="gallery-item">
       <a href="letter.html" target="_blank" class="gallery-link">
         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10010.jpg" 
@@ -362,9 +358,8 @@ Date last modified: 2026-06-29
         <span class="lang-ar hidden">إلى فلسطين، بكل حب</span>
       </div>
     </div>
-
   </div>
-</section>
+    </section>
 
 <!-- Section 5: This is the State of  Palestine -->
     <section class="section this-state" id="this-state">
@@ -414,27 +409,26 @@ Date last modified: 2026-06-29
   </h2>
  <div class="scrollable-gallery">
     <div class="gallery-card">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1703.jpg" alt="Gallery 3 Image 1" loading="lazy">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1703.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
     </div>
     <div class="gallery-card">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1800.jpg" alt="Gallery 3 Image 1" loading="lazy">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1800.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
     </div>
     <div class="gallery-card">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1801.jpg" alt="Gallery 3 Image 1" loading="lazy">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1801.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
     </div>
     <div class="gallery-card">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1802.jpg" alt="Gallery 3 Image 2" loading="lazy">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1802.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
     </div>
     <div class="gallery-card">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1803.jpg" alt="Gallery 3 Image 3" loading="lazy">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1803.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
     </div>
     <div class="gallery-card">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1804.jpg" alt="Gallery 3 Image 3" loading="lazy">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1804.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
     </div>
   </div>
 </section>
 
-  
   </main>
 
   <footer class="site-footer">
@@ -457,7 +451,7 @@ Date last modified: 2026-06-29
             </p>
           </div>
 <!--progress.html needs to be replaced with contact us.html-->
-<!--When this page goes live, this communcation avenue needs to be left alone, gentle request. This message is not for everyone.-->
+<!--When this page goes live, this communication avenue needs to be left alone, gentle request. This message is not for everyone.-->
           <a href="contact.html" class="footer-btn footer-btn-right">
             <span class="lang-en">Contact Us</span>
             <span class="lang-ar">اتصل بنا</span>
@@ -469,9 +463,3 @@ Date last modified: 2026-06-29
   <script src="js/main.js"></script>
 </body>
 </html>
-
-       
-       
-
-       
-       
