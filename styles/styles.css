@@ -1,7 +1,7 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
 /* Author: Leslie Brockman.                      */
-/* Updated  06-27-2026                           */
+/* Updated  06-30-2026                           */
 /* ============================================= */
 
 /* ================ quick developer notes ================ */
@@ -10,7 +10,6 @@
 /*logo pending for contest among the youth designers of Palestine.*/
 /*once the entire layout is set, I will go through and add more specific styles to each section and element, reorganize the css to avoid the rules interfering with eachother.*/
 /*class names will be changed to be more specific and descriptive, and the css will be organized into sections for easier navigation.*/
-
 :root {
     /* Color Palette */
     --primary-green: #009736;
@@ -194,6 +193,20 @@ a {
     font-size: 2.2rem;
     margin-bottom: 2rem;
     color: var(--dark);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.35rem;
+    margin: 0.25rem 0 0.65rem;
+    color: var(--dark);
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 1.25rem;
+    line-height: 1.55;
 }
 
 /* ================ LEGAL PAGE ================ */
@@ -722,12 +735,30 @@ main p {
     color: #222;
 }
 
+.quote-reply {
+    text-align: center;
+    margin: 0.5rem auto 0;
+    font-size: 1rem;
+    color: #222;
+}
+
+.journal-media .caption + .div-img {
+    margin-top: 3rem;
+}
+
 /* Green border around text */
 .text-content {
     border: 4px solid var(--primary-green);
     border-radius: 10px;
     padding: 1.5rem;
     background: #f8f8f8;
+}
+
+/* Day journal overrides: no border on text, image-left layout */
+.day-journal .text-content {
+    border: none;
+    background: transparent;
+    padding: 0 0 0 0.5rem;
 }
 
 .text-content .lang-en p,
@@ -766,6 +797,25 @@ main p {
     width: 100%;
     height: 100%;
     min-height: 800px;
+}
+
+.journal-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 300px;
+}
+
+.journal-media .div-img {
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+}
+
+.day-journal .content-grid {
+    grid-template-columns: auto 1fr;
+    align-items: start;
 }
 
 .media-content img,
@@ -968,6 +1018,7 @@ main p {
 }
 
 .video-gallery,
+.image-gallery,
 .links-gallery {
     display: flex;
     gap: 1.5rem;
@@ -975,24 +1026,28 @@ main p {
     overflow-y: hidden;
     scroll-behavior: smooth;
     padding: 10px 0;
+    border-radius: 12px;
 }
 
-.this-week .video-gallery {
+.this-state .video-gallery {
     justify-content: flex-end;
 }
 
 .video-gallery::-webkit-scrollbar,
+.image-gallery::-webkit-scrollbar,
 .links-gallery::-webkit-scrollbar {
     height: 10px;
 }
 
 .video-gallery::-webkit-scrollbar-thumb,
+.image-gallery::-webkit-scrollbar-thumb,
 .links-gallery::-webkit-scrollbar-thumb {
     background: var(--primary-green);
     border-radius: 10px;
 }
 
 .video-gallery::-webkit-scrollbar-track,
+.image-gallery::-webkit-scrollbar-track,
 .links-gallery::-webkit-scrollbar-track {
     background: transparent;
 }
@@ -1005,6 +1060,21 @@ main p {
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 151, 54, 0.5);
+}
+
+.video-container {
+    flex-basis: clamp(340px, 44vw, 520px);
+    width: clamp(340px, 44vw, 520px);
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: #000;
 }
 
 /* Play and Replay Button Styling */
@@ -1149,6 +1219,8 @@ main p {
   text-align: center;
   font-weight: 500;
   min-height: 50px;
+  border: 2px solid var(--dark);
+  border-radius: 6px;
 }
 
 /* ================ FOOTER ================ */
@@ -1339,6 +1411,16 @@ main p {
         font-size: 1.9rem;
     }
 
+    .section-subtitle {
+        font-size: 1.2rem;
+        margin: 0.2rem 0 0.55rem;
+    }
+
+    .section-intro {
+        font-size: 1rem;
+        margin: 0 auto 1rem;
+    }
+
     .day-journal .section-title {
         font-size: 2rem;
         margin-bottom: 1.25rem;
@@ -1368,6 +1450,23 @@ main p {
 
     .media-content {
         min-height: auto;
+    }
+
+    .day-journal .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journal-media {
+        width: 100%;
+    }
+
+    .journal-media .div-img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .day-journal .text-content {
+        padding: 0;
     }
 
     .ok-humanity .media-grid {
@@ -1522,6 +1621,17 @@ main p {
         font-size: 1.55rem;
     }
 
+    .section-subtitle {
+        font-size: 1.05rem;
+        margin: 0.15rem 0 0.45rem;
+    }
+
+    .section-intro {
+        font-size: 0.95rem;
+        line-height: 1.45;
+        margin: 0 auto 0.85rem;
+    }
+
     .day-journal .section-title {
         font-size: 1.7rem;
     }
@@ -1542,6 +1652,8 @@ main p {
     .video-container,
     .image-container {
         flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
     }
 
     .hero-gallery .video-container {
@@ -1593,6 +1705,7 @@ main p {
     scroll-behavior: smooth;
     padding: 1.5rem;
     border: 5px solid #000;
+    border-radius: 12px;
     box-shadow: 0 10px 25px rgba(207, 17, 39, 0.55);
     margin: 2rem auto;
     max-width: 1200px;
@@ -1636,6 +1749,18 @@ main p {
 
 .scrollable-gallery::-webkit-scrollbar-track {
     background: transparent;
+}
+
+/* Keep mixed-class galleries visually consistent with global gallery design. */
+.video-gallery.scrollable-gallery,
+.image-gallery.scrollable-gallery {
+    padding: 10px 0;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    max-width: none;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /* Gallery Section Headings */
@@ -2402,6 +2527,344 @@ main h2 {
 
     .about-page .about-div-3 .image-container img {
         height: 100%;
+    }
+}
+
+/* ================ FACE.HTML PAGE ================ */
+.face-page {
+    background: var(--light);
+}
+
+.face-page .face-main {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 2rem 0.85rem 2.5rem;
+}
+
+.face-page .face-hero {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    align-items: stretch;
+    max-width: 1180px;
+    margin: 0 auto 2rem;
+    padding: 0.9rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.5);
+}
+
+.face-page .face-hero img {
+    width: 92%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.65);
+}
+
+.face-page .face-hero img:first-child,
+.face-page .face-hero img:last-child {
+    justify-self: end;
+}
+
+.face-page .image-gallery-section {
+    max-width: 1240px;
+    margin: 2rem auto;
+    padding: 1rem 0.85rem 1.2rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.5);
+}
+
+.face-page .face-gallery-section {
+    scroll-margin-top: 1rem;
+}
+
+.face-page .image-gallery-section h2 {
+    margin: 0 auto 0.8rem;
+    padding: 0 0.75rem;
+    text-align: center;
+}
+
+.face-page .image-gallery {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.8rem;
+    scroll-behavior: smooth;
+}
+
+.face-page .image-gallery::-webkit-scrollbar {
+    height: 10px;
+}
+
+.face-page .image-gallery::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 10px;
+}
+
+.face-page .image-gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.face-page .image-container {
+    flex: 0 0 280px;
+    width: 280px;
+    aspect-ratio: 4 / 5;
+    border: 2px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.35);
+    background: #fff;
+}
+
+.face-page .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .face-page .face-main {
+        padding: 1.2rem 0.5rem 1.8rem;
+    }
+
+    .face-page .image-gallery-section {
+        margin: 1.25rem auto;
+        padding: 0.75rem 0.55rem 0.9rem;
+    }
+
+    .face-page .image-container {
+        flex: 0 0 230px;
+        width: 230px;
+    }
+}
+
+@media (max-width: 480px) {
+    .face-page .face-hero {
+        grid-template-columns: 1fr;
+        padding: 0.6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .face-page .image-container {
+        flex: 0 0 76vw;
+        width: 76vw;
+    }
+}
+
+/* ================ LESLIE.HTML PAGE ================ */
+.leslie-page {
+    background: var(--light);
+}
+
+.leslie-page main.leslie-page {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 2rem 0.85rem 2.5rem;
+}
+
+.leslie-page .leslie-1,
+.leslie-page .leslie-2,
+.leslie-page .leslie-3,
+.leslie-page .scroll-panels {
+    max-width: 1240px;
+    margin: 2rem auto;
+    padding: 1rem 0.85rem 1.2rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.5);
+}
+
+.leslie-page .leslie-1,
+.leslie-page .leslie-2 {
+    min-height: 120px;
+}
+
+.leslie-page .leslie-1 {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.leslie-page .leslie-1-media {
+    flex: 0 0 clamp(240px, 30vw, 320px);
+}
+
+.leslie-page .leslie-1-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    border: 3px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.35);
+}
+
+.leslie-page .leslie-1-bio {
+    flex: 1;
+    border: 3px solid #000;
+    border-radius: 12px;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(207, 17, 39, 0.25);
+    display: flex;
+    align-items: center;
+}
+
+.leslie-page .leslie-1-bio p {
+    margin: 0;
+    line-height: 1.65;
+}
+
+.leslie-page .leslie-2 h2,
+.leslie-page .leslie-3 h2,
+.leslie-page .image-gallery-section h2,
+.leslie-page .scroll-panel h2,
+.leslie-page .scroll-panel h3,
+.leslie-page .scroll-panel h4 {
+    text-align: center;
+}
+
+.leslie-page .image-gallery-section {
+    margin: 1.5rem auto;
+    padding: 1rem 0.85rem 1.15rem;
+    border: 3px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 7px 18px rgba(0, 151, 54, 0.26);
+}
+
+.leslie-page .image-gallery-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.8rem;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-green) transparent;
+}
+
+.leslie-page .image-gallery-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+.leslie-page .image-gallery-scroll::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 10px;
+}
+
+.leslie-page .image-gallery-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.leslie-page .image-gallery-scroll img {
+    flex: 0 0 280px;
+    width: 280px;
+    height: 360px;
+    object-fit: cover;
+    border: 2px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.35);
+}
+
+.leslie-page .scrollable-gallery {
+    padding: 0.8rem;
+}
+
+.leslie-page .gallery-card {
+    flex: 0 0 280px;
+    border: 2px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.35);
+}
+
+.leslie-page .gallery-card img {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.leslie-page .scroll-panels {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.leslie-page .scroll-panel {
+    border: 3px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(207, 17, 39, 0.35);
+}
+
+.leslie-page .scroll-panel-body {
+    max-height: 72vh;
+    overflow: auto;
+    padding: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-green) transparent;
+}
+
+.leslie-page .cover-letter-img {
+    display: block;
+    width: min(1100px, 100%);
+    margin: 2rem auto 0;
+    border: 4px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45);
+}
+
+@media (max-width: 768px) {
+    .leslie-page main.leslie-page {
+        padding: 1.2rem 0.5rem 1.8rem;
+    }
+
+    .leslie-page .leslie-1,
+    .leslie-page .leslie-2,
+    .leslie-page .leslie-3,
+    .leslie-page .scroll-panels,
+    .leslie-page .image-gallery-section {
+        margin: 1.25rem auto;
+        padding: 0.75rem 0.55rem 0.9rem;
+    }
+
+    .leslie-page .leslie-1 {
+        flex-direction: column;
+    }
+
+    .leslie-page .leslie-1-media {
+        flex: none;
+    }
+
+    .leslie-page .leslie-1-media img {
+        min-height: 220px;
+    }
+
+    .leslie-page .image-gallery-scroll img,
+    .leslie-page .gallery-card {
+        flex: 0 0 230px;
+        width: 230px;
+    }
+}
+
+@media (max-width: 480px) {
+    .leslie-page .image-gallery-scroll img,
+    .leslie-page .gallery-card {
+        flex: 0 0 76vw;
+        width: 76vw;
+    }
+
+    .leslie-page .scroll-panel-body {
+        max-height: 68vh;
     }
 }
 
