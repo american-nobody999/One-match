@@ -10,6 +10,8 @@
 /*logo pending for contest among the youth designers of Palestine.*/
 /*once the entire layout is set, I will go through and add more specific styles to each section and element, reorganize the css to avoid the rules interfering with eachother.*/
 /*class names will be changed to be more specific and descriptive, and the css will be organized into sections for easier navigation.*/
+
+
 :root {
     /* Color Palette */
     --primary-green: #009736;
@@ -37,6 +39,7 @@ body {
     background: var(--light);
     color: var(--dark);
     line-height: 1.65;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -355,6 +358,441 @@ main p {
     line-height: 1.6;
 }
 
+/* ================ HERO PAGE ================ */
+.hero-page main {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 2.5rem 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-page .hero-section-1,
+.hero-page .hero-section-2 {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45),
+                0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.hero-page .hero-section-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.hero-page #section-dedication,
+.hero-page #section-journalists {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-page #section-journalists {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+}
+
+.hero-page #section-journalists h2,
+.hero-page #section-journalists p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-page #section-journalists p {
+    max-width: 820px;
+}
+
+.hero-page #section-dedication {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+}
+
+.hero-page #section-dedication h2,
+.hero-page #section-dedication p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-page #section-dedication p {
+    max-width: 820px;
+}
+
+.hero-page .card {
+    flex: 0 0 clamp(340px, 44vw, 520px);
+    width: clamp(340px, 44vw, 520px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.hero-page .card-image,
+.hero-page .card-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-page .card-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.hero-page .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+
+.hero-page .card-links img {
+    max-width: 42px;
+    margin-bottom: 0;
+}
+
+.hero-page .social-links {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-page .video-gallery-section {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-page .hero-section-3 {
+    width: 100%;
+}
+
+.hero-page .video-gallery {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0;
+    scroll-padding-left: 0;
+    scroll-snap-type: x mandatory;
+}
+
+.hero-page .video-container {
+    scroll-snap-align: start;
+}
+
+.hero-page .card {
+    scroll-snap-align: start;
+}
+
+.hero-page #sources-gallery .image-gallery,
+.hero-page .hero-section-3 .image-gallery {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0 1.25rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.hero-page #sources-gallery {
+    width: 100%;
+}
+
+.hero-page #sources-gallery h3 {
+    font-size: 2.2rem;
+    margin: 0 0 0.75rem;
+}
+
+.hero-page #sources-gallery p {
+    margin: 0 auto 1rem;
+    max-width: 900px;
+}
+
+.hero-page #sources-gallery .image-gallery::-webkit-scrollbar {
+    height: 10px;
+}
+
+.hero-page #sources-gallery .image-gallery::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 10px;
+}
+
+.hero-page #sources-gallery .image-gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.hero-page #sources-gallery .image-container,
+.hero-page .hero-section-3 .image-container {
+    flex: 0 0 clamp(300px, 40vw, 420px);
+    width: clamp(300px, 40vw, 420px);
+    aspect-ratio: 4 / 3;
+    border: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    scroll-snap-align: start;
+    align-self: flex-start;
+}
+
+.hero-page #sources-gallery .image-container a,
+.hero-page #sources-gallery .image-container img,
+.hero-page .hero-section-3 .image-container a,
+.hero-page .hero-section-3 .image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-page #sources-gallery .image-gallery {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-green) transparent;
+}
+
+.hero-page #sources-gallery .image-container img,
+.hero-page .hero-section-3 .image-container img {
+    object-fit: cover;
+}
+
+.hero-page .disclaimer {
+    margin: 1rem auto 0;
+    max-width: 900px;
+    text-align: center;
+}
+
+.hero-page .disclaimer p {
+    font-size: 0.65rem;
+    line-height: 1.35;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-page .hero-section-3 .image-container {
+        flex: 0 0 260px;
+        width: 260px;
+    }
+
+    .hero-page #sources-gallery h3 {
+        font-size: 1.8rem;
+    }
+
+    .hero-page main {
+        padding: 1.25rem 0.75rem 2rem;
+        gap: 1.25rem;
+    }
+
+    .hero-page .hero-section-1,
+    .hero-page .hero-section-2,
+    .hero-page .hero-section-3 {
+        padding: 1rem 0.75rem;
+    }
+
+    .hero-page #section-dedication,
+    .hero-page #section-journalists {
+        max-width: 100%;
+    }
+
+    .hero-page #section-dedication p,
+    .hero-page #section-journalists p {
+        max-width: 100%;
+    }
+
+    .hero-page .card {
+        flex: 0 0 260px;
+        width: 260px;
+    }
+
+    .hero-page .card-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .hero-page .card-links img {
+        max-width: 36px;
+    }
+
+    .hero-page .video-container {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .hero-page #sources-gallery .image-gallery,
+    .hero-page .hero-section-3 .image-gallery {
+        padding: 0.75rem 0 1rem;
+    }
+
+    .hero-page #sources-gallery .image-container,
+    .hero-page .hero-section-3 .image-container {
+        flex: 0 0 260px;
+        width: 260px;
+    }
+
+    .hero-page .disclaimer p {
+        font-size: 0.55rem;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-page .hero-section-3 .image-container {
+        flex: 0 0 84vw;
+        width: 84vw;
+    }
+
+    .hero-page #sources-gallery h3 {
+        font-size: 1.45rem;
+    }
+
+    .hero-page main {
+        padding: 1rem 0.5rem 1.5rem;
+    }
+
+    .hero-page .hero-section-1,
+    .hero-page .hero-section-2,
+    .hero-page .hero-section-3 {
+        padding: 0.85rem 0.55rem;
+    }
+
+    .hero-page .card,
+    .hero-page #sources-gallery .image-container,
+    .hero-page .hero-section-3 .image-container {
+        flex: 0 0 84vw;
+        width: 84vw;
+    }
+
+    .hero-page .hero-section-3 .image-gallery,
+    .hero-page #sources-gallery .image-gallery {
+        gap: 0.75rem;
+    }
+
+    .hero-page .disclaimer p {
+        font-size: 0.5rem;
+    }
+}
+
+/* ================ UNITED PAGE ================ */
+.united-main {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+    gap: 2rem;
+}
+
+.united-section-1,
+.united-section-2,
+.united-section-3 {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.united-section-1 > div {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45),
+                0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.united-section-2 > .united-2-1,
+.united-section-3 > .united-3-1 {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem;
+    position: relative;
+    z-index: 2;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45),
+                0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.united-section-3 > .hero-grid {
+    width: min(100%, 1000px);
+    margin: -0.85rem auto 0;
+    padding: 1.75rem 1.5rem;
+    position: relative;
+    z-index: 1;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45),
+                0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.united-section-2 .hero-grid,
+.united-section-3 .hero-grid {
+    gap: 2rem;
+    justify-items: center;
+}
+    .united-gallery {
+        width: 100%;
+        max-width: 100%;
+    }
+    .united-gallery .video-gallery {
+        width: 100%;
+        padding: 0.5rem 0 0.75rem;
+        gap: 1rem;
+        scroll-snap-type: x mandatory;
+    }
+    .united-gallery .video-container {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        aspect-ratio: 16 / 9;
+        scroll-snap-align: start;
+    }
+    .united-gallery .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.united-section-1 > div p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.united-section-2 > .united-2-1 p,
+.united-section-3 > .united-3-1 p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .contact-page {
     background:
         linear-gradient(180deg, rgba(0, 151, 54, 0.08) 0%, rgba(255, 255, 255, 0.96) 22%, rgba(207, 17, 39, 0.08) 100%);
@@ -609,7 +1047,10 @@ main p {
     overflow-y: hidden;
     padding: 0.5rem 0 0.25rem;
     scroll-behavior: smooth;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: stretch;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
 }
 
 .faith-link-item {
@@ -617,6 +1058,7 @@ main p {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    scroll-snap-align: start;
 }
 
 .faith-link-item img {
@@ -1013,6 +1455,7 @@ main p {
 .image-gallery-section,
 .links-gallery-section {
     border: 5px solid #000;
+    border-radius: 18px;
     box-shadow: 0 10px 25px rgba(207, 17, 39, 0.55);
     margin: 2.8rem auto;
 }
@@ -2253,6 +2696,9 @@ main h2 {
     padding: 1.5rem;
     scroll-behavior: smooth;
     width: 100%;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 .edu-page .image-gallery::-webkit-scrollbar {
@@ -2277,6 +2723,7 @@ main h2 {
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 151, 54, 0.5);
     background: #fff;
+    scroll-snap-align: start;
 }
 
 .edu-page .image-container img,
@@ -2314,43 +2761,25 @@ main h2 {
     margin-bottom: 1.5rem;
 }
 
-.edu-page .image-gallery {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 1.5rem;
-    scroll-behavior: smooth;
-    width: 100%;
-    justify-content: center;
-}
-
-.edu-page .image-gallery-section {
-    max-width: 1200px;
-    margin: 2.8rem auto;
-    border-radius: 18px;
-    overflow: hidden;
-    text-align: center;
-}
-
-.edu-page .image-gallery-section h2 {
-    text-align: center;
-}
-
 /* Media Queries for EDU Page */
 @media (max-width: 768px) {
     .edu-main {
-        padding: 1.5rem 0.75rem;
+        padding: 1.25rem 0.6rem;
+    }
+
+    .edu-content {
+        max-width: 100%;
     }
 
     .edu-content h2 {
-        font-size: 1.8rem;
-        margin: 1.5rem 0 0.75rem;
+        font-size: 1.65rem;
+        margin: 1.25rem 0 0.7rem;
     }
 
     .edu-content > p {
         font-size: 0.95rem;
-        margin: 1rem auto;
+        margin: 0.95rem auto;
+        max-width: 100%;
     }
 
     .video-embed-section p {
@@ -2358,42 +2787,82 @@ main h2 {
         margin-bottom: 1rem;
     }
 
+    #image-section {
+        margin: 1.25rem auto;
+        border-radius: 14px;
+    }
+
+    .edu-content-section {
+        padding: 1.15rem;
+        margin: 2rem auto;
+    }
+
+    .edu-page .image-gallery-section,
+    .edu-page .video-gallery-section {
+        margin: 2rem auto;
+    }
+
     .edu-page .image-gallery,
     .edu-page .video-gallery {
-        padding: 1rem;
+        padding: 0.9rem;
         gap: 1rem;
     }
 
     .edu-page .image-container,
     .edu-page .video-container {
-        flex: 0 0 250px;
-        min-height: 280px;
+        flex: 0 0 82vw;
+        width: 82vw;
+        min-height: 0;
     }
 
     .edu-page .image-container img,
     .edu-page .video-container video {
-        height: 220px;
+        height: 210px;
     }
 }
 
 @media (max-width: 480px) {
+    .edu-main {
+        padding: 1rem 0.45rem;
+    }
+
     .edu-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
+    }
+
+    .edu-content > p {
+        font-size: 0.92rem;
+        line-height: 1.5;
     }
 
     .video-embed-section p {
         font-size: 1.1rem;
     }
 
+    #image-section {
+        margin: 1rem auto;
+    }
+
+    .edu-content-section {
+        padding: 0.95rem;
+        margin: 1.5rem auto;
+    }
+
+    .edu-page .image-gallery-section,
+    .edu-page .video-gallery-section {
+        margin: 1.5rem auto;
+    }
+
     .edu-page .image-container,
     .edu-page .video-container {
-        flex: 0 0 calc(100vw - 2rem);
-        max-width: calc(100vw - 2rem);
+        flex: 0 0 calc(100vw - 1.25rem);
+        width: calc(100vw - 1.25rem);
+        max-width: calc(100vw - 1.25rem);
     }
 
     .edu-page .image-container img,
     .edu-page .video-container video {
-        height: 200px;
+        height: 190px;
     }
 }
 
