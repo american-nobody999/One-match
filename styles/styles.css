@@ -1,7 +1,12 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
 /* Author: Leslie Brockman.                      */
-/* Updated  06-30-2026                           */
+/* Updated  07-01-2026                           */
+/* I know what I did. I am paying for it.        */
+/* Reclass pending to clean this monster up.     */
+/* I am very well aware AI  can automate         */
+/* AI can mess it up too                         */ 
+/* I do it myself                                */
 /* ============================================= */
 
 /* ================ quick developer notes ================ */
@@ -2577,6 +2582,18 @@ main h2 {
     padding: 2rem 1rem;
 }
 
+.edu-main h1,
+.edu-main h2,
+.edu-main h3,
+.edu-main h4,
+.edu-main h5,
+.edu-main h6,
+.edu-main p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .edu-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -2606,9 +2623,11 @@ main h2 {
 }
 
 #image-section img {
+    max-width: 100%;
     width: 100%;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 .video-embed-section {
@@ -2853,11 +2872,22 @@ main h2 {
         margin: 1.5rem auto;
     }
 
+    .edu-page .image-gallery,
+    .edu-page .video-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: visible;
+        overflow-y: visible;
+        gap: 0.85rem;
+        padding: 0.85rem 0;
+    }
+
     .edu-page .image-container,
     .edu-page .video-container {
-        flex: 0 0 calc(100vw - 1.25rem);
-        width: calc(100vw - 1.25rem);
-        max-width: calc(100vw - 1.25rem);
+        flex: 0 0 auto;
+        width: min(100%, calc(100vw - 1.25rem));
+        max-width: min(100%, calc(100vw - 1.25rem));
     }
 
     .edu-page .image-container img,
