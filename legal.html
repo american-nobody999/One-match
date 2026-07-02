@@ -1,7 +1,7 @@
 <!--
 MPAG:Legal page
 Leslie Brockman
-Date last modified: 2026-06-29
+Date last modified: 2026-07-01
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ Date last modified: 2026-06-29
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="American Nobody999">
 
-<!--For SQL and better accesibility-->
+<!--For SQL and better accessibility-->
     <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
     <title>Make Palestine Great Again - MPGA</title>
     
@@ -20,68 +20,61 @@ Date last modified: 2026-06-29
 <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-    <header class="site-header">
+
+<body class="legal-page">
+    
+<header class="site-header">
     <div class="header-container">
-            
 <!-- Logo - Left Side-waiting for logo contest from Palestinians -->
        <div class="header-logo">
                 <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
         </div>
-
 <!-- Center Content, don't touch this for now -->
 <!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
+<!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
         <div class="header-center">
             <h1 class="site-title">
                 <span class="lang-en">State of Palestine</span>
                 <span class="lang-ar">دولة فلسطين</span>
             </h1>
-                
-<!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
-              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+            <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
                     English | العربية
-              </button>
-
-<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
-<!-- progress.html will be replaced as the pages are completed with content and correct css, we did this all backwards, this website will remain live through the errors and reorganization-->
-              <nav class="main-nav" aria-label="Main navigation">
-                <ul class="nav-menu">
-                  <li><a href="index.html" class="nav-btn active">
+            </button>
+<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change based on Palestine design-->
+            <nav class="main-nav" aria-label="Main navigation">
+              <ul class="nav-menu">
+                <li><a href="index.html" class="nav-btn active">
                       <span class="lang-en">Home</span>
                       <span class="lang-ar">الرئيسية</span>
-                  </a></li>
-                  <li><a href="mpga.html" class="nav-btn">
+                </a></li>
+                <li><a href="mpga.html" class="nav-btn">
                         <span class="lang-en">MPGA</span>
                         <span class="lang-ar">MPGA</span>
-                  </a></li>
-<!--progress.html needs to be replaced with united.html-->
-                  <li><a href="progress.html" class="nav-btn">
+                </a></li>
+                <li><a href="united.html" class="nav-btn">
                       <span class="lang-en">United</span>
                       <span class="lang-ar">متحدون</span>
                 </a></li>
-<!--progress.html needs to be replaced with leslie.html-->
-                  <li><a href="progress.html" class="nav-btn">
+                <li><a href="leslie.html" class="nav-btn">
                     <span class="lang-en">Leslie</span>
                     <span class="lang-ar">ليزلي</span>
-                  </a></li>
-<!--progress.html needs to be replaced with about.html-->
-                    <li><a href="about.html" class="nav-btn">
+                </a></li>
+                <li><a href="about.html" class="nav-btn">
                       <span class="lang-en">About Us</span>
                       <span class="lang-ar">من نحن</span>
-                    </a></li>
-                  </ul>
-              </nav>
-            </div>
-
+                </a></li>
+              </ul>
+            </nav>
+        </div>
 <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
             <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 ☰
             </button>
+      </div>
+</header>
 
-        </div>
-    </header>
 
-        <main>
+        <main class="legal-main">
             <section class="legal-section legal-section-1" aria-label="Section 1">
                 <h2>
                     <span class="lang-en">Disclaimers</span>
@@ -126,7 +119,7 @@ Date last modified: 2026-06-29
                         <span class="lang-en">War Crimes Against Global Sumud Flotilla</span>
                         <span class="lang-ar hidden">جرائم حرب ضد أسطول الصمود العالمي</span>
                     </h2>
-                    <a href="ticket.html" target="_blank" rel="noopener">
+                    <a href="https://raw.githubusercontent.com/american-nobody999/Flotillas/main/ticket.html" target="_blank" rel="noopener">
                         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/legal/0021.jpg" alt="Featured filing image" loading="lazy">
                     </a>
                 </div>
@@ -257,7 +250,7 @@ Date last modified: 2026-06-29
             </section>
         </main>
 
-      <footer class="site-footer">
+<footer class="site-footer">
         <div class="footer-container">
         <div class="footer-row">
           <a href="legal.html" class="footer-btn footer-btn-left">
@@ -276,8 +269,6 @@ Date last modified: 2026-06-29
               <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
             </p>
           </div>
-<!--progress.html needs to be replaced with contact us.html-->
-<!--When this page goes live, this communcation avenue needs to be left alone, gentle request. This message is not for everyone.-->
           <a href="contact.html" class="footer-btn footer-btn-right">
             <span class="lang-en">Contact Us</span>
             <span class="lang-ar">اتصل بنا</span>
