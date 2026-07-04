@@ -1,7 +1,7 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
 /* Author: Leslie Brockman.                      */
-/* Updated  07-01-2026                           */
+/* Updated  07-04-2026                           */
 /* I know what I did. I am paying for it.        */
 /* Reclass pending to clean this monster up.     */
 /* I am very well aware AI  can automate         */
@@ -1273,6 +1273,12 @@ main p {
     max-width: 100%;
 }
 
+.tribute-img {
+    display: block;
+    width: min(100%, 900px);
+    margin: 2rem auto 0;
+}
+
 .ok-humanity .media-grid {
     display: flex;
     flex-direction: column;
@@ -1958,6 +1964,11 @@ main p {
 
     .hero-media .social-link img {
         max-width: 72px;
+    }
+
+    .tribute-img {
+        width: 100%;
+        margin-top: 1.25rem;
     }
 
     .hero-bio {
