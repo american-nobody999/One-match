@@ -234,4 +234,27 @@ if (form && statusMessage && submitBtn && submitBtnEn && submitBtnAr) {
         }
     });
 }
+// Count down timer for January 21, 2028, next election cycle begins--this demonstrates the countdown timer functionality. Adjust the target date as needed.
+const countdownElement = document.getElementById('countdown');
+const targetDate = new Date('January 21, 2028 00:00:00').getTime();
 
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+        countdownElement.textContent = 'The election cycle has begun!';
+        clearInterval(countdownInterval);
+        return;
+    }
+// Calculate time components-seconds, minutes, hours, days, yes, I know how to program.
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+const countdownInterval = setInterval(updateCountdown, 1000);
+updateCountdown();  
