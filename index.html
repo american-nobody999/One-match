@@ -1,7 +1,7 @@
 <!--
 MPAG:Home page
 Leslie Brockman
-Date last modified: 2026-07-04
+Date last modified: 2026-07-17
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,8 @@ Date last modified: 2026-07-04
     
 <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
-    
+<!--Only need this on the index, so we are not changing all the headers-->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css">
 </head>
@@ -74,7 +75,32 @@ Date last modified: 2026-07-04
 </header>
 
   <main class="home-main">
-<!-- Section 1: Daily Hey Palestine -->
+<!--Count down timer until the next election, demonstrates developer abilities to provide real-time updates on websites-->
+ <section class="countdown-section">
+
+    <div id="countdown">
+        <div class="time-box">
+            <span id="days">0</span>
+            <p>Days</p>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">0</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">0</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">0</span>
+            <p>Seconds</p>
+        </div>
+    </div>
+</section>
+
     <section class="section day-journal" id="daily-journal">
 <!--Hey Palestine header(do this for spans?)-->
         <div class="section-header">
@@ -89,25 +115,23 @@ Date last modified: 2026-07-04
             <span class="lang-ar hidden">اقتباس اليوم</span>
           </h3>
           <p class="quote-text">
-          <span class="lang-en">"2026 is the year of the patriot. America is great, strong, and exceptional. The abundance of patriots who will answer the call to serve their countrymen is the true wealth of America."<br> President Donald A. Trump, 45/47</span>
-          <span class="lang-ar hidden">"2026 هو عام الوطني. أمريكا عظيمة، قوية، واستثنائية. وفرة الوطنيين الذين سيستجيبون للدعوة لخدمة مواطنيهم هي الثروة الحقيقية لأمريكا."<br>الرئيس دونالد أ. ترامب، 45/47</span>
-        </p>
-        <p class="quote-reply">
-          <span class="lang-en">I say to you, Sir, it is only June.<br>
-        American Nobody</span>
-          <span class="lang-ar hidden">أقول لك، سيدي، إنه فقط يونيو.<br>
-        أمريكي Nobody</span>
+            <span class="lang-en">"Hope is not passive. Hope is not blah, blah, blah. Hope is telling the truth. Hope is taking action. And hope always comes from the people."</span>
+            <span class="lang-ar hidden">"الأمل ليس سلبياً. الأمل ليس مجرد كلام فارغ. الأمل هو قول الحقيقة. الأمل هو اتخاذ موقف. والأمل يأتي دائماً من الناس."</span><br>
+        <cite>
+            <span class="lang-en">Greta Thunberg</span>
+            <span class="lang-ar hidden">غريتا تونبرغ</span>
+        </cite>
         </p>
       </div>
       <h3 class="section-date">
-      <span class="lang-en">Tuesday, June 30, 2026</span>
-      <span class="lang-ar">الثلاثاء، 30 يونيو 2026</span>
-      <div class="day-counter">Day 282</div>
+      <span class="lang-en">Friday, July 17</span>
+      <span class="lang-ar">الجمعة، 17 يوليو</span>
+      <div class="day-counter">Day 289</div>
       </h3>
         </div>
         <div class="content-grid">
          <div class="journal-media">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg"
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0036.jpg"
                alt="Palestine Flag"
                class="div-img"
                loading="lazy">
@@ -115,7 +139,7 @@ Date last modified: 2026-07-04
             <span class="lang-en">Palestine Remains</span>
             <span class="lang-ar hidden">علم فلسطين</span>
           </div>
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/108.jpg"
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/14.png"
                alt="Palestine Flag"
                class="div-img"
                loading="lazy">
@@ -123,27 +147,27 @@ Date last modified: 2026-07-04
             <span class="lang-en">Record of the Palestinian Struggle from Albert Einstein, April 10, 1948.<br> They do not teach this in Western education. I couldn't find Palestine on a map a year ago. This is an epidemic of erasing history by the occupation and its allies.</span>
             <span class="lang-ar hidden">سجل النضال الفلسطيني من ألبرت أينشتاين، 10 أبريل 1948.<br> هذا لا يُدرَّس في التعليم الغربي. قبل عام لم أستطع العثور على فلسطين في الخريطة. هذا وباء لمحو التاريخ من قبل الاحتلال وحلفائه.</span>
           </div>
-         </div>
+        
          <div class="text-content">
           <div class="lang-en">
             <p> Hello sweethearts,</p>
-            <p>I know Palestine. You remain. We are working together now, so much louder, so much more together Palestine. The situation is dire, but we are resilient. This boat is still sailing to Palestine.</p>
-            <p>It's only Tuesday, and already, with the new Western media news cycle, the friends of the occupation are starting the propaganda. We must be vigilant in documenting and archiving the evidence this week.</p>
-           <p>Push it through the algorithm. I believe you're starting to see what we are going to do here. This has been a long process over the past ten months. I see them slaughtering you. Targeting the kids. I can do nothing but work on a website. So I will work on a website. Let's go to work.</p>
-            <p>The American people stand with the State of Palestine. We still have corrupt officials, but they are slowly losing power. We have been lied to, and our media is still occupied by those who seek to silence the truth. Our major threat is the attempts by corrupt congressmen trying to merge our sovereign military with the terror occupation. The American people do not want this, nor will we allow it.</p>
-            <p>Baby steps. I've got so many ideas, and I've been sharing them on social, millions of us have. It's like an award among the online community when Palestine or a humanitarian group uses your idea. True ones. Real ones. There's not enough time in the day. We all do this together. We are still here. So are you.</p>
+            <p>Some updates from the front lines: Sovereign American Side</p>
+            <p>MPGA moves forward with pressure on western media and American governement officials to honor the wishes of the American people and end funding to the occupation in Palestine and other countries for invasion and genocide.</p>
+           <p>Social media platforms are removing any supportive comments to Palestinians, they are targeting our platforms, our humanitarians, our networks of communication, some days, it feels lost in the tide.</p>
+            <p>We were able to block the corrupt american leaders from merging our military with the Isreali occupation forces. Americans remain sovereign, and the issues are no longer domestic on our minds, but rather where our media, companies, celebrities and leaders stand with the occupation.</p>
+            <p>I see you hurting loves, even when you smile. We will get through this together.We all have billions of sailboats all headed to you, and Palestine is our compass. Keep your heads down. I am still here.</p>
             <p>All my love,</p>
             <p>Leslie, American Nobody999</p>
         </div>
         <div class="lang-ar hidden" dir="rtl">
-          <p>مرحبًا يا أحبّتي،</p>
-          <p>أنا أعرف فلسطين. أنتم باقون. نحن نعمل معًا الآن، بصوت أعلى وبوحدة أكبر من أي وقت مضى. الوضع خطير، لكننا صامدون. هذا القارب ما زال متجهًا إلى فلسطين.</p>
-          <p>إنه يوم الثلاثاء فقط، ومع دورة الأخبار الغربية الجديدة بدأ أصدقاء الاحتلال بنشر الدعاية. يجب أن نكون يقظين هذا الأسبوع في التوثيق والأرشفة وحفظ الأدلة.</p>
-          <p>ادفعوا هذا عبر الخوارزمية. أؤمن أنكم بدأتم ترون ما الذي سنفعله هنا. كانت عملية طويلة خلال الأشهر العشرة الماضية. أراهم يذبحونكم ويستهدفون الأطفال. لا أستطيع أن أفعل شيئًا سوى العمل على موقع، ولذلك سأعمل على هذا الموقع. هيا بنا إلى العمل.</p>
-          <p>الشعب الأمريكي يقف مع دولة فلسطين. ما زال لدينا مسؤولون فاسدون، لكنهم يفقدون قوتهم تدريجيًا. لقد كُذب علينا، وما زال إعلامنا تحت سيطرة من يسعون لإسكات الحقيقة. الخطر الأكبر هو محاولات بعض أعضاء الكونغرس الفاسدين دمج جيشنا السيادي مع احتلال إرهابي. الشعب الأمريكي لا يريد ذلك، ولن نسمح به.</p>
-          <p>خطوات صغيرة. لدي أفكار كثيرة جدًا، وقد شاركتها على المنصات الاجتماعية، وملايين منا يفعلون ذلك. أصبح الأمر كأنه تكريم داخل المجتمع الإلكتروني عندما تستخدم فلسطين أو مجموعة إنسانية فكرتك. أشخاص حقيقيون. لا يكفي الوقت في اليوم. نحن نفعل هذا معًا. نحن ما زلنا هنا. وأنتم كذلك.</p>
-          <p>كل حبي،</p>
-          <p>ليزلي، أمريكان نوبودي999</p>
+         <p>مرحبًا يا أحبّتي،</p>
+         <p>إليكم بعض المستجدات من الخطوط الأمامية: الجانب الأمريكي السيادي.</p>
+         <p>تواصل حركة «اجعلوا فلسطين عظيمة مرة أخرى» (MPGA) جهودها للضغط على وسائل الإعلام الغربية والمسؤولين في الحكومة الأمريكية لاحترام إرادة الشعب الأمريكي، وإنهاء تمويل الاحتلال في فلسطين وغيرها من الدول التي تتعرض للغزو والإبادة الجماعية.</p>
+         <p>تقوم منصات التواصل الاجتماعي بحذف أي تعليقات داعمة للفلسطينيين، كما تستهدف منصاتنا الإنسانية، والعاملين في المجال الإنساني، وشبكات تواصلنا. وفي بعض الأيام، يبدو الأمر وكأن أصواتنا تضيع وسط التيار.</p>
+        <p>لقد تمكّنا من منع القادة الأمريكيين الفاسدين من دمج جيشنا مع قوات الاحتلال الإسرائيلي. ولا يزال الأمريكيون يحتفظون بسيادتهم، ولم تعد القضايا المحلية هي الشغل الشاغل في أذهاننا، بل أصبح اهتمامنا منصبًا على موقف وسائل إعلامنا، وشركاتنا، ومشاهيرنا، وقادتنا من الاحتلال.</p>
+        <p>أراكم تتألمون يا أحبّتي، حتى عندما تبتسمون. سنتجاوز هذه المحنة معًا. لدينا جميعًا مليارات القوارب الشراعية المتجهة نحوكم، وفلسطين هي بوصلتنا. أبقوا رؤوسكم منخفضة، فما زلت هنا.</p>
+        <p>كل حبي،</p>
+        <p>ليزلي، أمريكان نوبودي999</p>
       </div>
     </div>
 
@@ -161,29 +185,33 @@ Date last modified: 2026-07-04
                 <div class="text-content">
                   <div class="lang-en">
                 <p>Good Evening Humanity,</p>
-                <p>Going to be a bad week. While the world is distracted by communism invading America now. Distraction and targeting from the occupation continues, we must stay focused on our mission.</p>
-                <p>We are still missing 4 of our humanitarians in Tunisia, and Dr. S. We are still working to get them back. We have also recovered 10 of the missing humanitarian activists from the Global Convoy of Resilience. We must all heal.</p>
+                <p>Lets jump right in. Shall we. All Ground Crews need to report to: <a href="https://www.Globalsumudflotilla.org">Click it-- > Globalsumudflotilla.org</a> They are NOT sailing yet. The more awareness and support we give them, faster they get back in the water. Remember, we stay solid, we stay peaceful, and we love each other even if we want to push each other off the boats. If I have to put up with you, you have to put up with me. Go to work. Be nice.</p>
+                <p>In supporting each other, we must never forget why we are doing this, and that is for the Palestinians. Every one of us is good at doing something, something great, do that for Palestine. We all work together, and we protect each other. Are you saying Palestine right now? Where is Doctor Sayifa. West Bank needs support with the invaders.Americans, they so close to labeling us domestic terroists for isreal.Stay vigliant.</p>
                 <p>If you're just tuning in, this website is a living, organic, single voice for the State of Palestine. We never miss Friday prayer. Give me a few more weeks to completely set up the platform and continue working in all our ways for Palestine.</p>
                 <ul>
                   <li>We need to highlight the Palestinian prisoners and hostages.</li>
                   <li>We need to promote civic groups and Palestinian humanitarian groups on the ground in Palestine.</li>
                   <li>They need water, they need the occupation to stop killing them, they need food, basic healthcare, and education.</li>
+                  <li>Bisan and Gaza need all eyes, they are slaughtering them daily in bombing and drones. Especially the summer camps, public gatherings such as funerals, any hosptial. Keep your heads down.</li>
+                  <li>Palestine Authority needs support. Isreal has cut all their funding, and they cannot provide essential services while isreal takes all their resources and humantiarian aid. They are being starved and cut off from the world. We need to support them.</li>
                 </ul>
                 <p>I'll be in touch soon, and now that we're finally moving forward, unhindered, this website will continue to provide updates and support for our mission. We are moving from social media, folks. All my love, even if I disagree with you or don't like you.</p>
                 <p>Leslie, American Nobody999</p>
               </div>
               <div class="lang-ar hidden" dir="rtl">
-                <p>مساء الخير يا بشرية،</p>
-                <p>سيكون أسبوعًا صعبًا. بينما العالم منشغل بما يحدث في أمريكا، يستمر الإلهاء والاستهداف من طرف الاحتلال، ويجب أن نبقى مركزين على مهمتنا.</p>
-                <p>ما زلنا نفتقد 4 من العاملين الإنسانيين في تونس، إضافة إلى الدكتور س. وما زلنا نعمل على إعادتهم. كما استعدنا 10 من النشطاء الإنسانيين المفقودين من قافلة الصمود العالمية. علينا جميعًا أن نتعافى.</p>
-                <p>إذا كنتم تتابعوننا الآن، فهذا الموقع صوت حي وعضوي وموحد لدولة فلسطين. نحن لا نفوّت صلاة الجمعة. امنحوني بضعة أسابيع إضافية لإكمال تجهيز المنصة ومواصلة العمل بكل طرقنا من أجل فلسطين.</p>
+                <p>مساء الخير يا أهل الإنسانية،</p>
+                <p>لنبدأ مباشرةً. على جميع الفرق الميدانية التوجّه إلى <a href="https://www.Globalsumudflotilla.org">Globalsumudflotilla.org</a>. إنهم لم يبحروا بعد. وكلما زاد الوعي والدعم الذي نقدمه لهم، عادوا إلى البحر بشكل أسرع. تذكّروا: نبقى ثابتين، نبقى مسالمين، ونحافظ على محبتنا لبعضنا البعض، حتى وإن راودتنا الرغبة أحيانًا في دفع بعضنا خارج القوارب. إذا كان عليّ أن أتقبلكم، فعليكم أن تتقبلوني أيضًا. انطلقوا إلى العمل، وكونوا لطفاء.</p>
+                <p>وفي دعمنا لبعضنا البعض، يجب ألا ننسى أبدًا سبب قيامنا بهذا، وهو فلسطين والشعب الفلسطيني. كل واحد منا يمتلك مهارة أو قدرة مميزة، فاستثمرها من أجل فلسطين. عندما نعمل معًا، فإننا نحمي بعضنا بعضًا. هل تذكرون فلسطين الآن؟ أين الدكتور سيفا؟ تحتاج الضفة الغربية إلى الدعم في مواجهة المعتدين. أيها الأمريكيون، إنهم يقتربون من تصنيفنا كإرهابيين محليين بسبب دعمنا لفلسطين. ابقوا يقظين.</p>
+                <p>إذا كنتم قد انضممتم إلينا للتو، فهذا الموقع هو منصة حية ومتجددة تمثل صوتًا واحدًا لدولة فلسطين. ونحن لا نفوّت صلاة الجمعة أبدًا. امنحوني بضعة أسابيع أخرى لإكمال إعداد المنصة، ومواصلة العمل بكل السبل الممكنة من أجل فلسطين.</p>
                 <ul>
-                  <li>نحتاج إلى تسليط الضوء على الأسرى والرهائن الفلسطينيين.</li>
-                  <li>نحتاج إلى دعم المجموعات المدنية والمجموعات الإنسانية الفلسطينية العاملة على الأرض في فلسطين.</li>
-                  <li>هم بحاجة إلى الماء، وبحاجة إلى أن يتوقف الاحتلال عن قتلهم، وبحاجة إلى الطعام والرعاية الصحية الأساسية والتعليم.</li>
+                  <li>علينا تسليط الضوء على الأسرى والمحتجزين الفلسطينيين.</li>
+                  <li>علينا دعم والتعريف بالمؤسسات المدنية والمنظمات الإنسانية الفلسطينية العاملة على الأرض في فلسطين.</li>
+                  <li>هم بحاجة إلى الماء، وإلى وقف عمليات القتل التي يرتكبها الاحتلال، كما يحتاجون إلى الغذاء، والرعاية الصحية الأساسية، والتعليم.</li>
+                  <li>تحتاج بيسان وغزة إلى أن تبقى أنظار العالم مسلطة عليهما، إذ يتعرض السكان للقتل يوميًا بالقصف والطائرات المسيّرة، ولا سيما في المخيمات الصيفية، والتجمعات العامة مثل الجنائز، وحتى المستشفيات. ابقوا حذرين وحافظوا على سلامتكم.</li>
+                  <li>تحتاج السلطة الفلسطينية إلى الدعم. فقد قطع الاحتلال الإسرائيلي عنها مصادر التمويل، مما جعلها غير قادرة على تقديم الخدمات الأساسية، في الوقت الذي يستولي فيه الاحتلال على الموارد والمساعدات الإنسانية. ويواجه السكان التجويع والعزلة عن العالم، ولذلك يجب أن نقدم لهم الدعم.</li>
                 </ul>
-                <p>سأعود للتواصل قريبًا، والآن بعد أن بدأنا أخيرًا نتقدم بلا عوائق، سيواصل هذا الموقع تقديم التحديثات والدعم لمهمتنا. نحن ننتقل من وسائل التواصل الاجتماعي. كل حبي لكم، حتى إن اختلفت معكم أو لم أحب بعضكم.</p>
-                <p>ليزلي، أمريكان نوبودي999</p>
+                <p>سأكون على تواصل معكم قريبًا، والآن بعد أن بدأنا أخيرًا في المضي قدمًا دون عوائق، سيواصل هذا الموقع تقديم التحديثات والدعم لمهمتنا. لقد بدأنا بالانتقال بعيدًا عن منصات التواصل الاجتماعي. لكم مني كل المحبة، حتى إن اختلفت معكم أو لم أتفق مع آرائكم.</p>
+                <p>ليزلي، American Nobody999</p>
               </div>
                 </div>
                 <div class="media-grid">
@@ -411,8 +439,19 @@ Date last modified: 2026-07-04
         <span class="lang-ar hidden">عودة الدكتور أبو صفية</span>
   </h2>
  <div class="scrollable-gallery">
+  <!--Gallery card with link to biotsite
     <div class="gallery-card">
-      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1703.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+     <a href="https://raw.githubusercontent.com/american-nobody999/biosite/main/index.html" target="_blank">
+       <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1703.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+       <caption>
+         <span class="lang-en">Click me</span>
+         <span class="lang-ar hidden">عودة الدكتور أبو صفية</span>
+       </caption>
+     </a>
+   </div>
+    -->
+   <div class="gallery-card">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1408.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
     </div>
     <div class="gallery-card">
       <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1800.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
@@ -431,10 +470,6 @@ Date last modified: 2026-07-04
     </div>
   </div>
 </section>
-  <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/faithi/tribute.jpg"
-               alt="Palestine Flag"
-               class="div-img tribute-img"
-               loading="lazy">
   </main>
 
   <footer class="site-footer">
@@ -467,3 +502,4 @@ Date last modified: 2026-07-04
   <script src="js/main.js"></script>
 </body>
 </html>
+
