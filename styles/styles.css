@@ -547,12 +547,21 @@ main p {
 
 .united-section-1,
 .united-section-2,
-.united-section-3 {
+.united-section-3,
+.united-section-4 {
     width: min(100%, 1000px);
     margin: 0 auto;
     display: flex;
     justify-content: center;
     padding: 0 1rem;
+}
+
+.united-page .united-section-2,
+.united-page .united-section-3,
+.united-page .united-section-4 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
 }
 
 .united-section-1 > div {
@@ -601,6 +610,108 @@ main p {
     gap: 2rem;
     justify-items: center;
 }
+
+/* United desktop layout: stack all major blocks vertically */
+@media (min-width: 992px) {
+    .united-page .united-section-2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    .united-page .hero-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        width: min(100%, 1000px);
+        margin: 0 auto;
+    }
+
+    .united-page .hero-grid > * {
+        width: 100%;
+    }
+
+    .united-page .hero-media {
+        align-items: center;
+        text-align: center;
+    }
+
+    .united-page .hero-media > img {
+        width: min(100%, 340px);
+        max-width: 340px;
+        min-height: auto;
+        object-fit: cover;
+    }
+
+    .united-page .hero-media .social-link img {
+        max-width: 56px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .united-page .hero-media .social-link,
+    .united-page .hero-media > a:not(.social-link) {
+        align-self: center;
+    }
+
+    .united-page .hero-media > a:not(.social-link) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.35rem;
+        padding: 0.45rem 0.8rem;
+        border: 2px solid var(--dark);
+        border-radius: 6px;
+        background: var(--primary-green);
+        color: #000;
+        font-weight: 700;
+    }
+}
+
+    /* United responsive image sizing across breakpoints */
+    @media (min-width: 1600px) {
+        .united-page .hero-media > img {
+            max-width: 420px;
+        }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1599px) {
+        .united-page .hero-media > img {
+            max-width: 380px;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        .united-page .hero-media > img {
+            max-width: 340px;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 991px) {
+        .united-page .hero-media > img {
+            max-width: 300px;
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 768px) {
+        .united-page .hero-media > img {
+            max-width: 260px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .united-page .hero-media > img {
+            max-width: 220px;
+        }
+
+        .united-page .hero-media .social-link img {
+            width: 48px;
+            height: 48px;
+            max-width: 48px;
+        }
+    }
+
     .united-gallery {
         width: 100%;
         max-width: 100%;
@@ -634,6 +745,144 @@ main p {
 .united-section-3 > .united-3-1 p {
     margin-left: auto;
     margin-right: auto;
+}
+
+/* United hero bio copy: centered with paragraph indent */
+.united-page .hero-bio .lang-en,
+.united-page .hero-bio .lang-ar {
+    text-align: center;
+}
+
+.united-page .hero-bio p {
+    text-indent: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* United list: replace default bullets with Palestine flag markers */
+.united-page .hero-bio .palestine-flag-list {
+    list-style: none;
+    margin: 1rem auto 0;
+    padding: 0;
+    text-align: left;
+}
+
+.united-page .hero-bio .palestine-flag-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.55rem;
+}
+
+.united-page .hero-bio .palestine-flag-list li::before {
+    content: "🇵🇸";
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1;
+}
+
+/* United: thin framing around hero blocks */
+.united-page .hero-grid {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    background: linear-gradient(180deg, #6f6f6f 0%, #b8b8b8 45%, #111111 100%);
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.united-page .hero-grid > * {
+    min-width: 0;
+}
+
+/* United hero bio visual treatment */
+.united-page .hero-bio {
+    border: 1px solid rgba(0, 0, 0, 0.65);
+    background: linear-gradient(180deg, #6f6f6f 0%, #b8b8b8 45%, #111111 100%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 0 #000, 0 0 6px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.united-page .hero-bio h3,
+.united-page .hero-bio p {
+    color: #fff;
+    text-shadow: 0 2px 0 #000, 0 0 6px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
+    overflow-wrap: anywhere;
+}
+
+.united-page .hero-bio .palestine-flag-list li {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 991px) {
+    .united-page .united-main {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .united-page .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.85rem;
+    }
+
+    .united-page .hero-media {
+        align-items: center;
+        text-align: center;
+    }
+
+    .united-page .hero-media > img {
+        width: min(100%, 320px);
+        max-width: 320px;
+        height: auto;
+    }
+
+    .united-page .hero-media .social-link,
+    .united-page .hero-media > a:not(.social-link) {
+        align-self: center;
+    }
+
+    .united-page .hero-media > a:not(.social-link) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.35rem;
+        padding: 0.45rem 0.8rem;
+        border: 2px solid var(--dark);
+        border-radius: 6px;
+        background: var(--primary-green);
+        color: #000;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 575px) {
+    .united-page .united-main {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .united-page .united-section-1,
+    .united-page .united-section-2,
+    .united-page .united-section-3,
+    .united-page .united-section-4 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .united-page .hero-grid {
+        padding: 0.75rem;
+    }
+
+    .united-page .hero-bio {
+        padding: 0.9rem;
+    }
 }
 
 .contact-page {
