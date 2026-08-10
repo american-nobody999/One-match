@@ -4,6 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
 const langToggle = document.getElementById('lang-toggle');
 let currentLang = 'en';
 
+const englishLanguageSelectors = '.lang-en, .p-en, .h2-en, .h3-en, .caption-en, .intro-en, .learn-en';
+const arabicLanguageSelectors = '.lang-ar, .p-ar, .h2-ar, .h3-ar, .caption-ar, .intro-ar, .learn-ar';
+
+function setLanguageVisibility(selector, hide) {
+    document.querySelectorAll(selector).forEach(el => {
+        el.classList.toggle('hidden', hide);
+    });
+}
+
 function toggleLanguage() {
     currentLang = currentLang === 'en' ? 'ar' : 'en';
     
@@ -11,19 +20,20 @@ function toggleLanguage() {
     
     if (currentLang === 'ar') {
         langToggle.textContent = 'العربية | English';
-        document.querySelectorAll('.lang-en').forEach(el => el.classList.add('hidden'));
-        document.querySelectorAll('.lang-ar').forEach(el => el.classList.remove('hidden'));
+        setLanguageVisibility(englishLanguageSelectors, true);
+        setLanguageVisibility(arabicLanguageSelectors, false);
     } else {
         langToggle.textContent = 'English | العربية';
-        document.querySelectorAll('.lang-en').forEach(el => el.classList.remove('hidden'));
-        document.querySelectorAll('.lang-ar').forEach(el => el.classList.add('hidden'));
+        setLanguageVisibility(englishLanguageSelectors, false);
+        setLanguageVisibility(arabicLanguageSelectors, true);
     }
 }
 
 langToggle.addEventListener('click', toggleLanguage);
 
 // Set initial state (English)
-document.querySelectorAll('.lang-ar').forEach(el => el.classList.add('hidden'));
+setLanguageVisibility(englishLanguageSelectors, false);
+setLanguageVisibility(arabicLanguageSelectors, true);
     // ============== MOBILE MENU ==============
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.querySelector('.main-nav');
@@ -88,6 +98,23 @@ document.querySelectorAll('.lang-ar').forEach(el => el.classList.add('hidden'));
     }
 
     initVideoGalleries();
+
+    // Standardize repetitive placeholder alt text on the Faces page.
+    function normalizeFaceGalleryAltText() {
+        if (!document.body.classList.contains('face-page')) {
+            return;
+        }
+
+        let imageIndex = 0;
+        document.querySelectorAll('.face-page .image-gallery img').forEach(img => {
+            if (/^Image\s+\d+$/i.test(img.alt.trim())) {
+                imageIndex += 1;
+                img.alt = `Palestine faces gallery image ${imageIndex}`;
+            }
+        });
+    }
+
+    normalizeFaceGalleryAltText();
 
     // ============== ACCESSIBILITY & KEYBOARD SUPPORT ==============
     // Smooth scroll for anchor links
@@ -234,9 +261,10 @@ if (form && statusMessage && submitBtn && submitBtnEn && submitBtnAr) {
         }
     });
 }
-// Count down timer for January 21, 2028, next election cycle begins--this demonstrates the countdown timer functionality. Adjust the target date as needed.
+
+// Count down timer for January 20, 2029, next election cycle begins--this demonstrates the countdown timer functionality. Adjust the target date as needed.
 const countdownElement = document.getElementById('countdown');
-const targetDate = new Date('January 21, 2028 00:00:00').getTime();
+const targetDate = new Date('January 20, 2029 00:00:00').getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
