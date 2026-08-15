@@ -51,6 +51,30 @@ body {
     color: var(--dark);
     line-height: 1.65;
     overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+html {
+    overflow-y: scroll;
+    scrollbar-width: auto;
+    scrollbar-color: var(--primary-green) rgba(17, 17, 17, 0.12);
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 14px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: rgba(17, 17, 17, 0.1);
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary-green), var(--accent-red));
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 /* Index intro: black hold then match-light reveal */
@@ -2106,8 +2130,9 @@ main p {
 .ok-humanity .quest-card img {
     width: 400px;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
     border: 0;
+    background: #fff;
 }
 
 /* Keep side-quest cards fluid on smaller viewports */
@@ -2140,6 +2165,7 @@ main p {
     .ok-humanity .quest-card img {
         width: min(100%, 360px);
         height: 270px;
+        object-fit: contain;
     }
 
     .home-page .ok-humanity .media-grid {
@@ -2187,6 +2213,7 @@ main p {
     .ok-humanity .quest-card img {
         width: min(100%, 320px);
         height: 240px;
+        object-fit: contain;
     }
 
     .ok-humanity .media-grid {
