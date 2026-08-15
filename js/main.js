@@ -1,4 +1,6 @@
 // js/main.js
+//08-14-2026
+// Author: Leslie brockman
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
 const langToggle = document.getElementById('lang-toggle');
@@ -115,6 +117,30 @@ setLanguageVisibility(arabicLanguageSelectors, true);
     }
 
     normalizeFaceGalleryAltText();
+
+    // Home page intro: hold on black for 2 seconds, then reveal like a lit match.
+    function initHomeMatchIntro() {
+        if (!document.body.classList.contains('home-page')) {
+            return;
+        }
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+
+        document.body.classList.add('match-intro-active');
+
+        window.setTimeout(() => {
+            document.body.classList.add('match-intro-light');
+        }, 2000);
+
+        window.setTimeout(() => {
+            document.body.classList.remove('match-intro-light');
+            document.body.classList.remove('match-intro-active');
+        }, 3700);
+    }
+
+    initHomeMatchIntro();
 
     // ============== ACCESSIBILITY & KEYBOARD SUPPORT ==============
     // Smooth scroll for anchor links
