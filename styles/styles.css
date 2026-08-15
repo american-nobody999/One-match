@@ -3647,6 +3647,23 @@ main h2 {
     object-fit: cover;
 }
 
+@media (max-width: 991px) {
+    .face-page .face-gallery-top .image-gallery {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: visible;
+        overflow-y: visible;
+        gap: 0.8rem;
+        padding: 0.7rem;
+    }
+
+    .face-page .face-gallery-top .image-container {
+        flex: 0 0 auto;
+        width: min(100%, 460px);
+        max-width: 100%;
+    }
+}
+
 
 /* ================ LESLIE.HTML PAGE ================ */
 .leslie-page {
@@ -5367,6 +5384,23 @@ main h2 {
         .face-page .video-gallery-section .video-container {
             flex: 0 0 min(86vw, 280px);
             width: min(86vw, 280px);
+        }
+}
+
+@media (max-width: 991px) {
+        .face-page .face-section-1 .image-gallery {
+            justify-content: flex-start;
+            direction: ltr;
+            padding-left: 0.65rem;
+            padding-right: 0.65rem;
+            scroll-padding-left: 0.65rem;
+            scroll-padding-right: 0.65rem;
+        }
+
+        .face-page .face-section-1 .image-gallery .image-container {
+            flex: 0 0 min(78vw, 360px);
+            width: min(78vw, 360px);
+            max-width: min(78vw, 360px);
         }
 }
 
