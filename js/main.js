@@ -1,6 +1,4 @@
 // js/main.js
-//08-14-2026
-// Author: Leslie brockman
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
 const langToggle = document.getElementById('lang-toggle');
@@ -120,7 +118,11 @@ setLanguageVisibility(arabicLanguageSelectors, true);
 
     // Home page intro: hold on black for 2 seconds, then reveal like a lit match.
     function initHomeMatchIntro() {
-        if (!document.body.classList.contains('home-page')) {
+        const isHomePage = window.location.pathname === '/' ||
+            window.location.pathname.endsWith('/index.html') ||
+            window.location.pathname.endsWith('index.html');
+
+        if (!isHomePage || !document.body.classList.contains('home-page')) {
             return;
         }
 
@@ -141,6 +143,86 @@ setLanguageVisibility(arabicLanguageSelectors, true);
     }
 
     initHomeMatchIntro();
+
+    /* =========================
+       GET ELEMENTS
+    ========================= */
+
+    const giftImage = document.getElementById("giftImage");
+
+    const popupOverlay = document.getElementById("popupOverlay");
+
+    const backButton = document.getElementById("backButton");
+
+
+    if (giftImage && popupOverlay && backButton) {
+        /* =========================
+           OPEN POPUP
+        ========================= */
+
+        giftImage.addEventListener("click", function () {
+
+            // Stop the gift from shaking
+            giftImage.classList.add("stopped");
+
+            // Show the popup
+            popupOverlay.classList.add("show");
+
+            popupOverlay.setAttribute("aria-hidden", "false");
+
+        });
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        backButton.addEventListener("click", function () {
+
+            // Hide the popup
+            popupOverlay.classList.remove("show");
+
+            popupOverlay.setAttribute("aria-hidden", "true");
+
+        });
+
+
+        /* =========================
+           CLICK OUTSIDE POPUP
+        ========================= */
+
+        popupOverlay.addEventListener("click", function (event) {
+
+            // Close when clicking the dark
+            // background outside the popup
+
+            if (event.target === popupOverlay) {
+
+                popupOverlay.classList.remove("show");
+
+                popupOverlay.setAttribute("aria-hidden", "true");
+
+            }
+
+        });
+
+
+        /* =========================
+           ESCAPE KEY
+        ========================= */
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                popupOverlay.classList.remove("show");
+
+                popupOverlay.setAttribute("aria-hidden", "true");
+
+            }
+
+        });
+    }
 
     // ============== ACCESSIBILITY & KEYBOARD SUPPORT ==============
     // Smooth scroll for anchor links
