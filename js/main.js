@@ -1,4 +1,6 @@
 // js/main.js
+//Author: Leslie Brockman
+//Date modified: 08/20/2026
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
 const langToggle = document.getElementById('lang-toggle');
@@ -347,12 +349,18 @@ if (form && statusMessage && submitBtn && submitBtnEn && submitBtnAr) {
                     Accept: 'application/json'
                 }
             });
+            const result = await response.json().catch(() => null);
 
             if (response.ok) {
                 form.reset();
                 setContactStatus(getLocalizedText(copy.success), 'success');
             } else {
-                setContactStatus(getLocalizedText(copy.error), 'error');
+                console.error('Formspree submission failed:', response.status, result);
+                const formspreeError = result?.errors?.[0]?.message || result?.error;
+                const errorMessage = formspreeError
+                    ? `${getLocalizedText(copy.error)} (${formspreeError})`
+                    : getLocalizedText(copy.error);
+                setContactStatus(errorMessage, 'error');
             }
         } catch (error) {
             setContactStatus(getLocalizedText(copy.network), 'error');
@@ -375,6 +383,10 @@ const countdownElement = document.getElementById('countdown');
 const targetDate = new Date('January 20, 2029 00:00:00').getTime();
 
 function updateCountdown() {
+    if (!countdownElement) {
+        return;
+    }
+
     const now = new Date().getTime();
     const distance = targetDate - now;
 
@@ -391,6 +403,21 @@ function updateCountdown() {
 
     countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
-
+//
 const countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();  
+
+// Research Sources – hover tab scrolls to card
+document.querySelectorAll('.source-tab').forEach(tab => {
+  tab.addEventListener('mouseenter', () => {
+    const targetId = tab.dataset.target;
+    const card = document.getElementById(targetId);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    }
+
+    // Active state
+    document.querySelectorAll('.source-tab').forEach(t => t.classList.remove('is-active'));
+    tab.classList.add('is-active');
+  });
+});
