@@ -1,7 +1,7 @@
 <!--
 MPAG: Education page
 Leslie Brockman
-Date last modified: 2026-08-17
+Date last modified: 2026-08-015
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -83,12 +83,12 @@ Date last modified: 2026-08-17
     <section class="edu-1">
     <div class="edu-content">
       <h2>
-        <span class="edu-title-en">Education and Advocacy</span>
-        <span class="edu-title-ar hidden">التعليم والدعوة</span>
+        <span class="edu-title-en lang-en">Education and Advocacy</span>
+        <span class="edu-title-ar lang-ar hidden">التعليم والدعوة</span>
         </h2>
         <p>
-        <span class="edu-text-en">Welcome to MPGA's online educational platform. Here, you will find a variety of resources designed to support learning and advocacy efforts. We must continue to strive to provide Palestinian Youth opportunities for growth in any way we can.</span>
-        <span class="edu-text-ar hidden">مرحبًا بكم في منصتنا التعليمية والدعوية ثنائية اللغة. هنا، ستجدون مجموعة متنوعة من الموارد المصممة لدعم جهود التعلم والدعوة. يجب أن نستمر في السعي لتوفير فرص للنمو للشباب الفلسطينيين بأي طريقة ممكنة.</span>
+        <span class="edu-text-en lang-en">Welcome to MPGA's online educational platform. Here, you will find a variety of resources designed to support learning and advocacy efforts. We must continue to strive to provide Palestinian Youth opportunities for growth in any way we can.</span>
+        <span class="edu-text-ar lang-ar hidden">مرحبًا بكم في منصتنا التعليمية والدعوية ثنائية اللغة. هنا، ستجدون مجموعة متنوعة من الموارد المصممة لدعم التعلم وجهود المناصرة. يجب أن نستمر في السعي لتوفير فرص للنمو للشباب الفلسطينيين بأي طريقة ممكنة.</span>
         </p>
   </div>
 </section>
@@ -129,10 +129,19 @@ Date last modified: 2026-08-17
       <div class="popup-images">
 
         <figure>
+          <a href="circus.html#gazacircus">
+            <img
+              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/gazacircus.jpg"
+              alt="Gaza Circus popup image"
+            >
+          </a>
+        </figure>
+
+        <figure>
           <a href="circus.html#tito">
             <img
-              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/tito.jpg"
-              alt="Tito popup image"
+              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tito.jpg"
+              alt="Circus Tito popup image"
             >
           </a>
         </figure>
@@ -140,7 +149,7 @@ Date last modified: 2026-08-17
         <figure>
           <a href="circus.html#aloosh">
             <img
-              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/Abood.jpg"
+              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/Abood.jpg"
               alt="Abrood popup image"
             >
           </a>
@@ -336,6 +345,275 @@ Date last modified: 2026-08-17
 
 
 
+<section class="math-flashcards" aria-labelledby="practice-flashcards-title">
+  <div class="edu-content-section">
+    <h2 id="practice-flashcards-title">
+      <span class="lang-en">More Math Flashcards</span>
+      <span class="lang-ar">المزيد من بطاقات الرياضيات</span>
+    </h2>
+    <p>
+      <span class="lang-en">Practice addition, subtraction, multiplication, and division.</span>
+      <span class="lang-ar">تدرّب على الجمع والطرح والضرب والقسمة.</span>
+    </p>
+    <ol class="math-instructions">
+      <li>
+        <span class="lang-en">Choose an operation and press Start.</span>
+        <span class="lang-ar">اختر عملية حسابية واضغط على ابدأ.</span>
+      </li>
+      <li>
+        <span class="lang-en">Read the question, then flip the card to see the answer.</span>
+        <span class="lang-ar">اقرأ السؤال، ثم اقلب البطاقة لرؤية الإجابة.</span>
+      </li>
+      <li>
+        <span class="lang-en">Enter your answer and press Check Answer.</span>
+        <span class="lang-ar">اكتب إجابتك واضغط على تحقق من الإجابة.</span>
+      </li>
+      <li>
+        <span class="lang-en">Continue through the cards and review your score at the end.</span>
+        <span class="lang-ar">تابع حل البطاقات وراجع نتيجتك في النهاية.</span>
+      </li>
+    </ol>
+
+    <div class="flashcard-operations">
+      <div class="flashcard-operation" data-operation="addition">
+        <h3>
+          <span class="lang-en">Addition</span>
+          <span class="lang-ar">الجمع</span>
+        </h3>
+        <button class="btn-start" type="button" onclick="App.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat stat-progress" id="progress">Card 1 of 20</span>
+          <span class="stat stat-timer" id="timer" aria-label="Timer">⏱ 0:00</span>
+          <span class="stat stat-correct" id="scoreCorrect" aria-label="Correct answers">✓ 0</span>
+          <span class="stat stat-wrong" id="scoreWrong" aria-label="Incorrect answers">✗ 0</span>
+        </div>
+        <div class="card-scene">
+          <button class="card" id="card" type="button" aria-label="Flashcard. Press to flip" onclick="App.flip()">
+            <span class="card-face card-front">
+              <span class="face-label">Question</span>
+              <span class="question" id="question">7 + 5</span>
+              <span class="hint">Click or press Space to flip</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="face-label">Answer</span>
+              <span class="answer" id="answer">12</span>
+            </span>
+          </button>
+        </div>
+        <div class="answer-check" role="group" aria-label="Check your answer">
+          <label for="answerInput" class="sr-only">Your answer</label>
+          <input id="answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="answerFeedback">
+          <button class="btn-check" type="button" onclick="App.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
+          <p id="answerFeedback" class="answer-feedback" aria-live="polite"></p>
+        </div>
+        <div class="score-btns" id="scoreBtns" role="group" aria-label="Mark your answer">
+          <button class="btn-correct" type="button" onclick="App.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
+          <button class="btn-wrong" type="button" onclick="App.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
+        </div>
+        <div class="controls">
+          <button class="btn-nav" type="button" onclick="App.prev()" aria-label="Previous card">←</button>
+          <button class="btn-flip" type="button" onclick="App.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
+          <button class="btn-nav" type="button" onclick="App.next()" aria-label="Next card">→</button>
+          <button class="btn-shuffle" type="button" onclick="App.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
+          <button class="btn-reset" type="button" onclick="App.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
+        </div>
+        <p class="footer-note">
+          <span class="lang-en">20 addition problems · Numbers 1–20</span>
+          <span class="lang-ar">20 مسألة جمع · الأعداد من 1 إلى 20</span>
+        </p>
+      </div>
+      <div class="results" id="results" role="dialog" aria-modal="true" aria-labelledby="resultsTitle" hidden>
+        <div class="results-card">
+          <h2 id="resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
+          <div class="score-big" id="finalScore">0 / 20</div>
+          <p class="detail" id="finalCorrect">0</p>
+          <p class="detail" id="finalWrong">0</p>
+          <p class="detail" id="finalAccuracy">0%</p>
+          <p class="time-result" id="finalTime">0:00</p>
+          <button class="btn-shuffle" type="button" onclick="App.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
+        </div>
+      </div>
+
+      <div class="flashcard-operation" data-operation="subtraction">
+        <h3>
+          <span class="lang-en">Subtraction</span>
+          <span class="lang-ar">الطرح</span>
+        </h3>
+        <button class="btn-start" type="button" onclick="SubtractionApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat stat-progress" id="subtraction-progress">Card 1 of 20</span>
+          <span class="stat stat-timer" id="subtraction-timer" aria-label="Timer">⏱ 0:00</span>
+          <span class="stat stat-correct" id="subtraction-scoreCorrect" aria-label="Correct answers">✓ 0</span>
+          <span class="stat stat-wrong" id="subtraction-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
+        </div>
+        <div class="card-scene">
+          <button class="card" id="subtraction-card" type="button" aria-label="Flashcard. Press to flip" onclick="SubtractionApp.flip()">
+            <span class="card-face card-front">
+              <span class="face-label">Question</span>
+              <span class="question" id="subtraction-question">15 − 7</span>
+              <span class="hint">Click or press Space to flip</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="face-label">Answer</span>
+              <span class="answer" id="subtraction-answer">8</span>
+            </span>
+          </button>
+        </div>
+        <div class="answer-check" role="group" aria-label="Check your answer">
+          <label for="subtraction-answerInput" class="sr-only">Your answer</label>
+          <input id="subtraction-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="subtraction-answerFeedback">
+          <button class="btn-check" type="button" onclick="SubtractionApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
+          <p id="subtraction-answerFeedback" class="answer-feedback" aria-live="polite"></p>
+        </div>
+        <div class="score-btns" id="subtraction-scoreBtns" role="group" aria-label="Mark your answer">
+          <button class="btn-correct" type="button" onclick="SubtractionApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
+          <button class="btn-wrong" type="button" onclick="SubtractionApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
+        </div>
+        <div class="controls">
+          <button class="btn-nav" type="button" onclick="SubtractionApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
+          <button class="btn-flip" type="button" onclick="SubtractionApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
+          <button class="btn-nav" type="button" onclick="SubtractionApp.next()" aria-label="Next card / البطاقة التالية">→</button>
+          <button class="btn-shuffle" type="button" onclick="SubtractionApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
+          <button class="btn-reset" type="button" onclick="SubtractionApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
+        </div>
+        <p class="footer-note">
+          <span class="lang-en">20 subtraction problems</span>
+          <span class="lang-ar">20 مسألة طرح</span>
+        </p>
+      </div>
+      <div class="results" id="subtraction-results" role="dialog" aria-modal="true" aria-labelledby="subtraction-resultsTitle" hidden>
+        <div class="results-card">
+          <h2 id="subtraction-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
+          <div class="score-big" id="subtraction-finalScore">0 / 20</div>
+          <p class="detail" id="subtraction-finalCorrect">0</p>
+          <p class="detail" id="subtraction-finalWrong">0</p>
+          <p class="detail" id="subtraction-finalAccuracy">0%</p>
+          <p class="time-result" id="subtraction-finalTime">0:00</p>
+          <button class="btn-shuffle" type="button" onclick="SubtractionApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
+        </div>
+      </div>
+
+      <div class="flashcard-operation" data-operation="division">
+        <h3>
+          <span class="lang-en">Division</span>
+          <span class="lang-ar">القسمة</span>
+        </h3>
+        <button class="btn-start" type="button" onclick="DivisionApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat stat-progress" id="division-progress">Card 1 of 20</span>
+          <span class="stat stat-timer" id="division-timer" aria-label="Timer">⏱ 0:00</span>
+          <span class="stat stat-correct" id="division-scoreCorrect" aria-label="Correct answers">✓ 0</span>
+          <span class="stat stat-wrong" id="division-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
+        </div>
+        <div class="card-scene">
+          <button class="card" id="division-card" type="button" aria-label="Flashcard. Press to flip" onclick="DivisionApp.flip()">
+            <span class="card-face card-front">
+              <span class="face-label">Question</span>
+              <span class="question" id="division-question">12 ÷ 3</span>
+              <span class="hint">Click or press Space to flip</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="face-label">Answer</span>
+              <span class="answer" id="division-answer">4</span>
+            </span>
+          </button>
+        </div>
+        <div class="answer-check" role="group" aria-label="Check your answer">
+          <label for="division-answerInput" class="sr-only">Your answer</label>
+          <input id="division-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="division-answerFeedback">
+          <button class="btn-check" type="button" onclick="DivisionApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
+          <p id="division-answerFeedback" class="answer-feedback" aria-live="polite"></p>
+        </div>
+        <div class="score-btns" id="division-scoreBtns" role="group" aria-label="Mark your answer">
+          <button class="btn-correct" type="button" onclick="DivisionApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
+          <button class="btn-wrong" type="button" onclick="DivisionApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
+        </div>
+        <div class="controls">
+          <button class="btn-nav" type="button" onclick="DivisionApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
+          <button class="btn-flip" type="button" onclick="DivisionApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
+          <button class="btn-nav" type="button" onclick="DivisionApp.next()" aria-label="Next card / البطاقة التالية">→</button>
+          <button class="btn-shuffle" type="button" onclick="DivisionApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
+          <button class="btn-reset" type="button" onclick="DivisionApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
+        </div>
+        <p class="footer-note">
+          <span class="lang-en">20 division problems</span>
+          <span class="lang-ar">20 مسألة قسمة</span>
+        </p>
+      </div>
+      <div class="results" id="division-results" role="dialog" aria-modal="true" aria-labelledby="division-resultsTitle" hidden>
+        <div class="results-card">
+          <h2 id="division-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
+          <div class="score-big" id="division-finalScore">0 / 20</div>
+          <p class="detail" id="division-finalCorrect">0</p>
+          <p class="detail" id="division-finalWrong">0</p>
+          <p class="detail" id="division-finalAccuracy">0%</p>
+          <p class="time-result" id="division-finalTime">0:00</p>
+          <button class="btn-shuffle" type="button" onclick="DivisionApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
+        </div>
+      </div>
+
+      <div class="flashcard-operation" data-operation="multiplication">
+        <h3>
+          <span class="lang-en">Multiplication</span>
+          <span class="lang-ar">الضرب</span>
+        </h3>
+        <button class="btn-start" type="button" onclick="MultiplicationApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat stat-progress" id="multiplication-progress">Card 1 of 20</span>
+          <span class="stat stat-timer" id="multiplication-timer" aria-label="Timer">⏱ 0:00</span>
+          <span class="stat stat-correct" id="multiplication-scoreCorrect" aria-label="Correct answers">✓ 0</span>
+          <span class="stat stat-wrong" id="multiplication-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
+        </div>
+        <div class="card-scene">
+          <button class="card" id="multiplication-card" type="button" aria-label="Flashcard. Press to flip" onclick="MultiplicationApp.flip()">
+            <span class="card-face card-front">
+              <span class="face-label">Question</span>
+              <span class="question" id="multiplication-question">6 × 7</span>
+              <span class="hint">Click or press Space to flip</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="face-label">Answer</span>
+              <span class="answer" id="multiplication-answer">42</span>
+            </span>
+          </button>
+        </div>
+        <div class="answer-check" role="group" aria-label="Check your answer">
+          <label for="multiplication-answerInput" class="sr-only">Your answer</label>
+          <input id="multiplication-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="multiplication-answerFeedback">
+          <button class="btn-check" type="button" onclick="MultiplicationApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
+          <p id="multiplication-answerFeedback" class="answer-feedback" aria-live="polite"></p>
+        </div>
+        <div class="score-btns" id="multiplication-scoreBtns" role="group" aria-label="Mark your answer">
+          <button class="btn-correct" type="button" onclick="MultiplicationApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
+          <button class="btn-wrong" type="button" onclick="MultiplicationApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
+        </div>
+        <div class="controls">
+          <button class="btn-nav" type="button" onclick="MultiplicationApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
+          <button class="btn-flip" type="button" onclick="MultiplicationApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
+          <button class="btn-nav" type="button" onclick="MultiplicationApp.next()" aria-label="Next card / البطاقة التالية">→</button>
+          <button class="btn-shuffle" type="button" onclick="MultiplicationApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
+          <button class="btn-reset" type="button" onclick="MultiplicationApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
+        </div>
+        <p class="footer-note">
+          <span class="lang-en">20 multiplication problems</span>
+          <span class="lang-ar">20 مسألة ضرب</span>
+        </p>
+      </div>
+      <div class="results" id="multiplication-results" role="dialog" aria-modal="true" aria-labelledby="multiplication-resultsTitle" hidden>
+        <div class="results-card">
+          <h2 id="multiplication-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
+          <div class="score-big" id="multiplication-finalScore">0 / 20</div>
+          <p class="detail" id="multiplication-finalCorrect">0</p>
+          <p class="detail" id="multiplication-finalWrong">0</p>
+          <p class="detail" id="multiplication-finalAccuracy">0%</p>
+          <p class="time-result" id="multiplication-finalTime">0:00</p>
+          <button class="btn-shuffle" type="button" onclick="MultiplicationApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!--Going to pause this for now while we find and add more educational content
  <section class="edu-5">
   <div class="edu-content-section">
@@ -440,5 +718,9 @@ Date last modified: 2026-08-17
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/math-addition.js"></script>
+  <script src="js/math-subtraction.js"></script>
+  <script src="js/math-division.js"></script>
+  <script src="js/math-multiplication.js"></script>
 </body>
 </html>
