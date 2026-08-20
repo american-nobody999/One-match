@@ -2729,6 +2729,37 @@ main p {
     width: 100%;
 }
 
+#featured-hero .hero-gallery-block .scrollable-gallery {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0 1.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 5px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.35);
+    margin: 1.5rem auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+#featured-hero .hero-gallery-block .gallery-card {
+    flex: 0 0 200px;
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    border: 0;
+    border-radius: 0;
+}
+
+#featured-hero .hero-gallery-block .gallery-card img,
+#featured-hero .hero-gallery-block .gallery-card a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
 .gallery-title {
     text-align: center;
 }
@@ -6584,3 +6615,53 @@ main h2 {
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
         }
 }
+
+        /* Featured hero gallery: bordered scroll area with portrait image cards. */
+        @media (max-width: 1199px) {
+            #featured-hero .hero-gallery-block .scrollable-gallery {
+                padding: 0.9rem 0 1.1rem;
+                gap: 1.25rem;
+            }
+
+            #featured-hero .hero-gallery-block .gallery-card {
+                flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+            }
+
+            #featured-hero .hero-gallery-block .gallery-card img,
+            #featured-hero .hero-gallery-block .gallery-card a img {
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #featured-hero .hero-gallery-block .scrollable-gallery {
+                padding: 0.75rem 0 1rem;
+                gap: 1rem;
+            }
+
+            #featured-hero .hero-gallery-block .gallery-card {
+                flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+            }
+
+            #featured-hero .hero-gallery-block .gallery-card img,
+            #featured-hero .hero-gallery-block .gallery-card a img {
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #featured-hero .hero-gallery-block .gallery-card {
+                flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+            }
+
+            #featured-hero .hero-gallery-block .gallery-card img,
+            #featured-hero .hero-gallery-block .gallery-card a img {
+                height: 100%;
+            }
+        }
