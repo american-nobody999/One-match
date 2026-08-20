@@ -1,7 +1,7 @@
 <!--
 MPAG: Contact page
 Leslie Brockman
-Date last modified: 2026-07-01
+Date last modified: 2026-08-20
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -94,17 +94,17 @@ Date last modified: 2026-07-01
                     <label>
                         <span class="lang-en">Your Name:</span>
                         <span class="lang-ar">الاسم:</span>
-                        <input type="text" name="name">
+                        <input type="text" name="name" autocomplete="name" required>
                     </label>
                     <label>
                         <span class="lang-en">Your Email:</span>
                         <span class="lang-ar">البريد الإلكتروني:</span>
-                        <input type="email" name="email">
+                        <input type="email" name="_replyto" autocomplete="email" required>
                     </label>
                     <label>
                         <span class="lang-en">Your Message:</span>
                         <span class="lang-ar">رسالتك:</span>
-                        <textarea name="message"></textarea>
+                        <textarea name="message" required></textarea>
                     </label>
                     <p id="statusMessage" class="status-message" aria-live="polite"></p>
                     <button id="submitBtn" type="submit">
@@ -147,3 +147,5 @@ Date last modified: 2026-07-01
 </body>
 </html>
 
+
+        
