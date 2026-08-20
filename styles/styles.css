@@ -1,7 +1,7 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
 /* Author: Leslie Brockman.                      */
-/* Updated  08-19-2026                           */
+/* Updated  08-17-2026                           */
 /* I know what I did. I am paying for it.        */
 /* Reclass pending to clean this monster up.     */
 /* I am very well aware AI  can automate         */
@@ -47,6 +47,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font-en);
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.65;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body.circus-page-body {
     background-color: #fffdf6;
     background-image:
         radial-gradient(ellipse 24px 32px at 7% 38%, #ff5f6d 0 88%, transparent 91%),
@@ -68,10 +76,6 @@ body {
         radial-gradient(circle at 88% 68%, #2dd4bf 0 4px, transparent 5px);
     background-attachment: fixed;
     background-size: 100% 100%;
-    color: var(--dark);
-    line-height: 1.65;
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 html {
