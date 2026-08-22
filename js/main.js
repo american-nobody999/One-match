@@ -1,6 +1,6 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 08/20/2026
+//Date modified: 08/21/2026
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
 const langToggle = document.getElementById('lang-toggle');
@@ -61,6 +61,28 @@ setLanguageVisibility(arabicLanguageSelectors, true);
         });
     });
 
+    // ============== QUEST TABS HAMBURGER (united.html) ==============
+    const questTabsToggle = document.getElementById('quest-tabs-toggle');
+    const questTabsList = document.getElementById('quest-tabs-list');
+
+    if (questTabsToggle && questTabsList) {
+        questTabsToggle.addEventListener('click', function() {
+            const isExpanded = questTabsToggle.getAttribute('aria-expanded') === 'true';
+
+            questTabsToggle.setAttribute('aria-expanded', !isExpanded);
+            questTabsList.classList.toggle('active');
+        });
+
+        questTabsList.querySelectorAll('.source-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                if (window.innerWidth <= 600) {
+                    questTabsList.classList.remove('active');
+                    questTabsToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    }
+
     // ============== VIDEO GALLERY CONTROLS ==============
     function initVideoGalleries() {
         const videoContainers = document.querySelectorAll('.video-container');
@@ -101,6 +123,51 @@ setLanguageVisibility(arabicLanguageSelectors, true);
 
     initVideoGalleries();
 
+    function initEighthFrontTableReadMore() {
+        const table = document.querySelector('.eighth-front-table');
+
+        if (!table) {
+            return;
+        }
+
+        const getReadMoreLabel = isExpanded => {
+            if (document.documentElement.lang === 'ar') {
+                return isExpanded ? 'عرض أقل' : 'اقرأ المزيد';
+            }
+
+            return isExpanded ? 'Show less' : 'Read more';
+        };
+
+        table.querySelectorAll('tbody td:not(.platform-cell), tbody .platform-cell .cell-pros').forEach(cell => {
+            const copy = document.createElement('div');
+            copy.className = 'table-cell-copy is-collapsed';
+            copy.innerHTML = cell.innerHTML;
+
+            const button = document.createElement('button');
+            button.className = 'table-read-more';
+            button.type = 'button';
+            button.textContent = getReadMoreLabel(false);
+            button.setAttribute('aria-expanded', 'false');
+
+            cell.replaceChildren(copy, button);
+
+            button.addEventListener('click', () => {
+                const isExpanded = copy.classList.toggle('is-expanded');
+                copy.classList.toggle('is-collapsed', !isExpanded);
+                button.textContent = getReadMoreLabel(isExpanded);
+                button.setAttribute('aria-expanded', String(isExpanded));
+            });
+        });
+
+        langToggle?.addEventListener('click', () => {
+            table.querySelectorAll('.table-read-more').forEach(button => {
+                button.textContent = getReadMoreLabel(button.getAttribute('aria-expanded') === 'true');
+            });
+        });
+    }
+
+    initEighthFrontTableReadMore();
+
     // Standardize repetitive placeholder alt text on the Faces page.
     function normalizeFaceGalleryAltText() {
         if (!document.body.classList.contains('face-page')) {
@@ -118,13 +185,12 @@ setLanguageVisibility(arabicLanguageSelectors, true);
 
     normalizeFaceGalleryAltText();
 
-    // Home page intro: hold on black for 2 seconds, then reveal like a lit match.
+    // Red Door page intro: hold on black for 2 seconds, then reveal like a lit match.
     function initHomeMatchIntro() {
-        const isHomePage = window.location.pathname === '/' ||
-            window.location.pathname.endsWith('/index.html') ||
-            window.location.pathname.endsWith('index.html');
+        const isReddoorPage = window.location.pathname.endsWith('/reddoor.html') ||
+            window.location.pathname.endsWith('reddoor.html');
 
-        if (!isHomePage || !document.body.classList.contains('home-page')) {
+        if (!isReddoorPage || !document.body.classList.contains('reddoor-page')) {
             return;
         }
 
@@ -407,9 +473,9 @@ function updateCountdown() {
 const countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();  
 
-// Research Sources – hover tab scrolls to card
+// Research Sources – click a tab scrolls to its card
 document.querySelectorAll('.source-tab').forEach(tab => {
-  tab.addEventListener('mouseenter', () => {
+  tab.addEventListener('click', () => {
     const targetId = tab.dataset.target;
     const card = document.getElementById(targetId);
     if (card) {
@@ -420,4 +486,52 @@ document.querySelectorAll('.source-tab').forEach(tab => {
     document.querySelectorAll('.source-tab').forEach(t => t.classList.remove('is-active'));
     tab.classList.add('is-active');
   });
+});
+
+// Add the remaining social placeholders to every hero directory card.
+document.querySelectorAll('.hero-page .source-card .card-socials').forEach(socials => {
+    const excludedSocials = new Set(
+        (socials.closest('.source-card')?.dataset.excludeSocials || '')
+            .split(',')
+            .map(label => label.trim())
+            .filter(Boolean)
+    );
+
+    const links = [
+        {
+            label: 'YouTube',
+            image: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png',
+            alt: 'YouTube'
+        },
+        {
+            label: 'Upscrolled',
+            image: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/upscrolled.png',
+            alt: 'Upscrolled'
+        }
+    ];
+
+    links.forEach(({ label, image, alt }) => {
+        if (excludedSocials.has(label)) {
+            return;
+        }
+
+        if (socials.querySelector(`[aria-label="${label}"]`)) {
+            return;
+        }
+
+        const link = document.createElement('a');
+        link.href = '#';
+        link.className = 'social-link';
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.setAttribute('aria-label', label);
+
+        const icon = document.createElement('img');
+        icon.src = image;
+        icon.alt = alt;
+        icon.loading = 'lazy';
+
+        link.appendChild(icon);
+        socials.appendChild(link);
+    });
 });
