@@ -1,7 +1,7 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
 /* Author: Leslie Brockman.                      */
-/* Updated  08-21-2026                           */
+/* Updated  08-26-2026                           */
 /* I know what I did. I am paying for it.        */
 /* Reclass pending to clean this monster up.     */
 /* I am very well aware AI  can automate         */
@@ -34,6 +34,574 @@
     --panel-shadow: 0 8px 20px rgba(207, 17, 39, 0.45), 0 4px 10px rgba(0, 0, 0, 0.3);
     --panel-bg: #fff;
     --surface-soft: #f8f8f8;
+}
+
+/* ===== Shared site imagery (EDU and Circus intentionally excluded) ===== */
+body:not(.edu-page):not(.circus-page-body) {
+    background-color: var(--light);
+}
+
+body:not(.edu-page):not(.circus-page-body) .site-header {
+    background-color: #242424;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
+        url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body:not(.edu-page):not(.circus-page-body) .site-footer {
+    background-color: #242424;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
+        url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body:not(.edu-page):not(.circus-page-body) .site-header .site-title,
+body:not(.edu-page):not(.circus-page-body) .site-header .menu-toggle,
+body:not(.edu-page):not(.circus-page-body) .site-footer .footer-content,
+body:not(.edu-page):not(.circus-page-body) .site-footer .copyright {
+    color: var(--light);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+/* ===== Hero journalist directory: single-card gallery ===== */
+.hero-page .journalist-menu-toggle {
+    display: none;
+}
+
+.hero-page #journalist-tabs {
+    margin: 0 auto 1.25rem;
+    padding: 1rem;
+    border: 1px solid rgba(17, 17, 17, 0.16);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.hero-page #journalist-tabs .source-tab:hover,
+.hero-page #journalist-tabs .source-tab.is-active {
+    background: var(--accent-red);
+    border-color: var(--accent-red);
+    color: var(--light);
+    transform: translateY(-2px);
+}
+
+.hero-page #journalist-tabs .source-tab:focus-visible,
+.hero-page .journalist-menu-toggle:focus-visible,
+.hero-page #journalists-gallery a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.hero-page #journalists-gallery {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 560px;
+    padding: clamp(1.25rem, 4vw, 3rem);
+    overflow: hidden;
+    scroll-snap-type: none;
+    border-radius: 18px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.28)), url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/background_camera.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-page #journalists-gallery > .source-card {
+    display: none;
+    flex: 0 1 420px;
+    width: min(100%, 420px);
+    max-width: 420px;
+    scroll-snap-align: none;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.34);
+    transform: none;
+}
+
+.hero-page #journalists-gallery > .source-card.is-active {
+    display: block;
+}
+
+.hero-page #journalists-gallery > .source-card:hover {
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--dark);
+    border-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.38);
+    transform: translateY(-3px);
+}
+
+.hero-page #journalists-gallery > .source-card:hover .card-title a {
+    color: var(--accent-red);
+}
+
+.hero-page #journalists-gallery > .source-card:hover .card-desc {
+    color: #333333;
+}
+
+.hero-page #journalists-gallery > .source-card:hover .social-link {
+    background-color: #f1ece7;
+    color: var(--dark);
+}
+
+/* ===== HERO JOURNALIST SOCIAL-MEDIA LINKS: START ===== */
+.hero-page #journalists-gallery .card-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.hero-page #journalists-gallery .card-socials .social-link,
+.hero-page #journalists-gallery .card-socials .social-link[aria-label] {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    flex: 0 0 42px;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #e9f5ed;
+}
+
+.hero-page #journalists-gallery .card-socials .social-link img,
+.hero-page #journalists-gallery .card-socials .social-link[aria-label] img,
+.hero-page #journalists-gallery .card-socials .social-link[aria-label*="Facebook"] img,
+.hero-page #journalists-gallery .card-socials .social-link[aria-label*="Instagram"] img {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+/* ===== HERO JOURNALIST SOCIAL-MEDIA LINKS: END ===== */
+
+@media (max-width: 600px) {
+    .hero-page .journalist-menu-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        width: 100%;
+        margin: 0 0 0.65rem;
+        padding: 0.7rem 0.9rem;
+        border: 2px solid var(--dark);
+        border-radius: 10px;
+        background: var(--light);
+        color: var(--dark);
+        font-family: inherit;
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .hero-page .journalist-menu-icon {
+        font-size: 1.2rem;
+    }
+
+    .hero-page #journalist-tabs {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.35rem;
+        max-height: 52vh;
+        margin-bottom: 0.75rem;
+        padding: 0.5rem;
+        overflow-y: auto;
+    }
+
+    .hero-page #journalist-tabs.is-open {
+        display: flex;
+    }
+
+    .hero-page #journalist-tabs .source-tab {
+        width: 100%;
+        min-height: 44px;
+        flex: none;
+        border-radius: 8px;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .hero-page #journalists-gallery {
+        min-height: 0;
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .hero-page #journalists-gallery > .source-card {
+        width: 100%;
+        max-width: 360px;
+        flex-basis: 100%;
+    }
+}
+
+/* ===== Their Voices Remain memorial gallery ===== */
+.hero-page .memorial-section {
+    margin-top: clamp(2.5rem, 6vw, 5rem);
+}
+
+.hero-page .memorial-header h3 {
+    color: #7c2934;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.15;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.85);
+}
+
+.hero-page .memorial-header p span {
+    color: var(--light);
+    text-shadow:
+        -1px -1px 0 var(--accent-red),
+         1px -1px 0 var(--accent-red),
+        -1px  1px 0 var(--accent-red),
+         1px  1px 0 var(--accent-red);
+}
+
+.hero-page #their-voices-tabs {
+    max-width: 680px;
+    margin: 0 auto 1.25rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(17, 17, 17, 0.14);
+    border-radius: 14px;
+    background: rgba(248, 246, 242, 0.9);
+}
+
+.hero-page #their-voices-tabs .source-tab:hover,
+.hero-page #their-voices-tabs .source-tab.is-active {
+    background: #7c2934;
+    border-color: #7c2934;
+    color: var(--light);
+    transform: translateY(-1px);
+}
+
+.hero-page #their-voices-tabs .source-tab:focus-visible,
+.hero-page .memorial-menu-toggle:focus-visible,
+.hero-page #their-voices-gallery a:focus-visible,
+.hero-page #their-voices-gallery .memorial-photo-gallery:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.hero-page #their-voices-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 640px;
+    padding: clamp(1.25rem, 4vw, 3rem);
+    overflow: hidden;
+    scroll-snap-type: none;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #ddd5cb, #f6f2ec 52%, #cfc3b7);
+}
+
+.hero-page #their-voices-gallery > .memorial-card {
+    display: none;
+    flex: 0 1 520px;
+    width: min(100%, 520px);
+    max-width: 520px;
+    overflow: hidden;
+    scroll-snap-align: none;
+    background: rgba(255, 255, 255, 0.97);
+    color: var(--dark);
+    border: 1px solid rgba(124, 41, 52, 0.2);
+    box-shadow: 0 14px 34px rgba(31, 25, 22, 0.24);
+    transform: none;
+}
+
+.hero-page #their-voices-gallery > .memorial-card.is-active {
+    display: block;
+}
+
+.hero-page #their-voices-gallery > .memorial-card:hover {
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--dark);
+    border-color: rgba(124, 41, 52, 0.3);
+    box-shadow: 0 17px 40px rgba(31, 25, 22, 0.29);
+    transform: translateY(-2px);
+}
+
+.hero-page #their-voices-gallery > .memorial-card:hover .card-title a {
+    color: #7c2934;
+}
+
+.hero-page #their-voices-gallery > .memorial-card:hover .card-desc {
+    color: #333333;
+}
+
+.hero-page #their-voices-gallery .memorial-portrait {
+    aspect-ratio: 16 / 10;
+    border: 0;
+    background: transparent;
+}
+
+.hero-page #their-voices-gallery .memorial-portrait img {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+
+.hero-page #their-voices-gallery .memorial-dates {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin: 0 1rem 0.8rem;
+    color: #665b55;
+    font-size: 0.9rem;
+    font-weight: 650;
+}
+
+.hero-page #their-voices-gallery .memorial-photo-gallery {
+    display: flex;
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    border-radius: 12px;
+    border: 0;
+    background: transparent;
+    scrollbar-color: #7c2934 #ded7cf;
+    scrollbar-width: thin;
+}
+
+.hero-page #their-voices-gallery .memorial-photo {
+    flex: 0 0 100%;
+    height: clamp(190px, 34vw, 290px);
+    margin: 0;
+    border: 0;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.hero-page #their-voices-gallery .memorial-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-page #their-voices-gallery .memorial-photo-gallery::-webkit-scrollbar {
+    height: 7px;
+}
+
+.hero-page #their-voices-gallery .memorial-photo-gallery::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #7c2934;
+}
+
+@media (max-width: 600px) {
+    .hero-page #their-voices-tabs {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.35rem;
+        max-height: 45vh;
+        margin-bottom: 0.75rem;
+        padding: 0.5rem;
+        overflow-y: auto;
+    }
+
+    .hero-page #their-voices-tabs.is-open {
+        display: flex;
+    }
+
+    .hero-page #their-voices-tabs .source-tab {
+        width: 100%;
+        min-height: 44px;
+        flex: none;
+        border-radius: 8px;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .hero-page #their-voices-gallery {
+        min-height: 0;
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .hero-page #their-voices-gallery > .memorial-card {
+        width: 100%;
+        max-width: 420px;
+        flex-basis: 100%;
+    }
+
+    .hero-page #their-voices-gallery .memorial-photo {
+        height: clamp(180px, 62vw, 260px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-page #their-voices-gallery .memorial-photo-gallery {
+        scroll-behavior: auto;
+    }
+
+    .hero-page #their-voices-gallery > .memorial-card,
+    .hero-page #their-voices-tabs .source-tab {
+        transition: none;
+    }
+}
+
+/* ===== Hero Research Sources single-card directory ===== */
+.hero-page #sources-section {
+    margin-top: clamp(2.5rem, 6vw, 5rem);
+}
+
+.hero-page #sources-section > .sources-header h3 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.15;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.85);
+}
+
+.hero-page #sources-section > .sources-header p span {
+    color: var(--light);
+    text-shadow:
+        -1px -1px 0 var(--accent-red),
+         1px -1px 0 var(--accent-red),
+        -1px  1px 0 var(--accent-red),
+         1px  1px 0 var(--accent-red);
+}
+
+.hero-page #research-source-tabs {
+    margin: 0 auto 1.25rem;
+    padding: 1rem;
+    border: 1px solid rgba(17, 17, 17, 0.16);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.hero-page #research-source-tabs .source-tab:hover,
+.hero-page #research-source-tabs .source-tab.is-active {
+    background: var(--accent-red);
+    border-color: var(--accent-red);
+    color: var(--light);
+    transform: translateY(-2px);
+}
+
+.hero-page #research-source-tabs .source-tab:focus-visible,
+.hero-page .research-menu-toggle:focus-visible,
+.hero-page #sources-gallery a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.hero-page #sources-gallery.research-sources-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 560px;
+    padding: clamp(1.25rem, 4vw, 3rem);
+    overflow: hidden;
+    scroll-snap-type: none;
+    border-radius: 18px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.28)), url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/background_camera.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-page #sources-gallery.research-sources-gallery > .source-card {
+    display: none;
+    flex: 0 1 420px;
+    width: min(100%, 420px);
+    max-width: 420px;
+    scroll-snap-align: none;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.34);
+    transform: none;
+}
+
+.hero-page #sources-gallery.research-sources-gallery > .source-card.is-active {
+    display: block;
+}
+
+.hero-page #sources-gallery.research-sources-gallery > .source-card:hover {
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--dark);
+    border-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.38);
+    transform: translateY(-3px);
+}
+
+.hero-page #sources-gallery.research-sources-gallery > .source-card:hover .card-title a {
+    color: var(--accent-red);
+}
+
+.hero-page #sources-gallery.research-sources-gallery > .source-card:hover .card-desc {
+    color: #333333;
+}
+
+.hero-page #sources-gallery.research-sources-gallery > .source-card:hover .social-link {
+    background-color: #f1ece7;
+    color: var(--dark);
+}
+
+@media (max-width: 600px) {
+    .hero-page #research-source-tabs {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.35rem;
+        max-height: 52vh;
+        margin-bottom: 0.75rem;
+        padding: 0.5rem;
+        overflow-y: auto;
+    }
+
+    .hero-page #research-source-tabs.is-open {
+        display: flex;
+    }
+
+    .hero-page #research-source-tabs .source-tab {
+        width: 100%;
+        min-height: 44px;
+        flex: none;
+        border-radius: 8px;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .hero-page #sources-gallery.research-sources-gallery {
+        min-height: 0;
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .hero-page #sources-gallery.research-sources-gallery > .source-card {
+        width: 100%;
+        max-width: 360px;
+        flex-basis: 100%;
+    }
 }
 
 /* ================ RESET & BASE ================ */
@@ -886,6 +1454,14 @@ main p {
     padding: 0;
 }
 
+body.hero-page {
+    background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/background_camera.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
 .hero-page #section-dedication,
 .hero-page #section-journalists {
     width: 100%;
@@ -909,6 +1485,31 @@ main p {
 .hero-page #section-journalists p,
 .hero-page #section-dedication p {
     max-width: 820px;
+}
+
+.hero-page .hero-section-2 #section-journalists h2,
+.hero-page .hero-section-2 #section-journalists p {
+    color: var(--light);
+    text-shadow:
+        -1px -1px 0 var(--accent-red),
+         1px -1px 0 var(--accent-red),
+        -1px  1px 0 var(--accent-red),
+         1px  1px 0 var(--accent-red);
+}
+
+.hero-page .hero-section-2 > .journalist-directory-header h3 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.15;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.85);
+}
+
+.hero-page .hero-section-2 > .journalist-directory-header p span {
+    color: var(--light);
+    text-shadow:
+        -1px -1px 0 var(--accent-red),
+         1px -1px 0 var(--accent-red),
+        -1px  1px 0 var(--accent-red),
+         1px  1px 0 var(--accent-red);
 }
 
 .hero-page .card {
@@ -7467,6 +8068,53 @@ main h2 {
     padding: 0;
 }
 
+/* ===== ALL HERO-PAGE SOCIAL-MEDIA LINKS ===== */
+.hero-page .card-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.hero-page .card-socials .social-link,
+.hero-page .card-socials .social-link[aria-label] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    flex: 0 0 42px;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #e9f5ed;
+}
+
+.hero-page .source-card .card-socials .social-link img,
+.hero-page .source-card .card-socials .social-link[aria-label] img,
+.hero-page .source-card .card-socials .social-link[aria-label*="Facebook"] img,
+.hero-page .source-card .card-socials .social-link[aria-label*="Instagram"] img {
+    display: block;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+    object-fit: cover;
+    object-position: center;
+}
+
 .disclaimer {
   max-width: 720px;
   margin: 1.5rem auto 0;
@@ -7554,4 +8202,72 @@ main h2 {
         min-height: 0;
         overflow-y: auto;
     }
+}
+
+/* Keep the hero section introductions and disclaimer centered on desktop. */
+@media (min-width: 769px) {
+    .hero-page #section-dedication p,
+    .hero-page #section-journalists p,
+    .hero-page .sources-header p,
+    .hero-page .disclaimer p,
+    .hero-page article p,
+    .hero-page #section-dedication p > span,
+    .hero-page #section-journalists p > span,
+    .hero-page .sources-header p > span,
+    .hero-page .disclaimer p > span {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center !important;
+    }
+}
+
+.hero-page #their-voices-gallery {
+    background-color: transparent !important;
+    background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/rose.jpg") !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-page #their-voices-gallery > article.memorial-card,
+.hero-page #their-voices-gallery > article.memorial-card:hover {
+    background-color: rgba(255, 255, 255, 0.82) !important;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)),
+        url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/rose.jpg") !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Center each Their Voices Remain photo gallery below its article copy. */
+.hero-page #their-voices-gallery .memorial-card .memorial-photo-gallery {
+    clear: both;
+    width: calc(100% - 2rem);
+    margin: 0 auto 1rem;
+}
+
+.hero-page #their-voices-gallery .memorial-card .memorial-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-page #their-voices-gallery .memorial-card .memorial-photo img {
+    margin: 0 auto;
+}
+
+/* Show Anas's and Saleh's memorial photographs larger without cropping their edges. */
+.hero-page #their-voices-1 .memorial-photo,
+.hero-page #their-voices-2 .memorial-photo {
+    height: clamp(280px, 48vw, 420px);
+}
+
+.hero-page #their-voices-1 .memorial-photo img,
+.hero-page #their-voices-2 .memorial-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
