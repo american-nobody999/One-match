@@ -1,6 +1,6 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 08/21/2026
+//Date modified: 08/26/2026
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
 const langToggle = document.getElementById('lang-toggle');
@@ -473,9 +473,13 @@ function updateCountdown() {
 const countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();  
 
-// Research Sources – click a tab scrolls to its card
+// Legacy source tabs outside the single-card Hero directories.
 document.querySelectorAll('.source-tab').forEach(tab => {
   tab.addEventListener('click', () => {
+    if (tab.closest('.hero-page .journalist-tabs, .hero-page .research-source-tabs')) {
+      return;
+    }
+
     const targetId = tab.dataset.target;
     const card = document.getElementById(targetId);
     if (card) {
@@ -488,50 +492,69 @@ document.querySelectorAll('.source-tab').forEach(tab => {
   });
 });
 
-// Add the remaining social placeholders to every hero directory card.
-document.querySelectorAll('.hero-page .source-card .card-socials').forEach(socials => {
-    const excludedSocials = new Set(
-        (socials.closest('.source-card')?.dataset.excludeSocials || '')
-            .split(',')
-            .map(label => label.trim())
-            .filter(Boolean)
-    );
+// Hero journalist, memorial, and research directories: independent single-card tabs.
+document.querySelectorAll('.hero-page .journalist-tabs, .hero-page .research-source-tabs').forEach(tabList => {
+  const gallery = tabList.nextElementSibling;
+  const toggle = tabList.previousElementSibling;
 
-    const links = [
-        {
-            label: 'YouTube',
-            image: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png',
-            alt: 'YouTube'
-        },
-        {
-            label: 'Upscrolled',
-            image: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/upscrolled.png',
-            alt: 'Upscrolled'
-        }
-    ];
+  if (!(gallery?.classList.contains('journalist-gallery') || gallery?.classList.contains('research-sources-gallery')) ||
+      !toggle?.classList.contains('journalist-menu-toggle')) {
+    return;
+  }
 
-    links.forEach(({ label, image, alt }) => {
-        if (excludedSocials.has(label)) {
-            return;
-        }
+  const tabs = Array.from(tabList.querySelectorAll('.source-tab'));
+  const cards = Array.from(gallery.querySelectorAll(':scope > .source-card'));
+  const currentName = toggle.querySelector('.journalist-menu-current');
 
-        if (socials.querySelector(`[aria-label="${label}"]`)) {
-            return;
-        }
+  const selectJournalist = tab => {
+    const targetId = tab.dataset.target;
 
-        const link = document.createElement('a');
-        link.href = '#';
-        link.className = 'social-link';
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.setAttribute('aria-label', label);
-
-        const icon = document.createElement('img');
-        icon.src = image;
-        icon.alt = alt;
-        icon.loading = 'lazy';
-
-        link.appendChild(icon);
-        socials.appendChild(link);
+    tabs.forEach(item => {
+      const selected = item === tab;
+      item.classList.toggle('is-active', selected);
+      item.setAttribute('aria-selected', String(selected));
+      item.setAttribute('tabindex', selected ? '0' : '-1');
     });
+
+    cards.forEach(card => {
+      const selected = card.id === targetId;
+      card.classList.toggle('is-active', selected);
+      card.hidden = !selected;
+    });
+
+    currentName.textContent = tab.textContent.trim();
+    tabList.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  tabs.forEach((tab, index) => {
+    const card = document.getElementById(tab.dataset.target);
+    tab.setAttribute('aria-controls', tab.dataset.target);
+    if (card) {
+      card.setAttribute('role', 'tabpanel');
+      card.setAttribute('aria-labelledby', `${tabList.id}-tab-${index + 1}`);
+      tab.id = `${tabList.id}-tab-${index + 1}`;
+    }
+
+    tab.addEventListener('click', () => selectJournalist(tab));
+    tab.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      let nextIndex = index;
+      if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') nextIndex = 0;
+      if (event.key === 'End') nextIndex = tabs.length - 1;
+      selectJournalist(tabs[nextIndex]);
+      tabs[nextIndex].focus();
+    });
+  });
+
+  toggle.addEventListener('click', () => {
+    const open = tabList.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) tabs.find(tab => tab.classList.contains('is-active'))?.focus();
+  });
+
+  selectJournalist(tabs[0]);
 });
