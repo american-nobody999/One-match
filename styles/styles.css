@@ -1,7 +1,7 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
 /* Author: Leslie Brockman.                      */
-/* Updated  08-26-2026                           */
+/* Updated  08-29-2026                           */
 /* I know what I did. I am paying for it.        */
 /* Reclass pending to clean this monster up.     */
 /* I am very well aware AI  can automate         */
@@ -8270,4 +8270,13 @@ main h2 {
     height: 100%;
     object-fit: contain;
     object-position: center;
+}
+
+/* Center paragraph text under heading and video under image in the new section */
+.new-section > .section-text p {
+    text-align: center;
+}
+
+.new-section .video-gallery {
+    justify-content: center;
 }
