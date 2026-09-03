@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Franklin:wght@300;400;500&display=swap');
+
+:root {
+  --rose-ivory: #f7f0df;
+  --rose-gold: #d8b878;
+  --rose-deep: #521f2e;
+  --rose-ink: #171511;
+  --stone-light: #d5d0c4;
+  --stone-mid: #9f9b92;
+  --stone-dark: #686861;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; overflow-x: hidden; }
+
+body {
+  background: #11150f;
+  color: var(--rose-ivory);
+  font-family: "Libre Franklin", sans-serif;
+}
+
+body.rose-page--locked { overflow: hidden; }
+button { font: inherit; }
+
+.garden-entrance,
+.rose-garden {
+  min-height: 100svh;
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+}
+
+.garden-entrance {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background-color: #172016;
+  background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rose/rose3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity 1.8s ease, visibility 1.8s;
+  z-index: 5;
+}
+
+.garden-entrance.is-leaving { opacity: 0; visibility: hidden; }
+
+.garden-entrance__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 12, 7, .14), rgba(9, 10, 7, .36) 60%, rgba(8, 8, 6, .72));
+  z-index: -1;
+}
+
+.garden-entrance__content {
+  width: min(90%, 720px);
+  margin-top: 35vh;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  text-shadow: 0 2px 24px #000;
+}
+
+.garden-entrance h1,
+.garden-header h2,
+.dedication-panel h2,
+.memorial-content h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-wrap: balance;
+}
+
+.garden-entrance h1 {
+  font-size: clamp(3rem, 8vw, 6.8rem);
+  line-height: .9;
+  margin: .35rem 0 1.8rem;
+  text-transform: uppercase;
+}
+
+.garden-entrance__eyebrow { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(1.2rem, 2.2vw, 1.65rem); letter-spacing: .15em; }
+
+.garden-button {
+  min-height: 48px;
+  border: 1px solid rgba(238, 210, 151, .72);
+  border-radius: 2px;
+  padding: .85rem 1.5rem;
+  background: rgba(24, 18, 13, .76);
+  color: #fff9e9;
+  cursor: pointer;
+  letter-spacing: .075em;
+  transition: background-color .35s ease, box-shadow .35s ease, transform .35s ease;
+}
+
+.garden-button:hover { background: rgba(92, 42, 46, .88); box-shadow: 0 0 24px rgba(230, 192, 116, .2); transform: translateY(-2px); }
+.garden-button:focus-visible, .memorial-column:focus-visible { outline: 3px solid #fff2bd; outline-offset: 6px; }
+
+.rose-garden {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  background: #27311f url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rose/rose.png") center / cover no-repeat;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.rose-garden.is-visible { opacity: 1; visibility: visible; transition: opacity 1.8s ease; }
+
+.rose-garden__veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(6, 15, 9, .46), rgba(8, 17, 10, .05) 38%, rgba(6, 10, 6, .44));
+}
+
+.garden-header { z-index: 2; text-align: center; padding: clamp(1.6rem, 4vh, 3.2rem) 1rem .5rem; text-shadow: 0 2px 12px #0a1008; }
+.garden-header h2 { font-size: clamp(2.1rem, 5vw, 4.2rem); line-height: 1; margin: .15rem 0 .35rem; }
+.garden-header p { margin: .25rem 0; font-family: "Cormorant Garamond", serif; font-size: clamp(1rem, 2vw, 1.3rem); letter-spacing: .12em; }
+.garden-header p:first-child { color: #f1d9a3; text-transform: uppercase; font-size: .78rem; }
+.garden-language-toggle { min-height: 42px; margin-top: .75rem; padding: .5rem 1rem; border: 1px solid rgba(241, 217, 163, .65); border-radius: 999px; background: rgba(15, 23, 14, .58); color: #fff6df; cursor: pointer; font-family: inherit; font-size: .78rem; letter-spacing: .08em; transition: background-color .3s ease, border-color .3s ease; }
+.garden-language-toggle:hover { background: rgba(82, 31, 46, .78); border-color: #f1d9a3; }
+.garden-language-toggle:focus-visible { outline: 3px solid #fff2bd; outline-offset: 4px; }
+
+.memorial-grid {
+  align-self: end;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 330px));
+  align-items: end;
+  justify-content: center;
+  gap: clamp(5rem, 18vw, 18rem);
+  min-height: 560px;
+  padding: 1rem 5vw clamp(2rem, 5vh, 4rem);
+  z-index: 2;
+}
+
+.memorial-column {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--rose-ivory);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 14px 12px rgba(4, 7, 3, .52));
+  transition: transform .6s ease, filter .6s ease;
+}
+
+.memorial-column:hover { transform: translateY(-7px); filter: drop-shadow(0 15px 16px rgba(4, 7, 3, .64)) drop-shadow(0 0 20px rgba(247, 219, 154, .34)); }
+.memorial-column__medallion { width: 112px; aspect-ratio: 1; display: grid; place-items: center; border: 9px double var(--stone-mid); border-radius: 50%; color: #55554f; background: radial-gradient(circle at 36% 28%, #e2ddd1, #aaa69d 64%, #777870); box-shadow: inset -7px -8px 11px rgba(51, 51, 45, .3), 0 5px 7px rgba(0, 0, 0, .28); }
+.memorial-column__medallion span { font-family: Georgia, serif; font-size: 3.25rem; filter: grayscale(1); text-shadow: 1px 1px #e8e5da; }
+.memorial-column__capital { width: 76%; height: 38px; margin-top: 9px; clip-path: polygon(8% 0, 92% 0, 100% 25%, 88% 100%, 12% 100%, 0 25%); background: linear-gradient(90deg, #777870, #c9c5bb 24%, #ddd8cc 52%, #96958e 86%, #686a64); box-shadow: inset 0 5px rgba(255,255,255,.16); }
+.memorial-column__shaft { position: relative; width: 52%; height: clamp(210px, 32vh, 350px); background: linear-gradient(90deg, #74766f, #b8b5ad 17%, #d4d0c6 45%, #bbb8b0 72%, #71736d); clip-path: polygon(10% 0, 90% 0, 82% 100%, 18% 100%); box-shadow: inset 0 0 20px rgba(55,55,50,.28); }
+.memorial-column__shaft::before { content: ""; position: absolute; inset: 5% 25%; border-left: 1px solid rgba(255,255,255,.25); border-right: 1px solid rgba(70,70,64,.18); }
+.memorial-column__rose { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(92, 54, 55, .55); font-size: 2rem; }
+.memorial-column__base { width: 82%; height: 54px; clip-path: polygon(10% 0, 90% 0, 96% 30%, 100% 30%, 100% 100%, 0 100%, 0 30%, 4% 30%); background: linear-gradient(90deg, #666861, #bebbb2 18%, #d0ccc1 52%, #8c8d86); }
+.memorial-column__name { max-width: 290px; min-height: 3.2em; margin-top: .8rem; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 600; line-height: 1.08; text-shadow: 0 2px 8px #000; text-wrap: balance; }
+.memorial-column__invitation { margin-top: .35rem; color: #f0d9a8; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; text-shadow: 0 1px 5px #000; }
+
+.sunlight { pointer-events: none; position: absolute; top: -20%; width: 24vw; height: 112%; z-index: 1; opacity: 0; transform: rotate(9deg); background: linear-gradient(90deg, transparent, rgba(255, 235, 178, .16), transparent); filter: blur(13px); animation: light-arrives 4.5s 1.2s ease forwards; }
+.sunlight--left { left: 14%; }
+.sunlight--right { right: 14%; transform: rotate(-9deg); }
+@keyframes light-arrives { to { opacity: .75; } }
+
+.butterfly-field { pointer-events: none; position: absolute; inset: 0; overflow: hidden; z-index: 3; }
+.butterfly { --scale: 1; position: absolute; left: var(--start-x); bottom: -5%; width: 16px; height: 11px; opacity: .74; animation: butterfly-drift var(--duration) var(--delay) linear infinite; }
+.butterfly::before, .butterfly::after { content: ""; position: absolute; width: 9px; height: 12px; background: var(--wing-color); border-radius: 80% 25% 70% 30%; transform-origin: 100% 70%; animation: wing 700ms ease-in-out infinite alternate; }
+.butterfly::after { left: 8px; transform: scaleX(-1); transform-origin: 0 70%; }
+@keyframes wing { to { transform: scaleX(.28) rotate(8deg); } }
+@keyframes butterfly-drift { 0% { opacity: 0; transform: translate3d(0, 5vh, 0) scale(var(--scale)); } 10%, 82% { opacity: .72; } 30% { transform: translate3d(var(--sway-a), -28vh, 0) scale(var(--scale)); } 62% { transform: translate3d(var(--sway-b), -65vh, 0) scale(var(--scale)); } 100% { opacity: 0; transform: translate3d(var(--sway-c), -112vh, 0) scale(var(--scale)); } }
+
+.modal-backdrop { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: clamp(1rem, 4vw, 3rem); background: rgba(7, 9, 6, .82); backdrop-filter: blur(7px); opacity: 0; transition: opacity .6s ease; }
+.modal-backdrop[hidden] { display: none; }
+.modal-backdrop.is-open { opacity: 1; }
+
+.dedication-panel { width: min(620px, 100%); padding: clamp(2rem, 6vw, 4rem); border: 1px solid rgba(219, 185, 119, .66); outline: 1px solid rgba(219, 185, 119, .2); outline-offset: -9px; background: linear-gradient(145deg, rgba(24, 28, 20, .98), rgba(25, 16, 17, .98)); text-align: center; box-shadow: 0 24px 80px #000; }
+.dedication-panel h2 { margin: .25rem 0 1.5rem; color: #fff3d4; font-size: clamp(2.4rem, 6vw, 4.2rem); }
+.dedication-panel p { line-height: 1.8; }
+.modal-ornament { color: var(--rose-gold); font-size: 1.8rem; margin: 0; }
+.dedication-panel .garden-button { margin-top: 1.2rem; }
+
+.modal-backdrop--viewer { overflow: auto; align-items: center; }
+.memorial-viewer { width: min(1120px, 100%); max-height: calc(100svh - 2rem); overflow: auto; display: grid; grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr); border: 1px solid rgba(218, 184, 116, .52); background: rgba(17, 19, 14, .97); box-shadow: 0 25px 100px #000; }
+.memorial-viewer__artwork { display: grid; place-items: center; min-height: 0; padding: clamp(1rem, 3vw, 2.2rem); background: rgba(7, 9, 6, .75); }
+.memorial-image { display: block; max-width: 100%; max-height: calc(100svh - 7rem); object-fit: contain; box-shadow: 0 14px 45px rgba(0,0,0,.62); }
+.memorial-content { align-self: center; padding: clamp(2rem, 5vw, 4.5rem); }
+.memorial-content__eyebrow { color: var(--rose-gold); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
+.memorial-content h2 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; margin: .4rem 0; color: #fff1d0; }
+.memorial-dates { color: #d9cbb0; letter-spacing: .08em; }
+.memorial-content > p:not(.memorial-content__eyebrow):not(.memorial-dates), .memorial-content blockquote { line-height: 1.75; }
+.memorial-biography p { margin: 0 0 1rem; line-height: 1.75; }
+.memorial-biography__language[hidden] { display: none; }
+.memorial-biography__language--ar { text-align: right; }
+.memorial-biography__closing { color: #f2dfb6; font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 600; }
+.memorial-content blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 1px solid var(--rose-gold); color: #ddd3c0; font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-style: italic; }
+.memorial-divider { display: flex; align-items: center; gap: .7rem; width: 70%; margin: 1.5rem 0; color: var(--rose-gold); }
+.memorial-divider::before, .memorial-divider::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, rgba(216,184,120,.6)); }
+.memorial-divider::after { transform: scaleX(-1); }
+.memorial-button { margin-top: 1rem; }
+
+@media (max-width: 720px) {
+  .garden-entrance__content { margin-top: 28vh; }
+  .garden-entrance h1 { font-size: clamp(2.7rem, 15vw, 4.6rem); }
+  .rose-garden { overflow: visible; }
+  .memorial-grid { grid-template-columns: repeat(2, minmax(130px, 210px)); gap: .75rem; min-height: 510px; padding-inline: .5rem; }
+  .memorial-column__medallion { width: 82px; border-width: 7px; }
+  .memorial-column__medallion span { font-size: 2.45rem; }
+  .memorial-column__capital { width: 86%; }
+  .memorial-column__shaft { width: 62%; height: clamp(190px, 34vh, 270px); }
+  .memorial-column__base { width: 92%; }
+  .memorial-column__name { font-size: 1.05rem; }
+  .memorial-viewer { grid-template-columns: 1fr; max-height: calc(100svh - 1rem); }
+  .memorial-viewer__artwork { padding: 1rem; }
+  .memorial-image { max-height: 54svh; }
+  .memorial-content { padding: 1.5rem; }
+  .modal-backdrop { padding: .5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .butterfly { display: none; }
+}
