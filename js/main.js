@@ -1,9 +1,9 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 08/26/2026
+//Date modified: 08/21/2026
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
-const langToggle = document.getElementById('lang-toggle');
+const langToggles = document.querySelectorAll('.lang-toggle');
 let currentLang = 'en';
 
 const englishLanguageSelectors = '.lang-en, .p-en, .h2-en, .h3-en, .caption-en, .intro-en, .learn-en';
@@ -21,17 +21,17 @@ function toggleLanguage() {
     document.documentElement.setAttribute('lang', currentLang);
     
     if (currentLang === 'ar') {
-        langToggle.textContent = 'العربية | English';
+        langToggles.forEach(toggle => { toggle.textContent = 'العربية | English'; });
         setLanguageVisibility(englishLanguageSelectors, true);
         setLanguageVisibility(arabicLanguageSelectors, false);
     } else {
-        langToggle.textContent = 'English | العربية';
+        langToggles.forEach(toggle => { toggle.textContent = 'English | العربية'; });
         setLanguageVisibility(englishLanguageSelectors, false);
         setLanguageVisibility(arabicLanguageSelectors, true);
     }
 }
 
-langToggle.addEventListener('click', toggleLanguage);
+langToggles.forEach(toggle => toggle.addEventListener('click', toggleLanguage));
 
 // Set initial state (English)
 setLanguageVisibility(englishLanguageSelectors, false);
@@ -123,6 +123,122 @@ setLanguageVisibility(arabicLanguageSelectors, true);
 
     initVideoGalleries();
 
+    function initAndreyFeature() {
+        const trigger = document.getElementById('andrey-feature-trigger');
+        const modal = document.getElementById('andrey-modal');
+        const dialog = modal?.querySelector('[role="dialog"]');
+        const backButton = document.getElementById('andrey-modal-back');
+
+        if (!trigger || !modal || !dialog || !backButton) {
+            return;
+        }
+
+        const getFocusableElements = () => Array.from(
+            dialog.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')
+        );
+
+        const openAndreyModal = () => {
+            modal.hidden = false;
+            document.body.classList.add('andrey-modal-open');
+            requestAnimationFrame(() => modal.classList.add('is-open'));
+            backButton.focus();
+        };
+
+        const closeAndreyModal = () => {
+            if (modal.hidden) return;
+            modal.classList.remove('is-open');
+            document.body.classList.remove('andrey-modal-open');
+            modal.hidden = true;
+            trigger.focus();
+        };
+
+        trigger.addEventListener('click', openAndreyModal);
+        backButton.addEventListener('click', closeAndreyModal);
+
+        modal.addEventListener('click', event => {
+            if (event.target === modal) closeAndreyModal();
+        });
+
+        modal.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeAndreyModal();
+                return;
+            }
+
+            if (event.key !== 'Tab') return;
+            const focusable = getFocusableElements();
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        });
+    }
+
+    initAndreyFeature();
+
+    function initLetterFeature() {
+        const trigger = document.getElementById('letter-feature-trigger');
+        const modal = document.getElementById('letter-modal');
+        const dialog = modal?.querySelector('[role="dialog"]');
+        const backButton = document.getElementById('letter-modal-back');
+        const langToggleButton = document.getElementById('letter-modal-lang-toggle');
+
+        if (!trigger || !modal || !dialog || !backButton) {
+            return;
+        }
+
+        const focusables = [langToggleButton, backButton].filter(Boolean);
+
+        const openLetterModal = () => {
+            modal.hidden = false;
+            document.body.classList.add('letter-modal-open');
+            requestAnimationFrame(() => modal.classList.add('is-open'));
+            backButton.focus();
+        };
+
+        const closeLetterModal = () => {
+            if (modal.hidden) return;
+            modal.classList.remove('is-open');
+            document.body.classList.remove('letter-modal-open');
+            modal.hidden = true;
+            trigger.focus();
+        };
+
+        trigger.addEventListener('click', openLetterModal);
+        backButton.addEventListener('click', closeLetterModal);
+
+        modal.addEventListener('click', event => {
+            if (event.target === modal) closeLetterModal();
+        });
+
+        modal.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeLetterModal();
+                return;
+            }
+
+            if (event.key === 'Tab' && focusables.length) {
+                event.preventDefault();
+                const activeIndex = focusables.indexOf(document.activeElement);
+                const nextIndex = event.shiftKey
+                    ? (activeIndex <= 0 ? focusables.length - 1 : activeIndex - 1)
+                    : (activeIndex === -1 || activeIndex === focusables.length - 1 ? 0 : activeIndex + 1);
+                focusables[nextIndex].focus();
+            }
+        });
+    }
+
+    initLetterFeature();
+
     function initEighthFrontTableReadMore() {
         const table = document.querySelector('.eighth-front-table');
 
@@ -159,9 +275,11 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             });
         });
 
-        langToggle?.addEventListener('click', () => {
-            table.querySelectorAll('.table-read-more').forEach(button => {
-                button.textContent = getReadMoreLabel(button.getAttribute('aria-expanded') === 'true');
+        document.querySelectorAll('.lang-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                table.querySelectorAll('.table-read-more').forEach(button => {
+                    button.textContent = getReadMoreLabel(button.getAttribute('aria-expanded') === 'true');
+                });
             });
         });
     }
@@ -556,5 +674,7 @@ document.querySelectorAll('.hero-page .journalist-tabs, .hero-page .research-sou
     if (open) tabs.find(tab => tab.classList.contains('is-active'))?.focus();
   });
 
-  selectJournalist(tabs[0]);
+  const requestedProfileId = window.location.hash.slice(1);
+  const requestedProfileTab = tabs.find(tab => tab.dataset.target === requestedProfileId);
+  selectJournalist(requestedProfileTab || tabs[0]);
 });
