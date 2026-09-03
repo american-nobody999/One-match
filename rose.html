@@ -1,0 +1,96 @@
+<!--
+MPAG: Memorial page
+Leslie Brockman
+Date last modified: 2026-09-02
+These are my rocks, can you dig it?
+Can you hear me yet?
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Rose Garden, a peaceful garden of remembrance.">
+  <title>A Woman's Rose Garden</title>
+  <link rel="stylesheet" href="styles/rose.css">
+  <script src="scripts/rose.js" defer></script>
+</head>
+<body class="rose-page rose-page--locked">
+  <main>
+    <section class="garden-entrance" id="garden-entrance" aria-labelledby="entrance-title">
+      <div class="garden-entrance__shade" aria-hidden="true"></div>
+      <div class="garden-entrance__content">
+        <p class="garden-entrance__eyebrow"><span class="lang-en">A garden of remembrance.</span><span class="lang-ar" lang="ar" dir="rtl" hidden>حديقة للذكرى.</span></p>
+        <h1 id="entrance-title"><span class="lang-en">A Woman's Rose Garden</span><span class="lang-ar" lang="ar" dir="rtl" hidden>حديقة الورود لامرأة</span></h1>
+        <button class="garden-button garden-button--primary" id="enter-garden" type="button"><span class="lang-en">Enter the Rose Garden</span><span class="lang-ar" lang="ar" dir="rtl" hidden>ادخل حديقة الورود</span></button>
+      </div>
+    </section>
+
+    <section class="rose-garden" id="rose-garden" aria-labelledby="garden-title" aria-hidden="true">
+      <div class="rose-garden__veil" aria-hidden="true"></div>
+      <header class="garden-header">
+        <p><span class="lang-en">In Remembrance</span><span class="lang-ar" lang="ar" dir="rtl" hidden>في الذكرى</span></p>
+        <h2 id="garden-title"><span class="lang-en">Their Memories Remain</span><span class="lang-ar" lang="ar" dir="rtl" hidden>ذكرياتهم تبقى</span></h2>
+        <p><span class="lang-en">Select a memorial to enter their story.</span><span class="lang-ar" lang="ar" dir="rtl" hidden>اختر نصبًا تذكاريًا للدخول إلى قصتهم.</span></p>
+        <button class="garden-language-toggle" id="garden-language-toggle" type="button" aria-pressed="false">
+          English <span aria-hidden="true">|</span> العربية
+        </button>
+      </header>
+
+      <div class="sunlight sunlight--left" aria-hidden="true"></div>
+      <div class="sunlight sunlight--right" aria-hidden="true"></div>
+      <div class="butterfly-field" id="butterfly-field" aria-hidden="true"></div>
+
+      <div class="memorial-grid" aria-label="Memorials">
+        <button class="memorial-column" type="button" data-memorial="memorial-one" aria-label="Open the memorial for Supreme Leader Ayatollah Ali Khamenei">
+          <span class="memorial-column__medallion" aria-hidden="true"><span>☝</span></span>
+          <span class="memorial-column__capital" aria-hidden="true"></span>
+          <span class="memorial-column__shaft" aria-hidden="true"><span class="memorial-column__rose">✦</span></span>
+          <span class="memorial-column__base" aria-hidden="true"></span>
+          <span class="memorial-column__name"><span class="lang-en">Supreme Leader Ayatollah Ali Khamenei</span><span class="lang-ar" lang="ar" dir="rtl" hidden>المرشد الأعلى آية الله علي خامنئي</span></span>
+          <span class="memorial-column__invitation"><span class="lang-en">Enter Memorial</span><span class="lang-ar" lang="ar" dir="rtl" hidden>ادخل النصب التذكاري</span></span>
+        </button>
+
+        <button class="memorial-column" type="button" data-memorial="memorial-two" aria-label="Open the memorial for Hudhayfah Samir Abdullah al-Kahlout">
+          <span class="memorial-column__medallion" aria-hidden="true"><span>☝</span></span>
+          <span class="memorial-column__capital" aria-hidden="true"></span>
+          <span class="memorial-column__shaft" aria-hidden="true"><span class="memorial-column__rose">✦</span></span>
+          <span class="memorial-column__base" aria-hidden="true"></span>
+          <span class="memorial-column__name"><span class="lang-en">Hudhayfah Samir Abdullah al-Kahlout</span><span class="lang-ar" lang="ar" dir="rtl" hidden>حذيفة سمير عبدالله الكحلوت</span></span>
+          <span class="memorial-column__invitation"><span class="lang-en">Enter Memorial</span><span class="lang-ar" lang="ar" dir="rtl" hidden>ادخل النصب التذكاري</span></span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="dedication-modal" hidden>
+    <section class="dedication-panel" role="dialog" aria-modal="true" aria-labelledby="dedication-title" aria-describedby="dedication-copy">
+      <p class="modal-ornament" aria-hidden="true">❦</p>
+      <h2 id="dedication-title"><span class="lang-en">A Woman's Rose Garden</span><span class="lang-ar" lang="ar" dir="rtl" hidden>حديقة الورود لامرأة</span></h2>
+      <div id="dedication-copy">
+        <p><span class="lang-en">This garden is dedicated to fallen soldiers and to the lives, families, memories, and stories they leave behind.</span><span class="lang-ar" lang="ar" dir="rtl" hidden>هذه الحديقة مُهداة إلى الجنود الذين سقطوا، وإلى الأرواح والعائلات والذكريات والقصص التي يتركونها خلفهم.</span></p>
+        <p><span class="lang-en">May those who enter remember that behind every name was a human life.</span><span class="lang-ar" lang="ar" dir="rtl" hidden>ليتذكر من يدخل أن خلف كل اسم كانت هناك حياة إنسان.</span></p>
+      </div>
+      <button class="garden-button garden-button--primary" id="accept-dedication" type="button"><span class="lang-en">Enter in Remembrance</span><span class="lang-ar" lang="ar" dir="rtl" hidden>ادخل تكريمًا للذكرى</span></button>
+    </section>
+  </div>
+
+  <div class="modal-backdrop modal-backdrop--viewer" id="memorial-modal" hidden>
+    <section class="memorial-viewer" role="dialog" aria-modal="true" aria-labelledby="memorial-name" aria-describedby="memorial-biography">
+      <div class="memorial-viewer__artwork">
+        <img class="memorial-image" id="memorial-image" src="" alt="">
+      </div>
+      <div class="memorial-content">
+        <p class="memorial-content__eyebrow"><span class="lang-en">In Loving Memory</span><span class="lang-ar" lang="ar" dir="rtl" hidden>في ذكرى محبة</span></p>
+        <h2 id="memorial-name">Hudhayfah Samir Abdullah al-Kahlout — Abu Obeida</h2>
+        <p class="memorial-dates" id="memorial-dates">1984-2025</p>
+        <div class="memorial-divider" aria-hidden="true"><span>❦</span></div>
+        <div class="memorial-biography" id="memorial-biography"></div>
+        <blockquote id="memorial-remembrance"></blockquote>
+        <button class="garden-button memorial-button" id="close-memorial" type="button"><span class="lang-en">Return to the Rose Garden</span><span class="lang-ar" lang="ar" dir="rtl" hidden>العودة إلى حديقة الورود</span></button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
