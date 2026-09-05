@@ -14,7 +14,7 @@
 /* logo pending for contest among the youth designers of Palestine. */
 /* once the entire layout is set, more specific rules will be added per section and element. */
 /* class names will be updated to be more specific and descriptive over time. */
-/*I am totally avoiding refractoring this beast for now , most likely, the creator only knows how we fix it.*/
+/*I am totally avoiding refractoring this beast for now */
 
 /* ================ DESIGN TOKENS ================ */
 :root {
@@ -813,6 +813,10 @@ body.reddoor-page {
 
 .reddoor-page .reddoor-description {
     text-align: center;
+}
+
+.reddoor-page .archive-genocide-heading {
+    color: #fff;
 }
 
 
