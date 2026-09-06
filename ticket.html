@@ -1,7 +1,8 @@
 <!--
 MPAG: Golden Ticket page
 Leslie Brockman
-Date last modified: 2026-08-14
+Date last modified: 2026-09-06
+I got an idea for a website.
 This page is to keep track of the Flotilla groups and to keep the public informed of the progress of the flotilla and the humanitarian aid being sent to Palestine. The page will be updated regularly with the latest information and updates from the flotilla groups. The page will also include links to relevant news articles and social media posts related to the flotilla and the humanitarian aid being sent to Palestine.
 -->
 <!DOCTYPE html>
@@ -21,6 +22,185 @@ This page is to keep track of the Flotilla groups and to keep the public informe
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        /* Ticket page feature: scoped here so other pages remain unchanged. Its a beast, the css is the monster under my bed right now. */
+        .ticket-page .ticket-feature,
+        .ticket-page .ticket-secondary {
+            margin: 2rem auto;
+            padding: clamp(1rem, 3vw, 2rem);
+        }
+
+        .ticket-page .ticket-feature {
+            border-radius: var(--panel-radius);
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+                url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ticketb.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .ticket-page .ticket-feature-intro,
+        .ticket-page .ticket-secondary-intro {
+            max-width: 760px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .ticket-page .ticket-feature-intro {
+            padding: 1rem;
+            border-radius: var(--panel-radius);
+            background: rgba(255, 255, 255, 0.86);
+        }
+
+        .ticket-page .ticket-feature h2,
+        .ticket-page .ticket-secondary h2,
+        .ticket-page .ticket-secondary h3 {
+            margin: 0 0 0.75rem;
+        }
+
+        .ticket-page .ticket-feature p,
+        .ticket-page .ticket-secondary p {
+            margin: 0;
+        }
+
+        .ticket-page .ticket-feature-video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin: 0 auto 2rem;
+        }
+
+        .ticket-page .ticket-feature-video-card,
+        .ticket-page .ticket-secondary-card {
+            min-width: 0;
+            margin: 0;
+            overflow: hidden;
+            border: var(--panel-border);
+            border-radius: var(--panel-radius);
+            background: var(--panel-bg);
+            box-shadow: var(--panel-shadow);
+        }
+
+        .ticket-page .ticket-feature-video-frame {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            overflow: hidden;
+            background: var(--dark);
+        }
+
+        .ticket-page .ticket-feature-video-frame iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .ticket-page .ticket-feature-video-card figcaption,
+        .ticket-page .ticket-secondary-card figcaption {
+            padding: 0.8rem 1rem;
+            text-align: center;
+        }
+
+        .ticket-page .ticket-feature-socials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 0 auto 1.25rem;
+            padding: 0;
+        }
+
+        .ticket-page .ticket-feature-social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            min-height: 42px;
+            flex: 0 0 42px;
+            aspect-ratio: 1 / 1;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border-radius: 50%;
+            background: #e9f5ed;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .ticket-page .ticket-feature-social-link img {
+            display: block;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            min-height: 42px;
+            max-width: none;
+            max-height: none;
+            aspect-ratio: 1 / 1;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            clip-path: circle(50% at 50% 50%);
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .ticket-page .ticket-feature-social-link:hover,
+        .ticket-page .ticket-feature-social-link:focus-visible {
+            background: var(--primary-green);
+            color: var(--light);
+        }
+
+        .ticket-page .ticket-feature-action {
+            text-align: center;
+        }
+
+        .ticket-page .ticket-feature-learn-more {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 1rem;
+            border-radius: var(--panel-radius);
+            background: var(--primary-green);
+            color: var(--light);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .ticket-page .ticket-feature-learn-more:hover,
+        .ticket-page .ticket-feature-learn-more:focus-visible {
+            background: var(--accent-red);
+            color: var(--light);
+        }
+
+        .ticket-page .ticket-secondary-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ticket-page .ticket-secondary-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .ticket-page .ticket-feature-video-grid,
+            .ticket-page .ticket-secondary-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .ticket-page .ticket-feature-video-grid,
+            .ticket-page .ticket-secondary-gallery {
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body class="home-page">
@@ -76,7 +256,141 @@ This page is to keep track of the Flotilla groups and to keep the public informe
 </header>
 
 <main class="ticket-page">
-  <div class="ticket-top">
+    <div class="ticket-feature">
+        <div class="ticket-feature-intro">
+            <h2>
+                <span class="lang-en">Freedom Flotilla</span>
+                <span class="lang-ar hidden">أسطول الحرية</span>
+            </h2>
+            <h3><strong>
+                <span class="lang-en">October 2026</span>
+                <span class="lang-ar hidden">أكتوبر 2026</span>
+            </strong></h3>
+            <p>
+                <span class="lang-en">I am an American citizen participating in the Freedom Flotilla. This journey is both challenging and rewarding as we work to deliver humanitarian aid to those in need and break through the obstacles that stand in our way.</span>
+                <span class="lang-ar hidden">أنا مواطن أمريكي أشارك في أسطول الحرية. هذه الرحلة صعبة ومجزية في الوقت نفسه بينما نعمل على إيصال المساعدات الإنسانية لأولئك في حاجة إليها وكسر الحواجز التي تقف في طريقنا.</span>
+            </p>
+            <p>
+                <span class="lang-en">I never apologized. For those things I said back in October that caused you harm, and since then as well. I still would push a few of off the boat if I could.</span>
+                <span class="lang-ar hidden">لم أعتذر أبدًا. بالنسبة للأشياء التي قلتها في أكتوبر والتي سببت لك الأذى، وكذلك منذ ذلك الحين. لا زلت أود أن أُزيح بعضهم عن القارب لو كان ذلك ممكنًا.</span>
+            </p>
+            <p>
+                <span class="lang-en">They were my church bake sale, my charity, and peaceful action to get my Palestinians help. They are my hope we can get to Palestine, where all other paths have failed. They were my friends, my family before the current administration started changing maps, sanctioning the whole world for a foreign power, and creating obstacles that hinder humanitarian efforts. This journey is a testament to our resilience and commitment to Palestine. We will never stop loving and our fight for justice continues.</span>
+                <span class="lang-ar hidden">كانت بيعتي الخيرية في الكنيسة، وجمعيتي الخيرية، وفعلي السلمي للحصول على المساعدة للفلسطينيين. إنهم أملنا في الوصول إلى فلسطين، حيث فشلت كل الطرق الأخرى. كانوا أصدقائي وعائلتي قبل أن تبدأ الإدارة الحالية في تغيير الخرائط، وفرض العقوبات على العالم بأسره لصالح قوة أجنبية، وخلق عقبات تعرقل الجهود الإنسانية. هذه الرحلة شهادة على صلابتنا والتزامنا بفلسطين. لن نتوقف أبدًا عن الحب، وسيستمر نضالنا من أجل العدالة.</span>
+            </p>
+        </div>
+
+        <div class="ticket-feature-video-grid" aria-label="Flotilla video gallery">
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/g3kzEqI2kDQ" title="Flotilla video update 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">Longest 7 to 10 day trip of my life.</span>
+                    <span class="lang-ar hidden">أطول رحلة استمرت من 7 إلى 10 أيام في حياتي.</span>
+                </figcaption>
+            </figure>
+
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/A4hF5rA-v-Q" title="Flotilla video update 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">MPGA is ready when you are.</span>
+                    <span class="lang-ar hidden">إم بي جي إيه مستعدة عندما تكون أنت مستعدًا.</span>
+                </figcaption>
+            </figure>
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/rQHhNs8UqzM" title="Flotilla video update 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">I havent seen you since the chats, I miss all of so much. See you soon.</span>
+                    <span class="lang-ar hidden">لم أرَك منذ الدردشات، أفتقدكم جميعًا كثيرًا. أراك قريبًا.</span>
+                </figcaption>
+            </figure>
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/ClUtHRfeq4M" title="Flotilla video update 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">Can I remote steer the boat? One Time!</span>
+                    <span class="lang-ar hidden">هل يمكنني توجيه القارب عن بُعد؟ مرة واحدة!</span>
+                </figcaption>
+            </figure>
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/2_YbS5pMzSg" title="Flotilla video update 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">These are our people, our brothers, our sisters. Palestinians are people too.</span>
+                    <span class="lang-ar hidden">هذه أناسنا، إخوتنا، أخواتنا. الفلسطينيون بشر أيضًا.</span>
+                </figcaption>
+            </figure>
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/EdFlJFXPNZU" title="Flotilla video update 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">Palestinians have the right to live in peace and dignity. They exist. Not they have the right to, they exist.</span>
+                    <span class="lang-ar hidden">للفلسطينيين الحق في العيش بسلام وكرامة. إنهم موجودون. ليس فقط لهم الحق في العيش، بل إنهم موجودون.</span>
+                </figcaption>
+            </figure>
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/FGB_c5SY_OE" title="Flotilla video update 7" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">Frank, I got 9 spots here, I got infinite code to add more. Frank makes me laugh.</span>
+                    <span class="lang-ar hidden">فرانك، لدي هنا 9 أماكن، ولدي شفرات لا نهاية لها لإضافة المزيد. فرانك يضحكني.</span>
+                </figcaption>
+            </figure>
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/DaaS6625NYo" title="Flotilla video update 8" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">Ready to dance again? Kiss Kiss. (I AM being nice! None of you appreciate how very not nice I can be, and to be honest, that stings a bit.)</span>
+                    <span class="lang-ar hidden">هل أنتم مستعدون للرقص مجددًا؟ قبلة قبلة. (أنا لطيف الآن! لا أحد يقدّر مدى قسوتي عندما أريد، وبصراحة، هذا يجرح قليلًا.)</span>
+                </figcaption>
+            </figure>
+            
+            <figure class="ticket-feature-video-card">
+                <div class="ticket-feature-video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/sFyWrOY2uD0" title="Flotilla video update 9" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <figcaption>
+                    <span class="lang-en">We don't let go of anyone's hand. Palestine remains. We are coming. We never stopped.</span>
+                    <span class="lang-ar hidden">نحن لا نترك يد أحد. فلسطين ما زالت موجودة. نحن قادمون. لم نتوقف أبدًا.</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="ticket-feature-socials card-socials" aria-label="Follow the Freedom Flotilla Coalition on social media">
+            <a class="ticket-feature-social-link social-link" href="https://www.instagram.com/gazafreedomflotilla/" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on Instagram">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="Instagram icon" loading="lazy">
+            </a>
+            <a class="ticket-feature-social-link social-link" href="https://www.facebook.com/FreedomFlotillaCoalition" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on Facebook">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="Facebook icon" loading="lazy">
+            </a>
+            <a class="ticket-feature-social-link social-link" href="https://x.com/GazaFFlotilla" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on X / Twitter">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/x.jpeg" alt="X / Twitter icon" loading="lazy">
+            </a>
+            <a class="ticket-feature-social-link social-link" href="https://www.youtube.com/@freedomflotillacoalition6166/videos" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on YouTube">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png" alt="YouTube icon" loading="lazy">
+            </a>
+            <a class="ticket-feature-social-link social-link" href="https://www.tiktok.com/@gazafreedomflotilla" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on TikTok">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/tiktok.png" alt="TikTok icon" loading="lazy">
+            </a>
+            <a class="ticket-feature-social-link social-link" href="https://t.me/FFC_official_channel" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on Telegram">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/telegram.jpeg" alt="Telegram icon" loading="lazy">
+            </a>
+            <a class="ticket-feature-social-link social-link" href="https://www.linkedin.com/company/freedom-flotilla-coalition-ffc/" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on LinkedIn">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/linkedin.png" alt="LinkedIn icon" loading="lazy">
+            </a>
+          </div>
+
+    <div class="ticket-top">
     <h2>
       <span class="lang-en">HEY GUUUUUUUUUUUUUYYYYYYYYYSSSSSSSS</span>
       <span class="lang-ar hidden">يا جماعةااااااااااااااا</span>
@@ -89,21 +403,6 @@ This page is to keep track of the Flotilla groups and to keep the public informe
   <div class="ticket-middle">
    <!-- Palestine Land convoy--> 
     <div class="ticket-col-land">
-        <div class="ticket-copy-block">
-          <h2>
-            <span class="lang-en">Here We Come Palestine</span>
-            <span class="lang-ar hidden">نحن قادمون يا فلسطين</span>
-          </h2>
-          <p>
-            <span class="lang-en">The Palestine Land Convoy is stalled at the Border in Iraq. The team is coordinating with local authorities to ensure safe passage. Let's clear the way for them.</span>
-            <span class="lang-ar hidden">قافلة فلسطين البرية متوقفة عند الحدود في العراق. ينسق الفريق مع السلطات المحلية لضمان عبور آمن. لنمهد لهم الطريق.</span>
-          </p>
-        </div>
-
-      <h3>
-        <span class="lang-en">Updates</span>
-        <span class="lang-ar hidden">التحديثات</span>
-      </h3>
       <div class="ticket-gallery-scroll" role="region" aria-label="Scrollable image gallery">
         <figure>
           <a href="https://palestineconvoy.org/en" class="ticket-gallery-link">
@@ -114,6 +413,7 @@ This page is to keep track of the Flotilla groups and to keep the public informe
             <span class="lang-ar hidden">نواصل المسير</span>
           </figcaption>
         </figure>
+<!--I will deal with later--most likely going to remove or replace these figures with updated images 
         <figure>
           <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/pc-1.jpg" alt="Land gallery image 2" loading="lazy">
           <figcaption>
@@ -121,6 +421,7 @@ This page is to keep track of the Flotilla groups and to keep the public informe
             <span class="lang-ar hidden">على الطريق</span>
           </figcaption>
         </figure>
+
         <figure>
           <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/pc-2.jpg" alt="Land gallery image 3" loading="lazy">
           <figcaption>
@@ -142,41 +443,18 @@ This page is to keep track of the Flotilla groups and to keep the public informe
             <span class="lang-ar hidden">عبور آمن</span>
           </figcaption>
         </figure>
+        -->
       </div>
 
       <h3>
         <span class="lang-en">Put your Arm Around us, Get us Safely to Palestine.</span>
         <span class="lang-ar hidden">أحطنا بذراعك وأوصلنا بأمان إلى فلسطين.</span>
       </h3>
-      <div class="ticket-video-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/ClUtHRfeq4M"
-          title="Land video update"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
       </div>
     </div>
 
-<!--Freedom Flotillas, Kate (Frank)-->
-    <div class="ticket-col-ffc">
-      <div class="ticket-copy-block">
-        <h2>
-          <span class="lang-en">Launch Event: August 17th</span>
-          <span class="lang-ar hidden">فعالية الانطلاق: 17 أغسطس</span>
-        </h2>
-        <p>
-          <span class="lang-en">MPGA is joining the Freedom Flotillas! I didn't ask them, I'm just a stowaway like the last two times.</span>
-          <span class="lang-ar hidden">تنضم MPGA إلى أساطيل الحرية! لم أطلب منهم، أنا فقط متسللة كما حدث في المرتين السابقتين.</span>
-        </p>
-      </div>
-
-      <h3>
-        <span class="lang-en">FFC Updates</span>
-        <span class="lang-ar hidden">تحديثات أسطول الحرية</span>
-      </h3>
+<!--Freedom Flotillas, Kate (Frank) keep this here for now, we going to use this for placeholder on the Land convoy to DC. Freedom move to the top, but leave this for now
+    <div class="ticket-col-ffc"
       <div class="ticket-gallery-scroll" role="region" aria-label="Scrollable image gallery">
         <figure>
           <a href="https://freedomflotilla.org/" class="ticket-gallery-link">
@@ -187,6 +465,7 @@ This page is to keep track of the Flotilla groups and to keep the public informe
             <span class="lang-ar hidden">MPGA قادمة أيضًا!</span>
           </figcaption>
         </figure>
+       
         <figure>
           <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ffc-1.jpg" alt="FFC gallery image 2" loading="lazy">
           <figcaption>
@@ -201,6 +480,7 @@ This page is to keep track of the Flotilla groups and to keep the public informe
             <span class="lang-ar hidden">أراكم في الدردشات يا جماعة!</span>
           </figcaption>
         </figure>
+      -->
       </div>
 
       <h3>
@@ -222,10 +502,6 @@ This page is to keep track of the Flotilla groups and to keep the public informe
 <!--Global Sumud Flotillas, Alabina-->
     <div class="ticket-col-gsf">
       <div class="ticket-copy-block">
-        <h2>
-          <span class="lang-en">Launch Event: August 20th</span>
-          <span class="lang-ar hidden">فعالية الانطلاق: 20 أغسطس</span>
-        </h2>
         <p>
           <span class="lang-en">Join the Flamingo Revolution!</span>
           <span class="lang-ar hidden">انضموا إلى ثورة الفلامينغو!</span>
@@ -331,6 +607,39 @@ This page is to keep track of the Flotilla groups and to keep the public informe
   <div class="ticket-bottom">
 
   </div>
+
+        <div class="ticket-feature-action">
+            <a class="ticket-feature-learn-more" href="https://freedomflotilla.org/" target="_blank" rel="noopener noreferrer">
+                <span class="lang-en">Learn More</span>
+                <span class="lang-ar hidden">اعرف المزيد</span>
+            </a>
+        </div>
+  
+    </div>
+<!-- This section is for past documented interactions with the October and April missions, another div will be added to keep users up to date communications for October 2026 
+    <section class="ticket-secondary" aria-labelledby="ticket-secondary-title">
+        <div class="ticket-secondary-intro">
+            <h2 id="ticket-secondary-title">Humanitarian Aid in Action</h2>
+            <h3>Follow the journey and meet the people behind the mission</h3>
+            <p>Explore images and short stories documenting the preparations, people, and supplies that make each voyage possible.</p>
+        </div>
+
+        <div class="ticket-secondary-gallery">
+            <figure class="ticket-secondary-card">
+                <img class="ticket-secondary-image" src="images/700.jpg" alt="Humanitarian aid mission gallery placeholder" loading="lazy">
+                <figcaption>Mission preparation and coordination.</figcaption>
+            </figure>
+            <figure class="ticket-secondary-card">
+                <img class="ticket-secondary-image" src="images/701.jpg" alt="Community support gallery placeholder" loading="lazy">
+                <figcaption>Community support for the journey.</figcaption>
+            </figure>
+            <figure class="ticket-secondary-card">
+                <img class="ticket-secondary-image" src="images/702.jpg" alt="Aid delivery gallery placeholder" loading="lazy">
+                <figcaption>Aid, action, and solidarity.</figcaption>
+            </figure>
+        </div>
+    </section>
+  -->
 </main>
 
   <footer class="site-footer">
