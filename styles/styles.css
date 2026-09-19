@@ -29,7 +29,7 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
 /* Author: Leslie Brockman.                      */
-/* Updated  09-18-2026                           */
+/* Updated  09-04-2026                           */
 /* I know what I did. I am paying for it.        */
 /* Reclass pending to clean this monster up.     */
 /* I am very well aware AI  can automate         */
@@ -43,7 +43,6 @@
 /* once the entire layout is set, more specific rules will be added per section and element. */
 /* class names will be updated to be more specific and descriptive over time. */
 /*I am totally avoiding refractoring this beast for now */
-/*totally know now what I'm going to do, break up the pages into indvidual styles, we can make sure the template straight
 
 /* ================ DESIGN TOKENS ================ */
 :root {
@@ -4612,6 +4611,71 @@ main h2 {
     background: var(--primary-green);
     color: #000;
     font-weight: 700;
+}
+
+.link-page .featured-image-galleries {
+    width: 100%;
+    min-width: 0;
+    margin: 1.5rem auto;
+    padding: clamp(0.5rem, 2vw, 1.25rem);
+    border: 1px solid var(--gold);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 151, 54, 0.35);
+}
+
+.link-page .featured-image-galleries .gallery-section-copy {
+    margin-top: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.link-page .featured-profile {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.link-page .featured-profile .image > img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    margin: 0 auto 0.75rem;
+    border: 0;
+    box-shadow: none;
+}
+
+.link-page .featured-profile .social-link img {
+    border: 0;
+    box-shadow: none;
+}
+
+@media (min-width: 769px) {
+    .link-page .featured-profile {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+}
+
+.link-page .featured-image-galleries .image-container {
+    min-height: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.link-page .featured-image-galleries .image-container img {
+    border: 0;
+    box-shadow: none;
+}
+
+.link-page .featured-image-galleries .image-container > img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
 }
 
 .link-page .button-container {
