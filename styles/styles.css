@@ -29,7 +29,7 @@
 /* ============================================= */
 /* styles/styles.css - MPGA Website              */ 
 /* Author: Leslie Brockman.                      */
-/* Updated  09-04-2026                           */
+/* Updated  09-18-2026                           */
 /* I know what I did. I am paying for it.        */
 /* Reclass pending to clean this monster up.     */
 /* I am very well aware AI  can automate         */
@@ -43,6 +43,7 @@
 /* once the entire layout is set, more specific rules will be added per section and element. */
 /* class names will be updated to be more specific and descriptive over time. */
 /*I am totally avoiding refractoring this beast for now */
+/*totally know now what I'm going to do, break up the pages into indvidual styles, we can make sure the template straight
 
 /* ================ DESIGN TOKENS ================ */
 :root {
@@ -6624,6 +6625,11 @@ main h2 {
     line-height: 1.2;
     text-align: center;
     transition: color .3s ease;
+}
+
+.explore-card-title a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .explore-card:hover .explore-card-title {
