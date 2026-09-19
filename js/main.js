@@ -1,6 +1,6 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 09/04/2026
+//Date modified: 09/18/2026
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
 const langToggles = document.querySelectorAll('.lang-toggle');
@@ -141,7 +141,9 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             modal.hidden = false;
             document.body.classList.add('andrey-modal-open');
             requestAnimationFrame(() => modal.classList.add('is-open'));
-            backButton.focus();
+            backButton.focus({ preventScroll: true });
+            modal.scrollTop = 0;
+            dialog.scrollTop = 0;
         };
 
         const closeAndreyModal = () => {
