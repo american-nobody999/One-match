@@ -1,189 +1,567 @@
-/* Color Garden — isolated state; English and Arabic always appear together. */
-(() => {
-  'use strict';
-  const garden = document.getElementById('color-garden');
-  if (!garden) return;
-  const find = selector => garden.querySelector(selector);
-  const all = selector => [...garden.querySelectorAll(selector)];
-  const colors = {
-    red: ['Red', 'أحمر', '#c62836', '#fff'],
-    yellow: ['Yellow', 'أصفر', '#ffd60a', '#111'],
-    blue: ['Blue', 'أزرق', '#206887', '#fff'],
-    orange: ['Orange', 'برتقالي', '#f77f00', '#111'],
-    green: ['Green', 'أخضر', '#43aa5f', '#111'],
-    purple: ['Purple', 'بنفسجي', '#8e44ad', '#fff']
-  };
-  const recipes = { 'red-yellow': 'orange', 'blue-yellow': 'green', 'blue-red': 'purple' };
-  const secondary = ['orange', 'green', 'purple'];
-  const discovered = new Set();
-  let mixing = [], paintColor = 'red', challenge = null, pointer = null;
-  let previous = null, keyboardPosition = { x: 450, y: 250 };
-  const canvas = find('#color-garden-canvas');
-  const ctx = canvas.getContext('2d');
-  const result = find('#mix-result');
-  const blobs = [find('#mix-color-one'), find('#mix-color-two')];
-  const palette = all('.paint-color');
+/* =========================================
+   COLOR GARDEN
+   ========================================= */
 
-  function bilingual(element, english, arabic) {
-    element.replaceChildren();
-    for (const [language, text] of [['en', english], ['ar', arabic]]) {
-      const span = document.createElement('span');
-      span.className = `cg-${language}`;
-      span.lang = language;
-      span.dir = language === 'ar' ? 'rtl' : 'ltr';
-      span.textContent = text;
-      element.append(span);
-    }
-  }
-  function animate(element, name) {
-    element.classList.remove(name);
-    void element.offsetWidth;
-    element.classList.add(name);
-  }
-  function selectColor(color) {
-    all('.color-choice').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.color === color)));
-    bilingual(find('#color-name-display'), colors[color][0], colors[color][1]);
-    animate(find(`[data-color="${color}"]`), 'mix-animation');
-  }
-  function selectPaint(color) {
-    paintColor = color;
-    palette.forEach(button => {
-      const selected = button.dataset.paint === color;
-      button.classList.toggle('selected', selected);
-      button.setAttribute('aria-pressed', String(selected));
-    });
-  }
-  function updatePalette() {
-    palette.forEach(button => {
-      const color = button.dataset.paint;
-      const locked = secondary.includes(color) && !discovered.has(color);
-      button.disabled = locked;
-      button.classList.toggle('locked', locked);
-      bilingual(button, colors[color][0], colors[color][1]);
-      button.setAttribute('aria-label', `${colors[color][0]} — ${colors[color][1]}${locked ? ' — Mix to unlock / امزج لفتح اللون' : ''}`);
-    });
-  }
-  function unlockColor(color) {
-    if (secondary.includes(color)) discovered.add(color);
-    updatePalette();
-  }
-  function resetMix() {
-    mixing = [];
-    blobs.forEach(blob => { blob.style.background = ''; blob.classList.remove('mix-animation'); });
-    result.style.background = '#eee';
-    result.style.color = '#111';
-    result.textContent = '?';
-    result.classList.remove('splat');
-    find('#cg-mix-equation').textContent = '';
-  }
-  function generateChallenge() {
-    const choices = secondary.filter(color => color !== challenge);
-    challenge = choices[Math.floor(Math.random() * choices.length)];
-    bilingual(find('#cg-challenge'), `Can you make ${colors[challenge][0].toLowerCase()}?`, `هل يمكنك صنع اللون ${colors[challenge][1]}؟`);
-  }
-  function checkChallenge(color) {
-    if (challenge === color) {
-      bilingual(find('#cg-challenge'), `You made ${colors[color][0].toLowerCase()}!`, `رائع! صنعت اللون ${colors[color][1]}!`);
-      challenge = null;
-    }
-  }
-  function mixColors(color) {
-    if (mixing.length === 2) resetMix();
-    mixing.push(color);
-    blobs[mixing.length - 1].style.background = colors[color][2];
-    if (mixing.length !== 2) return;
-    const [first, second] = mixing;
-    const mixed = first === second ? first : recipes[[first, second].sort().join('-')];
-    blobs.forEach(blob => animate(blob, 'mix-animation'));
-    result.style.background = colors[mixed][2];
-    result.style.color = colors[mixed][3];
-    bilingual(result, colors[mixed][0], colors[mixed][1]);
-    bilingual(find('#cg-mix-equation'), `${colors[first][0]} + ${colors[second][0]} = ${colors[mixed][0]}`, `${colors[first][1]} + ${colors[second][1]} = ${colors[mixed][1]}`);
-    animate(result, 'splat');
-    unlockColor(mixed);
-    checkChallenge(mixed);
-  }
-  const equation = document.createElement('p');
-  equation.id = 'cg-mix-equation';
-  equation.setAttribute('aria-live', 'polite');
-  find('.mixing-stage').after(equation);
+.color-garden {
+  --garden-gap: clamp(2.5rem, 5vw, 4rem);
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 7vw, 6rem);
+  border: 1px solid #bdd1a6;
+  border-radius: 28px;
+  background-color: #e5efce;
+  background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/bug.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-  // Keep the fixed drawing buffer while CSS resizes it, preserving artwork.
-  function position(event) {
-    const rect = canvas.getBoundingClientRect();
-    return { x: (event.clientX - rect.left) * canvas.width / rect.width, y: (event.clientY - rect.top) * canvas.height / rect.height };
-  }
-  function draw(from, to) {
-    if (!ctx) return;
-    const width = 18 * canvas.width / (canvas.getBoundingClientRect().width || canvas.width);
-    ctx.fillStyle = ctx.strokeStyle = colors[paintColor][2];
-    ctx.lineWidth = width;
-    ctx.lineCap = ctx.lineJoin = 'round';
-    ctx.beginPath();
-    if (!from) {
-      ctx.arc(to.x, to.y, width / 2, 0, Math.PI * 2);
-      ctx.fill();
-    } else {
-      ctx.moveTo(from.x, from.y);
-      ctx.lineTo(to.x, to.y);
-      ctx.stroke();
-    }
-  }
-  function stopPainting(event) {
-    if (event && event.pointerId !== pointer) return;
-    if (pointer !== null && canvas.hasPointerCapture(pointer)) canvas.releasePointerCapture(pointer);
-    pointer = null;
-    previous = null;
-  }
-  function clearCanvas() {
-    stopPainting();
-    ctx?.clearRect(0, 0, canvas.width, canvas.height);
-  }
-  function resetGame() {
-    clearCanvas();
-    resetMix();
-    discovered.clear();
-    updatePalette();
-    selectPaint('red');
-    challenge = null;
-    find('#cg-challenge').textContent = '';
-    find('#color-name-display').textContent = '🎨';
-    keyboardPosition = { x: 450, y: 250 };
-    all('.color-choice').forEach(button => {
-      button.setAttribute('aria-pressed', 'false');
-      button.classList.remove('mix-animation');
-    });
-  }
-  all('.color-choice').forEach(button => button.addEventListener('click', () => selectColor(button.dataset.color)));
-  all('.mix-choice').forEach(button => button.addEventListener('click', () => mixColors(button.dataset.mix)));
-  palette.forEach(button => button.addEventListener('click', () => { if (!button.disabled) selectPaint(button.dataset.paint); }));
-  find('#reset-mix').addEventListener('click', resetMix);
-  find('#cg-new-challenge').addEventListener('click', generateChallenge);
-  find('#clear-painting').addEventListener('click', clearCanvas);
-  find('#restart-color-garden').addEventListener('click', resetGame);
-  canvas.addEventListener('pointerdown', event => {
-    if (pointer !== null || event.button !== 0) return;
-    event.preventDefault();
-    pointer = event.pointerId;
-    canvas.setPointerCapture(pointer);
-    previous = position(event);
-    draw(null, previous);
-  });
-  canvas.addEventListener('pointermove', event => {
-    if (event.pointerId !== pointer) return;
-    const next = position(event);
-    draw(previous, next);
-    previous = next;
-  });
-  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(type => canvas.addEventListener(type, stopPainting));
-  canvas.addEventListener('keydown', event => {
-    const moves = { ArrowLeft: [-15, 0], ArrowRight: [15, 0], ArrowUp: [0, -15], ArrowDown: [0, 15] };
-    if (event.key === ' ') { event.preventDefault(); draw(null, keyboardPosition); return; }
-    if (!moves[event.key]) return;
-    event.preventDefault();
-    const [x, y] = moves[event.key];
-    keyboardPosition = { x: Math.max(0, Math.min(canvas.width, keyboardPosition.x + x)), y: Math.max(0, Math.min(canvas.height, keyboardPosition.y + y)) };
-  });
-  resetGame();
-})();
+.color-garden-heading {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto var(--garden-gap);
+  padding: 1.25rem clamp(1rem, 3vw, 2rem);
+  text-align: center;
+  border: 1px solid #c4d3af;
+  border-radius: 24px;
+  background: rgba(255, 253, 240, .94);
+  box-shadow: 0 6px 18px rgba(48, 76, 37, .12);
+}
 
+.color-garden-heading h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.color-garden-heading p {
+  font-size: 1.15rem;
+}
+
+
+/* -----------------------------------------
+   SECTIONS
+   ----------------------------------------- */
+
+/* Stations stay in document order; the trail occupies only their gaps. */
+.color-garden .color-learning-area,
+.color-garden .color-mixing-area,
+.color-garden .color-challenge-area,
+.color-garden .painting-area {
+  --station-accent: #f6e7ab;
+  position: relative;
+  width: 94%;
+  min-width: 0;
+  margin: 0 auto var(--garden-gap);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  text-align: center;
+  border: 1px solid #bacda8;
+  border-top: 7px solid var(--station-accent);
+  border-radius: 26px;
+  background: rgba(255, 253, 243, .95);
+  box-shadow: 0 8px 22px rgba(48, 76, 37, .13);
+  transition: box-shadow .2s ease;
+}
+
+.color-garden .color-mixing-area { --station-accent: #cce5ef; }
+.color-garden .color-challenge-area {
+  --station-accent: #e1d5ee;
+  width: 82%;
+}
+.color-garden .painting-area {
+  --station-accent: #d1e6bb;
+  width: 100%;
+  margin-bottom: 0;
+  box-shadow: 0 10px 28px rgba(48, 76, 37, .17);
+}
+
+.color-garden .color-learning-area::after,
+.color-garden .color-mixing-area::after,
+.color-garden .color-challenge-area::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + .65rem);
+  left: calc(50% - 3px);
+  height: calc(var(--garden-gap) - 1.3rem);
+  border-left: 6px dotted rgba(76, 109, 48, .45);
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .color-garden .color-learning-area { margin-left: 0; }
+  .color-garden .color-mixing-area { margin-right: 0; }
+}
+
+.color-garden .color-challenge-area .color-game-button {
+  margin: 0;
+  background: #e8ddf3;
+}
+.color-garden #cg-challenge:empty { margin: 0; }
+.color-garden #cg-challenge:not(:empty) { margin: 1rem 0 0; }
+.color-garden #cg-drawing-help { margin-bottom: 1.25rem; }
+.color-garden .color-garden-heading h2,
+.color-garden h3 { color: #283d24; }
+.color-garden p { line-height: 1.65; }
+
+.color-garden h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1.5rem;
+}
+
+
+/* -----------------------------------------
+   PRIMARY COLORS
+   ----------------------------------------- */
+
+.color-garden .primary-colors,
+.color-garden .mix-buttons,
+.color-garden .paint-palette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.color-garden .color-choice,
+.color-garden .mix-choice {
+  width: 135px;
+  height: 135px;
+
+  border: 5px solid white;
+  border-radius: 50%;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .color-garden .color-choice:hover,
+  .color-garden .mix-choice:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.color-garden .color-choice:focus-visible,
+.color-garden .mix-choice:focus-visible,
+.color-garden .paint-color:focus-visible,
+.color-garden .color-game-button:focus-visible {
+  outline: 4px solid #111;
+  outline-offset: 4px;
+}
+
+
+/* -----------------------------------------
+   COLORS
+   ----------------------------------------- */
+
+.color-garden .red {
+  background: #e63946;
+  color: white;
+}
+
+.color-garden .yellow {
+  background: #ffd60a;
+  color: #111;
+}
+
+.color-garden .blue {
+  background: #277da1;
+  color: white;
+}
+
+.color-garden .orange {
+  background: #f77f00;
+}
+
+.color-garden .green {
+  background: #43aa5f;
+}
+
+.color-garden .purple {
+  background: #8e44ad;
+}
+
+
+/* -----------------------------------------
+   COLOR NAME DISPLAY
+   ----------------------------------------- */
+
+.color-garden .color-name-display {
+  min-height: 70px;
+  margin-top: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+/* -----------------------------------------
+   MIXING AREA
+   ----------------------------------------- */
+
+.color-garden .mix-instructions {
+  margin-bottom: 1.5rem;
+}
+
+.color-garden .mixing-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  margin: 2rem 0;
+
+  flex-wrap: wrap;
+}
+
+.color-garden .mix-blob,
+.color-garden .mix-result {
+  width: 110px;
+  height: 110px;
+
+  border-radius:
+    55% 45% 60% 40% /
+    45% 60% 40% 55%;
+
+  border: 4px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-garden .mix-result {
+  background: #eeeeee;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  flex-direction: column;
+}
+
+.color-garden .mix-symbol {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+/* Mixing animation */
+
+.color-garden .mix-blob.mix-animation {
+  animation: cgPaintBounce 0.5s ease;
+}
+
+.color-garden .mix-result.splat {
+  animation: cgPaintSplat 0.55s ease;
+}
+
+@keyframes cgPaintBounce {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cgPaintSplat {
+
+  0% {
+    transform: scale(0.5) rotate(-8deg);
+  }
+
+  60% {
+    transform: scale(1.25) rotate(6deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* -----------------------------------------
+   PAINT PALETTE
+   ----------------------------------------- */
+
+.color-garden .paint-palette {
+  margin-bottom: 1.5rem;
+}
+
+.color-garden .paint-color {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  border: 4px solid white;
+
+  cursor: pointer;
+}
+
+.color-garden .paint-color.selected {
+  outline: 5px solid #222;
+  outline-offset: 3px;
+}
+
+.color-garden .paint-color.locked {
+  opacity: 0.35;
+  cursor: not-allowed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* -----------------------------------------
+   CANVAS
+   ----------------------------------------- */
+
+.color-garden .canvas-wrapper {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  border: 2px solid #cbd4c3;
+  box-shadow: 0 5px 16px rgba(48, 76, 37, .13);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: white;
+}
+
+.color-garden #color-garden-canvas {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  background: white;
+
+  cursor: crosshair;
+
+  touch-action: none;
+}
+
+
+/* -----------------------------------------
+   BUTTONS
+   ----------------------------------------- */
+
+.color-garden .color-game-button {
+  min-height: 50px;
+
+  padding: 0.8rem 1.5rem;
+  margin: 1rem 0.5rem;
+
+  border: none;
+  border-radius: 30px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.color-garden .painting-controls {
+  margin-top: 1rem;
+}
+
+
+/* Integration: permanent bilingual labels and accessible, responsive controls. */
+.color-garden, .color-garden * { box-sizing: border-box; }
+.color-garden { width: 100%; min-width: 0; color: #111; }
+.color-garden .cg-en, .color-garden .cg-ar { display: block; }
+.color-garden [lang="ar"] { direction: rtl; }
+.color-garden button { font-family: inherit; }
+.color-garden .red { background: #c62836; color: #fff; }
+.color-garden .blue { background: #206887; color: #fff; }
+.color-garden .orange, .color-garden .green { color: #111; }
+.color-garden .purple { color: #fff; }
+.color-garden .paint-color { width: 100px; height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 1rem; font-weight: bold; }
+.color-garden .paint-color.locked { opacity: 1; border-style: dashed; }
+.color-garden .paint-color.locked::after { content: "🔒"; }
+.color-garden .color-choice[aria-pressed="true"] { outline: 4px solid #111; outline-offset: 3px; }
+.color-garden .color-choice.mix-animation { animation: cgPaintBounce .5s ease; }
+.color-garden .color-game-button { background: #ffdf70; color: #111; max-width: 100%; }
+.color-garden .color-name-display { flex-direction: column; color: #111; }
+.color-garden .mix-result { font-size: 1rem; }
+.color-garden .mixing-stage { flex-wrap: nowrap; gap: clamp(.2rem, 1vw, 1rem); }
+.color-garden .mix-blob, .color-garden .mix-result { width: clamp(48px, 15vw, 110px); height: clamp(68px, 15vw, 110px); flex-shrink: 0; }
+.color-garden .mix-blob-one.mix-animation { animation: cgMergeLeft .5s ease; }
+.color-garden .mix-blob-two.mix-animation { animation: cgMergeRight .5s ease; }
+.color-garden #color-garden-canvas:focus-visible { outline: 4px solid #111; outline-offset: -5px; }
+@keyframes cgMergeLeft { 50% { transform: translateX(12px) scale(1.08); } }
+@keyframes cgMergeRight { 50% { transform: translateX(-12px) scale(1.08); } }
+/* Responsive tiers shared with styles.css. Narrower rules build on wider ones. */
+@media (min-width: 1600px) {
+  .color-garden { padding: 6rem; }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .color-garden { padding: 5rem; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .color-garden { padding: 4rem 3rem; }
+}
+
+@media (max-width: 991px) {
+  .color-garden { padding: 3rem 2rem; }
+  .color-garden .color-learning-area,
+  .color-garden .color-mixing-area { width: 100%; }
+  .color-garden .color-challenge-area { width: 90%; }
+}
+
+@media (max-width: 768px) {
+  .color-garden {
+    --garden-gap: 2.5rem;
+    padding: 2.5rem 1.25rem;
+  }
+  .color-garden .color-learning-area,
+  .color-garden .color-mixing-area,
+  .color-garden .color-challenge-area,
+  .color-garden .painting-area {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+  .color-garden .color-choice,
+  .color-garden .mix-choice { width: 110px; height: 110px; }
+  .color-garden .primary-colors,
+  .color-garden .mix-buttons,
+  .color-garden .paint-palette { gap: 1rem; }
+  .color-garden .painting-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem;
+  }
+  .color-garden .color-game-button { margin-inline: 0; }
+}
+
+@media (max-width: 575px) {
+  .color-garden {
+    --garden-gap: 2rem;
+    margin-block: 2rem;
+    padding: 2.5rem .75rem;
+    border-radius: 22px;
+  }
+  .color-garden-heading { padding: 1rem .75rem; }
+  .color-garden .color-learning-area,
+  .color-garden .color-mixing-area,
+  .color-garden .color-challenge-area,
+  .color-garden .painting-area {
+    padding: 1.5rem .75rem;
+    border-radius: 20px;
+  }
+  .color-garden .color-choice,
+  .color-garden .mix-choice { width: 100px; height: 100px; }
+  .color-garden .primary-colors,
+  .color-garden .mix-buttons,
+  .color-garden .paint-palette { gap: .875rem; }
+  .color-garden .mix-symbol { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  /* Keep the equation in reading order, with a roomy result below it. */
+  .color-garden .mixing-stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    justify-items: center;
+    gap: .75rem;
+    max-width: 260px;
+    margin-inline: auto;
+  }
+  .color-garden .mix-blob,
+  .color-garden .mix-result { width: 80px; height: 80px; }
+  .color-garden .mixing-stage > .mix-symbol:nth-child(4),
+  .color-garden .mix-result { grid-column: 1 / -1; }
+  .color-garden .mix-result { width: 100px; height: 100px; }
+  .color-garden .painting-controls { gap: .75rem; }
+  .color-garden .painting-controls .color-game-button {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .color-garden { padding-inline: .5rem; }
+  .color-garden .color-garden-heading h2 { font-size: 1.75rem; }
+  .color-garden .color-garden-heading p { font-size: 1rem; }
+  .color-garden .color-name-display { font-size: 1.25rem; }
+  .color-garden .color-game-button { padding-inline: .75rem; }
+}
+
+@media (max-width: 359px) {
+  .color-garden { padding-inline: .375rem; }
+  .color-garden .color-learning-area,
+  .color-garden .color-mixing-area,
+  .color-garden .color-challenge-area,
+  .color-garden .painting-area { padding-inline: .5rem; }
+  .color-garden .color-garden-heading h2 { font-size: 1.5rem; }
+  .color-garden .color-choice,
+  .color-garden .mix-choice,
+  .color-garden .paint-color { width: 90px; height: 90px; }
+}
+
+/* Small interaction cues; locked paints retain their existing treatment. */
+.color-garden .color-choice,
+.color-garden .mix-choice,
+.color-garden .paint-color,
+.color-garden .color-game-button {
+  box-shadow: 0 3px 7px rgba(48, 76, 37, .16);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.color-garden .paint-color.orange:not(.locked),
+.color-garden .paint-color.green:not(.locked),
+.color-garden .paint-color.purple:not(.locked) {
+  animation: cgUnlockPop .28s ease-out;
+}
+@keyframes cgUnlockPop {
+  50% { transform: scale(1.05); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .color-garden .color-learning-area:hover,
+  .color-garden .color-mixing-area:hover,
+  .color-garden .color-challenge-area:hover,
+  .color-garden .painting-area:hover {
+    box-shadow: 0 10px 26px rgba(48, 76, 37, .19);
+  }
+  .color-garden .paint-color:not(:disabled):hover,
+  .color-garden .color-game-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(48, 76, 37, .2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .color-garden *, .color-garden *::before, .color-garden *::after { animation: none !important; transition: none !important; }
+  .color-garden button:hover { transform: none; }
+}
