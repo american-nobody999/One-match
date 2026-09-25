@@ -1,7 +1,7 @@
 <!--
 MPAG: Education page
 Leslie Brockman
-Date last modified: 2026-08-015
+Date last modified: 2026-09-25
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +19,7 @@ Date last modified: 2026-08-015
     
 <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/color-garden.css">
 </head>
 
 <body class="edu-page">
@@ -345,6 +346,268 @@ Date last modified: 2026-08-015
 
 
 
+<!-- Color Garden: both languages always visible. -->
+<section class="color-garden" id="color-garden" dir="ltr" aria-label="Color Garden — حديقة الألوان">
+
+  <div class="color-garden-heading">
+    <h2>
+      <span class="cg-en" lang="en">🎨 Color Garden</span>
+      <span class="cg-ar" lang="ar">🎨 حديقة الألوان</span>
+    </h2>
+
+    <p>
+      <span class="cg-en" lang="en">
+        Pick colors, mix them together, and paint your own picture!
+      </span>
+      <span class="cg-ar" lang="ar" dir="rtl">
+        اختر الألوان وامزجها معًا وارسم لوحتك الخاصة!
+      </span>
+    </p>
+  </div>
+
+
+  <!-- =========================
+       PRIMARY COLORS
+       ========================= -->
+
+  <div class="color-learning-area">
+
+    <h3>
+      <span class="cg-en" lang="en">Pick a Color</span>
+      <span class="cg-ar" lang="ar">اختر لونًا</span>
+    </h3>
+
+    <div class="primary-colors">
+
+      <button
+        type="button"
+        class="color-choice red"
+        data-color="red"
+        aria-label="Red - أحمر">
+        <span>Red</span>
+        <span dir="rtl">أحمر</span>
+      </button>
+
+      <button
+        type="button"
+        class="color-choice yellow"
+        data-color="yellow"
+        aria-label="Yellow - أصفر">
+        <span>Yellow</span>
+        <span dir="rtl">أصفر</span>
+      </button>
+
+      <button
+        type="button"
+        class="color-choice blue"
+        data-color="blue"
+        aria-label="Blue - أزرق">
+        <span>Blue</span>
+        <span dir="rtl">أزرق</span>
+      </button>
+
+    </div>
+
+    <div
+      id="color-name-display"
+      class="color-name-display"
+      aria-live="polite">
+      🎨
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       MIXING LAB
+       ========================= -->
+
+  <div class="color-mixing-area">
+
+    <h3>
+      <span class="cg-en" lang="en">Mix Two Colors!</span>
+      <span class="cg-ar" lang="ar">امزج لونين!</span>
+    </h3>
+
+    <p class="mix-instructions">
+      <span class="cg-en" lang="en">
+        Tap two colors and see what happens.
+      </span>
+
+      <span class="cg-ar" lang="ar" dir="rtl">
+        اضغط على لونين وشاهد ماذا يحدث.
+      </span>
+    </p>
+
+
+    <div class="mixing-stage">
+
+      <div
+        class="mix-blob mix-blob-one"
+        id="mix-color-one"
+        aria-hidden="true">
+      </div>
+
+      <div class="mix-symbol">+</div>
+
+      <div
+        class="mix-blob mix-blob-two"
+        id="mix-color-two"
+        aria-hidden="true">
+      </div>
+
+      <div class="mix-symbol">=</div>
+
+      <div
+        class="mix-result"
+        id="mix-result"
+        aria-live="polite">
+        ?
+      </div>
+
+    </div>
+
+
+    <div class="mix-buttons">
+
+      <button type="button" class="mix-choice red" data-mix="red">
+        Red<br>
+        <span dir="rtl">أحمر</span>
+      </button>
+
+      <button type="button" class="mix-choice yellow" data-mix="yellow">
+        Yellow<br>
+        <span dir="rtl">أصفر</span>
+      </button>
+
+      <button type="button" class="mix-choice blue" data-mix="blue">
+        Blue<br>
+        <span dir="rtl">أزرق</span>
+      </button>
+
+    </div>
+
+
+    <button
+      type="button"
+      id="reset-mix"
+      class="color-game-button">
+
+      <span class="cg-en" lang="en">Mix Again</span>
+      <span class="cg-ar" lang="ar">امزج مرة أخرى</span>
+
+    </button>
+
+  </div>
+
+
+  <div class="color-challenge-area">
+    <button type="button" id="cg-new-challenge" class="color-game-button"><span class="cg-en" lang="en">Try a Color Challenge</span><span class="cg-ar" lang="ar" dir="rtl">جرّب تحدي الألوان</span></button>
+    <p id="cg-challenge" aria-live="polite"></p>
+  </div>
+
+  <!-- =========================
+       PAINTING AREA
+       ========================= -->
+
+  <div class="painting-area">
+
+    <h3>
+      <span class="cg-en" lang="en">Now Let's Paint!</span>
+      <span class="cg-ar" lang="ar">والآن لنرسم!</span>
+    </h3>
+
+
+    <div
+      class="paint-palette"
+      id="paint-palette"
+      aria-label="Painting colors">
+
+      <button
+        type="button"
+        class="paint-color red selected"
+        data-paint="red"
+        aria-label="Paint with red"><span lang="en">Red</span><span lang="ar" dir="rtl">أحمر</span></button>
+
+      <button
+        type="button"
+        class="paint-color yellow"
+        data-paint="yellow"
+        aria-label="Paint with yellow"><span lang="en">Yellow</span><span lang="ar" dir="rtl">أصفر</span></button>
+
+      <button
+        type="button"
+        class="paint-color blue"
+        data-paint="blue"
+        aria-label="Paint with blue"><span lang="en">Blue</span><span lang="ar" dir="rtl">أزرق</span></button>
+
+      <!-- Unlocked through mixing -->
+
+      <button
+        type="button"
+        class="paint-color orange locked"
+        data-paint="orange"
+        aria-label="Orange - locked"
+        disabled><span lang="en">Orange</span><span lang="ar" dir="rtl">برتقالي</span></button>
+
+      <button
+        type="button"
+        class="paint-color green locked"
+        data-paint="green"
+        aria-label="Green - locked"
+        disabled><span lang="en">Green</span><span lang="ar" dir="rtl">أخضر</span></button>
+
+      <button
+        type="button"
+        class="paint-color purple locked"
+        data-paint="purple"
+        aria-label="Purple - locked"
+        disabled><span lang="en">Purple</span><span lang="ar" dir="rtl">بنفسجي</span></button>
+
+    </div>
+
+
+    <p id="cg-drawing-help"><span class="cg-en" lang="en">Draw with your finger or mouse. Keyboard: arrows to move, Space to paint.</span><span class="cg-ar" lang="ar" dir="rtl">ارسم بإصبعك أو بالفأرة. بلوحة المفاتيح: الأسهم للتحرك والمسافة للرسم.</span></p>
+    <div class="canvas-wrapper">
+      <canvas
+        id="color-garden-canvas"
+        width="900"
+        height="500"
+        aria-label="Color Garden painting area — مساحة الرسم" tabindex="0" aria-describedby="cg-drawing-help">
+        Painting canvas — لوحة الرسم
+      </canvas>
+    </div>
+
+
+    <div class="painting-controls">
+
+      <button
+        type="button"
+        id="clear-painting"
+        class="color-game-button">
+
+        <span class="cg-en" lang="en">Clear Painting</span>
+        <span class="cg-ar" lang="ar">مسح اللوحة</span>
+
+      </button>
+
+
+      <button
+        type="button"
+        id="restart-color-garden"
+        class="color-game-button">
+
+        <span class="cg-en" lang="en">Start Over</span>
+        <span class="cg-ar" lang="ar">ابدأ من جديد</span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
 <section class="math-flashcards" aria-labelledby="practice-flashcards-title">
   <div class="edu-content-section">
     <h2 id="practice-flashcards-title">
@@ -613,18 +876,6 @@ Date last modified: 2026-08-015
     </div>
   </div>
 </section>
-      
-  <section class="video-embed-section edu-bottom-video" aria-label="Featured education video">
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/isYyzivMhHU"
-        title="Featured education video"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-    </div>
-  </section>
 
 <!--Going to pause this for now while we find and add more educational content
  <section class="edu-5">
@@ -700,6 +951,18 @@ Date last modified: 2026-08-015
 </section>
 -->
 
+  <section class="video-embed-section edu-bottom-video" aria-label="Featured education video">
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/isYyzivMhHU"
+        title="Featured education video"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
  </main>
 
   <footer class="site-footer">
@@ -730,6 +993,7 @@ Date last modified: 2026-08-015
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/color-garden.js"></script>
   <script src="js/math-addition.js"></script>
   <script src="js/math-subtraction.js"></script>
   <script src="js/math-division.js"></script>
