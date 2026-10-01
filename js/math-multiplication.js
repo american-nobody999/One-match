@@ -1,7 +1,7 @@
 // Author: Leslie Brockman
 //Date Last Modified: 08-19-2026
 // Description: This module implements a multiplication flashcard application. It provides functionality for displaying multiplication problems, checking answers, tracking scores, and managing a timer.
-
+  'use strict';
 const MultiplicationApp = (() => {
   const cards = [
     { q: "6 × 7",  a: "42" },
