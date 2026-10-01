@@ -1,6 +1,7 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 09/18/2026
+//Date modified: 09/30/2026
+  'use strict';
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
 const langToggles = document.querySelectorAll('.lang-toggle');
