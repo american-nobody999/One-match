@@ -1,3 +1,4 @@
+  'use strict';
 const DivisionApp = (() => {
   // Author: Leslie Brockman
   //Date Last Modified: 08-19-2026
