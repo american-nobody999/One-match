@@ -2,7 +2,7 @@
 //Date Last Modified: 08-19-2026
 //Flashcards-Addtion
 
-
+  'use strict';
 
 const App = (() => {
   const cards = [
