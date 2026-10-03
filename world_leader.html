@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="American Nobody999">
+
+<!--For SQL and better accessibility-->
+    <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
+    <title>World Leaders - American Nobody</title>
+    
+<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    
+<!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/world-leaders.css">
+</head>
+<body class="world-leaders-page">
+    <header class="site-header">
+    <div class="header-container">
+            
+<!-- Logo - Left Side-waiting for logo contest from Palestinians -->
+       <div class="header-logo">
+                <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
+        </div>
+<!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
+        <div class="header-center">
+            <h1 class="site-title">
+                <span class="lang-en">State of Palestine</span>
+                <span class="lang-ar">دولة فلسطين</span>
+            </h1>
+                
+<!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    English | العربية
+              </button>
+
+<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change based on Palestine design-->
+              <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn">
+                      <span class="lang-en">Home</span>
+                      <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                        <span class="lang-en">MPGA</span>
+                        <span class="lang-ar">MPGA</span>
+                  </a></li>
+                  <li><a href="united.html" class="nav-btn">
+                      <span class="lang-en">United</span>
+                      <span class="lang-ar">متحدون</span>
+                </a></li>
+                <li><a href="leslie.html" class="nav-btn">
+                    <span class="lang-en">Leslie</span>
+                    <span class="lang-ar">ليزلي</span>
+                </a></li>
+                <li><a href="about.html" class="nav-btn">
+                      <span class="lang-en">About Us</span>
+                      <span class="lang-ar">من نحن</span>
+                    </a></li>
+                  </ul>
+              </nav>
+            </div>
+
+<!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+    <main class="world-leaders-main">
+        <section class="world-leaders-section" aria-labelledby="world-leaders-title">
+            <h2 id="world-leaders-title" class="section-title"><span class="lang-en">Current World Leaders</span><span class="lang-ar hidden">قادة العالم الحاليون</span></h2>
+            <div class="world-leaders-grid">
+                <article class="world-leader-card">
+                    <!-- Replace image src and alt when leader 1's image is supplied. -->
+                    <button type="button" class="world-leader-trigger" data-leader-modal="leader-1-modal" aria-haspopup="dialog" aria-controls="leader-1-modal" aria-labelledby="leader-1-card-title leader-1-action">
+                        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/redoor/flag.jpg" alt="Flag image for the first World Leaders feature" width="800" height="600" loading="lazy">
+                        <span id="leader-1-card-title" class="world-leader-card-title"><span class="lang-en">Prez Trump<br>United States of America</span><span class="lang-ar hidden">الرئيس ترامب<br>الولايات المتحدة الأمريكية</span></span>
+                        <span id="leader-1-action" class="world-leader-action"><span class="lang-en">Click me already</span><span class="lang-ar hidden">اضغط عليّ هيا!</span></span>
+                    </button>
+                </article>
+                <article class="world-leader-card">
+                    <!-- Replace image src and alt when leader 2's image is supplied. -->
+                    <button type="button" class="world-leader-trigger" data-leader-modal="leader-2-modal" aria-haspopup="dialog" aria-controls="leader-2-modal" aria-labelledby="leader-2-card-title leader-2-action">
+                        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/2387.jpg" alt="Second World Leaders feature image" width="800" height="600" loading="lazy">
+                        <span id="leader-2-card-title" class="world-leader-card-title"><span class="lang-en">Islamic Republic of Iran<br>Citizens</span><span class="lang-ar hidden">الجمهورية الإسلامية الإيرانية<br>المواطنون</span></span>
+                        <span id="leader-2-action" class="world-leader-action"><span class="lang-en">Click me already</span><span class="lang-ar hidden">اضغط عليّ هيا!</span></span>
+                    </button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Leader 1: replace the bilingual heading/paragraph and set data-video-src to
+         https://www.youtube-nocookie.com/embed/VIDEO_ID when supplied. No autoplay. -->
+    <dialog id="leader-1-modal" class="world-leader-modal" role="dialog" aria-modal="true" aria-labelledby="leader-1-title" aria-describedby="leader-1-description">
+        <h2 id="leader-1-title" tabindex="-1" autofocus><span class="lang-en">Prez Trump</span><span class="lang-ar hidden">الرئيس ترامب</span></h2>
+        <p id="leader-1-description"><span class="lang-en"><indent>What</indent> should I say to you, you're not listening anyway. The genocide, the invasion, and the occupation are over. You could have chosen to keep your word, your promises, but you choose not to, and you choose to continue to drag our good flag through the blood of innocent people. Try harder this week, with the little time you have left. Recognize the state of Palestine. Give me my Ambassador and my Embassy. Your actions will be remembered by history. Label me a terrorist all you want sir. Foreign and domestic. American people owe no loyalty to you. You no longer represent us, if you ever did. We will not forget.<br> Thank you for your attention to this matter.</span><span class="lang-ar hidden">ماذا عساي أن أقول لك، فأنت لا تصغي على أي حال. لقد انتهت الإبادة الجماعية والغزو والاحتلال. كان بإمكانك أن تفي بكلمتك ووعودك، لكنك تختار ألّا تفعل، وتختار الاستمرار في جرّ علمنا العزيز عبر دماء الأبرياء. ابذل جهدًا أكبر هذا الأسبوع، في الوقت القليل المتبقي لك. اعترف بدولة فلسطين. أعطني سفيري وسفارتي. سيتذكر التاريخ أفعالك. صفني بالإرهاب كما تشاء، يا سيدي. في الخارج والداخل. لا يدين لك الشعب الأمريكي بأي ولاء. لم تعد تمثلنا، إن كنت قد مثلتنا يومًا أصلًا. لن ننسى.<br>شكرًا لاهتمامك بهذا الأمر.</span></p>
+        
+        <div class="video-wrapper" hidden>
+            <iframe data-video-src="https://www.youtube-nocookie.com/embed/-N4jf6rtyuw" title="Featured leader 1 video" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="world-leader-gallery-section">
+            <div class="world-leader-gallery" role="group" aria-labelledby="leader-1-gallery-title">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/tpop3.jpg" data-gallery-slot="1" alt="Placeholder for leader 1 gallery image 1 of 5; image forthcoming" width="800" height="600" loading="lazy">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/tpop.jpg" data-gallery-slot="2" alt="Placeholder for leader 1 gallery image 2 of 5; image forthcoming" width="800" height="600" loading="lazy">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/tpop2.jpg" data-gallery-slot="3" alt="Placeholder for leader 1 gallery image 3 of 5; image forthcoming" width="800" height="600" loading="lazy">
+                <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/oneyear.jpg" data-gallery-slot="4" alt="Placeholder for leader 1 gallery image 4 of 5; image forthcoming" width="800" height="600" loading="lazy">
+            </div>
+        </div>
+        <button type="button" class="world-leader-close"><span class="lang-en">Back / Close</span><span class="lang-ar hidden">رجوع / إغلاق</span></button>
+    </dialog>
+
+    <!-- Leader 2: replace the bilingual heading/paragraph and set data-video-src to
+         https://www.youtube-nocookie.com/embed/VIDEO_ID when supplied. No autoplay. -->
+    <dialog id="leader-2-modal" class="world-leader-modal" role="dialog" aria-modal="true" aria-labelledby="leader-2-title" aria-describedby="leader-2-description">
+        <h2 id="leader-2-title" tabindex="-1" autofocus><span class="lang-en">Good Evening, dear Iranian Citizens,</span><span class="lang-ar hidden">مساء الخير، أيها المواطنون الإيرانيون الأعزاء،</span></h2>
+        <p id="leader-2-description"><span class="lang-en">I must apologize for my forthcomingness. I am not a diplomat. After everything that has gone on these few weeks, I wanted to come and address you directly, one global citizen to another. I hope my message finds you well and that we can work together towards a better future for all. I hope whatever healing needs to take place can begin now for you.<br> They sold us a war in America, an illegal one, because the people have said no, Congress has said no, but the corrupt Administration is sabotaging all our leaders’ attempts to put this matter to rest. America did not go to a not war because of anything you did wrong, but rather to further an evil agenda of occupation, invasion, and genocide. Our leaders have confessed their wrongdoings in their speeches trying to sell us another quagmire, and we must now work to rectify these injustices together. They told us we had to save all of you from your government.<br> I try to stay out of other countries politics. I have my hands full with my own corrupt officials. I do appreciate the outside perspective however, who we vote for, it's up to the American people. No outside influence is going to sway us. We had our fill the past twenty years from AIPAC and Foreign power of Israel. I do not have much faith in our elections. Both Democrats and Republicans fill their pockets with illegal foreign money and donors, then play Americans against each other. They are regurgitating the same issues as they have the past 15 years. You would think, as long as they have been in Congress, some of them, they could at least find the time to fix a few of them. If they did, they would have nothing to lie to the American people about. That's neither here nor there.  Most assuredly, the Republicans have lost the midterms. 50 Republican senators and John Fetterman voted this week to protect terrorists in the West Bank over slaughtered Americans. There is no coming back from that. They think to combine our military, create policies for the foreign government that contradicts our own Bill of Rights. We are working to correct the issues in our own house.<br> When all of this is over, I hope we meet on the other side. I have so many things, ideas, and projects that we can work on together. Iranians lead the way in science and medicine. Before all this started, I was most especially interested in your satellite and space programs. You were getting such successful data back, and I look forward to seeing your continued advancements in these fields. I have this crazy dream, once we get the State of Palestine going, and everyone calms down, we can work together to save the NASA space voyagers. They are running out of battery soon.<br>You should be so proud of your delegation last week. I know they tried so hard to get people to come right, and they were insulted, belittled, and ignored. I watch the whole thing my people. I had their itinerary as soon as it dropped into the State Department. I was making sure all the world UN leaders made it home safe. You have some leaders worth standing behind. We keep trying my Iranian brothers and sisters. We keep trying.<br> As just an American Nobody, I find it amusing sometimes when they tell me my Iranian women are oppressed. Americans are sometimes ignorant in our isolationism. I have collected a few of my Islamic sisters as religious study partners, and honestly, it's a toss-up between them and the Palestinians who I say Yes Ma’am quickly and fear the most. A Muslim wife and mother is not one to argue or play with. I do earn my tongue lashings sometimes, when I forget myself arguing in the White House live feeds all day, and to be honest, I would rather take a physical beating.<br> Please stay safe, I started out, loves, just trying to get to Palestine. We keep moving. I will see you here next week, to check on you.<br>All my love,<br>Leslie, American Nobody</span><span class="lang-ar hidden">لا بد لي من الاعتذار عن صراحتي. لست دبلوماسية. بعد كل ما جرى خلال هذه الأسابيع القليلة، أردت أن أتوجه إليكم مباشرة، من مواطنة في هذا العالم إلى مواطنين فيه. آمل أن تصلكم رسالتي وأنتم بخير، وأن نتمكن من العمل معًا من أجل مستقبل أفضل للجميع. وآمل أن يبدأ الآن كل ما تحتاجون إليه من تعافٍ.<br>لقد سوّقوا لنا حربًا في أمريكا، حربًا غير قانونية، فقد قال الشعب لا، وقال الكونغرس لا، لكن الإدارة الفاسدة تُحبط جميع محاولات قادتنا لوضع حدّ لهذه المسألة. لم تدخل أمريكا فيما يُقال إنه ليس حربًا بسبب أي خطأ ارتكبتموه، بل لدفع أجندة شريرة من الاحتلال والغزو والإبادة الجماعية. لقد أقرّ قادتنا بأخطائهم في خطاباتهم وهم يحاولون تسويق مستنقع آخر لنا، وعلينا الآن أن نعمل معًا لرفع هذا الظلم. قالوا لنا إن علينا أن ننقذكم جميعًا من حكومتكم.<br>أحاول الابتعاد عن سياسات البلدان الأخرى. فلديّ ما يكفيني من الانشغال بمسؤولينا الفاسدين. ومع أنني أقدّر وجهات النظر الخارجية، فإن اختيار من نصوّت له يعود إلى الشعب الأمريكي. لن يغيّر أي تأثير خارجي موقفنا. لقد اكتفينا خلال السنوات العشرين الماضية بما جاءنا من إيباك ومن إسرائيل بوصفها قوة أجنبية. لا أثق كثيرًا بانتخاباتنا. يملأ الديمقراطيون والجمهوريون على السواء جيوبهم بأموال أجنبية غير قانونية وبأموال المتبرعين، ثم يؤلّبون الأمريكيين بعضهم على بعض. إنهم يكررون القضايا نفسها التي ظلوا يرددونها طوال السنوات الخمس عشرة الماضية. وقد يظن المرء أن بعضهم، بعد كل هذه المدة في الكونغرس، كان يمكنه على الأقل أن يجد وقتًا لحلّ عدد منها. ولو فعلوا ذلك، لما بقي لديهم ما يكذبون بشأنه على الشعب الأمريكي. لكن هذا ليس موضوعنا الآن. من المؤكد أن الجمهوريين قد خسروا انتخابات التجديد النصفي. صوّت خمسون عضوًا جمهوريًا في مجلس الشيوخ وجون فيترمان هذا الأسبوع لحماية إرهابيين في الضفة الغربية على حساب أمريكيين قُتلوا بوحشية. لا سبيل إلى التراجع عن ذلك. إنهم يفكرون في دمج جيشنا ووضع سياسات لصالح الحكومة الأجنبية تتعارض مع وثيقة حقوقنا. ونحن نعمل على إصلاح المشكلات في بيتنا.<br>عندما ينتهي كل هذا، آمل أن نلتقي بعد تجاوزه. لديّ أشياء وأفكار ومشروعات كثيرة يمكننا العمل عليها معًا. يتصدّر الإيرانيون مجالات العلم والطب. وقبل أن يبدأ كل هذا، كنت مهتمة على نحو خاص ببرامجكم للأقمار الصناعية والفضاء. كنتم تتلقون بيانات ناجحة للغاية، وأتطلع إلى رؤية استمرار تقدمكم في هذه المجالات. لديّ حلم مجنون: بمجرد أن نُنهض دولة فلسطين ويهدأ الجميع، يمكننا أن نعمل معًا لإنقاذ مسباري فوياجر التابعين لناسا. فبطارياتهما توشك على النفاد.<br>يحق لكم أن تفخروا كثيرًا بوفدكم في الأسبوع الماضي. أعلم أنهم بذلوا جهدًا كبيرًا لحثّ الناس على التصرف كما ينبغي، لكنهم تعرضوا للإهانة والانتقاص والتجاهل. أتابع كل ما يحدث، يا أهلي. كان برنامج رحلتهم لديّ فور وصوله إلى وزارة الخارجية. كنت أحرص على التأكد من عودة جميع قادة العالم المشاركين في الأمم المتحدة إلى ديارهم سالمين. لديكم قادة يستحقون الوقوف إلى جانبهم. نواصل المحاولة، يا إخوتي وأخواتي الإيرانيين. نواصل المحاولة.<br>وبصفتي مجرد «أمريكية لا أحد»، أجد الأمر طريفًا أحيانًا عندما يقولون لي إن نسائي الإيرانيات مضطهدات. يكون الأمريكيون أحيانًا جاهلين بسبب انعزاليتنا. لقد جمعت حولي بعض أخواتي المسلمات شريكاتٍ في دراسة الدين، وبصراحة، لا أدري أيهنّ أهاب أكثر وأبادر بقول «نعم، سيدتي» لهنّ: هنّ أم الفلسطينيات. فالزوجة والأم المسلمة ليست ممن يُجادَلن أو يُستهان بهنّ. وأستحق أحيانًا ما أتلقاه من توبيخ، حين أنسى نفسي وأنا أجادل طوال اليوم في البثوث المباشرة للبيت الأبيض، وبصراحة، أفضّل أن أتلقى ضربًا جسديًا على ذلك.<br>أرجو أن تبقوا سالمين. لقد بدأت، يا أحبتي، بمجرد محاولة الوصول إلى فلسطين. نواصل المضي قدمًا. سأراكم هنا الأسبوع المقبل لأطمئن عليكم.<br>مع كل محبتي،<br>ليزلي، أمريكية لا أحد</span></p>
+        <div class="world-leader-video-placeholder"><span class="lang-en">Video forthcoming.</span><span class="lang-ar hidden">الفيديو قريبًا.</span></div>
+        <div class="video-wrapper" hidden>
+            <iframe data-video-src="https://www.youtube-nocookie.com/embed/zG2ibaQx0nM" title="Featured leader 2 video" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <button type="button" class="world-leader-close"><span class="lang-en">Back / Close</span><span class="lang-ar hidden">رجوع / إغلاق</span></button>
+    </dialog>
+
+      <footer class="site-footer">
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, A State rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 American Nobody999</span>
+              <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
+            </p>
+          </div>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/world-leaders.js"></script>
+</body>
+</html>
