@@ -24,8 +24,8 @@ no one told you to come in here nosing around my 1s and 0s.
 <!--Only need this on the index, so we are not changing all the headers-->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/ticket.css">
+    <link rel="stylesheet" href="styles/styles.css?v=20261007-2">
+    <link rel="stylesheet" href="styles/ticket.css?v=20261007-2">
 </head>
 
 <body class="home-page">
@@ -310,7 +310,7 @@ no one told you to come in here nosing around my 1s and 0s.
         <p class="land-convoy-route-note"><span class="lang-en">Select a numbered star for public details. Schematic route — spacing does not indicate exact locations or distances. Status: Upcoming / Current / Completed.</span><span class="lang-ar hidden">اختر نجمة مرقمة للاطلاع على التفاصيل المعلنة. المسار تخطيطي، ولا تعكس المسافات فيه المواقع أو المسافات الفعلية بدقة. الحالة: قادمة / حالية / مكتملة.</span></p>
         <div class="land-convoy-route-scroll" role="region" aria-label="Public convoy journey" tabindex="0">
         <div class="land-convoy-route" data-land-convoy-route>
-          <svg class="land-convoy-route-line" viewBox="0 0 1080 560" preserveAspectRatio="none" aria-hidden="true"><polyline points="90,100 90,260 90,420 270,420 270,260 270,100 450,100 450,260 450,420 630,420 630,260 630,100 810,100 810,260 810,420 990,420 990,260 990,100" /></svg>
+          <svg class="land-convoy-route-line" viewBox="0 0 1080 560" preserveAspectRatio="none" aria-hidden="true" fill="none"><polyline fill="none" stroke="#8b5838" stroke-width="3" stroke-dasharray="6 8" stroke-linejoin="round" stroke-linecap="round" points="90,100 90,260 90,420 270,420 270,260 270,100 450,100 450,260 450,420 630,420 630,260 630,100 810,100 810,260 810,420 990,420 990,260 990,100" /></svg>
           <!-- Edit each button's data fields manually. events accepts pipe-separated activities; source-links accepts pipe-separated public URLs.
                route-note holds published travel context or location uncertainty. Dates are published schedule dates, not verified progress.
                Status is upcoming, current, or completed; dates never change status or marker position. -->
@@ -728,7 +728,7 @@ no one told you to come in here nosing around my 1s and 0s.
             </div>
         </div>
   </footer>
-
-  <script src="js/main.js"></script>
+<!-- cache busting power-->
+  <script src="js/main.js?v=20261007-2"></script>
 </body>
 </html>
