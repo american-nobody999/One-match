@@ -194,6 +194,25 @@
     border-radius: 0;
 }
 
+.ticket-page .land-convoy .convoy-website-link {
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: currentColor;
+    transition: text-decoration-color 0.2s ease;
+}
+
+.ticket-page .land-convoy .convoy-website-link:hover {
+    text-decoration-color: #b85c75;
+}
+
+.ticket-page .land-convoy .convoy-website-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
 .ticket-page .land-convoy .land-convoy-instagram-link {
     display: inline-flex;
     align-items: center;
