@@ -1313,6 +1313,114 @@ main p {
     transform: translateX(-50%);
 }
 
+/* ===== Freedom Convoy USA: independent public documentation ===== */
+.land-convoy {
+    --convoy-cream: #fff7e8;
+    --convoy-peach: #f4b38f;
+    --convoy-orange: #dc9364;
+    --convoy-green: #87b79b;
+    --convoy-aqua: #9fcfc5;
+    --convoy-red: #c94f4f;
+    --convoy-ink: #34302d;
+    /* Similar visual character; not a verified match to the organizers' font. */
+    --convoy-font-display: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    --convoy-font-body: "Helvetica Neue", Arial, sans-serif;
+    font-family: var(--convoy-font-body);
+    font-weight: 400;
+    position: relative;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    border-block: 3px solid var(--convoy-orange);
+    background: var(--convoy-cream);
+    color: var(--convoy-ink);
+    line-height: 1.6;
+}
+.land-convoy *, .land-convoy *::before, .land-convoy *::after { box-sizing: border-box; }
+.land-convoy h2, .land-convoy h3, .land-convoy p { margin-top: 0; color: inherit; }
+.land-convoy h2, .land-convoy h3 { font-family: var(--convoy-font-display); font-weight: 900; line-height: 1.1; letter-spacing: -0.025em; overflow-wrap: anywhere; }
+.land-convoy h2 { font-size: clamp(2rem, 4vw, 3.4rem); }
+.land-convoy button { font-family: var(--convoy-font-body); }
+.land-convoy .land-convoy-modal-dialog h3 { font-family: var(--convoy-font-body); font-weight: 700; line-height: 1.2; }
+.land-convoy-modal-fields ul { margin: 0; padding-left: 1.25rem; }
+.land-convoy-modal-fields li + li { margin-top: 0.5rem; }
+.land-convoy-modal-fields [hidden] { display: none; }
+.land-convoy [data-land-convoy-modal-date] { font-weight: 700; }
+.land-convoy h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); }
+.land-convoy a { color: #365b49; text-decoration: underline; overflow-wrap: anywhere; }
+.land-convoy :focus-visible { outline: 3px solid var(--convoy-ink); outline-offset: 4px; }
+.land-convoy-intro-copy, .land-convoy-journey-heading { display: flex; align-items: center; gap: 2rem; }
+.land-convoy-intro-copy > div:last-child, .land-convoy-journey-heading > div { flex: 1; min-width: 0; }
+.land-convoy-mission-figure { flex: 0 0 230px; margin: 0; padding: 0.75rem; background: #fffdf7; border: 1px solid var(--convoy-orange); box-shadow: 4px 5px 0 var(--convoy-peach); }
+.land-convoy-image-placeholder { display: grid; place-content: center; min-height: 170px; padding: 1rem; background: var(--convoy-aqua); border: 1px dashed var(--convoy-ink); text-align: center; }
+.land-convoy-mission-figure img, .land-convoy-modal-flyer img { display: block; max-width: 100%; height: auto; }
+.land-convoy-mission-figure figcaption { margin-top: 0.65rem; font-size: 0.8rem; }
+.land-convoy .land-convoy-eyebrow { margin-bottom: 0.35rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.land-convoy-attribution, .land-convoy-countdown-note { font-size: 0.85rem; }
+.land-convoy-official-link, .land-convoy-official-pending { display: inline-block; padding: 0.7rem 1rem; background: var(--convoy-green); border: 1px solid var(--convoy-ink); border-radius: 5px; font-weight: 700; }
+.land-convoy a.land-convoy-official-link { color: var(--convoy-ink); }
+.land-convoy-official-link:hover { background: var(--convoy-aqua); }
+.land-convoy-details { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 1.5rem; }
+.land-convoy-details > p { margin-bottom: 0; }
+.land-convoy-countdown { width: min(100%, 380px); padding: 1rem; border: 1px solid var(--convoy-orange); border-radius: 8px; background: #fbe6d4; }
+.land-convoy-countdown-label { margin-bottom: 0.4rem; font-weight: 700; }
+.land-convoy-countdown-note { margin-bottom: 0.6rem; }
+.land-convoy-countdown-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; text-align: center; }
+.land-convoy-countdown-grid div { display: grid; gap: 0.15rem; }
+.land-convoy-countdown-grid strong { font-size: 1.5rem; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.land-convoy-countdown-grid span { font-size: 0.7rem; text-transform: uppercase; }
+.land-convoy-disclaimer { margin: 1.25rem 0 0; padding-top: 1rem; border-top: 1px solid var(--convoy-orange); font-size: 0.9rem; }
+.land-convoy-journey { margin-top: 2rem; }
+.land-convoy-journey-heading { align-items: flex-start; }
+.land-convoy-journey-heading > p { max-width: 420px; font-size: 0.9rem; }
+.land-convoy-route-note { font-size: 0.85rem; }
+.land-convoy-route-scroll { max-width: 100%; overflow-x: auto; border: 1px solid var(--convoy-orange); border-radius: 12px; }
+.land-convoy-route {
+    position: relative;
+    min-width: 1080px;
+    height: 590px;
+    background: radial-gradient(ellipse at 8% 50%, #9fcfc566, transparent 45%), radial-gradient(ellipse at 85% 20%, #87b79b44, transparent 40%), repeating-linear-gradient(0deg, transparent 0 39px, #34302d09 39px 40px), repeating-linear-gradient(90deg, transparent 0 39px, #34302d09 39px 40px), var(--convoy-cream);
+}
+.land-convoy-route-line { position: absolute; inset: 0; width: 100%; height: 560px; overflow: visible; }
+.land-convoy-route-line polyline { fill: none; stroke: #8b5838; stroke-width: 3; stroke-dasharray: 6 8; stroke-linejoin: round; stroke-linecap: round; }
+.land-convoy-stop { position: absolute; left: var(--stop-x); top: calc(var(--stop-y) - 29px); transform: translateX(-50%); z-index: 1; display: grid; justify-items: center; gap: 0.15rem; width: 160px; text-align: center; }
+.land-convoy-star { display: grid; place-items: center; width: 58px; height: 58px; padding: 0; border: 2px solid #8b5838; border-radius: 50%; background: var(--convoy-cream); color: #8b5838; cursor: pointer; font-size: 2.7rem; line-height: 1; transition: transform 0.2s ease; }
+.land-convoy-star:hover { background: var(--convoy-peach); transform: scale(1.08); }
+.land-convoy-star[data-status="current"] { color: #922f2f; border: 4px double #922f2f; background: #f8d8cf; }
+.land-convoy-star[data-status="completed"] { color: #254d38; border-color: #254d38; background: var(--convoy-green); }
+.land-convoy-stop-label { padding: 0 0.2rem; background: var(--convoy-cream); font-size: 0.9rem; line-height: 1.4; font-weight: 700; }
+.land-convoy-stop-status { padding: 0 0.3rem; background: var(--convoy-cream); font-size: 0.75rem; }
+.land-convoy-marker { position: absolute; top: var(--marker-y); left: var(--marker-x); transform: translateX(-50%); z-index: 2; display: grid; padding: 0.5rem 0.8rem; border: 2px dashed #8b5838; border-radius: 6px; background: var(--convoy-peach); font-size: 0.85rem; text-align: center; }
+.land-convoy-marker small { font-size: 0.75rem; }
+.land-convoy-modal[hidden] { display: none; }
+.land-convoy-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 1rem; background: #34302dbb; }
+.land-convoy-modal-dialog { position: relative; width: min(100%, 600px); max-height: 90dvh; overflow-y: auto; overscroll-behavior: contain; padding: clamp(1.25rem, 4vw, 2rem); border: 2px solid var(--convoy-orange); border-radius: 12px; background: var(--convoy-cream); color: var(--convoy-ink); }
+.land-convoy-modal-dialog h3 { padding-right: 2rem; }
+.land-convoy-modal-close { position: absolute; top: 0.6rem; right: 0.6rem; width: 44px; height: 44px; border: 1px solid var(--convoy-ink); border-radius: 50%; background: var(--convoy-peach); color: var(--convoy-ink); cursor: pointer; font-size: 1.5rem; line-height: 1; }
+.land-convoy-modal-close:hover { background: var(--convoy-orange); }
+.land-convoy-modal-fields { display: grid; gap: 0.75rem; margin: 1.25rem 0; }
+.land-convoy-modal-fields div { padding-bottom: 0.65rem; border-bottom: 1px solid #34302d33; }
+.land-convoy-modal-fields dt, .land-convoy-modal-sources strong { font-weight: 800; }
+.land-convoy-modal-fields dd { margin: 0.2rem 0 0; overflow-wrap: anywhere; }
+.land-convoy-modal-sources { display: grid; gap: 0.4rem; }
+@media (max-width: 700px) {
+    .land-convoy-intro-copy, .land-convoy-journey-heading, .land-convoy-details { align-items: stretch; flex-direction: column; gap: 1rem; }
+    .land-convoy-mission-figure { flex-basis: auto; max-width: 320px; }
+    .land-convoy-countdown { width: 100%; }
+    .land-convoy-route { min-width: 0; height: auto; padding: 1.5rem 1rem; display: grid; gap: 1.5rem; }
+    .land-convoy-route-line { display: none; }
+    .land-convoy-route::before { content: ''; position: absolute; top: 2rem; bottom: 6rem; left: 46px; border-left: 3px dashed #8b5838; }
+    .land-convoy-stop { position: relative; left: auto; top: auto; transform: none; width: 100%; grid-template-columns: 60px minmax(0, 1fr); column-gap: 0.8rem; justify-items: start; text-align: left; }
+    .land-convoy-star { grid-row: 1 / 3; }
+    .land-convoy-stop-label { align-self: end; }
+    .land-convoy-stop-status { align-self: start; }
+    .land-convoy-marker { position: relative; top: auto; left: auto; transform: none; justify-self: center; max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .land-convoy-star { transition: none; }
+}
+
 /* Floating/bobbing animation */
 @keyframes circus-balloon-float {
 
@@ -9294,3 +9402,8 @@ body.letter-modal-open { overflow: hidden; }
     .investment-disclaimer h3 { font-size: 1.2rem; }
     .investment-disclaimer p { font-size: .86rem; line-height: 1.55; }
 }
+
+/* Compact gallery in the education introduction. */
+.edu-circus-gallery { max-width: 100%; gap: 1rem; }
+.edu-circus-gallery .image-container { flex: 0 0 180px; }
+.edu-circus-gallery .image-container img { display: block; width: 100%; height: 150px; object-fit: contain; }
