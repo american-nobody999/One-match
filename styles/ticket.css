@@ -1,4 +1,4 @@
-  /* Center the independent Land Convoy without changing its route layout. */
+        /* Center the independent Land Convoy without changing its route layout. */
         .ticket-page .ticket-col-land > .land-convoy {
             box-sizing: border-box;
             max-width: 1160px;
@@ -362,6 +362,23 @@
                 gap: 1rem;
             }
         }
+
+.ticket-page .land-convoy #dancing-eagle {
+    animation: ticket-eagle-dance 1.2s ease-in-out infinite;
+}
+
+@keyframes ticket-eagle-dance {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-2px, 5px) rotate(-4deg); }
+    50% { transform: translate(0, 2px) rotate(0deg); }
+    75% { transform: translate(2px, 5px) rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticket-page .land-convoy #dancing-eagle {
+        animation: none;
+    }
+}
 
 /* Responsive repairs; the extracted rules above retain their original order. */
 .ticket-page > *,
