@@ -1,7 +1,7 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 09/30/2026
-  'use strict';
+//Date modified: 10/07/2026
+"use strict";
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
 const langToggles = document.querySelectorAll('.lang-toggle');
@@ -331,6 +331,195 @@ setLanguageVisibility(arabicLanguageSelectors, true);
         }, 3700);
     }
 
+    function initLandConvoyFeature() {
+        const convoy = document.querySelector('.land-convoy');
+        const countdown = convoy?.querySelector('[data-land-convoy-countdown]');
+        const modal = convoy?.querySelector('[data-land-convoy-modal]');
+        const dialog = modal?.querySelector('[role="dialog"]');
+        const closeButton = convoy?.querySelector('[data-land-convoy-close]');
+        const stars = convoy ? Array.from(convoy.querySelectorAll('[data-land-convoy-stop]')) : [];
+
+        if (!convoy || !countdown || !modal || !dialog || !closeButton || !stars.length) {
+            return;
+        }
+
+        const modalFields = {
+            status: dialog.querySelector('[data-land-convoy-modal-status]'),
+            title: dialog.querySelector('[data-land-convoy-modal-title]'),
+            description: dialog.querySelector('[data-land-convoy-modal-description]'),
+            date: dialog.querySelector('[data-land-convoy-modal-date]'),
+            events: dialog.querySelector('[data-land-convoy-modal-events]'),
+            location: dialog.querySelector('[data-land-convoy-modal-location]'),
+            routeNote: dialog.querySelector('[data-land-convoy-modal-route-note]'),
+            recap: dialog.querySelector('[data-land-convoy-modal-recap]'),
+            media: dialog.querySelector('[data-land-convoy-modal-media]'),
+            flyer: dialog.querySelector('[data-land-convoy-modal-flyer]'),
+            sources: dialog.querySelector('[data-land-convoy-modal-sources-list]')
+        };
+        let activeStar = null;
+        let previousOverflow = '';
+        let inertElements = [];
+        const countdownTarget = new Date(countdown.dataset.landConvoyCountdown).getTime();
+
+        function updateLandConvoyCountdown() {
+            if (!Number.isFinite(countdownTarget)) {
+                return;
+            }
+
+            const distance = Math.max(0, countdownTarget - Date.now());
+            const units = {
+                days: Math.floor(distance / 86400000),
+                hours: Math.floor((distance % 86400000) / 3600000),
+                minutes: Math.floor((distance % 3600000) / 60000),
+                seconds: Math.floor((distance % 60000) / 1000)
+            };
+
+            Object.entries(units).forEach(([unit, value]) => {
+                const element = countdown.querySelector(`[data-land-convoy-unit="${unit}"]`);
+                if (element) {
+                    element.textContent = String(value).padStart(2, '0');
+                }
+            });
+        }
+
+        function setModalText(element, value) {
+            if (element) {
+                element.textContent = value || 'Public details have not yet been announced.';
+            }
+        }
+
+        function getStatusLabel(status) {
+            return status ? status.charAt(0).toUpperCase() + status.slice(1) : 'Upcoming';
+        }
+
+        function populateLandConvoyModal(star) {
+            const data = star.dataset;
+            const status = data.status || 'upcoming';
+
+            setModalText(modalFields.status, getStatusLabel(status));
+            setModalText(modalFields.title, data.cityState || 'Stop information');
+            setModalText(modalFields.description, data.description || 'Public event details have not yet been announced.');
+            setModalText(modalFields.date, data.expectedDate);
+            modalFields.events.replaceChildren();
+            const activities = (data.events || '').split('|').map(item => item.trim()).filter(Boolean);
+            if (activities.length) {
+                const list = document.createElement('ul');
+                activities.forEach(activity => {
+                    const item = document.createElement('li');
+                    item.textContent = activity;
+                    list.append(item);
+                });
+                modalFields.events.append(list);
+            } else {
+                setModalText(modalFields.events, 'Public event details have not yet been announced.');
+            }
+            setModalText(modalFields.location, data.eventLocation);
+            // Optional documentation fields stay available without empty post-event sections.
+            [['routeNote', data.routeNote], ['recap', data.recap], ['media', data.media]].forEach(([key, value]) => {
+                const field = modalFields[key];
+                setModalText(field, value);
+                field.parentElement.hidden = !value;
+            });
+            dialog.dataset.status = status;
+
+            if (modalFields.flyer) {
+                modalFields.flyer.replaceChildren();
+                modalFields.flyer.hidden = !data.flyerImage;
+                if (data.flyerImage) {
+                    const image = document.createElement('img');
+                    image.src = data.flyerImage;
+                    image.alt = `${data.cityState || 'Stop'} event flyer`;
+                    modalFields.flyer.append(image);
+                }
+            }
+
+            if (modalFields.sources) {
+                modalFields.sources.replaceChildren();
+                const links = (data.sourceLinks || '').split('|').map(link => link.trim()).filter(link => /^https?:\/\//i.test(link));
+                if (!links.length) {
+                    modalFields.sources.textContent = 'Organizer-published Route & Schedule. Official Freedom Convoy USA source link awaiting confirmation.';
+                } else {
+                    links.forEach(link => {
+                        const anchor = document.createElement('a');
+                        anchor.href = link;
+                        anchor.target = '_blank';
+                        anchor.rel = 'noopener noreferrer';
+                        anchor.textContent = link;
+                        modalFields.sources.append(anchor, document.createTextNode(' '));
+                    });
+                }
+            }
+        }
+
+        function openLandConvoyModal(star) {
+            activeStar = star;
+            populateLandConvoyModal(star);
+            previousOverflow = document.body.style.overflow;
+            document.body.style.overflow = 'hidden';
+            // Inert sibling branches all the way to body while keeping the nested dialog usable.
+            inertElements = [];
+            for (let branch = modal; branch.parentElement; branch = branch.parentElement) {
+                Array.from(branch.parentElement.children).forEach(sibling => {
+                    if (sibling !== branch && !sibling.inert) {
+                        sibling.inert = true;
+                        inertElements.push(sibling);
+                    }
+                });
+                if (branch.parentElement === document.body) break;
+            }
+            modal.hidden = false;
+            closeButton.focus({ preventScroll: true });
+        }
+
+        function closeLandConvoyModal() {
+            if (modal.hidden) {
+                return;
+            }
+
+            modal.hidden = true;
+            document.body.style.overflow = previousOverflow;
+            inertElements.forEach(element => { element.inert = false; });
+            inertElements = [];
+            activeStar?.focus({ preventScroll: true });
+            activeStar = null;
+        }
+
+        stars.forEach((star, index) => {
+            const status = getStatusLabel(star.dataset.status);
+            star.parentElement.querySelector('.land-convoy-stop-status').textContent = status;
+            star.setAttribute('aria-label', `Open route point ${index + 1}: ${star.dataset.cityState}, ${status}`);
+            star.addEventListener('click', () => openLandConvoyModal(star));
+        });
+        closeButton.addEventListener('click', closeLandConvoyModal);
+        modal.addEventListener('click', event => {
+            if (event.target === modal) {
+                closeLandConvoyModal();
+            }
+        });
+        modal.addEventListener('keydown', event => {
+            if (event.key === 'Tab') {
+                const focusable = Array.from(dialog.querySelectorAll('button, a[href], [tabindex="0"]'));
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeLandConvoyModal();
+            }
+        });
+
+        updateLandConvoyCountdown();
+        window.setInterval(updateLandConvoyCountdown, 1000);
+    }
+
+    initLandConvoyFeature();
     initHomeMatchIntro();
 
     /* =========================
