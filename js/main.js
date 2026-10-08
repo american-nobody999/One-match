@@ -392,6 +392,16 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             return status ? status.charAt(0).toUpperCase() + status.slice(1) : 'Upcoming';
         }
 
+        function clearModalContent(element) {
+            if (typeof element.replaceChildren === 'function') {
+                element.replaceChildren();
+            } else {
+                while (element.firstChild) {
+                    element.removeChild(element.firstChild);
+                }
+            }
+        }
+
         function populateLandConvoyModal(star) {
             const data = star.dataset;
             const status = data.status || 'upcoming';
@@ -400,7 +410,7 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             setModalText(modalFields.title, data.cityState || 'Stop information');
             setModalText(modalFields.description, data.description || 'Public event details have not yet been announced.');
             setModalText(modalFields.date, data.expectedDate);
-            modalFields.events.replaceChildren();
+            clearModalContent(modalFields.events);
             const activities = (data.events || '').split('|').map(item => item.trim()).filter(Boolean);
             if (activities.length) {
                 const list = document.createElement('ul');
@@ -423,7 +433,7 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             dialog.dataset.status = status;
 
             if (modalFields.flyer) {
-                modalFields.flyer.replaceChildren();
+                clearModalContent(modalFields.flyer);
                 modalFields.flyer.hidden = !data.flyerImage;
                 if (data.flyerImage) {
                     const image = document.createElement('img');
@@ -434,7 +444,7 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             }
 
             if (modalFields.sources) {
-                modalFields.sources.replaceChildren();
+                clearModalContent(modalFields.sources);
                 const links = (data.sourceLinks || '').split('|').map(link => link.trim()).filter(link => /^https?:\/\//i.test(link));
                 if (!links.length) {
                     modalFields.sources.textContent = 'Organizer-published Route & Schedule. Official Freedom Convoy USA source link awaiting confirmation.';
