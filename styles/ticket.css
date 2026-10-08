@@ -1,0 +1,465 @@
+  /* Center the independent Land Convoy without changing its route layout. */
+        .ticket-page .ticket-col-land > .land-convoy {
+            box-sizing: border-box;
+            max-width: 1160px;
+            margin-inline: auto;
+        }
+
+        .ticket-page .land-convoy .land-convoy-intro-copy {
+            max-width: 960px;
+            margin-inline: auto;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .ticket-page .land-convoy .land-convoy-intro-copy > div:last-child {
+            max-width: 65ch;
+        }
+
+        .ticket-page .land-convoy .land-convoy-intro-copy p {
+            max-width: 65ch;
+            margin-inline: auto;
+        }
+
+        .ticket-page .land-convoy .land-convoy-details {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .ticket-page .land-convoy .land-convoy-countdown {
+            max-width: 380px;
+            margin-inline: auto;
+        }
+
+        .ticket-page .land-convoy .land-convoy-disclaimer,
+        .ticket-page .land-convoy .land-convoy-route-note {
+            max-width: 75ch;
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .ticket-page .land-convoy .land-convoy-journey-heading {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            text-align: center;
+        }
+
+        .ticket-page .land-convoy .land-convoy-journey-heading > p {
+            max-width: 65ch;
+        }
+
+        .ticket-page .land-convoy .land-convoy-route-scroll {
+            width: 100%;
+            max-width: 1080px;
+            margin-inline: auto;
+        }
+
+        @media (max-width: 700px) {
+            .ticket-page .land-convoy .land-convoy-intro-copy {
+                align-items: center;
+            }
+
+            .ticket-page .land-convoy .land-convoy-mission-figure {
+                width: min(100%, 320px);
+                margin-inline: auto;
+            }
+        }
+
+        .ticket-page .land-convoy .land-convoy-mission-figure > img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin-inline: auto;
+        }
+
+        .ticket-page .land-convoy .land-convoy-marker {
+            width: 76px;
+            overflow: visible;
+            padding: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            outline: none;
+            border-radius: 0;
+            transform: translate(-50%, -100%);
+            pointer-events: none;
+        }
+
+        .ticket-page .land-convoy .land-convoy-marker > img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            max-height: 64px;
+            height: auto;
+            margin: 0 auto;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            outline: none;
+            border-radius: 0;
+        }
+
+        @media (max-width: 700px) {
+            .ticket-page .land-convoy .land-convoy-marker {
+                position: absolute;
+                width: 76px;
+                left: calc(1rem + 30px);
+                top: 1.5rem;
+                transform: translate(-50%, -35%);
+            }
+        }
+
+        .ticket-page .land-convoy .land-convoy-instagram-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            max-width: 100%;
+            padding: 0.65rem 1rem;
+            margin: 0.5rem auto 1rem;
+            border: 2px solid var(--convoy-ink);
+            border-radius: 8px;
+            background: var(--convoy-peach);
+            color: var(--convoy-ink);
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .ticket-page .land-convoy .land-convoy-instagram-link:hover {
+            background: var(--convoy-green);
+        }
+
+        .ticket-page .land-convoy .land-convoy-instagram-link:focus-visible {
+            outline: 3px solid var(--convoy-ink);
+            outline-offset: 4px;
+        }
+
+        /* Ticket page feature: scoped here so other pages remain unchanged. Its a beast, the css is the monster under my bed right now. */
+        .ticket-page .ticket-feature,
+        .ticket-page .ticket-secondary {
+            margin: 2rem auto;
+            padding: clamp(1rem, 3vw, 2rem);
+        }
+
+        .ticket-page .ticket-feature {
+            border-radius: var(--panel-radius);
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+                url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ticketb.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .ticket-page .ticket-feature-intro,
+        .ticket-page .ticket-secondary-intro {
+            max-width: 760px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .ticket-page .ticket-feature-intro {
+            padding: 1rem;
+            border-radius: var(--panel-radius);
+            background: rgba(255, 255, 255, 0.86);
+        }
+
+        .ticket-page .ticket-feature h2,
+        .ticket-page .ticket-secondary h2,
+        .ticket-page .ticket-secondary h3 {
+            margin: 0 0 0.75rem;
+        }
+
+        .ticket-page .ticket-feature p,
+        .ticket-page .ticket-secondary p {
+            margin: 0;
+        }
+
+        .ticket-page .ticket-feature-discussion {
+            margin-bottom: 1.5rem;
+            padding: clamp(1rem, 3vw, 1.5rem);
+            border: 2px solid #000;
+            box-shadow: 0 0 12px 3px rgba(212, 175, 55, 0.65);
+            text-align: center;
+        }
+
+        .ticket-page .ticket-feature-live-stream {
+            position: relative;
+            width: 100%;
+            max-width: 840px;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
+
+        .ticket-page .ticket-feature-live-stream iframe {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .ticket-page .ticket-feature-live-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: clamp(1.25rem, 4vw, 2.5rem);
+            font-weight: 700;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .ticket-page .ticket-feature-intro-caption {
+            margin-top: 0.75rem;
+        }
+
+        .ticket-page .ticket-feature-intro-caption p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .ticket-page .ticket-feature-video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin: 0 auto 2rem;
+        }
+
+        .ticket-page .ticket-feature-video-card,
+        .ticket-page .ticket-secondary-card {
+            min-width: 0;
+            margin: 0;
+            overflow: hidden;
+            border: var(--panel-border);
+            border-radius: var(--panel-radius);
+            background: var(--panel-bg);
+            box-shadow: var(--panel-shadow);
+        }
+
+        .ticket-page .ticket-feature-video-frame {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            overflow: hidden;
+            background: var(--dark);
+        }
+
+        .ticket-page .ticket-feature-video-frame iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .ticket-page .ticket-feature-video-card figcaption,
+        .ticket-page .ticket-secondary-card figcaption {
+            padding: 0.8rem 1rem;
+            text-align: center;
+        }
+
+        .ticket-page .ticket-feature-socials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 0 auto 1.25rem;
+            padding: 0;
+        }
+
+        .ticket-page .ticket-feature-social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            min-height: 42px;
+            flex: 0 0 42px;
+            aspect-ratio: 1 / 1;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border-radius: 50%;
+            background: #e9f5ed;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .ticket-page .ticket-feature-social-link img {
+            display: block;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            min-height: 42px;
+            max-width: none;
+            max-height: none;
+            aspect-ratio: 1 / 1;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            clip-path: circle(50% at 50% 50%);
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .ticket-page .ticket-feature-social-link:hover,
+        .ticket-page .ticket-feature-social-link:focus-visible {
+            background: var(--primary-green);
+            color: var(--light);
+        }
+
+        .ticket-page .ticket-feature-action {
+            text-align: center;
+        }
+
+        .ticket-page .ticket-feature-learn-more {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 1rem;
+            border-radius: var(--panel-radius);
+            background: var(--primary-green);
+            color: var(--light);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .ticket-page .ticket-feature-learn-more:hover,
+        .ticket-page .ticket-feature-learn-more:focus-visible {
+            background: var(--accent-red);
+            color: var(--light);
+        }
+
+        .ticket-page .ticket-secondary-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ticket-page .ticket-secondary-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .ticket-page .ticket-feature-video-grid,
+            .ticket-page .ticket-secondary-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .ticket-page .ticket-feature-video-grid,
+            .ticket-page .ticket-secondary-gallery {
+                gap: 1rem;
+            }
+        }
+
+/* Responsive repairs; the extracted rules above retain their original order. */
+.ticket-page > *,
+.ticket-page .ticket-feature-intro,
+.ticket-page .ticket-feature-discussion,
+.ticket-page .ticket-gallery-scroll,
+.ticket-page .land-convoy .land-convoy-route-scroll {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.ticket-page .ticket-feature-intro {
+    max-width: 760px;
+}
+
+.ticket-page .ticket-gallery-scroll {
+    max-width: min(100%, 1200px);
+}
+
+.ticket-page .ticket-feature-discussion,
+.ticket-page figcaption,
+.ticket-page .land-convoy .land-convoy-intro,
+.ticket-page .land-convoy .land-convoy-journey-heading,
+.ticket-page .land-convoy .land-convoy-route-note,
+.ticket-page .land-convoy .land-convoy-modal-dialog {
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    .ticket-page .ticket-feature-video-grid,
+    .ticket-page .ticket-secondary-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991px) {
+    .ticket-page .ticket-video-wrap:not(.ticket-feature-live-stream) iframe {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 768px) {
+    .ticket-page .ticket-feature-social-link {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        flex-basis: 44px;
+    }
+
+    .ticket-page .ticket-feature-learn-more {
+        min-height: 44px;
+    }
+}
+
+/* Preserve manual map coordinates inside the intentional scroll region. */
+@media (max-width: 700px) {
+    .ticket-page .land-convoy .land-convoy-route {
+        display: block;
+        min-width: 1080px;
+        height: 590px;
+        padding: 0;
+    }
+
+    .ticket-page .land-convoy .land-convoy-route::before {
+        content: none;
+    }
+
+    .ticket-page .land-convoy .land-convoy-route-line {
+        display: block;
+    }
+
+    .ticket-page .land-convoy .land-convoy-stop {
+        position: absolute;
+        left: var(--stop-x);
+        top: calc(var(--stop-y) - 29px);
+        transform: translateX(-50%);
+        width: 160px;
+        grid-template-columns: none;
+        gap: 0.15rem;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .ticket-page .land-convoy .land-convoy-star {
+        grid-row: auto;
+    }
+
+    .ticket-page .land-convoy .land-convoy-stop-label,
+    .ticket-page .land-convoy .land-convoy-stop-status {
+        align-self: auto;
+    }
+
+    .ticket-page .land-convoy .land-convoy-marker {
+        position: absolute;
+        left: var(--marker-x);
+        top: var(--marker-y);
+        transform: translate(-50%, -100%);
+    }
+}
