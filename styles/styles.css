@@ -2284,6 +2284,66 @@ body.hero-page {
 }
 
 /* ================ MPGA PAGE ================ */
+.mpga-page .mpga-demands {
+    box-sizing: border-box;
+    width: calc(100% - 2rem);
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: clamp(1rem, 4vw, 2.5rem);
+    border: 2px solid #000;
+    border-radius: var(--panel-radius);
+    background: var(--panel-bg);
+    color: var(--dark);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.mpga-page .mpga-demands h2 {
+    margin: 0 0 1rem;
+    color: #008000;
+    text-shadow: 2px 2px 3px #000;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.mpga-page .mpga-demands p {
+    margin: 0 auto 1.5rem;
+    max-width: 65ch;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.mpga-page .mpga-demands .mpga-demands-list {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: disc;
+    list-style-position: inside;
+    text-align: center;
+}
+
+.mpga-page .mpga-demands .mpga-demands-list li {
+    display: list-item;
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.mpga-page .mpga-demands .mpga-demands-list li + li {
+    margin-top: 0.75rem;
+}
+
+.mpga-page .mpga-demands .lang-ar {
+    text-align: center;
+}
+
+html[lang="ar"] .mpga-page .mpga-demands .mpga-demands-list {
+    direction: rtl;
+}
+
 .mpga-section-2 {
     text-align: left;
 }
