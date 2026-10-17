@@ -1,0 +1,476 @@
+/* Shared parchment theme: mobile first; all rules scoped to the OK pages. */
+body.ok-page {
+    /* Shared parchment image for all five OK-series pages. */
+    --ok-parchment-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/paperbg.jpg");
+    min-height: 100vh;
+    background-color: #ddc49a;
+    background-image: var(--ok-parchment-image);
+    background-position: center top;
+    /* Fit the texture to narrow screens instead of magnifying it to page height.
+       Repeat vertically so long mobile pages remain covered. */
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+}
+
+/* Preserve the established desktop parchment appearance. */
+@media (min-width: 769px) {
+    body.ok-page {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.ok-page .ok-main {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    padding: 1.5rem .75rem;
+    color: #49301e;
+}
+
+.ok-page .ok-content {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 52rem;
+    min-width: 0;
+    margin-inline: auto;
+    padding: clamp(1rem, 3vw, 3rem);
+    border: 1px solid #a57c49;
+    border-block: 4px double #987044;
+    border-radius: .5rem;
+    background: rgba(255, 250, 235, .86);
+    box-shadow: 0 .6rem 1.8rem rgba(81, 48, 21, .18);
+    overflow-wrap: anywhere;
+}
+
+.ok-page .ok-content h1 {
+    margin: 0 0 1rem;
+    color: #6b451f;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.4;
+}
+
+.ok-page .ok-content p {
+    width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 1rem + .25vw, 1.25rem);
+    line-height: 1.85;
+    text-align: start;
+}
+
+.ok-page .ok-content .lang-ar {
+    font-family: var(--font-ar);
+    direction: rtl;
+    text-align: right;
+    display: block;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    letter-spacing: normal;
+}
+
+.ok-page .ok-content:lang(ar) {
+    direction: rtl;
+}
+
+/* Preserve the shared hamburger behavior; allow flex children to shrink. */
+.ok-page .header-center,
+.ok-page .main-nav,
+.ok-page .footer-content {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.ok-page .nav-btn,
+.ok-page .footer-btn,
+.ok-page .lang-toggle {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Weekly song dedication, centered within the parchment content panel. */
+.ok-page .weekly-song {
+    width: 100%;
+    min-width: 0;
+    margin-block: clamp(1.5rem, 3vw, 2.5rem) 1rem;
+}
+
+.ok-page .weekly-song h2 {
+    margin: 0 0 1.25rem;
+    color: #6b451f;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.ok-page .weekly-song h2 .lang-ar {
+    text-align: center;
+}
+
+.ok-page .weekly-song-video {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+    border: 2px solid #987044;
+    border-radius: .4rem;
+    background: #49301e;
+    box-shadow: 0 .25rem .75rem rgba(81, 48, 21, .15);
+}
+
+/* Tablet: more breathing room, with the reading width still capped. */
+@media (min-width: 48rem) {
+    .ok-page .ok-main { padding: 2.5rem 1.5rem; }
+}
+
+/* Laptop: limit the video width independently of the reading panel. */
+@media (min-width: 64rem) {
+    .ok-page .ok-main { padding: 3rem 2rem; }
+    .ok-page .weekly-song { max-width: 44rem; margin-inline: auto; }
+}
+
+/* Desktop and large monitors: retain a comfortable reading measure. */
+@media (min-width: 90rem) {
+    .ok-page .ok-main { padding-block: 4rem; }
+}
+
+@media (min-width: 120rem) {
+    .ok-page .ok-main { padding-block: 5rem; }
+}
+
+/* Featured Hero portrait: scoped so the four OK-series pages stay unchanged. */
+.ok-page .featured-hero-portrait {
+    display: block;
+    box-sizing: border-box;
+    width: min(100%, 18rem);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto clamp(1.25rem, 3vw, 2rem);
+    padding: .35rem;
+    border: 2px solid #D4AF37;
+    border-radius: .5rem;
+    background: rgba(255, 250, 235, .86);
+    box-shadow: 0 4px 16px rgba(178, 34, 34, 0.35);
+}
+
+.ok-page .featured-hero-content h1,
+.ok-page .featured-hero-content p,
+.ok-page .featured-hero-content h1 .lang-ar,
+.ok-page .featured-hero-content p .lang-ar {
+    text-align: center;
+}
+
+@media (min-width: 48rem) {
+    .ok-page .featured-hero-portrait { width: min(100%, 24rem); }
+}
+
+@media (min-width: 64rem) {
+    .ok-page .featured-hero-portrait { width: min(100%, 28rem); }
+}
+
+@media (min-width: 90rem) {
+    .ok-page .featured-hero-portrait { width: min(100%, 32rem); }
+}
+
+/* Standalone Meet Andrey feature; other OK pages retain their layout. */
+.drinking-games-page .drinking-games-content {
+    max-width: 78rem;
+}
+
+.drinking-games-page .meet-andrey {
+    margin-block: clamp(1.5rem, 3vw, 2.5rem);
+    min-width: 0;
+}
+
+.drinking-games-page .meet-andrey-portrait {
+    display: block;
+    width: min(100%, 28rem);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.drinking-games-page .meet-andrey h2,
+.drinking-games-page .meet-andrey h3 {
+    color: #6b451f;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    overflow-wrap: anywhere;
+}
+
+.drinking-games-page .meet-andrey h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.drinking-games-page .meet-andrey h3 {
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.drinking-games-page .meet-andrey-videos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-block: 2rem;
+}
+
+.drinking-games-page .meet-andrey-video {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.drinking-games-page .meet-andrey-video iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    margin-top: auto;
+}
+
+.drinking-games-page .andrey-modal-actions {
+    flex-wrap: wrap;
+}
+
+.drinking-games-page .andrey-modal-actions > * {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 48rem) {
+    .drinking-games-page .meet-andrey-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 75rem) {
+    .drinking-games-page .meet-andrey-videos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* OK America frames: retain box dimensions and accessible focus outlines. */
+.ok-america-page .ok-content,
+.ok-america-page .ok-content :is(div, figure, img) {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* OK America publication date and larger, uncropped gallery images. */
+.ok-america-page .ok-content {
+    max-width: 90rem;
+}
+
+.ok-america-page .ok-america-date {
+    display: block;
+    margin: -.25rem auto 1.5rem;
+    color: #6b451f;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    text-align: center;
+}
+
+.ok-america-page .ok-america-date .lang-ar {
+    text-align: center;
+}
+
+.ok-america-page .ok-america-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: auto;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+}
+
+.ok-america-page .ok-america-gallery .gallery-card {
+    flex: 0 0 75%;
+    width: 75%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: auto;
+}
+
+.ok-america-page .ok-america-gallery .gallery-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Independent OK Israelis strips; no shared gallery frame styles inherited. */
+.ok-page .israelis-gallery-section {
+    width: 100%;
+    min-width: 0;
+    margin-block: 2rem;
+}
+
+.ok-page .israelis-gallery-section h2 {
+    color: #6b451f;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.5;
+    margin: 0 0 1rem;
+}
+
+.ok-page .israelis-gallery {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    padding-block: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.ok-page .israelis-gallery-item {
+    flex: 0 0 85%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    scroll-snap-align: start;
+}
+
+.ok-page .israelis-gallery-item img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.ok-page .israelis-gallery:focus-visible {
+    outline: 3px solid #987044;
+    outline-offset: 3px;
+}
+
+@media (min-width: 48rem) {
+    .ok-page .israelis-gallery-item { flex-basis: 65%; }
+}
+
+@media (min-width: 64rem) {
+    .ok-page .israelis-gallery-item { flex-basis: 55%; }
+}
+
+/* Reuse the site's image-based Facebook icon beneath the featured portrait. */
+.ok-page .featured-hero-socials {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto 1.5rem;
+}
+
+.ok-page .featured-hero-socials .social-link {
+    box-sizing: border-box;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    border: 2px solid #D4AF37;
+    box-shadow: 0 4px 16px rgba(178, 34, 34, 0.35);
+}
+
+.ok-page .featured-hero-socials .social-link img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: inherit;
+    object-fit: contain;
+}
+
+.ok-page .featured-hero-socials .social-link:focus-visible {
+    outline: 3px solid #987044;
+    outline-offset: 4px;
+}
+
+/* OK Palestine introduction: shared shell and parchment, page-specific copy. */
+.ok-palestine-page .ok-content {
+    border: 0;
+    box-shadow: none;
+}
+
+.ok-palestine-page .section-header,
+.ok-palestine-page .section-header .lang-ar,
+.ok-palestine-page .ok-content p {
+    text-align: center;
+}
+
+.ok-palestine-page .section-title {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: #6b451f;
+    margin: 0 0 1.5rem;
+}
+
+.ok-palestine-page .quote-of-day {
+    max-width: 42rem;
+    margin: 1.5rem auto 2rem;
+}
+
+.ok-palestine-page .quote-title {
+    color: #6b451f;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    margin: 0 0 1rem;
+}
+
+.ok-palestine-page .quote-text {
+    margin-block: 0 1rem;
+    line-height: 1.85;
+}
+
+.ok-palestine-page .quote-of-day cite {
+    display: block;
+    font-size: clamp(.95rem, 2vw, 1.1rem);
+    line-height: 1.7;
+}
+
+.ok-palestine-page .section-date {
+    margin: 1.5rem 0 .75rem;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+}
+
+.ok-palestine-page .day-counter {
+    margin: 0 0 1.5rem;
+}
+
+.ok-palestine-page .ok-palestine-intro {
+    margin-block: 1.5rem 0;
+}
