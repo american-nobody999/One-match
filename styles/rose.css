@@ -221,3 +221,153 @@ button { font: inherit; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .butterfly { display: none; }
 }
+
+/* Letter nested flow: dedication -> Letter -> dedication. */
+.dedication-panel {
+  max-height: calc(100svh - 2rem);
+  overflow-y: auto;
+}
+.dedication-letter-trigger {
+  display: block;
+  width: 85%;
+  max-width: 420px;
+  margin: 1.5rem auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.dedication-letter-trigger img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: gentle-breathe 4s ease-in-out infinite;
+  transform-origin: center;
+}
+.dedication-letter-trigger:focus-visible {
+  outline: 3px solid var(--rose-gold);
+  outline-offset: 6px;
+}
+.rose-page .lang-ar {
+  direction: rtl;
+  font-family: "Amiri", serif;
+  text-align: right;
+}
+.rose-page [hidden] { display: none !important; }
+@keyframes gentle-breathe {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.025);
+    }
+}
+.letter-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: grid;
+    place-items: center;
+    padding: clamp(.75rem, 3vw, 2rem);
+    overflow-y: auto;
+    background: rgba(0, 0, 0, .78);
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+.letter-modal[hidden] { display: none; }
+.letter-modal.is-open { opacity: 1; }
+
+.letter-modal-content {
+    position: relative;
+    isolation: isolate;
+    width: min(100%, 850px);
+    max-height: calc(100svh - 2rem);
+    margin: auto;
+    padding: clamp(2rem, 7vw, 5rem) clamp(1.25rem, 6vw, 4rem);
+    overflow-y: auto;
+    border: 4px solid var(--rose-ink);
+    border-radius: 18px;
+    background-color: #423733;
+    background-image: linear-gradient(rgba(20, 17, 15, .58), rgba(20, 17, 15, .72)), url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/letter2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--rose-ivory);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, .55), 0 7px 0 var(--rose-gold);
+    text-align: center;
+}
+
+.letter-modal-content h2 {
+    margin: 0 auto 1.25rem;
+    padding: 0;
+    color: var(--rose-ivory);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .9);
+}
+
+.letter-modal-content p {
+    max-width: 650px;
+    margin: 0 auto clamp(2rem, 6vw, 4rem);
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .48);
+    color: var(--rose-ivory);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .9);
+}
+
+.letter-back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    min-height: 48px;
+    padding: .75rem 1.4rem;
+    border: 2px solid var(--rose-ink);
+    border-radius: 7px;
+    background: var(--rose-gold);
+    color: var(--rose-ink);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 0 var(--rose-ink);
+}
+
+.letter-back-button:hover { background: var(--rose-deep); }
+.letter-back-button:focus-visible { outline: 3px solid var(--rose-gold); outline-offset: 4px; }
+
+.letter-modal-lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    padding: .5rem 1.1rem;
+    border: 2px solid var(--rose-ink);
+    border-radius: 999px;
+    background: var(--rose-ivory);
+    color: var(--rose-ink);
+    font: inherit;
+    font-weight: 700;
+    font-size: .95rem;
+    cursor: pointer;
+    box-shadow: 0 3px 0 var(--rose-ink);
+}
+
+.letter-modal-lang-toggle:hover { background: var(--rose-gold); }
+.letter-modal-lang-toggle:focus-visible { outline: 3px solid var(--rose-gold); outline-offset: 4px; }
+
+
+@media (max-width: 768px) {
+  .letter-modal { padding: .65rem; }
+  .letter-modal-content { max-height: calc(100svh - 1.3rem); padding: 1.5rem 1rem; border-width: 3px; border-radius: 12px; }
+  .letter-modal-content h2 { font-size: 1.5rem; }
+  .letter-modal-content p { margin-bottom: 2rem; font-size: 1rem; }
+  .letter-back-button { width: 100%; max-width: 320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dedication-letter-trigger img { animation: none; }
+  .letter-modal { transition: none; }
+}
