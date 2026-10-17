@@ -1,7 +1,7 @@
-  'use strict';
 document.addEventListener("DOMContentLoaded", () => {
   const garden = initRoseGarden();
   initLanguageToggle();
+  initDedicationLetter(garden);
   initMemorials(garden);
   initButterflies();
 });
@@ -156,27 +156,68 @@ function renderBiography(container, content) {
 }
 
 function initLanguageToggle() {
-  const toggle = document.querySelector("#garden-language-toggle");
-  if (!toggle) return;
-
-  document.body.dataset.language = "en";
-
-  toggle.addEventListener("click", () => {
-    const language = document.body.dataset.language === "ar" ? "en" : "ar";
+  const toggles = document.querySelectorAll("#garden-language-toggle, #letter-modal-lang-toggle");
+  const applyLanguage = (language) => {
     document.body.dataset.language = language;
-    toggle.setAttribute("aria-pressed", String(language === "ar"));
-    toggle.setAttribute("aria-label", language === "ar" ? "Switch memorial text to English" : "تبديل نص النصب التذكاري إلى العربية");
+    document.documentElement.lang = language;
+    toggles.forEach((toggle) => {
+      toggle.setAttribute("aria-pressed", String(language === "ar"));
+      toggle.setAttribute("aria-label", language === "ar" ? "Switch text to English" : "تبديل النص إلى العربية");
+    });
+    document.querySelectorAll(".lang-en, .lang-ar").forEach((element) => {
+      element.hidden = !element.classList.contains(`lang-${language}`);
+    });
+  };
+  applyLanguage("en");
+  toggles.forEach((toggle) => toggle.addEventListener("click", () => {
+    applyLanguage(document.body.dataset.language === "ar" ? "en" : "ar");
+  }));
+}
 
-    document.querySelectorAll(".memorial-biography__language").forEach((section) => {
-      section.hidden = !section.classList.contains(`lang-${language}`);
-    });
+function initDedicationLetter({ garden, dedicationModal }) {
+  const trigger = document.querySelector("#letter-feature-trigger");
+  const modal = document.querySelector("#letter-modal");
+  const backButton = document.querySelector("#letter-modal-back");
+  const languageButton = document.querySelector("#letter-modal-lang-toggle");
+  const main = document.querySelector("main");
+  let previousInert = false;
 
-    document.querySelectorAll(".lang-en").forEach((element) => {
-      element.hidden = language === "ar";
-    });
-    document.querySelectorAll(".lang-ar").forEach((element) => {
-      element.hidden = language !== "ar";
-    });
+  const returnToDedication = () => {
+    if (modal.hidden) return;
+    modal.hidden = true;
+    modal.classList.remove("is-open");
+    modal.removeEventListener("keydown", trapDialogFocus);
+    main.inert = previousInert;
+    // Do not call closeDialog: the dedication still owns the garden lock.
+    openDialog(dedicationModal, trigger);
+    document.body.classList.add("rose-page--locked");
+  };
+
+  trigger.addEventListener("click", () => {
+    if (dedicationModal.hidden || !modal.hidden) return;
+    dedicationModal.hidden = true;
+    dedicationModal.classList.remove("is-open");
+    dedicationModal.removeEventListener("keydown", trapDialogFocus);
+    previousInert = main.inert;
+    main.inert = true;
+    modal.hidden = false;
+    modal.scrollTop = 0;
+    modal.querySelector('[role="dialog"]').scrollTop = 0;
+    document.body.classList.add("rose-page--locked");
+    requestAnimationFrame(() => { if (!modal.hidden) modal.classList.add("is-open"); });
+    languageButton.focus();
+    modal.addEventListener("keydown", trapDialogFocus);
+  });
+  backButton.addEventListener("click", returnToDedication);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) returnToDedication();
+  });
+  // Handle Escape before the shared trap, whose close buttons belong to other modals.
+  modal.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    returnToDedication();
   });
 }
 
