@@ -1,7 +1,7 @@
 /* Index-only media and section refinements. */
 .home-page .countdown-section > img.div-img {
-    width: 75%;
-    max-width: 75%;
+    width: 93.75%;
+    max-width: 93.75%;
     height: auto;
     margin-inline: auto;
 }
@@ -21,9 +21,13 @@
 .home-page :is(#daily-journal, #ok-humanity) .video-container iframe {
     border-color: transparent;
 }
-.home-page .scrollable-gallery-section .gallery-card,
-.home-page .scrollable-gallery-section .gallery-card img {
+/* Keep individual homepage gallery images and scrolling rows frameless.
+   Preserve keyboard focus outlines on interactive elements. */
+.home-page :is(#ok-palestine-gallery, #this-state, .scrollable-gallery-section) :is(.scrollable-gallery, .hero-gallery-block, .gallery-card, .gallery-item, figure, img),
+.home-page #your-famous .hero-gallery-block,
+.home-page #your-famous .hero-gallery-block :is(.scrollable-gallery, .gallery-card, figure, img) {
     border-color: transparent;
+    box-shadow: none;
 }
 
 /* ============================================= */
@@ -3650,54 +3654,36 @@ html[lang="ar"] .mpga-page .mpga-demands .mpga-demands-list {
 
 #featured-hero .hero-bio,
 #featured-hero .video-gallery-section,
-#featured-hero .hero-gallery-block,
+:is(#featured-hero, #your-famous) .hero-gallery-block,
 #featured-hero .hero-extra-block {
     width: min(100%, 980px);
 }
 
-#featured-hero .hero-gallery-block .scrollable-gallery {
+:is(#featured-hero, #your-famous) .hero-gallery-block .scrollable-gallery {
     width: 100%;
 }
 
-/* Featured Hero interactive image and video modal */
-#featured-hero .andrey-feature {
-    display: grid;
-    place-items: center;
-    padding: clamp(.75rem, 2vw, 1.25rem);
-    background: #f8f8f8;
-}
-
-.andrey-feature-trigger {
-    display: block;
-    width: min(100%, 680px);
-    margin: 0 auto;
-    padding: 0;
-    border: 0;
-    border-radius: 12px;
-    background: transparent;
-    cursor: pointer;
-}
-
-.andrey-feature-trigger:focus-visible {
+/* Drinking Games Explore image: preserve the original dance without its frame. */
+.home-page .drinking-games-image:focus-visible {
     outline: 4px solid var(--gold);
     outline-offset: 5px;
 }
 
-.andrey-feature-trigger .interactive-wiggle {
+.home-page .drinking-games-image .interactive-wiggle {
     display: block;
-    width: 100%;
-    max-width: 100%;
+    /* Leave space for the original horizontal dance inside the clipped frame. */
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
     height: auto;
-    margin: 0;
-    border: 3px solid var(--dark);
-    border-radius: 12px;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
     object-fit: contain;
     animation: giftShake 2.8s ease-in-out infinite;
     transform-origin: center;
-}
-
-.andrey-feature-trigger:hover .interactive-wiggle {
-    box-shadow: 0 10px 25px rgba(207, 17, 39, .45), 0 5px 0 var(--primary-green);
 }
 
 body.andrey-modal-open { overflow: hidden; }
@@ -3800,7 +3786,6 @@ body.andrey-modal-open { overflow: hidden; }
 .andrey-profile-link:focus-visible { outline: 3px solid var(--primary-green); outline-offset: 3px; }
 
 @media (max-width: 768px) {
-    #featured-hero .andrey-feature { padding: .65rem; }
     .andrey-modal { padding: .65rem; }
     .andrey-modal-content { max-height: calc(100svh - 1.3rem); padding: 1rem; border-width: 3px; border-radius: 12px; }
     .andrey-modal-content > h2 { font-size: 1.5rem; }
@@ -3812,11 +3797,11 @@ body.andrey-modal-open { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .andrey-feature-trigger .interactive-wiggle { animation: none; }
+    .home-page .drinking-games-image .interactive-wiggle { animation: none; }
     .andrey-modal { transition: none; }
 }
 
-#featured-hero .hero-gallery-block .scrollable-gallery {
+:is(#featured-hero, #your-famous) .hero-gallery-block .scrollable-gallery {
     display: flex;
     gap: 1.5rem;
     padding: 1rem 0 1.25rem;
@@ -3830,7 +3815,7 @@ body.andrey-modal-open { overflow: hidden; }
     scroll-snap-type: x mandatory;
 }
 
-#featured-hero .hero-gallery-block .gallery-card {
+:is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card {
     flex: 0 0 200px;
     width: 200px;
     height: 200px;
@@ -3839,8 +3824,8 @@ body.andrey-modal-open { overflow: hidden; }
     border-radius: 0;
 }
 
-#featured-hero .hero-gallery-block .gallery-card img,
-#featured-hero .hero-gallery-block .gallery-card a img {
+:is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card img,
+:is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -8698,50 +8683,50 @@ body.letter-modal-open { overflow: hidden; }
 
         /* Featured hero gallery: bordered scroll area with portrait image cards. */
         @media (max-width: 1199px) {
-            #featured-hero .hero-gallery-block .scrollable-gallery {
+            :is(#featured-hero, #your-famous) .hero-gallery-block .scrollable-gallery {
                 padding: 0.9rem 0 1.1rem;
                 gap: 1.25rem;
             }
 
-            #featured-hero .hero-gallery-block .gallery-card {
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card {
                 flex-basis: 200px;
                 width: 200px;
                 height: 200px;
             }
 
-            #featured-hero .hero-gallery-block .gallery-card img,
-            #featured-hero .hero-gallery-block .gallery-card a img {
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card img,
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card a img {
                 height: 100%;
             }
         }
 
         @media (max-width: 767px) {
-            #featured-hero .hero-gallery-block .scrollable-gallery {
+            :is(#featured-hero, #your-famous) .hero-gallery-block .scrollable-gallery {
                 padding: 0.75rem 0 1rem;
                 gap: 1rem;
             }
 
-            #featured-hero .hero-gallery-block .gallery-card {
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card {
                 flex-basis: 200px;
                 width: 200px;
                 height: 200px;
             }
 
-            #featured-hero .hero-gallery-block .gallery-card img,
-            #featured-hero .hero-gallery-block .gallery-card a img {
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card img,
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card a img {
                 height: 100%;
             }
         }
 
         @media (max-width: 480px) {
-            #featured-hero .hero-gallery-block .gallery-card {
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card {
                 flex-basis: 200px;
                 width: 200px;
                 height: 200px;
             }
 
-            #featured-hero .hero-gallery-block .gallery-card img,
-            #featured-hero .hero-gallery-block .gallery-card a img {
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card img,
+            :is(#featured-hero, #your-famous) .hero-gallery-block .gallery-card a img {
                 height: 100%;
             }
         }
@@ -9468,11 +9453,11 @@ body.letter-modal-open { overflow: hidden; }
 .edu-circus-gallery .image-container { flex: 0 0 180px; }
 .edu-circus-gallery .image-container img { display: block; width: 100%; height: 150px; object-fit: contain; }
 
-/* Index countdown logo: half its existing desktop width. */
+/* Index introduction image: responsive desktop sizing. */
 @media (min-width: 1024px) {
     .home-page .countdown-section > img.div-img {
-        width: 37.5%;
-        max-width: 37.5%;
+        width: 46.875%;
+        max-width: 46.875%;
         height: auto;
     }
 }
@@ -9530,5 +9515,69 @@ body.letter-modal-open { overflow: hidden; }
 @media (min-width: 1024px) {
     .home-page #ok-america .ok-america-gallery > .gallery-card {
         flex-basis: calc((100% - 2rem) / 3);
+    }
+}
+
+/* New OK Palestine strip: reuse State gallery visuals with room for captions. */
+.home-page #ok-palestine-gallery {
+    width: 100%;
+    min-width: 0;
+}
+
+.home-page #ok-palestine-gallery .state-image-gallery {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+}
+
+.home-page #ok-palestine-gallery .gallery-item {
+    flex: 0 0 min(78vw, 230px);
+    min-width: 0;
+    height: auto;
+    scroll-snap-align: start;
+}
+
+.home-page #ok-palestine-gallery .caption {
+    overflow-wrap: anywhere;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (min-width: 481px) {
+    .home-page #ok-palestine-gallery .gallery-item { flex-basis: 280px; }
+}
+
+@media (min-width: 769px) {
+    .home-page #ok-palestine-gallery .gallery-item { flex-basis: 340px; }
+}
+
+/* Four centered homepage gallery sections, each with one thin outer frame. */
+.home-page :is(#ok-palestine-gallery, #your-famous, #this-state, .scrollable-gallery-section) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: min(100%, 1200px);
+    min-width: 0;
+    margin-inline: auto;
+    padding-inline: clamp(.85rem, 3vw, 1.5rem);
+    border: 1px solid black;
+    box-shadow: none;
+    text-align: center;
+}
+
+.home-page #your-famous .hero-gallery-block {
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+.home-page :is(#ok-palestine-gallery, #your-famous, #this-state, .scrollable-gallery-section) > :is(h2, h3, p),
+.home-page :is(#ok-palestine-gallery, #your-famous, #this-state, .scrollable-gallery-section) :is(h2, h3, p) > .lang-ar {
+    text-align: center;
+}
+
+@media (min-width: 100rem) {
+    .home-page :is(#ok-palestine-gallery, #your-famous, #this-state, .scrollable-gallery-section) {
+        max-width: min(100%, 1440px);
     }
 }
