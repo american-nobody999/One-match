@@ -9581,3 +9581,19 @@ body.letter-modal-open { overflow: hidden; }
         max-width: min(100%, 1440px);
     }
 }
+
+/* Keep this heading's emoji sequence together in both languages. */
+.home-page .countdown-section > h2 .sovereign-heading-emojis {
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+@media (max-width: 768px) {
+    .home-page .countdown-section > h2 .sovereign-heading-emojis {
+        display: block;
+        margin-top: .35rem;
+        text-align: center;
+    }
+}
