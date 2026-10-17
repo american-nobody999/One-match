@@ -1825,7 +1825,7 @@ body.hero-page {
 
 .united-page .united-section-2,
 .united-page .united-section-3,
-.united-page .united-section-4 {
+:is(.united-page, .quests-page) .united-section-4 {
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
@@ -2100,7 +2100,7 @@ body.hero-page {
 }
 
 @media (max-width: 991px) {
-    .united-page .united-main {
+    :is(.united-page, .quests-page) .united-main {
         padding-left: 0.75rem;
         padding-right: 0.75rem;
     }
@@ -2143,7 +2143,7 @@ body.hero-page {
 }
 
 @media (max-width: 575px) {
-    .united-page .united-main {
+    :is(.united-page, .quests-page) .united-main {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
@@ -2151,7 +2151,7 @@ body.hero-page {
     .united-page .united-section-1,
     .united-page .united-section-2,
     .united-page .united-section-3,
-    .united-page .united-section-4 {
+    :is(.united-page, .quests-page) .united-section-4 {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
@@ -3520,25 +3520,25 @@ html[lang="ar"] .mpga-page .mpga-demands .mpga-demands-list {
     }
 }
 
-.united-page .source-card {
+:is(.united-page, .quests-page) .source-card {
     box-shadow: 0 8px 20px rgba(0, 151, 54, 0.45);
 }
 
-.united-page .source-card .card-image img {
+:is(.united-page, .quests-page) .source-card .card-image img {
     border: none;
 }
 
-.united-page .source-card:hover {
+:is(.united-page, .quests-page) .source-card:hover {
     background: var(--light);
     color: var(--dark);
 }
 
-.united-page .source-card:hover .card-title a {
+:is(.united-page, .quests-page) .source-card:hover .card-title a {
     color: var(--dark);
     text-shadow: 1px 1px 5px var(--accent-red), 0 0 10px var(--accent-red);
 }
 
-.united-page .source-card:hover .card-desc {
+:is(.united-page, .quests-page) .source-card:hover .card-desc {
     color: var(--dark);
     text-shadow: 1px 1px 5px var(--accent-red), 0 0 10px var(--accent-red);
 }
@@ -8875,7 +8875,7 @@ html[lang="ar"] .explore-card-title {
 }
 
 @media (max-width: 600px) {
-    .united-page .quest-tabs-toggle {
+    :is(.united-page, .quests-page) .quest-tabs-toggle {
         display: block;
         width: 100%;
         margin: 0 0 0.75rem;
@@ -8890,7 +8890,7 @@ html[lang="ar"] .explore-card-title {
         cursor: pointer;
     }
 
-    .united-page .quest-tabs {
+    :is(.united-page, .quests-page) .quest-tabs {
         display: none;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -8899,11 +8899,11 @@ html[lang="ar"] .explore-card-title {
         padding: 0.5rem;
     }
 
-    .united-page .quest-tabs.active {
+    :is(.united-page, .quests-page) .quest-tabs.active {
         display: flex;
     }
 
-    .united-page .quest-tabs .source-tab {
+    :is(.united-page, .quests-page) .quest-tabs .source-tab {
         width: 100%;
         flex: none;
         font-size: 0.78rem;
@@ -8912,13 +8912,13 @@ html[lang="ar"] .explore-card-title {
 
     /* Cap card height so the long descriptions scroll inside the card
        instead of stretching it far past the viewport during swipes. */
-    .united-page .source-card {
+    :is(.united-page, .quests-page) .source-card {
         display: flex;
         flex-direction: column;
         max-height: 75vh;
     }
 
-    .united-page .source-card .card-desc {
+    :is(.united-page, .quests-page) .source-card .card-desc {
         flex: 1 1 auto;
         min-height: 0;
         overflow-y: auto;
