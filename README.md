@@ -1,3 +1,15 @@
+10-17-2026
+This website is a organic living project that is updated every Friday.
+MPGA is a single solitary voice.
+our objectives are now clear within the website itself
+as we have grown over the past year, as we continue to grow, we remain steadfast.
+technical notes and workflows are all presevered for transpareceny
+
+
+
+
+*****************
+
 This websites purpose to to give a voice to the Great people of the State of Palestine.
 This webiste is maintained, designed and developed by one human Americna voice.
 All assets, images and videos are modified only to fit, and all orginial content is unaltered.
