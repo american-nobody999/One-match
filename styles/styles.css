@@ -6141,7 +6141,7 @@ main h2 {
     background: var(--light);
 }
 
-.leslie-page main.leslie-page {
+:is(.leslie-page main.leslie-page, .eighth-front-page main.eighth-front-main) {
     max-width: 1320px;
     margin: 0 auto;
     padding: 2rem 0.85rem 2.5rem;
@@ -6292,7 +6292,7 @@ main h2 {
     border: 0;
 }
 
-.leslie-page .eighth-front-gallery img {
+.eighth-front-page .eighth-front-gallery img {
     border: none;
 }
 
@@ -7016,7 +7016,7 @@ html[lang="ar"] .explore-card-title {
         .link-page-main,
         .edu-main,
         .face-page .face-main,
-        .leslie-page main.leslie-page {
+        :is(.leslie-page main.leslie-page, .eighth-front-page main.eighth-front-main) {
             max-width: 1440px;
         }
 
@@ -7076,7 +7076,7 @@ html[lang="ar"] .explore-card-title {
         .united-main,
         .edu-main,
         .face-page .face-main,
-        .leslie-page main.leslie-page {
+        :is(.leslie-page main.leslie-page, .eighth-front-page main.eighth-front-main) {
             padding-left: 0.85rem;
             padding-right: 0.85rem;
         }
@@ -7777,7 +7777,7 @@ html[lang="ar"] .explore-card-title {
             width: 230px;
         }
 
-        .leslie-page main.leslie-page {
+        :is(.leslie-page main.leslie-page, .eighth-front-page main.eighth-front-main) {
             padding: 1.2rem 0.5rem 1.8rem;
         }
 
@@ -7804,7 +7804,7 @@ html[lang="ar"] .explore-card-title {
 
         .leslie-page .image-gallery-scroll img,
         .leslie-page .gallery-card,
-        .leslie-page .eighth-front-gallery figure {
+        .eighth-front-page .eighth-front-gallery figure {
             flex: 0 0 100%;
             width: 100%;
         }
@@ -7905,7 +7905,7 @@ html[lang="ar"] .explore-card-title {
 
         .leslie-page .image-gallery-scroll img,
         .leslie-page .gallery-card,
-        .leslie-page .eighth-front-gallery figure {
+        .eighth-front-page .eighth-front-gallery figure {
             flex-basis: 100%;
             width: 100%;
         }
@@ -8207,7 +8207,7 @@ html[lang="ar"] .explore-card-title {
 
         .leslie-page .image-gallery-scroll img,
         .leslie-page .gallery-card,
-        .leslie-page .eighth-front-gallery figure {
+        .eighth-front-page .eighth-front-gallery figure {
             flex: 0 0 100%;
             width: 100%;
         }
@@ -8296,7 +8296,7 @@ html[lang="ar"] .explore-card-title {
 
         .leslie-page .image-gallery-scroll img,
         .leslie-page .gallery-card,
-        .leslie-page .eighth-front-gallery figure {
+        .eighth-front-page .eighth-front-gallery figure {
             flex-basis: 100%;
             width: 100%;
         }
@@ -8381,7 +8381,7 @@ html[lang="ar"] .explore-card-title {
 
         .leslie-page .image-gallery-scroll img,
         .leslie-page .gallery-card,
-        .leslie-page .eighth-front-gallery figure {
+        .eighth-front-page .eighth-front-gallery figure {
             flex-basis: 100%;
             width: 100%;
         }
@@ -9429,4 +9429,11 @@ html[lang="ar"] .explore-card-title {
         margin-top: .35rem;
         text-align: center;
     }
+}
+
+/* Keep the standalone 8th Front table and gallery within the page width. */
+.eighth-front-page .eighth-front-main,
+.eighth-front-page .eighth-front-section {
+    width: 100%;
+    min-width: 0;
 }
