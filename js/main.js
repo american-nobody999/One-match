@@ -1,6 +1,6 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 10/07/2026
+//Date modified: 10/18/2026
 "use strict";
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
@@ -187,61 +187,6 @@ setLanguageVisibility(arabicLanguageSelectors, true);
 
     initAndreyFeature();
 
-    function initLetterFeature() {
-        const trigger = document.getElementById('letter-feature-trigger');
-        const modal = document.getElementById('letter-modal');
-        const dialog = modal?.querySelector('[role="dialog"]');
-        const backButton = document.getElementById('letter-modal-back');
-        const langToggleButton = document.getElementById('letter-modal-lang-toggle');
-
-        if (!trigger || !modal || !dialog || !backButton) {
-            return;
-        }
-
-        const focusables = [langToggleButton, backButton].filter(Boolean);
-
-        const openLetterModal = () => {
-            modal.hidden = false;
-            document.body.classList.add('letter-modal-open');
-            requestAnimationFrame(() => modal.classList.add('is-open'));
-            backButton.focus();
-        };
-
-        const closeLetterModal = () => {
-            if (modal.hidden) return;
-            modal.classList.remove('is-open');
-            document.body.classList.remove('letter-modal-open');
-            modal.hidden = true;
-            trigger.focus();
-        };
-
-        trigger.addEventListener('click', openLetterModal);
-        backButton.addEventListener('click', closeLetterModal);
-
-        modal.addEventListener('click', event => {
-            if (event.target === modal) closeLetterModal();
-        });
-
-        modal.addEventListener('keydown', event => {
-            if (event.key === 'Escape') {
-                event.preventDefault();
-                closeLetterModal();
-                return;
-            }
-
-            if (event.key === 'Tab' && focusables.length) {
-                event.preventDefault();
-                const activeIndex = focusables.indexOf(document.activeElement);
-                const nextIndex = event.shiftKey
-                    ? (activeIndex <= 0 ? focusables.length - 1 : activeIndex - 1)
-                    : (activeIndex === -1 || activeIndex === focusables.length - 1 ? 0 : activeIndex + 1);
-                focusables[nextIndex].focus();
-            }
-        });
-    }
-
-    initLetterFeature();
-
     function initEighthFrontTableReadMore() {
         const table = document.querySelector('.eighth-front-table');
 
@@ -333,13 +278,12 @@ setLanguageVisibility(arabicLanguageSelectors, true);
 
     function initLandConvoyFeature() {
         const convoy = document.querySelector('.land-convoy');
-        const countdown = convoy?.querySelector('[data-land-convoy-countdown]');
         const modal = convoy?.querySelector('[data-land-convoy-modal]');
         const dialog = modal?.querySelector('[role="dialog"]');
         const closeButton = convoy?.querySelector('[data-land-convoy-close]');
         const stars = convoy ? Array.from(convoy.querySelectorAll('[data-land-convoy-stop]')) : [];
 
-        if (!convoy || !countdown || !modal || !dialog || !closeButton || !stars.length) {
+        if (!convoy || !modal || !dialog || !closeButton || !stars.length) {
             return;
         }
 
@@ -359,29 +303,6 @@ setLanguageVisibility(arabicLanguageSelectors, true);
         let activeStar = null;
         let previousOverflow = '';
         let inertElements = [];
-        const countdownTarget = new Date(countdown.dataset.landConvoyCountdown).getTime();
-
-        function updateLandConvoyCountdown() {
-            if (!Number.isFinite(countdownTarget)) {
-                return;
-            }
-
-            const distance = Math.max(0, countdownTarget - Date.now());
-            const units = {
-                days: Math.floor(distance / 86400000),
-                hours: Math.floor((distance % 86400000) / 3600000),
-                minutes: Math.floor((distance % 3600000) / 60000),
-                seconds: Math.floor((distance % 60000) / 1000)
-            };
-
-            Object.entries(units).forEach(([unit, value]) => {
-                const element = countdown.querySelector(`[data-land-convoy-unit="${unit}"]`);
-                if (element) {
-                    element.textContent = String(value).padStart(2, '0');
-                }
-            });
-        }
-
         function setModalText(element, value) {
             if (element) {
                 element.textContent = value || 'Public details have not yet been announced.';
@@ -400,6 +321,46 @@ setLanguageVisibility(arabicLanguageSelectors, true);
                     element.removeChild(element.firstChild);
                 }
             }
+        }
+
+        function populatePublicEventInformation(data) {
+            const field = modalFields.location;
+            clearModalContent(field);
+            const unavailable = !data.eventLocation ||
+                data.eventLocation === 'Exact public location and time have not yet been announced.';
+            const isArabic = document.documentElement.lang === 'ar';
+
+            ['en', 'ar'].forEach(language => {
+                const content = document.createElement('div');
+                content.setAttribute('class', `lang-${language}${(language === 'ar') !== isArabic ? ' hidden' : ''}`);
+                content.setAttribute('lang', language);
+                content.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+
+                if (unavailable) {
+                    const link = document.createElement('a');
+                    link.href = 'https://freedomconvoyusa.org/';
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.textContent = language === 'ar' ? 'عرض آخر تحديثات الفعاليات الرسمية' : 'View official event updates';
+                    content.append(link);
+                } else {
+                    const text = language === 'ar' ? (data.eventLocationAr || data.eventLocation) : data.eventLocation;
+                    text.split('|').forEach(detail => {
+                        const paragraph = document.createElement('p');
+                        paragraph.textContent = detail;
+                        content.append(paragraph);
+                    });
+                    if (data.eventLocationSource && /^https?:\/\//i.test(data.eventLocationSource)) {
+                        const source = document.createElement('a');
+                        source.href = data.eventLocationSource;
+                        source.target = '_blank';
+                        source.rel = 'noopener noreferrer';
+                        source.textContent = language === 'ar' ? 'المصدر: CODEPINK — معلومات الفعاليات المنشورة' : 'Source: CODEPINK — Published event information';
+                        content.append(source);
+                    }
+                }
+                field.append(content);
+            });
         }
 
         function populateLandConvoyModal(star) {
@@ -423,7 +384,7 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             } else {
                 setModalText(modalFields.events, 'Public event details have not yet been announced.');
             }
-            setModalText(modalFields.location, data.eventLocation);
+            populatePublicEventInformation(data);
             // Optional documentation fields stay available without empty post-event sections.
             [['routeNote', data.routeNote], ['recap', data.recap], ['media', data.media]].forEach(([key, value]) => {
                 const field = modalFields[key];
@@ -496,7 +457,6 @@ setLanguageVisibility(arabicLanguageSelectors, true);
 
         stars.forEach((star, index) => {
             const status = getStatusLabel(star.dataset.status);
-            star.parentElement.querySelector('.land-convoy-stop-status').textContent = status;
             star.setAttribute('aria-label', `Open route point ${index + 1}: ${star.dataset.cityState}, ${status}`);
             star.addEventListener('click', () => openLandConvoyModal(star));
         });
@@ -525,8 +485,6 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             }
         });
 
-        updateLandConvoyCountdown();
-        window.setInterval(updateLandConvoyCountdown, 1000);
     }
 
     initLandConvoyFeature();
