@@ -1,0 +1,634 @@
+/* 
+   Author: Leslie Brockman
+   Date: 10-19-2026
+*/
+
+/* Homepage migration. Shared foundations and chrome live in styles2.css.
+   Only active homepage features are included; dormant videos and popups are not
+   instantiated by index.html or main.js. Legacy CSS remains linked until browser
+   comparison is complete. Responsive rules start with narrow-screen defaults. 
+   might still need to be updated as the homepage evolves. */
+
+/* =====================================
+   01. PAGE SURFACE & MAIN LAYOUT
+   ===================================== */
+
+/* The gradient fills the body's full background area as homepage content grows. */
+body.home-page {
+    background: linear-gradient(
+        165deg,
+        #FFFFFF 0%,
+        #F0F3E8 25%,
+        #D5D5B7 65%,
+        #C4CBAA 100%
+    );
+    background-repeat: no-repeat;
+}
+
+:where(.home-page) main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem .85rem;
+    min-height: auto;
+}
+
+:where(.home-page) main img {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.home-page) main p {
+    max-width: 100%;
+    font-size: .98rem;
+    line-height: 1.5;
+}
+
+:where(.home-page) main h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1.5rem auto .75rem;
+    max-width: 1200px;
+    padding: 0 1rem;
+    color: var(--dark);
+}
+
+:where(.home-page) .div-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+@media (min-width: 481px) {
+    :where(.home-page) main p { font-size: 1.05rem; line-height: 1.55; }
+}
+
+@media (min-width: 576px) {
+    :where(.home-page) main p { font-size: 1rem; }
+}
+
+@media (min-width: 769px) {
+    :where(.home-page) main { padding: 2.5rem 1.5rem; min-height: calc(100vh - 300px); }
+    :where(.home-page) main p { max-width: 600px; font-size: 1.3rem; line-height: 1.6; }
+    :where(.home-page) main h2 { font-size: 2rem; margin: 2rem auto 1rem; padding: 0 1.5rem; }
+}
+
+@media (min-width: 1600px) {
+    :where(.home-page) main p { font-size: 1.35rem; max-width: 720px; }
+}
+
+/* =====================================
+   02. COUNTDOWN INTRODUCTION
+   ===================================== */
+
+.countdown-section {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.home-page .countdown-section > img.div-img {
+    width: 93.75%;
+    max-width: 93.75%;
+    height: auto;
+    margin-inline: auto;
+}
+
+.home-page .countdown-section > h2 .sovereign-heading-emojis {
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 4px solid #ff1e1e;   /* Bright red border */
+    border-radius: 20px;
+    padding: 1rem;
+
+    box-shadow:
+    0 0 15px rgba(255, 30, 30, 0.6),
+    0 0 35px rgba(255, 30, 30, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* main.js updates the four number spans while preserving their bilingual labels. */
+.time-box {
+    font-family: "Orbitron", sans-serif;
+    border: 2px solid rgba(255, 30, 30, 0.8);
+    border-radius: 16px;
+    padding: 1.25rem .75rem;
+    min-width: auto;
+    width: 100%;
+    max-width: 280px;
+    flex: 1 1 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.time-box:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 30, 30, 0.6);
+}
+
+.time-box span {
+    display: block;
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.15rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow:
+    0 0 5px rgba(255,255,255,0.7),
+    0 0 10px rgba(255,30,30,0.8),
+    0 0 20px rgba(255,30,30,0.6);
+    animation: pulse 1.5s infinite;
+}
+
+.time-box p {
+    margin-top: 0.75rem;
+    font-family: "Orbitron", sans-serif;
+    font-size: .8rem;
+    font-weight: 700;
+    color: #ffb3b3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow:
+        0 0 5px rgba(255,255,255,0.7),
+        0 0 10px rgba(255,30,30,0.8),
+        0 0 20px rgba(255,30,30,0.6);
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow:
+        0 0 8px rgba(255,255,255,0.9),
+        0 0 15px rgba(255,30,30,1),
+        0 0 30px rgba(255,30,30,0.8);
+    }
+}
+
+@media (min-width: 360px) {
+    :where(.home-page) .time-box span { font-size: 2.5rem; }
+}
+
+@media (min-width: 481px) {
+    :where(.home-page) #countdown { flex-direction: row; align-items: stretch; padding: 1.5rem; gap: .75rem; }
+    :where(.home-page) .time-box { width: auto; max-width: none; min-width: 120px; }
+    :where(.home-page) .time-box span { font-size: 3rem; }
+    :where(.home-page) .time-box p { font-size: .9rem; letter-spacing: 2px; }
+}
+
+@media (min-width: 769px) {
+    :where(.home-page) #countdown { padding: 2rem; gap: 1rem; }
+    :where(.home-page) .time-box { min-width: 140px; padding: 1.5rem 1rem; }
+    :where(.home-page) .time-box span { font-size: 4rem; }
+}
+
+@media (min-width: 1024px) {
+    .home-page .countdown-section > img.div-img {
+        width: 46.875%;
+        max-width: 46.875%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Existing heading treatment: keep the emoji sequence isolated in both languages. */
+    .home-page .countdown-section > h2 .sovereign-heading-emojis {
+        display: block;
+        margin-top: .35rem;
+        text-align: center;
+    }
+}
+
+/* =====================================
+   03. EXPLORE GRID & LINKS
+   ===================================== */
+
+.explore-section {
+    width: min(92%, 600px);
+    max-width: 1500px;
+    margin: 3rem auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    background: #F2EBD8;
+    /* Existing 2px border + 1px inset = 3px olive; each following ring is 3px.
+       Inset layers preserve the section's dimensions and surrounding spacing. */
+    box-shadow:
+        inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+}
+
+.explore-heading {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.explore-heading .section-title {
+    position: relative;
+    margin-bottom: .75rem;
+    padding-top: 2.25rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 7vw, 5.25rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.explore-heading .section-title::before {
+    content: "❧";
+    position: absolute;
+    top: -.75rem;
+    left: 50%;
+    color: var(--primary-green);
+    font-size: 2.4rem;
+    font-weight: 400;
+    transform: translateX(-50%);
+}
+
+.explore-kicker {
+    margin: 0 auto;
+    color: var(--dark);
+    font-size: clamp(.72rem, 1.2vw, .95rem);
+    font-weight: 700;
+    letter-spacing: .38em;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.explore-intro {
+    margin: .45rem auto 0;
+    color: #5f625f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+    font-style: italic;
+    text-align: center;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.explore-card {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.explore-image-frame {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.explore-image-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    object-position: center;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: none;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.explore-card:hover .explore-image-frame img {
+    transform: scale(1.025);
+}
+
+.explore-card-title {
+    margin: .8rem 0 0;
+    padding: 0;
+    color: var(--dark);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    transition: color .3s ease;
+}
+
+.explore-card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.explore-card:hover .explore-card-title {
+    color: var(--accent-red);
+}
+
+[dir="rtl"] .explore-card-title,
+html[lang="ar"] .explore-card-title {
+    direction: rtl;
+    text-align: center;
+}
+
+.explore-button {
+    min-width: min(180px, 100%);
+    margin-top: 1.15rem;
+}
+
+@media (min-width: 651px) {
+    .explore-section { width: min(94%, 1500px); margin: 4rem auto; }
+    .explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 1.5rem; }
+    .explore-image-frame { min-height: 300px; }
+    .explore-image-frame img { height: 310px; max-height: none; }
+    .explore-card-title { font-size: clamp(1.25rem, 2vw, 1.7rem); }
+}
+
+@media (min-width: 1001px) {
+    .explore-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 2rem; }
+    .explore-image-frame img { height: 330px; }
+}
+
+.home-page .drinking-games-image:focus-visible {
+    outline: 4px solid var(--gold);
+    outline-offset: 5px;
+}
+
+.home-page .drinking-games-image .interactive-wiggle {
+    display: block;
+    /* Leave space for the original horizontal dance inside the clipped frame. */
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    object-fit: contain;
+    animation: giftShake 2.8s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes giftShake {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    15% {
+        transform: translateX(-8px) rotate(-1deg);
+    }
+
+    30% {
+        transform: translateX(8px) rotate(1deg);
+    }
+
+    45% {
+        transform: translateX(-7px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translateX(7px) rotate(1deg);
+    }
+
+    75% {
+        transform: translateX(-4px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page .drinking-games-image .interactive-wiggle {
+        animation: none;
+    }
+}
+
+.home-page .leslie-explore-card .leslie-description {
+    max-width: 100%;
+    margin: .75rem 0 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================
+   04. PANEL SPACING & SECTION TITLES
+   ===================================== */
+
+/* Keep these after Explore: the original shared .section media rules also
+   overrode Explore's panel spacing, while its more specific heading stayed large. */
+:where(.home-page) .section { padding: .7rem; margin: .9rem auto; }
+:where(.home-page) .section-title { font-size: 1.3rem; }
+
+@media (min-width: 360px) {
+    :where(.home-page) .section { padding: 1.4rem .85rem; margin: 1.25rem auto; }
+    :where(.home-page) .section-title { font-size: 1.55rem; }
+}
+
+@media (min-width: 420px) {
+    :where(.home-page) .section { padding-inline: .8rem; }
+}
+
+@media (min-width: 481px) {
+    :where(.home-page) .section { padding-block: 2rem; margin: 1.8rem auto; }
+    :where(.home-page) .section-title { font-size: 1.9rem; }
+}
+
+@media (min-width: 576px) {
+    :where(.home-page) .section { padding-inline: 1rem; }
+    :where(.home-page) .section-title { font-size: 1.8rem; }
+}
+
+@media (min-width: 769px) {
+    :where(.home-page) .section { padding: 1.75rem 1rem; margin: 1.75rem auto; }
+    :where(.home-page) .section-title { font-size: 2rem; }
+}
+
+@media (min-width: 992px) {
+    :where(.home-page) .section { padding: 2.1rem 1.15rem; margin: 2.5rem auto; }
+    :where(.home-page) .section-title { font-size: 2.2rem; }
+    :where(.home-page) .explore-section { margin: 4rem auto; }
+}
+
+@media (min-width: 1200px) {
+    :where(.home-page) .section { padding: 2.4rem 1.4rem; }
+}
+
+@media (min-width: 1600px) {
+    :where(.home-page) .section { max-width: 1440px; padding: 2.5rem 1.5rem; }
+    :where(.home-page) .section-title { font-size: 2.5rem; }
+    :where(.home-page) .explore-section { padding: clamp(1.5rem, 3vw, 2.5rem); }
+}
+
+@media (max-width: 768px) {
+    /* Preserve the legacy full-width mobile panels, including Explore. */
+    :where(.home-page) .section { width: 100%; max-width: 100%; }
+}
+
+/* =====================================
+   05. STATE & HOSTAGES GALLERIES
+   ===================================== */
+
+:where(.home-page) .scrollable-gallery {
+    gap: 1rem;
+    padding: 1rem .5rem;
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+:where(.home-page) .links-gallery,
+:where(.home-page) .state-image-gallery { padding-inline: .5rem; }
+
+:where(.home-page) .gallery-item,
+:where(.home-page) .gallery-card { flex: 0 0 88vw; width: 88vw; }
+
+:where(.home-page) .gallery-item img,
+:where(.home-page) .gallery-card img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: #fff;
+}
+
+.this-state .state-image-gallery .gallery-item { flex: 0 0 230px; }
+.this-state .state-image-gallery .gallery-item img { height: 180px; object-fit: contain; background: #fff; }
+
+@media (min-width: 360px) {
+    :where(.home-page) .gallery-item,
+    :where(.home-page) .gallery-card { flex-basis: 82vw; width: auto; }
+}
+
+@media (min-width: 420px) {
+    :where(.home-page) .gallery-item,
+    :where(.home-page) .gallery-card { width: 82vw; }
+}
+
+@media (min-width: 481px) {
+    .this-state .state-image-gallery .gallery-item { flex-basis: 280px; }
+    .this-state .state-image-gallery .gallery-item img { height: 220px; }
+}
+
+@media (min-width: 576px) {
+    :where(.home-page) .gallery-item,
+    :where(.home-page) .gallery-card { flex-basis: 250px; width: 250px; }
+}
+
+@media (min-width: 769px) {
+    :where(.home-page) .scrollable-gallery {
+        gap: 1.5rem; padding: 1.5rem; margin: 2rem auto; width: auto; max-width: 1200px;
+    }
+    :where(.home-page) .links-gallery,
+    :where(.home-page) .state-image-gallery { padding-inline: 1.5rem; }
+    :where(.home-page) .gallery-item,
+    :where(.home-page) .gallery-card { flex-basis: 280px; width: 280px; }
+    :where(.home-page) .gallery-item img,
+    :where(.home-page) .gallery-card img { aspect-ratio: auto; background: transparent; }
+    :where(.home-page) .gallery-item img { height: 200px; object-fit: cover; }
+    :where(.home-page) .gallery-card img { height: 300px; object-fit: cover; }
+    .this-state .state-image-gallery .gallery-item { flex-basis: 340px; }
+    .this-state .state-image-gallery .gallery-item img { height: 260px; }
+}
+
+@media (min-width: 992px) {
+    :where(.home-page) .gallery-item,
+    :where(.home-page) .gallery-card { width: auto; }
+}
+
+@media (min-width: 1200px) {
+    :where(.home-page) .gallery-card { flex-basis: 300px; }
+}
+
+@media (min-width: 1600px) {
+    :where(.home-page) .gallery-item,
+    :where(.home-page) .gallery-card { flex-basis: 340px; }
+}
+
+/* Preserve the original ID specificity when removing dormant gallery branches.
+   Only the section owns a visible frame; the scrolling row and images are clear. */
+.home-page :is(#this-state, .scrollable-gallery-section) :is(.scrollable-gallery, .gallery-card, .gallery-item, img) {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.home-page :is(#this-state, .scrollable-gallery-section) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: min(100%, 1200px);
+    min-width: 0;
+    margin-inline: auto;
+    padding-inline: clamp(.85rem, 3vw, 1.5rem);
+    border: 1px solid black;
+    box-shadow: none;
+    text-align: center;
+}
+
+.home-page :is(#this-state, .scrollable-gallery-section) > :is(h2, h3, p),
+.home-page :is(#this-state, .scrollable-gallery-section) :is(h2, h3, p) > .lang-ar {
+    text-align: center;
+}
+
+@media (min-width: 100rem) {
+    .home-page :is(#this-state, .scrollable-gallery-section) {
+        max-width: min(100%, 1440px);
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .this-state .state-image-gallery .gallery-item {
+        overflow: visible;
+    }
+
+    .this-state .state-image-gallery .gallery-item:hover {
+        transform: none;
+        z-index: 5;
+    }
+
+    .this-state .state-image-gallery .gallery-item img {
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        transform-origin: center center;
+    }
+
+    .this-state .state-image-gallery .gallery-item:hover img {
+        transform: scale(1.32);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+    }
+}
