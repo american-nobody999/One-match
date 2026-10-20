@@ -1,6 +1,6 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 10/18/2026
+//Date modified: 10/19/2026
 "use strict";
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
@@ -724,10 +724,15 @@ if (form && statusMessage && submitBtn && submitBtnEn && submitBtnAr) {
 
 // Count down timer for January 20, 2029, next election cycle begins--this demonstrates the countdown timer functionality. Adjust the target date as needed.
 const countdownElement = document.getElementById('countdown');
+const countdownDays = document.getElementById('days');
+const countdownHours = document.getElementById('hours');
+const countdownMinutes = document.getElementById('minutes');
+const countdownSeconds = document.getElementById('seconds');
+const countdownStatus = document.getElementById('countdown-status');
 const targetDate = new Date('January 20, 2029 00:00:00').getTime();
 
 function updateCountdown() {
-    if (!countdownElement) {
+    if (!countdownElement || !countdownDays || !countdownHours || !countdownMinutes || !countdownSeconds) {
         return;
     }
 
@@ -735,7 +740,14 @@ function updateCountdown() {
     const distance = targetDate - now;
 
     if (distance < 0) {
-        countdownElement.textContent = 'The election cycle has begun!';
+        countdownDays.textContent = '0';
+        countdownHours.textContent = '0';
+        countdownMinutes.textContent = '0';
+        countdownSeconds.textContent = '0';
+        if (countdownStatus) {
+            countdownStatus.textContent = 'The election cycle has begun!';
+            countdownStatus.hidden = false;
+        }
         clearInterval(countdownInterval);
         return;
     }
@@ -745,7 +757,10 @@ function updateCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    countdownDays.textContent = days;
+    countdownHours.textContent = hours;
+    countdownMinutes.textContent = minutes;
+    countdownSeconds.textContent = seconds;
 }
 //
 const countdownInterval = setInterval(updateCountdown, 1000);
