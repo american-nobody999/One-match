@@ -1,7 +1,7 @@
 <!--
 MPGA:Home page
 Leslie Brockman
-Date last modified: 2026-10-18
+Date last modified: 2026-10-19
 These are my rocks, can you dig it?
 Can you hear me yet?
 Palestine State Recognized
@@ -9,7 +9,7 @@ Palestinian Embassy, a nice one, with a pool and you're paying for it, utilities
 Palestinian Ambassador to go with the Embassy
 Start there.
 Say anything, anything at all, and we will respond to you in mediation when I file the paperwork.
-This is better I think for the index, cleans it up, stick around long enough I may even start tocreate templates.
+This is better I think for the index, cleans it up, stick around long enough I may even start to create templates.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,39 +17,31 @@ This is better I think for the index, cleans it up, stick around long enough I m
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="American Nobody999">
-
-<!--For SQL and better accessibility-->
     <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
     <title>Make Palestine Great Again - MPGA</title>
     
-<!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
-<!--Only need this on the index, so we are not changing all the headers-->
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-<!-- Styles -->
-    <link rel="stylesheet" href="styles/styles.css">
+
+   <link rel="stylesheet" href="styles/styles2.css">
+   <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body class="home-page">
     
-  <header class="site-header">
+  <header class="site-header" data-global-chrome>
       <div class="header-container">
-  <!-- Logo - Left Side-waiting for logo contest from Palestinians -->
-        <div class="header-logo">
-                  <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
-          </div>
-  <!-- Center Content, don't touch this for now -->
-  <!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
-  <!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
+
+  <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
           <div class="header-center">
-              <h1 class="site-title">
+              <h1 class="site-title state-title">
                   <span class="lang-en">State of Palestine</span>
                   <span class="lang-ar">دولة فلسطين</span>
               </h1>
-              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
-                      English | العربية
-              </button>
-  <!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change based on Palestine design-->
               <nav class="main-nav" aria-label="Main navigation">
                 <ul class="nav-menu">
                   <li><a href="index.html" class="nav-btn active">
@@ -60,28 +52,16 @@ This is better I think for the index, cleans it up, stick around long enough I m
                           <span class="lang-en">MPGA</span>
                           <span class="lang-ar">MPGA</span>
                   </a></li>
-                  <li><a href="united.html" class="nav-btn">
-                        <span class="lang-en">United</span>
-                        <span class="lang-ar">متحدون</span>
+                  <li><a href="contact.html" class="nav-btn">
+                        <span class="lang-en">Contact Us</span>
+                        <span class="lang-ar">اتصل بنا</span>
                   </a></li>
-                  <li><a href="leslie.html" class="nav-btn">
-                      <span class="lang-en">Leslie</span>
-                      <span class="lang-ar">ليزلي</span>
-                  </a></li>
-                  <li><a href="about.html" class="nav-btn">
-                        <span class="lang-en">About Us</span>
-                        <span class="lang-ar">من نحن</span>
-                  </a></li>
-
-  <!--Archive button and archives to be added              
-                  <li><a href="archives.html" class="nav-btn">
-                        <span class="lang-en">Archives</span>
-                        <span class="lang-ar">الأرشيف</span>
-                  </a></li>
-  -->                 
                 </ul>
               </nav>
           </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                      English | العربية
+              </button>
   <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
               <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                   ☰
@@ -136,6 +116,7 @@ This is better I think for the index, cleans it up, stick around long enough I m
             </p>
         </div>
     </div>
+    <p id="countdown-status" hidden></p>
 <!--
     <div class="video-wrapper countdown-video-wrapper">
       <iframe
@@ -188,7 +169,7 @@ This is better I think for the index, cleans it up, stick around long enough I m
         </div>
     </section>
 
-<!-- Section 4: Explore -->
+<!-- Section 3: Explore:  -->
 
     <section class="section explore-section" id="links">
       <div class="explore-heading">
@@ -210,110 +191,110 @@ This is better I think for the index, cleans it up, stick around long enough I m
         <article class="explore-card explore-card-feature">
           <a href="ok-palestine.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/okp.png" alt="OK Palestine / فلسطين بخير" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">OK Palestine</span><span class="lang-ar hidden">فلسطين بخير</span></h4>
-          <a href="ok-palestine.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="ok-palestine.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
-          <a href="ok-humanity.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/humanity.png" alt="OK Humanity artwork placeholder / صورة مؤقتة" loading="lazy"></a>
+          <a href="ok-humanity.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/humanity.png" alt="OK Humanity artwork / عمل فني" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">OK Humanity</span><span class="lang-ar hidden">حسنًا، يا إنسانية</span></h4>
-          <a href="ok-humanity.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="ok-humanity.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <a href="ticket.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/thisway.jpg" alt="Golden Ticket: this way to Palestine / التذكرة الذهبية إلى فلسطين" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">Golden Ticket</span><span class="lang-ar hidden">التذكرة الذهبية</span></h4>
-          <a href="ticket.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="ticket.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
-          <a href="ok-america.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/mindyourown.png" alt="OK America artwork placeholder / صورة مؤقتة" loading="lazy"></a>
+          <a href="ok-america.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/mindyourown.png" alt="OK America artwork / عمل فني" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">OK America</span><span class="lang-ar hidden">حسنًا، يا أمريكا</span></h4>
-          <a href="ok-america.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="ok-america.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <!-- PLACEHOLDER ARTWORK: replace images/placeholders/ok-israelis.svg when final artwork is ready. -->
           <a href="ok-israelis.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/I001.png" alt="OK Israelis artwork placeholder / صورة مؤقتة" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">OK Israelis</span><span class="lang-ar hidden">حسنًا، يا إسرائيليين</span></h4>
-          <a href="ok-israelis.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="ok-israelis.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <a href="quests.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/quest.png" alt="Leslie’s Quests artwork / أعمال فنية لمهام ليزلي" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">Leslie's Quests</span><span class="lang-ar hidden">مهام ليزلي</span></h4>
-          <a href="quests.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="quests.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <a href="united.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/united.png" alt="United community artwork / أعمال فنية للمجتمع المتحد" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">United</span><span class="lang-ar hidden">متحدون</span></h4>
-          <a href="united.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="united.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <a href="world_leader.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/5647.jpg" alt="Explore World Leaders" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">World Leaders</span><span class="lang-ar hidden">قادة العالم</span></h4>
-          <a href="world_leader.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="world_leader.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10008.jpg" alt="Explore Online School" loading="lazy"></div>
           <h4 class="explore-card-title"><span class="lang-en">Online School</span><span class="lang-ar hidden">المدرسة الإلكترونية</span></h4>
-          <a href="edu.html" target="_blank" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="edu.html" target="_blank" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
-          <a href="featured-hero.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/fhero.png" alt="Featured Hero artwork placeholder / صورة مؤقتة للبطل المميز" loading="lazy"></a>
+          <a href="featured-hero.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/fhero.png" alt="Featured Hero artwork / عمل فني للبطل المميز" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">Featured Hero</span><span class="lang-ar hidden">البطل المميز</span></h4>
-          <a href="featured-hero.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="featured-hero.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <a href="flip.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/flip/myuz.jpg" alt="Ahmed Myuz of the Myuz Center for Psychological Support in Gaza" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">Flipping the World for Palestine</span><span class="lang-ar hidden">نقلب العالم من أجل فلسطين</span></h4>
-          <a href="flip.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="flip.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10004.jpg" alt="Explore Heroes" loading="lazy"></div>
           <h4 class="explore-card-title"><span class="lang-en">Palestinian Heroes</span><span class="lang-ar hidden">أبطال فلسطينيون</span></h4>
-          <a href="hero.html" target="_blank" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="hero.html" target="_blank" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10003.jpg" alt="Explore Influencers" loading="lazy"></div>
           <h4 class="explore-card-title"><span class="lang-en">Palestinian Influencers</span><span class="lang-ar hidden">المؤثرون الفلسطينيون</span></h4>
-          <a href="link.html" target="_blank" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="link.html" target="_blank" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10006.jpg" alt="Explore Faith" loading="lazy"></div>
           <h4 class="explore-card-title"><span class="lang-en">Palestine Faith</span><span class="lang-ar hidden">إيمان فلسطين</span></h4>
-          <a href="faith.html" target="_blank" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="faith.html" target="_blank" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10005.jpg" alt="Explore Speak" loading="lazy"></div>
           <h4 class="explore-card-title"><span class="lang-en">Palestine Speak</span><span class="lang-ar hidden">صوت فلسطين</span></h4>
-          <a href="face.html" target="_blank" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="face.html" target="_blank" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10009.jpg" alt="Explore Art" loading="lazy"></div>
           <h4 class="explore-card-title"><span class="lang-en">Art of Palestine</span><span class="lang-ar hidden">فن فلسطين</span></h4>
-          <a href="art.html" target="_blank" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="art.html" target="_blank" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
           <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10010.jpg" alt="Explore Love Letter" loading="lazy"></div>
           <h4 class="explore-card-title"><span class="lang-en">To Palestine, with Love</span><span class="lang-ar hidden">إلى فلسطين، بكل حب</span></h4>
-          <a href="letter.html" target="_blank" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="letter.html" target="_blank" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card explore-card-feature">
           <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/One-match/main/images/rose3.png" alt="Enter The Rose Garden, a garden of remembrance" loading="lazy"></div>
           <h4 class="explore-card-title"><span class="lang-en">The Rose Garden</span><span class="lang-ar hidden">حديقة الورود</span></h4>
-          <a href="rose.html" class="explore-button"><span class="lang-en">Enter the Garden</span><span class="lang-ar hidden">ادخل الحديقة</span><span aria-hidden="true">→</span></a>
+          <a href="rose.html" class="site-button explore-button"><span class="lang-en">Enter the Garden</span><span class="lang-ar hidden">ادخل الحديقة</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
@@ -329,7 +310,7 @@ This is better I think for the index, cleans it up, stick around long enough I m
               <span class="lang-ar hidden">أطلقوا سراح الرهائن من العاملين في الرعاية الصحية</span>
             </a>
           </h4>
-          <a href="https://LeslieMBrock.github.io/Biosite" target="_blank" rel="noopener noreferrer" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="https://LeslieMBrock.github.io/Biosite" target="_blank" rel="noopener noreferrer" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card">
@@ -339,13 +320,27 @@ This is better I think for the index, cleans it up, stick around long enough I m
                         class="interactive-wiggle"
                         loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">Drinking Games</span><span class="lang-ar hidden">ألعاب الشرب</span></h4>
-          <a href="drinking-games.html" class="explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+          <a href="drinking-games.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
         </article>
+
+        <article class="explore-card leslie-explore-card">
+          <a href="leslie.html" class="explore-image-frame"><img
+                        src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1019/leslie.png"
+                        alt="Leslie / ليزلي"
+                        loading="lazy"></a>
+          <h4 class="explore-card-title"><span class="lang-en">Leslie</span><span class="lang-ar hidden">ليزلي</span></h4>
+          <p class="leslie-description">
+            <span class="lang-en">My website, my page</span>
+            <span class="lang-ar hidden">عن ليزلي، الشخص وراء American Nobody.</span>
+          </p>
+          <a href="leslie.html" class="site-button explore-button"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اعرف المزيد</span><span aria-hidden="true">→</span></a>
+        </article>
+
 
         <article class="explore-card explore-card-feature">
           <a href="reddoor.html" target="_blank" rel="noopener" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/legal/2128.jpg" alt="Open the Red Door Security Repository" loading="lazy"></a>
           <h4 class="explore-card-title"><span class="lang-en">Red Door Security Repository</span><span class="lang-ar hidden">مستودع أمن الباب الأحمر</span></h4>
-          <a href="reddoor.html" target="_blank" rel="noopener" class="explore-button"><span class="lang-en">Open Red Door</span><span class="lang-ar hidden">افتح الباب الأحمر</span><span aria-hidden="true">→</span></a>
+          <a href="reddoor.html" target="_blank" rel="noopener" class="site-button explore-button"><span class="lang-en">Open Red Door</span><span class="lang-ar hidden">افتح الباب الأحمر</span><span aria-hidden="true">→</span></a>
         </article>
       </div>
     </section>
@@ -400,7 +395,7 @@ This is better I think for the index, cleans it up, stick around long enough I m
 
 </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-global-chrome>
         <div class="footer-container">
         <div class="footer-row">
           <a href="legal.html" class="footer-btn footer-btn-left">
@@ -409,14 +404,33 @@ This is better I think for the index, cleans it up, stick around long enough I m
           </a>
 
           <div class="footer-content">
-            <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
             <p class="footer-text">
               <span class="lang-en">From the Ashes, a State Rises</span>
               <span class="lang-ar">من الرماد، تنهض دولة</span>
             </p>
             <p class="copyright">
-              <span class="lang-en">&copy; 2026 American Nobody999</span>
-              <span class="lang-ar">&copy; 2026 أمريكان نوبودي999</span>
+              <span class="lang-en">&copy; 2026 <span class="footer-name">American Nobody</span>999 ✌️ 🇵🇸 🧭 👈</span>
+              <span class="lang-ar">&copy; 2026 <span class="footer-name">أمريكان نوبودي</span>999 ✌️ 🇵🇸 🧭 👈</span>
             </p>
           </div>
           <a href="contact.html" class="footer-btn footer-btn-right">
@@ -436,3 +450,4 @@ This is better I think for the index, cleans it up, stick around long enough I m
        
        
        
+ 
