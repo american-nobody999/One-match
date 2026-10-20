@@ -1,0 +1,711 @@
+/* Global Styles 
+   Author: Leslie Brockman
+   Date: 10-19-2026*/
+
+
+
+/* =====================================
+   01. DESIGN TOKENS
+   ===================================== */
+
+/* Temporary integration scope: only opted-in homepage chrome receives these tokens.
+   Keep legacy --gold and other body tokens unchanged during this experiment. */
+body.home-page [data-global-chrome] {
+    --chrome-olive: #303c22;
+    --chrome-panel: linear-gradient(165deg, #3a4628 0%, #303c22 48%, #252f1c 100%);
+    --chrome-gold: #C9AA65;
+    --chrome-link: #e4dbb5;
+    --chrome-frame: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/header.jpg");
+    --chrome-radius: 10px;
+    --chrome-font: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --chrome-antique-edge: rgba(201, 170, 101, .48);
+    --chrome-panel-highlight: rgba(228, 219, 181, .12);
+    /* Inset edge supplies a 1px border without changing panel dimensions. */
+    --chrome-panel-shadow:
+        inset 0 0 0 1px var(--chrome-antique-edge),
+        inset 0 2px 0 var(--chrome-panel-highlight),
+        0 0 7px 1px rgba(168, 184, 154, .22),
+        0 4px 7px rgba(24, 33, 19, .22);
+    --chrome-divider: linear-gradient(90deg, transparent, #C9AA65 50%, transparent);
+    --chrome-wordmark-ink: #11160E;
+    --chrome-wordmark-champagne: #F4DFA5;
+    --chrome-wordmark-bronze: #987039;
+    --chrome-wordmark-depth: rgba(17, 22, 14, .65);
+    --chrome-wordmark-glow: rgba(244, 223, 165, .16);
+    --chrome-botanical-highlight: drop-shadow(0 -.5px .5px rgba(244, 223, 165, .2));
+    --chrome-wordmark-highlight:
+        -.6px 0 0 var(--chrome-gold),
+        .6px 0 0 var(--chrome-gold),
+        0 -.6px 0 var(--chrome-gold),
+        0 .6px 0 var(--chrome-gold),
+        0 -1px .5px var(--chrome-wordmark-champagne),
+        0 1px .5px var(--chrome-wordmark-bronze),
+        0 2px 1px var(--chrome-wordmark-depth),
+        0 0 2px var(--chrome-wordmark-glow);
+    --chrome-slogan-shadow: 0 1px 2px rgba(160, 38, 46, .65);
+    --chrome-nav-hover: #f19b98;
+    --chrome-footer-name: #F4DFA5;
+    --chrome-footer-name-shadow:
+        0 -.5px .5px rgba(244, 223, 165, .3),
+        0 1px 1px rgba(17, 22, 14, .5),
+        0 0 2px rgba(201, 170, 101, .12);
+}
+
+/* Foundations used by the homepage and the shared components below. */
+:root {
+    --button-background: #303C22;
+    --button-hover-background: #394526;
+    --button-text: #F5F2E8;
+    --button-border: #C9AA65;
+    --button-focus: #303C22;
+    /* Color Palette */
+    --primary-green: #009736;
+    --accent-red: #CF1127;
+    --dark: #111111;
+    --light: #ffffff;
+    --gold: #f0c045;
+    
+    /* Typography */
+    --font-en: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-ar: 'Amiri', serif;
+    
+    /* Shared Panel Styling */
+    --panel-border: 4px solid var(--dark);
+    --panel-radius: 12px;
+    --panel-shadow: 0 8px 20px rgba(207, 17, 39, 0.45), 0 4px 10px rgba(0, 0, 0, 0.3);
+    --panel-bg: #fff;
+}
+
+/* =====================================
+   02. RESET & BASE ELEMENTS
+   ===================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-en);
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.65;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+html {
+    overflow-y: scroll;
+    scrollbar-width: auto;
+    scrollbar-color: var(--primary-green) rgba(17, 17, 17, 0.12);
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 14px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: rgba(17, 17, 17, 0.1);
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary-green), var(--accent-red));
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 4px solid #000000;
+    border-radius: 16px;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =====================================
+   03. TYPOGRAPHY
+   ===================================== */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-ar);
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.lang-ar {
+    direction: rtl;
+    text-align: right;
+    font-family: var(--font-ar);
+}
+
+/* =====================================
+   04. ACCESSIBILITY & UTILITIES
+   ===================================== */
+
+body.home-page [data-global-chrome] a:focus-visible,
+body.home-page [data-global-chrome] button:focus-visible {
+    outline: 3px solid var(--chrome-gold);
+    outline-offset: 4px;
+}
+
+/* main.js toggles this class for both initial and interactive language states. */
+.hidden {
+    display: none !important;
+}
+
+/* =====================================
+   05. GLOBAL HEADER
+   ===================================== */
+
+/* The opt-in scope intentionally matches/exceeds legacy theme specificity.
+   Remove this migration scope only after the legacy chrome is retired. */
+body.home-page .site-header[data-global-chrome] {
+    padding: 20px 10px;
+    border: 0;
+    background: #242424 var(--chrome-frame) center / cover no-repeat;
+    box-shadow: none;
+}
+
+body.home-page .site-header[data-global-chrome] .header-container {
+    position: relative;
+    display: grid;
+    /* Equal side tracks keep the middle centered regardless of control widths. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem 1rem;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    /* Five fewer pixels on each edge reduces panel height by 10px. */
+    padding: calc(1.25rem - 5px) clamp(1rem, 3vw, 2rem);
+    border-radius: var(--chrome-radius);
+    background: var(--chrome-olive);
+    background-image: var(--chrome-panel);
+    box-shadow: var(--chrome-panel-shadow);
+}
+
+body.home-page .site-header[data-global-chrome] .mpga-wordmark {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+    max-width: 100%;
+    padding: 0;
+    color: var(--chrome-gold);
+    font-family: Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+body.home-page .site-header[data-global-chrome] .mpga-wordmark svg {
+    width: 27.5px;
+    height: 31.25px;
+    flex-shrink: 0;
+    filter: var(--chrome-botanical-highlight);
+}
+
+body.home-page .site-header[data-global-chrome] .mpga-wordmark svg:first-child {
+    transform: scaleX(-1);
+}
+
+body.home-page .site-header[data-global-chrome] .mpga-wordmark > span {
+    color: var(--chrome-wordmark-ink);
+    /* Unsupported strokes fall back to the four fine gold shadow offsets.
+       Stroke-first painting preserves the near-black interior on thin serifs. */
+    -webkit-text-stroke: 1px var(--chrome-gold);
+    paint-order: stroke fill;
+    text-shadow: var(--chrome-wordmark-highlight);
+}
+
+body.home-page .site-header[data-global-chrome] .header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    width: auto;
+}
+
+body.home-page .site-header[data-global-chrome] .site-title {
+    margin: 0 0 .5rem;
+    color: var(--chrome-gold);
+    font-family: Georgia, 'Amiri', serif;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    text-shadow: none;
+    overflow-wrap: anywhere;
+}
+
+/* Only the bilingual slogan receives the red accent, not the MPGA wordmark. */
+body.home-page .site-header[data-global-chrome] .state-title {
+    position: relative;
+    width: 100%;
+    text-shadow: var(--chrome-slogan-shadow);
+}
+
+/* Anchor to the heading itself: the mobile parent uses display: contents.
+   Absolute placement uses existing spacing without adding another grid item. */
+body.home-page .site-header[data-global-chrome] .state-title::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 30%;
+    bottom: -4px;
+    width: 40%;
+    height: 1px;
+    background: var(--chrome-divider);
+    pointer-events: none;
+}
+
+/* =====================================
+   06. GLOBAL NAVIGATION
+   ===================================== */
+
+body.home-page .site-header[data-global-chrome] .main-nav {
+    display: block;
+    position: static;
+    width: 100%;
+    margin: .5rem 0 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+body.home-page .site-header[data-global-chrome] .nav-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body.home-page .site-header[data-global-chrome] .nav-btn,
+body.home-page .site-header[data-global-chrome] .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: .5rem .65rem;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--chrome-link);
+    box-shadow: none;
+    font-family: var(--chrome-font);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    transform: none;
+    transition: color .2s ease;
+    cursor: pointer;
+}
+
+body.home-page .site-header[data-global-chrome] .lang-toggle {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+}
+
+body.home-page .site-header[data-global-chrome] .nav-btn.active {
+    color: var(--chrome-gold);
+    font-weight: 700;
+}
+
+body.home-page .site-header[data-global-chrome] .nav-btn:hover {
+    color: var(--chrome-nav-hover);
+}
+
+body.home-page .site-header[data-global-chrome] .lang-toggle:hover {
+    color: var(--chrome-gold);
+    text-decoration: underline;
+    text-underline-offset: .35rem;
+}
+
+body.home-page .site-header[data-global-chrome] .menu-toggle {
+    display: none;
+    width: auto;
+    min-width: 44px;
+    min-height: 44px;
+    margin: 0;
+    padding: .5rem;
+    border: 1px solid var(--chrome-gold);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--chrome-gold);
+    font-size: 1.75rem;
+    line-height: 1;
+    text-align: center;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+/* =====================================
+   07. GLOBAL FOOTER
+   ===================================== */
+
+body.home-page .site-footer[data-global-chrome] {
+    text-align: center;
+    padding: 20px 10px;
+    border: 0;
+    background: #242424 var(--chrome-frame) center / cover no-repeat;
+}
+
+body.home-page .site-footer[data-global-chrome] .footer-container {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    padding: 1.25rem clamp(1rem, 3vw, 2rem);
+    border-radius: var(--chrome-radius);
+    background: var(--chrome-olive);
+    background-image: var(--chrome-panel);
+    box-shadow: var(--chrome-panel-shadow);
+}
+
+body.home-page .site-footer[data-global-chrome] .footer-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+body.home-page .site-footer[data-global-chrome] .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+    gap: .5rem;
+    order: 0;
+    color: var(--chrome-gold);
+    text-shadow: none;
+    overflow-wrap: anywhere;
+}
+
+body.home-page .site-footer[data-global-chrome] .footer-text {
+    margin: 0;
+    font-family: Georgia, 'Amiri', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Decorative branches stay centered within the existing text column. */
+body.home-page .site-footer[data-global-chrome] .footer-flourish {
+    display: block;
+    width: clamp(96px, 10vw, 128px);
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    color: var(--chrome-gold);
+    filter: var(--chrome-botanical-highlight);
+    pointer-events: none;
+}
+
+/* Inner wrappers isolate the name from copyright metadata and emoji glyphs.
+   Their parent language spans retain the shared visibility behavior. */
+body.home-page .site-footer[data-global-chrome] .footer-name {
+    color: var(--chrome-footer-name);
+    text-shadow: var(--chrome-footer-name-shadow);
+}
+
+body.home-page .site-footer[data-global-chrome] .copyright {
+    margin: 0;
+    color: var(--chrome-link);
+    font-family: var(--chrome-font);
+    font-size: .85rem;
+    line-height: 1.5;
+    text-shadow: none;
+    opacity: 1;
+}
+
+body.home-page .site-footer[data-global-chrome] .footer-btn {
+    cursor: pointer;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    margin: 0;
+    padding: .5rem .65rem;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--chrome-link);
+    font-family: var(--chrome-font);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    /* Applies to visited and active links as well as their default state. */
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    order: 0;
+    transform: none;
+    transition: color .2s ease;
+}
+
+body.home-page .site-footer[data-global-chrome] .footer-btn-right {
+    justify-self: end;
+}
+
+body.home-page .site-footer[data-global-chrome] .footer-btn:hover {
+    color: var(--chrome-nav-hover);
+}
+
+/* =====================================
+   08. SHARED COMPONENTS
+   ===================================== */
+
+/* One-class specificity allows later page modifiers to customize this component.
+   Colors can also be customized with the --button-* properties. */
+.site-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 44px;
+    padding: .7rem 1.35rem;
+    border: 1px solid var(--button-border);
+    border-radius: 6px;
+    background: var(--button-background);
+    color: var(--button-text);
+    font: inherit;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, .75), 0 5px 10px rgba(0, 0, 0, .18);
+    transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.site-button:hover,
+.site-button:focus-visible {
+    background: var(--button-hover-background);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, .75), 0 7px 12px rgba(0, 0, 0, .25);
+}
+
+.site-button:focus-visible {
+    outline: 3px solid var(--button-focus);
+    outline-offset: 4px;
+}
+
+/* Consolidated legacy .links-gallery declarations, retaining their final values. */
+.links-gallery {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    border-radius: 12px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.links-gallery::-webkit-scrollbar { height: 8px; }
+.links-gallery::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+.links-gallery::-webkit-scrollbar-track { background: transparent; }
+
+/* Existing panel and native-scrolling gallery primitives shared across pages.
+   Homepage dimensions and responsive exceptions belong in index.css. */
+.section {
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem auto;
+    max-width: 1200px;
+    border: var(--panel-border);
+    border-radius: var(--panel-radius);
+    background: var(--panel-bg);
+    box-shadow: var(--panel-shadow);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--dark);
+}
+
+.gallery-item {
+    flex: 0 0 280px;           /* Adjust width as needed */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;              /* Fixed height for consistency */
+    object-fit: cover;
+    display: block;
+}
+
+.scrollable-gallery {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 1.5rem;
+    border: 5px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.55);
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.gallery-card {
+    flex: 0 0 300px;
+    border: 2px solid var(--dark);
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.scrollable-gallery::-webkit-scrollbar {
+    height: 10px;
+}
+
+.scrollable-gallery::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 10px;
+}
+
+.scrollable-gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* =====================================
+   09. GLOBAL RESPONSIVE RULES
+   ===================================== */
+
+/* Button interaction remains visible without motion when requested. */
+@media (prefers-reduced-motion: reduce) {
+    .site-button {
+        transition: none;
+    }
+
+    .site-button:hover,
+    .site-button:focus-visible {
+        transform: none;
+    }
+}
+
+/* Header/navigation — must match main.js's <=768px menu behavior. */
+@media (max-width: 768px) {
+    /* Preserve the legacy document overflow behavior at the navigation breakpoint. */
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body.home-page .site-header[data-global-chrome] .header-container {
+        grid-template-columns: minmax(0, 1fr) auto;
+        justify-content: center;
+        gap: .5rem;
+    }
+
+    body.home-page .site-header[data-global-chrome] .header-center {
+        /* Expose the existing heading/nav as grid items without changing JS hooks. */
+        display: contents;
+    }
+
+    body.home-page .site-header[data-global-chrome] .lang-toggle {
+        grid-column: 2;
+        padding-inline: .25rem;
+    }
+
+    body.home-page .site-header[data-global-chrome] .site-title {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin: 0;
+        padding-inline: 48px;
+    }
+
+    body.home-page .site-header[data-global-chrome] .menu-toggle {
+        display: block;
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    body.home-page .site-header[data-global-chrome] .main-nav {
+        display: none;
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+
+    /* .active is toggled by main.js; keep closed navigation out of tab order. */
+    body.home-page .site-header[data-global-chrome] .main-nav.active {
+        display: block;
+    }
+
+    body.home-page .site-header[data-global-chrome] .nav-menu {
+        flex-direction: column;
+        gap: .25rem;
+    }
+}
+
+/* Footer — stack in DOM order so visual and keyboard link order agree. */
+@media (max-width: 768px) {
+    body.home-page .site-footer[data-global-chrome] .footer-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.home-page .site-footer[data-global-chrome] .footer-btn {
+        justify-self: center;
+    }
+}
