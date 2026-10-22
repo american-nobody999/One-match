@@ -1,0 +1,359 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+
+body.archive-page,
+body:has(> p > #archive-destination) {
+    --archive-olive: #303C22;
+    --archive-gold: #C9AA65;
+    --archive-cream: #F2EBD8;
+    --archive-ink: #25291f;
+    --archive-paper: #fffaf0;
+    --archive-popup-frame: clamp(.5rem, 2vw, 1rem);
+    background: #ddd2b9 url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/archive/body2.jpg") center top / cover no-repeat;
+    color: var(--archive-ink);
+}
+
+/* 02. Page frame and introduction */
+.archive-main {
+    width: min(75rem, calc(100% - 2rem));
+    color: var(--archive-ink);
+    line-height: 1.65;
+    min-width: 0;
+    margin: clamp(1.5rem, 4vw, 3.5rem) auto;
+}
+
+.archive-shell {
+    padding: clamp(.75rem, 5vw, 4rem);
+    border: 1px solid #786139;
+    border-radius: 12px;
+    background: #D9E2CE;
+    box-shadow: 0 .5rem 1.75rem #201a1459;
+}
+
+.archive-body {
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    border: 1px solid #b49b70;
+    border-radius: 8px;
+    background: rgb(255 247 225 / 94%);
+    overflow-wrap: anywhere;
+}
+
+.archive-intro {
+    padding-block-end: 1.5rem;
+    text-align: center;
+}
+
+.archive-intro .archive-collections-link {
+    margin-block-end: 1rem;
+}
+
+.archive-intro h2 {
+    margin-block-end: .75rem;
+    font-family: Georgia, 'Amiri', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.3;
+}
+
+/* Retain live archive announcements without visible introduction copy. */
+.archive-intro .archive-phase-note {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 03. Series, month and dated-entry selectors */
+.archive-section {
+    min-width: 0;
+    margin-block-start: 1.5rem;
+    padding: clamp(1rem, 2.5vw, 1.75rem);
+    border: 1px solid #8b815e;
+    border-radius: 10px;
+    background: #303C22;
+    color: #FFFFFF;
+}
+
+.archive-section h2 {
+    margin-block-end: .75rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Center selection content in both languages; preserve reading and navigation alignment. */
+.archive-section,
+.archive-section :not(:where(
+    .archive-dialog-writing, .archive-dialog-writing *,
+    .archive-entry-content, .archive-entry-content *,
+    nav, nav *
+)) { text-align: center; }
+
+/* Shared heading color includes both language variants. */
+.archive-section > :is(h2, h3, h4, h5, h6),
+.archive-section > :is(h2, h3, h4, h5, h6) > :is(.lang-en, .lang-ar) { color: #FFFFFF; }
+
+.archive-section > p {
+    margin: 0 0 1rem;
+}
+
+
+.archive-card-list {
+    display: grid;
+    gap: .85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.archive-card-list > li {
+    min-width: 0;
+}
+
+/* Content-driven grids grow from a single column without device-specific queries. */
+.archive-series-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+}
+
+.archive-month-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
+}
+
+.archive-entry-list {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.archive-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    height: 100%;
+    padding: 1rem;
+    border: 1px solid #786139;
+    border-radius: 8px;
+    background-color: #EDF0E4;
+    background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/archive/10007.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #303C22;
+    text-decoration: none;
+    font: inherit;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+.archive-choice:not(:disabled):hover,
+.archive-choice:focus-visible {
+    border-color: var(--archive-olive);
+    background-color: #e5e9d9;
+    box-shadow: inset 0 0 0 1px var(--archive-olive);
+}
+
+.archive-choice[aria-pressed="true"] {
+    border-color: var(--archive-olive);
+    background-color: #e5e9d9;
+    box-shadow: inset 0 0 0 2px var(--archive-olive);
+}
+
+.archive-choice:disabled {
+    border-style: dashed;
+    background-color: #f1f0e7;
+    color: #53584b;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.archive-selected-label { font-size: .85rem; font-weight: 700; }
+.archive-empty { grid-column: 1 / -1; padding: 1rem; text-align: center; }
+
+.archive-choice:focus-visible,
+.archive-dialog-writing:focus-visible {
+    outline: 3px solid var(--archive-olive);
+    outline-offset: 4px;
+}
+
+.archive-section .archive-choice:focus-visible {
+    outline-color: var(--archive-gold);
+}
+
+.archive-series-card { min-height: 7rem; }
+.archive-month-card { min-height: 6.5rem; }
+.archive-entry-card { min-height: 9rem; }
+.archive-entry-note { font-size: .9rem; font-weight: 400; }
+
+/* 04. Native reading dialog; archive.js manages opening and scroll locking */
+.archive-dialog {
+    width: min(56rem, calc(100% - 2rem));
+    max-width: calc(100% - 2rem);
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
+    margin: auto;
+    padding: clamp(.5rem, 2vw, 1rem);
+    border: 1px solid #786139;
+    border-radius: 12px;
+    background-color: #e7d9b9;
+
+    color: var(--archive-ink);
+    overflow: auto;
+}
+
+/* Do not override the native closed-dialog display:none. */
+.archive-dialog[open] { display: flex; flex-direction: column; }
+.archive-dialog::backdrop { background: rgba(17, 22, 14, .7); }
+
+.archive-dialog-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    width: 100%;
+    max-height: calc(100vh - 2rem - 2 * var(--archive-popup-frame));
+    max-height: calc(100dvh - 2rem - 2 * var(--archive-popup-frame));
+    padding: clamp(.75rem, 2vw, 1.5rem);
+    border-radius: 6px;
+    background: var(--archive-paper);
+    overflow-wrap: anywhere;
+}
+
+.archive-dialog-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    gap: .75rem;
+    flex-shrink: 0;
+}
+
+.archive-dialog-header > div { flex: 1 1 15rem; min-width: 0; }
+.archive-dialog-header h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.4; }
+.archive-dialog-header p { margin: 0; font-size: .9rem; }
+.archive-dialog-close { flex: 0 0 auto; }
+.archive-dialog-note { flex-shrink: 0; margin: .75rem 0; font-size: .9rem; }
+.archive-writing-title { flex-shrink: 0; margin: 0 0 .5rem; font-size: 1.1rem; }
+
+.archive-dialog-writing {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid #b49b70;
+    border-radius: 6px;
+    color: var(--archive-ink);
+    line-height: 1.85;
+}
+
+.archive-dialog-writing p { margin: 0 0 1rem; }
+
+/* 05. Language direction and keyboard entry point */
+html[lang="ar"] .archive-main,
+html[lang="ar"] .archive-dialog { direction: rtl; }
+
+.archive-skip-link {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    z-index: 1001;
+    padding: .65rem 1rem;
+    border: 2px solid var(--archive-olive);
+    border-radius: 6px;
+    background: var(--archive-paper);
+    color: var(--archive-ink);
+    transform: translateY(-200%);
+}
+
+.archive-skip-link:focus {
+    transform: none;
+    outline: 3px solid #151515;
+    outline-offset: 2px;
+}
+
+/* No archive animations or transitions are introduced. Shared button motion
+   already respects prefers-reduced-motion in styles2.css. */
+
+/* Collection navigation shares the approved archive palette and card geometry. */
+.archive-breadcrumb { margin-block-end: 1.25rem; }
+.archive-dialog-writing pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.archive-dialog-writing a { text-decoration: underline; }
+.archive-dialog-writing :lang(ar) { text-align: start; }
+
+/* Aged paper is reserved for writing, including the dynamically filled reader. */
+.archive-dialog-writing,
+.archive-main .archive-entry-content {
+    background: #f4e8cd url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/archive/0035.jpg") center top / cover repeat-y;
+}
+
+.archive-dialog-writing > .lang-en,
+.archive-dialog-writing > .lang-ar {
+    max-width: 65ch;
+    margin-inline: auto;
+}
+
+.archive-dialog-writing :is(h2, h3, h4, h5, h6) {
+    margin-block: 1.25em .5em;
+    color: inherit;
+    line-height: 1.4;
+}
+
+.archive-dialog-writing :is(ul, ol) { padding-inline-start: 1.5em; }
+.archive-dialog-writing li { margin-block: .4em; }
+.archive-dialog-writing blockquote {
+    margin-inline: 0;
+    padding-inline-start: 1em;
+    border-inline-start: 3px solid var(--archive-gold);
+}
+.archive-dialog-writing :is(a, code, pre) { overflow-wrap: anywhere; }
+.archive-dialog-writing a { color: #384522; }
+.archive-dialog-writing :lang(ar) { line-height: 2; }
+.archive-dialog-close {
+    min-height: 44px;
+    padding: .6rem 1rem;
+    border: 1px solid #786139;
+    border-radius: 6px;
+    background: var(--archive-paper);
+    color: var(--archive-ink);
+    font: inherit;
+    cursor: pointer;
+}
+.archive-dialog-close:focus-visible {
+    outline: 3px solid var(--archive-olive);
+    outline-offset: 3px;
+}
+
+/* Compact framing leaves room for longer translations without fixed heights. */
+@media (max-width: 480px) {
+    .archive-main { width: calc(100% - 1rem); margin-block: 1rem; }
+    .archive-shell { padding: .5rem; }
+    .archive-body { padding: .85rem; }
+    .archive-section { padding: .85rem; }
+    .archive-dialog { width: calc(100% - 1rem); max-width: calc(100% - 1rem); }
+    .archive-dialog-panel { padding: .5rem; }
+    .archive-dialog-header > div { flex-basis: 100%; }
+}
+
+/* Redirect fallback artwork without changing compatibility document markup. */
+body:has(> p > #archive-destination) > p {
+    max-width: min(46rem, calc(100% - 2rem));
+    margin: 2rem auto;
+    padding: 1.25rem;
+    border: 1px solid #786139;
+    border-radius: 8px;
+    background: var(--archive-paper);
+    overflow-wrap: anywhere;
+}
+#archive-destination { color: #384522; }
+
