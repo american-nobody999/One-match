@@ -1,6 +1,6 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 10/19/2026
+//Date modified: 10/21/2026
 "use strict";
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
@@ -96,23 +96,31 @@ setLanguageVisibility(arabicLanguageSelectors, true);
             
             if (!video) return;
 
-            // Initial play button
-            if (initialPlayBtn) {
-                initialPlayBtn.addEventListener('click', () => {
-                    video.play();
-                    initialPlayBtn.style.display = 'none';
-                    if (overlay) overlay.classList.add('hidden');
-                });
+            function showPlaying() {
+                if (initialPlayBtn) initialPlayBtn.style.display = 'none';
+                if (overlay) overlay.classList.add('hidden');
             }
 
-            // Replay button
-            if (replayBtn) {
-                replayBtn.addEventListener('click', () => {
-                    video.currentTime = 0;
-                    if (overlay) overlay.classList.add('hidden');
-                    video.play();
-                });
+            function restoreControls() {
+                if (overlay) overlay.classList.add('hidden');
+                if (initialPlayBtn) initialPlayBtn.style.display = '';
             }
+
+            function requestPlayback(replay) {
+                if (replay) video.currentTime = 0;
+                try {
+                    const playback = video.play();
+                    playback?.catch(restoreControls);
+                } catch {
+                    restoreControls();
+                }
+            }
+
+            // Sync with native controls as well as the custom play/replay buttons.
+            video.addEventListener('play', showPlaying);
+            video.addEventListener('error', restoreControls);
+            initialPlayBtn?.addEventListener('click', () => requestPlayback(false));
+            replayBtn?.addEventListener('click', () => requestPlayback(true));
 
             // Show replay only when the video has ended
             video.addEventListener('ended', () => {
@@ -721,50 +729,6 @@ if (form && statusMessage && submitBtn && submitBtnEn && submitBtnAr) {
         }
     });
 }
-
-// Count down timer for January 20, 2029, next election cycle begins--this demonstrates the countdown timer functionality. Adjust the target date as needed.
-const countdownElement = document.getElementById('countdown');
-const countdownDays = document.getElementById('days');
-const countdownHours = document.getElementById('hours');
-const countdownMinutes = document.getElementById('minutes');
-const countdownSeconds = document.getElementById('seconds');
-const countdownStatus = document.getElementById('countdown-status');
-const targetDate = new Date('January 20, 2029 00:00:00').getTime();
-
-function updateCountdown() {
-    if (!countdownElement || !countdownDays || !countdownHours || !countdownMinutes || !countdownSeconds) {
-        return;
-    }
-
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-        countdownDays.textContent = '0';
-        countdownHours.textContent = '0';
-        countdownMinutes.textContent = '0';
-        countdownSeconds.textContent = '0';
-        if (countdownStatus) {
-            countdownStatus.textContent = 'The election cycle has begun!';
-            countdownStatus.hidden = false;
-        }
-        clearInterval(countdownInterval);
-        return;
-    }
-// Calculate time components-seconds, minutes, hours, days, yes, I know how to program.
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownDays.textContent = days;
-    countdownHours.textContent = hours;
-    countdownMinutes.textContent = minutes;
-    countdownSeconds.textContent = seconds;
-}
-//
-const countdownInterval = setInterval(updateCountdown, 1000);
-updateCountdown();  
 
 // Legacy source tabs outside the single-card Hero directories.
 document.querySelectorAll('.source-tab').forEach(tab => {
