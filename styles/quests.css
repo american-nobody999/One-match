@@ -1,4 +1,8 @@
-/* Local design laboratory. Shared header, footer and production pages stay unchanged. */
+/* 
+   Author: Leslie Brockman
+   Date: 10-17-2026
+   Date modified: 10/21/2026
+*/
 body.test-quests-page[data-quest-design] {
     --tq-deep: #354A2F;
     --tq-olive: #667A45;
