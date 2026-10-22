@@ -1,0 +1,285 @@
+/* 
+   Author: Leslie Brockman
+   Date: 10-19-2026
+   Date modified: 10/21/2026
+*/
+.ok-america-page main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+.ok-america-page main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 1600px) {
+.ok-america-page main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+}
+
+@media (max-width: 768px) {
+.ok-america-page main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+.ok-america-page main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+.ok-america-page main p {
+font-size: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+.ok-america-page main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+}
+
+.ok-america-page main h2 {
+max-width: 1200px;
+    padding: 0 1.5rem;
+}
+
+body.ok-america-page {
+--ok-parchment-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/paperbg.jpg");
+    min-height: 100vh;
+    background-color: #ddc49a;
+    background-image: var(--ok-parchment-image);
+    background-position: center top;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.ok-america-page .ok-main {
+box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    padding: 1.5rem .75rem;
+    color: #49301e;
+}
+
+.ok-america-page .ok-content {
+box-sizing: border-box;
+    width: 100%;
+    max-width: 52rem;
+    min-width: 0;
+    margin-inline: auto;
+    padding: clamp(1rem, 3vw, 3rem);
+    border: 1px solid #a57c49;
+    border-block: 4px double #987044;
+    border-radius: .5rem;
+    background: rgba(255, 250, 235, .86);
+    box-shadow: 0 .6rem 1.8rem rgba(81, 48, 21, .18);
+    overflow-wrap: anywhere;
+}
+
+.ok-america-page .ok-content p {
+width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 1rem + .25vw, 1.25rem);
+    line-height: 1.85;
+    text-align: start;
+}
+
+.ok-america-page .ok-content .lang-ar {
+font-family: var(--font-ar);
+    direction: rtl;
+    text-align: right;
+    display: block;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    letter-spacing: normal;
+}
+
+.ok-america-page .ok-content:lang(ar) {
+direction: rtl;
+}
+
+.ok-america-page .weekly-song {
+width: 100%;
+    min-width: 0;
+    margin-block: clamp(1.5rem, 3vw, 2.5rem) 1rem;
+}
+
+.ok-america-page .weekly-song-video {
+display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+    border: 2px solid #987044;
+    border-radius: .4rem;
+    background: #49301e;
+    box-shadow: 0 .25rem .75rem rgba(81, 48, 21, .15);
+}
+
+@media (min-width: 48rem) {
+.ok-america-page .ok-main {
+padding: 2.5rem 1.5rem;
+}
+}
+
+@media (min-width: 64rem) {
+.ok-america-page .ok-main {
+padding: 3rem 2rem;
+}
+
+.ok-america-page .weekly-song {
+max-width: 44rem; margin-inline: auto;
+}
+}
+
+@media (min-width: 90rem) {
+.ok-america-page .ok-main {
+padding-block: 4rem;
+}
+}
+
+@media (min-width: 120rem) {
+.ok-america-page .ok-main {
+padding-block: 5rem;
+}
+}
+
+.ok-america-page .ok-content h1 {
+    margin: 0 0 1rem;
+    color: #6b451f;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.4;
+}
+
+
+.ok-america-page main h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+/* OK America frames: retain box dimensions and accessible focus outlines. */
+.ok-america-page .ok-content,
+.ok-america-page .ok-content :is(div, figure, img) {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* OK America publication date and larger, uncropped gallery images. */
+.ok-america-page .ok-content {
+    max-width: 90rem;
+}
+
+.ok-america-page .ok-america-date {
+    display: block;
+    margin: -.25rem auto 1.5rem;
+    color: #6b451f;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    text-align: center;
+}
+
+.ok-america-page .ok-america-date .lang-ar {
+    text-align: center;
+}
+
+.ok-america-page .ok-america-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: auto;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+}
+
+.ok-america-page .ok-america-gallery .gallery-card {
+    flex: 0 0 75%;
+    width: 75%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: auto;
+}
+
+.ok-america-page .ok-america-gallery .gallery-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+
+.ok-america-page .ok-content { background-color: #D9E2CE; }
+
+/* Keep the mobile control above the positioned title in their shared grid row. */
+@media (max-width: 768px) {
+    .ok-america-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.ok-america-page .ok-archive-link {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto 0;
+}
+
+.ok-america-page .ok-archive-link .lang-ar { text-align: center; }
+
+/* One Explore-style frame per complete gallery, including its heading. */
+.ok-america-page .ok-content .ok-america-gallery-section {
+    width: 100%;
+    min-width: 0;
+    margin-block: 2rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+}
+.ok-america-page .ok-content .ok-america-gallery-section .ok-america-gallery {
+    margin-block: 0;
+    border: 0;
+    box-shadow: none;
+}
+.ok-america-page .ok-content .ok-america-gallery-section .gallery-card,
+.ok-america-page .ok-content .ok-america-gallery-section img {
+    border: 0;
+    box-shadow: none;
+}
