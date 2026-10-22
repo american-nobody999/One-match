@@ -1,0 +1,60 @@
+/* 
+   Author: Leslie Brockman
+   Date: 10-17-2026
+   Date modified: 10/21/2026
+*/
+body.rocks-page { background-color: #D9E2CE; }
+.rocks-page .rocks-main { width: min(100%, 1100px); margin: auto; padding: clamp(.65rem, 3vw, 2rem); }
+.rocks-page .rocks-game { --button-background: #183A22; --button-hover-background: #245431; --button-text: #A4FFB0; --button-border: #62ED7E; --button-focus: #A4FFB0; }
+.rocks-page .rocks-game, .rocks-page .rocks-dialog { color: #A4FFB0; background: #080D09; border: 2px solid #62ED7E; border-radius: 12px; padding: clamp(.75rem, 3vw, 2rem); overflow-wrap: anywhere; }
+.rocks-page .rocks-game { box-shadow: 0 0 18px #183A22; text-align: center; }
+.rocks-page h1 { font-size: clamp(1.6rem, 5vw, 2.7rem); }
+.rocks-page .rocks-score { font: bold 1.4rem monospace; margin-block: 1rem; }
+.rocks-page .rocks-mode { display: flex; justify-content: center; align-items: center; gap: .6rem; min-height: 44px; margin-block: 1rem; }
+.rocks-page .rocks-mode input { width: 22px; height: 22px; flex-shrink: 0; accent-color: #62ED7E; }
+.rocks-page .rocks-stage { position: relative; background: #151B16; border: 1px solid #183A22; border-radius: 8px; overflow: hidden; }
+.rocks-page .rocks-lane { position: relative; height: 210px; overflow: hidden; border-bottom: 2px solid #62ED7E; }
+.rocks-page .rocks-target { position: absolute; top: 16px; left: 0; width: 112px; height: 174px; padding: 6px; color: #A4FFB0; font: inherit; font-size: .8rem; border: 0; background: transparent; transform-origin: center bottom; }
+.rocks-page .rocks-target:disabled { opacity: 1; }
+.rocks-page .rocks-portrait { display: grid; place-items: center; height: 96px; background: radial-gradient(ellipse, #183A22, #080D09); border: 2px solid #62ED7E; border-radius: 8px; font-size: 2rem; }
+.rocks-page .rocks-target-name { display: block; line-height: 1.2; min-height: 2.4em; }
+.rocks-page .rocks-stand { display: block; height: 16px; margin-top: 5px; background: #183A22; border: 2px solid #62ED7E; }
+.rocks-page .rocks-target[data-state="hit"] { animation: rocks-tip .55s ease-in forwards; }
+@keyframes rocks-tip { to { rotate: x 80deg; opacity: 0; } }
+.rocks-page .rocks-hit-zone { position: absolute; top: 161px; left: calc(50% - 25px); width: 50px; height: 36px; border: 3px solid #ff5050; background: #ff303033; pointer-events: none; z-index: 2; }
+.rocks-page .rocks-slingshot { position: relative; width: 70px; height: 95px; margin: 45px auto 12px; border-left: 10px solid #62ED7E; border-right: 10px solid #62ED7E; border-radius: 0 0 50% 50%; }
+.rocks-page .rocks-slingshot::after { content: ""; position: absolute; width: 12px; height: 45px; top: 70px; left: 19px; background: #62ED7E; }
+.rocks-page .rocks-slingshot span { position: absolute; top: 0; left: 0; width: 50px; height: 3px; background: #A4FFB0; }
+.rocks-page .rocks-stage.is-loaded .rocks-slingshot span { height: 28px; border-bottom: 3px solid #A4FFB0; border-radius: 0 0 50% 50%; background: transparent; }
+.rocks-page .rocks-projectile { position: absolute; left: 0; top: 0; width: 14px; height: 14px; border-radius: 50%; background: #b9bdb9; box-shadow: 0 0 6px #62ED7E; z-index: 3; pointer-events: none; }
+.rocks-page .rocks-status { min-height: 3rem; margin: 1rem 0; }
+.rocks-page .rocks-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.rocks-page #rocks-launch { touch-action: none; user-select: none; }
+.rocks-page button:disabled { cursor: not-allowed; }
+.rocks-page .rocks-actions button:disabled { opacity: .55; }
+.rocks-page .rocks-dialog { width: min(92vw, 520px); max-height: 85vh; overflow-y: auto; margin: auto; }
+.rocks-page .rocks-dialog::backdrop { background: #080d09cc; }
+.rocks-page .rocks-dialog .rocks-portrait { width: 100px; margin: 0 auto 1rem; }
+.rocks-page .rocks-target:focus-visible, .rocks-page .rocks-mode input:focus-visible { outline: 3px solid #A4FFB0; outline-offset: -3px; }
+.rocks-page .rocks-stage.is-stationary .rocks-lane { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); height: auto; min-height: 210px; gap: .75rem; padding: 1rem; }
+.rocks-page .rocks-stage.is-stationary .rocks-target { position: relative; top: auto; margin: auto; cursor: pointer; }
+.rocks-page .rocks-stage.is-stationary .rocks-hit-zone, .rocks-page .rocks-stage.is-stationary .rocks-slingshot { display: none; }
+.rocks-page .lang-ar { direction: rtl; }
+@media (prefers-reduced-motion: reduce) { .rocks-page .rocks-target[data-state="hit"] { animation: none; } }
+
+/* Profile media stays inside the existing portrait/stand geometry. */
+.rocks-page .rocks-portrait { overflow: hidden; }
+.rocks-page .rocks-portrait img { width: 100%; height: 100%; object-fit: cover; border: 0; border-radius: 0; }
+.rocks-page .rocks-profile-socials { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-block: 1rem; }
+.rocks-page .rocks-profile-socials .social-link { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: .4rem; border: 1px solid #62ED7E; border-radius: 6px; }
+.rocks-page .rocks-profile-socials img { width: 28px; height: 28px; object-fit: contain; border: 0; border-radius: 4px; }
+.rocks-page .rocks-profile-socials a:focus-visible { outline: 3px solid #A4FFB0; outline-offset: 3px; }
+/* Reuse global .site-button colors/states; only arrange the popup actions. */
+.rocks-page .rocks-dialog > .site-button {
+    display: flex;
+    width: min(100%, 24rem);
+    margin-inline: auto;
+    white-space: normal;
+}
+.rocks-page .rocks-dialog > .rocks-profile-website { margin-bottom: 1rem; }
+.rocks-page .rocks-profile-website[hidden] { display: none; }
