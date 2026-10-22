@@ -1,3 +1,5 @@
+//Author: Leslie Brockman
+//Date modified: 10/21/2026
 // Modern Quest Board: one reusable, non-modal detail panel.
 (() => {
     'use strict';
