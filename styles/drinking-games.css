@@ -1,0 +1,611 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+.drinking-games-page #your-famous .hero-gallery-block,
+.drinking-games-page #your-famous .hero-gallery-block :is(.scrollable-gallery, .gallery-card, figure, img) {
+border-color: transparent;
+    box-shadow: none;
+}
+
+:where(.drinking-games-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.drinking-games-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.drinking-games-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block {
+width: min(100%, 980px);
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .scrollable-gallery {
+width: 100%;
+}
+
+:where(.drinking-games-page) .andrey-modal-actions {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .85rem;
+    margin-top: 2rem;
+}
+
+:where(.drinking-games-page) .modal-back-button,
+:where(.drinking-games-page) .andrey-profile-link {
+display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: min(100%, 260px);
+    min-height: 48px;
+    padding: .75rem 1.2rem;
+    border: 2px solid var(--dark);
+    border-radius: 7px;
+    color: var(--dark);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+:where(.drinking-games-page) .modal-back-button {
+background: var(--primary-green);
+}
+
+:where(.drinking-games-page) .andrey-profile-link {
+background: var(--gold);
+}
+
+:where(.drinking-games-page) .modal-back-button:hover,
+:where(.drinking-games-page) .andrey-profile-link:hover {
+background: var(--accent-red);
+}
+
+:where(.drinking-games-page) .modal-back-button:focus-visible,
+:where(.drinking-games-page) .andrey-profile-link:focus-visible {
+outline: 3px solid var(--primary-green); outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+:where(.drinking-games-page) .andrey-modal-actions {
+margin-top: 1.4rem;
+}
+
+:where(.drinking-games-page) .modal-back-button,
+:where(.drinking-games-page) .andrey-profile-link {
+width: 100%; max-width: 320px;
+}
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .scrollable-gallery {
+display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0 1.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 5px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.35);
+    margin: 1.5rem auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card {
+flex: 0 0 200px;
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    border: 0;
+    border-radius: 0;
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card img,
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card a img {
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+:where(.drinking-games-page) .gallery-card a {
+display: block;
+    width: 100%;
+    height: 100%;
+}
+
+:where(.drinking-games-page) .gallery-card a img {
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+:where(.drinking-games-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.drinking-games-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 1600px) {
+:where(.drinking-games-page) .section {
+max-width: 1440px;
+}
+
+:where(.drinking-games-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex-basis: 340px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+:where(.drinking-games-page) .section {
+padding: 2.4rem 1.4rem;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.drinking-games-page) .section {
+padding: 2.1rem 1.15rem;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex-basis: 280px;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.drinking-games-page) .section {
+padding: 1.75rem 1rem;
+            margin: 1.75rem auto;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex: 0 0 280px;
+            width: 280px;
+}
+}
+
+@media (max-width: 768px) {
+:where(.drinking-games-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.drinking-games-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.drinking-games-page) .section {
+padding: 2rem 1rem;
+            margin: 1.8rem auto;
+            width: 100%;
+}
+
+:where(.drinking-games-page) .scrollable-gallery {
+gap: 1rem;
+            padding: 1rem;
+            margin: 1.5rem auto;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex: 0 0 250px;
+}
+
+:where(.drinking-games-page) .gallery-card img {
+height: 250px;
+}
+
+:where(.drinking-games-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+:where(.drinking-games-page) .section,
+:where(.drinking-games-page) .scrollable-gallery {
+width: 100%;
+            max-width: 100%;
+}
+
+:where(.drinking-games-page) .scrollable-gallery {
+padding-left: 0.5rem;
+            padding-right: 0.5rem;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex: 0 0 clamp(220px, 75vw, 320px);
+}
+
+:where(.drinking-games-page) .gallery-card img {
+height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background: #fff;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.drinking-games-page) main p {
+font-size: 1rem;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex-basis: 250px;
+            width: 250px;
+}
+}
+
+@media (max-width: 480px) {
+:where(.drinking-games-page) .section {
+padding: 1.4rem 0.85rem;
+            margin: 1.25rem auto;
+}
+
+:where(.drinking-games-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex: 0 0 82vw;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.drinking-games-page) .section {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex-basis: 82vw;
+            width: 82vw;
+}
+}
+
+@media (max-width: 359px) {
+:where(.drinking-games-page) .section {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}
+
+:where(.drinking-games-page) .gallery-card {
+flex-basis: 88vw;
+            width: 88vw;
+}
+}
+
+@media (max-width: 1199px) {
+:where(.drinking-games-page) #your-famous .hero-gallery-block .scrollable-gallery {
+padding: 0.9rem 0 1.1rem;
+                gap: 1.25rem;
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card {
+flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card img,
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card a img {
+height: 100%;
+}
+}
+
+@media (max-width: 767px) {
+:where(.drinking-games-page) #your-famous .hero-gallery-block .scrollable-gallery {
+padding: 0.75rem 0 1rem;
+                gap: 1rem;
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card {
+flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card img,
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card a img {
+height: 100%;
+}
+}
+
+@media (max-width: 480px) {
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card {
+flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+}
+
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card img,
+:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card a img {
+height: 100%;
+}
+}
+
+.drinking-games-page #your-famous {
+box-sizing: border-box;
+    width: 100%;
+    max-width: min(100%, 1200px);
+    min-width: 0;
+    margin-inline: auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    box-shadow:
+        inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+    text-align: center;
+}
+
+.drinking-games-page #your-famous .hero-gallery-block {
+max-width: 100%;
+    margin-inline: auto;
+}
+
+.drinking-games-page #your-famous :is(h2, h3, p) > .lang-ar {
+text-align: center;
+}
+
+@media (min-width: 100rem) {
+.drinking-games-page #your-famous {
+max-width: min(100%, 1440px);
+}
+}
+
+/* Required OK shell and Meet Andrey styles. */
+body.drinking-games-page {
+--ok-parchment-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/paperbg.jpg");
+    min-height: 100vh;
+    background-color: #ddc49a;
+    background-image: var(--ok-parchment-image);
+    background-position: center top;
+    
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+}
+
+@media (min-width: 769px) {
+body.drinking-games-page {
+background-size: cover;
+        background-repeat: no-repeat;
+}
+}
+
+:where(.drinking-games-page).ok-page .ok-main {
+box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    padding: 1.5rem .75rem;
+    color: #49301e;
+}
+
+:where(.drinking-games-page).ok-page .ok-content {
+box-sizing: border-box;
+    width: 100%;
+    max-width: 52rem;
+    min-width: 0;
+    margin-inline: auto;
+    padding: clamp(1rem, 3vw, 3rem);
+    border: 1px solid #a57c49;
+    border-block: 4px double #987044;
+    border-radius: .5rem;
+    background: rgba(255, 250, 235, .86);
+    box-shadow: 0 .6rem 1.8rem rgba(81, 48, 21, .18);
+    overflow-wrap: anywhere;
+}
+
+:where(.drinking-games-page).ok-page .ok-content p {
+width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 1rem + .25vw, 1.25rem);
+    line-height: 1.85;
+    text-align: start;
+}
+
+:where(.drinking-games-page).ok-page .ok-content .lang-ar {
+font-family: var(--font-ar);
+    direction: rtl;
+    text-align: right;
+    display: block;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    letter-spacing: normal;
+}
+
+:where(.drinking-games-page).ok-page .ok-content:lang(ar) {
+direction: rtl;
+}
+
+@media (min-width: 48rem) {
+:where(.drinking-games-page).ok-page .ok-main {
+padding: 2.5rem 1.5rem;
+}
+}
+
+@media (min-width: 64rem) {
+:where(.drinking-games-page).ok-page .ok-main {
+padding: 3rem 2rem;
+}
+}
+
+@media (min-width: 90rem) {
+:where(.drinking-games-page).ok-page .ok-main {
+padding-block: 4rem;
+}
+}
+
+@media (min-width: 120rem) {
+:where(.drinking-games-page).ok-page .ok-main {
+padding-block: 5rem;
+}
+}
+
+.drinking-games-page .drinking-games-content {
+max-width: 78rem;
+}
+
+.drinking-games-page .meet-andrey {
+margin-block: clamp(1.5rem, 3vw, 2.5rem);
+    min-width: 0;
+}
+
+.drinking-games-page .meet-andrey-portrait {
+display: block;
+    width: min(100%, 28rem);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.drinking-games-page .meet-andrey h2,
+.drinking-games-page .meet-andrey h3 {
+color: #6b451f;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    overflow-wrap: anywhere;
+}
+
+.drinking-games-page .meet-andrey h2 {
+font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.drinking-games-page .meet-andrey h3 {
+font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.drinking-games-page .meet-andrey-videos {
+display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-block: 2rem;
+}
+
+.drinking-games-page .meet-andrey-video {
+display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.drinking-games-page .meet-andrey-video iframe {
+display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    margin-top: auto;
+}
+
+.drinking-games-page .andrey-modal-actions {
+flex-wrap: wrap;
+}
+
+.drinking-games-page .andrey-modal-actions > * {
+min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 48rem) {
+.drinking-games-page .meet-andrey-videos {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (min-width: 75rem) {
+.drinking-games-page .meet-andrey-videos {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+}
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .drinking-games-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Olive belongs to the main content panel; body parchment stays unchanged. */
+.drinking-games-page .drinking-games-content { background-color: #D9E2CE; }
+/* Shrink scrolling gallery canvases without changing their portrait cards. */
+.drinking-games-page :is(.ok-main, #your-famous, .hero-gallery-block, .scrollable-gallery) { min-width: 0; max-width: 100%; }
+
+/* Size cards against the nested gallery, rather than the viewport. */
+@media (max-width: 991px) {
+    .drinking-games-page #your-famous .hero-gallery-block .gallery-card {
+        flex: 0 0 min(200px, 100%);
+        width: min(200px, 100%);
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .drinking-games-page #your-famous .hero-gallery-block .gallery-card img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+        margin: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .drinking-games-page.ok-page .ok-main {
+        padding: 1.5rem .75rem;
+    }
+
+    .drinking-games-page.ok-page .ok-content {
+        padding: 1rem;
+    }
+
+    .drinking-games-page .ok-content > h2 {
+        padding-inline: 0;
+    }
+}
