@@ -1,0 +1,162 @@
+<!--
+   Author: Leslie Brockman
+   Date: 10-21-2026
+   Date modified: 10/21/2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="American Nobody999">
+  <title>Leslie's Arcade - American Nobody</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles2.css">
+  <link rel="stylesheet" href="styles/arcade.css">
+</head>
+<body class="arcade-page">
+<header class="site-header" data-global-chrome>
+      <div class="header-container">
+
+  <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
+          <div class="header-center">
+              <h1 class="site-title state-title">
+                  <span class="lang-en">State of Palestine</span>
+                  <span class="lang-ar">دولة فلسطين</span>
+              </h1>
+              <nav id="arcade-navigation" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                          <span class="lang-en">MPGA</span>
+                          <span class="lang-ar">MPGA</span>
+                  </a></li>
+                  <li><a href="about.html" class="nav-btn">
+                        <span class="lang-en">About Us</span>
+                        <span class="lang-ar">من نحن</span>
+                  </a></li>
+                </ul>
+              </nav>
+          </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                      English | العربية
+              </button>
+  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+              <button id="menu-toggle" aria-controls="arcade-navigation" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  ☰
+              </button>
+        </div>
+  </header>
+  <main class="arcade-main" aria-labelledby="arcade-title">
+    <section class="arcade-intro">
+      <h1 id="arcade-title">
+        <span class="lang-en">Leslie's Arcade</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">ألعاب ليزلي</span>
+      </h1>
+    </section>
+
+    <section class="arcade-gallery" aria-labelledby="arcade-games-title">
+      <h2 id="arcade-games-title">
+        <span class="lang-en">Arcade Games</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">الألعاب</span>
+      </h2>
+      <div class="arcade-game-grid">
+        <!-- Reusable cabinet: marquee, monitor, decorative controls, description, and launch/status. -->
+        <article class="arcade-game-card" aria-labelledby="arcade-game-01-title">
+          <h3 id="arcade-game-01-title">
+            <span class="lang-en">Flipping the World for Palestine</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">نقلب العالم من أجل فلسطين</span>
+          </h3>
+          <div class="arcade-game-media">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/flip.jpg" alt="Flipping the World for Palestine arcade game artwork" loading="lazy">
+          </div>
+          <div class="arcade-control-panel" aria-hidden="true">
+            <span class="arcade-joystick"></span>
+            <span class="arcade-control-buttons"><span></span><span></span><span></span></span>
+          </div>
+          <p>
+            <span class="lang-en">A card-guessing game that takes players on a journey around the world, exploring countries and landmarks. This game is brought to you by the Myuz Center for Psychological Support — Gaza.</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">لعبة تخمين بطاقات تأخذ اللاعبين في رحلة حول العالم لاستكشاف البلدان والمعالم. هذه اللعبة مقدّمة لكم من مركز ميوز للدعم النفسي — غزة.</span>
+          </p>
+          <a class="site-button arcade-launch" href="flip.html" aria-labelledby="arcade-game-01-play arcade-game-01-title">
+            <span id="arcade-game-01-play"><span class="lang-en">PLAY GAME</span><span class="lang-ar hidden" lang="ar" dir="rtl">العب الآن</span></span>
+          </a>
+        </article>
+
+        <article class="arcade-game-card" aria-labelledby="arcade-game-02-title">
+          <h3 id="arcade-game-02-title">
+            <span class="lang-en">Rocks</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">الصخور</span>
+          </h3>
+          <div class="arcade-game-media">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/rock.jpg" alt="Rocks arcade game artwork featuring a slingshot" loading="lazy">
+          </div>
+          <div class="arcade-control-panel" aria-hidden="true">
+            <span class="arcade-joystick"></span>
+            <span class="arcade-control-buttons"><span></span><span></span><span></span></span>
+          </div>
+          <p>
+            <span class="lang-en">Rock out with the Humanitarians!</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">انطلقوا بحماس مع أصحاب المبادرات الإنسانية!</span>
+          </p>
+          <a class="site-button arcade-launch" href="rocks.html" aria-labelledby="arcade-game-02-play arcade-game-02-title">
+            <span id="arcade-game-02-play"><span class="lang-en">PLAY GAME</span><span class="lang-ar hidden" lang="ar" dir="rtl">العب الآن</span></span>
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer" data-global-chrome>
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, a State Rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 <span class="footer-name">American Nobody</span>999 ✌️ 🇵🇸 🧭 👈</span>
+              <span class="lang-ar">&copy; 2026 <span class="footer-name">أمريكان نوبودي</span>999 ✌️ 🇵🇸 🧭 👈</span>
+            </p>
+          </div>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
