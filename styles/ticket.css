@@ -1,101 +1,823 @@
+/* 
+   Author: Leslie Brockman
+   Date: 10-17-2026
+   Date modified: 10/21/2026
+*/
+:where(body.ticket-page) h2 {
+font-family: var(--font-ar);
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+:where(body.ticket-page) .hidden {
+display: none !important;
+}
+
+:where(body.ticket-page) .lang-ar {
+direction: rtl;
+    text-align: right;
+    font-family: var(--font-ar);
+}
+
+:where(body.ticket-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(body.ticket-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(body.ticket-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(body.ticket-page) .land-convoy {
+--convoy-cream: #fff7e8;
+    --convoy-peach: #f4b38f;
+    --convoy-orange: #dc9364;
+    --convoy-green: #87b79b;
+    --convoy-aqua: #9fcfc5;
+    --convoy-red: #c94f4f;
+    --convoy-ink: #34302d;
+    
+    --convoy-font-display: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    --convoy-font-body: "Helvetica Neue", Arial, sans-serif;
+    font-family: var(--convoy-font-body);
+    font-weight: 400;
+    position: relative;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    border-block: 3px solid var(--convoy-orange);
+    background: var(--convoy-cream);
+    color: var(--convoy-ink);
+    line-height: 1.6;
+}
+
+:where(body.ticket-page) .land-convoy *,
+:where(body.ticket-page) .land-convoy *::before,
+:where(body.ticket-page) .land-convoy *::after {
+box-sizing: border-box;
+}
+
+:where(body.ticket-page) .land-convoy h2,
+:where(body.ticket-page) .land-convoy h3,
+:where(body.ticket-page) .land-convoy p {
+margin-top: 0; color: inherit;
+}
+
+:where(body.ticket-page) .land-convoy h2,
+:where(body.ticket-page) .land-convoy h3 {
+font-family: var(--convoy-font-display); font-weight: 900; line-height: 1.1; letter-spacing: -0.025em; overflow-wrap: anywhere;
+}
+
+:where(body.ticket-page) .land-convoy h2 {
+font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+:where(body.ticket-page) .land-convoy button {
+font-family: var(--convoy-font-body);
+}
+
+:where(body.ticket-page) .land-convoy .land-convoy-modal-dialog h3 {
+font-family: var(--convoy-font-body); font-weight: 700; line-height: 1.2;
+}
+
+:where(body.ticket-page) .land-convoy-modal-fields ul {
+margin: 0; padding-left: 1.25rem;
+}
+
+:where(body.ticket-page) .land-convoy-modal-fields li + li {
+margin-top: 0.5rem;
+}
+
+:where(body.ticket-page) .land-convoy-modal-fields [hidden] {
+display: none;
+}
+
+:where(body.ticket-page) .land-convoy [data-land-convoy-modal-date] {
+font-weight: 700;
+}
+
+:where(body.ticket-page) .land-convoy h3 {
+font-size: clamp(1.25rem, 2vw, 1.65rem);
+}
+
+:where(body.ticket-page) .land-convoy a {
+color: #365b49; text-decoration: underline; overflow-wrap: anywhere;
+}
+
+:where(body.ticket-page) .land-convoy :focus-visible {
+outline: 3px solid var(--convoy-ink); outline-offset: 4px;
+}
+
+:where(body.ticket-page) .land-convoy-intro-copy,
+:where(body.ticket-page) .land-convoy-journey-heading {
+display: flex; align-items: center; gap: 2rem;
+}
+
+:where(body.ticket-page) .land-convoy-intro-copy > div:last-child,
+:where(body.ticket-page) .land-convoy-journey-heading > div {
+flex: 1; min-width: 0;
+}
+
+:where(body.ticket-page) .land-convoy-mission-figure {
+flex: 0 0 230px; margin: 0; padding: 0.75rem; background: #fffdf7; border: 1px solid var(--convoy-orange); box-shadow: 4px 5px 0 var(--convoy-peach);
+}
+
+:where(body.ticket-page) .land-convoy-image-placeholder {
+display: grid; place-content: center; min-height: 170px; padding: 1rem; background: var(--convoy-aqua); border: 1px dashed var(--convoy-ink); text-align: center;
+}
+
+:where(body.ticket-page) .land-convoy-mission-figure img,
+:where(body.ticket-page) .land-convoy-modal-flyer img {
+display: block; max-width: 100%; height: auto;
+}
+
+:where(body.ticket-page) .land-convoy-mission-figure figcaption {
+margin-top: 0.65rem; font-size: 0.8rem;
+}
+
+:where(body.ticket-page) .land-convoy .land-convoy-eyebrow {
+margin-bottom: 0.35rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+:where(body.ticket-page) .land-convoy-attribution {
+font-size: 0.85rem;
+}
+
+:where(body.ticket-page) .land-convoy-official-link,
+:where(body.ticket-page) .land-convoy-official-pending {
+display: inline-block; padding: 0.7rem 1rem; background: var(--convoy-green); border: 1px solid var(--convoy-ink); border-radius: 5px; font-weight: 700;
+}
+
+:where(body.ticket-page) .land-convoy a.land-convoy-official-link {
+color: var(--convoy-ink);
+}
+
+:where(body.ticket-page) .land-convoy-official-link:hover {
+background: var(--convoy-aqua);
+}
+
+:where(body.ticket-page) .land-convoy-details {
+display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 1.5rem;
+}
+
+:where(body.ticket-page) .land-convoy-details > p {
+margin-bottom: 0;
+}
+
+:where(body.ticket-page) .land-convoy-disclaimer {
+margin: 1.25rem 0 0; padding-top: 1rem; border-top: 1px solid var(--convoy-orange); font-size: 0.9rem;
+}
+
+:where(body.ticket-page) .land-convoy-journey {
+margin-top: 2rem;
+}
+
+:where(body.ticket-page) .land-convoy-journey-heading {
+align-items: flex-start;
+}
+
+:where(body.ticket-page) .land-convoy-journey-heading > p {
+max-width: 420px; font-size: 0.9rem;
+}
+
+:where(body.ticket-page) .land-convoy-route-note {
+font-size: 0.85rem;
+}
+
+:where(body.ticket-page) .land-convoy-route-scroll {
+max-width: 100%; overflow-x: auto; border: 1px solid var(--convoy-orange); border-radius: 12px;
+}
+
+:where(body.ticket-page) .land-convoy-route {
+position: relative;
+    min-width: 1080px;
+    height: 590px;
+    background: radial-gradient(ellipse at 8% 50%, #9fcfc566, transparent 45%), radial-gradient(ellipse at 85% 20%, #87b79b44, transparent 40%), repeating-linear-gradient(0deg, transparent 0 39px, #34302d09 39px 40px), repeating-linear-gradient(90deg, transparent 0 39px, #34302d09 39px 40px), var(--convoy-cream);
+}
+
+:where(body.ticket-page) .land-convoy-route-line {
+position: absolute; inset: 0; width: 100%; height: 560px; overflow: visible;
+}
+
+:where(body.ticket-page) .land-convoy-route-line polyline {
+fill: none; stroke: #8b5838; stroke-width: 3; stroke-dasharray: 6 8; stroke-linejoin: round; stroke-linecap: round;
+}
+
+:where(body.ticket-page) .land-convoy-stop {
+position: absolute; left: var(--stop-x); top: calc(var(--stop-y) - 29px); transform: translateX(-50%); z-index: 1; display: grid; justify-items: center; gap: 0.15rem; width: 160px; text-align: center;
+}
+
+:where(body.ticket-page) .land-convoy-star {
+display: grid; place-items: center; width: 58px; height: 58px; padding: 0; border: 2px solid #8b5838; border-radius: 50%; background: var(--convoy-cream); color: #8b5838; cursor: pointer; font-size: 2.7rem; line-height: 1; transition: transform 0.2s ease;
+}
+
+:where(body.ticket-page) .land-convoy-star:hover {
+background: var(--convoy-peach); transform: scale(1.08);
+}
+
+:where(body.ticket-page) .land-convoy-star[data-status="current"] {
+color: #922f2f; border: 4px double #922f2f; background: #f8d8cf;
+}
+
+:where(body.ticket-page) .land-convoy-star[data-status="completed"] {
+color: #254d38; border-color: #254d38; background: var(--convoy-green);
+}
+
+:where(body.ticket-page) .land-convoy-stop-label {
+padding: 0 0.2rem; background: var(--convoy-cream); font-size: 0.9rem; line-height: 1.4; font-weight: 700;
+}
+
+:where(body.ticket-page) .land-convoy-marker {
+position: absolute; top: var(--marker-y); left: var(--marker-x); transform: translateX(-50%); z-index: 2; display: grid; padding: 0.5rem 0.8rem; border: 2px dashed #8b5838; border-radius: 6px; background: var(--convoy-peach); font-size: 0.85rem; text-align: center;
+}
+
+:where(body.ticket-page) .land-convoy-marker small {
+font-size: 0.75rem;
+}
+
+:where(body.ticket-page) .land-convoy-modal[hidden] {
+display: none;
+}
+
+:where(body.ticket-page) .land-convoy-modal {
+position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 1rem; background: #34302dbb;
+}
+
+:where(body.ticket-page) .land-convoy-modal-dialog {
+position: relative; width: min(100%, 600px); max-height: 90dvh; overflow-y: auto; overscroll-behavior: contain; padding: clamp(1.25rem, 4vw, 2rem); border: 2px solid var(--convoy-orange); border-radius: 12px; background: var(--convoy-cream); color: var(--convoy-ink);
+}
+
+:where(body.ticket-page) .land-convoy-modal-dialog h3 {
+padding-right: 2rem;
+}
+
+:where(body.ticket-page) .land-convoy-modal-close {
+position: absolute; top: 0.6rem; right: 0.6rem; width: 44px; height: 44px; border: 1px solid var(--convoy-ink); border-radius: 50%; background: var(--convoy-peach); color: var(--convoy-ink); cursor: pointer; font-size: 1.5rem; line-height: 1;
+}
+
+:where(body.ticket-page) .land-convoy-modal-close:hover {
+background: var(--convoy-orange);
+}
+
+:where(body.ticket-page) .land-convoy-modal-fields {
+display: grid; gap: 0.75rem; margin: 1.25rem 0;
+}
+
+:where(body.ticket-page) .land-convoy-modal-fields div {
+padding-bottom: 0.65rem; border-bottom: 1px solid #34302d33;
+}
+
+:where(body.ticket-page) .land-convoy-modal-fields dt,
+:where(body.ticket-page) .land-convoy-modal-sources strong {
+font-weight: 800;
+}
+
+:where(body.ticket-page) .land-convoy-modal-fields dd {
+margin: 0.2rem 0 0; overflow-wrap: anywhere;
+}
+
+:where(body.ticket-page) .land-convoy-modal-sources {
+display: grid; gap: 0.4rem;
+}
+
+@media (max-width: 700px) {
+:where(body.ticket-page) .land-convoy-intro-copy,
+:where(body.ticket-page) .land-convoy-journey-heading,
+:where(body.ticket-page) .land-convoy-details {
+align-items: stretch; flex-direction: column; gap: 1rem;
+}
+
+:where(body.ticket-page) .land-convoy-mission-figure {
+flex-basis: auto; max-width: 320px;
+}
+
+:where(body.ticket-page) .land-convoy-route {
+min-width: 0; height: auto; padding: 1.5rem 1rem; display: grid; gap: 1.5rem;
+}
+
+:where(body.ticket-page) .land-convoy-route-line {
+display: none;
+}
+
+:where(body.ticket-page) .land-convoy-route::before {
+content: ''; position: absolute; top: 2rem; bottom: 6rem; left: 46px; border-left: 3px dashed #8b5838;
+}
+
+:where(body.ticket-page) .land-convoy-stop {
+position: relative; left: auto; top: auto; transform: none; width: 100%; grid-template-columns: 60px minmax(0, 1fr); column-gap: 0.8rem; justify-items: start; text-align: left;
+}
+
+:where(body.ticket-page) .land-convoy-star {
+grid-row: 1 / 3;
+}
+
+:where(body.ticket-page) .land-convoy-stop-label {
+align-self: end;
+}
+
+:where(body.ticket-page) .land-convoy-marker {
+position: relative; top: auto; left: auto; transform: none; justify-self: center; max-width: 100%;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+:where(body.ticket-page) .land-convoy-star {
+transition: none;
+}
+}
+
+:where(body.ticket-page) :where(main).ticket-page {
+width: min(100%, 1200px);
+    margin: 0 auto;
+    align-items: stretch;
+    text-align: initial;
+}
+
+:where(body.ticket-page) .ticket-top {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+:where(body.ticket-page) .ticket-top h2 {
+text-align: center;
+}
+
+:where(body.ticket-page) .ticket-copy-block {
+width: min(100%, 860px);
+    margin: 0 auto 1rem;
+    text-align: center;
+}
+
+:where(body.ticket-page) .ticket-copy-block p {
+width: min(100%, 760px);
+    margin: 0.35rem auto 0;
+    text-align: center !important;
+}
+
+:where(body.ticket-page) .ticket-copy-block p .lang-en,
+:where(body.ticket-page) .ticket-copy-block p .lang-ar {
+display: block;
+    width: 100%;
+    text-align: center !important;
+}
+
+:where(body.ticket-page) :where(main).ticket-page h1,
+:where(body.ticket-page) :where(main).ticket-page h2,
+:where(body.ticket-page) :where(main).ticket-page h3,
+:where(body.ticket-page) :where(main).ticket-page h4,
+:where(body.ticket-page) :where(main).ticket-page h5,
+:where(body.ticket-page) :where(main).ticket-page h6,
+:where(body.ticket-page) :where(main).ticket-page p {
+text-align: center;
+}
+
+:where(body.ticket-page) :where(main).ticket-page p .lang-en,
+:where(body.ticket-page) :where(main).ticket-page p .lang-ar {
+display: inline-block;
+    width: 100%;
+    text-align: center !important;
+}
+
+:where(body.ticket-page) :where(main).ticket-page p {
+text-align: center !important;
+}
+
+:where(body.ticket-page) .ticket-top-link {
+display: block;
+    width: min(100%, 980px);
+}
+
+:where(body.ticket-page) .ticket-top-image {
+width: 100%;
+    max-width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll {
+display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 1.25rem;
+    border: 5px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.55);
+    margin: 1.25rem auto;
+    max-width: 1200px;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll figure {
+flex: 0 0 360px;
+    margin: 0;
+    border: 0;
+    border-radius: 12px;
+    overflow: visible;
+    background: #fff;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll img {
+width: 100%;
+    height: 360px;
+    object-fit: contain;
+    margin: 0;
+    border: 0;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll figcaption {
+padding: 0.7rem 0.8rem;
+    text-align: center;
+}
+
+:where(body.ticket-page) :where(main).ticket-page .ticket-video-wrap {
+width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto 0;
+}
+
+:where(body.ticket-page) :where(main).ticket-page .ticket-video-wrap iframe {
+width: min(100%, 840px);
+    max-width: 840px;
+    height: 472px;
+    border: 0;
+    display: block;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll::-webkit-scrollbar {
+height: 10px;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll::-webkit-scrollbar-thumb {
+background: var(--primary-green);
+    border-radius: 10px;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll::-webkit-scrollbar-track {
+background: transparent;
+}
+
+:where(body.ticket-page) .ticket-middle {
+display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
+
+:where(body.ticket-page) .ticket-col-land,
+:where(body.ticket-page) .ticket-col-gsf {
+min-width: 0;
+}
+
+@media (min-width: 1200px) {
+:where(body.ticket-page) :where(main).ticket-page {
+width: min(100%, 1240px);
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll figure {
+flex: 0 0 360px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(body.ticket-page) :where(main).ticket-page {
+width: min(100%, 1040px);
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+}
+
+:where(body.ticket-page) .ticket-middle {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+:where(body.ticket-page) .ticket-col-gsf {
+grid-column: 1 / -1;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll figure {
+flex: 0 0 320px;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll img {
+height: 320px;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(body.ticket-page) :where(main).ticket-page {
+width: min(100%, 900px);
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+}
+
+:where(body.ticket-page) .ticket-middle {
+grid-template-columns: 1fr;
+        gap: 1.25rem;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll {
+gap: 1rem;
+        padding: 1rem;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll figure {
+flex: 0 0 290px;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll img {
+height: 290px;
+}
+
+:where(body.ticket-page) :where(main).ticket-page .ticket-video-wrap iframe {
+width: min(100%, 760px);
+        height: clamp(320px, 52vw, 430px);
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(body.ticket-page) :where(main).ticket-page {
+width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+}
+
+:where(body.ticket-page) .ticket-top h2 {
+font-size: 1.6rem;
+        line-height: 1.2;
+        word-break: break-word;
+}
+
+:where(body.ticket-page) .ticket-middle {
+grid-template-columns: 1fr;
+        gap: 1rem;
+}
+
+:where(body.ticket-page) .ticket-copy-block {
+width: 100%;
+}
+
+:where(body.ticket-page) .ticket-copy-block p {
+width: 100%;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll {
+gap: 0.85rem;
+        padding: 0.85rem;
+        border-width: 3px;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll figure {
+flex: 0 0 min(82vw, 300px);
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll img {
+height: 250px;
+}
+
+:where(body.ticket-page) :where(main).ticket-page .ticket-video-wrap iframe {
+width: 100%;
+        max-width: 100%;
+        height: clamp(230px, 56vw, 360px);
+}
+}
+
+@media (max-width: 575px) {
+:where(body.ticket-page) :where(main).ticket-page {
+width: 100%;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+}
+
+:where(body.ticket-page) .ticket-top {
+gap: 0.75rem;
+        margin-bottom: 1rem;
+}
+
+:where(body.ticket-page) .ticket-top h2 {
+font-size: 1.35rem;
+        line-height: 1.2;
+        word-break: break-word;
+        margin: 0;
+}
+
+:where(body.ticket-page) .ticket-middle {
+grid-template-columns: 1fr;
+        gap: 0.9rem;
+}
+
+:where(body.ticket-page) :where(main).ticket-page h2,
+:where(body.ticket-page) :where(main).ticket-page h3 {
+font-size: 1.15rem;
+}
+
+:where(body.ticket-page) :where(main).ticket-page p {
+font-size: 0.96rem;
+        line-height: 1.45;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll {
+gap: 0.75rem;
+        padding: 0.75rem;
+        margin: 1rem auto;
+        border-width: 3px;
+        border-radius: 10px;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll figure {
+flex: 0 0 min(86vw, 280px);
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll img {
+height: 220px;
+}
+
+:where(body.ticket-page) .ticket-gallery-scroll figcaption {
+padding: 0.55rem 0.6rem;
+        font-size: 0.95rem;
+}
+
+:where(body.ticket-page) :where(main).ticket-page .ticket-video-wrap {
+margin-top: 0.75rem;
+}
+
+:where(body.ticket-page) :where(main).ticket-page .ticket-video-wrap iframe {
+width: 100%;
+        max-width: 100%;
+        height: clamp(200px, 58vw, 290px);
+}
+}
+
+:where(body.ticket-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(body.ticket-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 1600px) {
+:where(body.ticket-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+}
+
+@media (max-width: 768px) {
+:where(body.ticket-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(body.ticket-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(body.ticket-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(body.ticket-page) main p {
+font-size: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+:where(body.ticket-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+}
+
 /* Ticket content stays in normal flow; header styles remain global. */
-.ticket-page {
+:where(main).ticket-page {
     position: relative;
     min-width: 0;
     max-width: 100%;
     box-sizing: border-box;
 }
 
-.ticket-page > *,
-.ticket-page .ticket-feature,
-.ticket-page .ticket-feature-discussion,
-.ticket-page .ticket-col-land,
-.ticket-page .land-convoy,
-.ticket-page .land-convoy-intro,
-.ticket-page .land-convoy-details,
-.ticket-page .land-convoy-journey {
+:where(main).ticket-page > *,
+:where(main).ticket-page .ticket-feature,
+:where(main).ticket-page .ticket-feature-discussion,
+:where(main).ticket-page .ticket-col-land,
+:where(main).ticket-page .land-convoy,
+:where(main).ticket-page .land-convoy-intro,
+:where(main).ticket-page .land-convoy-details,
+:where(main).ticket-page .land-convoy-journey {
     min-width: 0;
     max-width: 100%;
     box-sizing: border-box;
 }
 
-.ticket-page .ticket-feature,
-.ticket-page .ticket-col-land,
-.ticket-page .land-convoy-intro,
-.ticket-page .land-convoy-details,
-.ticket-page .land-convoy-journey {
+:where(main).ticket-page .ticket-feature,
+:where(main).ticket-page .ticket-col-land,
+:where(main).ticket-page .land-convoy-intro,
+:where(main).ticket-page .land-convoy-details,
+:where(main).ticket-page .land-convoy-journey {
     width: 100%;
 }
 
-.ticket-page .ticket-feature-discussion,
-.ticket-page figcaption,
-.ticket-page .land-convoy-intro,
-.ticket-page .land-convoy-journey-heading,
-.ticket-page .land-convoy-route-note,
-.ticket-page .land-convoy-modal-dialog {
+:where(main).ticket-page .ticket-feature-discussion,
+:where(main).ticket-page figcaption,
+:where(main).ticket-page .land-convoy-intro,
+:where(main).ticket-page .land-convoy-journey-heading,
+:where(main).ticket-page .land-convoy-route-note,
+:where(main).ticket-page .land-convoy-modal-dialog {
     overflow-wrap: anywhere;
 }
 
-.ticket-page .ticket-gallery-scroll {
+:where(main).ticket-page .ticket-gallery-scroll {
     width: 100%;
     min-width: 0;
     max-width: min(100%, 1200px);
 }
 
 /* Center the independent Land Convoy without changing its route layout. */
-.ticket-page .ticket-col-land > .land-convoy {
+:where(main).ticket-page .ticket-col-land > .land-convoy {
     box-sizing: border-box;
     max-width: 1160px;
     margin-inline: auto;
 }
 
-.ticket-page .land-convoy .land-convoy-intro-copy {
+:where(main).ticket-page .land-convoy .land-convoy-intro-copy {
     max-width: 960px;
     margin-inline: auto;
     justify-content: center;
     text-align: center;
 }
 
-.ticket-page .land-convoy .land-convoy-intro-copy > div:last-child {
+:where(main).ticket-page .land-convoy .land-convoy-intro-copy > div:last-child {
     max-width: 65ch;
 }
 
-.ticket-page .land-convoy .land-convoy-intro-copy p {
+:where(main).ticket-page .land-convoy .land-convoy-intro-copy p {
     max-width: 65ch;
     margin-inline: auto;
 }
 
-.ticket-page .land-convoy .land-convoy-details {
+:where(main).ticket-page .land-convoy .land-convoy-details {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.ticket-page .land-convoy .land-convoy-countdown {
-    max-width: 380px;
-    margin-inline: auto;
-}
-
-.ticket-page .land-convoy .land-convoy-disclaimer,
-.ticket-page .land-convoy .land-convoy-route-note {
+:where(main).ticket-page .land-convoy .land-convoy-disclaimer,
+:where(main).ticket-page .land-convoy .land-convoy-route-note {
     max-width: 75ch;
     margin-inline: auto;
     text-align: center;
 }
 
-.ticket-page .land-convoy .land-convoy-journey-heading {
+:where(main).ticket-page .land-convoy .land-convoy-journey-heading {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
     text-align: center;
 }
 
-.ticket-page .land-convoy .land-convoy-journey-heading > p {
+:where(main).ticket-page .land-convoy .land-convoy-journey-heading > p {
     max-width: 65ch;
 }
 
-.ticket-page .land-convoy .land-convoy-route-scroll {
+:where(main).ticket-page .land-convoy .land-convoy-route-scroll {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -106,7 +828,7 @@
     margin-inline: auto;
 }
 
-.ticket-page .land-convoy .land-convoy-mission-figure > img {
+:where(main).ticket-page .land-convoy .land-convoy-mission-figure > img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -115,7 +837,7 @@
 }
 
 /* Only this inner canvas is wide; every route coordinate stays unchanged. */
-.ticket-page .land-convoy .land-convoy-route {
+:where(main).ticket-page .land-convoy .land-convoy-route {
     position: relative;
     display: block;
     width: 1080px;
@@ -125,16 +847,16 @@
     padding: 0;
 }
 
-.ticket-page .land-convoy .land-convoy-route::before {
+:where(main).ticket-page .land-convoy .land-convoy-route::before {
     content: none;
 }
 
-.ticket-page .land-convoy .land-convoy-route-line {
+:where(main).ticket-page .land-convoy .land-convoy-route-line {
     display: block;
     fill: none;
 }
 
-.ticket-page .land-convoy .land-convoy-route-line polyline {
+:where(main).ticket-page .land-convoy .land-convoy-route-line polyline {
     fill: none;
     stroke: #8b5838;
     stroke-width: 3;
@@ -143,7 +865,7 @@
     stroke-linecap: round;
 }
 
-.ticket-page .land-convoy .land-convoy-stop {
+:where(main).ticket-page .land-convoy .land-convoy-stop {
     position: absolute;
     left: var(--stop-x);
     top: calc(var(--stop-y) - 29px);
@@ -155,16 +877,15 @@
     text-align: center;
 }
 
-.ticket-page .land-convoy .land-convoy-star {
+:where(main).ticket-page .land-convoy .land-convoy-star {
     grid-row: auto;
 }
 
-.ticket-page .land-convoy .land-convoy-stop-label,
-.ticket-page .land-convoy .land-convoy-stop-status {
+:where(main).ticket-page .land-convoy .land-convoy-stop-label {
     align-self: auto;
 }
 
-.ticket-page .land-convoy .land-convoy-marker {
+:where(main).ticket-page .land-convoy .land-convoy-marker {
     position: absolute;
     left: var(--marker-x);
     top: var(--marker-y);
@@ -180,7 +901,7 @@
     pointer-events: none;
 }
 
-.ticket-page .land-convoy .land-convoy-marker > img {
+:where(main).ticket-page .land-convoy .land-convoy-marker > img {
     display: block;
     width: auto;
     max-width: 100%;
@@ -194,7 +915,7 @@
     border-radius: 0;
 }
 
-.ticket-page .land-convoy .convoy-website-link {
+:where(main).ticket-page .land-convoy .convoy-website-link {
     color: inherit;
     font: inherit;
     text-decoration: underline;
@@ -204,16 +925,16 @@
     transition: text-decoration-color 0.2s ease;
 }
 
-.ticket-page .land-convoy .convoy-website-link:hover {
+:where(main).ticket-page .land-convoy .convoy-website-link:hover {
     text-decoration-color: #b85c75;
 }
 
-.ticket-page .land-convoy .convoy-website-link:focus-visible {
+:where(main).ticket-page .land-convoy .convoy-website-link:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 3px;
 }
 
-.ticket-page .land-convoy .land-convoy-instagram-link {
+:where(main).ticket-page .land-convoy .land-convoy-instagram-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -230,23 +951,23 @@
     text-decoration: none;
 }
 
-.ticket-page .land-convoy .land-convoy-instagram-link:hover {
+:where(main).ticket-page .land-convoy .land-convoy-instagram-link:hover {
     background: var(--convoy-green);
 }
 
-.ticket-page .land-convoy .land-convoy-instagram-link:focus-visible {
+:where(main).ticket-page .land-convoy .land-convoy-instagram-link:focus-visible {
     outline: 3px solid var(--convoy-ink);
     outline-offset: 4px;
 }
 
 /* Ticket page feature: scoped here so other pages remain unchanged. Its a beast, the css is the monster under my bed right now. */
-.ticket-page .ticket-feature,
-.ticket-page .ticket-secondary {
+:where(main).ticket-page .ticket-feature,
+:where(main).ticket-page .ticket-secondary {
     margin: 2rem auto;
     padding: clamp(1rem, 3vw, 2rem);
 }
 
-.ticket-page .ticket-feature {
+:where(main).ticket-page .ticket-feature {
     border-radius: var(--panel-radius);
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
@@ -256,38 +977,60 @@
     background-repeat: no-repeat;
 }
 
-.ticket-page .ticket-feature-intro,
-.ticket-page .ticket-secondary-intro {
+:where(main).ticket-page .ticket-feature-intro,
+:where(main).ticket-page .ticket-secondary-intro {
     max-width: 760px;
     margin: 0 auto 1.5rem;
 }
 
-.ticket-page .ticket-feature-intro {
+:where(main).ticket-page .ticket-feature-intro {
     padding: 1rem;
     border-radius: var(--panel-radius);
     background: rgba(255, 255, 255, 0.86);
 }
 
-.ticket-page .ticket-feature h2,
-.ticket-page .ticket-secondary h2,
-.ticket-page .ticket-secondary h3 {
+:where(main).ticket-page .ticket-feature h2,
+:where(main).ticket-page .ticket-secondary h2,
+:where(main).ticket-page .ticket-secondary h3 {
     margin: 0 0 0.75rem;
 }
 
-.ticket-page .ticket-feature p,
-.ticket-page .ticket-secondary p {
+:where(main).ticket-page .ticket-feature p,
+:where(main).ticket-page .ticket-secondary p {
     margin: 0;
 }
 
-.ticket-page .ticket-feature-discussion {
+:where(main).ticket-page .ticket-feature-discussion {
     margin-bottom: 1.5rem;
     padding: clamp(1rem, 3vw, 1.5rem);
     border: 2px solid #000;
     box-shadow: 0 0 12px 3px rgba(212, 175, 55, 0.65);
     text-align: center;
+    background-color: #183b32;
+    background-image:
+        radial-gradient(ellipse at 20% 15%, rgba(242, 240, 230, 0.045), transparent 65%),
+        repeating-linear-gradient(173deg, rgba(242, 240, 230, 0.012) 0 1px, transparent 1px 5px),
+        linear-gradient(135deg, #1c4037, #183b32 55%, #15352e);
+    color: #f2f0e6;
+    line-height: 1.7;
+    text-shadow: 0 0 0.5px rgba(242, 240, 230, 0.25);
+    overflow-wrap: anywhere;
 }
 
-.ticket-page .ticket-feature-live-stream {
+:where(main).ticket-page .ticket-feature-discussion :is(h2, h3, p, .lang-en, .lang-ar) {
+    color: inherit;
+}
+
+:where(main).ticket-page .ticket-feature-discussion a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+:where(main).ticket-page .ticket-feature-discussion :is(h2, h3) {
+    text-shadow: 0 0 0.75px rgba(242, 240, 230, 0.4);
+}
+
+:where(main).ticket-page .ticket-feature-live-stream {
     position: relative;
     width: 100%;
     max-width: 840px;
@@ -295,13 +1038,13 @@
     overflow: hidden;
 }
 
-.ticket-page .ticket-feature-live-stream iframe {
+:where(main).ticket-page .ticket-feature-live-stream iframe {
     width: 100%;
     max-width: 100%;
     height: 100%;
 }
 
-.ticket-page .ticket-feature-live-overlay {
+:where(main).ticket-page .ticket-feature-live-overlay {
     position: absolute;
     inset: 0;
     display: flex;
@@ -316,24 +1059,24 @@
     pointer-events: none;
 }
 
-.ticket-page .ticket-feature-intro-caption {
+:where(main).ticket-page .ticket-feature-intro-caption {
     margin-top: 0.75rem;
 }
 
-.ticket-page .ticket-feature-intro-caption p {
+:where(main).ticket-page .ticket-feature-intro-caption p {
     font-size: 0.9rem;
     line-height: 1.6;
 }
 
-.ticket-page .ticket-feature-video-grid {
+:where(main).ticket-page .ticket-feature-video-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
     margin: 0 auto 2rem;
 }
 
-.ticket-page .ticket-feature-video-card,
-.ticket-page .ticket-secondary-card {
+:where(main).ticket-page .ticket-feature-video-card,
+:where(main).ticket-page .ticket-secondary-card {
     min-width: 0;
     margin: 0;
     overflow: hidden;
@@ -343,14 +1086,14 @@
     box-shadow: var(--panel-shadow);
 }
 
-.ticket-page .ticket-feature-video-frame {
+:where(main).ticket-page .ticket-feature-video-frame {
     aspect-ratio: 16 / 9;
     width: 100%;
     overflow: hidden;
     background: var(--dark);
 }
 
-.ticket-page .ticket-feature-video-frame iframe {
+:where(main).ticket-page .ticket-feature-video-frame iframe {
     display: block;
     width: 100%;
     height: 100%;
@@ -358,85 +1101,36 @@
 }
 
 @supports not (aspect-ratio: 16 / 9) {
-    .ticket-page .ticket-feature-live-stream,
-    .ticket-page .ticket-feature-video-frame {
+    :where(main).ticket-page .ticket-feature-live-stream,
+    :where(main).ticket-page .ticket-feature-video-frame {
         position: relative;
         height: 0;
         padding-bottom: 56.25%;
     }
 
-    .ticket-page .ticket-feature-live-stream iframe,
-    .ticket-page .ticket-feature-video-frame iframe {
+    :where(main).ticket-page .ticket-feature-live-stream iframe,
+    :where(main).ticket-page .ticket-feature-video-frame iframe {
         position: absolute;
         top: 0;
         left: 0;
     }
 }
 
-.ticket-page .ticket-feature-video-card figcaption,
-.ticket-page .ticket-secondary-card figcaption {
+:where(main).ticket-page .ticket-feature-video-card figcaption,
+:where(main).ticket-page .ticket-secondary-card figcaption {
     padding: 0.8rem 1rem;
     text-align: center;
 }
 
-.ticket-page .ticket-feature-socials {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 0 auto 1.25rem;
-    padding: 0;
-}
 
-.ticket-page .ticket-feature-social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    min-height: 42px;
-    flex: 0 0 42px;
-    aspect-ratio: 1 / 1;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border-radius: 50%;
-    background: #e9f5ed;
-    text-decoration: none;
-    transition: background 0.2s ease, color 0.2s ease;
-}
 
-.ticket-page .ticket-feature-social-link img {
-    display: block;
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    min-height: 42px;
-    max-width: none;
-    max-height: none;
-    aspect-ratio: 1 / 1;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    clip-path: circle(50% at 50% 50%);
-    object-fit: cover;
-    object-position: center;
-}
 
-.ticket-page .ticket-feature-social-link:hover,
-.ticket-page .ticket-feature-social-link:focus-visible {
-    background: var(--primary-green);
-    color: var(--light);
-}
 
-.ticket-page .ticket-feature-action {
+:where(main).ticket-page .ticket-feature-action {
     text-align: center;
 }
 
-.ticket-page .ticket-feature-learn-more {
+:where(main).ticket-page .ticket-feature-learn-more {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -448,26 +1142,26 @@
     text-decoration: none;
 }
 
-.ticket-page .ticket-feature-learn-more:hover,
-.ticket-page .ticket-feature-learn-more:focus-visible {
+:where(main).ticket-page .ticket-feature-learn-more:hover,
+:where(main).ticket-page .ticket-feature-learn-more:focus-visible {
     background: var(--accent-red);
     color: var(--light);
 }
 
-.ticket-page .ticket-secondary-gallery {
+:where(main).ticket-page .ticket-secondary-gallery {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
-.ticket-page .ticket-secondary-image {
+:where(main).ticket-page .ticket-secondary-image {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
-.ticket-page .land-convoy #dancing-eagle {
+:where(main).ticket-page .land-convoy #dancing-eagle {
     animation: ticket-eagle-dance 1.2s ease-in-out infinite;
 }
 
@@ -479,85 +1173,83 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .ticket-page .land-convoy #dancing-eagle {
+    :where(main).ticket-page .land-convoy #dancing-eagle {
 animation: none;
     }
 }
 
 /* Tablet: use the site's existing 769–991px range. */
 @media (max-width: 991px) {
-    .ticket-page .ticket-video-wrap:not(.ticket-feature-live-stream) iframe {
+    :where(main).ticket-page .ticket-video-wrap:not(.ticket-feature-live-stream) iframe {
         height: auto;
         aspect-ratio: 16 / 9;
     }
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
-    .ticket-page .ticket-feature-video-grid,
-    .ticket-page .ticket-secondary-gallery {
+    :where(main).ticket-page .ticket-feature-video-grid,
+    :where(main).ticket-page .ticket-secondary-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 /* Mobile: one-column content; the map retains its own scroll viewport. */
 @media (max-width: 768px) {
-    .ticket-page .ticket-feature-video-grid,
-    .ticket-page .ticket-secondary-gallery {
+    :where(main).ticket-page .ticket-feature-video-grid,
+    :where(main).ticket-page .ticket-secondary-gallery {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
 
-    .ticket-page .land-convoy .land-convoy-intro-copy {
+    :where(main).ticket-page .land-convoy .land-convoy-intro-copy {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
-    .ticket-page .land-convoy .land-convoy-mission-figure {
+    :where(main).ticket-page .land-convoy .land-convoy-mission-figure {
         flex-basis: auto;
         width: min(100%, 320px);
         margin-inline: auto;
     }
 
-    .ticket-page .land-convoy .land-convoy-intro-copy > div:last-child {
+    :where(main).ticket-page .land-convoy .land-convoy-intro-copy > div:last-child {
         width: 100%;
     }
 
-    .ticket-page .ticket-feature-social-link {
-        width: 44px;
-        height: 44px;
-        min-width: 44px;
-        min-height: 44px;
-        flex-basis: 44px;
-    }
 
-    .ticket-page .ticket-feature-learn-more {
+    :where(main).ticket-page .ticket-feature-learn-more {
         min-height: 44px;
     }
 
-    .ticket-page .land-convoy .land-convoy-modal-dialog {
+    :where(main).ticket-page .land-convoy .land-convoy-modal-dialog {
         max-width: 100%;
         max-height: calc(100vh - 2rem);
         max-height: calc(100dvh - 2rem);
     }
 }
 
-/* Small mobile: preserve room for bilingual text and countdown digits. */
+/* Small mobile: preserve room for bilingual text. */
 @media (max-width: 575px) {
-    .ticket-page .ticket-feature-intro {
+    :where(main).ticket-page .ticket-feature-intro {
         padding: 0.75rem;
     }
 
-    .ticket-page .ticket-feature-discussion {
+    :where(main).ticket-page .ticket-feature-discussion {
         padding: 0.75rem;
     }
 
-    .ticket-page .land-convoy .land-convoy-countdown {
-        width: 100%;
-        padding: 0.75rem;
-    }
 
-    .ticket-page .land-convoy .land-convoy-countdown-grid {
-        gap: 0.25rem;
+}
+
+
+/* Ticket body only; feature backgrounds remain unchanged. */
+body.ticket-page { background: #D9E2CE; }
+
+/* Keep the mobile control above the positioned title in their shared grid row. */
+@media (max-width: 768px) {
+    body.ticket-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
     }
 }
