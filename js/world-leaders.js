@@ -1,9 +1,41 @@
-//10-02-2026
-
+//Author: Leslie Brockman
+//Date modified: 10/21/2026
 'use strict';
 
 // Native dialogs provide background inertness, keyboard containment, and Escape handling.
 document.addEventListener('DOMContentLoaded', () => {
+    function initElectionCountdown() {
+        const dialog = document.getElementById('leader-1-modal');
+        if (!dialog) return;
+        const countdown = dialog.querySelector('#countdown');
+        const days = dialog.querySelector('#days');
+        const hours = dialog.querySelector('#hours');
+        const minutes = dialog.querySelector('#minutes');
+        const seconds = dialog.querySelector('#seconds');
+        const status = dialog.querySelector('#countdown-status');
+        if (!countdown || !days || !hours || !minutes || !seconds || !status || countdown.dataset.initialized) return;
+        countdown.dataset.initialized = 'true';
+        // Preserve the original visitor-local midnight target.
+        const targetDate = new Date('January 20, 2029 00:00:00').getTime();
+        let interval = null;
+        function updateCountdown() {
+            const remaining = Math.max(0, targetDate - Date.now());
+            days.textContent = String(Math.floor(remaining / 86400000));
+            hours.textContent = String(Math.floor((remaining % 86400000) / 3600000));
+            minutes.textContent = String(Math.floor((remaining % 3600000) / 60000));
+            seconds.textContent = String(Math.floor((remaining % 60000) / 1000));
+            status.hidden = remaining > 0;
+            if (remaining === 0) {
+                if (interval !== null) clearInterval(interval);
+                interval = null;
+                return false;
+            }
+            return true;
+        }
+        if (updateCountdown()) interval = setInterval(updateCountdown, 1000);
+    }
+    initElectionCountdown();
+
     let activeDialog = null;
     let activeTrigger = null;
     let previousOverflow = '';
