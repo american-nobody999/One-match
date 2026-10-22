@@ -1,0 +1,447 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+:where(.art-page) .section-subtitle {
+text-align: center;
+    font-size: 1.35rem;
+    margin: 0.25rem 0 0.65rem;
+    color: var(--dark);
+}
+
+
+:where(.art-page) .section-intro {
+text-align: center;
+    max-width: 900px;
+    margin: 0 auto 1.25rem;
+    line-height: 1.55;
+}
+
+
+:where(.art-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+
+:where(.art-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+
+:where(.art-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+
+.art-page .art-main :is(.video-gallery-section, .image-gallery-section) {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 2.8rem auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+}
+
+
+.art-page .art-main :is(.video-gallery, .image-gallery) {
+    --art-item-width: calc((100% - 2rem) / 3);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: .8rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+}
+@media (min-width: 576px) and (max-width: 991px) {
+    .art-page .art-main :is(.video-gallery, .image-gallery) { --art-item-width: calc((100% - 1rem) / 2); }
+}
+@media (max-width: 575px) {
+    .art-page .art-main :is(.video-gallery, .image-gallery) { --art-item-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .art-page .art-main :is(.video-gallery, .image-gallery) { scroll-behavior: auto; }
+}
+
+
+:where(.art-page) .video-gallery::-webkit-scrollbar,
+:where(.art-page) .image-gallery::-webkit-scrollbar {
+height: 10px;
+}
+
+
+:where(.art-page) .video-gallery::-webkit-scrollbar-thumb,
+:where(.art-page) .image-gallery::-webkit-scrollbar-thumb {
+background: var(--primary-green);
+    border-radius: 10px;
+}
+
+
+:where(.art-page) .video-gallery::-webkit-scrollbar-track,
+:where(.art-page) .image-gallery::-webkit-scrollbar-track {
+background: transparent;
+}
+
+
+.art-page .art-main :is(.video-gallery, .image-gallery) > :is(.video-container, .image-container) {
+    flex: 0 0 var(--art-item-width);
+    width: var(--art-item-width);
+    min-width: 0;
+    max-width: 100%;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: none;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: start;
+}
+.art-page .art-main .image-gallery .image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    object-fit: contain;
+}
+
+
+:where(.art-page) .video-container {
+
+    
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+
+:where(.art-page) .video-container video {
+width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: #000;
+}
+
+
+:where(.art-page) .initial-play-btn {
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary-green);
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+:where(.art-page) .initial-play-btn:hover {
+background: var(--accent-red);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+:where(.art-page) .video-overlay {
+position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    gap: 1rem;
+}
+
+
+.art-page .video-overlay img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100% - 80px);
+    min-height: 0;
+    margin: 0;
+    object-fit: contain;
+    flex: 0 1 auto;
+}
+
+:where(.art-page) .replay-btn {
+    flex-shrink: 0;
+width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent-red);
+    color: white;
+    font-size: 2.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+:where(.art-page) .replay-btn:hover {
+background: var(--primary-green);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+
+:where(.art-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+
+:where(.art-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+
+@media (min-width: 1600px) {
+:where(.art-page) .section {
+max-width: 1440px;
+}
+
+
+:where(.art-page) .section-title {
+font-size: 2.5rem;
+}
+
+
+:where(.art-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}}
+
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+:where(.art-page) .section {
+padding: 2.4rem 1.4rem;
+}}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.art-page) .section {
+padding: 2.1rem 1.15rem;
+}}
+
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.art-page) .section-title {
+font-size: 2rem;
+}
+
+
+:where(.art-page) .section {
+padding: 1.75rem 1rem;
+            margin: 1.75rem auto;
+}}
+
+
+@media (max-width: 768px) {
+:where(.art-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+
+:where(.art-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+
+:where(.art-page) .section {
+padding: 2rem 1rem;
+            margin: 1.8rem auto;
+            width: 100%;
+}
+
+
+:where(.art-page) .section-title {
+font-size: 1.9rem;
+}
+
+
+:where(.art-page) .section-subtitle {
+font-size: 1.2rem;
+            margin: 0.2rem 0 0.55rem;
+}
+
+
+:where(.art-page) .section-intro {
+font-size: 1rem;
+            margin: 0 auto 1rem;
+}
+
+
+:where(.art-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+
+:where(.art-page) .section,
+:where(.art-page) .video-gallery-section,
+:where(.art-page) .image-gallery-section {
+width: 100%;
+            max-width: 100%;
+}
+
+
+:where(.art-page) .video-gallery {
+padding-left: 0.5rem;
+            padding-right: 0.5rem;
+}}
+
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.art-page) .section-title {
+font-size: 1.8rem;
+}
+
+
+:where(.art-page) .section-subtitle {
+font-size: 1.12rem;
+}
+
+
+:where(.art-page) main p {
+font-size: 1rem;
+}}
+
+
+@media (max-width: 480px) {
+:where(.art-page) .section {
+padding: 1.4rem 0.85rem;
+            margin: 1.25rem auto;
+}
+
+
+:where(.art-page) .section-title {
+font-size: 1.55rem;
+}
+
+
+:where(.art-page) .section-subtitle {
+font-size: 1.05rem;
+            margin: 0.15rem 0 0.45rem;
+}
+
+
+:where(.art-page) .section-intro {
+font-size: 0.95rem;
+            line-height: 1.45;
+            margin: 0 auto 0.85rem;
+}
+
+
+:where(.art-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+
+:where(.art-page) .initial-play-btn {
+width: 68px;
+            height: 68px;
+            font-size: 2rem;
+}
+
+
+:where(.art-page) .replay-btn {
+width: 60px;
+            height: 60px;
+            font-size: 1.9rem;
+}}
+
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.art-page) .section {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}}
+
+
+@media (max-width: 359px) {
+:where(.art-page) .section-title {
+font-size: 1.3rem;
+}
+
+
+:where(.art-page) .section {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}}
+
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .art-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+
+/* Art body only; preserve artwork panels and shared chrome. */
+body.art-page { background-color: #D9E2CE; }
+
+
+/* Let gallery canvases shrink while retaining their native horizontal scrolling. */
+.art-page :is(.art-main, .section, .video-gallery, .image-gallery) { min-width: 0; max-width: 100%; }
+
+.art-page .art-main { overflow-wrap: anywhere; }
+
+.art-page :is(.lang-ar, .gallery-title-ar, .h3-ar, .p-ar) { direction: rtl; }
