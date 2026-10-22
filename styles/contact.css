@@ -1,0 +1,240 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+:where(.contact-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.contact-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.contact-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.contact-page) .contact-main {
+width: 100%;
+    padding: 3rem 1.5rem 4rem;
+}
+
+:where(.contact-page) .contact-wrapper {
+width: min(100%, 860px);
+    margin: 0 auto;
+    padding: 2rem;
+    border: 4px solid var(--dark);
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(0, 151, 54, 0.08), rgba(255, 255, 255, 0.96) 35%, rgba(207, 17, 39, 0.12));
+    box-shadow: 0 12px 30px rgba(17, 17, 17, 0.18),
+                0 8px 18px rgba(207, 17, 39, 0.22);
+}
+
+:where(.contact-page) .contact-form {
+width: 100%;
+}
+
+:where(.contact-page) .contact-form h2 {
+margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.contact-page .contact-form p {
+margin: 0 auto 1.75rem;
+    max-width: 640px;
+}
+
+:where(.contact-page) .contact-form-fields {
+display: grid;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+}
+
+:where(.contact-page) .contact-form-fields label {
+display: grid;
+    gap: 0.45rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.contact-page .contact-main .lang-ar {
+text-align: right;
+}
+
+:where(.contact-page) .contact-form-fields .lang-ar {
+justify-self: end;
+}
+
+:where(.contact-page) .contact-form-fields input,
+:where(.contact-page) .contact-form-fields textarea {
+width: 100%;
+    padding: 0.9rem 1rem;
+    border: 3px solid var(--dark);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--dark);
+    font: inherit;
+    box-shadow: 0 4px 0 rgba(17, 17, 17, 0.18);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+:where(.contact-page) .contact-form-fields textarea {
+min-height: 180px;
+    resize: vertical;
+}
+
+:where(.contact-page) .status-message {
+min-height: 1.75rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+:where(.contact-page) .status-message.success {
+color: var(--primary-green);
+}
+
+:where(.contact-page) .status-message.error {
+color: var(--accent-red);
+}
+
+:where(.contact-page) .contact-form-fields input:focus,
+:where(.contact-page) .contact-form-fields textarea:focus {
+outline: none;
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 4px rgba(207, 17, 39, 0.18);
+    transform: translateY(-1px);
+}
+
+:where(.contact-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.contact-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 1600px) {
+:where(.contact-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+}
+
+@media (max-width: 768px) {
+:where(.contact-page) .contact-main {
+padding: 2rem 1rem 3rem;
+}
+
+:where(.contact-page) .contact-wrapper {
+padding: 1.5rem;
+}
+
+.contact-page .contact-form p {
+font-size: 1.1rem;
+}
+
+:where(.contact-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.contact-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.contact-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.contact-page) main p {
+font-size: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+:where(.contact-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.contact-page) .contact-wrapper {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}
+}
+
+@media (max-width: 420px) {
+:where(.contact-page) .contact-wrapper {
+padding: 1.2rem 1rem;
+            border-radius: 14px;
+}
+
+:where(.contact-page) .contact-form h2 {
+font-size: 1.75rem;
+}
+
+:where(.contact-page) .contact-form-fields input,
+:where(.contact-page) .contact-form-fields textarea {
+padding: 0.85rem 0.9rem;
+}
+}
+
+@media (max-width: 359px) {
+:where(.contact-page) .contact-wrapper {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}
+}
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .contact-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Solid body background; retain the form panel and field backgrounds. */
+body.contact-page { background-color: #D9E2CE; }
+/* Keep form tracks and controls within the available reading width. */
+.contact-page :is(.contact-main, .contact-wrapper, .contact-form, .contact-form-fields, .contact-form-fields label, .contact-form-fields input, .contact-form-fields textarea) { min-width: 0; max-width: 100%; }
+.contact-page .contact-main { overflow-wrap: anywhere; }
+.contact-page .contact-form-fields { grid-template-columns: minmax(0, 1fr); }
+.contact-page .contact-main .lang-ar { direction: rtl; }
+.contact-page .contact-form-fields:lang(ar) { direction: rtl; text-align: right; }
+/* Placement and state only: the global .site-button provides the appearance. */
+.contact-page #submitBtn { justify-self: center; }
+.contact-page #submitBtn:disabled { cursor: wait; opacity: .65; }
+@media (max-width: 768px) {
+    .contact-page .contact-form-fields :is(input, textarea) { font-size: max(1rem, 16px); min-height: 44px; }
+}
