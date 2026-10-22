@@ -1,0 +1,551 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+body.circus-page-body {
+background-color: #fffdf6;
+    background-image:
+        radial-gradient(ellipse 24px 32px at 7% 38%, #ff5f6d 0 88%, transparent 91%),
+        radial-gradient(ellipse 26px 35px at 93% 42%, #f0c045 0 88%, transparent 91%),
+        radial-gradient(ellipse 22px 30px at 14% 92%, #009736 0 88%, transparent 91%),
+        radial-gradient(ellipse 25px 34px at 86% 84%, #1f9df7 0 88%, transparent 91%),
+        radial-gradient(ellipse 23px 31px at 4% 78%, #cf1127 0 88%, transparent 91%),
+        radial-gradient(ellipse 24px 33px at 97% 14%, #7d5ce0 0 88%, transparent 91%),
+        radial-gradient(circle at 10% 12%, #f4d03f 0 4px, transparent 5px),
+        radial-gradient(circle at 24% 28%, #ef4444 0 4px, transparent 5px),
+        radial-gradient(circle at 39% 16%, #2ec27e 0 4px, transparent 5px),
+        radial-gradient(circle at 60% 20%, #f59e0b 0 4px, transparent 5px),
+        radial-gradient(circle at 78% 14%, #1d4ed8 0 4px, transparent 5px),
+        radial-gradient(circle at 91% 30%, #f472b6 0 4px, transparent 5px),
+        radial-gradient(circle at 14% 72%, #22c55e 0 4px, transparent 5px),
+        radial-gradient(circle at 30% 84%, #f59e0b 0 4px, transparent 5px),
+        radial-gradient(circle at 50% 76%, #8b5cf6 0 4px, transparent 5px),
+        radial-gradient(circle at 72% 88%, #ef4444 0 4px, transparent 5px),
+        radial-gradient(circle at 88% 68%, #2dd4bf 0 4px, transparent 5px);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+:where(.circus-page-body) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.circus-page-body) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.circus-page-body) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.circus-page-body) .circus-page {
+width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 2.5rem 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+:where(.circus-page-body) .circus-page .circus-intro {
+border: 2px solid var(--primary-green);
+    border-radius: 12px;
+    background: var(--panel-bg);
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45), 0 6px 0 var(--primary-green);
+    text-align: center;
+}
+
+:where(.circus-page-body) .circus-page .circus-intro h2 {
+margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--dark);
+}
+
+:where(.circus-page-body) .circus-page .section {
+border: 2px solid var(--primary-green);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45), 0 6px 0 var(--primary-green);
+}
+
+:where(.circus-page-body) .circus-page .section h3 {
+margin-bottom: 1rem;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+:where(.circus-page-body) .circus-page .section p {
+max-width: 760px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+:where(.circus-page-body) .circus-story {
+overflow: hidden;
+}
+
+:where(.circus-page-body) .circus-story img {
+float: left;
+    width: min(100%, 330px);
+    max-width: 330px;
+    margin: 0 1.5rem 0.75rem 0;
+    display: block;
+}
+
+:where(.circus-page-body) .circus-story p {
+margin: 0;
+    max-width: none;
+    text-align: left;
+    font-size: 1.08rem;
+    line-height: 1.75;
+}
+
+:where(.circus-page-body) .circus-page .social-link,
+:where(.circus-page-body) .circus-page .circus-social-links a {
+display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    padding: 0.75rem;
+    margin: 1.5rem auto 0;
+    border: 2px solid var(--dark);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 4px 0 var(--dark);
+    transition: all 0.25s ease;
+}
+
+:where(.circus-page-body) .circus-page .social-link:hover,
+:where(.circus-page-body) .circus-page .social-link:focus-visible,
+:where(.circus-page-body) .circus-page .circus-social-links a:hover,
+:where(.circus-page-body) .circus-page .circus-social-links a:focus-visible {
+background: var(--accent-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 var(--primary-green);
+}
+
+:where(.circus-page-body) .circus-page .social-link img,
+:where(.circus-page-body) .circus-page .circus-social-links a img {
+max-width: 39px;
+    max-height: 39px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+:where(.circus-page-body) .circus-social-links {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    flex-wrap: nowrap;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 700px) {
+:where(.circus-page-body) .circus-social-links {
+flex-wrap: wrap;
+}
+}
+
+:where(.circus-page-body) .circus-buttons {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+:where(.circus-page-body) .circus-balloon {
+position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 150px;
+    height: 105px;
+
+    background: #d4af37;
+    color: #006b3c;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    border: 3px solid #006b3c;
+    border-radius: 50% 50% 48% 48%;
+
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.25),
+        inset -8px -8px 12px rgba(0, 0, 0, 0.12),
+        inset 8px 8px 12px rgba(255, 255, 255, 0.25);
+
+    animation: circus-balloon-float 3s ease-in-out infinite;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+:where(.circus-page-body) .circus-balloon img {
+width: 64px;
+    height: auto;
+    max-height: 52px;
+    margin: 0;
+    object-fit: contain;
+}
+
+:where(.circus-page-body) .circus-balloon::before {
+content: "";
+    position: absolute;
+
+    bottom: -48px;
+    left: 50%;
+
+    width: 3px;
+    height: 38px;
+
+    background: #d1112e;
+    transform: translateX(-50%);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+:where(.circus-page-body) .circus-balloon::after {
+content: "";
+    position: absolute;
+
+    bottom: -21px;
+    left: 50%;
+
+    width: 34px;
+    height: 18px;
+
+    background: #d1112e;
+    clip-path: polygon(
+        0 0,
+        38% 24%,
+        50% 0,
+        62% 24%,
+        100% 0,
+        84% 100%,
+        56% 66%,
+        44% 66%,
+        16% 100%
+    );
+    transform: translateX(-50%);
+}
+
+:where(.circus-page-body) .circus-balloon:hover {
+background: #006b3c;
+    color: #d4af37;
+
+    transform: translateY(-12px) scale(1.05);
+
+    box-shadow:
+        0 15px 25px rgba(0, 0, 0, 0.3),
+        inset -8px -8px 12px rgba(0, 0, 0, 0.12),
+        inset 8px 8px 12px rgba(255, 255, 255, 0.2);
+}
+
+:where(.circus-page-body) .circus-balloon:focus-visible {
+outline: 3px solid #d4af37;
+    outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+:where(.circus-page-body) .circus-page {
+gap: 1.5rem;
+        padding: 2rem 0.85rem 2.5rem;
+}
+
+:where(.circus-page-body) .circus-page .section {
+padding: 1.5rem 1.25rem;
+}
+
+:where(.circus-page-body) .circus-story img {
+width: min(42%, 280px);
+        max-width: 280px;
+        margin-right: 1.25rem;
+}
+
+:where(.circus-page-body) .circus-story p {
+font-size: 1rem;
+        line-height: 1.65;
+}
+
+:where(.circus-page-body) .circus-buttons {
+gap: 1.5rem;
+        padding: 1.5rem 1rem;
+}
+}
+
+@media (max-width: 600px) {
+:where(.circus-page-body) .circus-page {
+padding: 1.25rem 0.65rem 2rem;
+}
+
+:where(.circus-page-body) .circus-page .section {
+border-radius: 10px;
+        padding: 1.25rem 0.85rem;
+}
+
+:where(.circus-page-body) .circus-page .section h3 {
+font-size: 1.65rem;
+}
+
+:where(.circus-page-body) .circus-story {
+overflow: visible;
+}
+
+:where(.circus-page-body) .circus-story img {
+float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 1rem;
+}
+
+:where(.circus-page-body) .circus-story p {
+font-size: 0.98rem;
+        line-height: 1.6;
+}
+
+:where(.circus-page-body) .circus-page .social-link,
+:where(.circus-page-body) .circus-page .circus-social-links a {
+width: 72px;
+        height: 72px;
+        margin-top: 1rem;
+}
+
+:where(.circus-page-body) .circus-page .social-link img,
+:where(.circus-page-body) .circus-page .circus-social-links a img {
+max-width: 33px;
+        max-height: 33px;
+}
+
+:where(.circus-page-body) .circus-social-links {
+gap: 0.65rem;
+        margin-top: 1rem;
+}
+
+:where(.circus-page-body) .circus-buttons {
+gap: 1rem;
+        padding: 1.25rem 0.5rem;
+}
+
+:where(.circus-page-body) .circus-balloon {
+width: 132px;
+        height: 94px;
+        font-size: 0.95rem;
+}
+}
+
+@media (max-width: 380px) {
+:where(.circus-page-body) .circus-page .circus-social-links a,
+:where(.circus-page-body) .circus-page .social-link {
+width: 64px;
+        height: 64px;
+        padding: 0.5rem;
+}
+
+:where(.circus-page-body) .circus-page .circus-social-links a img,
+:where(.circus-page-body) .circus-page .social-link img {
+max-width: 28px;
+        max-height: 28px;
+}
+
+:where(.circus-page-body) .circus-balloon {
+width: 118px;
+        height: 84px;
+        font-size: 0.88rem;
+}
+}
+
+:where(.circus-page-body) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.circus-page-body) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 1600px) {
+:where(.circus-page-body) .section {
+max-width: 1440px;
+}
+
+:where(.circus-page-body) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+:where(.circus-page-body) .section {
+padding: 2.4rem 1.4rem;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.circus-page-body) .section {
+padding: 2.1rem 1.15rem;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.circus-page-body) .section {
+padding: 1.75rem 1rem;
+            margin: 1.75rem auto;
+}
+}
+
+@media (max-width: 768px) {
+:where(.circus-page-body) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.circus-page-body) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.circus-page-body) .section {
+padding: 2rem 1rem;
+            margin: 1.8rem auto;
+            width: 100%;
+}
+
+:where(.circus-page-body) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+:where(.circus-page-body) .section {
+width: 100%;
+            max-width: 100%;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.circus-page-body) main p {
+font-size: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+:where(.circus-page-body) .section {
+padding: 1.4rem 0.85rem;
+            margin: 1.25rem auto;
+}
+
+:where(.circus-page-body) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.circus-page-body) .section {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}
+}
+
+@media (max-width: 359px) {
+:where(.circus-page-body) .section {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}
+}
+
+:where(.circus-page-body) .social-link {
+display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+    background: #e9f5ed;
+    color: var(--dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+:where(.circus-page-body) .social-link:hover {
+background: var(--primary-green);
+    color: var(--light);
+}
+@keyframes circus-balloon-float {
+
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .circus-page-body .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Keep performer content within its existing themed panels. */
+.circus-page-body :is(main.circus-page, .circus-page > .section, .circus-story, .circus-social-links, .circus-buttons) { min-width: 0; max-width: 100%; }
+.circus-page-body main.circus-page { overflow-wrap: anywhere; }
+.circus-page-body main .lang-ar { direction: rtl; }
+@media (max-width: 991px) {
+    .circus-page-body .circus-balloon {
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 105px;
+        padding: .5rem;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+    .circus-page-body .circus-buttons {
+        row-gap: 4rem;
+        padding-bottom: 3.5rem;
+    }
+    .circus-page-body .circus-social-links a { flex-shrink: 0; }
+}
+@media (max-width: 600px) {
+    .circus-page-body .circus-balloon { min-height: 94px; }
+}
+@media (max-width: 380px) {
+    .circus-page-body .circus-balloon { min-height: 84px; }
+}
