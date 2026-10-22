@@ -1,0 +1,278 @@
+/* 
+   Author: Leslie Brockman
+   Date: 10-19-2026
+   Date modified: 10/21/2026
+*/
+:where(.legal-page) .legal-section {
+width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 1.5rem;
+    border: var(--panel-border);
+    border-radius: var(--panel-radius);
+    background: var(--panel-bg);
+    box-shadow: var(--panel-shadow);
+}
+
+:where(.legal-page) .legal-section h2 {
+text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+:where(.legal-page) .legal-box {
+min-height: 90px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #f8f8f8;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45);
+}
+
+:where(.legal-page) .legal-box:last-child {
+margin-bottom: 0;
+}
+
+:where(.legal-page) .legal-section-3 .legal-box {
+padding: 1.25rem;
+}
+
+:where(.legal-page) .legal-section-3 .legal-box a,
+:where(.legal-page) .legal-section-3 .legal-box img,
+:where(.legal-page) .legal-section-3 .legal-box p,
+:where(.legal-page) .legal-section-3 .legal-box h2,
+:where(.legal-page) .legal-section-3 .legal-box h3 {
+margin-left: auto;
+    margin-right: auto;
+}
+
+:where(.legal-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.legal-page) .legal-section-1 .legal-box-1,
+:where(.legal-page) .legal-section-1 .legal-box-2,
+:where(.legal-page) .legal-section-1 .legal-box-3,
+:where(.legal-page) .legal-section-3 .legal-box {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+:where(.legal-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.legal-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.legal-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.legal-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 1600px) {
+:where(.legal-page) .section,
+:where(.legal-page) .legal-section {
+max-width: 1440px;
+}
+
+:where(.legal-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+:where(.legal-page) .section,
+:where(.legal-page) .legal-section {
+padding: 2.4rem 1.4rem;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.legal-page) .section {
+padding: 2.1rem 1.15rem;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.legal-page) .section,
+:where(.legal-page) .legal-section {
+padding: 1.75rem 1rem;
+            margin: 1.75rem auto;
+}
+}
+
+@media (min-width: 768px) {
+:where(.legal-page) .legal-section-1 .legal-box-1,
+:where(.legal-page) .legal-section-1 .legal-box-2,
+:where(.legal-page) .legal-section-1 .legal-box-3 {
+padding: 1.25rem;
+}
+
+:where(.legal-page) .legal-section-1 .legal-box-1 p,
+:where(.legal-page) .legal-section-1 .legal-box-2 p,
+:where(.legal-page) .legal-section-1 .legal-box-3 p {
+margin-left: auto;
+            margin-right: auto;
+}
+}
+
+@media (max-width: 768px) {
+:where(.legal-page) .legal-section {
+margin: 1.25rem auto;
+            padding: 1rem;
+}
+
+:where(.legal-page) .legal-section h2,
+:where(.legal-page) .legal-box h2 {
+font-size: 1.5rem;
+            margin-bottom: 0.85rem;
+}
+
+:where(.legal-page) .legal-box h3 {
+font-size: 1.2rem;
+}
+
+:where(.legal-page) .legal-box {
+min-height: auto;
+            padding: 0.85rem;
+}
+
+:where(.legal-page) .legal-box p {
+max-width: 100%;
+            font-size: 1rem;
+            line-height: 1.5;
+}
+
+:where(.legal-page) .legal-section-3 .legal-box-7 img {
+width: 100%;
+            max-width: 320px;
+            height: auto;
+}
+
+:where(.legal-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.legal-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.legal-page) .section {
+padding: 2rem 1rem;
+            margin: 1.8rem auto;
+            width: 100%;
+}
+
+:where(.legal-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+:where(.legal-page) .section,
+:where(.legal-page) .legal-section {
+width: 100%;
+            max-width: 100%;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.legal-page) main p {
+font-size: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+:where(.legal-page) .legal-section {
+padding: 0.85rem;
+            margin: 1rem auto;
+}
+
+:where(.legal-page) .legal-section h2,
+:where(.legal-page) .legal-box h2 {
+font-size: 1.3rem;
+}
+
+:where(.legal-page) .legal-box h3 {
+font-size: 1.05rem;
+}
+
+:where(.legal-page) .legal-box p {
+font-size: 0.95rem;
+            line-height: 1.45;
+}
+
+:where(.legal-page) .section {
+padding: 1.4rem 0.85rem;
+            margin: 1.25rem auto;
+}
+
+:where(.legal-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.legal-page) .section,
+:where(.legal-page) .legal-section {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}
+}
+
+@media (max-width: 359px) {
+:where(.legal-page) .section,
+:where(.legal-page) .legal-section {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}
+}
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .legal-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Body only: preserve legal sections and their individual panel backgrounds. */
+body.legal-page { background-color: #D9E2CE; }
+/* Allow long legal text and links to wrap inside nested panels. */
+.legal-page :is(.legal-main, .leslie-disclaimer, .legal-section, .legal-box) { min-width: 0; max-width: 100%; }
+.legal-page .legal-main { overflow-wrap: anywhere; }
+.legal-page .legal-main .lang-ar { direction: rtl; }
