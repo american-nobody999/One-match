@@ -1,0 +1,705 @@
+/* 
+   Author: Leslie Brockman
+   Date: 10-19-2026
+   Date modified: 10/21/2026
+*/
+:where(.link-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.link-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.link-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.link-page) .div-img {
+width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+:where(.link-page) .image-gallery-section {
+border: 5px solid #000;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.55);
+    margin: 2.8rem auto;
+}
+
+:where(.link-page) .image-gallery,
+:where(.link-page) .links-gallery {
+display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    border-radius: 12px;
+}
+
+:where(.link-page) .image-gallery::-webkit-scrollbar,
+:where(.link-page) .links-gallery::-webkit-scrollbar {
+height: 10px;
+}
+
+:where(.link-page) .image-gallery::-webkit-scrollbar-thumb,
+:where(.link-page) .links-gallery::-webkit-scrollbar-thumb {
+background: var(--primary-green);
+    border-radius: 10px;
+}
+
+:where(.link-page) .image-gallery::-webkit-scrollbar-track {
+background: transparent;
+}
+
+:where(.link-page) .image-container {
+flex: 0 0 320px;
+    border: 2px solid var(--dark);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.5);
+}
+
+:where(.link-page) .links-gallery {
+display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item {
+flex: 0 0 340px;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item img {
+height: 260px;
+    object-fit: contain;
+    background: #fff;
+}
+
+:where(.link-page) .caption {
+display: block;
+  width: 100%;
+  margin: 0.75rem auto 0;
+  padding: 12px 10px;
+  background: #f8f8f8;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  min-height: 50px;
+  border: 2px solid var(--dark);
+  border-radius: 6px;
+}
+
+:where(.link-page) .image-gallery.scrollable-gallery {
+padding: 10px 0;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    max-width: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+:where(.link-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.link-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+.link-page-main {
+max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 0.75rem 1.25rem;
+}
+
+.link-page .gallery-intro {
+max-width: 1100px;
+    margin: 1.5rem auto;
+    padding: 1rem 1.25rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.45),
+                0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.link-page .gallery-intro p {
+max-width: 980px;
+    margin: 0 auto;
+}
+
+.link-page .gallery-section-copy {
+max-width: 1100px;
+    margin: 1.5rem auto 1rem;
+    padding: 1rem 1.25rem;
+    border: 4px solid #000;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.28),
+                0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.link-page .gallery-section-copy h2 {
+margin: 0 0 0.75rem;
+    padding: 0;
+}
+
+.link-page .gallery-section-copy p {
+margin: 0;
+    max-width: 960px;
+}
+
+.link-page .image-gallery-section {
+width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+}
+
+.link-page .image-gallery {
+display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    width: 100%;
+}
+
+.link-page .image-container {
+flex: 0 0 calc((100% - 2rem) / 3);
+    max-width: calc((100% - 2rem) / 3);
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.55rem;
+    padding: 0.85rem;
+    border: 2px solid var(--dark);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.35);
+    scroll-snap-align: start;
+}
+
+.link-page .image-container > img {
+width: 100%;
+    height: 260px;
+    object-fit: cover;
+    margin: 0;
+}
+
+.link-page .image-container p {
+margin: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.3;
+    text-align: center;
+    max-width: 100%;
+}
+
+.link-page .social-links {
+display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.link-page .social-links .social-link img {
+width: 40px;
+    height: 40px;
+    border-width: 2px;
+    border-radius: 8px;
+    margin: 0;
+    object-fit: cover;
+}
+
+.link-page .image-container > a {
+margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--dark);
+    border-radius: 6px;
+    padding: 0.45rem 0.8rem;
+    background: var(--primary-green);
+    color: #000;
+    font-weight: 700;
+}
+
+.link-page .featured-image-galleries {
+width: 100%;
+    min-width: 0;
+    margin: 1.5rem auto;
+    padding: clamp(0.5rem, 2vw, 1.25rem);
+    border: 1px solid var(--gold);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 151, 54, 0.35);
+}
+
+.link-page .featured-image-galleries .gallery-section-copy {
+margin-top: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.link-page .featured-profile {
+display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.link-page .featured-profile .image > img {
+display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    margin: 0 auto 0.75rem;
+    border: 0;
+    box-shadow: none;
+}
+
+.link-page .featured-profile .social-link img {
+border: 0;
+    box-shadow: none;
+}
+
+@media (min-width: 769px) {
+.link-page .featured-profile {
+grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+}
+
+.link-page .featured-image-galleries .image-container {
+min-height: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.link-page .featured-image-galleries .image-container img {
+border: 0;
+    box-shadow: none;
+}
+
+.link-page .featured-image-galleries .image-container > img {
+width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+}
+
+@media (min-width: 1600px) {
+:where(.link-page) .section,
+.link-page-main {
+max-width: 1440px;
+}
+
+:where(.link-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+
+:where(.link-page) .gallery-item {
+flex-basis: 340px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+:where(.link-page) .section {
+padding: 2.4rem 1.4rem;
+}
+
+.link-page .image-container {
+flex: 0 0 calc((100% - 2rem) / 3);
+            max-width: calc((100% - 2rem) / 3);
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.link-page) .section {
+padding: 2.1rem 1.15rem;
+}
+
+:where(.link-page) .gallery-item {
+flex-basis: 280px;
+}
+
+.link-page .image-container {
+flex: 0 0 calc((100% - 1rem) / 2);
+            max-width: calc((100% - 1rem) / 2);
+            min-height: 430px;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.link-page) .section {
+padding: 1.75rem 1rem;
+            margin: 1.75rem auto;
+}
+
+:where(.link-page) .gallery-item {
+flex: 0 0 280px;
+            width: 280px;
+}
+
+.link-page .image-container {
+flex: 0 0 calc((100% - 1rem) / 2);
+            max-width: calc((100% - 1rem) / 2);
+            min-height: 410px;
+}
+}
+
+@media (max-width: 768px) {
+:where(.link-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.link-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.link-page) .section {
+padding: 2rem 1rem;
+            margin: 1.8rem auto;
+            width: 100%;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item {
+flex: 0 0 280px;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item img {
+height: 220px;
+}
+
+:where(.link-page) .scrollable-gallery {
+gap: 1rem;
+            padding: 1rem;
+            margin: 1.5rem auto;
+}
+
+:where(.link-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+.link-page-main {
+padding: 0 0.5rem 1rem;
+}
+
+.link-page .gallery-intro {
+margin: 1rem auto;
+            padding: 0.85rem;
+}
+
+.link-page .gallery-section-copy {
+margin: 1rem auto 0.85rem;
+            padding: 0.85rem;
+}
+
+.link-page .gallery-intro h2 {
+font-size: 1.5rem;
+}
+
+.link-page .gallery-section-copy h2 {
+font-size: 1.5rem;
+}
+
+.link-page .gallery-intro p {
+font-size: 0.98rem;
+            line-height: 1.45;
+}
+
+.link-page .gallery-section-copy p {
+font-size: 0.98rem;
+            line-height: 1.45;
+}
+
+.link-page .image-gallery {
+padding: 0.75rem;
+            gap: 0.75rem;
+}
+
+.link-page .image-container {
+flex: 0 0 100%;
+            max-width: 100%;
+            min-height: 420px;
+            padding: 0.75rem;
+}
+
+.link-page .image-container > img {
+height: 220px;
+}
+
+:where(.link-page) .section,
+:where(.link-page) .image-gallery-section,
+:where(.link-page) .scrollable-gallery {
+width: 100%;
+            max-width: 100%;
+}
+
+:where(.link-page) .links-gallery,
+:where(.link-page) .scrollable-gallery,
+:where(.link-page) .state-image-gallery {
+padding-left: 0.5rem;
+            padding-right: 0.5rem;
+}
+
+:where(.link-page) .gallery-item {
+flex: 0 0 clamp(220px, 75vw, 320px);
+}
+
+:where(.link-page) .gallery-item img {
+height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background: #fff;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.link-page) main p,
+.link-page .gallery-intro p,
+.link-page .gallery-section-copy p {
+font-size: 1rem;
+}
+
+:where(.link-page) .gallery-item {
+flex-basis: 250px;
+            width: 250px;
+}
+
+.link-page .image-container {
+min-height: 400px;
+}
+}
+
+@media (max-width: 480px) {
+:where(.link-page) .section {
+padding: 1.4rem 0.85rem;
+            margin: 1.25rem auto;
+}
+
+:where(.link-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+:where(.link-page) .image-container {
+flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item {
+flex: 0 0 230px;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item img {
+height: 180px;
+}
+
+.link-page-main {
+padding: 0 0.35rem 0.85rem;
+}
+
+.link-page .image-gallery {
+gap: 0.85rem;
+}
+
+.link-page .image-container {
+flex: 0 0 100%;
+            max-width: 100%;
+            min-height: 400px;
+}
+
+.link-page .gallery-intro h2 {
+font-size: 1.3rem;
+}
+
+.link-page .image-container {
+flex: 0 0 82vw;
+            min-height: 390px;
+}
+
+.link-page .image-container > img {
+height: 190px;
+}
+
+:where(.link-page) .gallery-item {
+flex: 0 0 82vw;
+}
+
+:where(.link-page) .caption {
+min-height: auto;
+            font-size: 1.25rem;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.link-page) .section,
+.link-page .gallery-intro,
+.link-page .gallery-section-copy {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}
+
+:where(.link-page) .image-container,
+:where(.link-page) .gallery-item {
+flex-basis: 82vw;
+            width: 82vw;
+}
+
+:where(.link-page) .caption {
+font-size: 1.15rem;
+            min-height: auto;
+}
+}
+
+@media (max-width: 359px) {
+:where(.link-page) .section,
+.link-page .gallery-intro,
+.link-page .gallery-section-copy {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}
+
+:where(.link-page) .image-container,
+:where(.link-page) .gallery-item {
+flex-basis: 88vw;
+            width: 88vw;
+}
+}
+
+@media (hover: hover) and (pointer: fine) {
+:where(.link-page) .this-state .state-image-gallery .gallery-item {
+overflow: visible;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item:hover {
+transform: none;
+            z-index: 5;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item img {
+transition: transform 0.22s ease, box-shadow 0.22s ease;
+            transform-origin: center center;
+}
+
+:where(.link-page) .this-state .state-image-gallery .gallery-item:hover img {
+transform: scale(1.32);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+}
+
+:where(.link-page) .social-link {
+display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+    background: #e9f5ed;
+    color: var(--dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+:where(.link-page) .social-link:hover {
+background: var(--primary-green);
+    color: var(--light);
+}
+
+.link-page .influencer-fundraiser {
+width: 100%;
+    min-width: 0;
+}
+
+.link-page .influencer-fundraiser .state-image-gallery {
+width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+}
+
+.link-page .influencer-fundraiser .gallery-item {
+flex: 0 0 min(78vw, 230px);
+    min-width: 0;
+    height: auto;
+    scroll-snap-align: start;
+}
+
+.link-page .influencer-fundraiser .caption {
+overflow-wrap: anywhere;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (min-width: 481px) {
+.link-page .influencer-fundraiser .gallery-item {
+flex-basis: 280px;
+}
+}
+
+@media (min-width: 769px) {
+.link-page .influencer-fundraiser .gallery-item {
+flex-basis: 340px;
+}
+}
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .link-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Link body only; individual card and shared chrome backgrounds remain unchanged. */
+body.link-page { background-color: #D9E2CE; }
