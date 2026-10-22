@@ -1,0 +1,230 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+:where(.faithi-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.faithi-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.faithi-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.faithi-page) .div-img {
+width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+:where(.faithi-page) .tribute-img {
+display: block;
+    width: min(100%, 900px);
+    margin: 2rem auto 0;
+}
+
+:where(.faithi-page) .gallery-card a {
+display: block;
+    width: 100%;
+    height: 100%;
+}
+
+:where(.faithi-page) .gallery-card a img {
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+:where(.faithi-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.faithi-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 1600px) {
+:where(.faithi-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+
+:where(.faithi-page) .gallery-card {
+flex-basis: 340px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.faithi-page) .gallery-card {
+flex-basis: 280px;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.faithi-page) .gallery-card {
+flex: 0 0 280px;
+            width: 280px;
+}
+}
+
+@media (max-width: 768px) {
+:where(.faithi-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.faithi-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.faithi-page) .tribute-img {
+width: 100%;
+            margin-top: 1.25rem;
+}
+
+:where(.faithi-page) .scrollable-gallery {
+gap: 1rem;
+            padding: 1rem;
+            margin: 1.5rem auto;
+}
+
+:where(.faithi-page) .gallery-card {
+flex: 0 0 250px;
+}
+
+:where(.faithi-page) .gallery-card img {
+height: 250px;
+}
+
+:where(.faithi-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+:where(.faithi-page) .scrollable-gallery {
+width: 100%;
+            max-width: 100%;
+}
+
+:where(.faithi-page) .scrollable-gallery {
+padding-left: 0.5rem;
+            padding-right: 0.5rem;
+}
+
+:where(.faithi-page) .gallery-card {
+flex: 0 0 clamp(220px, 75vw, 320px);
+}
+
+:where(.faithi-page) .gallery-card img {
+height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background: #fff;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.faithi-page) main p {
+font-size: 1rem;
+}
+
+:where(.faithi-page) .gallery-card {
+flex-basis: 250px;
+            width: 250px;
+}
+}
+
+@media (max-width: 480px) {
+:where(.faithi-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+:where(.faithi-page) .gallery-card {
+flex: 0 0 82vw;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.faithi-page) .gallery-card {
+flex-basis: 82vw;
+            width: 82vw;
+}
+}
+
+@media (max-width: 359px) {
+:where(.faithi-page) .gallery-card {
+flex-basis: 88vw;
+            width: 88vw;
+}
+}
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .faithi-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Keep wide gallery canvases inside the mobile viewport. */
+@media (max-width: 768px) {
+    .faithi-page .faithi-main,
+    .faithi-page .scrollable-gallery { width: 100%; min-width: 0; max-width: 100%; }
+}
+.faithi-page :is(.h2-ar, .gallery-title-ar) { direction: rtl; }
+
+/* Faithi body only; cards and shared chrome keep their own backgrounds. */
+body.faithi-page { background-color: #D9E2CE; }
+
+/* One stationary Explore frame around each heading and scrolling gallery. */
+.faithi-page .faithi-gallery-section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-block: 2rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+}
+.faithi-page .faithi-gallery-section .scrollable-gallery {
+    max-width: 100%;
+    min-width: 0;
+    border: 0;
+    box-shadow: none;
+}
+.faithi-page .faithi-gallery-section :is(.gallery-card, img) {
+    border: 0;
+    box-shadow: none;
+}
