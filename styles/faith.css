@@ -1,0 +1,395 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+:where(.faith-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.faith-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.faith-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+.faith-page main {
+display: block;
+    min-height: auto;
+    padding: 2.5rem 0 3rem;
+    text-align: initial;
+}
+
+.faith-page .section {
+max-width: 1100px;
+}
+
+:where(.faith-page) .faith-intro-copy {
+margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    width: 100%;
+}
+
+:where(.faith-page) .faith-intro-copy .lang-en p,
+:where(.faith-page) .faith-intro-copy .lang-ar p {
+text-align: center;
+    text-indent: 0;
+}
+
+:where(.faith-page) .faith-intro {
+background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/0026.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+:where(.faith-page) .faith-intro .section-title {
+color: var(--gold);
+    -webkit-text-stroke: 1px #000;
+    text-shadow: 0 1px 0 #000;
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.95);
+}
+
+:where(.faith-page) .faith-link-grid {
+display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5rem 0 0.25rem;
+    scroll-behavior: smooth;
+    justify-content: flex-start;
+    align-items: stretch;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+:where(.faith-page) .faith-link-item {
+flex: 0 0 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    scroll-snap-align: start;
+}
+
+:where(.faith-page) .faith-link-item img {
+display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+:where(.faith-page) .prayer-section {
+background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/0035.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+:where(.faith-page) .prayer-section .section-title {
+margin-bottom: 1.25rem;
+}
+
+:where(.faith-page) .prayer-image {
+display: block;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto 1.5rem;
+    border-radius: 12px;
+    border: 4px solid var(--dark);
+    object-fit: cover;
+}
+
+:where(.faith-page) .prayer-body {
+border: 4px solid var(--primary-green);
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: #f8f8f8;
+}
+
+:where(.faith-page) .prayer-copy {
+text-align: left;
+    font-size: 1.08rem;
+    line-height: 1.75;
+    color: #222;
+}
+
+.faith-page .prayer-copy p {
+text-indent: 0;
+    max-width: 960px;
+    margin: 0 auto 0.9rem;
+    text-align: center;
+}
+
+.faith-page .prayer-section .section-date,
+.faith-page .prayer-section .prayer-copy,
+.faith-page .prayer-section .prayer-copy.lang-ar {
+text-align: center;
+}
+
+.faith-page .prayer-copy {
+max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+:where(.faith-page) .prayer-copy.lang-ar {
+text-align: right;
+}
+
+:where(.faith-page) .faith-link-grid::-webkit-scrollbar {
+height: 10px;
+}
+
+:where(.faith-page) .faith-link-grid::-webkit-scrollbar-thumb {
+background: var(--primary-green);
+    border-radius: 10px;
+}
+
+:where(.faith-page) .faith-link-grid::-webkit-scrollbar-track {
+background: transparent;
+}
+
+:where(.faith-page) .text-content {
+border: 4px solid var(--primary-green);
+    border-radius: 10px;
+    padding: 1.5rem;
+    background: #f8f8f8;
+}
+
+:where(.faith-page) .text-content .lang-en p,
+:where(.faith-page) .text-content .lang-ar p {
+text-indent: 2em;
+}
+
+:where(.faith-page) .text-content .lang-ar {
+text-align: right;
+    font-family: var(--font-ar);
+}
+
+:where(.faith-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.faith-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 1600px) {
+:where(.faith-page) .section {
+max-width: 1440px;
+}
+
+:where(.faith-page) .section-title {
+font-size: 2.5rem;
+}
+
+:where(.faith-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+
+:where(.faith-page) .faith-link-item {
+flex-basis: 340px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+:where(.faith-page) .section {
+padding: 2.4rem 1.4rem;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.faith-page) .section {
+padding: 2.1rem 1.15rem;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.faith-page) .section-title {
+font-size: 2rem;
+}
+
+:where(.faith-page) .section {
+padding: 1.75rem 1rem;
+            margin: 1.75rem auto;
+}
+
+:where(.faith-page) .faith-link-item {
+flex: 0 0 280px;
+            width: 280px;
+}
+}
+
+@media (max-width: 768px) {
+:where(.faith-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.faith-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.faith-page) .section {
+padding: 2rem 1rem;
+            margin: 1.8rem auto;
+            width: 100%;
+}
+
+:where(.faith-page) .section-title {
+font-size: 1.9rem;
+}
+
+:where(.faith-page) .text-content {
+padding: 1rem;
+}
+
+:where(.faith-page) .faith-link-item {
+flex-basis: 230px;
+}
+
+:where(.faith-page) .faith-link-item img {
+height: 270px;
+}
+
+:where(.faith-page) .prayer-body {
+padding: 1.15rem;
+}
+
+:where(.faith-page) .prayer-copy {
+font-size: 1rem;
+}
+
+:where(.faith-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+:where(.faith-page) .section {
+width: 100%;
+            max-width: 100%;
+}
+
+:where(.faith-page) .faith-link-grid {
+padding-left: 0.5rem;
+            padding-right: 0.5rem;
+}
+
+:where(.faith-page) .faith-link-item {
+flex: 0 0 clamp(220px, 75vw, 320px);
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.faith-page) .section-title {
+font-size: 1.8rem;
+}
+
+:where(.faith-page) main p {
+font-size: 1rem;
+}
+
+:where(.faith-page) .faith-link-item {
+flex-basis: 250px;
+            width: 250px;
+}
+}
+
+@media (max-width: 480px) {
+:where(.faith-page) .section {
+padding: 1.4rem 0.85rem;
+            margin: 1.25rem auto;
+}
+
+:where(.faith-page) .section-title {
+font-size: 1.55rem;
+}
+
+:where(.faith-page) .text-content .lang-en p,
+:where(.faith-page) .text-content .lang-ar p,
+:where(.faith-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+:where(.faith-page) .faith-link-item {
+flex-basis: 200px;
+}
+
+:where(.faith-page) .faith-link-item img {
+height: 235px;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.faith-page) .section {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}
+
+:where(.faith-page) .faith-link-item {
+flex-basis: 82vw;
+            width: 82vw;
+}
+}
+
+@media (max-width: 359px) {
+:where(.faith-page) .section-title {
+font-size: 1.3rem;
+}
+
+:where(.faith-page) .section {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}
+
+:where(.faith-page) .faith-link-item {
+flex-basis: 88vw;
+            width: 88vw;
+}
+}
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .faith-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Keep Faith scrolling inside its content containers at narrow widths. */
+.faith-page .section,
+.faith-page .faith-link-grid,
+.faith-page .prayer-body { min-width: 0; max-width: 100%; }
+.faith-page .faith-link-grid { width: 100%; }
+.faith-page .faith-intro-copy,
+.faith-page .prayer-copy { overflow-wrap: anywhere; }
