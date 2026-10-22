@@ -1,0 +1,29 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+body.faithj-page { background-color: #D9E2CE; }
+
+/* One stationary Explore frame around each heading and scrolling gallery. */
+.faithj-page .faithj-gallery-section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-block: 2rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+}
+.faithj-page .faithj-gallery-section .scrollable-gallery {
+    max-width: 100%;
+    min-width: 0;
+    border: 0;
+    box-shadow: none;
+}
+.faithj-page .faithj-gallery-section :is(.gallery-card, img) {
+    border: 0;
+    box-shadow: none;
+}
