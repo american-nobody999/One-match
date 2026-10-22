@@ -1,8 +1,8 @@
 <!--
 MPAG: Faith page
 Leslie Brockman
-Date last modified: 2026-10-16
-Weekly updates incclude: 
+Date last modified: 2026-10-21
+Weekly updates include: 
 1. Friday Prayer 
 2. date 
 3. date in second prayer-section
@@ -16,7 +16,7 @@ Weekly updates incclude:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="American Nobody999">
 
-<!--For SQL and better accesibility-->
+<!--For SQL and better accessibility-->
     <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
     <title>Make Palestine Great Again - MPGA</title>
     
@@ -24,62 +24,48 @@ Weekly updates incclude:
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
     
 <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles2.css">
+    <link rel="stylesheet" href="styles/faith.css">
 </head>
 <body class="faith-page">
-    <header class="site-header">
-    <div class="header-container">
-            
-<!-- Logo - Left Side-waiting for logo contest from Palestinians -->
-       <div class="header-logo">
-                <img src="images/001.jpg" alt="MPGA Logo - Make Palestine Great Again" class="logo-img" loading="lazy">
-        </div>
-<!-- lang-en and lang-ar are classes for the whole website language toggle, js rule rewritten to avoid having to manually change each element -->
-        <div class="header-center">
-            <h1 class="site-title">
-                <span class="lang-en">State of Palestine</span>
-                <span class="lang-ar">دولة فلسطين</span>
-            </h1>
-                
-<!-- Language Toggle - Directly under h1 for functionality--gets lost if moved into the nav-- leave this alone -->
-              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
-                    English | العربية
-              </button>
+    <header class="site-header" data-global-chrome>
+      <div class="header-container">
 
-<!-- Navigation - Centered under button-colors, hover effects, and active state handled by CSS, will change baised on Palestine design-->
-              <nav class="main-nav" aria-label="Main navigation">
+  <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
+          <div class="header-center">
+              <h1 class="site-title state-title">
+                  <span class="lang-en">State of Palestine</span>
+                  <span class="lang-ar">دولة فلسطين</span>
+              </h1>
+              <nav id="faith-navigation" class="main-nav" aria-label="Main navigation">
                 <ul class="nav-menu">
-                  <li><a href="index.html" class="nav-btn active">
-                      <span class="lang-en">Home</span>
-                      <span class="lang-ar">الرئيسية</span>
+                  <li><a href="index.html" class="nav-btn">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-ar">الرئيسية</span>
                   </a></li>
                   <li><a href="mpga.html" class="nav-btn">
-                        <span class="lang-en">MPGA</span>
-                        <span class="lang-ar">MPGA</span>
+                          <span class="lang-en">MPGA</span>
+                          <span class="lang-ar">MPGA</span>
                   </a></li>
-                  <li><a href="united.html" class="nav-btn">
-                      <span class="lang-en">United</span>
-                      <span class="lang-ar">متحدون</span>
-                </a></li>
-                <li><a href="leslie.html" class="nav-btn">
-                    <span class="lang-en">Leslie</span>
-                    <span class="lang-ar">ليزلي</span>
-                </a></li>
-                <li><a href="about.html" class="nav-btn">
-                      <span class="lang-en">About Us</span>
-                      <span class="lang-ar">من نحن</span>
-                    </a></li>
-                  </ul>
+                  <li><a href="about.html" class="nav-btn">
+                        <span class="lang-en">About Us</span>
+                        <span class="lang-ar">من نحن</span>
+                  </a></li>
+                </ul>
               </nav>
-            </div>
-
-<!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                ☰
-            </button>
-
+          </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                      English | العربية
+              </button>
+  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+              <button id="menu-toggle" aria-controls="faith-navigation" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  ☰
+              </button>
         </div>
-    </header>
+  </header>
 
     <main class="faith-main">
         <section class="section faith-intro">
@@ -88,7 +74,7 @@ Weekly updates incclude:
                 <span class="lang-ar">ركائز الإيمان في فلسطين</span>
             </h2>
 
-             <div class="text-content faith-intro-copy">
+            <div class="text-content faith-intro-copy">
                 <div class="lang-en">
                      <p>The Faith of Palestine is deeply rooted in the cultural and religious traditions of its people. It encompasses a rich tapestry of beliefs, rituals, and practices that have been passed down through generations. These traditions play a significant role in shaping the identity and daily lives of the Palestinian people. So, understanding and respecting these practices is essential for anyone seeking to engage with Palestinian society in a meaningful way. So, I realized the importance of approaching these traditions with an open mind and a respectful attitude was essential. Exploring  these has given me a deep appreciation for understanding persepective I didn't know.</p>
                     <p>We will be circling back in the coming weeks to the faiths of Palestine, and the deep historical value of their perspective religious sites, to provide a more comprehensive understanding of their significance to humanitys history. I am also looking for prayers, and am having to navigate the complexities of religious practices and their meanings so not to offend anyone, and to ensure that my engagement is both respectful and correctly informed. This is a roough outline for each. I would like to try to find their relgious leaders who support Palestine. Pope Leo is an American. This is so important. We have to preserve this heritage and continue to learn from it.</p>
@@ -101,7 +87,6 @@ Weekly updates incclude:
                     <p>بصفتي ملحدًا أستكشف النصوص التأسيسية للديانات الإبراهيمية الثلاث، أقدّم كل تقليد على حدة مع احترام قيمته المقدسة. ويجب أن يظل هذا الحوار مفتوحًا ومحترمًا.</p>
                     <p>أود أن أعرب عن امتناني للعلماء والممارسين الدينيين الذين شاركوني معارفهم ورؤاهم بسخاء. لقد كان توجيههم أساسيًا في تعميق فهمي لهذه الأديان وتأثيرها في العالم. وأنا ملتزم بمواصلة هذه الرحلة من التعلم والحوار، مدركًا لأهمية الاحترام المتبادل والتعاطف في بناء مجتمع أكثر شمولية وانسجامًا.</p>
                 </div>
-            </div>
             </div>
 
             <div class="faith-link-grid" role="region" aria-label="Faith links panel">
@@ -117,10 +102,8 @@ Weekly updates incclude:
             </div>
         </section>
 
-        
-       
-<!--This is the update weekly Friday Prayer, all prayers have been archived and those will be coming soon-->
-       <section class="section prayer-section">
+ <!--This is the update weekly Friday Prayer, all prayers have been archived and those will be coming soon-->
+        <section class="section prayer-section">
             <h2 class="section-title">
                 <span class="lang-en">Friday Prayer</span>
                 <span class="lang-ar">صلاة الجمعة</span>
@@ -163,15 +146,17 @@ Weekly updates incclude:
         </section>
 
 <!--This is the second Friday Prayer, there is a story in the Quran about it. You should reference the historical accounts and religious teachings, citations for further research for more understanding and direction on these faith pages.-->
-        <section class="section prayer-section">
+          <section class="section prayer-section">
             <h3 class="section-title">
                 <span class="lang-en">Second Friday Prayer</span>
                 <span class="lang-ar">صلاة الجمعة الثانية</span>
             </h3>
+
  <!--This date needs to be changed out each week, even though no updates on the prisoners or the situation-->          
-          <h3 class="section-date">
-                <span class="lang-en">Friday, October 16, 2026</span>
-                <span class="lang-ar">الجمعة، 16 أكتوبر 2026</span>
+           
+            <h3 class="section-date">
+                <span class="lang-en">Friday, August 28, 2026</span>
+                <span class="lang-ar">الجمعة، 28 أغسطس 2026</span>
             </h3>
             <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/718.jpg" alt="Quran quote" class="prayer-image" loading="lazy">
             <div class="prayer-body">
@@ -211,9 +196,10 @@ Weekly updates incclude:
                 </div>
             </div>
         </section>
+        
     </main>
 
-      <footer class="site-footer">
+      <footer class="site-footer" data-global-chrome>
         <div class="footer-container">
         <div class="footer-row">
           <a href="legal.html" class="footer-btn footer-btn-left">
@@ -222,14 +208,33 @@ Weekly updates incclude:
           </a>
 
           <div class="footer-content">
-            <img src="images/40.jpg" alt="" class="footer-img" loading="lazy">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
             <p class="footer-text">
-              <span class="lang-en">From the Ashes, A State rises</span>
+              <span class="lang-en">From the Ashes, a State Rises</span>
               <span class="lang-ar">من الرماد، تنهض دولة</span>
             </p>
             <p class="copyright">
-              <span class="lang-en">&copy; 2026 American Nobody999</span>
-              <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
+              <span class="lang-en">&copy; 2026 <span class="footer-name">American Nobody</span>999 ✌️ 🇵🇸 🧭 👈</span>
+              <span class="lang-ar">&copy; 2026 <span class="footer-name">أمريكان نوبودي</span>999 ✌️ 🇵🇸 🧭 👈</span>
             </p>
           </div>
           <a href="contact.html" class="footer-btn footer-btn-right">
