@@ -1,0 +1,579 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+:where(.face-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.face-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.face-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.face-page) .video-gallery-section,
+:where(.face-page) .image-gallery-section {
+border: 5px solid #000;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.55);
+    margin: 2.8rem auto;
+}
+
+:where(.face-page) .video-gallery,
+:where(.face-page) .image-gallery {
+display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    border-radius: 12px;
+}
+
+:where(.face-page) .video-gallery::-webkit-scrollbar,
+:where(.face-page) .image-gallery::-webkit-scrollbar {
+height: 10px;
+}
+
+:where(.face-page) .video-gallery::-webkit-scrollbar-thumb,
+:where(.face-page) .image-gallery::-webkit-scrollbar-thumb {
+background: var(--primary-green);
+    border-radius: 10px;
+}
+
+:where(.face-page) .video-gallery::-webkit-scrollbar-track,
+:where(.face-page) .image-gallery::-webkit-scrollbar-track {
+background: transparent;
+}
+
+:where(.face-page) .video-container,
+:where(.face-page) .image-container {
+    overflow: hidden;
+    position: relative;
+}
+
+:where(.face-page) .video-container {
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+:where(.face-page) .video-container video {
+width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: #000;
+}
+
+:where(.face-page) .initial-play-btn {
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary-green);
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+:where(.face-page) .initial-play-btn:hover {
+background: var(--accent-red);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+:where(.face-page) .video-overlay {
+position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    gap: 1rem;
+}
+
+:where(.face-page) .replay-btn {
+width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent-red);
+    color: white;
+    font-size: 2.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+:where(.face-page) .replay-btn:hover {
+background: var(--primary-green);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+:where(.face-page) .video-gallery.scrollable-gallery,
+:where(.face-page) .image-gallery.scrollable-gallery {
+padding: 10px 0;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    max-width: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+:where(.face-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.face-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+.face-page .face-main {
+max-width: 1320px;
+    margin: 0 auto;
+    padding: 2rem 0.85rem 2.5rem;
+}
+
+.face-page .face-hero {
+display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    align-items: stretch;
+    max-width: 1180px;
+    margin: 0 auto 2rem;
+    padding: 0.9rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.5);
+}
+
+.face-page .face-hero img {
+width: 92%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.65);
+}
+
+.face-page .face-hero img:first-child,
+.face-page .face-hero img:last-child {
+justify-self: end;
+}
+
+.face-page .image-gallery-section {
+max-width: 1240px;
+    margin: 2rem auto;
+    padding: 1rem 0.85rem 1.2rem;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(207, 17, 39, 0.5);
+}
+
+.face-page .face-gallery-section {
+scroll-margin-top: 1rem;
+}
+
+.face-page .image-gallery-section h2 {
+margin: 0 auto 0.8rem;
+    padding: 0 0.75rem;
+    text-align: center;
+}
+
+.face-page .image-gallery {
+display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.8rem;
+    scroll-behavior: smooth;
+}
+
+.face-page .image-gallery::-webkit-scrollbar {
+height: 10px;
+}
+
+.face-page .image-gallery::-webkit-scrollbar-thumb {
+background: var(--primary-green);
+    border-radius: 10px;
+}
+
+.face-page .image-gallery::-webkit-scrollbar-track {
+background: transparent;
+}
+
+.face-page .image-container {
+    aspect-ratio: 4 / 5;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.face-page .image-container img {
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.face-page .video-gallery-section {
+max-width: 1240px;
+    margin: 2rem auto;
+}
+
+.face-page .video-gallery.scrollable-gallery {
+gap: 1rem;
+    padding: 0.8rem;
+}
+
+.face-page .video-gallery-section .video-container video {
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+@media (min-width: 1600px) {
+:where(.face-page) .section,
+.face-page .face-main {
+max-width: 1440px;
+}
+
+:where(.face-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+:where(.face-page) .section {
+padding: 2.4rem 1.4rem;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.face-page) .section {
+padding: 2.1rem 1.15rem;
+}
+
+.face-page .face-main {
+padding-left: 0.85rem;
+            padding-right: 0.85rem;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.face-page) .section {
+padding: 1.75rem 1rem;
+            margin: 1.75rem auto;
+}
+
+.face-page .face-hero {
+grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 768px) {
+:where(.face-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.face-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.face-page) .section {
+padding: 2rem 1rem;
+            margin: 1.8rem auto;
+            width: 100%;
+}
+
+:where(.face-page) .scrollable-gallery {
+gap: 1rem;
+            padding: 1rem;
+            margin: 1.5rem auto;
+}
+
+:where(.face-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+.face-page .face-main {
+padding: 1.2rem 0.5rem 1.8rem;
+}
+
+.face-page .image-gallery-section {
+margin: 1.25rem auto;
+            padding: 0.75rem 0.55rem 0.9rem;
+}
+
+:where(.face-page) .section,
+:where(.face-page) .video-gallery-section,
+:where(.face-page) .image-gallery-section,
+:where(.face-page) .scrollable-gallery {
+width: 100%;
+            max-width: 100%;
+}
+
+:where(.face-page) .video-gallery,
+:where(.face-page) .scrollable-gallery {
+padding-left: 0.5rem;
+            padding-right: 0.5rem;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.face-page) main p {
+font-size: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+:where(.face-page) .section {
+padding: 1.4rem 0.85rem;
+            margin: 1.25rem auto;
+}
+
+:where(.face-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+:where(.face-page) .initial-play-btn {
+width: 68px;
+            height: 68px;
+            font-size: 2rem;
+}
+
+:where(.face-page) .replay-btn {
+width: 60px;
+            height: 60px;
+            font-size: 1.9rem;
+}
+
+.face-page .face-hero {
+grid-template-columns: 1fr;
+            padding: 0.6rem;
+            margin-bottom: 1.2rem;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.face-page) .section {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}
+}
+
+@media (max-width: 359px) {
+:where(.face-page) .section,
+.face-page .image-gallery-section {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}
+}
+
+@media (min-width: 1200px) {
+.face-page .face-main {
+width: min(100%, 1320px);
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.face-page .face-main {
+width: min(100%, 1120px);
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+.face-page .face-main {
+width: min(100%, 940px);
+            padding-left: 0.7rem;
+            padding-right: 0.7rem;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+.face-page .face-main {
+width: 100%;
+            padding-left: 0.55rem;
+            padding-right: 0.55rem;
+}
+
+.face-page .image-gallery-section h2,
+.face-page .video-gallery-section h2 {
+font-size: 1.45rem;
+            line-height: 1.2;
+}
+}
+
+@media (max-width: 575px) {
+.face-page .face-main {
+width: 100%;
+            padding-left: 0.45rem;
+            padding-right: 0.45rem;
+}
+
+.face-page .image-gallery-section h2,
+.face-page .video-gallery-section h2 {
+font-size: 1.25rem;
+            line-height: 1.2;
+}
+
+.face-page .video-gallery.scrollable-gallery {
+padding: 0.7rem;
+            gap: 0.75rem;
+}
+}
+
+
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .face-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Face body only; cards and shared components retain their backgrounds. */
+body.face-page { background-color: #D9E2CE; }
+
+/* Keep wide media strips inside their own mobile scroll viewports. */
+@media (max-width: 768px) {
+    .face-page :is(.face-main, .image-gallery-section, .video-gallery-section, .image-gallery, .video-gallery) {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+/* Flex children must shrink so the media strips own horizontal overflow. */
+.face-page .face-main > section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+.face-page :is(.image-gallery-section, .video-gallery-section, .image-gallery, .video-gallery) {
+    min-width: 0;
+    max-width: 100%;
+}
+/* Keep the original replay design inside short widescreen players. */
+.face-page .video-overlay img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100% - 80px);
+    min-height: 0;
+    margin: 0;
+    object-fit: contain;
+    flex: 0 1 auto;
+}
+.face-page .video-overlay .replay-btn { flex-shrink: 0; }
+
+/* Stationary section frames; each inner row owns its horizontal scrolling. */
+.face-page :is(.image-gallery-section, .video-gallery-section) {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+}
+.face-page .face-main :is(.image-gallery, .video-gallery) {
+    --face-item-width: calc((100% - 2rem) / 3);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: .8rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+}
+.face-page .face-main :is(.image-gallery, .video-gallery) > :is(.image-container, .video-container) {
+    flex: 0 0 var(--face-item-width);
+    width: var(--face-item-width);
+    min-width: 0;
+    max-width: 100%;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: none;
+    scroll-snap-align: start;
+}
+.face-page .face-main .image-gallery .image-container img {
+    border: 0;
+    margin: 0;
+    object-fit: contain;
+}
+.face-page .face-main .video-gallery .video-container video { object-fit: contain; }
+@media (min-width: 576px) and (max-width: 991px) {
+    .face-page .face-main :is(.image-gallery, .video-gallery) { --face-item-width: calc((100% - 1rem) / 2); }
+}
+@media (max-width: 575px) {
+    .face-page .face-main :is(.image-gallery, .video-gallery) { --face-item-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .face-page .face-main :is(.image-gallery, .video-gallery) { scroll-behavior: auto; }
+}
