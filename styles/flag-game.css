@@ -1,3 +1,5 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
 .flip-page:not(.edu-page):not(.circus-page-body) {
     background-color: rgb(6 59 76 / 50%);
 }
@@ -250,15 +252,76 @@
     .flip-page .flag-game { width: 94%; padding: 1rem; }
     .flip-page .myuz-feature-content { grid-template-columns: 1fr; gap: 1.5rem; }
     .flip-page .flag-game .flag-game-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .flip-page .flag-game .flag-card-inner { min-height: 420px; }
+    .flip-page .flag-game .flag-card {
+        width: 100%;
+        max-width: 560px;
+        margin-inline: auto;
+        min-width: 0;
+    }
+    .flip-page .flag-game .flag-card-inner {
+        width: 100%;
+        height: auto;
+        min-height: 420px;
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .flip-page .flag-game .flag-card-front,
+    .flip-page .flag-game .flag-card-back {
+        width: 100%;
+        min-width: 0;
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+    .flip-page .flag-game .flag-card-back {
+        justify-content: flex-start;
+    }
+    .flip-page .flag-game .flag-card-back h3 {
+        width: 100%;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+    .flip-page .flag-game .flag-card-back p {
+        width: 100%;
+        max-width: 100%;
+        line-height: 1.65;
+        margin-bottom: 1rem;
+    }
+    .flip-page .flag-game .landmark-image {
+        width: 100%;
+        max-width: 100%;
+        height: clamp(160px, 45vw, 260px);
+        object-fit: contain;
+        flex-shrink: 0;
+        margin-bottom: 1rem;
+    }
+    .flip-page .flag-game .flag-card-back .flag-reset-button {
+        margin-top: auto;
+    }
+    .flip-page .flag-game .flag-card :is(label, h3, p, button) {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
     .flip-page .myuz-feature h2,
     .flip-page .flag-game h2 { font-size: 1.8rem; line-height: 1.35; }
     .flip-page .myuz-feature-text p,
     .flip-page .flag-game p { font-size: 1rem; }
-    .flip-page .flag-game .flag-answer { font-size: 16px; }
-    .flip-page .flag-game .flag-card-front > .flag-image {
-        min-height: clamp(160px, 40vw, 280px);
+    .flip-page .flag-game .flag-answer,
+    .flip-page .flag-game .flag-check-button,
+    .flip-page .flag-game .flag-reset-button {
+        width: 100%;
+        max-width: 360px;
+        min-width: 0;
+        min-height: 44px;
+        font-size: 16px;
     }
+    .flip-page .flag-game .flag-card-front > .flag-image {
+        flex: 1 0 auto;
+        height: clamp(180px, 50vw, 320px);
+        min-height: clamp(160px, 40vw, 280px);
+        max-height: 320px;
+        margin-block: auto 1rem;
+    }
+    .flip-page .flag-game .flag-feedback { width: 100%; margin-bottom: 0; }
     .flip-page .flag-game button:hover { transform: none; }
 }
 @media (max-width: 575px) {
