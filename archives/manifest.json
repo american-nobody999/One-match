@@ -1,0 +1,133 @@
+{
+  "version": 2,
+  "series": {
+    "ok-america": {
+      "months": {
+        "2026-10": "ok-series/ok-america/2026-10.html"
+      },
+      "collection": "ok-series",
+      "title": {
+        "en": "OK America",
+        "ar": "حسنًا، يا أمريكا"
+      },
+      "directory": "ok-series/ok-america"
+    },
+    "ok-humanity": {
+      "months": {
+        "2026-10": "ok-series/ok-humanity/2026-10.html"
+      },
+      "collection": "ok-series",
+      "title": {
+        "en": "OK Humanity",
+        "ar": "حسنًا، يا إنسانية"
+      },
+      "directory": "ok-series/ok-humanity"
+    },
+    "ok-israelis": {
+      "months": {
+        "2026-10": "ok-series/ok-israelis/2026-10.html"
+      },
+      "collection": "ok-series",
+      "title": {
+        "en": "OK Israelis",
+        "ar": "حسنًا، يا إسرائيليين"
+      },
+      "directory": "ok-series/ok-israelis"
+    },
+    "ok-palestine": {
+      "months": {
+        "2026-10": "ok-series/ok-palestine/2026-10.html"
+      },
+      "collection": "ok-series",
+      "title": {
+        "en": "OK Palestine",
+        "ar": "فلسطين بخير"
+      },
+      "directory": "ok-series/ok-palestine"
+    },
+    "friday-prayers": {
+      "collection": "friday-prayers",
+      "title": {
+        "en": "Friday Prayers",
+        "ar": "صلوات الجمعة"
+      },
+      "directory": "friday-prayers",
+      "months": {
+        "2026-10": "friday-prayers/2026-10.html"
+      }
+    },
+    "trump": {
+      "collection": "world-leaders",
+      "title": {
+        "en": "United States — Trump",
+        "ar": "الولايات المتحدة — ترامب"
+      },
+      "directory": "world-leaders/trump",
+      "months": {
+        "2026-10": "world-leaders/trump/2026-10.html"
+      }
+    },
+    "iran": {
+      "collection": "world-leaders",
+      "title": {
+        "en": "Iran — Citizens",
+        "ar": "إيران — المواطنون"
+      },
+      "directory": "world-leaders/iran",
+      "months": {
+        "2026-10": "world-leaders/iran/2026-10.html"
+      }
+    },
+    "pope-leo": {
+      "collection": "world-leaders",
+      "title": {
+        "en": "Vatican — Pope Leo XIV",
+        "ar": "الفاتيكان — البابا ليو الرابع عشر"
+      },
+      "directory": "world-leaders/pope-leo",
+      "months": {
+        "2026-10": "world-leaders/pope-leo/2026-10.html"
+      }
+    },
+    "love-letters-palestine": {
+      "collection": "love-letters-palestine",
+      "title": {
+        "en": "Love Letters for Palestine",
+        "ar": "رسائل حب لفلسطين"
+      },
+      "directory": "love-letters-palestine",
+      "months": {}
+    },
+    "other-communications": {
+      "collection": "other-communications",
+      "title": {
+        "en": "Other Communications",
+        "ar": "مراسلات أخرى"
+      },
+      "directory": "other-communications",
+      "months": {}
+    }
+  },
+  "collections": {
+    "ok-series": {
+      "en": "OK Series",
+      "ar": "سلاسل OK"
+    },
+    "friday-prayers": {
+      "en": "Friday Prayers",
+      "ar": "صلوات الجمعة"
+    },
+    "world-leaders": {
+      "en": "World Leaders",
+      "ar": "قادة العالم"
+    },
+    "love-letters-palestine": {
+      "en": "Love Letters for Palestine",
+      "ar": "رسائل حب لفلسطين"
+    },
+    "other-communications": {
+      "en": "Other Communications",
+      "ar": "مراسلات أخرى"
+    }
+  }
+}
