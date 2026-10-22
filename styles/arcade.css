@@ -1,0 +1,195 @@
+/* Author: Leslie Brockman
+   Date modified: 10/21/2026 */
+body.arcade-page {
+    background-color: #D9E2CE;
+}
+
+.arcade-page .arcade-main {
+    width: min(100%, 1200px);
+    margin-inline: auto;
+    padding: clamp(1rem, 4vw, 3rem);
+    overflow-wrap: anywhere;
+}
+
+.arcade-page .arcade-intro,
+.arcade-page .arcade-gallery > h2 {
+    text-align: center;
+}
+
+.arcade-page .arcade-intro {
+    margin-bottom: 2rem;
+}
+
+.arcade-page .arcade-intro h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.arcade-page .arcade-game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1.5rem;
+}
+
+/* Reusable upright cabinets; all chrome is local to the game cards. */
+.arcade-page .arcade-game-card {
+    --cabinet-black: #080D09;
+    --cabinet-charcoal: #151B16;
+    --cabinet-green: #62ED7E;
+    --cabinet-phosphor: #A4FFB0;
+    --cabinet-dark-green: #183A22;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: clamp(.8rem, 2vw, 1.4rem);
+    border: 2px solid var(--cabinet-green);
+    border-bottom: 12px solid var(--cabinet-black);
+    border-radius: 16px 16px 5px 5px;
+    background: linear-gradient(100deg, var(--cabinet-black), var(--cabinet-charcoal) 18%, var(--cabinet-charcoal) 82%, var(--cabinet-black));
+    box-shadow: inset 5px 0 0 var(--cabinet-dark-green), inset -5px 0 0 var(--cabinet-dark-green), 0 8px 0 var(--cabinet-black), 0 12px 20px #080d0933, 0 0 12px #62ed7e33;
+    color: var(--cabinet-phosphor);
+    text-align: center;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.arcade-page .arcade-game-card:hover,
+.arcade-page .arcade-game-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: inset 5px 0 0 var(--cabinet-dark-green), inset -5px 0 0 var(--cabinet-dark-green), 0 8px 0 var(--cabinet-black), 0 16px 24px #080d0944, 0 0 18px #62ed7e66;
+}
+
+.arcade-page .arcade-game-card h3 {
+    display: grid;
+    align-items: center;
+    min-height: 5.5rem;
+    margin: 0 0 1rem;
+    padding: .8rem;
+    border: 1px solid var(--cabinet-green);
+    border-radius: 8px 8px 2px 2px;
+    background: var(--cabinet-black);
+    color: var(--cabinet-green);
+    font-family: ui-monospace, "Courier New", monospace;
+    font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+    line-height: 1.4;
+    text-shadow: 0 0 8px #62ed7e77;
+    overflow-wrap: anywhere;
+}
+
+.arcade-page .arcade-game-card h3 .lang-ar { font-family: var(--font-ar); }
+
+.arcade-page .arcade-game-media {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    min-width: 0;
+    padding: .5rem;
+    border: 8px solid var(--cabinet-black);
+    border-radius: 14px;
+    background: radial-gradient(ellipse, var(--cabinet-dark-green), var(--cabinet-black));
+    box-shadow: inset 0 0 18px #62ed7e33, 0 0 0 1px var(--cabinet-dark-green);
+    overflow: hidden;
+}
+
+.arcade-page .arcade-game-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(transparent 0 3px, #080d0922 3px 4px);
+}
+
+.arcade-page .arcade-game-media img {
+    position: absolute;
+    inset: .5rem;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    max-width: 100%;
+    object-fit: contain;
+    border: 0;
+    border-radius: 4px;
+}
+
+.arcade-page .arcade-control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: .75rem;
+    min-height: 5rem;
+    margin: .75rem 0 1rem;
+    padding: 1rem;
+    border: 1px solid var(--cabinet-dark-green);
+    border-bottom: 5px solid var(--cabinet-black);
+    border-radius: 3px 3px 12px 12px;
+    background: linear-gradient(var(--cabinet-charcoal), var(--cabinet-dark-green));
+}
+
+.arcade-page .arcade-joystick {
+    position: relative;
+    width: 3rem;
+    height: 1rem;
+    flex: 0 0 3rem;
+    border-radius: 50%;
+    background: var(--cabinet-black);
+    box-shadow: 0 0 0 1px var(--cabinet-green);
+}
+
+.arcade-page .arcade-joystick::before {
+    content: "";
+    position: absolute;
+    bottom: .5rem;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 1.6rem;
+    background: var(--cabinet-phosphor);
+}
+
+.arcade-page .arcade-joystick::after {
+    content: "";
+    position: absolute;
+    bottom: 1.5rem;
+    left: calc(50% - .65rem);
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 25%, var(--cabinet-phosphor), var(--cabinet-green) 50%, var(--cabinet-dark-green));
+}
+
+.arcade-page .arcade-control-buttons { display: flex; gap: .45rem; }
+.arcade-page .arcade-control-buttons > span {
+    width: clamp(1.1rem, 3vw, 1.6rem);
+    aspect-ratio: 1;
+    border: 2px solid var(--cabinet-black);
+    border-radius: 50%;
+    background: var(--cabinet-green);
+    box-shadow: 0 3px 0 var(--cabinet-black), inset 0 2px 2px var(--cabinet-phosphor);
+}
+
+.arcade-page .arcade-game-card p { margin-bottom: 1rem; }
+.arcade-page .arcade-game-card .arcade-launch {
+    --button-background: var(--cabinet-dark-green);
+    --button-hover-background: #245431;
+    --button-text: var(--cabinet-phosphor);
+    --button-border: var(--cabinet-green);
+    --button-focus: var(--cabinet-phosphor);
+    margin-top: auto;
+    font-family: ui-monospace, "Courier New", monospace;
+}
+
+.arcade-page .arcade-game-card .arcade-game-status {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding: .7rem;
+    border: 1px dashed var(--cabinet-dark-green);
+    font-family: ui-monospace, "Courier New", monospace;
+    font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .arcade-page .arcade-game-card { transition: none; }
+    .arcade-page .arcade-game-card:hover,
+    .arcade-page .arcade-game-card:focus-within { transform: none; }
+}
+
+.arcade-page .arcade-main .lang-ar {
+    direction: rtl;
+}
