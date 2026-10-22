@@ -1,0 +1,490 @@
+/* 
+   Author: Leslie Brockman
+   Date: 10-19-2026
+   Date modified: 10/21/2026
+*/
+:where(.leslie-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.leslie-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.leslie-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.leslie-page) .image-gallery-section {
+border: 5px solid #000;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.55);
+    margin: 2.8rem auto;
+}
+
+:where(.leslie-page) .gallery-card a {
+display: block;
+    width: 100%;
+    height: 100%;
+}
+
+:where(.leslie-page) .gallery-card a img {
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+:where(.leslie-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.leslie-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+.leslie-page main.leslie-page {
+max-width: 1320px;
+    margin: 0 auto;
+    padding: 2rem 0.85rem 2.5rem;
+}
+
+.leslie-page .leslie-1,
+.leslie-page .leslie-3,
+.leslie-page .scroll-panels {
+max-width: 1240px;
+    margin: 2rem auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    box-sizing: border-box;
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow:
+        inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+}
+
+.leslie-page .leslie-1 {
+min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.leslie-page .leslie-1 > h2 {
+text-align: center;
+}
+
+.leslie-page .leslie-1 > .div-img {
+    display: block;
+    align-self: center;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.leslie-page .leslie-1-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.leslie-page .leslie-1-media {
+flex: 0 0 clamp(240px, 30vw, 320px);
+}
+
+.leslie-page .leslie-1-media img {
+width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+    border: 3px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.35);
+}
+
+.leslie-page .leslie-1-bio {
+flex: 1;
+    min-width: 0;
+    border: 3px solid #000;
+    border-radius: 12px;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(207, 17, 39, 0.25);
+    display: flex;
+    align-items: center;
+}
+
+.leslie-page .leslie-1-bio p {
+margin: 0;
+    line-height: 1.65;
+}
+
+.leslie-page .leslie-3 h2,
+.leslie-page .image-gallery-section h2,
+.leslie-page .scroll-panel h2,
+.leslie-page .scroll-panel h3,
+.leslie-page .scroll-panel h4 {
+text-align: center;
+}
+
+.leslie-page .image-gallery-section {
+margin: 1.5rem auto;
+    padding: 1rem 0.85rem 1.15rem;
+    border: 3px solid #000;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 7px 18px rgba(0, 151, 54, 0.26);
+}
+
+.leslie-page .image-gallery-scroll {
+display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.8rem;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-green) transparent;
+}
+
+.leslie-page .image-gallery-scroll::-webkit-scrollbar {
+height: 10px;
+}
+
+.leslie-page .image-gallery-scroll::-webkit-scrollbar-thumb {
+background: var(--primary-green);
+    border-radius: 10px;
+}
+
+.leslie-page .image-gallery-scroll::-webkit-scrollbar-track {
+background: transparent;
+}
+
+.leslie-page .image-gallery-scroll img {
+flex: 0 0 calc((100% - 2rem) / 3);
+    width: calc((100% - 2rem) / 3);
+    height: 360px;
+    object-fit: cover;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.35);
+}
+
+.leslie-page .scrollable-gallery {
+padding: 0.8rem;
+    border: none;
+}
+
+.leslie-page .gallery-card {
+flex: 0 0 calc((100% - 2rem) / 3);
+    width: calc((100% - 2rem) / 3);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 151, 54, 0.35);
+}
+
+.leslie-page .gallery-card img {
+width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border: none;
+    background: #fff;
+}
+
+.leslie-page .leslie-video-gallery {
+scroll-snap-type: x mandatory;
+}
+
+.leslie-page .leslie-video-gallery .video-card {
+aspect-ratio: 16 / 9;
+    background: #000;
+    scroll-snap-align: start;
+}
+
+.leslie-page .leslie-video-gallery .video-card iframe {
+display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.leslie-page .leslie-video-gallery .leslie-playlist-captioned {
+aspect-ratio: auto;
+    align-self: flex-start;
+}
+
+.leslie-page .leslie-playlist-captioned .leslie-playlist-frame {
+aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+.leslie-page .leslie-playlist-captioned .leslie-playlist-caption {
+padding: 0.8rem 1rem;
+    background: var(--panel-bg);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+.leslie-page .scroll-panels {
+display: grid;
+    gap: 1.2rem;
+}
+
+.leslie-page .scroll-panel {
+border: 0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(207, 17, 39, 0.35);
+}
+
+.leslie-page .scroll-panel-body {
+max-height: 72vh;
+    overflow: auto;
+    padding: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-green) transparent;
+}
+
+@media (min-width: 1600px) {
+.leslie-page main.leslie-page {
+max-width: 1440px;
+}
+
+:where(.leslie-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+
+:where(.leslie-page) .gallery-card {
+flex-basis: 340px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.leslie-page main.leslie-page {
+padding-left: 0.85rem;
+            padding-right: 0.85rem;
+}
+
+:where(.leslie-page) .gallery-card {
+flex-basis: 280px;
+}
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.leslie-page) .gallery-card {
+flex: 0 0 280px;
+            width: 280px;
+}
+}
+
+@media (max-width: 768px) {
+:where(.leslie-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.leslie-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.leslie-page) .scrollable-gallery {
+gap: 1rem;
+            padding: 1rem;
+            margin: 1.5rem auto;
+}
+
+:where(.leslie-page) .gallery-card {
+flex: 0 0 250px;
+}
+
+:where(.leslie-page) .gallery-card img {
+height: 250px;
+}
+
+:where(.leslie-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+.leslie-page main.leslie-page {
+padding: 1.2rem 0.5rem 1.8rem;
+}
+
+.leslie-page .leslie-1,
+.leslie-page .leslie-3,
+.leslie-page .scroll-panels,
+.leslie-page .image-gallery-section {
+margin: 1.25rem auto;
+}
+
+.leslie-page .image-gallery-section {
+padding: 0.75rem 0.55rem 0.9rem;
+}
+
+.leslie-page .leslie-1-row {
+flex-direction: column;
+}
+
+.leslie-page .leslie-1-media {
+flex: none;
+    width: min(100%, 320px);
+    align-self: center;
+}
+
+.leslie-page .leslie-1-bio {
+width: 100%;
+}
+
+
+
+.leslie-page .image-gallery-scroll img,
+.leslie-page .gallery-card {
+flex: 0 0 100%;
+            width: 100%;
+}
+
+:where(.leslie-page) .image-gallery-section,
+:where(.leslie-page) .scrollable-gallery {
+width: 100%;
+            max-width: 100%;
+}
+
+:where(.leslie-page) .scrollable-gallery {
+padding-left: 0.5rem;
+            padding-right: 0.5rem;
+}
+
+:where(.leslie-page) .gallery-card {
+flex: 0 0 clamp(220px, 75vw, 320px);
+}
+
+:where(.leslie-page) .gallery-card img {
+height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background: #fff;
+}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.leslie-page) main p {
+font-size: 1rem;
+}
+
+:where(.leslie-page) .gallery-card {
+flex-basis: 250px;
+            width: 250px;
+}
+
+.leslie-page .image-gallery-scroll img,
+.leslie-page .gallery-card {
+flex-basis: 100%;
+            width: 100%;
+}
+}
+
+@media (max-width: 480px) {
+:where(.leslie-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+.leslie-page .image-gallery-scroll img,
+.leslie-page .gallery-card {
+flex: 0 0 100%;
+            width: 100%;
+}
+
+.leslie-page .scroll-panel-body {
+max-height: 68vh;
+}
+
+:where(.leslie-page) .gallery-card {
+flex: 0 0 82vw;
+}
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.leslie-page) .gallery-card {
+flex-basis: 82vw;
+            width: 82vw;
+}
+
+.leslie-page .image-gallery-scroll img,
+.leslie-page .gallery-card {
+flex-basis: 100%;
+            width: 100%;
+}
+}
+
+@media (max-width: 359px) {
+.leslie-page .leslie-1,
+.leslie-page .leslie-3,
+.leslie-page .scroll-panels {
+margin: 0.9rem auto;
+}
+
+:where(.leslie-page) .gallery-card {
+flex-basis: 88vw;
+            width: 88vw;
+}
+
+.leslie-page .image-gallery-scroll img,
+.leslie-page .gallery-card {
+flex-basis: 100%;
+            width: 100%;
+}
+}
+
+/* Keep the shared mobile control above the positioned title. */
+@media (max-width: 768px) {
+    .leslie-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Body only: retain the existing white reading panels and main canvas. */
+body.leslie-page { background-color: #D9E2CE; }
+/* Allow text and scrolling galleries to shrink within their reading panels. */
+.leslie-page :is(.leslie-1-media, .leslie-1-bio, .leslie-1, .leslie-3, .scroll-panels, .scroll-panel, .scroll-panel-body, .image-gallery-section, .image-gallery-scroll, .scrollable-gallery) { min-width: 0; max-width: 100%; }
+.leslie-page main.leslie-page { overflow-wrap: anywhere; }
+.leslie-page :is(.lang-ar, .p-ar, .h2-ar, .h3-ar) { direction: rtl; }
+@media (max-width: 768px) {
+    .leslie-page .image-gallery-scroll img { max-width: 100%; }
+    .leslie-page .leslie-1-media img { height: auto; min-height: 0; }
+}
