@@ -1,3 +1,7 @@
+/*
+Author: Leslie Brockman
+Date: 10-21-2026
+*/
 (() => {
     'use strict';
 
