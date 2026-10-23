@@ -1,0 +1,1206 @@
+/*======================================
+    STYLESHEET
+    Author:Leslie Brockman
+    Date: O7/27/2026
+    Biosite Styles Page
+    Inspirtational Song: I'll make a man out you--Samuel Kim
+    Still Here.
+    modified: 10-23-2026
+======================================*/
+
+/*======================================
+    1. CSS Reset
+======================================*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+/*======================================
+    2. Variables
+======================================*/
+:root {
+    /* DESIGN SYSTEM:Phase 1 - Colors, Typography & Spacing*/
+    /*Global designs for pages with industry standards*/
+    --deep-green: #007A3D;
+    --black: #000000;
+    --white: #FFFFFF;
+    --cherry-red: #CE1126;
+    --warm-cream: #F5F5DC;
+    --charcoal-gray: #36454F;
+
+    --bg-color: var(--warm-cream);
+    --surface-color: var(--white);
+    --surface-light: #F9F9EF;
+
+    --text-primary: var(--black);
+    --text-secondary: #1F1F1F;
+
+    --palestine-red: var(--cherry-red);
+    --palestine-green: var(--deep-green);
+    --accent-gold: var(--charcoal-gray);
+
+    --border-color: #8A9388;
+
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.22);
+
+    /*==========================
+        Typography
+    ==========================*/
+    --heading-font: "Merriweather", serif;
+    --body-font: "Source Sans 3", sans-serif;
+    --nav-font: "Merriweather", serif;
+    --arabic-font: "Amiri", serif;
+
+    /*==========================
+        Font Sizes
+    ==========================*/
+    --fs-display: 3rem;
+    --fs-h1: 2.5rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.5rem;
+
+    --fs-body: 1.1rem;
+    --fs-small: 0.95rem;
+
+    /*==========================
+        Spacing
+    ==========================*/
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+
+    /*==========================
+        Rounded Corners
+    ==========================*/
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+}
+
+/*======================================
+    3. Utilities
+======================================*/
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*======================================
+    4. Typography
+======================================*/
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--heading-font);
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+    color: var(--white);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.55);
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+}
+
+/*Arabic styles for typography*/
+.lang-ar {
+    font-family: var(--arabic-font);
+    direction: rtl;
+}
+
+/*======================================
+    5. Layout
+======================================*/
+body {
+    background: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--body-font);
+    font-size: var(--fs-body);
+    line-height: 1.8;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/*Links*/
+a {
+    color: var(--palestine-green);
+    transition: 0.25s ease;
+}
+
+a:hover {
+    color: var(--palestine-red);
+}
+
+a:focus-visible,
+button:focus-visible,
+.scrolling-gallery:focus-visible {
+    outline: 3px solid var(--charcoal-gray);
+    outline-offset: 3px;
+}
+
+header a:focus-visible,
+header button:focus-visible {
+    outline-color: var(--white);
+}
+
+/*======================================
+    Components
+======================================*/
+/* Language Toggle Container */
+.language-toggle {
+    margin-top: 1.25rem;
+}
+
+/*======================================
+    Header
+======================================*/
+header {
+    position: relative;
+    background: linear-gradient(180deg, #008443 0%, #007A3D 40%, #006332 100%);
+    border-bottom: 5px solid var(--black);
+    box-shadow: 0 8px 30px var(--shadow-dark);
+    padding: var(--space-md) var(--space-lg);
+    text-align: center;
+}
+
+/* Main Title:
+The clamp() function automatically scales the title between mobile and desktop.*/
+header h1 {
+    margin: 0;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    letter-spacing: 2px;
+    font-weight: 900;
+    color: var(--white);
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25), 0 0 18px rgba(255, 255, 255, 0.15);
+}
+
+/*======================================
+    Navigation
+======================================*/
+.link-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 220px;
+    height: 3px;
+    margin: 2rem auto 0;
+    background: var(--white);
+    border-radius: 100px;
+}
+
+/*======================================
+    Hero
+======================================*/
+/* Main Hero Container */
+.main-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 30px rgba(206, 17, 38, 0.28), 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.hero-image {
+    flex: 0 0 340px;
+    padding: 0;
+    position: relative;
+}
+
+.hero-image-home {
+    padding-top: 1.25rem;
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    border: 4px solid var(--palestine-green);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.55);
+}
+
+.hero-caption {
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 1.9rem;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.main-text {
+    flex: 1;
+}
+
+.main-text h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    color: var(--palestine-green);
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.main-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border: 2px solid var(--charcoal-gray);
+    border-radius: 26px;
+    z-index: 0;
+}
+
+/*======================================
+    Gallery
+======================================*/
+.scrolling-gallery {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0.25rem;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scrolling-gallery.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.gallery-item {
+    flex: 0 0 calc((100% - 2rem) / 3);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--palestine-green);
+    border-radius: 14px;
+}
+
+/*======================================
+    Cards
+======================================*/
+.gallery-content,
+.action-items,
+.hobby-table {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 28px rgba(206, 17, 38, 0.24), 0 10px 24px var(--shadow-light);
+}
+
+/* Requirement 8 callout: using :is() pseudo-class to simplify grouped selectors. */
+:is(.gallery-content, .action-items, .hobby-table) h2 {
+    color: var(--palestine-green);
+}
+
+.hobby-mobile-list {
+    display: none;
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.hobby-mobile-list li {
+    padding: 0.9rem 1rem;
+    border: 1px solid #A6AEA4;
+}
+
+.hobby-mobile-list li:nth-child(odd) {
+    background: var(--surface-light);
+}
+
+.hobby-mobile-list li:nth-child(even) {
+    background: var(--white);
+}
+
+.hobby-mobile-list strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--charcoal-gray);
+}
+
+.action-items {
+    border: 0;
+    overflow: visible;
+}
+
+/* Keep the nested wrapper from framing or narrowing the images. */
+.action-items > .action-items {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.action-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+}
+
+.action-list li {
+    width: 100%;
+    list-style: none;
+    display: block;
+    flex: 0 0 auto;
+}
+
+.action-list img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: 0;
+    border-radius: 0;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.action-list li:hover img,
+.action-list li:focus-within img {
+    transform: scale(2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+/*======================================
+    Buttons
+======================================*/
+/* Navigation Buttons */
+.link-nav a {
+    display: inline-block;
+    font-family: var(--nav-font);
+    min-width: 120px;
+    padding: 0.85rem 1.6rem;
+    text-decoration: none;
+    color: var(--black);
+    background: linear-gradient(180deg, #FFFFFF, #ECECE3);
+    border: 2px solid var(--black);
+    border-radius: 40px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.link-nav a:hover {
+    background: var(--palestine-red);
+    border-color: var(--white);
+    color: var(--white);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Active navigation button */
+.link-nav a.active {
+    background: var(--palestine-red);
+    border-color: var(--white);
+    color: white;
+}
+
+.lang-toggle {
+    font-family: var(--nav-font);
+    background: linear-gradient(180deg, #E11A32, #B80E22);
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 40px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.lang-toggle:hover {
+    transform: translateY(-3px);
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--cherry-red);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+    font-family: var(--nav-font);
+    display: none;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--white);
+    border-radius: 999px;
+    background: var(--cherry-red);
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*======================================
+    Tables
+======================================*/
+.hobby-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.hobby-table table {
+    width: min(100%, 900px);
+    min-width: 680px;
+    margin: 1rem auto 0;
+    border-collapse: collapse;
+    background: var(--white);
+    color: var(--black);
+    border: 2px solid var(--charcoal-gray);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.hobby-table th,
+.hobby-table td {
+    padding: 0.9rem 1rem;
+    border: 1px solid #A6AEA4;
+    text-align: left;
+}
+
+.hobby-table th {
+    background: var(--charcoal-gray);
+    color: var(--white);
+}
+
+.hobby-table tr:nth-child(even) td {
+    background: var(--surface-light);
+}
+
+.hobby-table a {
+    color: var(--palestine-green);
+    text-decoration: none;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.hobby-table a:hover,
+/* Requirement 8 callout: using :focus-visible pseudo-class for keyboard accessibility. */
+.hobby-table a:focus-visible {
+    color: var(--palestine-red);
+    text-decoration: underline;
+}
+
+.table-cell-copy {
+    position: relative;
+}
+
+.table-read-more {
+    display: none;
+    margin-top: 0.55rem;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--charcoal-gray);
+    border-radius: 999px;
+    background: var(--surface-light);
+    color: var(--charcoal-gray);
+    font-family: var(--body-font);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.table-read-more:hover,
+.table-read-more:focus-visible {
+    background: var(--charcoal-gray);
+    color: var(--white);
+}
+
+/*======================================
+    Footer
+======================================*/
+footer {
+    margin-top: 3rem;
+    border-top: 4px solid var(--palestine-green);
+    background: var(--charcoal-gray);
+    padding: 1.25rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.footer-content p {
+    color: var(--white);
+}
+
+.footer-content img {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--palestine-green);
+    border-radius: 14px;
+}
+
+/*======================================
+    Animations
+======================================*/
+/* Transitions and hover effects are defined inline with their components. */
+
+/*======================================
+    Media Queries
+======================================*/
+/* Action Items sizing and interaction on desktop. */
+@media (min-width: 1024px) {
+    .action-list li {
+        width: 75%;
+    }
+
+    .action-list li:hover img,
+    .action-list li:focus-within img {
+        transform: none;
+        box-shadow: none;
+        z-index: auto;
+    }
+}
+
+/* ============================== */
+/* Ultra Wide Desktop Screens     */
+/* 1920px and up (large monitors) */
+/* ============================== */
+@media (min-width: 1920px) {
+    body {
+        background: linear-gradient(180deg, #F5F5DC 0%, #ECF4E8 48%, #F5F5DC 100%);
+    }
+
+    main {
+        max-width: 1480px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 2rem) / 3);
+    }
+
+}
+
+/* ============================== */
+/* Large Desktop Screens          */
+/* 1440px to 1919px (big laptops) */
+/* ============================== */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    body {
+        background: linear-gradient(180deg, #F5F5DC 0%, #ECF4E8 48%, #F5F5DC 100%);
+    }
+
+    main {
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 2rem) / 3);
+    }
+
+}
+
+/* ============================== */
+/* Standard Desktop Screens       */
+/* 1200px to 1439px (desktop)     */
+/* ============================== */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .main-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        flex: 0 0 30%;
+        margin-top: -0.5rem;
+    }
+
+    .main-text {
+        flex: 1;
+    }
+
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 2rem) / 3);
+    }
+}
+
+/* ============================== */
+/* Small Desktop / Laptop Screens */
+/* 1024px to 1199px (laptops)     */
+/* ============================== */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    main {
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+
+    .main-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .hero-image {
+        flex: 0 0 33%;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 2rem) / 3);
+    }
+
+}
+
+/* ============================== */
+/* Tablet Landscape Screens       */
+/* 900px to 1023px (horizontal)   */
+/* ============================== */
+@media (min-width: 900px) and (max-width: 1023px) {
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .link-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    nav.is-open .link-nav {
+        display: flex;
+    }
+
+    .main-content {
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 1rem) / 2);
+    }
+
+    .action-list {
+        justify-content: flex-start;
+    }
+
+    .hobby-table table {
+        min-width: 620px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.8rem 0.85rem;
+        font-size: 1rem;
+    }
+}
+
+/* ============================== */
+/* Tablet Portrait Screens        */
+/* 768px to 899px (vertical)      */
+/* ============================== */
+@media (min-width: 768px) and (max-width: 899px) {
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .link-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    nav.is-open .link-nav {
+        display: flex;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 1rem) / 2);
+    }
+
+    .action-list {
+        justify-content: flex-start;
+    }
+
+    .hobby-table table {
+        min-width: 560px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.75rem 0.8rem;
+        font-size: 0.98rem;
+    }
+}
+
+/* ============================== */
+/* Large Mobile Screens           */
+/* 576px to 767px (large phones)  */
+/* ============================== */
+@media (min-width: 576px) and (max-width: 767px) {
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .link-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    nav.is-open .link-nav {
+        display: flex;
+    }
+
+    .gallery-content,
+    .action-items {
+        display: block;
+        width: 100%;
+    }
+
+    .hobby-table {
+        padding: 1rem;
+    }
+
+    .hobby-table table {
+        display: table;
+        min-width: 520px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.7rem 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .hobby-mobile-list {
+        display: none;
+        margin: 0.75rem 0 0;
+    }
+
+    .hobby-mobile-list li {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 10px;
+    }
+
+    .gallery-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+    }
+
+    .scrolling-gallery {
+        scroll-snap-type: x mandatory;
+    }
+
+    .action-list {
+        justify-content: flex-start;
+        overflow: visible;
+        padding-bottom: 0.25rem;
+    }
+
+
+    .main-content {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ============================== */
+/* Medium Mobile Screens          */
+/* 421px to 575px (most phones)   */
+/* ============================== */
+@media (min-width: 421px) and (max-width: 575px) {
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .link-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    nav.is-open .link-nav {
+        display: flex;
+    }
+
+    .gallery-content,
+    .action-items {
+        display: block;
+        width: 100%;
+    }
+
+    .hobby-table {
+        padding: 1rem;
+    }
+
+    .hobby-table table {
+        display: table;
+        min-width: 480px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.65rem 0.7rem;
+        font-size: 0.92rem;
+        line-height: 1.45;
+    }
+
+    .table-read-more {
+        display: inline-block;
+    }
+
+    .table-cell-copy.is-collapsed {
+        max-height: 5.8em;
+        overflow: hidden;
+    }
+
+    .table-cell-copy.is-collapsed::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2.1em;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--white));
+        pointer-events: none;
+    }
+
+    .hobby-mobile-list {
+        display: none;
+        margin: 0.75rem 0 0;
+    }
+
+    .hobby-mobile-list li {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 10px;
+    }
+
+    .gallery-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+    }
+
+    .scrolling-gallery {
+        scroll-snap-type: x mandatory;
+    }
+
+    .action-list {
+        justify-content: flex-start;
+        overflow: visible;
+        padding-bottom: 0.25rem;
+    }
+
+
+    .main-content {
+        flex-direction: column;
+        padding: 1.25rem;
+        gap: 1.25rem;
+        margin: 1.25rem 0.75rem;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ============================== */
+/* Small Mobile Screens           */
+/* 420px and below (small phones) */
+/* ============================== */
+@media (max-width: 420px) {
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .link-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    nav.is-open .link-nav {
+        display: flex;
+    }
+
+    .gallery-content,
+    .action-items {
+        display: block;
+        width: 100%;
+    }
+
+    .hobby-table {
+        padding: 1rem;
+    }
+
+    .hobby-table table {
+        display: table;
+        min-width: 440px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.6rem 0.65rem;
+        font-size: 0.88rem;
+        line-height: 1.4;
+    }
+
+    .table-read-more {
+        display: inline-block;
+        font-size: 0.82rem;
+    }
+
+    .table-cell-copy.is-collapsed {
+        max-height: 5.4em;
+        overflow: hidden;
+    }
+
+    .table-cell-copy.is-collapsed::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2em;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--white));
+        pointer-events: none;
+    }
+
+    .hobby-mobile-list {
+        display: none;
+        margin: 0.75rem 0 0;
+    }
+
+    .gallery-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+    }
+
+    .scrolling-gallery {
+        scroll-snap-type: x mandatory;
+    }
+
+    .action-list {
+        justify-content: flex-start;
+        overflow: visible;
+        padding-bottom: 0.25rem;
+    }
+
+    header {
+        padding: 1.25rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+
+    .link-nav {
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .link-nav a {
+        min-width: auto;
+        width: 100%;
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .main-content {
+        margin: 1.25rem 0.75rem;
+        padding: 1rem;
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .main-text h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .main-text p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .gallery-content,
+    .action-items,
+    .hobby-table {
+        width: auto;
+        margin: 1rem 0.75rem;
+        padding: 1rem;
+    }
+
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .hobby-mobile-list li {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+
+    .footer-content img {
+        width: 90px;
+    }
+}
+
+/* ============================== */
+/* Print Styles                   */
+/* Printer-friendly output        */
+/* ============================== */
+@media print {
+    body {
+        background: #FFFFFF;
+        color: #000000;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    header,
+    footer,
+    .gallery-content,
+    .action-items,
+    .hobby-table,
+    .main-content {
+        box-shadow: none;
+    }
+
+    .menu-toggle,
+    .language-toggle {
+        display: none;
+    }
+
+    .hobby-table table {
+        display: table;
+    }
+
+    .hobby-mobile-list {
+        display: none;
+    }
+}
