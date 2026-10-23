@@ -1,0 +1,197 @@
+<!--Author:Leslie Brockman
+    Date: 10-23-2026-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="American Nobody999">
+
+
+    <meta name="description" content="Meet Palestinian healthcare workers and learn about Dr. Hussam Abu Safiya.">
+    <title>Healthcare Workers - American Nobody</title>
+    
+<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    
+<!-- Styles -->
+    <link rel="stylesheet" href="styles/styles2.css">
+    <link rel="stylesheet" href="styles/featured.css">
+    <link rel="stylesheet" href="styles/docs.css">
+</head>
+
+<body class="link-page featured-page docs-page">
+    
+<header class="site-header" data-global-chrome>
+      <div class="header-container">
+
+  <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
+          <div class="header-center">
+              <h1 class="site-title state-title">
+                  <span class="lang-en">State of Palestine</span>
+                  <span class="lang-ar">دولة فلسطين</span>
+              </h1>
+              <nav id="link-navigation" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                          <span class="lang-en">MPGA</span>
+                          <span class="lang-ar">MPGA</span>
+                  </a></li>
+                  <li><a href="about.html" class="nav-btn">
+                        <span class="lang-en">About Us</span>
+                        <span class="lang-ar">من نحن</span>
+                  </a></li>
+                </ul>
+              </nav>
+          </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                      English | العربية
+              </button>
+  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+              <button id="menu-toggle" aria-controls="link-navigation" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  ☰
+              </button>
+        </div>
+  </header>
+
+<main class="link-page-main">
+  <section class="gallery-section-copy featured-collection" aria-labelledby="docs-workers-heading">
+    <h2 id="docs-workers-heading"><span class="lang-en" lang="en" dir="ltr">Meet the Workers</span><span class="lang-ar hidden" lang="ar" dir="rtl">تعرّفوا على الكوادر</span></h2>
+    <!-- Add cards inside this grid using unique article, heading, and face IDs.
+         Retain the data-featured-* hooks and both native flip buttons. -->
+    <div class="featured-gallery">
+      <article class="featured-card" id="doc-safiya" data-featured-card aria-labelledby="doc-safiya-name">
+        <div class="featured-card-inner">
+          <div class="featured-card-face featured-card-front" data-featured-face="front" id="doc-safiya-front">
+            <img class="featured-card-photo" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/01.jpg" alt="Poster with a portrait of Dr. Hussam Abu Safiya / ملصق بصورة الدكتور حسام أبو صفية" loading="lazy">
+            <h3 id="doc-safiya-name"><span class="lang-en" lang="en" dir="ltr">Dr. Hussam Abu Safiya</span><span class="lang-ar hidden" lang="ar" dir="rtl">الدكتور حسام أبو صفية</span></h3>
+            <button type="button" class="featured-flip-button" data-featured-flip="back" aria-controls="doc-safiya-back" aria-expanded="false"><span class="lang-en" lang="en" dir="ltr">More</span><span class="lang-ar hidden" lang="ar" dir="rtl">المزيد</span></button>
+          </div>
+          <div class="featured-card-face featured-card-back" data-featured-face="back" id="doc-safiya-back" inert aria-hidden="true">
+            <div class="featured-card-details" tabindex="0" role="region" aria-labelledby="doc-safiya-back-name">
+              <h3 id="doc-safiya-back-name"><span class="lang-en" lang="en" dir="ltr">Dr. Hussam Abu Safiya</span><span class="lang-ar hidden" lang="ar" dir="rtl">الدكتور حسام أبو صفية</span></h3>
+              <!-- Biography summarized from biosite/index.html, Introducing Doc Safiya. -->
+              <p><span class="lang-en" lang="en" dir="ltr">Dr. Hussam Abu Safiya is a Palestinian pediatrician and neonatologist. As director of Kamal Adwan Hospital in northern Gaza, he cared for newborns and children and helped strengthen pediatric and neonatal services while mentoring younger healthcare professionals.</span><span class="lang-ar hidden" lang="ar" dir="rtl">الدكتور حسام أبو صفية طبيب أطفال واختصاصي حديثي الولادة فلسطيني. وبصفته مدير مستشفى كمال عدوان في شمال غزة، اعتنى بالمواليد الجدد والأطفال، وساهم في تعزيز خدمات طب الأطفال وحديثي الولادة وإرشاد الكوادر الصحية الشابة.</span></p>
+              <a class="site-button" href="biosite/index.html"><span class="lang-en" lang="en" dir="ltr">Let's go get him back</span><span class="lang-ar hidden" lang="ar" dir="rtl">هيا نعمل على إعادته</span></a>
+    <section class="section scrollable-gallery-section docs-hostages-gallery" aria-labelledby="docs-hostages-heading">
+  <h2 id="docs-hostages-heading">
+        <span class="lang-en">Return the Hostages</span>
+        <span class="lang-ar hidden">أعيدوا الرهائن</span>
+  </h2>
+ <div class="scrollable-gallery" tabindex="0" role="region" aria-labelledby="docs-hostages-heading">
+  <!--Gallery card with link to biotsite
+    <div class="gallery-card">
+     <a href="https://raw.githubusercontent.com/american-nobody999/biosite/main/index.html" target="_blank">
+       <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1703.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+       <caption>
+         <span class="lang-en">Click me</span>
+         <span class="lang-ar hidden">اضغط هنا</span>
+       </caption>
+     </a>
+   </div>
+    -->
+   <div class="gallery-card">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1408.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+    </div>
+    <div class="gallery-card">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1800.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+    </div>
+    <div class="gallery-card">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1801.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+    </div>
+    <div class="gallery-card">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1802.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+    </div>
+    <div class="gallery-card">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1803.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+    </div>
+    <div class="gallery-card">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1804.jpg" alt="Return Doctor Abu Safiya" loading="lazy">
+    </div>
+  </div>
+    </section>
+            </div>
+            <button type="button" class="featured-flip-button" data-featured-flip="front" aria-controls="doc-safiya-front"><span class="lang-en" lang="en" dir="ltr">Back</span><span class="lang-ar hidden" lang="ar" dir="rtl">رجوع</span></button>
+          </div>
+        </div>
+      </article>
+      <!-- PLACEHOLDER: replace the future worker front name and front image when supplied.
+           Keep the back image-only apart from its required Back control. -->
+      <article class="featured-card" id="doc-future" data-featured-card aria-labelledby="doc-future-name">
+        <div class="featured-card-inner">
+          <div class="featured-card-face featured-card-front" data-featured-face="front" id="doc-future-front">
+            <img class="featured-card-photo" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/doc3.jpg" alt="Healthcare worker portrait" loading="lazy">
+            <h3 id="doc-future-name"><span class="lang-en" lang="en" dir="ltr">Dr. Ahmed Al-Kahlout</span><span class="lang-ar hidden" lang="ar" dir="rtl">Dr. Ahmed Al-Kahlout</span></h3>
+            <button type="button" class="featured-flip-button" data-featured-flip="back" aria-controls="doc-future-back" aria-expanded="false"><span class="lang-en" lang="en" dir="ltr">More</span><span class="lang-ar hidden" lang="ar" dir="rtl">المزيد</span></button>
+          </div>
+          <div class="featured-card-face featured-card-back" data-featured-face="back" id="doc-future-back" inert aria-hidden="true">
+            <img
+              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/doc2.jpg"
+              alt="Informational profile of the second healthcare worker"
+              class="healthcare-card-back-image"
+            >
+            <button type="button" class="featured-flip-button" data-featured-flip="front" aria-controls="doc-future-front"><span class="lang-en" lang="en" dir="ltr">Back</span><span class="lang-ar hidden" lang="ar" dir="rtl">رجوع</span></button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" data-global-chrome>
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, a State Rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 <span class="footer-name">American Nobody</span>999 ✌️ 🇵🇸 🧭 👈</span>
+              <span class="lang-ar">&copy; 2026 <span class="footer-name">أمريكان نوبودي</span>999 ✌️ 🇵🇸 🧭 👈</span>
+            </p>
+          </div>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/docs.js" defer></script>
+</body>
+</html>
