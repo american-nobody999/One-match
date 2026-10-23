@@ -1,0 +1,124 @@
+<!--Author:Leslie Brockman
+    Date: O7/27/2026
+    Biosite Home Page
+    I am still here.
+    Date Modified and migrated: 10-24-2026-->
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Where Is Doctor Safiya?</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/biosite.css">
+    <script src="../js/biosite.js" defer></script>
+</head>
+
+<body>
+<!-- Nav a links will be styled as buttons in the css-->
+<header>
+    <h1>
+        <span class="lang-en" lang="en" dir="ltr">Where is Doctor Safiya?</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">أين الدكتور سيفه؟</span>
+    </h1>
+<!--this is the bilingual toggle button that will be used to switch between English and Arabic, js will be added for functionality-->
+    <div class="language-toggle">
+                <button id="lang-toggle" class="lang-toggle" type="button" aria-pressed="false" aria-label="Toggle language" data-label-en="Toggle language" data-label-ar="تبديل اللغة">
+                    <span class="lang-en" lang="en" dir="ltr">English | العربية</span>
+                    <span class="lang-ar hidden" lang="ar" dir="rtl">العربية | English</span>
+                </button>
+    </div>
+    <nav>
+        <ul id="primary-navigation" class="link-nav">
+            <li><a class="active" aria-current="page" href="index.html"><span class="lang-en" lang="en" dir="ltr">Home</span><span class="lang-ar hidden" lang="ar" dir="rtl">الرئيسية</span></a></li>
+            <li><a href="about.html"><span class="lang-en" lang="en" dir="ltr">About</span><span class="lang-ar hidden" lang="ar" dir="rtl">حول</span></a></li>
+            <li><a href="https://american-nobody999.github.io/One-match"><span class="lang-en" lang="en" dir="ltr">MPGA</span><span class="lang-ar hidden" lang="ar" dir="rtl">MPGA</span></a></li>
+            <li><a href="hobby.html"><span class="lang-en" lang="en" dir="ltr">Sources</span><span class="lang-ar hidden" lang="ar" dir="rtl">المصادر</span></a></li>
+        </ul>
+<!-- Hamburger for MobileDO NOT TOUCH THIS!!!!! EVER!-->
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-controls="primary-navigation" aria-label="Toggle navigation" data-label-en="Toggle navigation" data-label-ar="تبديل التنقل" aria-expanded="false">
+                ☰
+            </button>
+    </nav>
+</header>
+
+<main>
+<section class="main-content">
+    <div class="hero-image hero-image-home">
+        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/01.jpg" alt="Poster calling for the release of Palestinian paediatrician Dr. Hussam Abu Safiya, with his portrait and a Palestinian flag">
+        <p class="hero-caption">
+            <span class="lang-en" lang="en" dir="ltr">Dr. Hussam Abu Safiya at Kamal Adwan Hospital.</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">الدكتور حسام أبو صفية في مستشفى كمال عدوان.</span>
+        </p>
+    </div>
+    <div class="main-text">
+        <h2><span class="lang-en" lang="en" dir="ltr">Introducing Doc Safiya</span><span class="lang-ar hidden" lang="ar" dir="rtl">تقديم الدكتور سيفه</span></h2>
+        <p><span class="lang-en" lang="en" dir="ltr">Dr. Hussam Abu Safiya is a Palestinian pediatrician and neonatologist whose unwavering commitment to caring for children has made him a widely recognized figure both in Gaza and around the world. For decades, he dedicated his medical career to treating newborns and children, often working under conditions that would challenge even the most experienced healthcare professionals.</span><span class="lang-ar hidden" lang="ar" dir="rtl">الدكتور حسام أبو صفية طبيب أطفال واختصاصي حديثي الولادة فلسطيني، وقد جعل التزامه الراسخ برعاية الأطفال منه شخصية معروفة على نطاق واسع في غزة وحول العالم. وعلى مدى عقود، كرّس مسيرته الطبية لعلاج المواليد الجدد والأطفال، وغالبًا ما عمل في ظروف قد تُرهق حتى أكثر المهنيين الصحيين خبرة.</span></p>
+        <p><span class="lang-en" lang="en" dir="ltr">As the director of Kamal Adwan Hospital in northern Gaza, Dr. Abu Safiya became a symbol of medical professionalism, compassion, and resilience during one of the most difficult periods in the region's recent history. Throughout the conflict, he remained at his hospital despite repeated threats, shortages of medicine and equipment, and the constant danger posed by ongoing military operations.</span><span class="lang-ar hidden" lang="ar" dir="rtl">وبصفته مدير مستشفى كمال عدوان في شمال غزة، أصبح الدكتور أبو صفية رمزًا للمهنية الطبية والتعاطف والصمود خلال واحدة من أصعب الفترات في التاريخ الحديث للمنطقة. وطوال فترة النزاع، بقي في مستشفاه رغم التهديدات المتكررة ونقص الأدوية والمعدات والخطر الدائم الناتج عن العمليات العسكرية المستمرة.</span></p>
+        <p><span class="lang-en" lang="en" dir="ltr">Born in the Jabalia refugee camp to a family displaced during the 1948 Arab-Israeli War, Dr. Abu Safiya pursued his medical education in Kazakhstan before returning to Gaza to serve his community. He later specialized in pediatrics and neonatology, earning Palestinian board certification and becoming one of the leading physicians caring for the region's youngest and most vulnerable patients.</span><span class="lang-ar hidden" lang="ar" dir="rtl">وُلد الدكتور أبو صفية في مخيم جباليا للاجئين لعائلة هُجّرت خلال الحرب العربية الإسرائيلية عام 1948، وتابع تعليمه الطبي في كازاخستان قبل أن يعود إلى غزة لخدمة مجتمعه. ولاحقًا تخصص في طب الأطفال وحديثي الولادة، وحصل على البورد الفلسطيني، ليصبح أحد الأطباء البارزين في رعاية أصغر المرضى وأكثرهم هشاشة في المنطقة.</span></p>
+        <p><span class="lang-en" lang="en" dir="ltr">His dedication extended beyond clinical medicine, as he also helped strengthen neonatal and pediatric services throughout Gaza while mentoring younger healthcare professionals. During the Gaza conflict, Dr. Abu Safiya became internationally known through his public appeals describing the humanitarian challenges facing hospitals and the desperate need to protect patients, medical staff, and healthcare facilities.</span><span class="lang-ar hidden" lang="ar" dir="rtl">وامتد التزامه إلى ما هو أبعد من الطب السريري، إذ ساهم أيضًا في تعزيز خدمات حديثي الولادة وطب الأطفال في أنحاء غزة، إلى جانب إرشاد الكوادر الصحية الشابة. وخلال النزاع في غزة، أصبح الدكتور أبو صفية معروفًا دوليًا من خلال مناشداته العلنية التي وصفت التحديات الإنسانية التي تواجه المستشفيات والحاجة الملحة لحماية المرضى والطواقم الطبية والمرافق الصحية.</span></p>
+        <p><span class="lang-en" lang="en" dir="ltr">His interviews and statements provided firsthand accounts of the conditions inside Kamal Adwan Hospital, where doctors and nurses continued treating injured civilians despite severe shortages of electricity, fuel, medical supplies, and staff. Many international medical organizations and humanitarian groups highlighted his efforts as an example of physicians continuing their ethical duty to care for patients under extraordinary circumstances.</span><span class="lang-ar hidden" lang="ar" dir="rtl">وقد قدّمت مقابلاته وتصريحاته شهادات مباشرة عن الأوضاع داخل مستشفى كمال عدوان، حيث واصل الأطباء والممرضون علاج المدنيين المصابين رغم النقص الحاد في الكهرباء والوقود والإمدادات الطبية والكوادر. وأبرزت العديد من المنظمات الطبية الدولية والمجموعات الإنسانية جهوده بوصفها مثالًا على استمرار الأطباء في أداء واجبهم الأخلاقي تجاه رعاية المرضى في ظروف استثنائية.</span></p>
+    </div>
+</section>
+
+<section class="gallery-content">
+    <h2 id="gallery-heading"><span class="lang-en" lang="en" dir="ltr">Return Doc Safiya</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعيدوا الدكتور سيفه</span></h2>
+    <div class="scrolling-gallery" role="region" aria-labelledby="gallery-heading" tabindex="0">
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/02.jpg" alt="Health Workers 4 Palestine urgent statement demanding immediate medical release for Dr. Hussam Abu Safiya">
+        </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/03.jpg" alt="Health Workers 4 Palestine statement dated 4 July 2026 reporting that Dr. Abu Safiya is critically ill and needs hospitalisation">
+        </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/04.jpg" alt="Health Workers 4 Palestine statement describing Dr. Abu Safiya’s hospital work and the impact of his detention on healthcare in Gaza">
+        </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/05.jpg" alt="Health Workers 4 Palestine statement alleging denial of medical examination and treatment during Dr. Abu Safiya’s detention">
+        </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/06.jpg" alt="Health Workers 4 Palestine summary of Dr. Abu Safiya’s detention and reported solitary confinement, weight loss, injuries, and denial of care">
+        </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/07.jpg" alt="Health Workers 4 Palestine appeal for Red Cross access and urgent transfer of Dr. Abu Safiya to medical care">
+        </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/08.jpg" alt="Health Workers 4 Palestine appeal to UK officials for independent medical evaluation, emergency hospitalisation, and humanitarian release">
+        </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/09.jpg" alt="Health Workers 4 Palestine appeal to medical organisations to demand Dr. Abu Safiya’s release to hospital care">
+        </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/10.jpg" alt="Health Workers 4 Palestine poster reading: Free Dr. Abu Safiya">
+        </div>
+    </div>
+</section>
+    <!-- .action-items -->
+    <section class="action-items"><!-- .action-items -->
+    <div class="action-items">
+    <h2><span class="lang-en" lang="en" dir="ltr">Action Items</span><span class="lang-ar hidden" lang="ar" dir="rtl">بنود العمل</span></h2>
+    <div class="action-item">
+        <ul class="action-list">
+<!--Need verification of the links one final time before added to make sure they are still active-->            
+            <li><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/11.jpg" alt="Humanti.org action guide, step one: Find your local elected official"></li>
+            <li><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/12.jpg" alt="Humanti.org action guide, step two: Send your email, with a sample letter to an elected official"></li>
+            <li><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/13.jpg" alt="Red ribbon with a Palestinian flag and the words Free Palestinian Hostages"></li>
+             
+        </ul>
+    </div>
+</div> 
+</section>
+</main>
+
+<footer>
+    <div class="footer-content">
+<!--This is the Leslie Design logo-->
+    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/24.png" alt="Leslie’s Designs logo">
+    <p><span class="lang-en" lang="en" dir="ltr">&copy; 2026 American Nobody</span><span class="lang-ar hidden" lang="ar" dir="rtl">&copy; 2026 أمريكان نوبودي</span></p>
+    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/25.jpg" alt="Robot wearing a construction helmet at a computer beside a Coming Soon sign and a Palestinian flag">
+    </div>
+</footer>
+
+</body>
+</html>
