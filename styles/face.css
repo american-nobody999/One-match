@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman
-   Date modified: 10/21/2026 */
+   Date modified: 10/23/2026 */
 :where(.face-page) main {
 display: flex;
     flex-direction: column;
@@ -576,4 +576,181 @@ body.face-page { background-color: #D9E2CE; }
 }
 @media (prefers-reduced-motion: reduce) {
     .face-page .face-main :is(.image-gallery, .video-gallery) { scroll-behavior: auto; }
+}
+
+/* Migrated State of Palestine section: homepage-specific appearance only. */
+.face-page #this-state { padding: .7rem; margin: .9rem auto; }
+
+.face-page #this-state .section-title { font-size: 1.3rem; }
+
+@media (min-width: 360px) {
+.face-page #this-state { padding: 1.4rem .85rem; margin: 1.25rem auto; }
+
+.face-page #this-state .section-title { font-size: 1.55rem; }
+}
+
+@media (min-width: 420px) {
+.face-page #this-state { padding-inline: .8rem; }
+}
+
+@media (min-width: 481px) {
+.face-page #this-state { padding-block: 2rem; margin: 1.8rem auto; }
+
+.face-page #this-state .section-title { font-size: 1.9rem; }
+}
+
+@media (min-width: 576px) {
+.face-page #this-state { padding-inline: 1rem; }
+
+.face-page #this-state .section-title { font-size: 1.8rem; }
+}
+
+@media (min-width: 769px) {
+.face-page #this-state { padding: 1.75rem 1rem; margin: 1.75rem auto; }
+
+.face-page #this-state .section-title { font-size: 2rem; }
+}
+
+@media (min-width: 992px) {
+.face-page #this-state { padding: 2.1rem 1.15rem; margin: 2.5rem auto; }
+
+.face-page #this-state .section-title { font-size: 2.2rem; }
+}
+
+@media (min-width: 1200px) {
+.face-page #this-state { padding: 2.4rem 1.4rem; }
+}
+
+@media (min-width: 1600px) {
+.face-page #this-state { max-width: 1440px; padding: 2.5rem 1.5rem; }
+
+.face-page #this-state .section-title { font-size: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+.face-page #this-state { width: 100%; max-width: 100%; }
+}
+
+.face-page #this-state .scrollable-gallery {
+    gap: 1rem;
+    padding: 1rem .5rem;
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.face-page #this-state .links-gallery,
+.face-page #this-state .state-image-gallery { padding-inline: .5rem; }
+
+.face-page #this-state .gallery-item { flex: 0 0 88vw; width: 88vw; }
+
+.face-page #this-state .gallery-item img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: #fff;
+}
+
+.face-page #this-state .state-image-gallery .gallery-item { flex: 0 0 230px; }
+
+.face-page #this-state .state-image-gallery .gallery-item img { height: 180px; object-fit: contain; background: #fff; }
+
+@media (min-width: 360px) {
+.face-page #this-state .gallery-item { flex-basis: 82vw; width: auto; }
+}
+
+@media (min-width: 420px) {
+.face-page #this-state .gallery-item { width: 82vw; }
+}
+
+@media (min-width: 481px) {
+.face-page #this-state .state-image-gallery .gallery-item { flex-basis: 280px; }
+
+.face-page #this-state .state-image-gallery .gallery-item img { height: 220px; }
+}
+
+@media (min-width: 576px) {
+.face-page #this-state .gallery-item { flex-basis: 250px; width: 250px; }
+}
+
+@media (min-width: 769px) {
+.face-page #this-state .scrollable-gallery {
+        gap: 1.5rem; padding: 1.5rem; margin: 2rem auto; width: auto; max-width: 1200px;
+    }
+
+.face-page #this-state .links-gallery,
+.face-page #this-state .state-image-gallery { padding-inline: 1.5rem; }
+
+.face-page #this-state .gallery-item { flex-basis: 280px; width: 280px; }
+
+.face-page #this-state .gallery-item img { aspect-ratio: auto; background: transparent; }
+
+.face-page #this-state .gallery-item img { height: 200px; object-fit: cover; }
+
+.face-page #this-state .state-image-gallery .gallery-item { flex-basis: 340px; }
+
+.face-page #this-state .state-image-gallery .gallery-item img { height: 260px; }
+}
+
+@media (min-width: 992px) {
+.face-page #this-state .gallery-item { width: auto; }
+}
+
+@media (min-width: 1600px) {
+.face-page #this-state .gallery-item { flex-basis: 340px; }
+}
+
+.face-page #this-state :is(.scrollable-gallery, .gallery-item, img) {
+    border: 0;
+    box-shadow: none;
+}
+
+.face-page #this-state {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: min(100%, 1200px);
+    min-width: 0;
+    margin-inline: auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    box-shadow:
+        inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+    text-align: center;
+}
+
+.face-page #this-state > :is(h2, h3, p),
+.face-page #this-state :is(h2, h3, p) > .lang-ar {
+    text-align: center;
+}
+
+@media (min-width: 100rem) {
+.face-page #this-state {
+        max-width: min(100%, 1440px);
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+.face-page #this-state .state-image-gallery .gallery-item {
+        overflow: visible;
+    }
+
+.face-page #this-state .state-image-gallery .gallery-item:hover {
+        transform: none;
+        z-index: 5;
+    }
+
+.face-page #this-state .state-image-gallery .gallery-item img {
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        transform-origin: center center;
+    }
+
+.face-page #this-state .state-image-gallery .gallery-item:hover img {
+        transform: scale(1.32);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+    }
 }
