@@ -1,0 +1,68 @@
+<!--Author:Leslie Brockman
+    Date: O7/27/2026
+    Biosite About Page
+    Date Modified: 10-23-2026-->
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Where Is Doctor Safiya?</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/biosite.css">
+    <script src="../js/biosite.js" defer></script>
+</head>
+
+<body>
+<!-- Nav a links will be styled as buttons in the css-->
+<header>
+    <h1>
+        <span class="lang-en" lang="en" dir="ltr">Where is Doctor Safiya?</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">أين الدكتور سيفه؟</span>
+    </h1>
+<!--this is the bilingual toggle button that will be used to switch between English and Arabic, js will be added for functionality-->
+    <div class="language-toggle">
+                <button id="lang-toggle" class="lang-toggle" type="button" aria-pressed="false" aria-label="Toggle language" data-label-en="Toggle language" data-label-ar="تبديل اللغة">
+                    <span class="lang-en" lang="en" dir="ltr">English | العربية</span>
+                    <span class="lang-ar hidden" lang="ar" dir="rtl">العربية | English</span>
+                </button>
+    </div>
+    <nav>
+        <ul id="primary-navigation" class="link-nav">
+            <li><a href="index.html"><span class="lang-en" lang="en" dir="ltr">Home</span><span class="lang-ar hidden" lang="ar" dir="rtl">الرئيسية</span></a></li>
+            <li><a class="active" aria-current="page" href="about.html"><span class="lang-en" lang="en" dir="ltr">About</span><span class="lang-ar hidden" lang="ar" dir="rtl">حول</span></a></li>
+            <li><a href="../index.html"><span class="lang-en" lang="en" dir="ltr">MPGA</span><span class="lang-ar hidden" lang="ar" dir="rtl">MPGA</span></a></li>
+            <li><a href="hobby.html"><span class="lang-en" lang="en" dir="ltr">Sources</span><span class="lang-ar hidden" lang="ar" dir="rtl">المصادر</span></a></li>
+        </ul>
+<!-- Hamburger for MobileDO NOT TOUCH THIS!!!!! EVER!-->
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-controls="primary-navigation" aria-label="Toggle navigation" data-label-en="Toggle navigation" data-label-ar="تبديل التنقل" aria-expanded="false">
+                ☰
+            </button>
+    </nav>
+</header>
+
+<main>
+<section class="main-content">
+    <div class="hero-image">
+        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/22.jpg" alt="TRT World image of a man in a white coat walking through rubble toward military vehicles, captioned as Dr. Hussam Abu Safiya before his arrest">
+    </div>
+    <div class="main-text">
+        <h2><span class="lang-en" lang="en" dir="ltr">Doc Safiya Never Left</span><span class="lang-ar hidden" lang="ar" dir="rtl">لم يغادر الدكتور صفية أبدًا</span></h2>
+        <p><span class="lang-en" lang="en" dir="ltr">In December 2024, following an Israeli military operation at Kamal Adwan Hospital, Dr. Abu Safiya was detained by Israeli authorities. His detention has drawn significant international attention and prompted statements from organizations such as Amnesty International, medical associations, and humanitarian advocates calling for due process and expressing concern about his welfare while in custody. Israeli authorities have publicly alleged security-related concerns, while Dr. Abu Safiya's supporters and numerous human rights organizations have disputed the basis for his detention and called for his release.</span><span class="lang-ar hidden" lang="ar" dir="rtl">في ديسمبر 2024، وبعد عملية عسكرية إسرائيلية في مستشفى كمال عدوان، اعتقلت السلطات الإسرائيلية الدكتور أبو صفية. وقد أثار اعتقاله اهتمامًا دوليًا واسعًا، ودفع منظمات مثل منظمة العفو الدولية، والجمعيات الطبية، والمدافعين عن العمل الإنساني إلى إصدار بيانات تطالب بضمان الإجراءات القانونية الواجبة والتعبير عن القلق بشأن سلامته أثناء الاحتجاز. وفي حين زعمت السلطات الإسرائيلية علنًا وجود مخاوف أمنية مرتبطة بالقضية، فإن أنصار الدكتور أبو صفية والعديد من منظمات حقوق الإنسان طعنوا في مبررات اعتقاله وطالبوا بالإفراج عنه.</span></p>
+    </div>
+</section>
+</main>
+
+<footer>
+    <div class="footer-content">
+<!--This is the Leslie Design logo-->
+    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/24.png" alt="Leslie’s Designs logo">
+    <p><span class="lang-en" lang="en" dir="ltr">&copy; 2026 American Nobody</span><span class="lang-ar hidden" lang="ar" dir="rtl">&copy; 2026 أمريكان نوبودي</span></p>
+    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/25.jpg" alt="Robot wearing a construction helmet at a computer beside a Coming Soon sign and a Palestinian flag">
+    </div>
+</footer>
+
+
+</body>
+</html>
