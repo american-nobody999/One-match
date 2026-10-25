@@ -11,7 +11,8 @@ const creators = [
     "biographyHTML": "<p>\n        <span class=\"lang-en\">Kareem Al-Khodary is a young Palestinian digital creator who shares everyday life, personal experiences, and moments of hope with his online audience. His content gives viewers a personal window into life in Gaza while he works toward continuing his education and supporting his family.</span>\n        <span class=\"lang-ar hidden arabic-text\">كريم الخضري هو منشئ فلسطيني شاب في العالم الرقمي يشارك الحياة اليومية والتجارب الشخصية ولحظات الأمل مع جمهوره عبر الإنترنت. يمنح محتواه المشاهدين نافذة شخصية على الحياة في غزة بينما يعمل على مواصلة تعليمه ودعم أسرته.</span>\n      </p>",
     "linksHTML": "<div class=\"creator-support-buttons\">\n          <a class=\"site-button\" href=\"https://chuffed.org/project/help-kareem-in-gaza\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم صانع المحتوى</span></a>\n        </div>\n        <div class=\"social-links\"><a class=\"social-link\" aria-label=\"PayPal / باي بال\" href=\"https://www.paypal.me/cbourgeois95\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:paypal}}</a><a aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/profile.php?id=61581233649121\" class=\"social-link\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a><a aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/kareem_vo_dr/\" class=\"social-link\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:instagram}}</a></div>",
     "section": "featured",
-    "sectionHTML": ""
+    "sectionHTML": "",
+    "nameAr": "الدكتور كريم"
   },
   {
     "id": "creator-2",
@@ -21,7 +22,8 @@ const creators = [
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Mera is a young Palestinian girl from Gaza whose family shares glimpses of her everyday life through cooking videos, school adventures, and precious family moments. With the help of her parents, she brings smiles, warmth, and a little childhood joy to people around the world, even amid the hardships of life in Gaza. Her family's page offers a personal glimpse into the resilience and humanity of Palestinian children.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ميرا طفلة فلسطينية صغيرة من غزة، تشارك عائلتها لمحات من حياتها اليومية من خلال مقاطع فيديو للطهي، ومغامراتها المدرسية، ولحظاتها العائلية الجميلة. وبمساعدة والديها، تنشر الابتسامات والدفء وشيئًا من بهجة الطفولة بين الناس حول العالم، رغم صعوبات الحياة في غزة. وتقدم صفحة عائلتها نافذة إنسانية على صمود الأطفال الفلسطينيين وإنسانيتهم.</span></p>",
     "linksHTML": "<div class=\"creator-support-buttons\">\n          <a class=\"site-button\" href=\"https://gogetfunding.com/donate-to-mira-daughter-of-gaza-and-her-family/\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Family</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم العائلة</span></a>\n          <a class=\"site-button\" href=\"https://ko-fi.com/mirafamily\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Family</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم العائلة</span></a>\n        </div>\n        <div class=\"social-links\"><a aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/profile.php?id=61580305417215\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:facebook}}</a></div>",
     "section": "Creators and Daily Voices",
-    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    "
+    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    ",
+    "nameAr": "ميرا"
   },
   {
     "id": "creator-3",
@@ -31,7 +33,8 @@ const creators = [
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Mahmoud Abo Swilem is a Palestinian digital creator from Gaza who uses social media to share his experiences and give people a personal connection to life in Palestine. Through his online presence, he highlights the challenges facing families in Gaza while reminding the world of the humanity behind the headlines.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">محمود أبو سويلم صانع محتوى رقمي فلسطيني من غزة، يستخدم وسائل التواصل الاجتماعي لمشاركة تجاربه وإتاحة الفرصة للناس للتعرف عن قرب على الحياة في فلسطين. ومن خلال حضوره على الإنترنت، يسلط الضوء على التحديات التي تواجه العائلات في غزة، ويذكّر العالم بإنسانية الأشخاص الذين يقفون وراء العناوين الإخبارية.</span></p>",
     "linksHTML": "<div class=\"creator-support-buttons\">\n          <a class=\"site-button\" href=\"https://chuffed.org/project/157037-urgent-relief-for-bisho-sanad-and-tim\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم صانع المحتوى</span></a>\n          <a class=\"site-button\" href=\"https://gofund.me/47d5d914\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم صانع المحتوى</span></a>\n        </div>\n        <div class=\"social-links\"><a aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/mooda199044\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:facebook}}</a><a aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/mahmoud_199044/\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:instagram}}</a></div>",
     "section": "Creators and Daily Voices",
-    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    "
+    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    ",
+    "nameAr": "محمود أبو سويلم"
   },
   {
     "id": "creator-4",
@@ -41,7 +44,8 @@ const creators = [
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Inas Qaddih is a Palestinian mother and digital creator from Khan Yunis, Gaza, who shares her family's experiences and the challenges of raising five children amid difficult living conditions. Through her online presence, she gives the world a personal glimpse into her family's daily life, resilience, and determination to build a safer future for their children.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إيناس قديح أم فلسطينية وصانعة محتوى رقمي من خان يونس في غزة، تشارك تجارب عائلتها والتحديات التي تواجهها في تربية أطفالها الخمسة وسط ظروف معيشية صعبة. ومن خلال حضورها على وسائل التواصل الاجتماعي، تمنح العالم لمحة إنسانية عن الحياة اليومية لعائلتها وصمودها وإصرارها على بناء مستقبل أكثر أمانًا لأطفالها.</span></p>",
     "linksHTML": "<div class=\"creator-support-buttons\">\n          <a class=\"site-button\" href=\"https://www.freefunder.com/campaign/inas-family-gaza-survive\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Family</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم العائلة</span></a>\n        </div>\n        <div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/ayanas.ana.2025\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a></div>",
     "section": "Creators and Daily Voices",
-    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    "
+    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    ",
+    "nameAr": "إيناس قديح"
   },
   {
     "id": "creator-5",
@@ -51,7 +55,8 @@ const creators = [
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Save Gaza is a Palestinian-focused photography page sharing images of people, families, and everyday life in Palestine. Through its visual storytelling, the page helps audiences connect with the human experiences behind the headlines and offers a Facebook subscription for visitors who wish to support its work.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">صفحة «أنقذوا غزة» هي صفحة تصوير فوتوغرافي تهتم بفلسطين، وتنشر صورًا للأشخاص والعائلات والحياة اليومية فيها. ومن خلال سرد القصص بالصور، تساعد الصفحة الجمهور على التواصل مع التجارب الإنسانية التي تقف وراء العناوين الإخبارية، وتتيح اشتراكًا عبر فيسبوك للراغبين في دعم عملها.</span></p>",
     "linksHTML": "<div class=\"save-gaza-subscription\">\n          <a class=\"site-button save-gaza-subscription-button\" href=\"https://www.facebook.com/Savegaza.07/subscribenow\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Subscribe on Facebook — $9.99/month</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">اشترك عبر فيسبوك — 9.99 دولار شهريًا</span></a>\n        </div>\n        <div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/Savegaza.07/\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a></div>",
     "section": "Creators and Daily Voices",
-    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    "
+    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    ",
+    "nameAr": "أنقذوا غزة"
   },
   {
     "id": "creator-6",
@@ -61,7 +66,8 @@ const creators = [
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Yousef and Yazan are two young Palestinian brothers from Gaza whose mother, Doaa, shares their family's experiences through social media. Through everyday moments and personal stories, their family offers a glimpse into the challenges of raising children in Gaza and their hopes for a safer, more stable future.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">يوسف ويزن شقيقان فلسطينيان صغيران من غزة، تشارك والدتهما دعاء تجارب عائلتهما عبر وسائل التواصل الاجتماعي. ومن خلال اللحظات اليومية والقصص الشخصية، تقدم العائلة لمحة عن تحديات تربية الأطفال في غزة وآمالها في مستقبل أكثر أمانًا واستقرارًا.</span></p>",
     "linksHTML": "<div class=\"creator-support-buttons\">\n          <a class=\"site-button\" href=\"https://www.gofundme.com/f/help-a-family-to-celebrate-ramadan-and-plan-for-the-future\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Family</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم العائلة</span></a>\n        </div>\n        <div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/translation.skyline\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a><a class=\"social-link\" aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/kids.from.ga.za/\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:instagram}}</a></div>",
     "section": "Creators and Daily Voices",
-    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    "
+    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    ",
+    "nameAr": "يوسف ويزن من غزة"
   },
   {
     "id": "creator-7",
@@ -71,7 +77,8 @@ const creators = [
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Myuz Ahmed is a Palestinian content creator from Gaza who uses his platform to bring smiles to children and share moments of joy amid difficult circumstances. Through his videos and community-focused content, he highlights the resilience, creativity, and humanity of Palestinian families.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ميوز أحمد صانع محتوى فلسطيني من غزة، يستخدم منصاته لرسم الابتسامة على وجوه الأطفال ومشاركة لحظات الفرح رغم الظروف الصعبة. ومن خلال مقاطع الفيديو والمحتوى الذي يقدمه للمجتمع، يسلط الضوء على صمود العائلات الفلسطينية وإبداعها وإنسانيتها.</span></p>",
     "linksHTML": "<div class=\"creator-support-buttons\">\n          <a class=\"site-button\" href=\"https://gofund.me/ba9b9245\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم صانع المحتوى</span></a>\n        </div>\n        <div class=\"social-links\"><a class=\"social-link\" aria-label=\"PayPal / باي بال\" href=\"https://paypal.me/dalalchamma\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:paypal}}</a><a aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/ahmed.myuz\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:facebook}}</a><a aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/myuz_gaza/\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:instagram}}</a><a class=\"social-link\" aria-label=\"TikTok / تيك توك\" href=\"https://www.tiktok.com/@myuz_gaza\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:tiktok}}</a></div>",
     "section": "Creators and Daily Voices",
-    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    "
+    "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    ",
+    "nameAr": "ميوز أحمد"
   },
   {
     "id": "creator-8",
@@ -86,14 +93,15 @@ const creators = [
   },
   {
     "id": "creator-9",
-    "name": "A. S.",
-    "nameHTML": "A. S.",
+    "name": "Anas Shamlakh",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Anas Shamlakh</span> <span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">أنس شملخ</span>",
     "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/807.jpg\" alt=\"Card 8\">",
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Anas Shamlakh is a Palestinian content creator from Gaza who shares his experiences and raises awareness about the lives of Palestinian families. Through his platform, he brings attention to the challenges of displacement, survival, and rebuilding, while sharing messages of resilience and hope.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">أنس شملخ صانع محتوى فلسطيني من غزة، يشارك تجاربه ويسلط الضوء على حياة العائلات الفلسطينية. ومن خلال منصته، يلفت الانتباه إلى تحديات النزوح والبقاء وإعادة بناء الحياة، وينشر رسائل الصمود والأمل.</span></p>",
     "linksHTML": "<div class=\"creator-support-buttons\">\n          <a class=\"site-button\" href=\"https://chuffed.org/project/147625-support-anas-and-his-family-rebuild-their-home-in-gaza\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم صانع المحتوى</span></a>\n          <a class=\"site-button\" href=\"https://chuffed.org/project/195672-help-anas-and-his-family-in-gaza-stand-with-us-and-help-us-rebuild-our-lives\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم صانع المحتوى</span></a>\n        </div>\n        <div class=\"social-links\"><a aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/profile.php?id=100022487434446\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:facebook}}</a><a aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/anas.sham0\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:instagram}}</a></div>",
     "section": "Creators and Daily Voices",
     "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    ",
-    "frontNameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Anas Shamlakh</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">أنس شملخ</span>"
+    "frontNameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Anas Shamlakh</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">أنس شملخ</span>",
+    "nameAr": "أنس شملخ"
   },
   {
     "id": "creator-10",
@@ -361,14 +369,15 @@ const creators = [
   },
   {
     "id": "creator-34",
-    "name": "Aaed",
+    "name": "Aaed Abusweilem",
     "nameHTML": "Aaed",
     "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/833.jpg\" alt=\"Card 3\">",
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Aaed Abusweilem is a young Palestinian content creator from Gaza with a love for gardening and animals. He tends to his little garden and has a special place in his heart for rescuing cats. Through his videos, Aaed shares moments of kindness, compassion, and everyday life, reminding us that even in difficult times, there is still room to nurture life and care for others.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">عائد أبو سويلم صانع محتوى فلسطيني صغير السن من غزة، يحب الزراعة والحيوانات. يعتني بحديقته الصغيرة، وله شغف خاص بإنقاذ القطط ورعايتها. ومن خلال مقاطع الفيديو التي يشاركها، ينشر عائد لحظات من اللطف والرحمة والحياة اليومية، ويذكّرنا بأنه حتى في أصعب الظروف، يبقى هناك متسع لرعاية الحياة والاهتمام بالآخرين.</span></p>",
     "linksHTML": "<div class=\"creator-support-buttons\"><a class=\"site-button\" href=\"https://www.gofundme.com/f/rebuilding-lives-together-hkth5\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support Aaed's Campaign</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم حملة عائد</span></a></div>\n        \n        \n        <div class=\"social-links\">\n          <a aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/AhmedLittleFarmer\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:facebook}}</a>\n        </div>\n        <a href=\"https://www.gofundme.com/f/nq2v9-all-eyes-on-palestine\" target=\"_blank\" \n          rel=\"noopener noreferrer\">\n          <span class=\"learn-en\">Learn More</span>\n          <span class=\"learn-ar hidden arabic-text\">اعرف المزيد</span>\n        </a>\n      ",
     "section": "Relief, Rebuilding, and Hope",
     "sectionHTML": "\n      <span class=\"lang-en\">Relief, Rebuilding, and Hope</span>\n      <span class=\"lang-ar\">الإغاثة وإعادة البناء والأمل</span>\n    ",
-    "frontNameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Aaed Abusweilem</span>"
+    "frontNameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Aaed Abusweilem</span>",
+    "nameAr": "عائد أبو سويلم"
   },
   {
     "id": "creator-35",
@@ -405,14 +414,15 @@ const creators = [
   },
   {
     "id": "creator-38",
-    "name": "I. N.",
-    "nameHTML": "I. N.",
+    "name": "Ibrahim Nazmii",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Ibrahim Nazmii</span> <span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إبراهيم نظمي</span>",
     "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/in.jpg\" alt=\"Card 7\">",
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Ibrahim Nazmii is a Palestinian digital creator from Gaza who shares moments from his personal life and experiences through social media. His profile also reflects his involvement in commerce and perfume-related business activities. Through his online presence, he connects with his community and shares glimpses of everyday life in Gaza.</span> <span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إبراهيم نظمي صانع محتوى رقمي فلسطيني من غزة، يشارك لحظات من حياته الشخصية وتجاربه عبر وسائل التواصل الاجتماعي. ويعكس ملفه الشخصي أيضًا اهتمامه بالتجارة والأعمال المتعلقة بالعطور. ومن خلال حضوره الرقمي، يتواصل مع مجتمعه ويشارك جوانب من الحياة اليومية في غزة.</span></p>",
     "linksHTML": "\n        \n        \n        <div class=\"social-links\">\n          <a aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/ibrahim.nazmii\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:facebook}}</a>\n        </div>\n      ",
     "section": "Relief, Rebuilding, and Hope",
     "sectionHTML": "\n      <span class=\"lang-en\">Relief, Rebuilding, and Hope</span>\n      <span class=\"lang-ar\">الإغاثة وإعادة البناء والأمل</span>\n    ",
-    "frontNameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Ibrahim Nazmii</span> <span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إبراهيم نظمي</span>"
+    "frontNameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Ibrahim Nazmii</span> <span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إبراهيم نظمي</span>",
+    "nameAr": "إبراهيم نظمي"
   },
   {
     "id": "creator-39",
@@ -433,7 +443,8 @@ const creators = [
     "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Salman Abu Elreesh is a young Palestinian boxer and digital creator from Gaza who shares his passion for boxing, training, and sports through social media. At just 14 years old, he uses his platform to share his experiences and determination while encouraging others to support his journey. Through his story, Salman highlights the dreams and resilience of young Palestinians growing up in difficult circumstances.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">سلمان أبو الريش ملاكم فلسطيني شاب وصانع محتوى رقمي من غزة، يشارك شغفه بالملاكمة والتدريب والرياضة عبر وسائل التواصل الاجتماعي. في عمر الرابعة عشرة، يستخدم منصاته لمشاركة تجاربه وإصراره، ويشجّع الآخرين على دعم مسيرته. ومن خلال قصته، يسلّط سلمان الضوء على أحلام الشباب الفلسطيني وصمودهم في ظل الظروف الصعبة.</span></p>",
     "linksHTML": "\n        \n        \n        <div class=\"social-links\">\n          <a aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/profile.php?id=61586914149981\" class=\"social-link\" target=\"_blank\" \n          rel=\"noopener noreferrer\">{{social:facebook}}</a>\n        <a class=\"social-link\" aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/salman_the_kking/\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:instagram}}</a><a class=\"social-link\" aria-label=\"PayPal — HousamAbouelreish198 / باي بال — HousamAbouelreish198\" href=\"https://www.paypal.com/paypalme/HousamAbouelreish198\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:paypal}}</a></div>\n      ",
     "section": "Relief, Rebuilding, and Hope",
-    "sectionHTML": "\n      <span class=\"lang-en\">Relief, Rebuilding, and Hope</span>\n      <span class=\"lang-ar\">الإغاثة وإعادة البناء والأمل</span>\n    "
+    "sectionHTML": "\n      <span class=\"lang-en\">Relief, Rebuilding, and Hope</span>\n      <span class=\"lang-ar\">الإغاثة وإعادة البناء والأمل</span>\n    ",
+    "nameAr": "سلمان أبو الريش"
   },
   {
     "id": "creator-41",
@@ -663,7 +674,11 @@ function renderSocialIcons(linksHTML) {
     const indicator = document.getElementById('creator-page');
     const empty = document.getElementById('creator-empty');
     let page = 0;
-    const normalize = value => value.trim().toLocaleLowerCase();
+    // Match both name fields in either interface language; ignore Arabic marks
+    // and common Alef variants so spelling and optional diacritics do not hide names.
+    const normalize = value => value.normalize('NFKC').trim().toLocaleLowerCase()
+        .replace(/[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06ed\u0640]/g, '')
+        .replace(/[أإآٱ]/g, 'ا');
     const arabic = () => document.documentElement.lang === 'ar';
     const bilingual = (en, ar) => `<span class="lang-en">${en}</span><span class="lang-ar hidden" lang="ar" dir="rtl">${ar}</span>`;
     const escapeText = value => value.replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[char]));
