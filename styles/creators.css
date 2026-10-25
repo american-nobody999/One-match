@@ -1,6 +1,6 @@
 /* 
    Author: Leslie Brockman
-   Date: 10-23-2026
+   Date: 10-24-2026
    Date modified: 10/23/2026
 */
 :where(.link-page) main {
@@ -240,15 +240,6 @@ display: flex;
     flex-wrap: wrap;
 }
 
-.link-page .social-links .social-link img {
-width: 40px;
-    height: 40px;
-    border-width: 2px;
-    border-radius: 8px;
-    margin: 0;
-    object-fit: cover;
-}
-
 .link-page .image-container > a {
 margin-top: auto;
     display: inline-flex;
@@ -273,41 +264,7 @@ width: 100%;
     box-shadow: 0 6px 20px rgba(0, 151, 54, 0.35);
 }
 
-.link-page .featured-image-galleries .gallery-section-copy {
-margin-top: 0;
-    border: 0;
-    box-shadow: none;
-}
 
-.link-page .featured-profile {
-display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.link-page .featured-profile .image > img {
-display: block;
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    max-height: 420px;
-    object-fit: contain;
-    margin: 0 auto 0.75rem;
-    border: 0;
-    box-shadow: none;
-}
-
-.link-page .featured-profile .social-link img {
-border: 0;
-    box-shadow: none;
-}
-
-@media (min-width: 769px) {
-.link-page .featured-profile {
-grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-}
-}
 
 .link-page .featured-image-galleries .image-container {
 min-height: 0;
@@ -711,4 +668,548 @@ body.link-page { background-color: #D9E2CE; }
 }
 .link-page .directory-review-notice .lang-ar {
     display: block;
+}
+
+/* Directory cards reuse the docs/featured flip-card component. */
+.creators-page .featured-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-block: 1.5rem;
+}
+.creators-page .featured-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 34rem;
+    justify-self: center;
+    perspective: 1200px;
+}
+.creators-page .featured-card-inner {
+    position: relative;
+    height: clamp(38rem, 80svh, 46rem);
+    transform-style: preserve-3d;
+    transition: transform .65s ease;
+}
+.creators-page .featured-card.is-flipped .featured-card-inner {
+    transform: rotateY(180deg);
+}
+.creators-page .featured-card-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    min-height: 0;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 2px solid #a88b4c;
+    border-radius: 1.25rem;
+    background: #f8f5e9;
+    color: #303c22;
+    box-shadow: 0 .5rem 1.3rem #303c2226;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow-wrap: anywhere;
+}
+.creators-page .featured-card-front {
+    overflow-y: auto;
+}
+.creators-page .featured-card-back {
+    transform: rotateY(180deg);
+}
+.creators-page .featured-card-photo {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    flex: 1 1 16rem;
+    object-fit: contain;
+    border: 1px solid #c9aa65;
+    border-radius: .75rem;
+    background: #e3e5d6;
+}
+.creators-page .featured-card h3 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin: 0;
+}
+.creators-page .featured-card-details {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    padding: .25rem .5rem 1rem;
+}
+.creators-page .featured-card-details > p {
+    margin-block: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    text-align: start;
+}
+.creators-page .featured-flip-button {
+    flex-shrink: 0;
+    max-width: 100%;
+    margin-top: auto;
+    padding: .7rem 1.75rem;
+    border: 2px solid #c9aa65;
+    border-radius: .6rem;
+    background: #303c22;
+    color: #fff9e8;
+    font: inherit;
+    white-space: normal;
+    cursor: pointer;
+}
+.creators-page .featured-flip-button:hover {
+    background: #465635;
+}
+.creators-page .featured-card :is(button, a, [tabindex]):focus-visible {
+    outline: 3px solid #8b571d;
+    outline-offset: 3px;
+}
+@media (max-width: 480px) {
+    .creators-page .featured-gallery { gap: 1.25rem; }
+    .creators-page .featured-collection { padding: .6rem; }
+    .creators-page .featured-card-face { padding: .85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .creators-page .featured-card-inner { transition: none; }
+}
+
+.creators-page .creator-directory {
+    width: 100%;
+    min-width: 0;
+}
+.creators-page .featured-gallery {
+    align-items: start;
+    gap: 1.25rem;
+}
+.creators-page .featured-card[hidden],
+.creators-page #creator-empty[hidden] { display: none; }
+.creators-page .featured-card-front > img {
+    max-width: 100%;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    object-fit: contain;
+}
+.creators-page .featured-card-details a {
+    overflow-wrap: anywhere;
+}
+.creators-page .featured-card-details h2,
+.creators-page .featured-card-details .creator-classification {
+    font-size: 1rem;
+    margin: .5rem 0;
+    padding: 0;
+}
+.creators-page .creator-classification { font-weight: 700; }
+.creators-page .creator-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
+    gap: 1rem;
+}
+.creators-page .creator-filters > div {
+    flex: 1 1 14rem;
+    min-width: 0;
+    max-width: 24rem;
+}
+.creators-page .creator-filters label { display: block; margin-bottom: .35rem; }
+.creators-page .creator-filters :is(input, select) {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: .6rem;
+    border: 2px solid #303c22;
+    border-radius: 6px;
+    font: inherit;
+    color: #303c22;
+    background: #fff;
+}
+.creators-page .creator-filters :is(input, select):focus-visible,
+.creators-page .creator-review summary:focus-visible {
+    outline: 3px solid #8b571d;
+    outline-offset: 3px;
+}
+.creators-page .creator-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-block: 1.5rem;
+}
+.creators-page .creator-pagination button:disabled {
+    opacity: .5;
+    cursor: default;
+    transform: none;
+}
+.creators-page .creator-review { width: 100%; min-width: 0; }
+.creators-page .creator-review summary { cursor: pointer; font-weight: 700; }
+.creators-page .creator-review .influencer-fundraiser { margin-inline: 0; }
+html[lang="ar"] .creators-page .creator-directory { direction: rtl; }
+@media (max-width: 991px) {
+    .creators-page .featured-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+    .creators-page .featured-gallery { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Creator social buttons: local SVG symbols, independent of portrait styling. */
+.creators-page .social-links .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid #000;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(220, 20, 60, 0.65);
+    transition: box-shadow .2s ease, transform .2s ease, background-color .2s ease;
+    background: #303c22;
+    color: #fff9e8;
+}
+.creators-page .social-links .creator-social-icon {
+    display: block;
+    flex: none;
+    width: 22px;
+    height: 22px;
+}
+.creators-page .social-links .social-link:hover {
+    box-shadow: 0 0 13px rgba(220, 20, 60, 0.9);
+    transform: translateY(-2px);
+    background: #465635;
+    color: #fff9e8;
+}
+.creators-page .social-links .social-link:focus-visible {
+    outline: 3px solid #8b571d;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .creators-page .social-links .social-link {
+        transition: none;
+    }
+    .creators-page .social-links .social-link:hover {
+        transform: none;
+    }
+}
+
+/* Relocated supporting-content disclosure; preserve native summary interaction. */
+.creators-page .creator-how-it-works {
+    width: 100%;
+    min-width: 0;
+    margin-block: 1.5rem;
+}
+.creators-page :is(.creator-how-it-works, .community-networks) .creator-list-control {
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    padding: .85rem clamp(.85rem, 3vw, 1.5rem);
+    border: 1px solid #24713b;
+    border-radius: .65rem;
+    background: #fff;
+    color: #303c22;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(220, 20, 60, .55);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    list-style: none;
+    cursor: pointer;
+}
+.creators-page :is(.creator-how-it-works, .community-networks) .creator-list-control::-webkit-details-marker {
+    display: none;
+}
+.creators-page :is(.creator-how-it-works, .community-networks) .creator-list-arrow {
+    display: inline-block;
+    margin-inline: .3em;
+    color: #b5122b;
+}
+.creators-page :is(.creator-how-it-works, .community-networks) .creator-list-control:hover {
+    background: #f0f3e8;
+    text-shadow: 0 0 7px rgba(220, 20, 60, .75);
+}
+.creators-page :is(.creator-how-it-works, .community-networks) .creator-list-control:focus-visible {
+    outline: 3px solid #8b571d;
+    outline-offset: 4px;
+}
+
+/* Unified introduction: keep its typography and panel treatment page-specific. */
+.creators-page .creators-intro {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 68rem;
+    margin: clamp(1rem, 3vw, 2rem) auto;
+    padding: clamp(1.1rem, 4vw, 2.5rem);
+    border: 1px solid #465635;
+    border-radius: 16px;
+    background: #f0f3e8;
+    box-shadow: none;
+}
+.creators-page .creators-intro h2 {
+    margin: 0 auto 1.5rem;
+    padding: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+.creators-page .creators-intro p {
+    max-width: 60ch;
+    margin: 0 auto 1.1em;
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.8;
+    text-indent: 0;
+}
+.creators-page .creators-intro p > :is(.lang-en, .lang-ar) {
+    display: block;
+    text-align: start;
+}
+.creators-page .creators-intro .lang-ar {
+    direction: rtl;
+    font-family: var(--font-ar);
+}
+.creators-page .creators-intro .creators-intro-closing {
+    margin-bottom: 0;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 700;
+    color: #303c22;
+}
+
+/* Persistent directory disclaimer below pagination, outside card results. */
+.creators-page .directory-review-notice {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 850px;
+    margin: 1.5rem auto;
+    padding: .85rem clamp(.75rem, 3vw, 1.25rem);
+    border: 1px solid #c62828;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(212, 175, 55, .55);
+    text-align: center;
+}
+.creators-page .directory-review-notice p {
+    max-width: 100%;
+    margin: 0;
+    font-size: .85rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.6;
+    text-indent: 0;
+    text-align: center;
+}
+.creators-page .directory-review-notice .lang-ar {
+    direction: rtl;
+    font-family: var(--font-ar);
+    text-align: center;
+}
+
+/* Community Networks educational feature; all overrides stay inside this panel. */
+.creators-page .community-networks {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 68rem;
+    padding: clamp(1.1rem, 4vw, 2.5rem);
+    border: 1px solid #465635;
+    border-radius: 16px;
+    background: #f0f3e8;
+    box-shadow: none;
+}
+.creators-page .community-networks h3 {
+    max-width: 65ch;
+    margin: 1.75rem auto .75rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    line-height: 1.5;
+}
+.creators-page .community-networks p {
+    max-width: 65ch;
+    margin: 0 auto 1em;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.8;
+    text-indent: 0;
+}
+.creators-page .community-networks :is(p, h3) > :is(.lang-en, .lang-ar) {
+    display: block;
+    text-align: start;
+}
+.creators-page .community-networks .lang-ar {
+    direction: rtl;
+    font-family: var(--font-ar);
+}
+.creators-page .community-networks .community-key-statement {
+    padding-block: .65rem;
+    font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+    color: #303c22;
+}
+.creators-page .community-networks .community-references {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 100, 0, .3);
+    font-size: .8rem;
+    line-height: 1.6;
+    text-align: start;
+}
+.creators-page .community-references h3 {
+    margin: 0 0 .5rem;
+    font-size: .95rem;
+}
+.creators-page .community-references ol {
+    margin: 0;
+    padding-inline-start: 1.5rem;
+}
+.creators-page .community-references li { margin-block: .65rem; }
+.creators-page .community-references a {
+    color: #303c22;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+.creators-page .community-references a:hover { color: #8b271e; }
+.creators-page .community-references a:focus-visible {
+    outline: 3px solid #8b571d;
+    outline-offset: 3px;
+}
+html[lang="ar"] .creators-page .community-networks { direction: rtl; }
+
+/* Financial Hardships outer panel only; preserve the first disclosure's styles. */
+.creators-page #financial-hardships {
+    border: 1px solid #c62828;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .45);
+}
+
+/* Mera's fundraiser links reuse global website buttons below her biography. */
+.creators-page #creator-2 .mera-fundraiser-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem;
+    margin-block: 1rem;
+}
+.creators-page #creator-2 .mera-fundraiser-buttons .site-button {
+    flex: 1 1 9rem;
+}
+
+/* Profile fundraiser buttons share the established layout. */
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    margin-block: 1rem;
+}
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-button {
+    display: flex;
+    direction: ltr;
+    justify-content: flex-start;
+    gap: .85rem;
+    width: 100%;
+    min-height: 64px;
+    padding: .75rem;
+    border: 1px solid #c9aa65;
+    border-radius: .75rem;
+    color: #fff;
+    text-align: start;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-chuffed { background: #075ca8; }
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-paypal { background: #242424; }
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-logo {
+    display: block;
+    flex: 0 0 72px;
+    width: 72px;
+    max-width: 72px;
+    height: 48px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    object-fit: contain;
+}
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-button > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-chuffed:hover { background: #064b89; }
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-paypal:hover { background: #383838; }
+.creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-button:focus-visible {
+    outline: 3px solid #8b571d;
+    outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-button { transition: none; }
+    .creators-page :is(#creator-1, #creator-3, #creator-4, #creator-6, #creator-7) .kareem-fundraiser-button:is(:hover, :focus-visible) { transform: none; }
+}
+
+/* FreeFunder text button until a suitable platform logo asset is supplied. */
+.creators-page #creator-4 .inas-fundraiser-freefunder { background: #075ca8; }
+.creators-page #creator-4 .inas-fundraiser-freefunder:hover { background: #064b89; }
+
+/* Save Gaza: subscription CTA, separate from its circular profile link. */
+.creators-page #creator-5 .save-gaza-subscription { margin-block: 1rem; }
+.creators-page #creator-5 .save-gaza-subscription-button {
+    width: 100%;
+    gap: .75rem;
+    border-radius: .75rem;
+    background: #0866b9;
+    color: #fff;
+    text-align: start;
+}
+.creators-page #creator-5 .save-gaza-subscription-button .creator-social-icon {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+}
+.creators-page #creator-5 .save-gaza-subscription-button > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.creators-page #creator-5 .save-gaza-subscription-button:hover { background: #075399; }
+.creators-page #creator-5 .save-gaza-subscription-button:focus-visible {
+    outline: 3px solid #8b571d;
+    outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .creators-page #creator-5 .save-gaza-subscription-button { transition: none; }
+    .creators-page #creator-5 .save-gaza-subscription-button:is(:hover, :focus-visible) { transform: none; }
+}
+
+/* Card 6: preserve contrast with the unmodified green GoFundMe logo. */
+.creators-page #creator-6 .brothers-fundraiser-gofundme {
+    background: #f0f3e8;
+    color: #303c22;
+}
+.creators-page #creator-6 .brothers-fundraiser-gofundme:hover {
+    background: #d9e2ce;
+    color: #303c22;
+}
+
+/* Reviewed cards: global site-button owns colors, border, shadow and hover. */
+.creators-page .creator-support-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+    margin-block: 1rem;
+}
+
+/* Numbered/platform support buttons: identifiers below the shared label. */
+.creators-page :is(#creator-14, #creator-18) .salma-support-button {
+    flex-direction: column;
+    gap: .15rem;
+    min-width: min(100%, 13rem);
+}
+.creators-page :is(#creator-14, #creator-18) .salma-support-button small {
+    font-size: .75em;
+    font-weight: 400;
+}
+
+/* Mohammed's Upscrolled asset uses the same circular control and icon sizing. */
+.creators-page #creator-18 .social-link img.creator-social-icon {
+    margin: 0;
+    border-radius: 0;
+    object-fit: contain;
 }
