@@ -1,6 +1,6 @@
 /* 
    Author: Leslie Brockman
-   Date: 10-17-2026
+   Date: 10-26-2026
    Date modified: 10/21/2026
 */
 :where(body.ticket-page) h2 {
@@ -1244,7 +1244,7 @@ animation: none;
 
 
 /* Ticket body only; feature backgrounds remain unchanged. */
-body.ticket-page { background: #D9E2CE; }
+body.ticket-page { background-color: #d5d5b7; }
 
 /* Keep the mobile control above the positioned title in their shared grid row. */
 @media (max-width: 768px) {
@@ -1252,4 +1252,185 @@ body.ticket-page { background: #D9E2CE; }
         position: relative;
         z-index: 1;
     }
+}
+
+/* Featured flotilla directory; isolated from existing galleries and convoy. */
+.flotilla-missions {
+    width: 100%;
+    max-width: 1200px;
+    margin-block-end: 2.5rem;
+    color: var(--dark);
+    font-family: var(--font-en);
+}
+.flotilla-missions .flotilla-missions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-block-end: 1.5rem;
+}
+.flotilla-missions .flotilla-missions-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 0;
+    padding: 1.25rem;
+    background: var(--panel-bg);
+    border: var(--panel-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--panel-shadow);
+    overflow-wrap: anywhere;
+}
+.flotilla-missions .flotilla-missions-card :is(.lang-en, .lang-ar) {
+    text-align: center;
+}
+.flotilla-missions .flotilla-missions-image { margin: 0 0 1rem; }
+.flotilla-missions .flotilla-missions-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: contain;
+    margin: 0 0 0.5rem;
+}
+.flotilla-missions .flotilla-missions-image figcaption { font-size: 0.85rem; }
+.flotilla-missions h3 { margin-block: 0.5rem 1rem; font-size: 1.3rem; }
+.flotilla-missions p { max-width: none; font-size: 1rem; line-height: 1.6; }
+.flotilla-missions .flotilla-missions-social {
+    margin-block-start: auto;
+    text-align: center;
+}
+.flotilla-missions > [data-flotilla-open] {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+}
+.flotilla-missions .flotilla-missions-button {
+    padding: 0.75rem 1.25rem;
+    min-height: 44px;
+    border: 2px solid var(--button-border);
+    border-radius: var(--panel-radius);
+    background: var(--button-background);
+    color: var(--button-text);
+    font: inherit;
+    cursor: pointer;
+}
+.flotilla-missions .flotilla-missions-button:hover { background: var(--button-hover-background); }
+.flotilla-missions :focus-visible { outline: 3px solid var(--button-focus); outline-offset: 4px; }
+.flotilla-missions dialog {
+    width: min(600px, calc(100% - 2rem));
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: #d5d5b7;
+    color: var(--dark);
+    border: var(--panel-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--panel-shadow);
+    text-align: start;
+}
+.flotilla-missions #flotilla-directory .flotilla-missions-coming-soon {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+}
+.flotilla-missions dialog::backdrop { background: rgb(17 17 17 / 65%); }
+.flotilla-missions dialog h3 { margin-block-start: 1.5rem; }
+html[lang="ar"] .flotilla-missions { direction: rtl; }
+@media (max-width: 991px) {
+    .flotilla-missions .flotilla-missions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+    .flotilla-missions .flotilla-missions-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Featured social icons mirror styles/creators.css without loading page-wide rules. */
+.flotilla-missions .flotilla-missions-social-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-block: 1rem;
+}
+.flotilla-missions .flotilla-missions-social-links .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid #000;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(220, 20, 60, 0.65);
+    transition: box-shadow .2s ease, transform .2s ease, background-color .2s ease;
+    background: #303c22;
+    color: #fff9e8;
+    text-decoration: none;
+}
+.flotilla-missions .flotilla-missions-social-links .creator-social-icon {
+    display: block;
+    flex: none;
+    width: 22px;
+    height: 22px;
+}
+.flotilla-missions .flotilla-missions-social-links .social-link:hover {
+    box-shadow: 0 0 13px rgba(220, 20, 60, 0.9);
+    transform: translateY(-2px);
+    background: #465635;
+    color: #fff9e8;
+}
+.flotilla-missions .flotilla-missions-social-links .social-link:focus-visible {
+    outline: 3px solid #8b571d;
+    outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .flotilla-missions .flotilla-missions-social-links .social-link { transition: none; }
+    .flotilla-missions .flotilla-missions-social-links .social-link:hover { transform: none; }
+}
+
+/* Intro gallery: keep image order left-to-right in both language modes. */
+.flotilla-missions > #flotilla-missions-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+.flotilla-missions .flotilla-missions-gallery {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem 6px 2rem;
+    background: #000000;
+    box-shadow: 0 0 0 6px #c00000, 0 8px 22px rgba(0, 0, 0, 0.35);
+    border-radius: var(--panel-radius);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    direction: ltr;
+}
+.flotilla-missions .flotilla-missions-gallery-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.flotilla-missions .flotilla-missions-gallery > img {
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    height: clamp(220px, 32vw, 340px);
+    object-fit: contain;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    transform: none;
+    transition: none;
 }
