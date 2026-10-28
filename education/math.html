@@ -1,0 +1,408 @@
+
+<!-- Author: Leslie Brockman
+ Date: 10-27-2026-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="American Nobody999">
+    <meta name="description" content="Bilingual learning at the American Nobody educational schoolhouse.">
+    <title>Math — MPGA Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles2.css">
+    <link rel="stylesheet" href="../styles/edu.css">
+    <link rel="stylesheet" href="../styles/math.css">
+</head>
+<body class="edu-page education-classroom math-classroom">
+  <header class="site-header" data-global-chrome>
+      <div class="header-container">
+
+  <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
+          <div class="header-center">
+              <h1 class="site-title state-title">
+                  <span class="lang-en">State of Palestine</span>
+                  <span class="lang-ar">دولة فلسطين</span>
+              </h1>
+              <nav id="edu-navigation" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="../index.html" class="nav-btn">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="../mpga.html" class="nav-btn">
+                          <span class="lang-en">MPGA</span>
+                          <span class="lang-ar">MPGA</span>
+                  </a></li>
+                  <li><a href="../about.html" class="nav-btn">
+                        <span class="lang-en">About Us</span>
+                        <span class="lang-ar">من نحن</span>
+                  </a></li>                 
+                </ul>
+              </nav>
+          </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                      English | العربية
+              </button>
+  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+              <button id="menu-toggle" aria-controls="edu-navigation" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  ☰
+              </button>
+        </div>
+  </header>
+  <main class="classroom-main">
+    <section class="weekly-board math-welcome-board" aria-labelledby="classroom-title">
+      <div class="math-board-emblem" aria-hidden="true">
+        <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><linearGradient id="subject-book-red" x2="0" y2="1"><stop stop-color="#df6252"/><stop offset="1" stop-color="#9e302e"/></linearGradient></defs>
+<ellipse cx="60" cy="101" rx="47" ry="7" fill="#806238" opacity=".2"/>
+<path d="m14 79 72-9 20 14-72 12Z" fill="#347b9c" stroke="#23495f" stroke-width="2"/><path d="m15 81 20 12 69-8v11l-70 10-19-12Z" fill="#245b83" stroke="#23495f" stroke-width="2"/><path d="m36 93 64-8v8l-64 9Z" fill="#fff0cb"/><path d="m40 96 56-6" stroke="#c8b994"/>
+<path d="m15 59 69-8 20 13-69 12Z" fill="#70955a" stroke="#355c39" stroke-width="2"/><path d="m15 60 20 14 68-9v12l-69 10-19-14Z" fill="#477a45" stroke="#355c39" stroke-width="2"/><path d="m37 75 62-9v8l-62 9Z" fill="#fff0cb"/>
+<path d="m18 37 68-9 19 13-68 12Z" fill="url(#subject-book-red)" stroke="#792f28" stroke-width="2"/><path d="m18 38 20 14 66-10v12L38 65 18 51Z" fill="#b23d35" stroke="#792f28" stroke-width="2"/><path d="m40 52 60-9v8l-60 10Z" fill="#fff1d3"/><path d="m43 55 53-8M31 38l50-6" stroke="#f0cba2" stroke-width="1.5"/></svg>
+      </div>
+      <h2 id="classroom-title"><span lang="en">Welcome!</span><span lang="ar" dir="rtl">أهلًا وسهلًا!</span></h2>
+      <p lang="en">Choose an operation and enjoy learning.</p>
+      <p lang="ar" dir="rtl">اختر عملية حسابية واستمتع بالتعلّم.</p>
+      <div class="board-tray" aria-hidden="true">
+        <svg class="tray-eraser" viewBox="0 0 150 65" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="edu-eraser-red" x2="0" y2="1"><stop stop-color="#cc695b"/><stop offset=".5" stop-color="#993e34"/><stop offset="1" stop-color="#672a24"/></linearGradient>
+            <linearGradient id="edu-felt" x2="0" y2="1"><stop stop-color="#4a4940"/><stop offset="1" stop-color="#22291f"/></linearGradient>
+          </defs>
+          <path d="M13 33 125 23 141 38 29 53Z" fill="url(#edu-felt)"/>
+          <path d="m13 20 112-10 16 13v15L29 49 13 33Z" fill="#622e24"/>
+          <path d="m13 20 112-10 16 13L29 35Z" fill="url(#edu-eraser-red)" stroke="#612c22"/>
+          <path d="m29 35 112-12v10L29 45Z" fill="#86392e"/>
+          <path d="m27 23 35-3m17-2 27-2m-53 11 19-2" stroke="#ebad91" stroke-opacity=".5" stroke-width="2"/>
+        </svg>
+        <svg class="tray-chalk" viewBox="0 0 120 28" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="edu-chalk" x2="0" y2="1"><stop stop-color="#fffdf4"/><stop offset=".55" stop-color="#eeede5"/><stop offset="1" stop-color="#aaa99f"/></linearGradient></defs>
+          <path d="m9 8 97-3 7 4-1 12-98 3-8-4Z" fill="url(#edu-chalk)" stroke="#b8b7aa"/>
+          <path d="m10 9 8 4-2 10-8-4Z" fill="#fffef5"/>
+          <path d="m24 10 75-2" stroke="#fff" stroke-opacity=".7"/>
+        </svg>
+      </div>
+    </section>
+    <a class="schoolhouse-back" href="../edu.html"><span class="math-return-en" lang="en">← Back to the schoolhouse</span><span class="math-return-ar" lang="ar" dir="rtl">العودة إلى المدرسة →</span></a>
+<section class="math-flashcards" aria-labelledby="practice-flashcards-title">
+  <div class="edu-content-section">
+    <h2 id="practice-flashcards-title">
+      <span class="lang-en">More Math Flashcards</span>
+      <span class="lang-ar">المزيد من بطاقات الرياضيات</span>
+    </h2>
+    <p>
+      <span class="lang-en">Practice addition, subtraction, multiplication, and division.</span>
+      <span class="lang-ar">تدرّب على الجمع والطرح والضرب والقسمة.</span>
+    </p>
+    <ol class="math-instructions">
+      <li>
+        <span class="lang-en">Choose an operation and press Start.</span>
+        <span class="lang-ar">اختر عملية حسابية واضغط على ابدأ.</span>
+      </li>
+      <li>
+        <span class="lang-en">Read the question, then flip the card to see the answer.</span>
+        <span class="lang-ar">اقرأ السؤال، ثم اقلب البطاقة لرؤية الإجابة.</span>
+      </li>
+      <li>
+        <span class="lang-en">Enter your answer and press Check Answer.</span>
+        <span class="lang-ar">اكتب إجابتك واضغط على تحقق من الإجابة.</span>
+      </li>
+      <li>
+        <span class="lang-en">Continue through the cards and review your score at the end.</span>
+        <span class="lang-ar">تابع حل البطاقات وراجع نتيجتك في النهاية.</span>
+      </li>
+    </ol>
+
+    <div class="flashcard-operations">
+      <div class="flashcard-operation" data-operation="addition">
+        <h3>
+          <span class="lang-en">Addition</span>
+          <span class="lang-ar">الجمع</span>
+        </h3>
+        <button class="btn-start" type="button" onclick="App.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat stat-progress" id="progress">Card 1 of 20</span>
+          <span class="stat stat-timer" id="timer" aria-label="Timer">⏱ 0:00</span>
+          <span class="stat stat-correct" id="scoreCorrect" aria-label="Correct answers">✓ 0</span>
+          <span class="stat stat-wrong" id="scoreWrong" aria-label="Incorrect answers">✗ 0</span>
+        </div>
+        <div class="card-scene">
+          <button class="card" id="card" type="button" aria-label="Flashcard. Press to flip" onclick="App.flip()">
+            <span class="card-face card-front">
+              <span class="face-label">Question</span>
+              <span class="question" id="question">7 + 5</span>
+              <span class="hint">Click or press Space to flip</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="face-label">Answer</span>
+              <span class="answer" id="answer">12</span>
+            </span>
+          </button>
+        </div>
+        <div class="answer-check" role="group" aria-label="Check your answer">
+          <label for="answerInput" class="sr-only">Your answer</label>
+          <input id="answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="answerFeedback">
+          <button class="btn-check" type="button" onclick="App.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
+          <p id="answerFeedback" class="answer-feedback" aria-live="polite"></p>
+        </div>
+        <div class="score-btns" id="scoreBtns" role="group" aria-label="Mark your answer">
+          <button class="btn-correct" type="button" onclick="App.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
+          <button class="btn-wrong" type="button" onclick="App.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
+        </div>
+        <div class="controls">
+          <button class="btn-nav" type="button" onclick="App.prev()" aria-label="Previous card">←</button>
+          <button class="btn-flip" type="button" onclick="App.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
+          <button class="btn-nav" type="button" onclick="App.next()" aria-label="Next card">→</button>
+          <button class="btn-shuffle" type="button" onclick="App.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
+          <button class="btn-reset" type="button" onclick="App.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
+        </div>
+        <p class="footer-note">
+          <span class="lang-en">20 addition problems · Numbers 1–20</span>
+          <span class="lang-ar">20 مسألة جمع · الأعداد من 1 إلى 20</span>
+        </p>
+      </div>
+      <div class="results" id="results" role="dialog" aria-modal="true" aria-labelledby="resultsTitle" hidden>
+        <div class="results-card">
+          <h2 id="resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
+          <div class="score-big" id="finalScore">0 / 20</div>
+          <p class="detail" id="finalCorrect">0</p>
+          <p class="detail" id="finalWrong">0</p>
+          <p class="detail" id="finalAccuracy">0%</p>
+          <p class="time-result" id="finalTime">0:00</p>
+          <button class="btn-shuffle" type="button" onclick="App.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
+        </div>
+      </div>
+
+      <div class="flashcard-operation" data-operation="subtraction">
+        <h3>
+          <span class="lang-en">Subtraction</span>
+          <span class="lang-ar">الطرح</span>
+        </h3>
+        <button class="btn-start" type="button" onclick="SubtractionApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat stat-progress" id="subtraction-progress">Card 1 of 20</span>
+          <span class="stat stat-timer" id="subtraction-timer" aria-label="Timer">⏱ 0:00</span>
+          <span class="stat stat-correct" id="subtraction-scoreCorrect" aria-label="Correct answers">✓ 0</span>
+          <span class="stat stat-wrong" id="subtraction-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
+        </div>
+        <div class="card-scene">
+          <button class="card" id="subtraction-card" type="button" aria-label="Flashcard. Press to flip" onclick="SubtractionApp.flip()">
+            <span class="card-face card-front">
+              <span class="face-label">Question</span>
+              <span class="question" id="subtraction-question">15 − 7</span>
+              <span class="hint">Click or press Space to flip</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="face-label">Answer</span>
+              <span class="answer" id="subtraction-answer">8</span>
+            </span>
+          </button>
+        </div>
+        <div class="answer-check" role="group" aria-label="Check your answer">
+          <label for="subtraction-answerInput" class="sr-only">Your answer</label>
+          <input id="subtraction-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="subtraction-answerFeedback">
+          <button class="btn-check" type="button" onclick="SubtractionApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
+          <p id="subtraction-answerFeedback" class="answer-feedback" aria-live="polite"></p>
+        </div>
+        <div class="score-btns" id="subtraction-scoreBtns" role="group" aria-label="Mark your answer">
+          <button class="btn-correct" type="button" onclick="SubtractionApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
+          <button class="btn-wrong" type="button" onclick="SubtractionApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
+        </div>
+        <div class="controls">
+          <button class="btn-nav" type="button" onclick="SubtractionApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
+          <button class="btn-flip" type="button" onclick="SubtractionApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
+          <button class="btn-nav" type="button" onclick="SubtractionApp.next()" aria-label="Next card / البطاقة التالية">→</button>
+          <button class="btn-shuffle" type="button" onclick="SubtractionApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
+          <button class="btn-reset" type="button" onclick="SubtractionApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
+        </div>
+        <p class="footer-note">
+          <span class="lang-en">20 subtraction problems</span>
+          <span class="lang-ar">20 مسألة طرح</span>
+        </p>
+      </div>
+      <div class="results" id="subtraction-results" role="dialog" aria-modal="true" aria-labelledby="subtraction-resultsTitle" hidden>
+        <div class="results-card">
+          <h2 id="subtraction-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
+          <div class="score-big" id="subtraction-finalScore">0 / 20</div>
+          <p class="detail" id="subtraction-finalCorrect">0</p>
+          <p class="detail" id="subtraction-finalWrong">0</p>
+          <p class="detail" id="subtraction-finalAccuracy">0%</p>
+          <p class="time-result" id="subtraction-finalTime">0:00</p>
+          <button class="btn-shuffle" type="button" onclick="SubtractionApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
+        </div>
+      </div>
+
+      <div class="flashcard-operation" data-operation="division">
+        <h3>
+          <span class="lang-en">Division</span>
+          <span class="lang-ar">القسمة</span>
+        </h3>
+        <button class="btn-start" type="button" onclick="DivisionApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat stat-progress" id="division-progress">Card 1 of 20</span>
+          <span class="stat stat-timer" id="division-timer" aria-label="Timer">⏱ 0:00</span>
+          <span class="stat stat-correct" id="division-scoreCorrect" aria-label="Correct answers">✓ 0</span>
+          <span class="stat stat-wrong" id="division-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
+        </div>
+        <div class="card-scene">
+          <button class="card" id="division-card" type="button" aria-label="Flashcard. Press to flip" onclick="DivisionApp.flip()">
+            <span class="card-face card-front">
+              <span class="face-label">Question</span>
+              <span class="question" id="division-question">12 ÷ 3</span>
+              <span class="hint">Click or press Space to flip</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="face-label">Answer</span>
+              <span class="answer" id="division-answer">4</span>
+            </span>
+          </button>
+        </div>
+        <div class="answer-check" role="group" aria-label="Check your answer">
+          <label for="division-answerInput" class="sr-only">Your answer</label>
+          <input id="division-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="division-answerFeedback">
+          <button class="btn-check" type="button" onclick="DivisionApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
+          <p id="division-answerFeedback" class="answer-feedback" aria-live="polite"></p>
+        </div>
+        <div class="score-btns" id="division-scoreBtns" role="group" aria-label="Mark your answer">
+          <button class="btn-correct" type="button" onclick="DivisionApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
+          <button class="btn-wrong" type="button" onclick="DivisionApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
+        </div>
+        <div class="controls">
+          <button class="btn-nav" type="button" onclick="DivisionApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
+          <button class="btn-flip" type="button" onclick="DivisionApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
+          <button class="btn-nav" type="button" onclick="DivisionApp.next()" aria-label="Next card / البطاقة التالية">→</button>
+          <button class="btn-shuffle" type="button" onclick="DivisionApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
+          <button class="btn-reset" type="button" onclick="DivisionApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
+        </div>
+        <p class="footer-note">
+          <span class="lang-en">20 division problems</span>
+          <span class="lang-ar">20 مسألة قسمة</span>
+        </p>
+      </div>
+      <div class="results" id="division-results" role="dialog" aria-modal="true" aria-labelledby="division-resultsTitle" hidden>
+        <div class="results-card">
+          <h2 id="division-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
+          <div class="score-big" id="division-finalScore">0 / 20</div>
+          <p class="detail" id="division-finalCorrect">0</p>
+          <p class="detail" id="division-finalWrong">0</p>
+          <p class="detail" id="division-finalAccuracy">0%</p>
+          <p class="time-result" id="division-finalTime">0:00</p>
+          <button class="btn-shuffle" type="button" onclick="DivisionApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
+        </div>
+      </div>
+
+      <div class="flashcard-operation" data-operation="multiplication">
+        <h3>
+          <span class="lang-en">Multiplication</span>
+          <span class="lang-ar">الضرب</span>
+        </h3>
+        <button class="btn-start" type="button" onclick="MultiplicationApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
+        <div class="stats" role="status" aria-live="polite">
+          <span class="stat stat-progress" id="multiplication-progress">Card 1 of 20</span>
+          <span class="stat stat-timer" id="multiplication-timer" aria-label="Timer">⏱ 0:00</span>
+          <span class="stat stat-correct" id="multiplication-scoreCorrect" aria-label="Correct answers">✓ 0</span>
+          <span class="stat stat-wrong" id="multiplication-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
+        </div>
+        <div class="card-scene">
+          <button class="card" id="multiplication-card" type="button" aria-label="Flashcard. Press to flip" onclick="MultiplicationApp.flip()">
+            <span class="card-face card-front">
+              <span class="face-label">Question</span>
+              <span class="question" id="multiplication-question">6 × 7</span>
+              <span class="hint">Click or press Space to flip</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="face-label">Answer</span>
+              <span class="answer" id="multiplication-answer">42</span>
+            </span>
+          </button>
+        </div>
+        <div class="answer-check" role="group" aria-label="Check your answer">
+          <label for="multiplication-answerInput" class="sr-only">Your answer</label>
+          <input id="multiplication-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="multiplication-answerFeedback">
+          <button class="btn-check" type="button" onclick="MultiplicationApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
+          <p id="multiplication-answerFeedback" class="answer-feedback" aria-live="polite"></p>
+        </div>
+        <div class="score-btns" id="multiplication-scoreBtns" role="group" aria-label="Mark your answer">
+          <button class="btn-correct" type="button" onclick="MultiplicationApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
+          <button class="btn-wrong" type="button" onclick="MultiplicationApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
+        </div>
+        <div class="controls">
+          <button class="btn-nav" type="button" onclick="MultiplicationApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
+          <button class="btn-flip" type="button" onclick="MultiplicationApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
+          <button class="btn-nav" type="button" onclick="MultiplicationApp.next()" aria-label="Next card / البطاقة التالية">→</button>
+          <button class="btn-shuffle" type="button" onclick="MultiplicationApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
+          <button class="btn-reset" type="button" onclick="MultiplicationApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
+        </div>
+        <p class="footer-note">
+          <span class="lang-en">20 multiplication problems</span>
+          <span class="lang-ar">20 مسألة ضرب</span>
+        </p>
+      </div>
+      <div class="results" id="multiplication-results" role="dialog" aria-modal="true" aria-labelledby="multiplication-resultsTitle" hidden>
+        <div class="results-card">
+          <h2 id="multiplication-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
+          <div class="score-big" id="multiplication-finalScore">0 / 20</div>
+          <p class="detail" id="multiplication-finalCorrect">0</p>
+          <p class="detail" id="multiplication-finalWrong">0</p>
+          <p class="detail" id="multiplication-finalAccuracy">0%</p>
+          <p class="time-result" id="multiplication-finalTime">0:00</p>
+          <button class="btn-shuffle" type="button" onclick="MultiplicationApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer class="site-footer" data-global-chrome>
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="../legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, A State rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 American Nobody999</span>
+              <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
+            </p>
+          </div>
+          <a href="../contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <script src="../js/math-addition.js"></script>
+  <script src="../js/math-subtraction.js"></script>
+  <script src="../js/math-division.js"></script>
+  <script src="../js/math-multiplication.js"></script>
+</body>
+</html>
