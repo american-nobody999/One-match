@@ -1,0 +1,687 @@
+/* Author: Leslie Brockman
+ Date: 10-27-2026 */
+:where(.edu-page) .site-header {
+    z-index: 1000;
+}
+
+:where(.edu-page) .header-container {
+    flex-wrap: wrap;
+}
+
+:where(.edu-page) .header-center {
+    flex: 1;
+}
+
+:where(.edu-page) .footer-row {
+    flex-wrap: wrap;
+}
+
+body.education-classroom {
+    --education-paper: #fffdf6;
+    --education-green: #234c3c;
+    --education-ink: #343e32;
+    --education-gold: #b49b63;
+    --education-hover: #963d35;
+    --education-shadow: 0 4px 16px rgb(55 65 38 / 7%);
+    --education-radius: 20px;
+    --classroom-accent: #326e51;
+    --classroom-tint: #e8eddb;
+    background: #f5f3e7;
+}
+
+.education-classroom .classroom-main {
+    width: min(100%, 1120px);
+    min-width: 0;
+    margin: 0 auto;
+    padding: clamp(1rem, 3.5vw, 2.75rem);
+    color: var(--education-ink);
+    min-height: 60vh;
+}
+
+.education-classroom .classroom-welcome {
+    min-width: 0;
+    margin: 1.5rem 0;
+    padding: clamp(1.25rem, 3.5vw, 2.5rem);
+    border-radius: var(--education-radius);
+    background: var(--education-paper);
+    box-shadow: var(--education-shadow);
+    overflow-wrap: anywhere;
+    border-top: 3px solid var(--classroom-accent);
+    text-align: center;
+}
+
+.education-classroom .classroom-materials {
+    min-width: 0;
+    margin: 1.5rem 0;
+    padding: clamp(1.25rem, 3.5vw, 2.5rem);
+    border-radius: var(--education-radius);
+    background: var(--education-paper);
+    box-shadow: var(--education-shadow);
+    overflow-wrap: anywhere;
+}
+
+.education-classroom .classroom-welcome h2 {
+    margin: 1rem 0 .75rem;
+    color: var(--education-green);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.45;
+}
+
+.education-classroom .classroom-materials h3 {
+    color: var(--education-green);
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+.education-classroom .classroom-welcome p {
+    max-width: 62ch;
+    margin: .75rem auto 0;
+    text-indent: 0;
+    line-height: 1.8;
+}
+
+.education-classroom .classroom-materials p {
+    max-width: 62ch;
+    margin: .75rem auto 0;
+    text-indent: 0;
+    line-height: 1.8;
+}
+
+.education-classroom .schoolhouse-back {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    min-height: 44px;
+    padding: .65rem 1rem;
+    border: 1px solid #b8c3a9;
+    border-radius: 10px;
+    background: var(--education-paper);
+    color: var(--education-green);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: .25em;
+    overflow-wrap: anywhere;
+}
+
+.education-classroom .schoolhouse-back:hover {
+    color: var(--education-hover);
+}
+
+.education-classroom .schoolhouse-back:focus-visible {
+    outline: 3px solid var(--education-green);
+    outline-offset: 4px;
+}
+
+.education-classroom .classroom-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--classroom-tint);
+    color: var(--classroom-accent);
+    font: 700 1.75rem Georgia, serif;
+}
+
+html[lang="ar"] .education-classroom .classroom-materials {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    :where(.edu-page) .site-header {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    :where(.edu-page) .header-container {
+        flex-direction: column;
+    }
+}
+
+
+/* Schoolhouse landing: consolidated board, signs and decorative supplies */
+body.schoolhouse-page {
+    --education-paper: #fffdf6;
+    --education-green: #234c3c;
+    --education-ink: #343e32;
+    --education-gold: #b49b63;
+    --education-hover: #963d35;
+    --education-shadow: 0 4px 16px rgb(55 65 38 / 7%);
+    --education-radius: 20px;
+    --classroom-accent: #326e51;
+    --classroom-tint: #e8eddb;
+    --school-olive: #a5a950;
+    --school-cream: #fff6d9;
+    --school-paper: #f5e9ca;
+    --school-green: #173b13;
+    --school-board: #103f2b;
+    --school-gold: #e7c15e;
+    --school-wood: #98531f;
+    --school-red: #b32630;
+    --school-ink: #26351c;
+    background: radial-gradient(ellipse at 50% 100%, rgba(255, 238, 173, .72), transparent 72%),
+        linear-gradient(135deg, #b9bd69 0%, #a5a950 45%, #d7c77a 100%);
+}
+
+.schoolhouse-page .schoolhouse-main {
+    width: min(100%, 1120px);
+    min-width: 0;
+    margin: 0 auto;
+    padding: clamp(1rem, 3.5vw, 2.75rem);
+    color: var(--school-ink);
+}
+
+.schoolhouse-page .classroom-card:focus-visible {
+    outline: 3px solid var(--education-green);
+    outline-offset: 4px;
+    outline-color: var(--school-green);
+    border-color: var(--school-wood);
+}
+
+.schoolhouse-page .weekly-board {
+    position: relative;
+    min-width: 0;
+    background-clip: padding-box;
+    text-align: center;
+    isolation: isolate;
+    padding: clamp(2.25rem, 5vw, 4rem);
+    border: 4px solid #5a2d12;
+    border-radius: 10px;
+    color: var(--school-cream);
+    background: repeating-linear-gradient(2deg, transparent 0 7px, rgba(65, 26, 6, .13) 8px 9px), linear-gradient(145deg, #d99a47 0%, #8a461b 18%, #b46d2c 42%, #67300e 75%, #e0a45a 100%);
+    box-shadow: inset 0 2px 3px #f2c17a, inset 0 -5px 8px #50270e, 0 12px 20px rgba(34, 38, 12, .35);
+}
+
+.schoolhouse-page .weekly-board h2 {
+    margin: 0 0 .75rem;
+    font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+    font-family: "Chalkboard SE", "Comic Sans MS", cursive;
+    color: var(--school-cream);
+}
+
+.schoolhouse-page .board-encouragement {
+    margin: 0;
+    text-indent: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-family: "Chalkboard SE", "Comic Sans MS", cursive;
+}
+
+.schoolhouse-page .weekly-lesson {
+    display: flex;
+    flex-direction: column;
+    gap: .85rem;
+    max-width: 46rem;
+    margin: 1.5rem auto .5rem;
+    position: relative;
+}
+
+.schoolhouse-page .weekly-lesson p {
+    min-width: 0;
+    margin: 0;
+    text-indent: 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+}
+
+.schoolhouse-page .lesson-ar {
+    font-family: var(--font-ar);
+    order: 0;
+    font-size: clamp(1.5rem, 3.8vw, 2.4rem);
+    font-weight: 700;
+    color: var(--school-gold);
+}
+
+.schoolhouse-page .lesson-en {
+    order: 1;
+    font-size: clamp(1rem, 2.3vw, 1.2rem);
+    font-weight: 400;
+    font-family: "Chalkboard SE", "Comic Sans MS", cursive;
+    color: var(--school-cream);
+}
+
+html[lang="ar"] .schoolhouse-page .lesson-en {
+    order: 0;
+    font-size: clamp(1.5rem, 3.8vw, 2.4rem);
+    font-weight: 700;
+}
+
+html[lang="ar"] .schoolhouse-page .lesson-ar {
+    order: 1;
+    font-size: clamp(1rem, 2.3vw, 1.2rem);
+    font-weight: 400;
+}
+
+.schoolhouse-page .classroom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 3rem;
+}
+
+.schoolhouse-page .classroom-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    transition: border-color .18s ease, box-shadow .18s ease;
+    border: 1.5px solid #c9a54b;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fffdf0 0%, #fff6d9 75%, #eee0b4 100%);
+    box-shadow: 0 5px 0 rgba(89, 72, 23, .14), 0 9px 15px rgba(38, 49, 15, .24);
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+}
+
+.schoolhouse-page .classroom-card h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .35rem .65rem;
+    line-height: 1.5;
+    color: var(--school-green);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    margin: 0 0 .35rem;
+    font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+}
+
+.schoolhouse-page .classroom-card p {
+    text-indent: 0;
+    color: var(--school-ink);
+    margin: 0 0 .65rem;
+    font-size: .95rem;
+    line-height: 1.65;
+}
+
+/* Card text stays bilingual independently of the site language toggle. */
+.schoolhouse-page .classroom-description {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.schoolhouse-page .classroom-description [lang="ar"] {
+    font-family: "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif;
+    line-height: 1.6;
+    text-align: start;
+}
+
+
+.schoolhouse-page .classroom-enter {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: .45rem;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: .65rem;
+    padding: .45rem .9rem;
+    color: var(--school-green);
+    background: linear-gradient(180deg, #e9efc4 0%, #d2df9e 100%);
+    border: 1px solid #b8a252;
+    border-radius: 999px;
+    box-shadow: 0 3px 0 rgba(69, 91, 35, .22);
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.schoolhouse-page .classroom-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--classroom-accent);
+    width: 100px;
+    height: 100px;
+    background: none;
+}
+
+.schoolhouse-page .card-math {
+    --classroom-accent: #555487;
+    --classroom-tint: #ece9f3;
+}
+
+.schoolhouse-page .card-science {
+    --classroom-accent: #32634b;
+    --classroom-tint: #e3ecdd;
+}
+
+.schoolhouse-page .card-history {
+    --classroom-accent: #815d36;
+    --classroom-tint: #f0e6d6;
+}
+
+.schoolhouse-page .card-abc123 {
+    --classroom-accent: #944d4d;
+    --classroom-tint: #f4e3de;
+}
+
+.schoolhouse-page .card-recess {
+    --classroom-accent: #826020;
+    --classroom-tint: #f3ebcf;
+}
+
+.schoolhouse-page .card-homework {
+    --classroom-accent: #426580;
+    --classroom-tint: #e3eaf0;
+}
+
+html[lang="ar"] .schoolhouse-page .classroom-card {
+    align-items: center;
+    text-align: right;
+}
+
+.schoolhouse-page .weekly-board::before {
+    content: "";
+    position: absolute;
+    inset: clamp(12px, 2vw, 22px);
+    z-index: -1;
+    border: 2px solid #522d17;
+    border-radius: 2px;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, .7), inset 0 0 3px rgba(255, 255, 255, .3);
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 98%, rgba(247, 239, 198, .14), transparent 28%), radial-gradient(ellipse at 30% 35%, rgba(236, 255, 224, .10), transparent 50%), repeating-linear-gradient(174deg, transparent 0 8px, rgba(255, 255, 255, .022) 9px 10px), linear-gradient(125deg, #092d21, #15513a 48%, #08291f);
+}
+
+.schoolhouse-page .schoolhouse-main [lang="ar"] {
+    font-family: "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif;
+}
+
+.schoolhouse-page .board-tray {
+    position: absolute;
+    inset-inline: -10px;
+    bottom: -14px;
+    height: 24px;
+    border: 2px solid #5a2d12;
+    border-top-color: #e3b16b;
+    border-radius: 3px 3px 6px 6px;
+    background: linear-gradient(#cf9146 0%, #a35e26 35%, #703711 45%, #98531f 100%);
+    pointer-events: none;
+    box-shadow: inset 0 3px 2px rgba(255, 224, 159, .35), 0 9px 11px rgba(34, 38, 12, .38);
+}
+
+.schoolhouse-page .tray-eraser {
+    position: absolute;
+    width: clamp(70px, 12vw, 120px);
+    height: auto;
+    right: 16%;
+    bottom: 8px;
+}
+
+.schoolhouse-page .tray-chalk {
+    position: absolute;
+    width: clamp(48px, 8vw, 85px);
+    height: auto;
+    left: 20%;
+    bottom: 9px;
+    transform: rotate(-5deg);
+}
+
+.schoolhouse-page .schoolhouse-supplies {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: min(100%, 360px);
+    margin: 1.5rem 0 0 auto;
+    pointer-events: none;
+}
+
+.schoolhouse-page .school-pencil {
+    display: block;
+    width: 66%;
+    height: auto;
+}
+
+.schoolhouse-page .school-globe {
+    display: block;
+    width: 34%;
+    height: auto;
+}
+
+.schoolhouse-page .classroom-card-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+}
+
+.schoolhouse-page .classroom-icon svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.schoolhouse-page .weekly-board::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle at 7px 7px, #382414 0 2px, #d29b57 2.5px 3.5px, transparent 4px), radial-gradient(circle at calc(100% - 7px) 7px, #382414 0 2px, #d29b57 2.5px 3.5px, transparent 4px), radial-gradient(circle at 7px calc(100% - 7px), #382414 0 2px, #d29b57 2.5px 3.5px, transparent 4px), radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #382414 0 2px, #d29b57 2.5px 3.5px, transparent 4px);
+}
+
+.schoolhouse-page .weekly-board h2::after {
+    content: "";
+    display: block;
+    width: min(65%, 210px);
+    height: 3px;
+    margin: .35rem auto .65rem;
+    border-radius: 50%;
+    background: #e8a0ae;
+    transform: rotate(-1deg);
+    opacity: .85;
+}
+
+.schoolhouse-page .board-encouragement::before {
+    content: "";
+    display: inline-block;
+    width: .65rem;
+    height: 1rem;
+    margin: 0 .75rem;
+    border: 1px solid #a1c77a;
+    border-radius: 80% 0 80% 0;
+    background: rgba(161, 199, 122, .18);
+    transform: rotate(-35deg);
+    vertical-align: middle;
+}
+
+.schoolhouse-page .board-encouragement::after {
+    content: "";
+    display: inline-block;
+    width: .65rem;
+    height: 1rem;
+    margin: 0 .75rem;
+    border: 1px solid #a1c77a;
+    border-radius: 80% 0 80% 0;
+    background: rgba(161, 199, 122, .18);
+    transform: rotate(35deg);
+    vertical-align: middle;
+}
+
+.schoolhouse-page .weekly-lesson::before {
+    content: "";
+    position: absolute;
+    top: 1.2rem;
+    left: -1rem;
+    width: .6rem;
+    height: 1.2rem;
+    border-top: 2px solid #e7c15e;
+    border-bottom: 2px solid #e7c15e;
+    transform: rotate(-20deg);
+    opacity: .7;
+    pointer-events: none;
+}
+
+.schoolhouse-page .weekly-lesson::after {
+    content: "";
+    position: absolute;
+    top: 1.2rem;
+    right: -1rem;
+    width: .6rem;
+    height: 1.2rem;
+    border-top: 2px solid #e7c15e;
+    border-bottom: 2px solid #e7c15e;
+    transform: rotate(20deg);
+    opacity: .7;
+    pointer-events: none;
+}
+
+.schoolhouse-page .board-heart {
+    display: block;
+    width: 30px;
+    height: 20px;
+    margin: .65rem auto 0;
+    pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .schoolhouse-page .classroom-card:hover {
+        border-color: var(--school-wood);
+        box-shadow: 0 5px 0 rgba(89, 72, 23, .14), 0 11px 18px rgba(38, 49, 15, .28);
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .schoolhouse-page .classroom-card:hover .classroom-enter {
+        background: linear-gradient(180deg, #f4f6d8, #e0eaba);
+        box-shadow: 0 4px 0 rgba(69, 91, 35, .22);
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .classroom-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+}
+
+.schoolhouse-page .classroom-card:focus-within .classroom-enter {
+    background: linear-gradient(180deg, #f4f6d8, #e0eaba);
+    box-shadow: 0 4px 0 rgba(69, 91, 35, .22);
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .schoolhouse-page .classroom-card,
+    .schoolhouse-page .classroom-enter {
+        transition: none;
+    }
+    .schoolhouse-page .classroom-card:hover .classroom-enter,
+    .schoolhouse-page .classroom-card:focus-within .classroom-enter {
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .weekly-board {
+        padding: 1.75rem 1.25rem;
+        border-width: 3px;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .weekly-board::before {
+        inset: 8px;
+        border-width: 1px;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .board-tray {
+        inset-inline: 0;
+        height: 20px;
+        bottom: -12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .schoolhouse-supplies {
+        width: min(100%, 240px);
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .schoolhouse-page .classroom-card {
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: .75rem;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .schoolhouse-page .classroom-icon {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .classroom-card {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: .65rem;
+        padding: .9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .classroom-icon {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .weekly-lesson::before {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .weekly-lesson::after {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .board-encouragement::before {
+        margin: 0 .3rem;
+        width: .45rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .schoolhouse-page .board-encouragement::after {
+        margin: 0 .3rem;
+        width: .45rem;
+    }
+}
+
+
+/* Tiny, static marks sit behind the existing school supplies, away from links. */
+.schoolhouse-page .supplies-wonder {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.schoolhouse-page .school-pencil,
+.schoolhouse-page .school-globe {
+    position: relative;
+}
