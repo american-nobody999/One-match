@@ -1,29 +1,19 @@
-<!--
-MPAG: Education page
-Leslie Brockman
-Date last modified: 2026-10-21
--->
+<!-- Author: Leslie Brockman
+ Date: 10-27-2026 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="American Nobody999">
-
-    <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
-    <title>Make Palestine Great Again - MPGA</title>
-    
+    <meta name="description" content="Bilingual learning at the American Nobody educational schoolhouse.">
+    <title>Schoolhouse — MPGA Education</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
-    
-<!-- Styles -->
     <link rel="stylesheet" href="styles/styles2.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/color-garden.css">
+    <link rel="stylesheet" href="styles/edu.css">
 </head>
-
-<body class="edu-page">
-
-    <header class="site-header" data-global-chrome>
+<body class="edu-page schoolhouse-page">
+  <header class="site-header" data-global-chrome>
       <div class="header-container">
 
   <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
@@ -61,906 +51,198 @@ Date last modified: 2026-10-21
               </button>
         </div>
   </header>
-
-  <main class="edu-main">
-    <section class="edu-1">
-    <div class="edu-content">
-      <h2>
-        <span class="edu-title-en lang-en">Education and Advocacy</span>
-        <span class="edu-title-ar lang-ar hidden">التعليم والدعوة</span>
-        </h2>
-        <p>
-        <span class="edu-text-en lang-en">Welcome to MPGA's online educational platform. Here, you will find a variety of resources designed to support learning and advocacy efforts. We must continue to strive to provide Palestinian Youth opportunities for growth in any way we can.</span>
-        <span class="edu-text-ar lang-ar hidden">مرحبًا بكم في منصتنا التعليمية والدعوية ثنائية اللغة. هنا، ستجدون مجموعة متنوعة من الموارد المصممة لدعم التعلم وجهود المناصرة. يجب أن نستمر في السعي لتوفير فرص للنمو للشباب الفلسطينيين بأي طريقة ممكنة.</span>
-        </p>
-        <div class="image-gallery edu-circus-gallery" role="region" aria-label="Circus image gallery" tabindex="0">
-          <div class="image-container">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/15517.jpg" alt="Circus gallery image 1" loading="lazy">
-          </div>
-          <div class="image-container">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/29510.jpg" alt="Circus gallery image 2" loading="lazy">
-          </div>
-          <div class="image-container">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/3245.jpg" alt="Circus gallery image 3" loading="lazy">
-          </div>
-          <div class="image-container">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/9836.jpg" alt="Circus gallery image 4" loading="lazy">
-          </div>
-        </div>
-  </div>
-</section>
-
-<!-- Main Gift -->
-  <section class="gift-container">
-    <img
-      id="giftImage"
-      class="gift-image"
-      src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/edu1.png"
-      alt="Red gift box with green ribbon and Palestine flag tag"
-    >
-  </section>
-
-  <!-- Popup Overlay -->
-  <div
-    id="popupOverlay"
-    class="popup-overlay"
-    aria-hidden="true"
-  >
-
-    <div
-      class="popup"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="popupCaption"
-    >
-      <div class="balloon-cluster" aria-hidden="true">
-        <span class="balloon balloon-1"></span>
-        <span class="balloon balloon-2"></span>
-        <span class="balloon balloon-3"></span>
-        <span class="balloon balloon-4"></span>
-        <span class="balloon balloon-5"></span>
-        <span class="balloon balloon-6"></span>
+  <main class="schoolhouse-main">
+    <section class="weekly-board" aria-labelledby="weekly-title">
+      <h2 id="weekly-title"><span class="lang-en" lang="en">Lesson of the Week</span><span class="lang-ar hidden" lang="ar" dir="rtl">درس الأسبوع</span></h2>
+      <p class="board-encouragement"><span class="lang-en" lang="en">Learn Together</span><span class="lang-ar hidden" lang="ar" dir="rtl">نتعلم معًا</span></p>
+      <!-- WEEKLY LESSON: replace only the two paragraphs below each week.
+           Both translations stay visible. CSS reads html[lang] set by main.js:
+           English mode highlights Arabic; Arabic mode highlights English.
+           Do not add lang-en/lang-ar classes to these two lesson paragraphs. -->
+      <div class="weekly-lesson">
+        <p class="lesson-ar" lang="ar" dir="rtl">كل يوم فرصة جديدة لتعلّم شيء رائع.</p>
+        <p class="lesson-en" lang="en" dir="ltr">Every day is a new chance to learn something wonderful.</p>
       </div>
-
-      <!-- Popup Images -->
-      <div class="popup-images">
-
-        <figure>
-          <a href="circus.html#gazacircus">
-            <img
-              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/gazacircus.jpg"
-              alt="Gaza Circus popup image"
-            >
-          </a>
-        </figure>
-
-        <figure>
-          <a href="circus.html#tito">
-            <img
-              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tito.jpg"
-              alt="Circus Tito popup image"
-            >
-          </a>
-        </figure>
-
-        <figure>
-          <a href="circus.html#aloosh">
-            <img
-              src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/Abood.jpg"
-              alt="Abrood popup image"
-            >
-          </a>
-        </figure>
-
+      <svg class="board-heart" viewBox="0 0 48 32" aria-hidden="true" focusable="false"><path d="M24 28C-3 13 8-4 24 9 40-4 51 13 24 28Z" fill="none" stroke="#edb3bf" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <div class="board-tray" aria-hidden="true">
+        <svg class="tray-eraser" viewBox="0 0 150 65" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="edu-eraser-red" x2="0" y2="1"><stop stop-color="#cc695b"/><stop offset=".5" stop-color="#993e34"/><stop offset="1" stop-color="#672a24"/></linearGradient>
+            <linearGradient id="edu-felt" x2="0" y2="1"><stop stop-color="#4a4940"/><stop offset="1" stop-color="#22291f"/></linearGradient>
+          </defs>
+          <path d="M13 33 125 23 141 38 29 53Z" fill="url(#edu-felt)"/>
+          <path d="m13 20 112-10 16 13v15L29 49 13 33Z" fill="#622e24"/>
+          <path d="m13 20 112-10 16 13L29 35Z" fill="url(#edu-eraser-red)" stroke="#612c22"/>
+          <path d="m29 35 112-12v10L29 45Z" fill="#86392e"/>
+          <path d="m27 23 35-3m17-2 27-2m-53 11 19-2" stroke="#ebad91" stroke-opacity=".5" stroke-width="2"/>
+        </svg>
+        <svg class="tray-chalk" viewBox="0 0 120 28" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="edu-chalk" x2="0" y2="1"><stop stop-color="#fffdf4"/><stop offset=".55" stop-color="#eeede5"/><stop offset="1" stop-color="#aaa99f"/></linearGradient></defs>
+          <path d="m9 8 97-3 7 4-1 12-98 3-8-4Z" fill="url(#edu-chalk)" stroke="#b8b7aa"/>
+          <path d="m10 9 8 4-2 10-8-4Z" fill="#fffef5"/>
+          <path d="m24 10 75-2" stroke="#fff" stroke-opacity=".7"/>
+        </svg>
       </div>
-
-      <!-- Caption -->
-      <figcaption id="popupCaption">
-
-        Click Me Again
-
-        <span class="arabic">
-          اضغط هنا مرة أخرى
+    </section>
+    <nav class="classroom-grid" aria-label="Classrooms / الصفوف الدراسية">
+      <a class="classroom-card card-math" href="education/math.html">
+        <span class="classroom-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><linearGradient id="subject-book-red" x2="0" y2="1"><stop stop-color="#df6252"/><stop offset="1" stop-color="#9e302e"/></linearGradient></defs>
+<ellipse cx="60" cy="101" rx="47" ry="7" fill="#806238" opacity=".2"/>
+<path d="m14 79 72-9 20 14-72 12Z" fill="#347b9c" stroke="#23495f" stroke-width="2"/><path d="m15 81 20 12 69-8v11l-70 10-19-12Z" fill="#245b83" stroke="#23495f" stroke-width="2"/><path d="m36 93 64-8v8l-64 9Z" fill="#fff0cb"/><path d="m40 96 56-6" stroke="#c8b994"/>
+<path d="m15 59 69-8 20 13-69 12Z" fill="#70955a" stroke="#355c39" stroke-width="2"/><path d="m15 60 20 14 68-9v12l-69 10-19-14Z" fill="#477a45" stroke="#355c39" stroke-width="2"/><path d="m37 75 62-9v8l-62 9Z" fill="#fff0cb"/>
+<path d="m18 37 68-9 19 13-68 12Z" fill="url(#subject-book-red)" stroke="#792f28" stroke-width="2"/><path d="m18 38 20 14 66-10v12L38 65 18 51Z" fill="#b23d35" stroke="#792f28" stroke-width="2"/><path d="m40 52 60-9v8l-60 10Z" fill="#fff1d3"/><path d="m43 55 53-8M31 38l50-6" stroke="#f0cba2" stroke-width="1.5"/></svg>
         </span>
-
-      </figcaption>
-
-      <!-- Back Button -->
-      <button
-        id="backButton"
-        class="back-button"
-        type="button"
-      >
-        ← Back
-      </button>
-
+        <div class="classroom-card-content">
+          <h2><span class="classroom-en" lang="en">Math</span><span class="classroom-ar" lang="ar" dir="rtl">الرياضيات</span></h2>
+        <p class="classroom-description"><span class="classroom-en" lang="en">Explore numbers and practise with flashcards.</span><span class="classroom-ar" lang="ar" dir="rtl">اكتشف الأعداد وتدرّب باستخدام البطاقات.</span></p>
+        <span class="classroom-enter"><span class="lang-en" lang="en">Enter classroom →</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادخل الصف ←</span></span>
+        </div>
+      </a>
+      <a class="classroom-card card-science" href="education/science.html">
+        <span class="classroom-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><linearGradient id="subject-glass" x2="1" y2="1"><stop stop-color="#f5ffff" stop-opacity=".9"/><stop offset="1" stop-color="#9fc7c4" stop-opacity=".25"/></linearGradient></defs>
+<ellipse cx="59" cy="104" rx="46" ry="6" fill="#506a46" opacity=".17"/>
+<path d="M28 17h23v8h-4v27L64 88q5 12-7 12H21q-12 0-7-12l18-36V25h-4Z" fill="url(#subject-glass)" stroke="#527d82" stroke-width="2.5"/>
+<path d="m25 70-8 19q-3 7 5 7h34q8 0 4-8l-9-18Z" fill="#18a5d2" stroke="#117eac"/><path d="M77 22h20v8h-3v25q23 12 18 33-4 16-23 16T67 88q-5-21 14-33V30h-4Z" fill="url(#subject-glass)" stroke="#527d82" stroke-width="2.5"/>
+<path d="M72 77q16 5 34 0 5 21-17 23-20-2-17-23Z" fill="#71b34f" stroke="#418f40"/>
+<path d="M35 30v22L22 82m62-47v22q-11 7-12 15" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+<g fill="#dafff5" stroke="#4e9990"><circle cx="36" cy="78" r="3"/><circle cx="46" cy="88" r="2"/><circle cx="87" cy="85" r="3"/><circle cx="96" cy="92" r="2"/></g></svg>
+        </span>
+        <div class="classroom-card-content">
+          <h2><span class="classroom-en" lang="en">Science</span><span class="classroom-ar" lang="ar" dir="rtl">العلوم</span></h2>
+        <p class="classroom-description"><span class="classroom-en" lang="en">A place for nature, questions and discovery.</span><span class="classroom-ar" lang="ar" dir="rtl">مكان للطبيعة والأسئلة والاكتشاف.</span></p>
+        <span class="classroom-enter"><span class="lang-en" lang="en">Enter classroom →</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادخل الصف ←</span></span>
+        </div>
+      </a>
+      <a class="classroom-card card-history" href="education/history.html">
+        <span class="classroom-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><linearGradient id="subject-parchment" x2="1" y2="1"><stop stop-color="#ffebac"/><stop offset="1" stop-color="#cf9e59"/></linearGradient></defs>
+<ellipse cx="59" cy="102" rx="47" ry="7" fill="#7f6235" opacity=".2"/>
+<path d="M28 17h65q-9 13-3 35l9 37H32q-7-18-2-39Z" fill="url(#subject-parchment)" stroke="#9c6a31" stroke-width="2"/>
+<path d="M28 17q-18-1-17 10t21 10q-9-14-4-20Zm5 72q-18-4-17 7t23 7h58q13 0 8-14Z" fill="#c9914c" stroke="#8c5b29" stroke-width="2"/>
+<path d="m41 36 12 9 15-11 10 15-17 14-13-3-9 15m-1-26 39 23" fill="none" stroke="#9a7946" stroke-width="2" stroke-dasharray="3 3"/>
+<path d="m61 49 6 6m0-6-6 6" stroke="#a44d37" stroke-width="2"/>
+<circle cx="88" cy="84" r="21" fill="#d4ad51" stroke="#826027" stroke-width="2"/><circle cx="88" cy="84" r="16" fill="#fff0c7" stroke="#a08443"/>
+<path d="m88 68 5 16-5 16-5-16Z" fill="#397184"/><path d="m72 84 16-5 16 5-16 5Z" fill="#b7694b"/><circle cx="88" cy="84" r="3" fill="#f6dc8b"/></svg>
+        </span>
+        <div class="classroom-card-content">
+          <h2><span class="classroom-en" lang="en">History</span><span class="classroom-ar" lang="ar" dir="rtl">التاريخ</span></h2>
+        <p class="classroom-description"><span class="classroom-en" lang="en">A place to explore people, places and the past.</span><span class="classroom-ar" lang="ar" dir="rtl">مكان لاكتشاف الناس والأماكن والماضي.</span></p>
+        <span class="classroom-enter"><span class="lang-en" lang="en">Enter classroom →</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادخل الصف ←</span></span>
+        </div>
+      </a>
+      <a class="classroom-card card-abc123" href="education/abc123.html">
+        <span class="classroom-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><linearGradient id="subject-letter" x2="0" y2="1"><stop stop-color="#ffe984"/><stop offset="1" stop-color="#d69f23"/></linearGradient></defs>
+<ellipse cx="61" cy="103" rx="49" ry="6" fill="#7b5b3a" opacity=".17"/>
+<g font-family="Georgia, serif" font-weight="700" font-size="39" stroke-linejoin="round" stroke-width="1.5">
+<g fill="#7c5541" stroke="#7c5541" transform="translate(1 3)"><text x="7" y="53">A</text><text x="45" y="53">B</text><text x="82" y="53">C</text><text x="11" y="97">1</text><text x="48" y="97">2</text><text x="85" y="97">3</text></g>
+<text x="7" y="53" fill="#d95149" stroke="#8c322e">A</text><text x="45" y="53" fill="url(#subject-letter)" stroke="#a27a22">B</text><text x="82" y="53" fill="#57945b" stroke="#35613d">C</text>
+<text x="11" y="97" fill="#448eb6" stroke="#2e5e7d">1</text><text x="48" y="97" fill="#8970b0" stroke="#59417e">2</text><text x="85" y="97" fill="#d86e3a" stroke="#984b2a">3</text></g></svg>
+        </span>
+        <div class="classroom-card-content">
+          <h2><span class="classroom-en" lang="en">ABC / 123</span><span class="classroom-ar" lang="ar" dir="rtl">الحروف والأرقام</span></h2>
+        <p class="classroom-description"><span class="classroom-en" lang="en">Play with colors and take your first learning steps.</span><span class="classroom-ar" lang="ar" dir="rtl">العب بالألوان وابدأ خطواتك الأولى في التعلّم.</span></p>
+        <span class="classroom-enter"><span class="lang-en" lang="en">Enter classroom →</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادخل الصف ←</span></span>
+        </div>
+      </a>
+      <a class="classroom-card card-recess" href="education/recess.html">
+        <span class="classroom-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><radialGradient id="subject-ball" cx=".3" cy=".25" r=".8"><stop stop-color="#fffef6"/><stop offset=".7" stop-color="#eee9d9"/><stop offset="1" stop-color="#b9bdaf"/></radialGradient><clipPath id="subject-ball-clip"><circle cx="60" cy="57" r="43"/></clipPath></defs>
+<ellipse cx="60" cy="105" rx="39" ry="6" fill="#4a5431" opacity=".2"/><circle cx="60" cy="57" r="43" fill="url(#subject-ball)" stroke="#596052" stroke-width="2"/>
+<g clip-path="url(#subject-ball-clip)" stroke="#5b6257" stroke-width="1.5"><path d="m60 36 19 14-7 22H48l-7-22Z" fill="#30382e"/><path d="m28 22 15 5-6 20-19 7-7-16Zm53-6 23 12-3 25-18-7-7-19ZM25 77l19 3 9 22-26 7-15-17Zm58 2 20-6 10 21-21 16-17-10Z" fill="#30382e"/>
+<path d="m60 36-17-9m36 23 4-4M72 72l11 7M48 72l-4 8M41 50l-4-3" fill="none"/></g><path d="M35 31q9-9 20-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/></svg>
+        </span>
+        <div class="classroom-card-content">
+          <h2><span class="classroom-en" lang="en">Recess</span><span class="classroom-ar" lang="ar" dir="rtl">الاستراحة</span></h2>
+        <p class="classroom-description"><span class="classroom-en" lang="en">A place for play, creativity and a cheerful break.</span><span class="classroom-ar" lang="ar" dir="rtl">مكان للعب والإبداع واستراحة مرحة.</span></p>
+        <span class="classroom-enter"><span class="lang-en" lang="en">Enter classroom →</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادخل الصف ←</span></span>
+        </div>
+      </a>
+      <a class="classroom-card card-homework" href="education/homework.html">
+        <span class="classroom-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><linearGradient id="subject-checklist" x2="1" y2="1"><stop stop-color="#fff6d8"/><stop offset="1" stop-color="#e9ce99"/></linearGradient></defs><ellipse cx="61" cy="105" rx="42" ry="6" fill="#66502e" opacity=".17"/>
+<g transform="rotate(-8 60 60)"><path d="M25 17h72v86H25Z" fill="#a3613f" stroke="#71452e" stroke-width="2"/><path d="M30 20h63v78H30Z" fill="url(#subject-checklist)" stroke="#be9c66"/>
+<path d="M38 19v76" stroke="#d58c7b"/>
+<g fill="none" stroke="#704b39" stroke-width="3" stroke-linecap="round"><path d="M36 25q-14-7-6-12t7 8M50 25q-14-7-6-12t7 8M64 25q-14-7-6-12t7 8M78 25q-14-7-6-12t7 8M91 25q-14-7-6-12t7 8"/></g>
+<path d="m43 42 4 4 7-9m-11 25 4 4 7-9m-11 25 4 4 7-9" fill="none" stroke="#b13d35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M60 43h23M60 49h17M60 63h23M60 69h18M60 83h23M60 89h15" stroke="#65563e" stroke-width="2" stroke-linecap="round"/></g></svg>
+        </span>
+        <div class="classroom-card-content">
+          <h2><span class="classroom-en" lang="en">Homework</span><span class="classroom-ar" lang="ar" dir="rtl">الواجبات المنزلية</span></h2>
+        <p class="classroom-description"><span class="classroom-en" lang="en">A place to practise and learn at your own pace.</span><span class="classroom-ar" lang="ar" dir="rtl">مكان للتدرّب والتعلّم بالسرعة التي تناسبك.</span></p>
+        <span class="classroom-enter"><span class="lang-en" lang="en">Enter classroom →</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادخل الصف ←</span></span>
+        </div>
+      </a>
+    </nav>
+    <div class="schoolhouse-supplies" aria-hidden="true">
+      <svg class="supplies-wonder" viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+        <g fill="#e7c15e" stroke="#b08d3c" stroke-width=".6" opacity=".8">
+          <path d="m174 23 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z"/>
+          <path d="m203 45 1.5 3.5 3.5 1.5-3.5 1.5-1.5 3.5-1.5-3.5-3.5-1.5 3.5-1.5Z"/>
+          <path d="m313 17 1.5 3.5 3.5 1.5-3.5 1.5-1.5 3.5-1.5-3.5-3.5-1.5 3.5-1.5Z"/>
+        </g>
+        <path d="M20 154q35 15 64-2t52 1" fill="none" stroke="#6e854c" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+        <path d="M217 145c-21 6-28-12-14-16 11-3 13 10 3 11" fill="none" stroke="#fff6d9" stroke-width="1.7" stroke-linecap="round" opacity=".7"/>
+      </svg>
+      <svg class="school-pencil" viewBox="0 0 300 180" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="edu-pencil-yellow" x2="0" y2="1"><stop stop-color="#ffea8b"/><stop offset=".25" stop-color="#ffd13d"/><stop offset=".7" stop-color="#e4aa16"/><stop offset="1" stop-color="#a66a0e"/></linearGradient>
+          <linearGradient id="edu-silver" x2="0" y2="1"><stop stop-color="#e8e6db"/><stop offset=".35" stop-color="#aab8bc"/><stop offset=".65" stop-color="#edf0e8"/><stop offset="1" stop-color="#697773"/></linearGradient>
+          <radialGradient id="edu-pink" cx=".25" cy=".25" r=".9"><stop stop-color="#ffd2d6"/><stop offset=".55" stop-color="#e99ba9"/><stop offset="1" stop-color="#b7667c"/></radialGradient>
+          <linearGradient id="edu-tip-grain" x2="0" y2="1"><stop stop-color="#f3d4a0"/><stop offset=".6" stop-color="#d6aa70"/><stop offset="1" stop-color="#ad7d44"/></linearGradient>
+        </defs>
+        <path d="M29 153q74-28 163-16l40 13q-106-4-185 15Z" fill="#456c35" opacity=".72"/>
+        <g transform="rotate(-29 150 100)">
+          <ellipse cx="158" cy="122" rx="120" ry="8" fill="#493b1c" opacity=".18"/>
+          <path d="M24 89 65 76v34Z" fill="url(#edu-tip-grain)" stroke="#9c713d"/>
+          <path d="m24 89 18-6v12Z" fill="#30352a"/>
+          <path d="m28 88 10-3" stroke="#9dada8" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="m43 86 20-7m-19 12 19-4m-15 7 15 11" fill="none" stroke="#a57944" stroke-width=".8" opacity=".65"/>
+          <path d="m44 88 19-6m-17 12 17 9" stroke="#9d713e" stroke-width="1.5"/>
+          <path d="M65 76h171v34H65Z" fill="url(#edu-pencil-yellow)" stroke="#b27915"/>
+          <path d="M65 86h171v12H65Z" fill="#ffda54" opacity=".5"/>
+          <path d="M65 101h171v8H65Z" fill="#96620c" opacity=".18"/>
+          <path d="M69 81h160M69 102h160" stroke="#fff1a9" stroke-opacity=".55" stroke-width="2"/>
+          <path d="M236 76h27v34h-27Z" fill="url(#edu-silver)" stroke="#7b8681"/>
+          <path d="M240 78v30m5-30v30m5-30v30m5-30v30m5-30v30" stroke="#647771" stroke-opacity=".65" stroke-width="1"/>
+          <path d="M242 79v27m10-27v27m6-27v27" stroke="#f8fcf9" stroke-opacity=".7" stroke-width=".8"/>
+          <path d="M263 76h9q15 0 15 17t-15 17h-9Z" fill="url(#edu-pink)" stroke="#9f6260"/>
+          <path d="M270 81q11-1 12 8" fill="none" stroke="#f7d3c7" stroke-width="2"/>
+        </g>
+      </svg>
+      <svg class="school-globe" viewBox="0 0 160 200" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="edu-ocean" cx=".3" cy=".25" r=".8"><stop stop-color="#b4e2ea"/><stop offset=".5" stop-color="#51aac7"/><stop offset="1" stop-color="#286a8a"/></radialGradient>
+          <linearGradient id="edu-stand" x2="0" y2="1"><stop stop-color="#d0a353"/><stop offset="1" stop-color="#69431f"/></linearGradient>
+          <radialGradient id="edu-globe-light" cx=".3" cy=".25" r=".8"><stop stop-color="#fffbe7" stop-opacity=".3"/><stop offset=".6" stop-color="#fffbe7" stop-opacity="0"/><stop offset="1" stop-color="#123c4b" stop-opacity=".32"/></radialGradient>
+          <linearGradient id="edu-bronze" x2="1" y2="1"><stop stop-color="#e7c37b"/><stop offset=".5" stop-color="#b38a47"/><stop offset="1" stop-color="#73502b"/></linearGradient>
+          <clipPath id="edu-globe-clip"><circle cx="80" cy="76" r="52"/></clipPath>
+        </defs>
+        <ellipse cx="81" cy="185" rx="53" ry="7" fill="#4d4c25" opacity=".18"/>
+        <path d="M77 130h9v37h-9Z" fill="url(#edu-stand)"/>
+        <path d="M79 141v23" stroke="#e2b776" stroke-width="2" opacity=".65"/>
+        <path d="M54 167h54l14 14q-40 11-80 0Z" fill="url(#edu-stand)" stroke="#674621" stroke-width="2"/>
+        <path d="M52 19C-2 47 9 135 87 143c18 0 35-7 47-20" fill="none" stroke="#75552b" stroke-width="8"/>
+        <path d="M52 19C-2 47 9 135 87 143c18 0 35-7 47-20" fill="none" stroke="url(#edu-bronze)" stroke-width="4"/>
+        <path d="M51 18 110 134" fill="none" stroke="#c9a05d" stroke-width="3"/>
+        <circle cx="80" cy="76" r="52" fill="url(#edu-ocean)" stroke="#8d753e" stroke-width="2"/>
+        <g clip-path="url(#edu-globe-clip)">
+          <!-- Simplified decorative land silhouettes; no geographic labels or lesson content. -->
+          <path d="m31 40 9-12 17-4 10 7 11-3 5 10-12 7-6 10-10 2-4 11-9-8-3-10-8-3Z M55 68l13 3 10 14-4 14-7 16-7-11-2-17-6-10Z M91 28l15-1 9 7-2 10 14 3 7 14-11 8-11-4-3 12-9-1-5-12-10-4-2-12 9-6Z M96 62l12 7 1 17-9 14-9-17 1-12Z M116 91l13-3 10 11-7 10-17-4Z" fill="#78ac65" stroke="#4d7046" stroke-width="1.3"/>
+          <ellipse cx="80" cy="76" rx="26" ry="52" fill="none" stroke="#ede2ac" stroke-opacity=".25"/>
+          <ellipse cx="80" cy="76" rx="44" ry="52" fill="none" stroke="#ede2ac" stroke-opacity=".18"/>
+          <path d="M28 76h104M36 51q44 15 88 0M36 101q44-15 88 0" fill="none" stroke="#ede2ac" stroke-opacity=".25"/>
+        </g>
+        <circle cx="80" cy="76" r="51" fill="url(#edu-globe-light)"/>
+        <path d="M47 44q10-12 23-13" fill="none" stroke="#e3f6f0" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+        <path d="M49 176q32 8 66 0" fill="none" stroke="#e2b776" stroke-width="2" opacity=".55"/>
+        <path d="M44 183q37 9 76-1" fill="none" stroke="#4e3219" stroke-width="2" opacity=".4"/>
+        <path d="m51 18 5-5m49 126 5-5" stroke="#d2b979" stroke-width="5" stroke-linecap="round"/>
+      </svg>
     </div>
-
-  </div>
-
-  </div>
-</section>
-
-
-<section class="edu-2">
-  <div class="image-gallery-section">
-    <h2>
-      <span class="gallery-title-en">Education Gallery</span>
-      <span class="gallery-title-ar hidden">معرض التعليم</span>
-    </h2>
-    <div class="image-gallery">
-      <div class="image-container">
-        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/100.webp" alt="Education Image 1" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/101.png" alt="Education Image 2" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/102.png" alt="Education Image 3" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/103.webp" alt="Education Image 4" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/104.jpg" alt="Education Image 5" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/105.jpg" alt="Education Image 6" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/106.jpg" alt="Education Image 7" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/107.webp" alt="Education Image 8" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="edu-3">
-  <div class="video-gallery-section">
-    <h2>
-      <span class="gallery-title-en">Animals are too Funny</span>
-      <span class="gallery-title-ar hidden">الحيوانات مضحكة جدًا</span>
-    </h2>
-    <div class="video-gallery">
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_35.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_3.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_4.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_24.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_20.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/01272025_7.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/01272025_24.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-      <div class="video-container">
-        <video controls preload="none" loading="lazy">
-          <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/01272025_29.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay hidden">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay" loading="lazy">
-          <button class="replay-btn">⟲</button>
-        </div>
-        <button class="initial-play-btn">▶</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<!-- Color Garden: both languages always visible. -->
-<section class="color-garden" id="color-garden" dir="ltr" aria-label="Color Garden — حديقة الألوان">
-
-  <div class="color-garden-heading">
-    <h2>
-      <span class="cg-en" lang="en">🎨 Color Garden</span>
-      <span class="cg-ar" lang="ar">🎨 حديقة الألوان</span>
-    </h2>
-
-    <p>
-      <span class="cg-en" lang="en">
-        Pick colors, mix them together, and paint your own picture!
-      </span>
-      <span class="cg-ar" lang="ar" dir="rtl">
-        اختر الألوان وامزجها معًا وارسم لوحتك الخاصة!
-      </span>
-    </p>
-  </div>
-
-
-  <!-- =========================
-       PRIMARY COLORS
-       ========================= -->
-
-  <div class="color-learning-area">
-
-    <h3>
-      <span class="cg-en" lang="en">Pick a Color</span>
-      <span class="cg-ar" lang="ar">اختر لونًا</span>
-    </h3>
-
-    <div class="primary-colors">
-
-      <button
-        type="button"
-        class="color-choice red"
-        data-color="red"
-        aria-label="Red - أحمر">
-        <span>Red</span>
-        <span dir="rtl">أحمر</span>
-      </button>
-
-      <button
-        type="button"
-        class="color-choice yellow"
-        data-color="yellow"
-        aria-label="Yellow - أصفر">
-        <span>Yellow</span>
-        <span dir="rtl">أصفر</span>
-      </button>
-
-      <button
-        type="button"
-        class="color-choice blue"
-        data-color="blue"
-        aria-label="Blue - أزرق">
-        <span>Blue</span>
-        <span dir="rtl">أزرق</span>
-      </button>
-
-    </div>
-
-    <div
-      id="color-name-display"
-      class="color-name-display"
-      aria-live="polite">
-      🎨
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       MIXING LAB
-       ========================= -->
-
-  <div class="color-mixing-area">
-
-    <h3>
-      <span class="cg-en" lang="en">Mix Two Colors!</span>
-      <span class="cg-ar" lang="ar">امزج لونين!</span>
-    </h3>
-
-    <p class="mix-instructions">
-      <span class="cg-en" lang="en">
-        Tap two colors and see what happens.
-      </span>
-
-      <span class="cg-ar" lang="ar" dir="rtl">
-        اضغط على لونين وشاهد ماذا يحدث.
-      </span>
-    </p>
-
-
-    <div class="mixing-stage">
-
-      <div
-        class="mix-blob mix-blob-one"
-        id="mix-color-one"
-        aria-hidden="true">
-      </div>
-
-      <div class="mix-symbol">+</div>
-
-      <div
-        class="mix-blob mix-blob-two"
-        id="mix-color-two"
-        aria-hidden="true">
-      </div>
-
-      <div class="mix-symbol">=</div>
-
-      <div
-        class="mix-result"
-        id="mix-result"
-        aria-live="polite">
-        ?
-      </div>
-
-    </div>
-
-
-    <div class="mix-buttons">
-
-      <button type="button" class="mix-choice red" data-mix="red">
-        Red<br>
-        <span dir="rtl">أحمر</span>
-      </button>
-
-      <button type="button" class="mix-choice yellow" data-mix="yellow">
-        Yellow<br>
-        <span dir="rtl">أصفر</span>
-      </button>
-
-      <button type="button" class="mix-choice blue" data-mix="blue">
-        Blue<br>
-        <span dir="rtl">أزرق</span>
-      </button>
-
-    </div>
-
-
-    <button
-      type="button"
-      id="reset-mix"
-      class="color-game-button">
-
-      <span class="cg-en" lang="en">Mix Again</span>
-      <span class="cg-ar" lang="ar">امزج مرة أخرى</span>
-
-    </button>
-
-  </div>
-
-
-  <div class="color-challenge-area">
-    <button type="button" id="cg-new-challenge" class="color-game-button"><span class="cg-en" lang="en">Try a Color Challenge</span><span class="cg-ar" lang="ar" dir="rtl">جرّب تحدي الألوان</span></button>
-    <p id="cg-challenge" aria-live="polite"></p>
-  </div>
-
-  <!-- =========================
-       PAINTING AREA
-       ========================= -->
-
-  <div class="painting-area">
-
-    <h3>
-      <span class="cg-en" lang="en">Now Let's Paint!</span>
-      <span class="cg-ar" lang="ar">والآن لنرسم!</span>
-    </h3>
-
-
-    <div
-      class="paint-palette"
-      id="paint-palette"
-      aria-label="Painting colors">
-
-      <button
-        type="button"
-        class="paint-color red selected"
-        data-paint="red"
-        aria-label="Paint with red"><span lang="en">Red</span><span lang="ar" dir="rtl">أحمر</span></button>
-
-      <button
-        type="button"
-        class="paint-color yellow"
-        data-paint="yellow"
-        aria-label="Paint with yellow"><span lang="en">Yellow</span><span lang="ar" dir="rtl">أصفر</span></button>
-
-      <button
-        type="button"
-        class="paint-color blue"
-        data-paint="blue"
-        aria-label="Paint with blue"><span lang="en">Blue</span><span lang="ar" dir="rtl">أزرق</span></button>
-
-      <!-- Unlocked through mixing -->
-
-      <button
-        type="button"
-        class="paint-color orange locked"
-        data-paint="orange"
-        aria-label="Orange - locked"
-        disabled><span lang="en">Orange</span><span lang="ar" dir="rtl">برتقالي</span></button>
-
-      <button
-        type="button"
-        class="paint-color green locked"
-        data-paint="green"
-        aria-label="Green - locked"
-        disabled><span lang="en">Green</span><span lang="ar" dir="rtl">أخضر</span></button>
-
-      <button
-        type="button"
-        class="paint-color purple locked"
-        data-paint="purple"
-        aria-label="Purple - locked"
-        disabled><span lang="en">Purple</span><span lang="ar" dir="rtl">بنفسجي</span></button>
-
-    </div>
-
-
-    <p id="cg-drawing-help"><span class="cg-en" lang="en">Draw with your finger or mouse. Keyboard: arrows to move, Space to paint.</span><span class="cg-ar" lang="ar" dir="rtl">ارسم بإصبعك أو بالفأرة. بلوحة المفاتيح: الأسهم للتحرك والمسافة للرسم.</span></p>
-    <div class="canvas-wrapper">
-      <canvas
-        id="color-garden-canvas"
-        width="900"
-        height="500"
-        aria-label="Color Garden painting area — مساحة الرسم" tabindex="0" aria-describedby="cg-drawing-help">
-        Painting canvas — لوحة الرسم
-      </canvas>
-    </div>
-
-
-    <div class="painting-controls">
-
-      <button
-        type="button"
-        id="clear-painting"
-        class="color-game-button">
-
-        <span class="cg-en" lang="en">Clear Painting</span>
-        <span class="cg-ar" lang="ar">مسح اللوحة</span>
-
-      </button>
-
-
-      <button
-        type="button"
-        id="restart-color-garden"
-        class="color-game-button">
-
-        <span class="cg-en" lang="en">Start Over</span>
-        <span class="cg-ar" lang="ar">ابدأ من جديد</span>
-
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="math-flashcards" aria-labelledby="practice-flashcards-title">
-  <div class="edu-content-section">
-    <h2 id="practice-flashcards-title">
-      <span class="lang-en">More Math Flashcards</span>
-      <span class="lang-ar">المزيد من بطاقات الرياضيات</span>
-    </h2>
-    <p>
-      <span class="lang-en">Practice addition, subtraction, multiplication, and division.</span>
-      <span class="lang-ar">تدرّب على الجمع والطرح والضرب والقسمة.</span>
-    </p>
-    <ol class="math-instructions">
-      <li>
-        <span class="lang-en">Choose an operation and press Start.</span>
-        <span class="lang-ar">اختر عملية حسابية واضغط على ابدأ.</span>
-      </li>
-      <li>
-        <span class="lang-en">Read the question, then flip the card to see the answer.</span>
-        <span class="lang-ar">اقرأ السؤال، ثم اقلب البطاقة لرؤية الإجابة.</span>
-      </li>
-      <li>
-        <span class="lang-en">Enter your answer and press Check Answer.</span>
-        <span class="lang-ar">اكتب إجابتك واضغط على تحقق من الإجابة.</span>
-      </li>
-      <li>
-        <span class="lang-en">Continue through the cards and review your score at the end.</span>
-        <span class="lang-ar">تابع حل البطاقات وراجع نتيجتك في النهاية.</span>
-      </li>
-    </ol>
-
-    <div class="flashcard-operations">
-      <div class="flashcard-operation" data-operation="addition">
-        <h3>
-          <span class="lang-en">Addition</span>
-          <span class="lang-ar">الجمع</span>
-        </h3>
-        <button class="btn-start" type="button" onclick="App.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
-        <div class="stats" role="status" aria-live="polite">
-          <span class="stat stat-progress" id="progress">Card 1 of 20</span>
-          <span class="stat stat-timer" id="timer" aria-label="Timer">⏱ 0:00</span>
-          <span class="stat stat-correct" id="scoreCorrect" aria-label="Correct answers">✓ 0</span>
-          <span class="stat stat-wrong" id="scoreWrong" aria-label="Incorrect answers">✗ 0</span>
-        </div>
-        <div class="card-scene">
-          <button class="card" id="card" type="button" aria-label="Flashcard. Press to flip" onclick="App.flip()">
-            <span class="card-face card-front">
-              <span class="face-label">Question</span>
-              <span class="question" id="question">7 + 5</span>
-              <span class="hint">Click or press Space to flip</span>
-            </span>
-            <span class="card-face card-back">
-              <span class="face-label">Answer</span>
-              <span class="answer" id="answer">12</span>
-            </span>
-          </button>
-        </div>
-        <div class="answer-check" role="group" aria-label="Check your answer">
-          <label for="answerInput" class="sr-only">Your answer</label>
-          <input id="answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="answerFeedback">
-          <button class="btn-check" type="button" onclick="App.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
-          <p id="answerFeedback" class="answer-feedback" aria-live="polite"></p>
-        </div>
-        <div class="score-btns" id="scoreBtns" role="group" aria-label="Mark your answer">
-          <button class="btn-correct" type="button" onclick="App.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
-          <button class="btn-wrong" type="button" onclick="App.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
-        </div>
-        <div class="controls">
-          <button class="btn-nav" type="button" onclick="App.prev()" aria-label="Previous card">←</button>
-          <button class="btn-flip" type="button" onclick="App.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
-          <button class="btn-nav" type="button" onclick="App.next()" aria-label="Next card">→</button>
-          <button class="btn-shuffle" type="button" onclick="App.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
-          <button class="btn-reset" type="button" onclick="App.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
-        </div>
-        <p class="footer-note">
-          <span class="lang-en">20 addition problems · Numbers 1–20</span>
-          <span class="lang-ar">20 مسألة جمع · الأعداد من 1 إلى 20</span>
-        </p>
-      </div>
-      <div class="results" id="results" role="dialog" aria-modal="true" aria-labelledby="resultsTitle" hidden>
-        <div class="results-card">
-          <h2 id="resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
-          <div class="score-big" id="finalScore">0 / 20</div>
-          <p class="detail" id="finalCorrect">0</p>
-          <p class="detail" id="finalWrong">0</p>
-          <p class="detail" id="finalAccuracy">0%</p>
-          <p class="time-result" id="finalTime">0:00</p>
-          <button class="btn-shuffle" type="button" onclick="App.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
-        </div>
-      </div>
-
-      <div class="flashcard-operation" data-operation="subtraction">
-        <h3>
-          <span class="lang-en">Subtraction</span>
-          <span class="lang-ar">الطرح</span>
-        </h3>
-        <button class="btn-start" type="button" onclick="SubtractionApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
-        <div class="stats" role="status" aria-live="polite">
-          <span class="stat stat-progress" id="subtraction-progress">Card 1 of 20</span>
-          <span class="stat stat-timer" id="subtraction-timer" aria-label="Timer">⏱ 0:00</span>
-          <span class="stat stat-correct" id="subtraction-scoreCorrect" aria-label="Correct answers">✓ 0</span>
-          <span class="stat stat-wrong" id="subtraction-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
-        </div>
-        <div class="card-scene">
-          <button class="card" id="subtraction-card" type="button" aria-label="Flashcard. Press to flip" onclick="SubtractionApp.flip()">
-            <span class="card-face card-front">
-              <span class="face-label">Question</span>
-              <span class="question" id="subtraction-question">15 − 7</span>
-              <span class="hint">Click or press Space to flip</span>
-            </span>
-            <span class="card-face card-back">
-              <span class="face-label">Answer</span>
-              <span class="answer" id="subtraction-answer">8</span>
-            </span>
-          </button>
-        </div>
-        <div class="answer-check" role="group" aria-label="Check your answer">
-          <label for="subtraction-answerInput" class="sr-only">Your answer</label>
-          <input id="subtraction-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="subtraction-answerFeedback">
-          <button class="btn-check" type="button" onclick="SubtractionApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
-          <p id="subtraction-answerFeedback" class="answer-feedback" aria-live="polite"></p>
-        </div>
-        <div class="score-btns" id="subtraction-scoreBtns" role="group" aria-label="Mark your answer">
-          <button class="btn-correct" type="button" onclick="SubtractionApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
-          <button class="btn-wrong" type="button" onclick="SubtractionApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
-        </div>
-        <div class="controls">
-          <button class="btn-nav" type="button" onclick="SubtractionApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
-          <button class="btn-flip" type="button" onclick="SubtractionApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
-          <button class="btn-nav" type="button" onclick="SubtractionApp.next()" aria-label="Next card / البطاقة التالية">→</button>
-          <button class="btn-shuffle" type="button" onclick="SubtractionApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
-          <button class="btn-reset" type="button" onclick="SubtractionApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
-        </div>
-        <p class="footer-note">
-          <span class="lang-en">20 subtraction problems</span>
-          <span class="lang-ar">20 مسألة طرح</span>
-        </p>
-      </div>
-      <div class="results" id="subtraction-results" role="dialog" aria-modal="true" aria-labelledby="subtraction-resultsTitle" hidden>
-        <div class="results-card">
-          <h2 id="subtraction-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
-          <div class="score-big" id="subtraction-finalScore">0 / 20</div>
-          <p class="detail" id="subtraction-finalCorrect">0</p>
-          <p class="detail" id="subtraction-finalWrong">0</p>
-          <p class="detail" id="subtraction-finalAccuracy">0%</p>
-          <p class="time-result" id="subtraction-finalTime">0:00</p>
-          <button class="btn-shuffle" type="button" onclick="SubtractionApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
-        </div>
-      </div>
-
-      <div class="flashcard-operation" data-operation="division">
-        <h3>
-          <span class="lang-en">Division</span>
-          <span class="lang-ar">القسمة</span>
-        </h3>
-        <button class="btn-start" type="button" onclick="DivisionApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
-        <div class="stats" role="status" aria-live="polite">
-          <span class="stat stat-progress" id="division-progress">Card 1 of 20</span>
-          <span class="stat stat-timer" id="division-timer" aria-label="Timer">⏱ 0:00</span>
-          <span class="stat stat-correct" id="division-scoreCorrect" aria-label="Correct answers">✓ 0</span>
-          <span class="stat stat-wrong" id="division-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
-        </div>
-        <div class="card-scene">
-          <button class="card" id="division-card" type="button" aria-label="Flashcard. Press to flip" onclick="DivisionApp.flip()">
-            <span class="card-face card-front">
-              <span class="face-label">Question</span>
-              <span class="question" id="division-question">12 ÷ 3</span>
-              <span class="hint">Click or press Space to flip</span>
-            </span>
-            <span class="card-face card-back">
-              <span class="face-label">Answer</span>
-              <span class="answer" id="division-answer">4</span>
-            </span>
-          </button>
-        </div>
-        <div class="answer-check" role="group" aria-label="Check your answer">
-          <label for="division-answerInput" class="sr-only">Your answer</label>
-          <input id="division-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="division-answerFeedback">
-          <button class="btn-check" type="button" onclick="DivisionApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
-          <p id="division-answerFeedback" class="answer-feedback" aria-live="polite"></p>
-        </div>
-        <div class="score-btns" id="division-scoreBtns" role="group" aria-label="Mark your answer">
-          <button class="btn-correct" type="button" onclick="DivisionApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
-          <button class="btn-wrong" type="button" onclick="DivisionApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
-        </div>
-        <div class="controls">
-          <button class="btn-nav" type="button" onclick="DivisionApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
-          <button class="btn-flip" type="button" onclick="DivisionApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
-          <button class="btn-nav" type="button" onclick="DivisionApp.next()" aria-label="Next card / البطاقة التالية">→</button>
-          <button class="btn-shuffle" type="button" onclick="DivisionApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
-          <button class="btn-reset" type="button" onclick="DivisionApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
-        </div>
-        <p class="footer-note">
-          <span class="lang-en">20 division problems</span>
-          <span class="lang-ar">20 مسألة قسمة</span>
-        </p>
-      </div>
-      <div class="results" id="division-results" role="dialog" aria-modal="true" aria-labelledby="division-resultsTitle" hidden>
-        <div class="results-card">
-          <h2 id="division-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
-          <div class="score-big" id="division-finalScore">0 / 20</div>
-          <p class="detail" id="division-finalCorrect">0</p>
-          <p class="detail" id="division-finalWrong">0</p>
-          <p class="detail" id="division-finalAccuracy">0%</p>
-          <p class="time-result" id="division-finalTime">0:00</p>
-          <button class="btn-shuffle" type="button" onclick="DivisionApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
-        </div>
-      </div>
-
-      <div class="flashcard-operation" data-operation="multiplication">
-        <h3>
-          <span class="lang-en">Multiplication</span>
-          <span class="lang-ar">الضرب</span>
-        </h3>
-        <button class="btn-start" type="button" onclick="MultiplicationApp.start()"><span class="lang-en">Start</span><span class="lang-ar">ابدأ</span></button>
-        <div class="stats" role="status" aria-live="polite">
-          <span class="stat stat-progress" id="multiplication-progress">Card 1 of 20</span>
-          <span class="stat stat-timer" id="multiplication-timer" aria-label="Timer">⏱ 0:00</span>
-          <span class="stat stat-correct" id="multiplication-scoreCorrect" aria-label="Correct answers">✓ 0</span>
-          <span class="stat stat-wrong" id="multiplication-scoreWrong" aria-label="Incorrect answers">✗ 0</span>
-        </div>
-        <div class="card-scene">
-          <button class="card" id="multiplication-card" type="button" aria-label="Flashcard. Press to flip" onclick="MultiplicationApp.flip()">
-            <span class="card-face card-front">
-              <span class="face-label">Question</span>
-              <span class="question" id="multiplication-question">6 × 7</span>
-              <span class="hint">Click or press Space to flip</span>
-            </span>
-            <span class="card-face card-back">
-              <span class="face-label">Answer</span>
-              <span class="answer" id="multiplication-answer">42</span>
-            </span>
-          </button>
-        </div>
-        <div class="answer-check" role="group" aria-label="Check your answer">
-          <label for="multiplication-answerInput" class="sr-only">Your answer</label>
-          <input id="multiplication-answerInput" class="answer-input" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-describedby="multiplication-answerFeedback">
-          <button class="btn-check" type="button" onclick="MultiplicationApp.checkAnswer()"><span class="lang-en">Check Answer</span><span class="lang-ar">تحقق من الإجابة</span></button>
-          <p id="multiplication-answerFeedback" class="answer-feedback" aria-live="polite"></p>
-        </div>
-        <div class="score-btns" id="multiplication-scoreBtns" role="group" aria-label="Mark your answer">
-          <button class="btn-correct" type="button" onclick="MultiplicationApp.mark(true)" aria-label="Correct answer / إجابة صحيحة">✓</button>
-          <button class="btn-wrong" type="button" onclick="MultiplicationApp.mark(false)" aria-label="Incorrect answer / إجابة غير صحيحة">✗</button>
-        </div>
-        <div class="controls">
-          <button class="btn-nav" type="button" onclick="MultiplicationApp.prev()" aria-label="Previous card / البطاقة السابقة">←</button>
-          <button class="btn-flip" type="button" onclick="MultiplicationApp.flip()"><span class="lang-en">Flip</span><span class="lang-ar">اقلب</span></button>
-          <button class="btn-nav" type="button" onclick="MultiplicationApp.next()" aria-label="Next card / البطاقة التالية">→</button>
-          <button class="btn-shuffle" type="button" onclick="MultiplicationApp.shuffle()"><span class="lang-en">Shuffle</span><span class="lang-ar">خلط</span></button>
-          <button class="btn-reset" type="button" onclick="MultiplicationApp.reset()"><span class="lang-en">Reset</span><span class="lang-ar">إعادة ضبط</span></button>
-        </div>
-        <p class="footer-note">
-          <span class="lang-en">20 multiplication problems</span>
-          <span class="lang-ar">20 مسألة ضرب</span>
-        </p>
-      </div>
-      <div class="results" id="multiplication-results" role="dialog" aria-modal="true" aria-labelledby="multiplication-resultsTitle" hidden>
-        <div class="results-card">
-          <h2 id="multiplication-resultsTitle"><span class="lang-en">Session Complete!</span><span class="lang-ar">اكتملت الجلسة!</span></h2>
-          <div class="score-big" id="multiplication-finalScore">0 / 20</div>
-          <p class="detail" id="multiplication-finalCorrect">0</p>
-          <p class="detail" id="multiplication-finalWrong">0</p>
-          <p class="detail" id="multiplication-finalAccuracy">0%</p>
-          <p class="time-result" id="multiplication-finalTime">0:00</p>
-          <button class="btn-shuffle" type="button" onclick="MultiplicationApp.closeResults()"><span class="lang-en">Practice Again</span><span class="lang-ar">تدرّب مرة أخرى</span></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--Going to pause this for now while we find and add more educational content
- <section class="edu-5">
-  <div class="edu-content-section">
-    <h3>
-      <span class="lang-en">Palestinian History and Culture</span>
-      <span class="lang-ar hidden">التاريخ والثقافة الفلسطينية</span>
-    </h3>
-    <p>
-      <span class="lang-en">Palestine has a rich and ancient history spanning thousands of years. From the Canaanite civilization to the modern Palestinian state, this land has been a cradle of culture, spirituality, and human achievement. Our educational resources explore the layers of history, highlighting the contributions of Palestinian people to art, science, literature, and philosophy.</span>
-      <span class="lang-ar hidden">فلسطين لديها تاريخ عريق وعريق يمتد لآلاف السنين. من حضارة كنعان إلى الدولة الفلسطينية الحديثة، كانت هذه الأرض مهد الثقافة والروحانية والإنجاز الإنساني. تستكشف مواردنا التعليمية طبقات التاريخ، مع تسليط الضوء على مساهمات الشعب الفلسطيني في الفن والعلم والأدب والفلسفة.</span>
-    </p>
-    <div class="image-gallery">
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Culture" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Heritage" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Tradition" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="edu-6">
-  <div class="edu-content-section">
-    <h3>
-      <span class="lang-en">Supplemental Materials</span>
-      <span class="lang-ar hidden">المواد التكميلية</span>
-    </h3>
-    <p>
-      <span class="lang-en">This gallery will feature future sub pages of math, science, art, music, technology, languages, reading, writing, civics, basic life skills, and other age appropriate educational topics.</span>
-      <span class="lang-ar hidden">ستعرض هذه المعرض صفحات فرعية مستقبلية للرياضيات والعلوم والفن والموسيقى والتكنولوجيا واللغات والقراءة والكتابة والمهارات المدنية والمهارات الحياتية الأساسية ومواضيع تعليمية مناسبة للعمر.</span>
-    </p>
-    <div class="image-gallery">
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Culture" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Heritage" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Tradition" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="edu-6">
-  <div class="edu-content-section">
-    <h3>
-      <span class="lang-en">Building a Better Future</span>
-      <span class="lang-ar hidden">بناء مستقبل أفضل</span>
-    </h3>
-    <p>
-      <span class="lang-en">Education is the foundation for building a sustainable and equitable future. Our platform is dedicated to supporting Palestinian educational initiatives, youth development, and community empowerment. By sharing knowledge, fostering dialogue, and celebrating achievements, we contribute to a vision of peace and prosperity for all Palestinians.</span>
-      <span class="lang-ar hidden">التعليم هو الأساس لبناء مستقبل مستدام وعادل. تكرس منصتنا نفسها لدعم المبادرات التعليمية الفلسطينية وتطوير الشباب وتمكين المجتمع. من خلال تبادل المعرفة وتعزيز الحوار والاحتفال بالإنجازات، نساهم في رؤية السلام والازدهار لجميع الفلسطينيين.</span>
-    </p>
-    <div class="image-gallery">
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Future" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Education" loading="lazy">
-      </div>
-      <div class="image-container">
-        <img src="images/001.jpg" alt="Palestinian Youth" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
--->
-
-  <section class="video-embed-section edu-bottom-video" aria-label="Featured education video">
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/isYyzivMhHU"
-        title="Featured education video"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-    </div>
-  </section>
-
- </main>
-
+  </main>
   <footer class="site-footer" data-global-chrome>
         <div class="footer-container">
         <div class="footer-row">
@@ -1006,12 +288,6 @@ Date last modified: 2026-10-21
             </div>
         </div>
   </footer>
-
   <script src="js/main.js"></script>
-  <script src="js/color-garden.js"></script>
-  <script src="js/math-addition.js"></script>
-  <script src="js/math-subtraction.js"></script>
-  <script src="js/math-division.js"></script>
-  <script src="js/math-multiplication.js"></script>
 </body>
 </html>
