@@ -1,0 +1,218 @@
+/* Author: Leslie Brockman
+ Date: 10-27-2026 */
+.edu-page.history-classroom {
+    --classroom-accent: #815d36;
+    --classroom-tint: #f0e6d6;
+}
+
+/* Exact landing-page olive background; shared chrome stays independently styled. */
+body.edu-page.history-classroom {
+    background: radial-gradient(ellipse at 50% 100%, rgba(255, 238, 173, .72), transparent 72%),
+        linear-gradient(135deg, #b9bd69 0%, #a5a950 45%, #d7c77a 100%);
+}
+
+/* History welcome chalkboard: landing board/tray declarations adapted to local scope.
+   styles/edu.css is read only and landing selectors require .schoolhouse-page;
+   do not add that body class here or import its lesson-reversal behavior. */
+.history-classroom .history-welcome-board {
+    --school-cream: #fff6d9;
+    margin-bottom: 2.25rem;
+}
+.history-classroom .weekly-board {
+    position: relative;
+    min-width: 0;
+    background-clip: padding-box;
+    text-align: center;
+    isolation: isolate;
+    padding: clamp(2.25rem, 5vw, 4rem);
+    border: 4px solid #5a2d12;
+    border-radius: 10px;
+    color: var(--school-cream);
+    background: repeating-linear-gradient(2deg, transparent 0 7px, rgba(65, 26, 6, .13) 8px 9px), linear-gradient(145deg, #d99a47 0%, #8a461b 18%, #b46d2c 42%, #67300e 75%, #e0a45a 100%);
+    box-shadow: inset 0 2px 3px #f2c17a, inset 0 -5px 8px #50270e, 0 12px 20px rgba(34, 38, 12, .35);
+}
+
+.history-classroom .weekly-board::before {
+    content: "";
+    position: absolute;
+    inset: clamp(12px, 2vw, 22px);
+    z-index: -1;
+    border: 2px solid #522d17;
+    border-radius: 2px;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, .7), inset 0 0 3px rgba(255, 255, 255, .3);
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 98%, rgba(247, 239, 198, .14), transparent 28%), radial-gradient(ellipse at 30% 35%, rgba(236, 255, 224, .10), transparent 50%), repeating-linear-gradient(174deg, transparent 0 8px, rgba(255, 255, 255, .022) 9px 10px), linear-gradient(125deg, #092d21, #15513a 48%, #08291f);
+}
+
+.history-classroom .board-tray {
+    position: absolute;
+    inset-inline: -10px;
+    bottom: -14px;
+    height: 24px;
+    border: 2px solid #5a2d12;
+    border-top-color: #e3b16b;
+    border-radius: 3px 3px 6px 6px;
+    background: linear-gradient(#cf9146 0%, #a35e26 35%, #703711 45%, #98531f 100%);
+    pointer-events: none;
+    box-shadow: inset 0 3px 2px rgba(255, 224, 159, .35), 0 9px 11px rgba(34, 38, 12, .38);
+}
+
+.history-classroom .tray-eraser {
+    position: absolute;
+    width: clamp(70px, 12vw, 120px);
+    height: auto;
+    right: 16%;
+    bottom: 8px;
+}
+
+.history-classroom .tray-chalk {
+    position: absolute;
+    width: clamp(48px, 8vw, 85px);
+    height: auto;
+    left: 20%;
+    bottom: 9px;
+    transform: rotate(-5deg);
+}
+
+.history-classroom .weekly-board::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle at 7px 7px, #382414 0 2px, #d29b57 2.5px 3.5px, transparent 4px), radial-gradient(circle at calc(100% - 7px) 7px, #382414 0 2px, #d29b57 2.5px 3.5px, transparent 4px), radial-gradient(circle at 7px calc(100% - 7px), #382414 0 2px, #d29b57 2.5px 3.5px, transparent 4px), radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #382414 0 2px, #d29b57 2.5px 3.5px, transparent 4px);
+}
+
+@media (max-width: 600px) {
+    .history-classroom .weekly-board {
+            padding: 1.75rem 1.25rem;
+            border-width: 3px;
+        }
+}
+
+@media (max-width: 600px) {
+    .history-classroom .weekly-board::before {
+            inset: 8px;
+            border-width: 1px;
+        }
+}
+
+@media (max-width: 600px) {
+    .history-classroom .board-tray {
+            inset-inline: 0;
+            height: 20px;
+            bottom: -12px;
+        }
+}
+
+/* Both welcome languages remain visible and equally prominent in all modes. */
+.history-classroom .history-welcome-board h2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: .4rem 1rem;
+    margin: 0 0 1rem;
+    color: #fff6d9;
+    font: 700 clamp(1.6rem, 4vw, 2.25rem)/1.6 "Chalkboard SE", "Comic Sans MS", cursive;
+}
+.history-classroom .history-welcome-board p {
+    margin: .6rem auto;
+    max-width: 45ch;
+    color: #fff6d9;
+    font: 400 clamp(1.05rem, 2.4vw, 1.3rem)/1.8 "Chalkboard SE", "Comic Sans MS", cursive;
+    text-indent: 0;
+    overflow-wrap: anywhere;
+}
+.history-classroom .history-welcome-board [lang="ar"],
+.history-classroom .schoolhouse-back [lang="ar"] {
+    font-family: "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif;
+}
+.history-classroom .history-welcome-board [lang="ar"] { color: #e7c15e; }
+/* Semantic return anchor: invitation treatment, without changing its destination. */
+.history-classroom .schoolhouse-back {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem .9rem;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    padding: .6rem 1rem;
+    border: 1px solid #b8a252;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #e9efc4, #d2df9e);
+    color: #173b13;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 3px 0 rgba(69, 91, 35, .22);
+    transition: box-shadow 180ms ease, transform 180ms ease;
+}
+.history-classroom .schoolhouse-back:hover,
+.history-classroom .schoolhouse-back:focus-visible {
+    background: linear-gradient(180deg, #f4f6d8, #e0eaba);
+    color: #173b13;
+    box-shadow: 0 4px 0 rgba(69, 91, 35, .22);
+    transform: translateY(-2px);
+}
+.history-classroom .schoolhouse-back:focus-visible {
+    outline: 3px solid #173b13;
+    outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .history-classroom .schoolhouse-back { transition: none; }
+    .history-classroom .schoolhouse-back:hover,
+    .history-classroom .schoolhouse-back:focus-visible { transform: none; }
+}
+
+/* One featured activity: original Arcade artwork and destination, no game embed. */
+.history-classroom .history-featured {
+    margin: 2rem 0;
+    padding: clamp(1rem, 3vw, 2rem);
+    border-radius: 20px;
+    background: #fff6d9;
+    box-shadow: var(--education-shadow);
+    text-align: center;
+}
+.history-classroom .history-featured h2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .4rem 1rem;
+    color: #173b13;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+.history-classroom .history-featured figure { max-width: 760px; margin: 1.25rem auto 0; }
+.history-classroom .history-game-link {
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 5px 14px rgba(69, 64, 25, .18);
+    transition: box-shadow 180ms ease;
+}
+.history-classroom .history-game-link img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #c9a54b;
+    border-radius: 18px;
+}
+.history-classroom .history-game-link:hover,
+.history-classroom .history-game-link:focus-visible { box-shadow: 0 7px 18px rgba(69, 64, 25, .27); }
+.history-classroom .history-game-link:focus-visible { outline: 3px solid #173b13; outline-offset: 5px; }
+.history-classroom .history-featured figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    margin-top: 1rem;
+    color: #173b13;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+.history-classroom .history-featured [lang="ar"] { font-family: "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif; }
+@media (prefers-reduced-motion: reduce) {
+    .history-classroom .history-game-link { transition: none; }
+}
