@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 10/21/2026
+   Date modified: 10-30-2026
 */
 .ok-palestine-page main {
 display: flex;
@@ -237,4 +237,43 @@ text-align: center;
         position: relative;
         z-index: 1;
     }
+}
+
+
+/* Literary typography applies only to the OK Palestine reading panel. */
+.ok-palestine-page .ok-palestine-message .lang-en {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.05rem, 1rem + 0.25vw, 1.25rem);
+    line-height: 1.85;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.ok-palestine-page .ok-content :is(.section-title, .quote-title, .quote-text, .quote-of-day cite, .section-date) .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: normal;
+}
+
+.ok-palestine-page .ok-content :is(.section-title, .quote-title) .lang-en {
+    font-weight: 700;
+}
+
+.ok-palestine-page .ok-content .quote-text .lang-en {
+    font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.6rem);
+    line-height: 1.65;
+    font-weight: 400;
+}
+
+.ok-palestine-page .ok-content .quote-of-day cite .lang-en {
+    font-size: inherit;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.ok-palestine-page .ok-content .section-date .lang-en {
+    font-weight: 600;
+}
+
+.ok-palestine-page .ok-content .lang-ar {
+    font-family: 'Amiri', serif;
 }
