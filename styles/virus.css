@@ -1,0 +1,45 @@
+/* Author: Leslie Brockman
+   Date: 10-19-2026
+   Date modified: 10/28/2026
+   I think this is funny. Their reaction is priceless.
+*/
+.circus-page-body .circus-back-recess {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-self: flex-start;
+    justify-content: center;
+    gap: .35rem .9rem;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    padding: .6rem 1rem;
+    border: 1px solid #b8a252;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #e9efc4, #d2df9e);
+    color: #173b13;
+    font-weight: 700;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    box-shadow: 0 3px 0 rgba(69, 91, 35, .22);
+    transition: box-shadow 180ms ease, transform 180ms ease;
+}
+.circus-page-body .circus-back-recess [lang="ar"] {
+    font-family: "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif;
+}
+.circus-page-body .circus-back-recess:hover,
+.circus-page-body .circus-back-recess:focus-visible {
+    background: linear-gradient(180deg, #f4f6d8, #e0eaba);
+    color: #173b13;
+    box-shadow: 0 4px 0 rgba(69, 91, 35, .22);
+    transform: translateY(-2px);
+}
+.circus-page-body .circus-back-recess:focus-visible {
+    outline: 3px solid #173b13;
+    outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-page-body .circus-back-recess { transition: none; }
+    .circus-page-body .circus-back-recess:hover,
+    .circus-page-body .circus-back-recess:focus-visible { transform: none; }
+}
