@@ -229,20 +229,30 @@ body:has(> p > #archive-destination) {
 }
 
 .archive-dialog-header {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
-    justify-content: space-between;
     gap: .75rem;
     flex-shrink: 0;
 }
 
-.archive-dialog-header > div { flex: 1 1 15rem; min-width: 0; }
-.archive-dialog-header h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.4; }
-.archive-dialog-header p { margin: 0; font-size: .9rem; }
-.archive-dialog-close { flex: 0 0 auto; }
+.archive-dialog-header > div { min-width: 0; text-align: center; }
+.archive-dialog-header h2 { margin: 0 0 .35rem; text-align: center; font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.4; }
+.archive-dialog-header p { margin: 0; font-size: .9rem; text-align: center; }
+.archive-dialog-header > .archive-dialog-close { justify-self: end; }
 .archive-dialog-note { flex-shrink: 0; margin: .75rem 0; font-size: .9rem; }
-.archive-writing-title { flex-shrink: 0; margin: 0 0 .5rem; font-size: 1.1rem; }
+/* Keep the bilingual region name available without a visible Writing heading. */
+.archive-writing-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
 
 .archive-dialog-writing {
     flex: 1 1 auto;
@@ -251,8 +261,10 @@ body:has(> p > #archive-destination) {
     overscroll-behavior: contain;
     scrollbar-gutter: stable;
     padding: clamp(1rem, 3vw, 2rem);
-    border: 1px solid #b49b70;
+    margin-block-start: 1rem;
+    border: 1px solid var(--archive-gold);
     border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(32, 26, 20, .16);
     color: var(--archive-ink);
     line-height: 1.85;
 }
@@ -320,17 +332,27 @@ html[lang="ar"] .archive-dialog { direction: rtl; }
 .archive-dialog-writing a { color: #384522; }
 .archive-dialog-writing :lang(ar) { line-height: 2; }
 .archive-dialog-close {
+    --button-background: var(--archive-olive);
+    --button-text: var(--archive-cream);
+    --button-border: var(--archive-gold);
+    --button-hover-background: #A72D35;
+    --button-focus: var(--archive-gold);
     min-height: 44px;
     padding: .6rem 1rem;
-    border: 1px solid #786139;
+    border: 1px solid var(--archive-gold);
     border-radius: 6px;
-    background: var(--archive-paper);
-    color: var(--archive-ink);
+    background: var(--archive-olive);
+    color: var(--archive-cream);
+    box-shadow: 0 3px 8px rgba(32, 26, 20, .18);
     font: inherit;
     cursor: pointer;
 }
+.archive-dialog-close:hover,
 .archive-dialog-close:focus-visible {
-    outline: 3px solid var(--archive-olive);
+    background: #A72D35;
+}
+.archive-dialog-close:focus-visible {
+    outline: 3px solid var(--archive-gold);
     outline-offset: 3px;
 }
 
@@ -342,7 +364,6 @@ html[lang="ar"] .archive-dialog { direction: rtl; }
     .archive-section { padding: .85rem; }
     .archive-dialog { width: calc(100% - 1rem); max-width: calc(100% - 1rem); }
     .archive-dialog-panel { padding: .5rem; }
-    .archive-dialog-header > div { flex-basis: 100%; }
 }
 
 /* Redirect fallback artwork without changing compatibility document markup. */
@@ -357,3 +378,15 @@ body:has(> p > #archive-destination) > p {
 }
 #archive-destination { color: #384522; }
 
+
+
+/* World Leaders series labels: country above person, same card geometry. */
+[data-archive-collection="world-leaders"] .archive-series-card .archive-leader-country,
+[data-archive-collection="world-leaders"] .archive-series-card .archive-leader-person {
+    display: block;
+    text-align: center;
+}
+
+[data-archive-collection="world-leaders"] .archive-series-card .archive-leader-person {
+    margin-top: 0.25rem;
+}
