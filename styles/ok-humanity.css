@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 10/21/2026
+   Date modified: 10/30/2026
 */
 .ok-humanity-page main {
 display: flex;
@@ -205,8 +205,35 @@ padding-block: 5rem;
 /* Visitor-local date beneath the writing heading. */
 .ok-humanity-page .ok-content .ok-humanity-date {
     margin: .25rem auto 1.5rem;
-    font-size: 1rem;
+    font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.6rem);
     line-height: 1.5;
     text-align: center;
 }
 .ok-humanity-page .ok-humanity-date .lang-ar { text-align: center; }
+
+
+/* Literary typography stays inside the OK Humanity reading panel. */
+.ok-humanity-page .ok-content > p:not(.ok-humanity-date) .lang-en {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.05rem, 1rem + 0.25vw, 1.25rem);
+    line-height: 1.85;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.ok-humanity-page .ok-content :is(h1, h2, h3, .ok-humanity-date) .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: normal;
+}
+
+.ok-humanity-page .ok-content :is(h1, h2, h3) .lang-en {
+    font-weight: 700;
+}
+
+.ok-humanity-page .ok-content .ok-humanity-date .lang-en {
+    font-weight: 600;
+}
+
+.ok-humanity-page .ok-content .lang-ar {
+    font-family: 'Amiri', serif;
+}
