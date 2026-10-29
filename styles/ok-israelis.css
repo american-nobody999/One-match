@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 10/21/2026
+   Date modified: 10/30/2026
 */
 .ok-israelis-page main {
 display: flex;
@@ -282,7 +282,7 @@ padding-block: 5rem;
     display: block;
     margin: -.25rem auto 1.5rem;
     color: #6b451f;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.9rem);
     text-align: center;
 }
 
@@ -304,4 +304,52 @@ padding-block: 5rem;
 .ok-israelis-page .israelis-gallery-section :is(.israelis-gallery, .israelis-gallery-item, img) {
     border: 0;
     box-shadow: none;
+}
+
+/* Literary typography stays inside the OK Israelis reading panel. */
+.ok-israelis-page .ok-content > p .lang-en,
+.ok-israelis-page .ok-israelis-quotation .lang-en {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.05rem, 1rem + 0.25vw, 1.25rem);
+    line-height: 1.85;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.ok-israelis-page .ok-content :is(h1, h2, h3, .ok-israelis-date) .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: normal;
+}
+
+.ok-israelis-page .ok-content :is(h1, h2, h3) .lang-en {
+    font-weight: 700;
+}
+
+.ok-israelis-page .ok-content .ok-israelis-date .lang-en {
+    font-weight: 600;
+}
+
+.ok-israelis-page .ok-content .lang-ar {
+    font-family: 'Amiri', serif;
+}
+
+.ok-israelis-page .ok-israelis-quotation {
+    box-sizing: border-box;
+    max-width: 42rem;
+    min-width: 0;
+    margin: 1.5rem auto;
+    padding: clamp(.75rem, 3vw, 1.5rem);
+    border: 1px solid #a57c49;
+    border-radius: .4rem;
+    text-align: start;
+    overflow-wrap: anywhere;
+}
+
+.ok-israelis-page .ok-israelis-quotation blockquote {
+    margin: 0;
+}
+
+.ok-israelis-page .ok-israelis-quotation figcaption {
+    margin-block-start: .75rem;
+    line-height: 1.85;
 }
