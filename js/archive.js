@@ -187,7 +187,21 @@ document.addEventListener('DOMContentLoaded', async () => {
             button.dataset.archiveSeries = series;
             button.setAttribute('aria-controls', 'archive-months');
             button.setAttribute('aria-pressed', 'false');
-            button.append(translated(data.title.en, data.title.ar));
+            const label = translated(data.title.en, data.title.ar);
+            if (collection === 'world-leaders') {
+                for (const language of label.children) {
+                    const parts = language.textContent.split(' — ');
+                    if (parts.length !== 2) continue;
+                    const country = document.createElement('span');
+                    country.className = 'archive-leader-country';
+                    country.textContent = parts[0];
+                    const person = document.createElement('span');
+                    person.className = 'archive-leader-person';
+                    person.textContent = parts[1];
+                    language.replaceChildren(country, person);
+                }
+            }
+            button.append(label);
             item.append(button);
             fragment.append(item);
         }
