@@ -96,7 +96,9 @@
         "ar": "رسائل حب لفلسطين"
       },
       "directory": "love-letters-palestine",
-      "months": {}
+      "months": {
+        "2026-10": "love-letters-palestine/2026-10.html"
+      }
     },
     "other-communications": {
       "collection": "other-communications",
