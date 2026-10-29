@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 10/21/2026
+   Date modified: 10/30/2026
 */
 .ok-america-page main {
 display: flex;
@@ -198,7 +198,7 @@ padding-block: 5rem;
     display: block;
     margin: -.25rem auto 1.5rem;
     color: #6b451f;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
     text-align: center;
 }
 
@@ -282,4 +282,30 @@ padding-block: 5rem;
 .ok-america-page .ok-content .ok-america-gallery-section img {
     border: 0;
     box-shadow: none;
+}
+
+/* Literary typography stays inside the OK America reading panel. */
+.ok-america-page .ok-america-message p .lang-en {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.05rem, 1rem + 0.25vw, 1.25rem);
+    line-height: 1.85;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.ok-america-page .ok-content :is(h1, h2, h3, .ok-america-date) .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: normal;
+}
+
+.ok-america-page .ok-content :is(h1, h2, h3) .lang-en {
+    font-weight: 700;
+}
+
+.ok-america-page .ok-content .ok-america-date .lang-en {
+    font-weight: 600;
+}
+
+.ok-america-page .ok-content .lang-ar {
+    font-family: 'Amiri', serif;
 }
