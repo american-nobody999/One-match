@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman
-   Date modified: 10/21/2026 */
+   Date modified: 10/30/2026 */
 .drinking-games-page #your-famous .hero-gallery-block,
 .drinking-games-page #your-famous .hero-gallery-block :is(.scrollable-gallery, .gallery-card, figure, img) {
 border-color: transparent;
@@ -607,5 +607,267 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 
     .drinking-games-page .ok-content > h2 {
         padding-inline: 0;
+    }
+}
+
+/* Loser of the Week: confined to this feature, with natural-height faces. */
+.drinking-games-page #loser-of-the-week {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-block: 2rem;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    border: 1px solid #c8a45a;
+    border-radius: 18px;
+    background: #252a20;
+    color: #f5edda;
+    box-shadow: 0 .35rem .9rem rgba(91, 29, 35, .22),
+        0 1rem 2rem rgba(91, 29, 35, .12);
+    overflow-wrap: anywhere;
+}
+.drinking-games-page #loser-of-the-week :is(h2, h3),
+.drinking-games-page #loser-of-the-week :is(h2, h3) .lang-ar {
+    padding-inline: 0;
+    text-align: center;
+    color: #c8a45a;
+}
+.drinking-games-page #loser-of-the-week h2 {
+    margin-block: 0 1.5rem;
+    font-size: clamp(2rem, 1.3rem + 3vw, 3.8rem);
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(200, 164, 90, .22);
+}
+.drinking-games-page #loser-of-the-week h2 .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+}
+.drinking-games-page #loser-of-the-week h2::after {
+    content: "";
+    display: block;
+    width: min(5rem, 35%);
+    height: 1px;
+    margin: 1rem auto 0;
+    background: #c8a45a;
+    opacity: .8;
+}
+.drinking-games-page #loser-of-the-week .loser-week-intro {
+    max-width: 42rem;
+    margin-inline: auto;
+    color: #f5edda;
+}
+.drinking-games-page #loser-of-the-week .loser-week-intro p {
+    line-height: 1.9;
+}
+.drinking-games-page #loser-of-the-week .loser-week-intro p:last-child {
+    font-weight: 700;
+    color: #ebd4a3;
+}
+.drinking-games-page #loser-of-the-week h3 {
+    margin-block: 1.25rem .75rem;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+.drinking-games-page #loser-of-the-week .loser-week-intro p + p {
+    margin-block-start: 1rem;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card {
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding: clamp(.65rem, 2vw, 1.25rem);
+    border: 1px solid #c8a45a;
+    border-radius: .85rem;
+    background: #343b2c;
+    box-shadow: inset 0 1px 12px rgba(0, 0, 0, .22);
+    transition: transform .2s ease, box-shadow .2s ease;
+    perspective: 1200px;
+}
+.drinking-games-page #loser-of-the-week .loser-week-face {
+    min-width: 0;
+    text-align: center;
+}
+.drinking-games-page #loser-of-the-week .loser-week-face[hidden] {
+    display: none;
+}
+.drinking-games-page #loser-of-the-week .loser-week-face.is-revealed {
+    animation: loser-week-turn .3s ease-out;
+}
+.drinking-games-page #loser-of-the-week .loser-week-images {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(.5rem, 2vw, 1rem);
+}
+.drinking-games-page #loser-of-the-week .loser-week-images img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    box-sizing: border-box;
+    padding: .25rem;
+    border: 1px solid rgba(200, 164, 90, .5);
+    border-radius: .5rem;
+    background: #252a20;
+    object-fit: contain;
+}
+.drinking-games-page #loser-of-the-week .loser-week-description {
+    margin-inline: auto;
+    max-width: 42rem;
+    padding: clamp(.5rem, 2vw, 1rem);
+    color: #f5edda;
+}
+.drinking-games-page #loser-of-the-week .loser-week-description p {
+    line-height: 1.85;
+}
+.drinking-games-page #loser-of-the-week .lang-en {
+    direction: ltr;
+}
+.drinking-games-page #loser-of-the-week .lang-ar {
+    direction: rtl;
+    font-family: var(--font-ar);
+    letter-spacing: normal;
+}
+.drinking-games-page #loser-of-the-week .loser-week-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 48px;
+    margin-top: 1.25rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid #c8a45a;
+    border-radius: .6rem;
+    background: #81362f;
+    color: #f5edda;
+    font: inherit;
+    font-weight: 700;
+    white-space: normal;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #48231f, 0 5px 10px rgba(0, 0, 0, .2);
+    transition: background-color .2s ease, transform .2s ease;
+}
+.drinking-games-page #loser-of-the-week .loser-week-button:hover {
+    background: #98443b;
+}
+.drinking-games-page #loser-of-the-week .loser-week-button:focus-visible {
+    outline: 3px solid #fff2cc;
+    outline-offset: 4px;
+}
+.drinking-games-page #loser-of-the-week .loser-week-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #48231f;
+}
+@media (hover: hover) and (pointer: fine) {
+    .drinking-games-page #loser-of-the-week .loser-week-card:hover {
+        transform: translateY(-2px);
+        box-shadow: inset 0 1px 12px rgba(0, 0, 0, .22),
+            0 .5rem 1rem rgba(0, 0, 0, .18);
+    }
+}
+@media (min-width: 36rem) {
+    .drinking-games-page #loser-of-the-week .loser-week-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (min-width: 64rem) {
+    .drinking-games-page #loser-of-the-week #loser-week-back .loser-week-images {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@keyframes loser-week-turn {
+    from { opacity: .5; transform: rotateY(-12deg); }
+    to { opacity: 1; transform: rotateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .drinking-games-page #loser-of-the-week .loser-week-card,
+    .drinking-games-page #loser-of-the-week .loser-week-button {
+        transition: none;
+        transform: none;
+    }
+    .drinking-games-page #loser-of-the-week .loser-week-card:hover,
+    .drinking-games-page #loser-of-the-week .loser-week-button:active {
+        transform: none;
+    }
+    .drinking-games-page #loser-of-the-week .loser-week-face.is-revealed {
+        animation: none;
+    }
+}
+
+/* West Bank headline: separate bilingual lines before the existing galleries. */
+.drinking-games-page .drinking-games-content #meet-andrey-heading {
+    margin: 1.5rem auto 0;
+    padding: clamp(.85rem, 3vw, 2rem);
+    border-radius: 18px 18px 0 0;
+    background: #252a20;
+    text-align: center;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+.drinking-games-page #meet-andrey-heading .west-bank-alert,
+.drinking-games-page #meet-andrey-heading .west-bank-place {
+    display: block;
+}
+.drinking-games-page #meet-andrey-heading .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+}
+.drinking-games-page #meet-andrey-heading .lang-ar {
+    font-family: var(--font-ar);
+    direction: rtl;
+    text-align: center;
+    letter-spacing: normal;
+}
+.drinking-games-page #meet-andrey-heading .west-bank-alert {
+    color: #FFF5DF;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(92, 28, 36, .65);
+}
+.drinking-games-page #meet-andrey-heading .west-bank-place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.4rem, 2vw, 1rem);
+    margin-top: .5rem;
+    color: #E9BD69;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: 700;
+    text-shadow: 0 0 .4rem rgba(233, 189, 105, .2),
+        0 3px 5px rgba(92, 28, 36, .65);
+}
+.drinking-games-page #meet-andrey-heading .west-bank-place > span {
+    min-width: 0;
+}
+.drinking-games-page #meet-andrey-heading .west-bank-place .lang-en {
+    letter-spacing: .04em;
+}
+.drinking-games-page #meet-andrey-heading .west-bank-place::before,
+.drinking-games-page #meet-andrey-heading .west-bank-place::after {
+    content: "";
+    flex: 0 1 3rem;
+    height: 1px;
+    background: #E9BD69;
+    opacity: .7;
+}
+.drinking-games-page .west-bank-decoration {
+    box-sizing: border-box;
+    padding: 0 .5rem 1.25rem;
+    border-radius: 0 0 18px 18px;
+    background: #252a20;
+    color: #FFF5DF;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    word-spacing: .35em;
+    direction: ltr;
+}
+@media (max-width: 480px) {
+    .drinking-games-page #meet-andrey-heading .west-bank-place::before,
+    .drinking-games-page #meet-andrey-heading .west-bank-place::after {
+        display: none;
     }
 }
