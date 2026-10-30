@@ -1,5 +1,5 @@
 //Author:Leslie Brockman
-//Date last modified: 2026-10-24
+//Date last modified: 2026-10-30
 "use strict";
 
 const creators = [
@@ -643,6 +643,39 @@ const creators = [
     "linksHTML": "<div class=\"creator-support-buttons\"><a class=\"site-button\" href=\"https://chuffed.org/project/190283-ahmeds-family-survival-fund\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support Ahmed's Family</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم عائلة أحمد</span></a><a class=\"site-button\" href=\"https://chuffed.org/project/182714-creating-a-new-home-for-the-gaza-circus-school\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support Gaza Circus School</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم مدرسة سيرك غزة</span></a></div>\n        <div class=\"social-links\"><a class=\"social-link\" aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/gaza_circus_school/\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:instagram}}</a><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/ahmd.fwaz.mshthy\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a><a class=\"social-link\" aria-label=\"PayPal payment / الدفع عبر باي بال\" href=\"https://www.paypal.me/AMushtaha764\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:paypal}}</a></div>",
     "section": "Relief, Rebuilding, and Hope",
     "sectionHTML": "\n      <span class=\"lang-en\">Relief, Rebuilding, and Hope</span>\n      <span class=\"lang-ar\">الإغاثة وإعادة البناء والأمل</span>\n    "
+  },
+  {
+    "id": "creator-59",
+    "name": "Mahmoud Zuaiter",
+    "nameAr": "محمود زعيتر",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Mahmoud Zuaiter</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">محمود زعيتر</span>",
+    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/m-z.jpg\" alt=\"Mahmoud Zuaiter / محمود زعيتر\" loading=\"lazy\">",
+    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Mahmoud Zuaiter is a Palestinian comedian, actor, and content creator from Gaza. Known for his humor and storytelling, he uses his platform to share everyday Palestinian experiences, document life in Gaza, and bring humanity, awareness, and resilience to audiences around the world.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">محمود زعيتر ممثل وكوميدي وصانع محتوى فلسطيني من غزة. اشتهر بروحه المرحة وأسلوبه في سرد القصص، ويستخدم منصاته لمشاركة تجارب الفلسطينيين اليومية وتوثيق الحياة في غزة، وإيصال القصص الإنسانية ونشر الوعي وإبراز صمود أهل غزة أمام العالم.</span></p>",
+    "linksHTML": "<div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/mahmoudzeateer\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a><a class=\"social-link\" aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/mahmoudabuzaiter\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:instagram}}</a></div>",
+    "section": "Palestinian comedian, actor, and content creator",
+    "sectionHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Palestinian comedian, actor, and content creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">كوميدي وممثل وصانع محتوى فلسطيني</span>"
+  },
+  {
+    "id": "creator-60",
+    "name": "Ibrahim Z. Sheikh",
+    "nameAr": "إبراهيم ز. شيخ",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Ibrahim Z. Sheikh</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إبراهيم ز. شيخ</span>",
+    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/mzs.jpg\" alt=\"Ibrahim Z. Sheikh / إبراهيم ز. شيخ\" loading=\"lazy\">",
+    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Ibrahim Z. Sheikh, also known publicly as Ibrahim Al-Ghazawi, is a Palestinian digital creator from Gaza. Through his online presence, he shares messages of humanity, peace, and hope while drawing attention to the experiences of Palestinians living through war and displacement.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إبراهيم ز. شيخ، المعروف أيضاً باسم إبراهيم الغزاوي، صانع محتوى رقمي فلسطيني من غزة. يشارك عبر منصاته رسائل إنسانية تدعو إلى السلام والأمل، ويسلط الضوء على تجارب الفلسطينيين في ظل الحرب والنزوح.</span></p>",
+    "linksHTML": "<div class=\"creator-support-buttons\"><a class=\"site-button\" href=\"https://www.gofundme.com/f/8sqyb-bring-hope-to-a-family-in-gaza\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم صانع المحتوى</span></a></div><div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/shadyps\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a></div>",
+    "section": "Creators and Daily Voices",
+    "sectionHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Creators and Daily Voices</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">صنّاع المحتوى وأصوات الحياة اليومية</span>"
+  },
+  {
+    "id": "creator-61",
+    "name": "Sameh & Eileen Family",
+    "nameAr": "عائلة سامح وإيلين",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Sameh &amp; Eileen Family</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">عائلة سامح وإيلين</span>",
+    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/el.jpg\" alt=\"Sameh &amp; Eileen Family / عائلة سامح وإيلين\" loading=\"lazy\">",
+    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Meet Sameh, Amani, and their daughter Eileen, a Palestinian family from Gaza. Through their family pages, they share their experiences and their hopes for safety and rebuilding their lives. Their online presence features little Eileen and invites others to follow their family&#x27;s journey.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">تعرّفوا على سامح وزوجته أماني وابنتهما إيلين، وهي عائلة فلسطينية من غزة. تشارك العائلة عبر صفحاتها تجاربها وآمالها في الوصول إلى الأمان وإعادة بناء حياتها. وتظهر الطفلة إيلين في محتوى العائلة الذي يدعو الآخرين إلى متابعة رحلتهم.</span></p>",
+    "linksHTML": "<div class=\"creator-support-buttons\"><a class=\"site-button\" href=\"https://www.gofundme.com/f/help-samehs-family-rebuild-and-relocate\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Family</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم العائلة</span></a></div><div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/profile.php?id=61584816777726\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a><a class=\"social-link\" aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/sameh_eliin__family__relief\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:instagram}}</a><a class=\"social-link\" aria-label=\"YouTube / يوتيوب\" href=\"https://www.youtube.com/@samehandeileenfamilyproject\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:youtube}}</a></div>",
+    "section": "Creators and Daily Voices",
+    "sectionHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Creators and Daily Voices</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">صنّاع المحتوى وأصوات الحياة اليومية</span>"
   }
 ];
 
