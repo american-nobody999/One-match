@@ -1,0 +1,262 @@
+/* Author: Leslie Brockman
+   Date: 10/30/2026 */
+body.command-page {
+    background: #0b120e;
+    color: #dcebdc;
+}
+.command-center {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1rem, 4vw, 3rem);
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+.command-center *, .command-center *::before, .command-center *::after { box-sizing: border-box; }
+.command-center h2, .command-center h3 {
+    font-family: ui-monospace, "Courier New", monospace;
+    color: #a7f3a2;
+    line-height: 1.4;
+}
+.command-center h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+.command-center h3 { font-size: 1.15rem; }
+.command-center .lang-ar { font-family: var(--font-ar), serif; }
+.command-welcome { margin-block-end: 2rem; }
+.command-center .terminal-panel {
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 2rem);
+    margin-block: 1.5rem;
+    background: #142219;
+    border: 1px solid #77965f;
+    border-radius: 18px;
+    box-shadow: 0 0 20px #8cf88c0d;
+}
+.transmissions, .mission-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.transmissions article, .mission-card {
+    min-width: 0;
+    padding: 1.2rem;
+    border: 1px solid #647e51;
+    border-radius: 12px;
+    background: #0d1811;
+}
+.command-center a { color: #c5f3b4; text-decoration: underline; text-underline-offset: .2em; }
+.command-center button, .command-center select {
+    max-width: 100%;
+    min-height: 44px;
+    padding: .7rem 1rem;
+    border: 1px solid #b3c88d;
+    border-radius: 8px;
+    background: #243b29;
+    color: #f2edcd;
+    font: inherit;
+}
+.command-center button { cursor: pointer; white-space: normal; }
+.command-center button:hover { background: #345339; }
+.command-center :focus-visible { outline: 3px solid #f4ce73; outline-offset: 4px; }
+.command-center label { display: block; margin-block: .7rem; }
+.command-center .mission-task { display: flex; align-items: flex-start; gap: .75rem; padding-block: .5rem; cursor: pointer; }
+.mission-task input { flex: 0 0 auto; width: 24px; height: 24px; accent-color: #a7f3a2; margin-block-start: .2rem; }
+.command-center progress { width: 100%; accent-color: #a7f3a2; }
+#storage-status { color: #e7cc79; }
+.dependency-map { padding-block: 1.5rem; text-align: center; }
+.dependency-node { display: inline-block; max-width: 100%; border: 1px solid #a7f3a2; border-radius: 10px; padding: .6rem 1rem; background: #1c3121; }
+.dependency-branches { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block-start: 1rem; }
+.dependency-branch { border-block-start: 2px solid #77965f; padding: 1rem; min-width: 0; }
+#dependency-details ul { padding-inline-start: 1.5rem; }
+#dependency-details li { margin-block: .5rem; }
+@media (min-width: 700px) {
+    .transmissions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .dependency-branches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Phase 2 mission controls: retain the existing terminal layout. */
+.command-center .mission-category {
+    color: #e7cc79;
+    font-size: .9rem;
+    border-inline-start: 3px solid #77965f;
+    padding-inline-start: .6rem;
+}
+.command-center .mission-checklist { margin-block: 1rem; }
+.command-center .mission-checklist > summary {
+    cursor: pointer;
+    min-height: 44px;
+    padding-block: .6rem;
+    color: #c5f3b4;
+}
+#mission-summary { border-block: 1px solid #647e51; margin-block: 1rem; padding-block: .75rem; }
+#mission-message { color: #a7f3a2; }
+
+/* Inventory views share the original mission cards and completion state. */
+.command-center .inventory-views { display: flex; flex-wrap: wrap; gap: .75rem; margin-block: 1rem; }
+.command-center .inventory-views button[aria-pressed="true"] { border-color: #f4ce73; background: #345339; }
+.command-center .inventory-group { min-width: 0; margin-block: 1rem; }
+.command-center .inventory-group > summary { min-height: 44px; padding: .75rem; cursor: pointer; color: #e7cc79; }
+.command-center .inventory-group .inventory-group { grid-column: 1 / -1; }
+.command-center .inventory-group > .mission-grid { padding-block: .5rem; }
+.command-center .inventory-transparency { color: #e7cc79; }
+.command-center [hidden] { display: none !important; }
+
+/* Page-card grids: identical containers in All Pages and Weekly Updates. */
+.command-center .mission-grid {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+}
+.command-center .mission-card {
+    padding: .85rem;
+    overflow-wrap: anywhere;
+}
+.command-center .mission-card > h3 { margin-block: 0 .5rem; }
+.command-center .mission-card > p { margin-block: .5rem; }
+.command-center .mission-card .mission-checklist { margin-block: .5rem; }
+.command-center .mission-card .mission-task > span { min-width: 0; }
+@media (min-width: 600px) {
+    .command-center .mission-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 900px) {
+    .command-center .mission-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) {
+    .command-center { max-width: 1900px; padding-inline: 1.25rem; }
+    .command-center .mission-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* Centered vintage sign; ornaments use CSS, with no image/font dependencies. */
+.command-center .command-welcome {
+    text-align: center;
+    padding-block: clamp(1rem, 4vw, 3.5rem);
+    margin-block-end: clamp(1.5rem, 4vw, 3rem);
+}
+.command-center .command-emblem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.75rem, 3vw, 2rem);
+    margin-block-end: 1rem;
+}
+.command-center .hero-emblem-art {
+    display: block;
+    width: min(100%, 400px);
+    height: auto;
+    flex: 0 1 400px;
+}
+.command-center .command-hero-title {
+    font-family: Rockwell, "Rockwell Nova", "Roboto Slab", Georgia, "Times New Roman", serif;
+    font-weight: 900;
+    font-size: clamp(1.65rem, 4.8vw, 5rem);
+    line-height: 1.15;
+    letter-spacing: .035em;
+    margin: 0;
+    text-shadow: 0 3px 0 #050b06, 0 5px 12px #0008;
+}
+.command-center .command-hero-title .lang-ar { font-weight: 700; letter-spacing: 0; }
+.command-center .hero-brand, .command-center .hero-command { display: block; }
+.command-center .hero-american { color: #f0e6cb; }
+.command-center .hero-nobody { color: #a7b784; }
+.command-center .hero-command { color: #d8b35f; margin-block-start: .2em; }
+.command-center .hero-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(.5rem, 2vw, 1rem);
+    max-width: 560px;
+    margin: 1.5rem auto 0;
+}
+.command-center .hero-divider::before, .command-center .hero-divider::after {
+    content: "";
+    flex: 1;
+    min-width: 0;
+    height: 1px;
+    background: #ac975f;
+}
+.command-center .divider-flourish {
+    display: block;
+    width: clamp(24px, 5vw, 40px);
+    height: auto;
+    flex: 0 0 auto;
+}
+.command-center .divider-flourish-mirror { transform: scaleX(-1); }
+.command-center .hero-flag {
+    display: block;
+    width: clamp(44px, 6vw, 64px);
+    height: auto;
+    flex: 0 0 auto;
+}
+.command-center .command-emblem, .command-center .hero-divider { direction: ltr; }
+.command-center .terminal-panel > h2,
+.command-center .terminal-panel > p,
+.command-center .transmissions,
+.command-center #mission-summary,
+.command-center #mission-message { text-align: center; }
+.command-center .inventory-group:has(> .mission-grid > #mission-planned-big-top) > summary { text-align: center; }
+
+/* Dashboard accents reused from Color Garden, arcade, recess, and math games. */
+.command-center .terminal-panel {
+    --dashboard-blue: #9ad7ff;
+    --dashboard-pink: #f472b6;
+    --dashboard-yellow: #ffd60a;
+    --dashboard-violet: #818cf8;
+    --dashboard-phosphor: #62ed7e;
+    --dashboard-ivory: #fff6d9;
+    color: var(--dashboard-ivory);
+    box-shadow: none;
+}
+.command-center #transmissions-title { color: var(--dashboard-blue); }
+.command-center #missions-title { color: var(--dashboard-pink); }
+.command-center #dependencies-title { color: var(--dashboard-yellow); }
+.command-center .transmissions article:first-child h3 { color: var(--dashboard-violet); }
+.command-center .transmissions article:last-child h3 { color: var(--dashboard-blue); }
+.command-center .mission-card > h3 { color: var(--dashboard-ivory); }
+.command-center .mission-category { color: var(--dashboard-yellow); border-inline-start-color: var(--dashboard-pink); }
+.command-center .terminal-panel progress { accent-color: var(--dashboard-blue); }
+.command-center .terminal-panel progress::-webkit-progress-bar { background: #0d1811; }
+.command-center .terminal-panel progress::-webkit-progress-value { background: var(--dashboard-blue); }
+.command-center .terminal-panel progress::-moz-progress-bar { background: var(--dashboard-blue); }
+.command-center .terminal-panel .mission-task input { accent-color: var(--dashboard-phosphor); }
+.command-center .terminal-panel a { color: var(--dashboard-blue); }
+.command-center .terminal-panel a:hover { color: var(--dashboard-yellow); text-decoration-thickness: 2px; }
+.command-center .terminal-panel button:hover {
+    color: var(--dashboard-ivory);
+    border-color: var(--dashboard-pink);
+    box-shadow: 0 0 8px #f472b626;
+}
+.command-center .terminal-panel :focus-visible { outline-color: var(--dashboard-blue); }
+.command-center .inventory-views button[aria-pressed="true"] {
+    color: var(--dashboard-yellow);
+    border-color: var(--dashboard-blue);
+    box-shadow: 0 0 8px #9ad7ff26;
+}
+.command-center .mission-card:focus-within { border-color: var(--dashboard-violet); }
+.command-center .mission-checklist > summary { color: var(--dashboard-blue); }
+.command-center #mission-summary { border-block-color: var(--dashboard-violet); }
+.command-center #mission-message { color: var(--dashboard-phosphor); }
+.command-center .dependency-root { border-color: var(--dashboard-violet); }
+.command-center .dependency-branch:nth-child(1) { --dependency-accent: var(--dashboard-blue); }
+.command-center .dependency-branch:nth-child(2) { --dependency-accent: var(--dashboard-pink); }
+.command-center .dependency-branch:nth-child(3) { --dependency-accent: var(--dashboard-yellow); }
+.command-center .dependency-branch { border-block-start-color: var(--dependency-accent); }
+.command-center .dependency-branch h3 { color: var(--dependency-accent); }
+.command-center .dependency-branch .dependency-node { color: var(--dependency-accent); border-color: var(--dependency-accent); }
+.command-center #dependency-details h3:nth-of-type(1),
+.command-center #dependency-details ul:nth-of-type(1) a { color: var(--dashboard-blue); }
+.command-center #dependency-details h3:nth-of-type(2),
+.command-center #dependency-details ul:nth-of-type(2) a { color: var(--dashboard-pink); }
+.command-center #dependency-details h3:nth-of-type(3),
+.command-center #dependency-details ul:nth-of-type(3) a { color: var(--dashboard-yellow); }
+.command-center #dependency-details a:hover { color: var(--dashboard-ivory); }
+
+/* Planned reference links and actions remain distinct keyboard targets. */
+.command-center .planned-reference-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+    margin-block: .75rem;
+}
+.command-center .planned-reference-actions > a { overflow-wrap: anywhere; }
+
+/* Match united.css: keep the mobile hamburger above the overlapping title. */
+@media (max-width: 768px) {
+    .command-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
