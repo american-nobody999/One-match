@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-17-2026
-   Date modified: 10/21/2026
+   Date modified: 10/30/2026
 */
 :where(.world-leaders-page) h2 {
 font-family: var(--font-ar);
@@ -140,11 +140,49 @@ border-radius: 10px;
 .world-leaders-page .world-leaders-section > .section-title { color: #f5f5f5; }
 .world-leaders-main { max-width: 1500px; margin: 0 auto; padding: clamp(1rem, 4vw, 3rem); }
 .world-leaders-page .world-leaders-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.5rem, 2vw, 1rem);
+    min-width: 0;
     margin-block: 0.5rem 1rem;
-    color: #f5f5f5;
+    color: #D4AF77;
     text-align: center;
-    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem);
+    font-weight: 600;
     line-height: 1.5;
+    text-shadow: 0 0 .45rem rgba(212, 175, 119, .25);
+}
+.world-leaders-page .world-leaders-date::before,
+.world-leaders-page .world-leaders-date::after {
+    content: "";
+    flex: 0 1 4rem;
+    height: 1px;
+    background: currentColor;
+    opacity: .6;
+}
+.world-leaders-page .world-leaders-date > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.world-leaders-page .world-leaders-date .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: .04em;
+}
+.world-leaders-page .world-leaders-date .lang-ar {
+    font-family: var(--font-ar);
+    direction: rtl;
+    text-align: center;
+    letter-spacing: normal;
+}
+@media (max-width: 480px) {
+    .world-leaders-page .world-leaders-date {
+        gap: 0;
+    }
+    .world-leaders-page .world-leaders-date::before,
+    .world-leaders-page .world-leaders-date::after {
+        display: none;
+    }
 }
 .world-leaders-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
 .world-leader-card {
