@@ -1,7 +1,7 @@
 <!--
 MPAG:Hero page
 Leslie Brockman
-Date last modified: 2026-10-24
+Date last modified: 2026-10-30
 Cleaning up the code to standards so everyone will quit crying about it. 
 You know part of the fun is I know someone, somewhere has to go through this, and it makes me giggle when I know its occupation and friends. If you're in this code this deep, congratulations! I'll make it easier to read.
 This is the hero page for the MPGA website, featuring journalists and their work in Palestine.
@@ -70,24 +70,6 @@ This is the hero page for the MPGA website, featuring journalists and their work
 
 <!--This section is dedicated to the hero content-->        
 
-        <section class="hero-section-1">
-            <div id="section-dedication">
-                <h2>
-                  <span id="h2-en" class="lang-en h2-en">My Gift to the Great State of Palestine</span>
-                  <span id="h2-ar" class="lang-ar h2-ar hidden">هديتي إلى دولة فلسطين العظيمة</span>
-                </h2>
-                <p>
-                  <span id="p-en" class="lang-en p-en">
-                   In Honor of the brave men and women, the journalists,<br> the truth tellers who have fallen in their efforts<br> to document the struggle of the great people of the State of Palestine,<br> and the ones still there who will not let the truth be buried.<br>
-                   This website is designed, developed, and maintained<br> by one single American human voice.<br>
-                  </span>
-                  <span id="p-ar" class="lang-ar p-ar hidden">
-                  تكريماً للرجال والنساء الشجعان، الصحفيين، رواة الحقيقة الذين سقطوا أثناء توثيقهم لنضال شعب فلسطين العظيم، وأولئك الذين ما زالوا هناك ولن يسمحوا بدفن الحقيقة.<br>
-                  تم تصميم وتطوير وصيانة هذا الموقع بواسطة صوت أمريكي واحد فقط.<br>
-                  </span>
-               </p>
-            </div>
-        </section>
 
 <!--This is section to individual journalists on ground to follow--> 
         <section class="hero-section-2">
@@ -118,34 +100,16 @@ This is the hero page for the MPGA website, featuring journalists and their work
               </p>
             </div>
 
-            <button class="journalist-menu-toggle" type="button" aria-expanded="false" aria-controls="journalist-tabs">
-              <span class="journalist-menu-icon" aria-hidden="true">☰</span>
-              <span class="journalist-menu-current">Mahmoud Alawadia</span>
-            </button>
-
-            <div class="sources-tabs journalist-tabs" id="journalist-tabs" role="tablist" aria-label="Journalists">
-              <button class="source-tab" data-target="journalist-1" role="tab">Mahmoud Alawadia</button>
-              <button class="source-tab" data-target="journalist-2" role="tab">Aboud Battah</button>
-              <button class="source-tab" data-target="journalist-3" role="tab">Mohammed Abo Soltan</button>
-              <button class="source-tab" data-target="journalist-4" role="tab">Khaled Al-Sultan</button>
-              <button class="source-tab" data-target="journalist-5" role="tab">Amer Sultan</button>
-              <button class="source-tab" data-target="journalist-6" role="tab">Motasem A Dalloul</button>
-              <button class="source-tab" data-target="journalist-7" role="tab">Musab Al sharif</button>
-              <button class="source-tab" data-target="journalist-8" role="tab">Mahammed Asad</button>
-              <button class="source-tab" data-target="journalist-9" role="tab">Asad Al Sharq</button>
-              <button class="source-tab" data-target="journalist-10" role="tab">Yusif Faris</button>
-              <button class="source-tab" data-target="journalist-11" role="tab">Nahed Hajjaj</button>
-              <button class="source-tab" data-target="journalist-12" role="tab">Bisan Owda</button>
-              <button class="source-tab" data-target="journalist-13" role="tab">Andrey Khrzhanovskiy</button>
-              <button class="source-tab" data-target="journalist-15" role="tab">Hazem Suleiman</button>
+            <div class="journalist-filters">
+              <select id="journalist-select" aria-label="Choose a journalist / اختر صحفيًا" aria-controls="journalists-gallery"></select>
             </div>
-
+            <noscript><p><span class="lang-en">All journalist profiles are shown. Enable JavaScript for pagination.</span><span class="lang-ar hidden" lang="ar" dir="rtl">تُعرض جميع ملفات الصحفيين. فعّل جافاسكريبت لتصفحها على صفحات.</span></p></noscript>
 
             <div class="sources-gallery journalist-gallery" id="journalists-gallery">
        
 <!--Mahmoud Alawadia: Journalist 1-->              
               <article class="source-card" id="journalist-1">
-                <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/mahmoud_%20alawadia.jpg" alt="Mahmoud Alawadia" loading="lazy"></div>
+                <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/new1.jpg" alt="Mahmoud Alawadia" loading="lazy"></div>
                 <h4 class="card-title"><a href="https://www.facebook.com/Mahmoud.Alawadia" target="_blank" rel="noopener">Mahmoud Alawadia</a></h4>
                 <p class="card-desc">
                   <span class="lang-en">Mahmoud Alawadia is a Palestinian journalist documenting events and daily life in Gaza. His reporting provides an on-the-ground perspective on the experiences and struggles of Palestinians.</span>
@@ -154,18 +118,20 @@ This is the hero page for the MPGA website, featuring journalists and their work
                 <div class="card-socials">
                   <a href="https://www.facebook.com/Mahmoud.Alawadia" class="social-link" aria-label="Mahmoud Alawadia on Facebook" target="_blank" rel="noopener">
                     <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="facebook" loading="lazy"></a>
+                  <a href="https://www.instagram.com/mahmoud_awadia/" class="social-link" aria-label="Mahmoud Awadia on Instagram / محمود العوضية على إنستغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
                   </div>
+                <p><a class="site-button" href="https://www.gofundme.com/f/i-am-a-journalist-and-humanitarian-activist-who-has-lived-th" aria-label="Support Mahmoud Awadia on GoFundMe / ادعم محمود العوضية عبر جوفندمي" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Support</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادعم</span></a></p>
               </article>
 
 <!--Aboud Battah: Journalist 2 -->
 
-              <article class="source-card" id="journalist-2" data-exclude-socials="YouTube,Upscrolled">
+              <article class="source-card" id="journalist-2" data-exclude-socials="Upscrolled">
                 <div class="card-image">
                   <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/aboud_battah.jpg" alt="Aboud Battah" loading="lazy">
                 </div>
 
                 <h4 class="card-title">
-                  <a href="https://www.facebook.com/profile.php?id=61593423748199" target="_blank" rel="noopener">Aboud Battah</a>
+                  Aboud Battah
                 </h4>
 
                 <p class="card-desc">
@@ -175,8 +141,7 @@ This is the hero page for the MPGA website, featuring journalists and their work
 
                 <div class="card-socials">
 
-                  <a href="https://www.facebook.com/profile.php?id=61593423748199" class="social-link" aria-label="Aboud Battah on Facebook" target="_blank" rel="noopener">
-                    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="facebook" loading="lazy"></a>
+                  <a href="https://www.youtube.com/@abod_battah" class="social-link" aria-label="Abod Battah on YouTube / عبود بطاح على يوتيوب" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png" alt="" loading="lazy"></a>
 
                     <a href="https://x.com/abod_bt" class="social-link" aria-label="Aboud Battah on X" target="_blank" rel="noopener">
                       <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/x.jpg" alt="x" loading="lazy"></a>
@@ -185,6 +150,7 @@ This is the hero page for the MPGA website, featuring journalists and their work
                         <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/tiktok.png" alt="tiktok" loading="lazy"></a>
 
                       </div>
+                <p><a class="site-button" href="https://paypal.me/ZinebElattar17" aria-label="Support Abod Battah via PayPal (ZinebElattar17) / ادعم عبود بطاح عبر باي بال (ZinebElattar17)" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Support</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادعم</span></a></p>
 
               </article>
 
@@ -204,7 +170,9 @@ This is the hero page for the MPGA website, featuring journalists and their work
                   <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="facebook" loading="lazy"></a>
 
                   <a href="https://ps.linkedin.com/in/mohammed-abo-soltan-563903148" class="social-link" aria-label="Mohammed Abo Soltan on LinkedIn" target="_blank" rel="noopener">
-                    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/linkedin.png" alt="linkedin" loading="lazy"></a></div>
+                    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/linkedin.png" alt="linkedin" loading="lazy"></a>
+                  </div>
+                <p style="text-align: center;"><a class="site-button" href="https://palplusnews.com/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Learn More</span><span class="lang-ar hidden" lang="ar" dir="rtl">اعرف المزيد</span></a></p>
               </article>
 
 <!--Khaled Al-Sultan: Journalist 4 -->
@@ -261,6 +229,7 @@ This is the hero page for the MPGA website, featuring journalists and their work
                 <div class="card-socials">
                   <a href="https://x.com/AbujomaaGaza" class="social-link" aria-label="X / Twitter" target="_blank" rel="noopener">X</a>
                 </div>
+                <p style="text-align: center;"><a class="site-button" href="https://www.paypal.com/paypalme/MotasemADalloul" aria-label="Support Motasem A. Dalloul via PayPal / ادعم معتصم دلال عبر باي بال" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Support</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادعم</span></a></p>
               </article>
 
 <!-- Musab Al sharif: Journalist 7 -->
@@ -295,7 +264,8 @@ This is the hero page for the MPGA website, featuring journalists and their work
                   
                   <a href="https://www.instagram.com/mohammedasad.84" class="social-link" aria-label="Instagram" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="instgram" loading="lazy">
                   </a>
-                </div>
+                                  <a href="https://www.tiktok.com/@mohammedasad590" class="social-link" aria-label="Mohammed Asad on TikTok / محمد أسعد على تيك توك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/tiktok.png" alt="" loading="lazy"></a>
+</div>
               </article>
 
 <!-- Asad Al Sharq: Journalist 9 -->
@@ -373,7 +343,7 @@ This is the hero page for the MPGA website, featuring journalists and their work
                 </p>
 
                 <div class="card-socials">
-                  <a href="https://www.facebook.com/profile.php?id=100091827085884" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="facebook" loading="lazy"></a>
+                  <a href="https://www.youtube.com/@thewizardbisan" class="social-link" aria-label="Bisan Owda on YouTube / بيسان عودة على يوتيوب" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png" alt="" loading="lazy"></a>
 
                   <a href="https://x.com/wizardbisan" class="social-link" aria-label="X / Twitter" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/x.jpeg" alt="x" loading="lazy"></a>
                   
@@ -388,13 +358,14 @@ This is the hero page for the MPGA website, featuring journalists and their work
                   
                 
                 </div>
+                <p style="text-align: center;"><a class="site-button" href="https://eleelnaelak.org/" aria-label="Learn more at the Ele Elna Elak website / اعرف المزيد عبر موقع إلنا إلك" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Learn More</span><span class="lang-ar hidden" lang="ar" dir="rtl">اعرف المزيد</span></a></p>
               </article>
 
 <!--Andrey Khrzhanovskiy -->    
               <article class="source-card" id="journalist-13">
                 <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/617.jpg" alt="Andrey Khrzhanovskiy" loading="lazy"></div>
                 <h4 class="card-title">
-                  <a href="https://www.facebook.com/khrzhanovskiy" target="_blank" rel="noopener">Andrey Khrzhanovskiy</a>
+                  <a href="https://www.facebook.com/khrzhanovskiy" target="_blank" rel="noopener" style="order: 1; background-image: none; color: #303c22; font-size: 1.2rem;">Andrey Khrzhanovskiy</a>
                 </h4>
                 <p class="card-desc">
                   <span class="lang-en">Andrey Khrzhanovskiy, known as Andrey X, is an independent journalist and activist who reports from the occupied West Bank. His work documents Palestinian communities, displacement, settler violence, and military activity, often through first hand video and on-the-ground reporting. Keep Moving. Never give up, Never surrender.</span>
@@ -404,16 +375,16 @@ This is the hero page for the MPGA website, featuring journalists and their work
                   <a href="https://www.facebook.com/khrzhanovskiy" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
                     <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="facebook" loading="lazy">
                   </a>
-                    <a href="https://x.com/the_andrey_x" class="social-link" aria-label="X / Twitter" target="_blank" rel="noopener">
-                       <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/x.jpeg"
-                       alt="X / Twitter"
-                      loading="lazy">
+                    <a href="https://x.com/the_andrey_x" class="social-link" aria-label="Andrey X on X / أندري إكس على إكس" target="_blank" rel="noopener noreferrer" style="order: 2;"><span aria-hidden="true">X</span></a>
+
+                    <a href="https://www.instagram.com/the.andrey.x/" class="social-link" aria-label="Andrey X on Instagram / أندري إكس على إنستغرام" target="_blank" rel="noopener noreferrer" style="order: 3; background-image: none; color: #303c22; font-size: 1.2rem;"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="instgram" loading="lazy">
                     </a>
 
-                    <a href="https://www.instagram.com/the.andrey.x" class="social-link" aria-label="Instagram" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="instgram" loading="lazy">
-                    </a>
-
-                  </div>
+                  
+                  <a href="https://www.tiktok.com/@the_andrey_x" class="social-link" aria-label="Andrey X on TikTok / أندري إكس على تيك توك" target="_blank" rel="noopener noreferrer" style="order: 4; background-image: none; color: #303c22; font-size: 1.2rem;"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/tiktok.png" alt="" loading="lazy"></a>
+                  <a href="https://linktr.ee/the.andrey.x" class="social-link" aria-label="Andrey X on Linktree / أندري إكس على لينكتري" target="_blank" rel="noopener noreferrer" style="order: 5; background-image: none; color: #303c22; font-size: 1.2rem;"><span aria-hidden="true">🌳</span></a>
+</div>
+                <p style="text-align: center;"><a class="site-button" href="https://www.patreon.com/AndreyX" aria-label="Support Andrey X on Patreon / ادعم أندري إكس عبر باتريون" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Support</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادعم</span></a></p>
 
               </article>
 
@@ -426,121 +397,105 @@ This is the hero page for the MPGA website, featuring journalists and their work
                   <span class="lang-ar hidden" lang="ar" dir="rtl">حازم سليمان مصور صحفي وصانع محتوى رقمي فلسطيني من غزة، يوثّق القصص الإنسانية وتجارب الناس في ظل الحرب. وبعد تعرضه لإصابة خطيرة، واصل مشاركة رحلته وآماله في التعافي. وتهدف حملته لجمع التبرعات إلى توفير الدعم للعلاج وإعادة التأهيل حتى يتمكن من المشي مجددًا.</span>
                 </p>
                 <div class="card-socials">
-                  <a href="https://www.facebook.com/profile.php?id=61567276115581" class="social-link" aria-label="Facebook — Hazem / فيسبوك — حازم" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a>
-                  <a href="https://www.facebook.com/alshfy.hazm.slyman" class="social-link" aria-label="Facebook — existing creator profile / فيسبوك — الملف الأصلي" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a>
-                  <a href="https://www.instagram.com/hazmaslman/" class="social-link" aria-label="Instagram — Hazem / إنستغرام — حازم" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
+                  <a href="https://www.facebook.com/alshfy.hazm.slyman" class="social-link" aria-label="Hazem Suleiman on Facebook / حازم سليمان على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a>
                   <a href="https://www.tiktok.com/@hazmaslman" class="social-link" aria-label="TikTok — Hazem / تيك توك — حازم" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/tiktok.png" alt="" loading="lazy"></a>
-                  <a href="https://www.instagram.com/mulhum_alkhayri/" class="social-link" aria-label="Instagram — mulhum_alkhayri (additional account) / إنستغرام — حساب إضافي" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
+                  <a href="https://www.instagram.com/mulhum_alkhayri/" class="social-link" aria-label="Hazem Suleiman on Instagram / حازم سليمان على إنستغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
                 </div>
-                <p><a class="site-button" href="https://www.gofundme.com/f/help-journalist-hazem-suleiman-walk-again" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Support Hazem's Recovery</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادعم تعافي حازم</span></a></p>
+                <p style="text-align: center;"><a class="site-button" aria-label="Support Hazem Suleiman’s GoFundMe campaign / ادعم حملة حازم سليمان عبر جوفندمي" href="https://www.gofundme.com/f/help-journalist-hazem-suleiman-walk-again" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Support</span><span class="lang-ar hidden" lang="ar" dir="rtl">ادعم</span></a></p>
               </article>
 
-            </div>
+                          <!-- Sam Stein: Journalist 16 -->
+              <article class="source-card" id="journalist-16">
+                <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/sam.jpg" alt="Sam Stein / سام ستاين" loading="lazy"></div>
+                <h4 class="card-title"><span class="lang-en" lang="en" dir="ltr">Sam Stein</span><span class="lang-ar hidden" lang="ar" dir="rtl">سام ستاين</span></h4>
+                <p class="card-desc">
+                  <span class="lang-en" lang="en" dir="ltr">Sam Stein is a Jewish-American writer, journalist, and human rights activist based in Jerusalem. His writing documents Palestinian experiences in the occupied West Bank, settler violence, military restrictions, and grassroots resistance to occupation. His work has appeared in The Progressive and the Jewish Telegraphic Agency, combining firsthand observations with reporting and commentary on human rights.</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">سام ستاين كاتب وصحفي وناشط أمريكي يهودي في مجال حقوق الإنسان، يقيم في القدس. يوثّق في كتاباته تجارب الفلسطينيين في الضفة الغربية المحتلة، وعنف المستوطنين، والقيود العسكرية، والمقاومة الشعبية للاحتلال. نُشرت أعماله في مجلة ذا بروغريسيف ووكالة التلغراف اليهودية، حيث يجمع بين مشاهداته المباشرة والتغطية الصحفية والتعليق على قضايا حقوق الإنسان.</span>
+                </p>
+                <div class="card-socials">
+                  <a href="https://www.instagram.com/sam_avraham/" class="social-link" aria-label="Sam Stein on Instagram / سام ستاين على إنستغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
+                </div>
+                <p>
+                  <a class="site-button" href="https://linktr.ee/ElbitOutOfGA" aria-label="Sam Stein on Linktree / سام ستاين على لينكتري" target="_blank" rel="noopener noreferrer">Linktree</a>
+                  <a class="site-button" href="https://www.patreon.com/cw/Sam_Avraham" aria-label="Sam Stein on Patreon / سام ستاين على باتريون" target="_blank" rel="noopener noreferrer">Patreon</a>
+                  <a class="site-button" href="https://samstein.substack.com/" aria-label="Sam Stein on Substack / سام ستاين على سبستاك" target="_blank" rel="noopener noreferrer">Substack</a>
+                </p>
+                <p><span class="lang-en" lang="en" dir="ltr">Author pages:</span><span class="lang-ar hidden" lang="ar" dir="rtl">صفحات الكاتب:</span>
+                  <a href="https://progressive.org/topics/sam-stein/" aria-label="Sam Stein at The Progressive / سام ستاين في ذا بروغريسيف" target="_blank" rel="noopener noreferrer">The Progressive</a> ·
+                  <a href="https://www.jta.org/author/sam-stein" aria-label="Sam Stein at the Jewish Telegraphic Agency / سام ستاين في وكالة التلغراف اليهودية" target="_blank" rel="noopener noreferrer">Jewish Telegraphic Agency</a>
+                </p>
+              </article>
+
+              <!-- The Gaza: public profile -->
+              <article class="source-card" id="journalist-17">
+                <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/gaza.jpg" alt="The Gaza / غزة" loading="lazy"></div>
+                <h4 class="card-title"><span class="lang-en" lang="en" dir="ltr">The Gaza</span><span class="lang-ar hidden" lang="ar" dir="rtl">غزة</span></h4>
+                <p class="card-desc">
+                  <span class="lang-en" lang="en" dir="ltr">Through the power of photography and visual storytelling, The Gaza captures moments that deserve to be seen and stories that deserve to be heard. Sharing photographs and news from Gaza and around the world, this independent photographer and emerging journalist helps audiences stay informed, connected, and aware of the human experiences behind the headlines. Every image offers another window into our shared world.</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">من خلال قوة التصوير الفوتوغرافي والسرد البصري، توثّق صفحة «غزة» لحظات تستحق أن تُرى وقصصًا تستحق أن تُروى. ومن خلال مشاركة الصور والأخبار من غزة ومختلف أنحاء العالم، تسعى هذه الموهبة المستقلة في التصوير والصحافة الناشئة إلى إبقاء الجمهور على اطلاع وتواصل مع التجارب الإنسانية وراء العناوين الإخبارية. كل صورة تفتح نافذة جديدة على عالمنا المشترك.</span>
+                </p>
+                <div class="card-socials">
+                  <a href="https://www.facebook.com/Thegaza1" class="social-link" aria-label="The Gaza on Facebook / غزة على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a>
+                </div>
+              </article>
+
+              <!-- Adele Shoko -->
+              <article class="source-card" id="journalist-18">
+                <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/adele.jpg" alt="Adele Shoko / أديل شوكو" loading="lazy"></div>
+                <h4 class="card-title"><span class="lang-en" lang="en" dir="ltr">Adele Shoko</span><span class="lang-ar hidden" lang="ar" dir="rtl">أديل شوكو</span></h4>
+                <p class="card-desc">
+                  <span class="lang-en" lang="en" dir="ltr">Adele Shoko shares news, commentary, and perspectives through digital platforms, contributing to conversations about current events and the stories that shape public understanding. Explore Adele's published content and follow the accounts linked below for updates.</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">تشارك أديل شوكو الأخبار والتعليقات ووجهات النظر عبر المنصات الرقمية، وتساهم في النقاشات حول الأحداث الجارية والقصص التي تشكّل فهم الجمهور لما يحدث في العالم. يمكنكم استكشاف محتواها المنشور ومتابعة حساباتها المرتبطة أدناه للاطلاع على آخر التحديثات.</span>
+                </p>
+                <div class="card-socials">
+                  <a href="https://www.facebook.com/profile.php?id=61578197818162" class="social-link" aria-label="Adele Shoko on Facebook / أديل شوكو على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a>
+                  <a href="https://www.instagram.com/adele.shoko/" class="social-link" aria-label="Adele Shoko on Instagram / أديل شوكو على إنستغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
+                  <a href="https://x.com/AdeleShoko" class="social-link" aria-label="Adele Shoko on X / أديل شوكو على إكس" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/x.jpg" alt="" loading="lazy"></a>
+                </div>
+                <p><a class="site-button" href="https://www.patreon.com/cw/AdeleShoko" aria-label="Adele Shoko on Patreon / أديل شوكو على باتريون" target="_blank" rel="noopener noreferrer">Patreon</a></p>
+              </article>
+
+              <!-- Infinite Jaz -->
+              <article class="source-card" id="journalist-19">
+                <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/jaz.jpg" alt="Infinite Jaz / إنفينيت جاز" loading="lazy"></div>
+                <h4 class="card-title"><a href="https://www.infinitejaz.com/" aria-label="Infinite Jaz website / موقع إنفينيت جاز" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Infinite Jaz</span><span class="lang-ar hidden" lang="ar" dir="rtl">إنفينيت جاز</span></a></h4>
+                <p class="card-desc">
+                  <span class="lang-en" lang="en" dir="ltr">Infinite Jaz is an independent writing platform associated with Jasper Diamond Nathaniel, sharing published writing, commentary, and perspectives on current events and the world around us. Through the publication and social media channels, readers can explore Jaz's work, engage with different perspectives, and follow new stories and updates.</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">إنفينيت جاز منصة كتابة مستقلة مرتبطة بجاسبر دايموند ناثانيال، تنشر المقالات والتعليقات ووجهات النظر حول الأحداث الجارية والعالم من حولنا. ومن خلال المنصة وحساباتها على وسائل التواصل الاجتماعي، يمكن للقراء استكشاف أعمال جاز والتفاعل مع وجهات نظر مختلفة ومتابعة القصص والمنشورات الجديدة.</span>
+                </p>
+                <div class="card-socials">
+                  <a href="https://x.com/infinite_jaz" class="social-link" aria-label="Infinite Jaz on X / إنفينيت جاز على إكس" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/x.jpg" alt="" loading="lazy"></a>
+                  <a href="https://www.instagram.com/infinite_jaz/" class="social-link" aria-label="Infinite Jaz on Instagram / إنفينيت جاز على إنستغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
+                </div>
+              </article>
+
+              <!-- Ali Al-Jafarawi -->
+              <article class="source-card" id="journalist-20">
+                <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/ali.jpg" alt="Ali Al-Jafarawi / علي الجعفراوي" loading="lazy"></div>
+                <h4 class="card-title"><span class="lang-en" lang="en" dir="ltr">Ali Al-Jafarawi</span><span class="lang-ar hidden" lang="ar" dir="rtl">علي الجعفراوي</span></h4>
+                <p class="card-desc">
+                  <span class="lang-en" lang="en" dir="ltr">Ali Al-Jafarawi is a young Palestinian photojournalist, content creator, and storyteller from Gaza. Through his photography and reporting, he documents everyday life, unfolding events, and the experiences of people whose stories deserve to be seen and heard.</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">علي الجعفراوي صحفي ومصور فلسطيني شاب وصانع محتوى من غزة. يوثّق من خلال صوره وتغطيته الصحفية تفاصيل الحياة اليومية والأحداث الجارية وتجارب الناس الذين تستحق قصصهم أن تُرى وتُسمع.</span>
+                </p>
+                <p class="card-desc">
+                  <span class="lang-en" lang="en" dir="ltr">Ali is also the younger brother of Saleh Al-Jafarawi, whose memory is honored in Their Voices Remain. While carrying forward a family legacy of documenting Palestine, Ali is building his own voice through his photographs, reporting, and dedication to sharing the realities of life in Gaza with the world.</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">علي هو أيضًا الشقيق الأصغر لصالح الجعفراوي، الذي نُخلّد ذكراه في قسم «أصواتهم باقية». وبينما يواصل إرثًا عائليًا في توثيق فلسطين، يصنع علي صوته الخاص من خلال التصوير والعمل الصحفي وحرصه على نقل واقع الحياة في غزة إلى العالم.</span>
+                </p>
+                <div class="card-socials">
+                  <a href="https://www.facebook.com/ali.a.aljafarawi" class="social-link" aria-label="Ali Al-Jafarawi on Facebook / علي الجعفراوي على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a>
+                  <a href="https://www.instagram.com/ali.a.aljafarawi2/" class="social-link" aria-label="Ali Al-Jafarawi on Instagram / علي الجعفراوي على إنستغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
+                </div>
+              </article>
+
+</div>
 
             
-<!-- ========== THEIR VOICES REMAIN ========== -->
-            <section class="memorial-section" aria-labelledby="their-voices-heading">
-            <div class="sources-header journalist-directory-header memorial-header">
-              <h3 id="their-voices-heading">
-                <span class="lang-en">Their Voices Remain</span>
-                <span class="lang-ar hidden">أصواتهم باقية</span>
-              </h3>
-              <p>
-                <span class="lang-en">Remembering journalists whose voices and work endure.</span>
-                <span class="lang-ar hidden">إحياء ذكرى الصحفيين الذين تبقى أصواتهم وأعمالهم.</span>
-              </p>
-            </div>
-
-            <button class="journalist-menu-toggle memorial-menu-toggle" type="button" aria-expanded="false" aria-controls="their-voices-tabs">
-              <span class="journalist-menu-icon" aria-hidden="true">☰</span>
-              <span class="journalist-menu-current">Voice 1</span>
-            </button>
-
-            <div class="sources-tabs journalist-tabs memorial-tabs" id="their-voices-tabs" role="tablist" aria-label="Their Voices Remain memorial journalists">
-              <button class="source-tab" data-target="their-voices-1" role="tab">Anas al-Sharif</button>
-              <button class="source-tab" data-target="their-voices-2" role="tab">Saleh al-Jafarawi</button>
-              <button class="source-tab" data-target="their-voices-3" role="tab">Ibrahim Mohareb</button>
-              <button class="source-tab" data-target="journalist-14" role="tab">Hussam Shabat</button>
-            </div>
-
-            <div class="sources-gallery journalist-gallery" id="their-voices-gallery">
-              <article class="source-card memorial-card" id="their-voices-1" data-exclude-socials="YouTube,Upscrolled">
-                <div class="card-image memorial-portrait"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas0.jpg" alt="Anas al-Sharif" loading="lazy"></div>
-                <h4 class="card-title"><a href="">Anas al-Sharif</a></h4>
-                <p class="memorial-dates">
-                  <span class="lang-en"><span class="birth-date">December 3, 1996</span><span aria-hidden="true"> — </span><span class="death-date">August 10, 2025</span></span>
-                  <span class="lang-ar hidden"><span class="birth-date">٣ ديسمبر ١٩٩٦</span><span aria-hidden="true"> — </span><span class="death-date">١٠ أغسطس ٢٠٢٥</span></span>
-                </p>
-                <p class="card-desc">
-                  <span class="lang-en">Anas al-Sharif was a Palestinian journalist and Al Jazeera correspondent from Jabalia who became one of the most recognizable voices reporting from northern Gaza. He continued documenting the war and its impact on civilians until he was killed in an Israeli strike on a journalists' tent outside al-Shifa Hospital on August 10, 2025.</span>
-                  <span class="lang-ar hidden">كان أنس الشريف صحفياً فلسطينياً ومراسل شبكة الجزيرة من جباليا، وأصبح أحد أبرز الأصوات التي تنقل الأخبار من شمال غزة. واصل توثيق الحرب وتأثيرها على المدنيين حتى استشهاده في غارة إسرائيلية استهدفت خيمة الصحفيين أمام مستشفى الشفاء في 10 أغسطس 2025.</span>
-                </p>
-                <div class="memorial-photo-gallery" tabindex="0" role="region" aria-label="Anas al-Sharif memorial photographs">
-                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas1.jpg" alt="Anas al-Sharif memorial photograph 1" loading="lazy"></figure>
-                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas2.jpg" alt="Anas al-Sharif memorial photograph 2" loading="lazy"></figure>
-                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas3.jpg" alt="Anas al-Sharif memorial photograph 3" loading="lazy"></figure>
-                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas4.jpg" alt="Anas al-Sharif memorial photograph 4" loading="lazy"></figure>
-                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas5.jpg" alt="Anas al-Sharif memorial photograph 5" loading="lazy"></figure>
-                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas6.jpg" alt="Anas al-Sharif memorial photograph 6" loading="lazy"></figure>
-                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas7.jpg" alt="Anas al-Sharif memorial photograph 7" loading="lazy"></figure>
-                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas8.jpg" alt="Anas al-Sharif memorial photograph 8" loading="lazy"></figure>
-                </div>
-                <div class="card-socials"><a href="https://www.facebook.com/ans.al.alshryf.2025" class="social-link" aria-label="Anas Al-Sharif on Facebook" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="facebook" loading="lazy"></a><a href="https://www.instagram.com/anasjamal44/" class="social-link" aria-label="Anas Al-Sharif on Instagram" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="instagram" loading="lazy"></a><a href="https://x.com/AnasAlSharif0" class="social-link" aria-label="Anas Al-Sharif on X" target="_blank" rel="noopener">X</a><a href="https://t.me/anas1020304050" class="social-link" aria-label="Anas Al-Sharif on Telegram" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/telegram.jpeg" alt="telegram" loading="lazy"></a></div>
-              </article>
-
-              <article class="source-card memorial-card" id="their-voices-2" data-exclude-socials="YouTube,Upscrolled">
-                <div class="card-image memorial-portrait"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/saleh.jpg" alt="Saleh al-Jafarawi" loading="lazy"></div>
-                <h4 class="card-title"><a href="#">Saleh al-Jafarawi</a></h4>
-                <p class="memorial-dates">
-                  <span class="lang-en"><span class="birth-date">November 22, 1998</span><span aria-hidden="true"> — </span><span class="death-date">October 12, 2025</span></span>
-                  <span class="lang-ar hidden"><span class="birth-date">٢٢ نوفمبر ١٩٩٨</span><span aria-hidden="true"> — </span><span class="death-date">١٢ أكتوبر ٢٠٢٥</span></span>
-                </p>
-                <p class="card-desc">
-                  <span class="lang-en">Saleh al-Jafarawi was a Palestinian journalist, photographer, and content creator from Gaza who used his camera and social platforms to document the lives of civilians throughout the war. His firsthand videos reached millions of people around the world, making him one of Gaza's most recognizable forever young media voices.<br>You say to them, they remain, and we are coming. We will never stop for Palestine.</span>
-                  <span class="lang-ar hidden">كان صالح الجعفراوي صحفياً ومصوراً وصانع محتوى فلسطيني من غزة، استخدم كاميرته ومنصاته الاجتماعية لتوثيق حياة المدنيين طوال الحرب. وصلت مقاطع الفيديو الميدانية الخاصة به إلى الملايين حول العالم، مما جعله أحد أبرز الأصوات الإعلامية الشابة في غزة.<br>تقول لهم: هم باقون، ونحن قادمون. لن نتوقف أبداً من أجل فلسطين.</span>
-                </p>
-                <div class="memorial-photo-gallery" tabindex="0" role="region" aria-label="Saleh al-Jafarawi memorial photographs">
-                  <figure class="memorial-photo">
-                    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas_saleh.jpg" alt="Anas al-Sharif and Saleh al-Jafarawi" loading="lazy"></figure>
-                </div>
-                <div class="card-socials">
-                  <a href="https://x.com/S_Aljafarawi" class="social-link" aria-label="Saleh al-Jafarawi on X" target="_blank" rel="noopener">X</a>
-                  <a href="https://www.youtube.com/@SalehAljafarawi" class="social-link" aria-label="Saleh al-Jafarawi on YouTube" target="_blank" rel="noopener">
-                  <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png" alt="youtube" loading="lazy"></a>
-                  <a href="https://t.me/salehaljafarawi1" class="social-link" aria-label="Saleh al-Jafarawi on Telegram" target="_blank" rel="noopener">
-                  <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/telegram.jpeg" alt="telegram" loading="lazy">
-                </a>
-                </div>
-              </article>
-
-<!-- Ibrahim Mohareb: Stage 1 copy; original creator record remains intact. -->
-              <article class="source-card memorial-card" id="their-voices-3">
-                <div class="card-image memorial-portrait"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/831.jpg" alt="Ibrahim Mohareb / إبراهيم محارب" loading="lazy"></div>
-                <h4 class="card-title"><a href="https://www.facebook.com/ibrahim.mohareb.409003" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Ibrahim Mohareb</span><span class="lang-ar hidden" lang="ar" dir="rtl">إبراهيم محارب</span></a></h4>
-                <p class="card-desc">
-                  <span class="lang-en" lang="en" dir="ltr">Ibrahim Mohareb (1998–2024) was a Palestinian freelance photojournalist who documented events and humanitarian conditions in Gaza. On August 18, 2024, he was killed by Israeli tank fire while reporting alongside other journalists near Khan Younis. He was 26 years old.</span>
-                  <span class="lang-ar hidden" lang="ar" dir="rtl">إبراهيم محارب (1998–2024) مصور صحفي فلسطيني مستقل، وثّق الأحداث والظروف الإنسانية في قطاع غزة. في 18 أغسطس 2024، استُشهد بنيران دبابة إسرائيلية أثناء تغطيته الأحداث برفقة صحفيين آخرين قرب خان يونس، عن عمر ناهز 26 عامًا.</span>
-                </p>
-                <div class="card-socials"><a href="https://www.facebook.com/ibrahim.mohareb.409003" class="social-link" aria-label="Ibrahim Mohareb on Facebook / إبراهيم محارب على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a></div>
-              </article>
-
-<!-- Hussam Shabat: Journalist memorial. -->
-              <article class="source-card memorial-card" id="journalist-14">
-                <div class="card-image memorial-portrait"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/821.jpg" alt="Hussam Shabat / حسام شبات" loading="lazy"></div>
-                <h4 class="card-title"><a href="https://www.facebook.com/hsam.shbat.465943" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Hussam Shabat</span><span class="lang-ar hidden" lang="ar" dir="rtl">حسام شبات</span></a></h4>
-                <p class="memorial-dates">
-                  <span class="lang-en" lang="en" dir="ltr">Born: <time class="birth-date" datetime="2001-10-10">October 10, 2001</time><br>Killed: <time class="death-date" datetime="2025-03-24">March 24, 2025</time><br>Age: 23</span>
-                  <span class="lang-ar hidden" lang="ar" dir="rtl">تاريخ الميلاد: <time class="birth-date" datetime="2001-10-10">١٠ أكتوبر ٢٠٠١</time><br>تاريخ الاستشهاد: <time class="death-date" datetime="2025-03-24">٢٤ مارس ٢٠٢٥</time><br>العمر: ٢٣ عامًا</span>
-                </p>
-                <p class="card-desc">
-                  <span class="lang-en" lang="en" dir="ltr">Hussam Shabat (October 10, 2001 – March 24, 2025) was a Palestinian journalist and correspondent for Al Jazeera Mubasher who reported from northern Gaza. He documented the experiences of Palestinian civilians and the humanitarian conditions facing their communities. He was killed in an Israeli airstrike on his vehicle near Beit Lahia on March 24, 2025, at the age of 23.</span>
-                  <span class="lang-ar hidden" lang="ar" dir="rtl">حسام شبات (١٠ أكتوبر ٢٠٠١ – ٢٤ مارس ٢٠٢٥) صحفي فلسطيني ومراسل لقناة الجزيرة مباشر، عمل على تغطية الأحداث من شمال غزة. وثّق تجارب المدنيين الفلسطينيين والظروف الإنسانية التي واجهتها مجتمعاتهم. استُشهد في غارة جوية إسرائيلية استهدفت سيارته قرب بيت لاهيا في ٢٤ مارس ٢٠٢٥، عن عمر ناهز ٢٣ عامًا.</span>
-                </p>
-                <div class="card-socials"><a href="https://www.facebook.com/hsam.shbat.465943" class="social-link" aria-label="Hussam Shabat on Facebook / حسام شبات على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a></div>
-              </article>
-            </div>
-            </section>
-
+            <nav class="journalist-pagination" id="journalist-pagination" aria-label="Journalist pages / صفحات الصحفيين" hidden>
+              <button type="button" id="journalist-previous" class="site-button" aria-controls="journalists-gallery"><span class="lang-en">Previous</span><span class="lang-ar hidden" lang="ar" dir="rtl">السابق</span></button>
+              <span id="journalist-page" role="status" aria-live="polite" aria-atomic="true"></span>
+              <button type="button" id="journalist-next" class="site-button" aria-controls="journalists-gallery"><span class="lang-en">Next</span><span class="lang-ar hidden" lang="ar" dir="rtl">التالي</span></button>
+            </nav>
+        </section>
 
 <!-- ========== RESEARCH SOURCES FEATURE ========== -->
 <section class="hero-section-3" id="sources-section">
@@ -555,30 +510,10 @@ This is the hero page for the MPGA website, featuring journalists and their work
     </p>
   </div>
 
-  <button class="journalist-menu-toggle research-menu-toggle" type="button" aria-expanded="false" aria-controls="research-source-tabs">
-    <span class="journalist-menu-icon" aria-hidden="true">☰</span>
-    <span class="journalist-menu-current">Middle East Eye</span>
-  </button>
+  <div class="journalist-filters">
+  <select id="research-select" aria-label="Choose a research source / اختر مصدرًا للبحث" aria-controls="sources-gallery"></select>
+</div>
 
-  <!-- Tabs -->
-  <div class="sources-tabs research-source-tabs" id="research-source-tabs" role="tablist" aria-label="Research sources">
-    <button class="source-tab" data-target="source-1" role="tab">Middle East Eye</button>
-    <button class="source-tab" data-target="source-2" role="tab">Al Jazeera</button>
-    <button class="source-tab" data-target="source-3" role="tab">Yeni Şafak</button>
-    <button class="source-tab" data-target="source-4" role="tab">Kuwait Times</button>
-    <button class="source-tab" data-target="source-5" role="tab">AJ+</button>
-    <button class="source-tab" data-target="source-6" role="tab">Middle East Monitor</button>
-    <button class="source-tab" data-target="source-7" role="tab">Sahat</button>
-    <button class="source-tab" data-target="source-8" role="tab">TMJ News</button>
-    <button class="source-tab" data-target="source-9" role="tab">Anadolu Agency</button>
-    <button class="source-tab" data-target="source-10" role="tab">The Young Turks</button>
-    <button class="source-tab" data-target="source-11" role="tab">Roya News</button>
-    <button class="source-tab" data-target="source-12" role="tab">Reuters</button>
-    <button class="source-tab" data-target="source-13" role="tab">BBC News</button>
-    <button class="source-tab" data-target="source-14" role="tab">The Guardian</button>
-    <button class="source-tab" data-target="source-15" role="tab">PIB News</button>
-    <button class="source-tab" data-target="source-16" role="tab">Live Palestine News</button>
-  </div>
 
   <!-- Single-card source display -->
   <div class="sources-gallery research-sources-gallery" id="sources-gallery">
@@ -901,7 +836,44 @@ This is the hero page for the MPGA website, featuring journalists and their work
       </div>
     </article>
 
-  </div>
+      <!-- Card 17: The Times of Palestine -->
+    <article class="source-card" id="source-17">
+      <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/top.jpg" alt="The Times of Palestine logo / شعار تايمز أوف فلسطين" loading="lazy"></div>
+      <h4 class="card-title"><span class="lang-en" lang="en" dir="ltr">The Times of Palestine</span><span class="lang-ar hidden" lang="ar" dir="rtl">تايمز أوف فلسطين</span></h4>
+      <p class="card-desc">
+        <span class="lang-en" lang="en" dir="ltr">The Times of Palestine is a Palestine-focused digital news outlet sharing reporting, updates, and stories about events affecting Palestinians. Follow its coverage through its social media channels.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">تايمز أوف فلسطين منصة إخبارية رقمية تركز على فلسطين، وتنشر الأخبار والتحديثات والقصص المتعلقة بالأحداث التي تؤثر في الشعب الفلسطيني. تابعوا تغطيتها عبر حساباتها على وسائل التواصل الاجتماعي.</span>
+      </p>
+      <div class="card-socials">
+        <a href="https://www.facebook.com/PalTimesNews" class="social-link" aria-label="The Times of Palestine on Facebook / تايمز أوف فلسطين على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/paltimesnews/" class="social-link" aria-label="The Times of Palestine on Instagram / تايمز أوف فلسطين على إنستغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
+        <a href="https://x.com/paltimesnews" class="social-link" aria-label="The Times of Palestine on X / تايمز أوف فلسطين على إكس" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/x.jpg" alt="" loading="lazy"></a>
+        <a href="https://www.tiktok.com/@pal.timesnews" class="social-link" aria-label="The Times of Palestine on TikTok / تايمز أوف فلسطين على تيك توك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/tiktok.png" alt="" loading="lazy"></a>
+        <a href="https://www.youtube.com/@paltimesnews" class="social-link" aria-label="The Times of Palestine on YouTube / تايمز أوف فلسطين على يوتيوب" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png" alt="" loading="lazy"></a>
+      </div>
+    </article>
+
+    <!-- Card 18: Al Mayadeen -->
+    <article class="source-card" id="source-18">
+      <div class="card-image"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/am.jpg" alt="Al Mayadeen logo / شعار الميادين" loading="lazy"></div>
+      <h4 class="card-title"><a href="https://www.almayadeen.net/" aria-label="Al Mayadeen official website / الموقع الرسمي للميادين" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Al Mayadeen</span><span class="lang-ar hidden" lang="ar" dir="rtl">الميادين</span></a></h4>
+      <p class="card-desc">
+        <span class="lang-en" lang="en" dir="ltr">Al Mayadeen is an Arabic-language news network based in Beirut, Lebanon. Launched in 2012, it provides news reporting, interviews, analysis, and coverage of regional and international affairs, including developments in Palestine.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">الميادين شبكة إعلامية إخبارية ناطقة بالعربية، تتخذ من بيروت في لبنان مقرًا لها. انطلقت عام 2012، وتقدم الأخبار والمقابلات والتحليلات والتغطيات المتعلقة بالشؤون الإقليمية والدولية، بما في ذلك التطورات في فلسطين.</span>
+      </p>
+      <div class="card-socials">
+        <a href="https://www.instagram.com/almayadeen.tv/" class="social-link" aria-label="Al Mayadeen on Instagram / الميادين على إنستغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="" loading="lazy"></a>
+        <a href="https://t.me/mayadeenlivechannel" class="social-link" aria-label="Al Mayadeen on Telegram / الميادين على تيليغرام" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/telegram.jpeg" alt="" loading="lazy"></a>
+      </div>
+    </article>
+
+</div>
+<nav class="journalist-pagination" id="research-pagination" aria-label="Directory pages / صفحات الدليل" hidden>
+  <button type="button" id="research-previous" class="site-button" aria-controls="sources-gallery"><span class="lang-en">Previous</span><span class="lang-ar hidden" lang="ar" dir="rtl">السابق</span></button>
+  <span id="research-page" role="status" aria-live="polite" aria-atomic="true"></span>
+  <button type="button" id="research-next" class="site-button" aria-controls="sources-gallery"><span class="lang-en">Next</span><span class="lang-ar hidden" lang="ar" dir="rtl">التالي</span></button>
+</nav>
+
 
   <div class="disclaimer">
     <p>
@@ -910,6 +882,108 @@ This is the hero page for the MPGA website, featuring journalists and their work
     </p>
   </div>
 </section>
+
+<!-- ========== THEIR VOICES REMAIN ========== -->
+            <section class="memorial-section" aria-labelledby="their-voices-heading">
+            <div class="sources-header journalist-directory-header memorial-header">
+              <h3 id="their-voices-heading">
+                <span class="lang-en">Their Voices Remain</span>
+                <span class="lang-ar hidden">أصواتهم باقية</span>
+              </h3>
+              <p>
+                <span class="lang-en">Remembering journalists whose voices and work endure.</span>
+                <span class="lang-ar hidden">إحياء ذكرى الصحفيين الذين تبقى أصواتهم وأعمالهم.</span>
+              </p>
+            </div>
+
+            <div class="journalist-filters">
+  <select id="memorial-select" aria-label="Choose a memorial profile / اختر ملفًا تذكاريًا" aria-controls="their-voices-gallery"></select>
+</div>
+
+
+            <div class="sources-gallery journalist-gallery" id="their-voices-gallery">
+              <article class="source-card memorial-card" id="their-voices-1" data-exclude-socials="YouTube,Upscrolled">
+                <div class="card-image memorial-portrait"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas0.jpg" alt="Anas al-Sharif" loading="lazy"></div>
+                <h4 class="card-title"><a href="">Anas al-Sharif</a></h4>
+                <p class="memorial-dates">
+                  <span class="lang-en"><span class="birth-date">December 3, 1996</span><span aria-hidden="true"> — </span><span class="death-date">August 10, 2025</span></span>
+                  <span class="lang-ar hidden"><span class="birth-date">٣ ديسمبر ١٩٩٦</span><span aria-hidden="true"> — </span><span class="death-date">١٠ أغسطس ٢٠٢٥</span></span>
+                </p>
+                <p class="card-desc">
+                  <span class="lang-en">Anas al-Sharif was a Palestinian journalist and Al Jazeera correspondent from Jabalia who became one of the most recognizable voices reporting from northern Gaza. He continued documenting the war and its impact on civilians until he was killed in an Israeli strike on a journalists' tent outside al-Shifa Hospital on August 10, 2025.</span>
+                  <span class="lang-ar hidden">كان أنس الشريف صحفياً فلسطينياً ومراسل شبكة الجزيرة من جباليا، وأصبح أحد أبرز الأصوات التي تنقل الأخبار من شمال غزة. واصل توثيق الحرب وتأثيرها على المدنيين حتى استشهاده في غارة إسرائيلية استهدفت خيمة الصحفيين أمام مستشفى الشفاء في 10 أغسطس 2025.</span>
+                </p>
+                <div class="memorial-photo-gallery" tabindex="0" role="region" aria-label="Anas al-Sharif memorial photographs">
+                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas1.jpg" alt="Anas al-Sharif memorial photograph 1" loading="lazy"></figure>
+                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas2.jpg" alt="Anas al-Sharif memorial photograph 2" loading="lazy"></figure>
+                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas3.jpg" alt="Anas al-Sharif memorial photograph 3" loading="lazy"></figure>
+                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas4.jpg" alt="Anas al-Sharif memorial photograph 4" loading="lazy"></figure>
+                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas5.jpg" alt="Anas al-Sharif memorial photograph 5" loading="lazy"></figure>
+                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas6.jpg" alt="Anas al-Sharif memorial photograph 6" loading="lazy"></figure>
+                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas7.jpg" alt="Anas al-Sharif memorial photograph 7" loading="lazy"></figure>
+                  <figure class="memorial-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas8.jpg" alt="Anas al-Sharif memorial photograph 8" loading="lazy"></figure>
+                </div>
+                <div class="card-socials"><a href="https://www.facebook.com/ans.al.alshryf.2025" class="social-link" aria-label="Anas Al-Sharif on Facebook" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="facebook" loading="lazy"></a><a href="https://www.instagram.com/anasjamal44/" class="social-link" aria-label="Anas Al-Sharif on Instagram" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg" alt="instagram" loading="lazy"></a><a href="https://x.com/AnasAlSharif0" class="social-link" aria-label="Anas Al-Sharif on X" target="_blank" rel="noopener">X</a><a href="https://t.me/anas1020304050" class="social-link" aria-label="Anas Al-Sharif on Telegram" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/telegram.jpeg" alt="telegram" loading="lazy"></a></div>
+              </article>
+
+              <article class="source-card memorial-card" id="their-voices-2" data-exclude-socials="YouTube,Upscrolled">
+                <div class="card-image memorial-portrait"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/saleh.jpg" alt="Saleh al-Jafarawi" loading="lazy"></div>
+                <h4 class="card-title"><a href="#">Saleh al-Jafarawi</a></h4>
+                <p class="memorial-dates">
+                  <span class="lang-en"><span class="birth-date">November 22, 1998</span><span aria-hidden="true"> — </span><span class="death-date">October 12, 2025</span></span>
+                  <span class="lang-ar hidden"><span class="birth-date">٢٢ نوفمبر ١٩٩٨</span><span aria-hidden="true"> — </span><span class="death-date">١٢ أكتوبر ٢٠٢٥</span></span>
+                </p>
+                <p class="card-desc">
+                  <span class="lang-en">Saleh al-Jafarawi was a Palestinian journalist, photographer, and content creator from Gaza who used his camera and social platforms to document the lives of civilians throughout the war. His firsthand videos reached millions of people around the world, making him one of Gaza's most recognizable forever young media voices.<br>You say to them, they remain, and we are coming. We will never stop for Palestine.</span>
+                  <span class="lang-ar hidden">كان صالح الجعفراوي صحفياً ومصوراً وصانع محتوى فلسطيني من غزة، استخدم كاميرته ومنصاته الاجتماعية لتوثيق حياة المدنيين طوال الحرب. وصلت مقاطع الفيديو الميدانية الخاصة به إلى الملايين حول العالم، مما جعله أحد أبرز الأصوات الإعلامية الشابة في غزة.<br>تقول لهم: هم باقون، ونحن قادمون. لن نتوقف أبداً من أجل فلسطين.</span>
+                </p>
+                <div class="memorial-photo-gallery" tabindex="0" role="region" aria-label="Saleh al-Jafarawi memorial photographs">
+                  <figure class="memorial-photo">
+                    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/hero/anas_saleh.jpg" alt="Anas al-Sharif and Saleh al-Jafarawi" loading="lazy"></figure>
+                </div>
+                <div class="card-socials">
+                  <a href="https://x.com/S_Aljafarawi" class="social-link" aria-label="Saleh al-Jafarawi on X" target="_blank" rel="noopener">X</a>
+                  <a href="https://www.youtube.com/@SalehAljafarawi" class="social-link" aria-label="Saleh al-Jafarawi on YouTube" target="_blank" rel="noopener">
+                  <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png" alt="youtube" loading="lazy"></a>
+                  <a href="https://t.me/salehaljafarawi1" class="social-link" aria-label="Saleh al-Jafarawi on Telegram" target="_blank" rel="noopener">
+                  <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/telegram.jpeg" alt="telegram" loading="lazy">
+                </a>
+                </div>
+              </article>
+
+<!-- Ibrahim Mohareb: Stage 1 copy; original creator record remains intact. -->
+              <article class="source-card memorial-card" id="their-voices-3">
+                <div class="card-image memorial-portrait"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/831.jpg" alt="Ibrahim Mohareb / إبراهيم محارب" loading="lazy"></div>
+                <h4 class="card-title"><a href="https://www.facebook.com/ibrahim.mohareb.409003" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Ibrahim Mohareb</span><span class="lang-ar hidden" lang="ar" dir="rtl">إبراهيم محارب</span></a></h4>
+                <p class="card-desc">
+                  <span class="lang-en" lang="en" dir="ltr">Ibrahim Mohareb (1998–2024) was a Palestinian freelance photojournalist who documented events and humanitarian conditions in Gaza. On August 18, 2024, he was killed by Israeli tank fire while reporting alongside other journalists near Khan Younis. He was 26 years old.</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">إبراهيم محارب (1998–2024) مصور صحفي فلسطيني مستقل، وثّق الأحداث والظروف الإنسانية في قطاع غزة. في 18 أغسطس 2024، استُشهد بنيران دبابة إسرائيلية أثناء تغطيته الأحداث برفقة صحفيين آخرين قرب خان يونس، عن عمر ناهز 26 عامًا.</span>
+                </p>
+                <div class="card-socials"><a href="https://www.facebook.com/ibrahim.mohareb.409003" class="social-link" aria-label="Ibrahim Mohareb on Facebook / إبراهيم محارب على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a></div>
+              </article>
+
+<!-- Hussam Shabat: Journalist memorial. -->
+              <article class="source-card memorial-card" id="journalist-14">
+                <div class="card-image memorial-portrait"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/821.jpg" alt="Hussam Shabat / حسام شبات" loading="lazy"></div>
+                <h4 class="card-title"><a href="https://www.facebook.com/hsam.shbat.465943" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Hussam Shabat</span><span class="lang-ar hidden" lang="ar" dir="rtl">حسام شبات</span></a></h4>
+                <p class="memorial-dates">
+                  <span class="lang-en" lang="en" dir="ltr">Born: <time class="birth-date" datetime="2001-10-10">October 10, 2001</time><br>Killed: <time class="death-date" datetime="2025-03-24">March 24, 2025</time><br>Age: 23</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">تاريخ الميلاد: <time class="birth-date" datetime="2001-10-10">١٠ أكتوبر ٢٠٠١</time><br>تاريخ الاستشهاد: <time class="death-date" datetime="2025-03-24">٢٤ مارس ٢٠٢٥</time><br>العمر: ٢٣ عامًا</span>
+                </p>
+                <p class="card-desc">
+                  <span class="lang-en" lang="en" dir="ltr">Hussam Shabat (October 10, 2001 – March 24, 2025) was a Palestinian journalist and correspondent for Al Jazeera Mubasher who reported from northern Gaza. He documented the experiences of Palestinian civilians and the humanitarian conditions facing their communities. He was killed in an Israeli airstrike on his vehicle near Beit Lahia on March 24, 2025, at the age of 23.</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">حسام شبات (١٠ أكتوبر ٢٠٠١ – ٢٤ مارس ٢٠٢٥) صحفي فلسطيني ومراسل لقناة الجزيرة مباشر، عمل على تغطية الأحداث من شمال غزة. وثّق تجارب المدنيين الفلسطينيين والظروف الإنسانية التي واجهتها مجتمعاتهم. استُشهد في غارة جوية إسرائيلية استهدفت سيارته قرب بيت لاهيا في ٢٤ مارس ٢٠٢٥، عن عمر ناهز ٢٣ عامًا.</span>
+                </p>
+                <div class="card-socials"><a href="https://www.facebook.com/hsam.shbat.465943" class="social-link" aria-label="Hussam Shabat on Facebook / حسام شبات على فيسبوك" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg" alt="" loading="lazy"></a></div>
+              </article>
+            </div>
+<nav class="journalist-pagination" id="memorial-pagination" aria-label="Directory pages / صفحات الدليل" hidden>
+  <button type="button" id="memorial-previous" class="site-button" aria-controls="their-voices-gallery"><span class="lang-en">Previous</span><span class="lang-ar hidden" lang="ar" dir="rtl">السابق</span></button>
+  <span id="memorial-page" role="status" aria-live="polite" aria-atomic="true"></span>
+  <button type="button" id="memorial-next" class="site-button" aria-controls="their-voices-gallery"><span class="lang-en">Next</span><span class="lang-ar hidden" lang="ar" dir="rtl">التالي</span></button>
+</nav>
+
+            </section>
 
 </main>
 
@@ -960,5 +1034,6 @@ This is the hero page for the MPGA website, featuring journalists and their work
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/hero.js" defer></script>
 </body>
 </html>
