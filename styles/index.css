@@ -1,10 +1,12 @@
 /* 
    Author: Leslie Brockman
-   Date: 10-21-2026
+   Date: 10-19-2026
+   Date modified: 11/01/2026
 */
 
-/*=====================================
-   01. PAGE SURFACE & MAIN LAYOUT
+/* ===================================== */
+/* ===================================== */
+/* 01. PAGE SURFACE & MAIN LAYOUT
    ===================================== */
 
 /* The gradient fills the body's full background area as homepage content grows. */
@@ -294,6 +296,8 @@ body.home-page {
 }
 
 .explore-card {
+    display: flex;
+    flex-direction: column;
     min-width: 0;
     margin: 0;
     padding: 0;
@@ -305,7 +309,7 @@ body.home-page {
 
 .explore-image-frame {
     width: 100%;
-    min-height: auto;
+    aspect-ratio: 4 / 3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -318,8 +322,8 @@ body.home-page {
 .explore-image-frame img {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 420px;
+    height: 100%;
+    max-height: none;
     object-fit: contain;
     object-position: center;
     border: 0;
@@ -333,7 +337,7 @@ body.home-page {
 }
 
 .explore-card-title {
-    margin: .8rem 0 0;
+    margin: .8rem 0 1.15rem;
     padding: 0;
     color: var(--dark);
     font-size: 1.35rem;
@@ -360,20 +364,33 @@ html[lang="ar"] .explore-card-title {
 
 .explore-button {
     min-width: min(180px, 100%);
-    margin-top: 1.15rem;
+    align-self: center;
+    margin-top: auto;
 }
 
 @media (min-width: 651px) {
     .explore-section { width: min(94%, 1500px); margin: 4rem auto; }
     .explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 1.5rem; }
-    .explore-image-frame { min-height: 300px; }
-    .explore-image-frame img { height: 310px; max-height: none; }
     .explore-card-title { font-size: clamp(1.25rem, 2vw, 1.7rem); }
 }
 
 @media (min-width: 1001px) {
     .explore-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 2rem; }
-    .explore-image-frame img { height: 330px; }
+}
+
+
+/* Mission Control occupies its own row; remaining cards share the main grid. */
+.explore-card-mission {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    min-width: 0;
+}
+@media (min-width: 651px) {
+    .explore-card-mission { width: calc((100% - 1.5rem) / 2); }
+}
+@media (min-width: 1001px) {
+    .explore-card-mission { width: calc((100% - 4rem) / 3); }
 }
 
 .home-page .drinking-games-image:focus-visible {
@@ -436,7 +453,7 @@ html[lang="ar"] .explore-card-title {
 
 .home-page .explore-card .explore-card-description {
     max-width: 100%;
-    margin: .75rem 0 0;
+    margin: 0 0 1.15rem;
     font-size: 1rem;
     line-height: 1.5;
     overflow-wrap: anywhere;
