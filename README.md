@@ -1,81 +1,128 @@
-10-17-2026
-This website is a organic living project that is updated every Friday.
-MPGA is a single solitary voice.
-our objectives are now clear within the website itself
-as we have grown over the past year, as we continue to grow, we remain steadfast.
-technical notes and workflows are all presevered for transpareceny
 
+# American Nobody | MPGA 🇵🇸
 
+**An independent, bilingual web platform dedicated to Palestinian voices, documentation, education, and humanitarian awareness.**
 
+[Visit the Live Website](https://american-nobody999.github.io/One-match/)
 
-*****************
+## About the Project
 
-This websites purpose to to give a voice to the Great people of the State of Palestine.
-This webiste is maintained, designed and developed by one human Americna voice.
-All assets, images and videos are modified only to fit, and all orginial content is unaltered.
-All assets are collected, managed, and stored safely on multiple back up usbs and will be transfered with ownership to the rightful people.
-It is the intention of the website to be a source of hope for the future of Palestine, all images of war crimes and the preperators have been saved on a usb.
-They will not be published on this website at this time out of repsect for the People of Palestine unless they wish it to be so, that is their story to tell.
+American Nobody is an independently developed and maintained website bringing together Palestinian stories, community information, humanitarian resources, journalism, creative expression, and educational experiences.
 
-//Developer notes//
-1. currently bringing code up to professional standards (im making it work)
-2.. exploring different hosting options for better maintaince, developing, and more options
-3. improving user friendliness, clarity, translation, speed, performance, relability always 
-4. collecting content that remains within the boundries and purpose, and audience of the website
-5. futher research and verification, permissions to promote organizations and pro-palestian charities
-   --security an issue, expolitation an issue, validity an issue (further reasearch)
+The platform is designed to make information accessible, encourage visitors to explore original sources, and amplify the work of Palestinian communities and creators.
 
-   June 4 2026 Update:
-   1.We have to move fast now, everyone get in the water.
-   2.Because github just decided to cut the knees of developers world wide with their unfair practices of changing how we pay,
-   knowing full well, the only one who can afford those token counts are big coorporations, we moving this week.
-   3. I have to fit class work, professional portfolio, and the pursuit of the State of Palestine into one.
-   4. please be advised over the next several days there will down maintaince on the site as reorganize.
-   5. MPGA remains a single solitary voice for the advocacy of the future state of Palestine and its great people.
-   6. They stained my American Flag with Palestian blood. 
-   7. Buckle up buttercups
-   8. Yes. I know. github messing with the format. work with what we have
+The website is available in **English and Arabic** and continues to evolve through regular content updates and ongoing development.
 
+## Mission
 
-   April 19th Updated Notes
-   1. adding new features for Palestine support biz (permission is still needed for some)
-   2. adding new infulencers by request and verification/cross references
-   3. Disclaimer: If you are a scam, or lie to me, and you get passed me, I will find out,
-      I will find you and I will hand deliver you to anyone I have to to seek justice for victimizing the Palestians through fraud.
-      This website is for the Palestians, they going through enough.
-      Have some respect and don't waist my time.
-   5. MPGA is still a soliatry movement focused on peacefully resoulutions and awareness, working together,
-      and giving the State of Palestine a path to their Soverignity, justice,
-      and basic human rights through consistant action and perservence.
-   6. We will never give up. We will never surrender.
-   7. I have the US constitution in my back pocket, and I have the decleration of Indpendence in my purse.
-   
-      
+The project has four central objectives:
 
+- **Awareness:** Highlight Palestinian communities, experiences, and perspectives.
+- **Documentation:** Organize reporting, historical context, source references, and ongoing updates.
+- **Education:** Develop accessible, interactive learning experiences and research resources.
+- **Connection:** Help visitors discover Palestinian journalists, creators, humanitarian initiatives, and their original platforms.
 
-   Feb 05 Update notes
+American Nobody is an independent personal initiative. It does not claim to represent Palestinian organizations, communities, or individuals.
 
-   1. move all this week to new viewer descretion adised page
-   2. countuine research to upade Board of Peace
-   3. focus on adding more influencers and sources
-   4. focus on ux and design/css
-   5. add notes to love letter asking for account managers to keep the social media up to date
-   6. some accounts are being censored and targeted
-   7. account managers need to set goals as high as they can
-   8. no request for the memorial accounts to be taken down
-   9. add disclaimer about how some of the accounts are memorial accounts, be respectful
-   10. start recording the find the errors but do not add to the commit notes--
-  
-    Jan 30 Update notes
+## Website Features
 
-   1. monitoring social media platforms and adding new links/pages and influencers
-   2. established line of communication with the Palestians to add or remove content found on pubilc forums and influencers
-   3. established a postive civic line of information and communication between Board of Peace and State of Palestine People
-   4. focus on establishing a organized trello workload for this
-   5. each day will be a specific page update with more content, the Gaza Peace Board every two days at least as announcements are made
-   6. emails should be read and answered daily--this is going to be interesting--established boundries
-   7. art page includes vid and collected Oalestine art organized into catacgories with artist intials for client privacy
-   8. use intials with poetry, essays, prayer, and with the journalists,
-   9. add journalist links to social media platforms to their cards--visual of where they are being targeted and censored
-   
+### Community Explorer
 
+An interactive West Bank directory organized by region and community, featuring historical background, community-specific information, referenced updates, and approximate geographic maps.
+
+### Journalism and Humanitarian Resources
+
+Directories highlighting journalists, creators, humanitarian initiatives, and independent sources, with links to their original work and platforms.
+
+### Schoolhouse and Interactive Learning
+
+Educational pages and browser-based activities exploring subjects such as mathematics, science, history, and introductory learning.
+
+### Archives and Documentation
+
+Organized collections that preserve published material, research references, and previous updates for continued access.
+
+### Creative and Interactive Experiences
+
+Original interactive features, games, galleries, and multimedia presentations designed to engage visitors through different forms of storytelling.
+
+## Technology Stack
+
+| Technology | Purpose |
+| --- | --- |
+| HTML5 | Semantic page structure |
+| CSS3 | Responsive layouts, visual design, and animations |
+| JavaScript | Interactive components, content rendering, and navigation |
+| JSON-style data structures | Organized, reusable content records |
+| GitHub Pages | Static website hosting |
+| GitHub repositories | Source code and media organization |
+
+The project uses a static-site architecture without requiring a traditional server-side application or database for its core functionality.
+
+## Project Architecture
+
+The website separates its primary concerns into reusable resources:
+
+- `index.html` — Main website landing page.
+- `styles/` — Global and page-specific stylesheets.
+- `js/` — Shared functionality and page-specific JavaScript.
+- `archives/` — Organized historical and published collections.
+- Individual HTML pages — Dedicated sections, interactive features, and resources.
+
+Large image and video collections are maintained separately from the primary website repository to keep content organization manageable.
+
+## Accessibility and Internationalization
+
+The website is developed with ongoing attention to:
+
+- English and Arabic language support.
+- Right-to-left text presentation where appropriate.
+- Responsive layouts for mobile, tablet, and desktop.
+- Semantic HTML and descriptive navigation.
+- Keyboard interaction and visible focus states.
+- Readability, contrast, and accessible media descriptions.
+
+Accessibility and internationalization remain active areas of testing and improvement.
+
+## Development and Maintenance
+
+American Nobody is a living project maintained through an iterative development workflow.
+
+Development practices include:
+
+- Modular HTML, CSS, and JavaScript organization.
+- Reusable page components and shared navigation.
+- Manual cross-device and browser testing.
+- Content and source-link verification.
+- Regular content publication and maintenance.
+- Incremental refactoring and documented changes.
+
+The platform generally follows a weekly publication cycle, with additional updates as needed.
+
+## Editorial Independence and Attribution
+
+American Nobody is independently maintained and is not an official representative of the individuals, publications, or organizations referenced on the website.
+
+External journalism, humanitarian campaigns, and creator profiles are linked to their original sources where available.
+
+Inclusion does not imply endorsement, affiliation, sponsorship, or authorization to speak on another party's behalf.
+
+Content corrections, attribution concerns, and requests regarding published material can be submitted through the website's contact page.
+
+## Future Development
+
+Long-term goals include expanding bilingual educational resources, improving accessibility, developing additional interactive experiences, strengthening source documentation, and preparing the platform for possible future collaboration and stewardship by Palestinians.
+
+These are development goals, not claims of existing partnerships or completed transfers.
+
+## Developer
+
+**Leslie Brockman**  
+Independent Web Developer | Leslie's Designs
+
+American Nobody is both an ongoing public-interest initiative and a practical demonstration of independent web development, interface design, JavaScript programming, content architecture, internationalization, and long-term website maintenance.
+
+---
+
+**American Nobody | MPGA**  
+*One independent voice. Many stories worth hearing.* 🇵🇸
