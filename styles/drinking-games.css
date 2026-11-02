@@ -1,873 +1,330 @@
-/* Author: Leslie Brockman
-   Date modified: 10/30/2026 */
-.drinking-games-page #your-famous .hero-gallery-block,
-.drinking-games-page #your-famous .hero-gallery-block :is(.scrollable-gallery, .gallery-card, figure, img) {
-border-color: transparent;
-    box-shadow: none;
-}
-
-:where(.drinking-games-page) main {
-display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    min-height: calc(100vh - 300px);
-}
-
-:where(.drinking-games-page) main img {
-max-width: 300px;
-    width: 100%;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-}
-
-:where(.drinking-games-page) main p {
-max-width: 600px;
-    font-size: 1.3rem;
-    line-height: 1.6;
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block {
-width: min(100%, 980px);
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .scrollable-gallery {
-width: 100%;
-}
-
-:where(.drinking-games-page) .andrey-modal-actions {
-display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .85rem;
-    margin-top: 2rem;
-}
-
-:where(.drinking-games-page) .modal-back-button,
-:where(.drinking-games-page) .andrey-profile-link {
-display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: min(100%, 260px);
-    min-height: 48px;
-    padding: .75rem 1.2rem;
-    border: 2px solid var(--dark);
-    border-radius: 7px;
-    color: var(--dark);
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-:where(.drinking-games-page) .modal-back-button {
-background: var(--primary-green);
-}
-
-:where(.drinking-games-page) .andrey-profile-link {
-background: var(--gold);
-}
-
-:where(.drinking-games-page) .modal-back-button:hover,
-:where(.drinking-games-page) .andrey-profile-link:hover {
-background: var(--accent-red);
-}
-
-:where(.drinking-games-page) .modal-back-button:focus-visible,
-:where(.drinking-games-page) .andrey-profile-link:focus-visible {
-outline: 3px solid var(--primary-green); outline-offset: 3px;
-}
-
-@media (max-width: 768px) {
-:where(.drinking-games-page) .andrey-modal-actions {
-margin-top: 1.4rem;
-}
-
-:where(.drinking-games-page) .modal-back-button,
-:where(.drinking-games-page) .andrey-profile-link {
-width: 100%; max-width: 320px;
-}
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .scrollable-gallery {
-display: flex;
-    gap: 1.5rem;
-    padding: 1rem 0 1.25rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    border: 5px solid #000;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.35);
-    margin: 1.5rem auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card {
-flex: 0 0 200px;
-    width: 200px;
-    height: 200px;
-    aspect-ratio: 1 / 1;
-    border: 0;
-    border-radius: 0;
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card img,
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card a img {
-width: 100%;
-    height: 100%;
-    object-fit: cover;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-}
-
-:where(.drinking-games-page) .gallery-card a {
-display: block;
-    width: 100%;
-    height: 100%;
-}
-
-:where(.drinking-games-page) .gallery-card a img {
-width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-:where(.drinking-games-page) h2 {
-text-align: center;
-    font-size: 2rem;
-    margin: 2rem auto 1rem;
-    max-width: 1200px;
-    padding: 0 1.5rem;
-    color: var(--dark);
-}
-
-:where(.drinking-games-page) main h2 {
-text-align: center;
-    font-size: 2rem;
-    margin: 2rem auto 1rem;
-    max-width: 1200px;
-    padding: 0 1.5rem;
-    color: var(--dark);
-}
-
-@media (min-width: 1600px) {
-:where(.drinking-games-page) .section {
-max-width: 1440px;
-}
-
-:where(.drinking-games-page) main p {
-font-size: 1.35rem;
-            max-width: 720px;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex-basis: 340px;
-}
-}
-
-@media (min-width: 1200px) and (max-width: 1599px) {
-:where(.drinking-games-page) .section {
-padding: 2.4rem 1.4rem;
-}
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-:where(.drinking-games-page) .section {
-padding: 2.1rem 1.15rem;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex-basis: 280px;
-}
-}
-
-@media (min-width: 769px) and (max-width: 991px) {
-:where(.drinking-games-page) .section {
-padding: 1.75rem 1rem;
-            margin: 1.75rem auto;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex: 0 0 280px;
-            width: 280px;
-}
-}
-
-@media (max-width: 768px) {
-:where(.drinking-games-page) main {
-min-height: auto;
-            padding: 1.5rem 0.85rem;
-}
-
-:where(.drinking-games-page) main p {
-max-width: 100%;
-            font-size: 1.05rem;
-            line-height: 1.55;
-}
-
-:where(.drinking-games-page) .section {
-padding: 2rem 1rem;
-            margin: 1.8rem auto;
-            width: 100%;
-}
-
-:where(.drinking-games-page) .scrollable-gallery {
-gap: 1rem;
-            padding: 1rem;
-            margin: 1.5rem auto;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex: 0 0 250px;
-}
-
-:where(.drinking-games-page) .gallery-card img {
-height: 250px;
-}
-
-:where(.drinking-games-page) main h2 {
-font-size: 1.5rem;
-            margin: 1.5rem auto 0.75rem;
-            padding: 0 1rem;
-}
-
-:where(.drinking-games-page) .section,
-:where(.drinking-games-page) .scrollable-gallery {
-width: 100%;
-            max-width: 100%;
-}
-
-:where(.drinking-games-page) .scrollable-gallery {
-padding-left: 0.5rem;
-            padding-right: 0.5rem;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex: 0 0 clamp(220px, 75vw, 320px);
-}
-
-:where(.drinking-games-page) .gallery-card img {
-height: auto;
-            aspect-ratio: 4 / 3;
-            object-fit: contain;
-            background: #fff;
-}
-}
-
-@media (min-width: 576px) and (max-width: 768px) {
-:where(.drinking-games-page) main p {
-font-size: 1rem;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex-basis: 250px;
-            width: 250px;
-}
-}
-
-@media (max-width: 480px) {
-:where(.drinking-games-page) .section {
-padding: 1.4rem 0.85rem;
-            margin: 1.25rem auto;
-}
-
-:where(.drinking-games-page) main p {
-font-size: 0.98rem;
-            line-height: 1.5;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex: 0 0 82vw;
-}
-}
-
-@media (min-width: 420px) and (max-width: 575px) {
-:where(.drinking-games-page) .section {
-padding-left: 0.8rem;
-            padding-right: 0.8rem;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex-basis: 82vw;
-            width: 82vw;
-}
-}
-
-@media (max-width: 359px) {
-:where(.drinking-games-page) .section {
-padding: 0.7rem;
-            margin: 0.9rem auto;
-}
-
-:where(.drinking-games-page) .gallery-card {
-flex-basis: 88vw;
-            width: 88vw;
-}
-}
-
-@media (max-width: 1199px) {
-:where(.drinking-games-page) #your-famous .hero-gallery-block .scrollable-gallery {
-padding: 0.9rem 0 1.1rem;
-                gap: 1.25rem;
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card {
-flex-basis: 200px;
-                width: 200px;
-                height: 200px;
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card img,
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card a img {
-height: 100%;
-}
-}
-
-@media (max-width: 767px) {
-:where(.drinking-games-page) #your-famous .hero-gallery-block .scrollable-gallery {
-padding: 0.75rem 0 1rem;
-                gap: 1rem;
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card {
-flex-basis: 200px;
-                width: 200px;
-                height: 200px;
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card img,
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card a img {
-height: 100%;
-}
-}
-
-@media (max-width: 480px) {
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card {
-flex-basis: 200px;
-                width: 200px;
-                height: 200px;
-}
-
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card img,
-:where(.drinking-games-page) #your-famous .hero-gallery-block .gallery-card a img {
-height: 100%;
-}
-}
-
-.drinking-games-page #your-famous {
-box-sizing: border-box;
-    width: 100%;
-    max-width: min(100%, 1200px);
-    min-width: 0;
-    margin-inline: auto;
-    padding: clamp(1.5rem, 3vw, 2.5rem);
-    border: 2px solid #303C22;
-    border-radius: 12px;
-    box-shadow:
-        inset 0 0 0 1px #303C22,
-        inset 0 0 0 4px #FFFFFF,
-        inset 0 0 0 7px #151515,
-        inset 0 0 0 10px #C9AA65,
-        inset 0 0 0 13px #A52A32;
-    text-align: center;
-}
-
-.drinking-games-page #your-famous .hero-gallery-block {
-max-width: 100%;
-    margin-inline: auto;
-}
-
-.drinking-games-page #your-famous :is(h2, h3, p) > .lang-ar {
-text-align: center;
-}
-
-@media (min-width: 100rem) {
-.drinking-games-page #your-famous {
-max-width: min(100%, 1440px);
-}
-}
-
-/* Required OK shell and Meet Andrey styles. */
-body.drinking-games-page {
---ok-parchment-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/paperbg.jpg");
-    min-height: 100vh;
-    background-color: #ddc49a;
-    background-image: var(--ok-parchment-image);
-    background-position: center top;
-    
-    background-size: 100% auto;
-    background-repeat: repeat-y;
-    background-attachment: scroll;
-}
-
-@media (min-width: 769px) {
-body.drinking-games-page {
-background-size: cover;
-        background-repeat: no-repeat;
-}
-}
-
-:where(.drinking-games-page).ok-page .ok-main {
-box-sizing: border-box;
-    width: 100%;
-    min-width: 0;
-    margin-inline: auto;
-    padding: 1.5rem .75rem;
-    color: #49301e;
-}
-
-:where(.drinking-games-page).ok-page .ok-content {
-box-sizing: border-box;
-    width: 100%;
-    max-width: 52rem;
-    min-width: 0;
-    margin-inline: auto;
-    padding: clamp(1rem, 3vw, 3rem);
-    border: 1px solid #a57c49;
-    border-block: 4px double #987044;
-    border-radius: .5rem;
-    background: rgba(255, 250, 235, .86);
-    box-shadow: 0 .6rem 1.8rem rgba(81, 48, 21, .18);
-    overflow-wrap: anywhere;
-}
-
-:where(.drinking-games-page).ok-page .ok-content p {
-width: 100%;
-    max-width: 42rem;
-    margin: 0 auto;
-    font-size: clamp(1.05rem, 1rem + .25vw, 1.25rem);
-    line-height: 1.85;
-    text-align: start;
-}
-
-:where(.drinking-games-page).ok-page .ok-content .lang-ar {
-font-family: var(--font-ar);
-    direction: rtl;
-    text-align: right;
-    display: block;
-    overflow-wrap: anywhere;
-    word-break: normal;
-    letter-spacing: normal;
-}
-
-:where(.drinking-games-page).ok-page .ok-content:lang(ar) {
-direction: rtl;
-}
-
-@media (min-width: 48rem) {
-:where(.drinking-games-page).ok-page .ok-main {
-padding: 2.5rem 1.5rem;
-}
-}
-
-@media (min-width: 64rem) {
-:where(.drinking-games-page).ok-page .ok-main {
-padding: 3rem 2rem;
-}
-}
-
-@media (min-width: 90rem) {
-:where(.drinking-games-page).ok-page .ok-main {
-padding-block: 4rem;
-}
-}
-
-@media (min-width: 120rem) {
-:where(.drinking-games-page).ok-page .ok-main {
-padding-block: 5rem;
-}
-}
-
-.drinking-games-page .drinking-games-content {
-max-width: 78rem;
-}
-
-.drinking-games-page .meet-andrey {
-margin-block: clamp(1.5rem, 3vw, 2.5rem);
-    min-width: 0;
-}
-
-.drinking-games-page .meet-andrey-portrait {
-display: block;
-    width: min(100%, 28rem);
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto 1.5rem;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-}
-
-.drinking-games-page .meet-andrey h2,
-.drinking-games-page .meet-andrey h3 {
-color: #6b451f;
-    line-height: 1.6;
-    margin: 0 0 1rem;
-    overflow-wrap: anywhere;
-}
-
-.drinking-games-page .meet-andrey h2 {
-font-size: clamp(1.5rem, 3vw, 2.2rem);
-}
-
-.drinking-games-page .meet-andrey h3 {
-font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-}
-
-.drinking-games-page .meet-andrey-videos {
-display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
-    margin-block: 2rem;
-}
-
-.drinking-games-page .meet-andrey-video {
-display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
-.drinking-games-page .meet-andrey-video iframe {
-display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    border: 0;
-    margin-top: auto;
-}
-
-.drinking-games-page .andrey-modal-actions {
-flex-wrap: wrap;
-}
-
-.drinking-games-page .andrey-modal-actions > * {
-min-width: 0;
-    max-width: 100%;
-    white-space: normal;
-    overflow-wrap: anywhere;
-}
-
-@media (min-width: 48rem) {
-.drinking-games-page .meet-andrey-videos {
-grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-}
-
-@media (min-width: 75rem) {
-.drinking-games-page .meet-andrey-videos {
-grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-}
-
-/* Keep the shared mobile control above the positioned title. */
-@media (max-width: 768px) {
-    .drinking-games-page .site-header[data-global-chrome] .menu-toggle {
-        position: relative;
-        z-index: 1;
-    }
-}
-
-/* Olive belongs to the main content panel; body parchment stays unchanged. */
-.drinking-games-page .drinking-games-content { background-color: #D9E2CE; }
-/* Shrink scrolling gallery canvases without changing their portrait cards. */
-.drinking-games-page :is(.ok-main, #your-famous, .hero-gallery-block, .scrollable-gallery) { min-width: 0; max-width: 100%; }
-
-/* Size cards against the nested gallery, rather than the viewport. */
-@media (max-width: 991px) {
-    .drinking-games-page #your-famous .hero-gallery-block .gallery-card {
-        flex: 0 0 min(200px, 100%);
-        width: min(200px, 100%);
-        max-width: 100%;
-        min-width: 0;
-        height: auto;
-        aspect-ratio: 1 / 1;
+"use strict";
+//Author: Leslie Brockman
+//Date: 11-01-2026
+// The lounge owns its dialogs and wheel; main.js owns language and navigation.
+(() => {
+    const page = document.querySelector('.drinking-games-page');
+    if (!page) return;
+    const dialogs = [...page.querySelectorAll('.lounge-dialog')];
+    const triggers = new WeakMap();
+    let activeDialog = null;
+    const jukebox = document.getElementById('jukebox-dialog');
+
+    function stopMedia(dialog) {
+        dialog.querySelectorAll('iframe[data-src]').forEach(frame => frame.removeAttribute('src'));
     }
 
-    .drinking-games-page #your-famous .hero-gallery-block .gallery-card img {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        height: 100%;
-        aspect-ratio: auto;
-        margin: 0;
-    }
-}
+    page.querySelectorAll('[data-open-dialog]').forEach(button => {
+        button.addEventListener('click', () => {
+            const dialog = document.getElementById(button.dataset.openDialog);
+            if (!dialog || dialog.open) return;
+            activeDialog?.close();
+            triggers.set(dialog, button);
+            dialog.showModal();
+            activeDialog = dialog;
+            page.classList.add('lounge-modal-open');
+            if (dialog === wheelDialog && selected !== null && !surpriseView.hidden) {
+                loadSurpriseMedia(sectionsById.get(surprises[selected].sectionId));
+                renderResult();
+                title.focus({ preventScroll: true });
+            }
+            if (dialog === jukebox) {
+                dialog.querySelectorAll('iframe[data-src]').forEach(frame => {
+                    frame.src = frame.dataset.src;
+                });
+            }
+        });
+    });
+    dialogs.forEach(dialog => {
+        dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
+        // Native Escape cancellation closes the dialog and reaches this same cleanup.
+        dialog.addEventListener('close', () => {
+            stopMedia(dialog);
+            if (dialog === wheelDialog) closeWheel();
+            if (activeDialog === dialog) {
+                activeDialog = null;
+                page.classList.remove('lounge-modal-open');
+                triggers.get(dialog)?.focus({ preventScroll: true });
+            }
+        });
+    });
 
-@media (max-width: 575px) {
-    .drinking-games-page.ok-page .ok-main {
-        padding: 1.5rem .75rem;
+    // Weekly edits belong here. Null mediaUrl means a complete text-only surprise.
+    // Supported content types: text, image, video, embed (approved URLs only).
+    const surprises = [
+        { sectionId: 1, id: 'bonus-song', titleEn: 'Bonus Song', titleAr: 'أغنية إضافية', type: 'embed', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://www.youtube.com/embed/Ek750-CExS8', mediaTitleEn: 'Bonus Song — YouTube video', mediaTitleAr: 'أغنية إضافية — فيديو يوتيوب' },
+        { sectionId: 2, id: 'meme-madness', titleEn: 'Meme Madness', titleAr: 'جنون الميمات', type: 'image', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/ai.png', mediaTitleEn: 'Meme Madness artwork', mediaTitleAr: 'صورة جنون الميمات' },
+        { sectionId: 3, id: 'surprise-video', titleEn: 'Surprise Video', titleAr: 'فيديو مفاجئ', type: 'text', descriptionEn: "Congratulations! You've won absolutely nothing. Much like your last argument.", descriptionAr: 'تهانينا! لم تفز بأي شيء على الإطلاق. تمامًا كما خرجت من جدالك الأخير بلا مكسب.', mediaUrl: null },
+        { sectionId: 4, id: 'mystery-box', titleEn: 'Mystery Scent', titleAr: 'الرائحة الغامضة', type: 'embed', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://www.youtube.com/embed/bc5gNP5D3Ig', mediaTitleEn: 'Mystery Box — YouTube video', mediaTitleAr: 'الصندوق الغامض — فيديو يوتيوب', mediaLoading: 'lazy' },
+        { sectionId: 5, id: 'ridiculous-challenge', titleEn: 'Ridiculous Challenge', titleAr: 'تحدٍّ طريف', type: 'image', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/ho.png', mediaTitleEn: 'Ridiculous Challenge artwork', mediaTitleAr: 'صورة التحدي الطريف' },
+        { sectionId: 6, id: 'wild-card', titleEn: 'Wild Card', titleAr: 'المفاجأة الحرة', type: 'text', descriptionEn: "Did I piss you off yet? Good, I like pissed off. Now use it and let's go free Palestine.", descriptionAr: 'هل أغضبتك حتى الآن؟ جيد، يعجبني هذا الغضب. والآن حوّله إلى عمل، وهيا نحرّر فلسطين.', mediaUrl: null }
+    ];
+    const wheelDialog = document.getElementById('wheel-dialog');
+    const wheel = page.querySelector('.challenge-wheel');
+    const labels = page.querySelector('.wheel-labels');
+    const spin = document.getElementById('spin-wheel');
+    const result = document.getElementById('wheel-result');
+    const playView = document.getElementById('wheel-play');
+    const surpriseView = document.getElementById('wheel-surprise');
+    const title = document.getElementById('surprise-title');
+    const description = document.getElementById('surprise-description');
+    const media = document.getElementById('surprise-media');
+    const back = document.getElementById('surprise-back');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const colors = ['#b94e45', '#194f38', '#fff5df', '#742b30', '#151515', '#68733d'];
+    const step = 360 / surprises.length;
+    const sectionsById = new Map(surprises.map(surprise => [surprise.sectionId, surprise]));
+    const visitedSections = new Set();
+    let availableCards = [...sectionsById.keys()];
+    const completedCards = new Set();
+    const statusDots = new Map();
+    let activeSectionId = null;
+    const sectionPaths = new Map();
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const wedges = document.createElementNS(svgNS, 'svg');
+    wedges.setAttribute('viewBox', '0 0 200 200');
+    wedges.setAttribute('aria-hidden', 'true');
+    wedges.classList.add('wheel-sections');
+    const shading = document.createElementNS(svgNS, 'defs');
+    colors.forEach((color, i) => {
+        const gradient = document.createElementNS(svgNS, 'radialGradient');
+        gradient.id = `wheel-paint-${i + 1}`;
+        gradient.setAttribute('cx', '40%');
+        gradient.setAttribute('cy', '32%');
+        gradient.setAttribute('r', '78%');
+        [[0, color], [1, i === 2 ? '#d8cfb6' : '#0e100c']].forEach(([offset, shade]) => {
+            const stop = document.createElementNS(svgNS, 'stop');
+            stop.setAttribute('offset', String(offset));
+            stop.setAttribute('stop-color', shade);
+            gradient.append(stop);
+        });
+        shading.append(gradient);
+    });
+    wedges.append(shading);
+    function pointAt(degrees) {
+        const radians = degrees * Math.PI / 180;
+        return `${100 + 97 * Math.sin(radians)} ${100 - 97 * Math.cos(radians)}`;
+    }
+    surprises.forEach((surprise, i) => {
+        const path = document.createElementNS(svgNS, 'path');
+        path.id = `wheel-section-${surprise.sectionId}`;
+        path.dataset.sectionId = String(surprise.sectionId);
+        path.setAttribute('d', `M100 100 L${pointAt(i * step)} A97 97 0 0 1 ${pointAt((i + 1) * step)} Z`);
+        path.setAttribute('fill', `url(#wheel-paint-${surprise.sectionId})`);
+        wedges.append(path);
+        sectionPaths.set(surprise.sectionId, path);
+        const label = document.createElement('span');
+        label.textContent = String(surprise.sectionId);
+        label.style.setProperty('--angle', `${(i + .5) * step}deg`);
+        const labelAngle = (i + .5) * step * Math.PI / 180;
+        label.style.left = `${50 + 32 * Math.sin(labelAngle)}%`;
+        label.style.top = `${50 - 32 * Math.cos(labelAngle)}%`;
+        labels.append(label);
+        const dot = document.createElement('span');
+        dot.className = 'wheel-status-dot';
+        dot.textContent = '☮';
+        dot.dataset.sectionId = String(surprise.sectionId);
+        dot.style.left = label.style.left;
+        dot.style.top = label.style.top;
+        statusDots.set(surprise.sectionId, dot);
+        wheel.append(dot);
+    });
+    wheel.prepend(wedges);
+    const lights = wheelDialog.querySelector('.wheel-lights');
+    for (let i = 0; i < 24; i++) {
+        const bulb = document.createElement('span');
+        const radians = i * Math.PI / 12;
+        bulb.style.left = `${50 + 48 * Math.sin(radians)}%`;
+        bulb.style.top = `${50 - 48 * Math.cos(radians)}%`;
+        bulb.style.setProperty('--bulb-delay', `${-(i % 4) * .3}s`);
+        lights.append(bulb);
+    }
+    function trackSection(sectionId) {
+        if (!sectionsById.has(sectionId)) return;
+        visitedSections.add(sectionId);
+        activeSectionId = sectionId;
+        renderSectionStates();
+    }
+    function renderSectionStates() {
+        sectionPaths.forEach((path, id) => {
+            path.classList.toggle('is-visited', visitedSections.has(id) && id !== activeSectionId);
+            path.classList.toggle('is-current', id === activeSectionId);
+            statusDots.get(id).classList.toggle('is-completed', completedCards.has(id));
+        });
+    }
+    let selected = null;
+    let spinning = false;
+    let rotation = 0;
+    let timer;
+    function renderResult() {
+        const ar = document.documentElement.lang === 'ar';
+        result.lang = surpriseView.lang = ar ? 'ar' : 'en';
+        result.dir = surpriseView.dir = ar ? 'rtl' : 'ltr';
+        const tagline = result.querySelector('.wheel-carnival-tagline');
+        tagline.hidden = spinning;
+        tagline.querySelectorAll('.lang-en, .lang-ar').forEach(span => {
+            span.classList.toggle('hidden', span.classList.contains('lang-ar') !== ar);
+        });
+        result.querySelector('.wheel-spin-status').textContent = spinning
+            ? (ar ? 'العجلة تدور…' : 'Spinning…') : '';
+        if (selected !== null && !surpriseView.hidden) {
+            const surprise = sectionsById.get(surprises[selected].sectionId);
+            title.textContent = surprise.sectionId === 3
+                ? '3. 😂'
+                : `${surprise.sectionId}. ${surprise[ar ? 'titleAr' : 'titleEn']}`;
+            description.classList.toggle('wheel-result-statement', surprise.sectionId === 3 || surprise.sectionId === 6);
+            description.textContent = surprise[ar ? 'descriptionAr' : 'descriptionEn'];
+            description.hidden = surprise.type !== 'text';
+            surpriseView.dataset.sectionId = String(surprise.sectionId);
+            const image = media.querySelector('img');
+            if (image) image.alt = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
+            const frame = media.querySelector('iframe');
+            if (frame) frame.title = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
+        }
+    }
+    function clearSurpriseMedia() {
+        media.querySelectorAll('video').forEach(video => video.pause());
+        media.querySelectorAll('iframe').forEach(frame => frame.removeAttribute('src'));
+        media.replaceChildren();
+    }
+    function loadSurpriseMedia(surprise) {
+        clearSurpriseMedia();
+        if (!surprise.mediaUrl || surprise.type === 'text') return;
+        const tag = { image: 'img', video: 'video', embed: 'iframe' }[surprise.type];
+        if (!tag) return;
+        const element = document.createElement(tag);
+        element.src = surprise.mediaUrl;
+        element.className = 'wheel-result-media';
+        const ar = document.documentElement.lang === 'ar';
+        if (tag === 'img') {
+            element.alt = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
+        }
+        if (tag === 'video') element.controls = true;
+        if (tag === 'iframe') {
+            element.title = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
+            element.allowFullscreen = true;
+            if (surprise.mediaLoading) element.loading = surprise.mediaLoading;
+            element.allow = 'encrypted-media; picture-in-picture';
+            element.referrerPolicy = 'strict-origin-when-cross-origin';
+        }
+        media.append(element);
+    }
+    function resetWheelView(moveFocus = false) {
+        clearSurpriseMedia();
+        surpriseView.hidden = true;
+        playView.hidden = false;
+        if (moveFocus) spin.focus({ preventScroll: true });
+    }
+    function finishSpin() {
+        clearTimeout(timer);
+        if (!spinning) return;
+        spinning = false;
+        spin.disabled = true;
+        result.removeAttribute('aria-busy');
+        if (!wheelDialog.open) return;
+        trackSection(surprises[selected].sectionId);
+        playView.hidden = true;
+        surpriseView.hidden = false;
+        loadSurpriseMedia(sectionsById.get(surprises[selected].sectionId));
+        renderResult();
+        title.focus({ preventScroll: true });
+    }
+    spin.addEventListener('click', () => {
+        if (spinning || !wheelDialog.open || !surpriseView.hidden || selected !== null || !availableCards.length) return;
+        activeSectionId = null;
+        renderSectionStates();
+        spinning = true;
+        spin.disabled = true;
+        const poolIndex = Math.floor(Math.random() * availableCards.length);
+        const sectionId = availableCards.splice(poolIndex, 1)[0];
+        selected = surprises.findIndex(surprise => surprise.sectionId === sectionId);
+        result.setAttribute('aria-busy', 'true');
+        renderResult();
+        // Segment centers land beneath the fixed pointer at twelve o'clock.
+        const target = (360 - (selected + .5) * step) % 360;
+        rotation += 360 * 5 + ((target - rotation % 360 + 360) % 360);
+        wheel.style.transform = `rotate(${rotation}deg)`;
+        if (reducedMotion.matches) finishSpin();
+        else timer = window.setTimeout(finishSpin, 3300);
+    });
+    back.addEventListener('click', () => {
+        if (spinning || surpriseView.hidden || selected === null) return;
+        completedCards.add(surprises[selected].sectionId);
+        selected = null;
+        activeSectionId = null;
+        if (completedCards.size === sectionsById.size) {
+            availableCards = [...sectionsById.keys()];
+            completedCards.clear();
+            visitedSections.clear();
+        }
+        renderSectionStates();
+        spin.disabled = false;
+        resetWheelView(true);
+        renderResult();
+    });
+    // The existing dialog close handler calls this cleanup for Close and Escape.
+    function closeWheel() {
+        if (spinning) {
+            // Cancelled, unviewed results remain available in the current round.
+            if (selected !== null) availableCards.push(surprises[selected].sectionId);
+            selected = null;
+            activeSectionId = null;
+            renderSectionStates();
+            wheel.style.transition = 'none';
+            wheel.style.transform = `rotate(${rotation}deg)`;
+            void wheel.offsetWidth;
+            wheel.style.removeProperty('transition');
+        }
+        clearTimeout(timer);
+        spinning = false;
+        result.removeAttribute('aria-busy');
+        if (!surpriseView.hidden && selected !== null) {
+            // Keep a viewed result pending until Back; reopening restores its media.
+            clearSurpriseMedia();
+            spin.disabled = true;
+        } else {
+            spin.disabled = false;
+            resetWheelView();
+        }
+        renderResult();
+    }
+    reducedMotion.addEventListener('change', () => {
+        if (spinning && reducedMotion.matches) finishSpin();
+    });
+    new MutationObserver(renderResult).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    renderResult();
+})();
+
+"use strict";
+
+//Author:Leslie Brockman
+//Date: 2026-10-30
+(() => {
+    const card = document.querySelector('#loser-of-the-week [data-loser-card]');
+    if (!card) return;
+    const front = card.querySelector('[data-loser-face="front"]');
+    const back = card.querySelector('[data-loser-face="back"]');
+    const more = front?.querySelector('[data-loser-flip="back"]');
+    const reset = back?.querySelector('[data-loser-flip="front"]');
+    if (!front || !back || !more || !reset) return;
+
+    function showFace(showBack, moveFocus = true) {
+        const visible = showBack ? back : front;
+        const concealed = showBack ? front : back;
+        visible.hidden = false;
+        visible.inert = false;
+        visible.removeAttribute('aria-hidden');
+        visible.classList.toggle('is-revealed', moveFocus);
+        more.setAttribute('aria-expanded', String(showBack));
+        // Transfer focus before concealing the previously active control.
+        if (moveFocus) (showBack ? reset : more).focus({ preventScroll: true });
+        concealed.hidden = true;
+        concealed.inert = true;
+        concealed.setAttribute('aria-hidden', 'true');
+        concealed.classList.remove('is-revealed');
     }
 
-    .drinking-games-page.ok-page .ok-content {
-        padding: 1rem;
-    }
-
-    .drinking-games-page .ok-content > h2 {
-        padding-inline: 0;
-    }
-}
-
-/* Loser of the Week: confined to this feature, with natural-height faces. */
-.drinking-games-page #loser-of-the-week {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 0;
-    margin-block: 2rem;
-    padding: clamp(1rem, 3vw, 2.5rem);
-    border: 1px solid #c8a45a;
-    border-radius: 18px;
-    background: #252a20;
-    color: #f5edda;
-    box-shadow: 0 .35rem .9rem rgba(91, 29, 35, .22),
-        0 1rem 2rem rgba(91, 29, 35, .12);
-    overflow-wrap: anywhere;
-}
-.drinking-games-page #loser-of-the-week :is(h2, h3),
-.drinking-games-page #loser-of-the-week :is(h2, h3) .lang-ar {
-    padding-inline: 0;
-    text-align: center;
-    color: #c8a45a;
-}
-.drinking-games-page #loser-of-the-week h2 {
-    margin-block: 0 1.5rem;
-    font-size: clamp(2rem, 1.3rem + 3vw, 3.8rem);
-    line-height: 1.2;
-    text-shadow: 0 2px 8px rgba(200, 164, 90, .22);
-}
-.drinking-games-page #loser-of-the-week h2 .lang-en {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 700;
-}
-.drinking-games-page #loser-of-the-week h2::after {
-    content: "";
-    display: block;
-    width: min(5rem, 35%);
-    height: 1px;
-    margin: 1rem auto 0;
-    background: #c8a45a;
-    opacity: .8;
-}
-.drinking-games-page #loser-of-the-week .loser-week-intro {
-    max-width: 42rem;
-    margin-inline: auto;
-    color: #f5edda;
-}
-.drinking-games-page #loser-of-the-week .loser-week-intro p {
-    line-height: 1.9;
-}
-.drinking-games-page #loser-of-the-week .loser-week-intro p:last-child {
-    font-weight: 700;
-    color: #ebd4a3;
-}
-.drinking-games-page #loser-of-the-week h3 {
-    margin-block: 1.25rem .75rem;
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
-}
-.drinking-games-page #loser-of-the-week .loser-week-intro p + p {
-    margin-block-start: 1rem;
-}
-.drinking-games-page #loser-of-the-week .loser-week-card {
-    box-sizing: border-box;
-    min-width: 0;
-    width: 100%;
-    margin-top: clamp(1.5rem, 3vw, 2.5rem);
-    padding: clamp(.65rem, 2vw, 1.25rem);
-    border: 1px solid #c8a45a;
-    border-radius: .85rem;
-    background: #343b2c;
-    box-shadow: inset 0 1px 12px rgba(0, 0, 0, .22);
-    transition: transform .2s ease, box-shadow .2s ease;
-    perspective: 1200px;
-}
-.drinking-games-page #loser-of-the-week .loser-week-face {
-    min-width: 0;
-    text-align: center;
-}
-.drinking-games-page #loser-of-the-week .loser-week-face[hidden] {
-    display: none;
-}
-.drinking-games-page #loser-of-the-week .loser-week-face.is-revealed {
-    animation: loser-week-turn .3s ease-out;
-}
-.drinking-games-page #loser-of-the-week .loser-week-images {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: clamp(.5rem, 2vw, 1rem);
-}
-.drinking-games-page #loser-of-the-week .loser-week-images img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    height: auto;
-    margin: 0;
-    box-sizing: border-box;
-    padding: .25rem;
-    border: 1px solid rgba(200, 164, 90, .5);
-    border-radius: .5rem;
-    background: #252a20;
-    object-fit: contain;
-}
-.drinking-games-page #loser-of-the-week .loser-week-description {
-    margin-inline: auto;
-    max-width: 42rem;
-    padding: clamp(.5rem, 2vw, 1rem);
-    color: #f5edda;
-}
-.drinking-games-page #loser-of-the-week .loser-week-description p {
-    line-height: 1.85;
-}
-.drinking-games-page #loser-of-the-week .lang-en {
-    direction: ltr;
-}
-.drinking-games-page #loser-of-the-week .lang-ar {
-    direction: rtl;
-    font-family: var(--font-ar);
-    letter-spacing: normal;
-}
-.drinking-games-page #loser-of-the-week .loser-week-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    max-width: 100%;
-    min-height: 48px;
-    margin-top: 1.25rem;
-    padding: .75rem 1.25rem;
-    border: 1px solid #c8a45a;
-    border-radius: .6rem;
-    background: #81362f;
-    color: #f5edda;
-    font: inherit;
-    font-weight: 700;
-    white-space: normal;
-    cursor: pointer;
-    box-shadow: 0 3px 0 #48231f, 0 5px 10px rgba(0, 0, 0, .2);
-    transition: background-color .2s ease, transform .2s ease;
-}
-.drinking-games-page #loser-of-the-week .loser-week-button:hover {
-    background: #98443b;
-}
-.drinking-games-page #loser-of-the-week .loser-week-button:focus-visible {
-    outline: 3px solid #fff2cc;
-    outline-offset: 4px;
-}
-.drinking-games-page #loser-of-the-week .loser-week-button:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 0 #48231f;
-}
-@media (hover: hover) and (pointer: fine) {
-    .drinking-games-page #loser-of-the-week .loser-week-card:hover {
-        transform: translateY(-2px);
-        box-shadow: inset 0 1px 12px rgba(0, 0, 0, .22),
-            0 .5rem 1rem rgba(0, 0, 0, .18);
-    }
-}
-@media (min-width: 36rem) {
-    .drinking-games-page #loser-of-the-week .loser-week-images {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-@media (min-width: 64rem) {
-    .drinking-games-page #loser-of-the-week #loser-week-back .loser-week-images {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-@keyframes loser-week-turn {
-    from { opacity: .5; transform: rotateY(-12deg); }
-    to { opacity: 1; transform: rotateY(0); }
-}
-@media (prefers-reduced-motion: reduce) {
-    .drinking-games-page #loser-of-the-week .loser-week-card,
-    .drinking-games-page #loser-of-the-week .loser-week-button {
-        transition: none;
-        transform: none;
-    }
-    .drinking-games-page #loser-of-the-week .loser-week-card:hover,
-    .drinking-games-page #loser-of-the-week .loser-week-button:active {
-        transform: none;
-    }
-    .drinking-games-page #loser-of-the-week .loser-week-face.is-revealed {
-        animation: none;
-    }
-}
-
-/* West Bank headline: separate bilingual lines before the existing galleries. */
-.drinking-games-page .drinking-games-content #meet-andrey-heading {
-    margin: 1.5rem auto 0;
-    padding: clamp(.85rem, 3vw, 2rem);
-    border-radius: 18px 18px 0 0;
-    background: #252a20;
-    text-align: center;
-    line-height: 1.25;
-    overflow-wrap: anywhere;
-}
-.drinking-games-page #meet-andrey-heading .west-bank-alert,
-.drinking-games-page #meet-andrey-heading .west-bank-place {
-    display: block;
-}
-.drinking-games-page #meet-andrey-heading .lang-en {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 700;
-}
-.drinking-games-page #meet-andrey-heading .lang-ar {
-    font-family: var(--font-ar);
-    direction: rtl;
-    text-align: center;
-    letter-spacing: normal;
-}
-.drinking-games-page #meet-andrey-heading .west-bank-alert {
-    color: #FFF5DF;
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(92, 28, 36, .65);
-}
-.drinking-games-page #meet-andrey-heading .west-bank-place {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(.4rem, 2vw, 1rem);
-    margin-top: .5rem;
-    color: #E9BD69;
-    font-size: clamp(2.3rem, 5vw, 4rem);
-    font-weight: 700;
-    text-shadow: 0 0 .4rem rgba(233, 189, 105, .2),
-        0 3px 5px rgba(92, 28, 36, .65);
-}
-.drinking-games-page #meet-andrey-heading .west-bank-place > span {
-    min-width: 0;
-}
-.drinking-games-page #meet-andrey-heading .west-bank-place .lang-en {
-    letter-spacing: .04em;
-}
-.drinking-games-page #meet-andrey-heading .west-bank-place::before,
-.drinking-games-page #meet-andrey-heading .west-bank-place::after {
-    content: "";
-    flex: 0 1 3rem;
-    height: 1px;
-    background: #E9BD69;
-    opacity: .7;
-}
-.drinking-games-page .west-bank-decoration {
-    box-sizing: border-box;
-    padding: 0 .5rem 1.25rem;
-    border-radius: 0 0 18px 18px;
-    background: #252a20;
-    color: #FFF5DF;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    line-height: 1.5;
-    text-align: center;
-    white-space: nowrap;
-    word-spacing: .35em;
-    direction: ltr;
-}
-@media (max-width: 480px) {
-    .drinking-games-page #meet-andrey-heading .west-bank-place::before,
-    .drinking-games-page #meet-andrey-heading .west-bank-place::after {
-        display: none;
-    }
-}
+    showFace(false, false);
+    more.addEventListener('click', () => showFace(true));
+    reset.addEventListener('click', () => showFace(false));
+})();
