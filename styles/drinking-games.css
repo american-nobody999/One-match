@@ -1,330 +1,1126 @@
-"use strict";
-//Author: Leslie Brockman
-//Date: 11-01-2026
-// The lounge owns its dialogs and wheel; main.js owns language and navigation.
-(() => {
-    const page = document.querySelector('.drinking-games-page');
-    if (!page) return;
-    const dialogs = [...page.querySelectorAll('.lounge-dialog')];
-    const triggers = new WeakMap();
-    let activeDialog = null;
-    const jukebox = document.getElementById('jukebox-dialog');
 
-    function stopMedia(dialog) {
-        dialog.querySelectorAll('iframe[data-src]').forEach(frame => frame.removeAttribute('src'));
-    }
+/*
+   Author: Leslie Brockman
+   Date: 11-01-2026
+*/
+/* Drinking Games shell and Weekly Song Dedication. */
+:where(.drinking-games-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
 
-    page.querySelectorAll('[data-open-dialog]').forEach(button => {
-        button.addEventListener('click', () => {
-            const dialog = document.getElementById(button.dataset.openDialog);
-            if (!dialog || dialog.open) return;
-            activeDialog?.close();
-            triggers.set(dialog, button);
-            dialog.showModal();
-            activeDialog = dialog;
-            page.classList.add('lounge-modal-open');
-            if (dialog === wheelDialog && selected !== null && !surpriseView.hidden) {
-                loadSurpriseMedia(sectionsById.get(surprises[selected].sectionId));
-                renderResult();
-                title.focus({ preventScroll: true });
-            }
-            if (dialog === jukebox) {
-                dialog.querySelectorAll('iframe[data-src]').forEach(frame => {
-                    frame.src = frame.dataset.src;
-                });
-            }
-        });
-    });
-    dialogs.forEach(dialog => {
-        dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
-        // Native Escape cancellation closes the dialog and reaches this same cleanup.
-        dialog.addEventListener('close', () => {
-            stopMedia(dialog);
-            if (dialog === wheelDialog) closeWheel();
-            if (activeDialog === dialog) {
-                activeDialog = null;
-                page.classList.remove('lounge-modal-open');
-                triggers.get(dialog)?.focus({ preventScroll: true });
-            }
-        });
-    });
+:where(.drinking-games-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
 
-    // Weekly edits belong here. Null mediaUrl means a complete text-only surprise.
-    // Supported content types: text, image, video, embed (approved URLs only).
-    const surprises = [
-        { sectionId: 1, id: 'bonus-song', titleEn: 'Bonus Song', titleAr: 'أغنية إضافية', type: 'embed', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://www.youtube.com/embed/Ek750-CExS8', mediaTitleEn: 'Bonus Song — YouTube video', mediaTitleAr: 'أغنية إضافية — فيديو يوتيوب' },
-        { sectionId: 2, id: 'meme-madness', titleEn: 'Meme Madness', titleAr: 'جنون الميمات', type: 'image', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/ai.png', mediaTitleEn: 'Meme Madness artwork', mediaTitleAr: 'صورة جنون الميمات' },
-        { sectionId: 3, id: 'surprise-video', titleEn: 'Surprise Video', titleAr: 'فيديو مفاجئ', type: 'text', descriptionEn: "Congratulations! You've won absolutely nothing. Much like your last argument.", descriptionAr: 'تهانينا! لم تفز بأي شيء على الإطلاق. تمامًا كما خرجت من جدالك الأخير بلا مكسب.', mediaUrl: null },
-        { sectionId: 4, id: 'mystery-box', titleEn: 'Mystery Scent', titleAr: 'الرائحة الغامضة', type: 'embed', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://www.youtube.com/embed/bc5gNP5D3Ig', mediaTitleEn: 'Mystery Box — YouTube video', mediaTitleAr: 'الصندوق الغامض — فيديو يوتيوب', mediaLoading: 'lazy' },
-        { sectionId: 5, id: 'ridiculous-challenge', titleEn: 'Ridiculous Challenge', titleAr: 'تحدٍّ طريف', type: 'image', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/ho.png', mediaTitleEn: 'Ridiculous Challenge artwork', mediaTitleAr: 'صورة التحدي الطريف' },
-        { sectionId: 6, id: 'wild-card', titleEn: 'Wild Card', titleAr: 'المفاجأة الحرة', type: 'text', descriptionEn: "Did I piss you off yet? Good, I like pissed off. Now use it and let's go free Palestine.", descriptionAr: 'هل أغضبتك حتى الآن؟ جيد، يعجبني هذا الغضب. والآن حوّله إلى عمل، وهيا نحرّر فلسطين.', mediaUrl: null }
-    ];
-    const wheelDialog = document.getElementById('wheel-dialog');
-    const wheel = page.querySelector('.challenge-wheel');
-    const labels = page.querySelector('.wheel-labels');
-    const spin = document.getElementById('spin-wheel');
-    const result = document.getElementById('wheel-result');
-    const playView = document.getElementById('wheel-play');
-    const surpriseView = document.getElementById('wheel-surprise');
-    const title = document.getElementById('surprise-title');
-    const description = document.getElementById('surprise-description');
-    const media = document.getElementById('surprise-media');
-    const back = document.getElementById('surprise-back');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const colors = ['#b94e45', '#194f38', '#fff5df', '#742b30', '#151515', '#68733d'];
-    const step = 360 / surprises.length;
-    const sectionsById = new Map(surprises.map(surprise => [surprise.sectionId, surprise]));
-    const visitedSections = new Set();
-    let availableCards = [...sectionsById.keys()];
-    const completedCards = new Set();
-    const statusDots = new Map();
-    let activeSectionId = null;
-    const sectionPaths = new Map();
-    const svgNS = 'http://www.w3.org/2000/svg';
-    const wedges = document.createElementNS(svgNS, 'svg');
-    wedges.setAttribute('viewBox', '0 0 200 200');
-    wedges.setAttribute('aria-hidden', 'true');
-    wedges.classList.add('wheel-sections');
-    const shading = document.createElementNS(svgNS, 'defs');
-    colors.forEach((color, i) => {
-        const gradient = document.createElementNS(svgNS, 'radialGradient');
-        gradient.id = `wheel-paint-${i + 1}`;
-        gradient.setAttribute('cx', '40%');
-        gradient.setAttribute('cy', '32%');
-        gradient.setAttribute('r', '78%');
-        [[0, color], [1, i === 2 ? '#d8cfb6' : '#0e100c']].forEach(([offset, shade]) => {
-            const stop = document.createElementNS(svgNS, 'stop');
-            stop.setAttribute('offset', String(offset));
-            stop.setAttribute('stop-color', shade);
-            gradient.append(stop);
-        });
-        shading.append(gradient);
-    });
-    wedges.append(shading);
-    function pointAt(degrees) {
-        const radians = degrees * Math.PI / 180;
-        return `${100 + 97 * Math.sin(radians)} ${100 - 97 * Math.cos(radians)}`;
-    }
-    surprises.forEach((surprise, i) => {
-        const path = document.createElementNS(svgNS, 'path');
-        path.id = `wheel-section-${surprise.sectionId}`;
-        path.dataset.sectionId = String(surprise.sectionId);
-        path.setAttribute('d', `M100 100 L${pointAt(i * step)} A97 97 0 0 1 ${pointAt((i + 1) * step)} Z`);
-        path.setAttribute('fill', `url(#wheel-paint-${surprise.sectionId})`);
-        wedges.append(path);
-        sectionPaths.set(surprise.sectionId, path);
-        const label = document.createElement('span');
-        label.textContent = String(surprise.sectionId);
-        label.style.setProperty('--angle', `${(i + .5) * step}deg`);
-        const labelAngle = (i + .5) * step * Math.PI / 180;
-        label.style.left = `${50 + 32 * Math.sin(labelAngle)}%`;
-        label.style.top = `${50 - 32 * Math.cos(labelAngle)}%`;
-        labels.append(label);
-        const dot = document.createElement('span');
-        dot.className = 'wheel-status-dot';
-        dot.textContent = '☮';
-        dot.dataset.sectionId = String(surprise.sectionId);
-        dot.style.left = label.style.left;
-        dot.style.top = label.style.top;
-        statusDots.set(surprise.sectionId, dot);
-        wheel.append(dot);
-    });
-    wheel.prepend(wedges);
-    const lights = wheelDialog.querySelector('.wheel-lights');
-    for (let i = 0; i < 24; i++) {
-        const bulb = document.createElement('span');
-        const radians = i * Math.PI / 12;
-        bulb.style.left = `${50 + 48 * Math.sin(radians)}%`;
-        bulb.style.top = `${50 - 48 * Math.cos(radians)}%`;
-        bulb.style.setProperty('--bulb-delay', `${-(i % 4) * .3}s`);
-        lights.append(bulb);
-    }
-    function trackSection(sectionId) {
-        if (!sectionsById.has(sectionId)) return;
-        visitedSections.add(sectionId);
-        activeSectionId = sectionId;
-        renderSectionStates();
-    }
-    function renderSectionStates() {
-        sectionPaths.forEach((path, id) => {
-            path.classList.toggle('is-visited', visitedSections.has(id) && id !== activeSectionId);
-            path.classList.toggle('is-current', id === activeSectionId);
-            statusDots.get(id).classList.toggle('is-completed', completedCards.has(id));
-        });
-    }
-    let selected = null;
-    let spinning = false;
-    let rotation = 0;
-    let timer;
-    function renderResult() {
-        const ar = document.documentElement.lang === 'ar';
-        result.lang = surpriseView.lang = ar ? 'ar' : 'en';
-        result.dir = surpriseView.dir = ar ? 'rtl' : 'ltr';
-        const tagline = result.querySelector('.wheel-carnival-tagline');
-        tagline.hidden = spinning;
-        tagline.querySelectorAll('.lang-en, .lang-ar').forEach(span => {
-            span.classList.toggle('hidden', span.classList.contains('lang-ar') !== ar);
-        });
-        result.querySelector('.wheel-spin-status').textContent = spinning
-            ? (ar ? 'العجلة تدور…' : 'Spinning…') : '';
-        if (selected !== null && !surpriseView.hidden) {
-            const surprise = sectionsById.get(surprises[selected].sectionId);
-            title.textContent = surprise.sectionId === 3
-                ? '3. 😂'
-                : `${surprise.sectionId}. ${surprise[ar ? 'titleAr' : 'titleEn']}`;
-            description.classList.toggle('wheel-result-statement', surprise.sectionId === 3 || surprise.sectionId === 6);
-            description.textContent = surprise[ar ? 'descriptionAr' : 'descriptionEn'];
-            description.hidden = surprise.type !== 'text';
-            surpriseView.dataset.sectionId = String(surprise.sectionId);
-            const image = media.querySelector('img');
-            if (image) image.alt = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
-            const frame = media.querySelector('iframe');
-            if (frame) frame.title = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
-        }
-    }
-    function clearSurpriseMedia() {
-        media.querySelectorAll('video').forEach(video => video.pause());
-        media.querySelectorAll('iframe').forEach(frame => frame.removeAttribute('src'));
-        media.replaceChildren();
-    }
-    function loadSurpriseMedia(surprise) {
-        clearSurpriseMedia();
-        if (!surprise.mediaUrl || surprise.type === 'text') return;
-        const tag = { image: 'img', video: 'video', embed: 'iframe' }[surprise.type];
-        if (!tag) return;
-        const element = document.createElement(tag);
-        element.src = surprise.mediaUrl;
-        element.className = 'wheel-result-media';
-        const ar = document.documentElement.lang === 'ar';
-        if (tag === 'img') {
-            element.alt = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
-        }
-        if (tag === 'video') element.controls = true;
-        if (tag === 'iframe') {
-            element.title = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
-            element.allowFullscreen = true;
-            if (surprise.mediaLoading) element.loading = surprise.mediaLoading;
-            element.allow = 'encrypted-media; picture-in-picture';
-            element.referrerPolicy = 'strict-origin-when-cross-origin';
-        }
-        media.append(element);
-    }
-    function resetWheelView(moveFocus = false) {
-        clearSurpriseMedia();
-        surpriseView.hidden = true;
-        playView.hidden = false;
-        if (moveFocus) spin.focus({ preventScroll: true });
-    }
-    function finishSpin() {
-        clearTimeout(timer);
-        if (!spinning) return;
-        spinning = false;
-        spin.disabled = true;
-        result.removeAttribute('aria-busy');
-        if (!wheelDialog.open) return;
-        trackSection(surprises[selected].sectionId);
-        playView.hidden = true;
-        surpriseView.hidden = false;
-        loadSurpriseMedia(sectionsById.get(surprises[selected].sectionId));
-        renderResult();
-        title.focus({ preventScroll: true });
-    }
-    spin.addEventListener('click', () => {
-        if (spinning || !wheelDialog.open || !surpriseView.hidden || selected !== null || !availableCards.length) return;
-        activeSectionId = null;
-        renderSectionStates();
-        spinning = true;
-        spin.disabled = true;
-        const poolIndex = Math.floor(Math.random() * availableCards.length);
-        const sectionId = availableCards.splice(poolIndex, 1)[0];
-        selected = surprises.findIndex(surprise => surprise.sectionId === sectionId);
-        result.setAttribute('aria-busy', 'true');
-        renderResult();
-        // Segment centers land beneath the fixed pointer at twelve o'clock.
-        const target = (360 - (selected + .5) * step) % 360;
-        rotation += 360 * 5 + ((target - rotation % 360 + 360) % 360);
-        wheel.style.transform = `rotate(${rotation}deg)`;
-        if (reducedMotion.matches) finishSpin();
-        else timer = window.setTimeout(finishSpin, 3300);
-    });
-    back.addEventListener('click', () => {
-        if (spinning || surpriseView.hidden || selected === null) return;
-        completedCards.add(surprises[selected].sectionId);
-        selected = null;
-        activeSectionId = null;
-        if (completedCards.size === sectionsById.size) {
-            availableCards = [...sectionsById.keys()];
-            completedCards.clear();
-            visitedSections.clear();
-        }
-        renderSectionStates();
-        spin.disabled = false;
-        resetWheelView(true);
-        renderResult();
-    });
-    // The existing dialog close handler calls this cleanup for Close and Escape.
-    function closeWheel() {
-        if (spinning) {
-            // Cancelled, unviewed results remain available in the current round.
-            if (selected !== null) availableCards.push(surprises[selected].sectionId);
-            selected = null;
-            activeSectionId = null;
-            renderSectionStates();
-            wheel.style.transition = 'none';
-            wheel.style.transform = `rotate(${rotation}deg)`;
-            void wheel.offsetWidth;
-            wheel.style.removeProperty('transition');
-        }
-        clearTimeout(timer);
-        spinning = false;
-        result.removeAttribute('aria-busy');
-        if (!surpriseView.hidden && selected !== null) {
-            // Keep a viewed result pending until Back; reopening restores its media.
-            clearSurpriseMedia();
-            spin.disabled = true;
-        } else {
-            spin.disabled = false;
-            resetWheelView();
-        }
-        renderResult();
-    }
-    reducedMotion.addEventListener('change', () => {
-        if (spinning && reducedMotion.matches) finishSpin();
-    });
-    new MutationObserver(renderResult).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
-    renderResult();
-})();
+:where(.drinking-games-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
 
-"use strict";
+:where(.drinking-games-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
 
-//Author:Leslie Brockman
-//Date: 2026-10-30
-(() => {
-    const card = document.querySelector('#loser-of-the-week [data-loser-card]');
-    if (!card) return;
-    const front = card.querySelector('[data-loser-face="front"]');
-    const back = card.querySelector('[data-loser-face="back"]');
-    const more = front?.querySelector('[data-loser-flip="back"]');
-    const reset = back?.querySelector('[data-loser-flip="front"]');
-    if (!front || !back || !more || !reset) return;
+:where(.drinking-games-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
 
-    function showFace(showBack, moveFocus = true) {
-        const visible = showBack ? back : front;
-        const concealed = showBack ? front : back;
-        visible.hidden = false;
-        visible.inert = false;
-        visible.removeAttribute('aria-hidden');
-        visible.classList.toggle('is-revealed', moveFocus);
-        more.setAttribute('aria-expanded', String(showBack));
-        // Transfer focus before concealing the previously active control.
-        if (moveFocus) (showBack ? reset : more).focus({ preventScroll: true });
-        concealed.hidden = true;
-        concealed.inert = true;
-        concealed.setAttribute('aria-hidden', 'true');
-        concealed.classList.remove('is-revealed');
+@media (min-width: 1600px) {
+:where(.drinking-games-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+
+}
+
+@media (max-width: 768px) {
+:where(.drinking-games-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.drinking-games-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.drinking-games-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.drinking-games-page) main p {
+font-size: 1rem;
+}
+
+}
+
+@media (max-width: 480px) {
+:where(.drinking-games-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+}
+
+body.drinking-games-page {
+--ok-parchment-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/paperbg.jpg");
+    min-height: 100vh;
+    background-color: #ddc49a;
+    background-image: var(--ok-parchment-image);
+    background-position: center top;
+    
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+}
+
+@media (min-width: 769px) {
+body.drinking-games-page {
+background-size: cover;
+        background-repeat: no-repeat;
+}
+
+}
+
+:where(.drinking-games-page).ok-page .ok-main {
+box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    padding: 1.5rem .75rem;
+    color: #49301e;
+}
+
+:where(.drinking-games-page).ok-page .ok-content {
+box-sizing: border-box;
+    width: 100%;
+    max-width: 52rem;
+    min-width: 0;
+    margin-inline: auto;
+    padding: clamp(1rem, 3vw, 3rem);
+    border: 1px solid #a57c49;
+    border-block: 4px double #987044;
+    border-radius: .5rem;
+    background: rgba(255, 250, 235, .86);
+    box-shadow: 0 .6rem 1.8rem rgba(81, 48, 21, .18);
+    overflow-wrap: anywhere;
+}
+
+:where(.drinking-games-page).ok-page .ok-content p {
+width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 1rem + .25vw, 1.25rem);
+    line-height: 1.85;
+    text-align: start;
+}
+
+:where(.drinking-games-page).ok-page .ok-content .lang-ar {
+font-family: var(--font-ar);
+    direction: rtl;
+    text-align: right;
+    display: block;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    letter-spacing: normal;
+}
+
+:where(.drinking-games-page).ok-page .ok-content:lang(ar) {
+direction: rtl;
+}
+
+@media (min-width: 48rem) {
+:where(.drinking-games-page).ok-page .ok-main {
+padding: 2.5rem 1.5rem;
+}
+
+}
+
+@media (min-width: 64rem) {
+:where(.drinking-games-page).ok-page .ok-main {
+padding: 3rem 2rem;
+}
+
+}
+
+@media (min-width: 90rem) {
+:where(.drinking-games-page).ok-page .ok-main {
+padding-block: 4rem;
+}
+
+}
+
+@media (min-width: 120rem) {
+:where(.drinking-games-page).ok-page .ok-main {
+padding-block: 5rem;
+}
+
+}
+
+.drinking-games-page .drinking-games-content {
+max-width: 78rem;
+}
+
+.drinking-games-page .weekly-songs {
+margin-block: clamp(1.5rem, 3vw, 2.5rem);
+    min-width: 0;
+}
+
+.drinking-games-page .weekly-songs h2,
+.drinking-games-page .weekly-songs h3 {
+color: #6b451f;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    overflow-wrap: anywhere;
+}
+
+.drinking-games-page .weekly-songs h2 {
+font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.drinking-games-page .weekly-songs h3 {
+font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.drinking-games-page .weekly-song-videos {
+display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-block: 2rem;
+}
+
+.drinking-games-page .weekly-song-video {
+display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.drinking-games-page .weekly-song-video iframe {
+display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    margin-top: auto;
+}
+
+@media (min-width: 48rem) {
+.drinking-games-page .weekly-song-videos {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+}
+
+@media (min-width: 75rem) {
+.drinking-games-page .weekly-song-videos {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+}
+
+@media (max-width: 768px) {
+.drinking-games-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
     }
 
-    showFace(false, false);
-    more.addEventListener('click', () => showFace(true));
-    reset.addEventListener('click', () => showFace(false));
-})();
+}
+
+.drinking-games-page .drinking-games-content { background-color: #D9E2CE; }
+
+@media (max-width: 575px) {
+.drinking-games-page.ok-page .ok-main {
+        padding: 1.5rem .75rem;
+    }
+
+.drinking-games-page.ok-page .ok-content {
+        padding: 1rem;
+    }
+
+.drinking-games-page .ok-content > h2 {
+        padding-inline: 0;
+    }
+
+}
+
+
+/* Bilingual content warning: only the border pulses, for five seconds. */
+.drinking-games-page .content-warning {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #b3261e;
+    border-radius: .5rem;
+    background: transparent;
+    color: #252a20;
+    text-align: center;
+    animation: content-warning-border 1s ease-in-out 5;
+}
+.drinking-games-page .content-warning #page-heading {
+    margin: 0 0 .75rem;
+    padding: 0;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 1.5;
+    color: inherit;
+}
+.drinking-games-page.ok-page .content-warning p {
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: center;
+}
+.drinking-games-page.ok-page .content-warning p + p { margin-top: .75rem; }
+.drinking-games-page.ok-page .content-warning .lang-ar { text-align: center; }
+@keyframes content-warning-border {
+    0%, 100% { border-color: #b3261e; }
+    50% { border-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .drinking-games-page .content-warning { animation: none; }
+}
+
+/* Three doors into the lounge. All additions stay within this page. */
+.drinking-games-page .lounge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-block: 2rem;
+}
+.drinking-games-page :is(.lounge-feature, .game-card) {
+    min-width: 0;
+    padding: clamp(1.1rem, 2.5vw, 2rem);
+    border: 1px solid var(--lounge-accent, #c9aa65);
+    border-radius: 1rem;
+    overflow-wrap: anywhere;
+}
+.drinking-games-page .lounge-arcade { --lounge-accent: #8ce9bb; background: #171e22; color: #f5f2e8; }
+.drinking-games-page .lounge-jukebox { --lounge-accent: #e9bd69; background: #502425; color: #fff5df; }
+.drinking-games-page .lounge-carnival { --lounge-accent: #eec876; background: #303c22; color: #fff5df; }
+.drinking-games-page .lounge-feature {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    box-shadow: 0 .5rem 1rem #15151526;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.drinking-games-page .lounge-feature:is(:hover, :focus-within) {
+    transform: translateY(-4px);
+    box-shadow: 0 .5rem 1.5rem #15151555;
+}
+.drinking-games-page .feature-mark { display: flex; justify-content: space-between; font-size: 3.5rem; color: var(--lounge-accent); }
+.drinking-games-page .feature-mark > span { font: 700 1rem monospace; padding-top: 1rem; }
+.drinking-games-page .lounge-feature h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--lounge-accent); line-height: 1.25; margin-block: 1rem; }
+.drinking-games-page .ok-content .lounge-feature p { font-size: 1.05rem; line-height: 1.65; margin-bottom: 1.5rem; }
+.drinking-games-page .lounge-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 48px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: .75rem 1.1rem;
+    border: 2px solid transparent;
+    border-radius: .5rem;
+    background: var(--lounge-accent, #c9aa65);
+    color: #151515;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+.drinking-games-page .lounge-feature .lounge-button { margin-top: auto; }
+
+/* Game Room artwork card only. */
+.drinking-games-page .lounge-arcade #game-room-card-title,
+.drinking-games-page .lounge-arcade #game-room-card-title .lang-ar { text-align: center; }
+.drinking-games-page .lounge-arcade .game-room-artwork {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    border-radius: .75rem;
+}
+.drinking-games-page .lounge-arcade .lounge-button { align-self: center; }
+
+/* Jukebox landing card only; popup and songs retain their existing styles. */
+.drinking-games-page .lounge-feature.lounge-jukebox,
+.drinking-games-page .lounge-feature.lounge-jukebox:is(:hover, :focus-within) {
+    box-shadow: 0 8px 24px rgba(95, 115, 45, .35);
+}
+.drinking-games-page .lounge-feature.lounge-jukebox .feature-mark { justify-content: flex-start; }
+.drinking-games-page .lounge-feature.lounge-jukebox .jukebox-note {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    color: var(--lounge-accent);
+}
+.drinking-games-page .lounge-feature.lounge-jukebox #jukebox-card-title,
+.drinking-games-page .lounge-feature.lounge-jukebox #jukebox-card-title .lang-ar { text-align: center; }
+.drinking-games-page .lounge-feature.lounge-jukebox .jukebox-artwork {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    box-shadow: none;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto 1.5rem;
+}
+.drinking-games-page .lounge-feature.lounge-jukebox > .lounge-button {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+}
+.drinking-games-page .lounge-feature.lounge-jukebox > .lounge-button .lang-ar { text-align: center; }
+
+/* Vintage carnival artwork: Wheel landing card only. */
+.drinking-games-page .lounge-feature.lounge-carnival {
+    --lounge-accent: #F2C56E;
+    border-color: #F2C56E;
+}
+.drinking-games-page .lounge-feature.lounge-carnival,
+.drinking-games-page .lounge-feature.lounge-carnival:is(:hover, :focus-within) { box-shadow: 0 8px 24px rgba(95, 115, 45, .35); }
+.drinking-games-page .lounge-feature.lounge-carnival .feature-mark { justify-content: flex-start; }
+.drinking-games-page .lounge-feature.lounge-carnival .wheel-peace { display: block; width: 3.5rem; height: 3.5rem; color: #F2C56E; }
+.drinking-games-page .lounge-feature.lounge-carnival #wheel-card-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', 'Amiri', Georgia, serif;
+    text-shadow: 0 0 .6rem rgba(242, 197, 110, .25);
+}
+.drinking-games-page .lounge-feature.lounge-carnival #wheel-card-title .lang-ar { text-align: center; }
+.drinking-games-page .lounge-feature.lounge-carnival > p {
+    color: #C65A5A;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.75);
+    text-align: center;
+}
+.drinking-games-page .lounge-feature.lounge-carnival > p .lang-ar { text-align: center; }
+.drinking-games-page .lounge-feature.lounge-carnival .wheel-artwork-frame {
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+    margin: 0 auto 1.5rem;
+    background: transparent;
+    animation: wheel-card-float 4s ease-in-out infinite;
+}
+.drinking-games-page .lounge-feature.lounge-carnival .wheel-artwork {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    filter: drop-shadow(0 0 .65rem rgba(95, 115, 45, .35)) drop-shadow(0 .2rem .3rem rgba(242, 197, 110, .2));
+    transition: transform .3s ease;
+}
+.drinking-games-page .lounge-feature.lounge-carnival .wheel-artwork-frame:hover .wheel-artwork { transform: scale(1.03); }
+.drinking-games-page .lounge-feature.lounge-carnival > .lounge-button { width: 100%; align-self: center; text-align: center; }
+.drinking-games-page .lounge-feature.lounge-carnival > .lounge-button .lang-ar { text-align: center; }
+@keyframes wheel-card-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .drinking-games-page .lounge-feature.lounge-carnival .wheel-artwork-frame { animation: none; }
+    .drinking-games-page .lounge-feature.lounge-carnival .wheel-artwork,
+    .drinking-games-page .lounge-feature.lounge-carnival .wheel-artwork-frame:hover .wheel-artwork { transform: none; transition: none; }
+}
+
+/* Pink accents belong only to the Game Room landing card. */
+.drinking-games-page .lounge-feature.lounge-arcade .game-room-die {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    color: #FF4FA3;
+}
+.drinking-games-page .lounge-feature.lounge-arcade #game-room-card-title { color: #FF4FA3; }
+.drinking-games-page .lounge-feature.lounge-arcade > .lounge-button { background: #FF4FA3; color: #151515; }
+
+
+.drinking-games-page .lounge-button:hover { border-color: currentColor; }
+.drinking-games-page .lounge-button:focus-visible { outline: 3px solid #fff5df; outline-offset: 4px; box-shadow: 0 0 0 6px #151515; }
+.drinking-games-page .lounge-button:disabled { opacity: .6; cursor: wait; }
+.drinking-games-page.lounge-modal-open { overflow: hidden; }
+.drinking-games-page .lounge-dialog {
+    box-sizing: border-box;
+    width: min(72rem, calc(100% - 2rem));
+    max-width: calc(100% - 2rem);
+    max-height: calc(100dvh - 2rem);
+    margin: auto;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    border: 2px solid var(--lounge-accent);
+    border-radius: 1.5rem;
+    overflow: auto;
+    overflow-wrap: anywhere;
+    overscroll-behavior: contain;
+}
+.drinking-games-page .lounge-dialog::backdrop { background: #10150de6; }
+.drinking-games-page .dialog-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+.drinking-games-page .lounge-dialog h2 { margin: 0; padding: 0; text-align: start; color: var(--lounge-accent); font-size: clamp(1.6rem, 4vw, 2.5rem); }
+.drinking-games-page .lounge-dialog h3 { color: var(--lounge-accent); line-height: 1.5; }
+.drinking-games-page .lounge-dialog p { font-size: 1.1rem; line-height: 1.7; }
+.drinking-games-page .lounge-dialog .lang-ar { font-family: var(--font-ar); direction: rtl; text-align: right; }
+.drinking-games-page .game-card { background: #ffffff08; }
+
+/* Game Room popup artwork and action only. */
+.drinking-games-page #game-room-dialog .dialog-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+.drinking-games-page #game-room-dialog #game-room-title {
+    grid-row: 2;
+    min-width: 0;
+    color: #FF4FA3;
+    text-align: center;
+}
+.drinking-games-page #game-room-dialog #game-room-title .lang-ar { text-align: center; }
+.drinking-games-page #game-room-dialog .dialog-top > .dialog-close {
+    grid-row: 1;
+    justify-self: end;
+}
+.drinking-games-page #game-room-dialog .lounge-button { background: #FF4FA3; color: #151515; }
+
+.drinking-games-page #game-room-dialog .game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+.drinking-games-page #game-room-dialog .game-room-popup-artwork {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+}
+.drinking-games-page #game-room-dialog .game-card > .lounge-button { align-self: center; }
+
+.drinking-games-page #game-room-dialog .lounge-note {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.75;
+}
+.drinking-games-page #game-room-dialog .lounge-note .lang-ar { text-align: center; }
+
+
+.drinking-games-page .lounge-note { margin-top: 1.5rem; }
+.drinking-games-page .lounge-jukebox.lounge-dialog { border-top: .8rem solid #e9bd69; border-radius: 3rem 3rem 1rem 1rem; }
+.drinking-games-page .lounge-jukebox .weekly-songs h2 { text-align: center; font-size: 1.5rem; }
+
+/* Vintage cafe ornaments belong only to the Jukebox popup. */
+.drinking-games-page #jukebox-dialog .dialog-top { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: .65rem; }
+.drinking-games-page #jukebox-dialog .dialog-top > .dialog-close { justify-self: end; }
+.drinking-games-page #jukebox-dialog .cafe-title-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr); align-items: center; gap: .5rem; width: 100%; }
+.drinking-games-page #jukebox-dialog #jukebox-title { text-align: center; font-family: 'Cormorant Garamond', 'Amiri', Georgia, serif; text-shadow: 0 0 .6rem rgba(233, 189, 105, .3); }
+.drinking-games-page #jukebox-dialog :is(#jukebox-title, #weekly-song-heading, .cafe-subtitle, .cafe-tagline) .lang-ar { text-align: center; }
+.drinking-games-page #jukebox-dialog .cafe-branch { display: block; width: 100%; max-width: 8rem; height: auto; justify-self: center; color: #b5ae70; }
+.drinking-games-page #jukebox-dialog .cafe-branch-right { transform: scaleX(-1); }
+.drinking-games-page #jukebox-dialog .cafe-note { width: 1.75rem; height: 1.75rem; color: #e9bd69; }
+.drinking-games-page #jukebox-dialog .cafe-subtitle { margin: 0; text-align: center; color: #cfb57e; font-family: 'Cormorant Garamond', 'Amiri', Georgia, serif; font-size: clamp(1.05rem, 2.5vw, 1.3rem); line-height: 1.6; }
+.drinking-games-page #jukebox-dialog .cafe-divider { width: min(100%, 20rem); height: 1px; background: linear-gradient(to right, transparent, #e9bd69, transparent); }
+.drinking-games-page #jukebox-dialog .cafe-tagline { margin: 0; text-align: center; color: #fff5df; font-size: clamp(1rem, 2vw, 1.1rem); line-height: 1.7; }
+.drinking-games-page #jukebox-dialog #weekly-song-heading::after { content: ''; display: block; width: 3rem; height: .35rem; margin: .65rem auto 0; border-block: 1px solid #e9bd69; border-radius: 50%; }
+@media (max-width: 480px) {
+    .drinking-games-page #jukebox-dialog .cafe-title-row { grid-template-columns: minmax(0, 1fr) minmax(0, 6fr) minmax(0, 1fr); gap: .25rem; }
+}
+
+.drinking-games-page .lounge-jukebox .weekly-song-video { padding: .75rem; background: #170d0d66; border-radius: .75rem; }
+.drinking-games-page #wheel-dialog { text-align: center; border: 3px solid #e9bd69; box-shadow: inset 0 0 0 5px #742b30, inset 0 0 0 7px #c9aa65, 0 1rem 3rem #0008; background: #303c22; }
+.drinking-games-page #wheel-dialog .dialog-top { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 1rem; }
+.drinking-games-page #wheel-dialog #wheel-title,
+.drinking-games-page #wheel-dialog .wheel-optional { text-align: center; font-family: 'Cormorant Garamond', 'Amiri', Georgia, serif; font-weight: 700; color: #e9bd69; text-shadow: 1px 2px 0 #742b30, 2px 4px 2px #151515, 0 0 .65rem #e9bd6940; }
+.drinking-games-page #wheel-dialog :is(#wheel-title, .wheel-optional) .lang-ar { text-align: center; }
+.drinking-games-page #wheel-dialog .wheel-optional { margin: 0; font-size: clamp(1.2rem, 4vw, 1.6rem); padding: .65rem 1rem; border-block: 1px solid #c9aa65; border-radius: .5rem; background: linear-gradient(90deg, #742b3040, #742b30aa, #742b3040); }
+.drinking-games-page #wheel-dialog .wheel-stage { position: relative; width: min(100%, 24rem); margin: 2rem auto; padding: clamp(1rem, 4vw, 1.25rem); isolation: isolate; box-sizing: border-box; }
+.drinking-games-page #wheel-dialog .wheel-pointer { position: absolute; z-index: 4; top: -.8rem; left: 50%; transform: translateX(-50%); color: #e9bd69; font-size: 2rem; text-shadow: 0 2px 3px #151515; }
+.drinking-games-page #wheel-dialog .challenge-wheel { position: relative; width: 100%; aspect-ratio: 1; border-radius: 50%; background: #151515; transition: transform 3.2s cubic-bezier(.15,.7,.15,1); }
+.drinking-games-page #wheel-dialog .wheel-sections { display: block; width: 100%; height: 100%; overflow: visible; }
+.drinking-games-page #wheel-dialog .wheel-sections path { stroke: #c9aa65; stroke-width: 1.2; stroke-linejoin: round; }
+.drinking-games-page #wheel-dialog .wheel-sections path.is-visited { filter: saturate(.65) brightness(.88); }
+.drinking-games-page #wheel-dialog .wheel-sections path.is-current { stroke: #ffe29a; stroke-width: 3; filter: drop-shadow(0 0 3px #f2c56e); animation: wheel-selected-lights 1.2s ease-in-out infinite; }
+.drinking-games-page #wheel-dialog .wheel-labels > span { position: absolute; top: 50%; left: 50%; font: 900 clamp(1.35rem, 6vw, 2rem) Georgia, serif; color: #f2c56e; -webkit-text-stroke: .6px #151515; text-shadow: 1px 2px 1px #151515, -1px -1px 1px #151515; transform: translate(-50%, -50%); }
+.drinking-games-page #wheel-dialog .wheel-hub { position: absolute; z-index: 3; width: 27%; aspect-ratio: 1; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; pointer-events: none; filter: drop-shadow(0 2px 3px #15151599); }
+.drinking-games-page #wheel-dialog .wheel-hub svg { width: 100%; height: auto; }
+.drinking-games-page #wheel-dialog .wheel-lights { position: absolute; z-index: 2; inset: .25rem; border: .65rem solid #a13832; box-shadow: inset 0 0 0 3px #f2c56e, 0 0 0 3px #f2c56e, 0 0 0 5px #7c4b22; background: transparent; box-sizing: border-box; border-radius: 50%; pointer-events: none; }
+.drinking-games-page #wheel-dialog .wheel-lights span { position: absolute; width: clamp(.4rem, 1.8vw, .65rem); aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: #fff5df; box-shadow: 0 0 .4rem #fff5df99, 0 1px 2px #151515; border: 1px solid #b17c36; box-sizing: border-box; animation: wheel-marquee 1.2s ease-in-out infinite; animation-delay: var(--bulb-delay); }
+.drinking-games-page #wheel-dialog .wheel-lights span:nth-child(even) { background: #e9bd69; }
+@keyframes wheel-marquee { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@keyframes wheel-selected-lights { 0%, 100% { stroke: #ffe29a; } 50% { stroke: #c78a32; } }
+@media (prefers-reduced-motion: reduce) {
+    .drinking-games-page #wheel-dialog .challenge-wheel { transition: none; }
+    .drinking-games-page #wheel-dialog .wheel-lights span,
+    .drinking-games-page #wheel-dialog .wheel-sections path.is-current { animation: none; }
+}
+.drinking-games-page #wheel-dialog #wheel-title { position: relative; padding-block: .75rem; font-size: clamp(1.7rem, 5vw, 3rem); }
+.drinking-games-page #wheel-dialog #wheel-title::before,
+.drinking-games-page #wheel-dialog #wheel-title::after { content: ''; display: block; width: min(60%, 10rem); height: .3rem; border-block: 1px solid #c9aa65; border-radius: 50%; margin: .6rem auto; }
+.drinking-games-page #wheel-dialog .wheel-stage::before { content: ''; position: absolute; z-index: -1; inset: -1rem; border-radius: 50%; background: radial-gradient(circle, #e9bd692b, transparent 70%); pointer-events: none; }
+.drinking-games-page #wheel-dialog .wheel-olive { position: absolute; z-index: 0; left: 0; top: 15%; width: 12%; height: 70%; color: #b5ae70; opacity: .55; pointer-events: none; }
+.drinking-games-page #wheel-dialog .wheel-olive-right { left: auto; right: 0; transform: scaleX(-1); }
+.drinking-games-page #wheel-dialog :is(.dialog-close, #spin-wheel) { max-width: 100%; background: linear-gradient(#ffe2a0, #e9bd69 55%, #c7933d); color: #151515; border: 1px solid #f2c56e; border-top-color: #fff5df; border-bottom-color: #9f4237; border-radius: .65rem; box-shadow: 0 3px 0 #742b30, 0 5px 8px #15151566; }
+.drinking-games-page #wheel-dialog :is(.dialog-close, #spin-wheel):hover { background: linear-gradient(#fff0c2, #f2c56e); }
+.drinking-games-page .wheel-result { min-height: 8rem; margin-top: 1.5rem; padding: 1rem; background: #15151540; border-radius: .75rem; }
+
+/* Raised red lettering only inside the Wheel popup instruction panel. */
+.drinking-games-page #wheel-dialog .wheel-result { display: grid; place-items: center; min-width: 0; padding: clamp(1rem, 4vw, 2rem); }
+.drinking-games-page #wheel-dialog .wheel-carnival-tagline {
+    max-width: 100%;
+    min-width: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    line-height: 1.4;
+    color: #f35b50;
+    overflow-wrap: anywhere;
+    text-shadow: 0 -1px 0 #ffe2a0, 0 1px 0 #b52936, 1px 2px 0 #922337, 2px 3px 0 #742030, 3px 4px 0 #501d2c, 4px 6px 5px rgba(0, 0, 0, .8);
+}
+.drinking-games-page #wheel-dialog .wheel-carnival-tagline .lang-ar { font-family: var(--font-ar); direction: rtl; text-align: center; }
+.drinking-games-page #wheel-dialog .wheel-carnival-tagline[hidden] { display: none; }
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+    .drinking-games-page #wheel-dialog .wheel-carnival-tagline > span {
+        background: linear-gradient(#fff0bf 0%, #ff8e73 16%, #f34e48 40%, #b52638 75%, #7c1d30 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+.drinking-games-page .lounge-feature:last-child { grid-column: 1 / -1; }
+@media (max-width: 768px) {
+    .drinking-games-page .lounge-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+        .drinking-games-page .lounge-dialog { width: calc(100% - 1rem); max-width: calc(100% - 1rem); max-height: calc(100dvh - 1rem); }
+    .drinking-games-page .dialog-close { width: 100%; }
+    .drinking-games-page .weekly-song-videos { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .drinking-games-page :is(.lounge-feature, .challenge-wheel) { transition: none; }
+    .drinking-games-page .lounge-feature:is(:hover, :focus-within) { transform: none; }
+}
+
+/* Round availability peace signs rotate with their permanent numbered segments. */
+.drinking-games-page #wheel-dialog .wheel-status-dot {
+    position: absolute;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    transform: translate(-50%, calc(clamp(1.35rem, 6vw, 2rem) * .6 + 11px));
+    font-family: "DejaVu Sans", "Arial Unicode MS", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: #fff5df;
+    text-shadow: 0 0 1px #f2c56e, 1px 0 1px #f2c56e, -1px 0 1px #f2c56e;
+    pointer-events: none;
+    animation: wheel-availability 2.4s steps(1, end) infinite;
+}
+.drinking-games-page #wheel-dialog .wheel-status-dot.is-completed {
+    animation: none;
+    opacity: 0;
+}
+@keyframes wheel-availability {
+    0%, 100% { color: #b94e45; }
+    25% { color: #287048; }
+    50% { color: #fff5df; }
+    75% { color: #151515; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .drinking-games-page #wheel-dialog .wheel-status-dot { animation: none; }
+}
+
+/* Mystery reveal uses the existing wheel dialog, never a nested modal. */
+.drinking-games-page :is(#wheel-play, #wheel-surprise)[hidden] { display: none; }
+.drinking-games-page .wheel-surprise { padding: clamp(1rem, 4vw, 3rem); background: #15151540; border-radius: 1rem; }
+.drinking-games-page .surprise-mark { color: #eec876; font-size: 4rem; margin: 0; }
+
+/* Only Challenge 1 replaces the shared result ornament. */
+.drinking-games-page #wheel-dialog .wheel-result__peace { display: none; }
+.drinking-games-page #wheel-dialog #wheel-surprise:is([data-section-id="1"], [data-section-id="2"], [data-section-id="3"], [data-section-id="4"]) > .surprise-mark { display: none; }
+.drinking-games-page #wheel-dialog #wheel-surprise:is([data-section-id="1"], [data-section-id="2"], [data-section-id="3"], [data-section-id="4"]) > .wheel-result__peace {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 4px;
+    font-family: "DejaVu Sans", "Arial Unicode MS", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    color: #f3c66d;
+    text-align: center;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .45), 0 0 10px rgba(243, 198, 109, .2);
+}
+
+.drinking-games-page #surprise-title:focus-visible { outline: 3px solid #eec876; outline-offset: 4px; }
+.drinking-games-page #surprise-media :is(img, video, iframe) { display: block; width: 100%; max-width: 36rem; margin: 1rem auto; }
+.drinking-games-page #surprise-media iframe { aspect-ratio: 16 / 9; border: 0; }
+/* Wheel result media and shared statement typography. */
+.drinking-games-page #wheel-dialog #surprise-media .wheel-result-media {
+    box-sizing: border-box;
+    display: block;
+    width: min(100%, 500px);
+    max-width: 100%;
+    height: auto;
+    margin: 1.25rem auto;
+    object-fit: contain;
+    border: 1px solid #c9aa65;
+    border-radius: .65rem;
+}
+.drinking-games-page #wheel-dialog #surprise-media iframe.wheel-result-media {
+    width: min(100%, 36rem);
+    aspect-ratio: 16 / 9;
+}
+.drinking-games-page #wheel-dialog #surprise-description[hidden] { display: none; }
+.drinking-games-page #wheel-dialog #surprise-description.wheel-result-statement {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    text-wrap: balance;
+    min-width: 0;
+    max-width: 100%;
+    padding: clamp(.75rem, 3vw, 1.5rem);
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.65rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: .015em;
+    overflow-wrap: anywhere;
+    color: #ffe2a0;
+    text-shadow: 0 -1px 0 #fff0bf, 0 1px 0 #c7933d, 1px 2px 0 #9b3d37, 2px 3px 0 #742b30, 3px 4px 0 #502425, 4px 6px 5px #151515cc, 0 0 14px #e9bd6938;
+}
+.drinking-games-page #wheel-dialog #surprise-description.wheel-result-statement:lang(ar) {
+    font-family: var(--font-ar);
+    direction: rtl;
+    letter-spacing: normal;
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+    .drinking-games-page #wheel-dialog #surprise-description.wheel-result-statement {
+        background: linear-gradient(#fff8df 0%, #ffe8a3 18%, #f2c56e 42%, #df8b45 70%, #b8443d 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+/* Inline editorial feature migrated from West Bank. */
+.drinking-games-page #loser-of-the-week {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-block: 2rem;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    border: 1px solid #c8a45a;
+    border-radius: 18px;
+    background: #252a20;
+    color: #f5edda;
+    box-shadow: 0 .35rem .9rem rgba(91, 29, 35, .22),
+        0 1rem 2rem rgba(91, 29, 35, .12);
+    overflow-wrap: anywhere;
+}
+
+.drinking-games-page #loser-of-the-week :is(h2, h3),
+.drinking-games-page #loser-of-the-week :is(h2, h3) .lang-ar {
+    padding-inline: 0;
+    text-align: center;
+    color: #c8a45a;
+}
+
+.drinking-games-page #loser-of-the-week h2 {
+    margin-block: 0 1.5rem;
+    font-size: clamp(2rem, 1.3rem + 3vw, 3.8rem);
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(200, 164, 90, .22);
+}
+
+.drinking-games-page #loser-of-the-week h2 .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+}
+
+.drinking-games-page #loser-of-the-week h2::after {
+    content: "";
+    display: block;
+    width: min(5rem, 35%);
+    height: 1px;
+    margin: 1rem auto 0;
+    background: #c8a45a;
+    opacity: .8;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-intro {
+    max-width: 42rem;
+    margin-inline: auto;
+    color: #f5edda;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-intro p {
+    line-height: 1.9;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-intro p:last-child {
+    font-weight: 700;
+    color: #ebd4a3;
+}
+
+.drinking-games-page #loser-of-the-week h3 {
+    margin-block: 1.25rem .75rem;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-intro p + p {
+    margin-block-start: 1rem;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-card {
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding: clamp(.65rem, 2vw, 1.25rem);
+    border: 1px solid #c8a45a;
+    border-radius: .85rem;
+    background: #343b2c;
+    box-shadow: inset 0 1px 12px rgba(0, 0, 0, .22);
+    transition: transform .2s ease, box-shadow .2s ease;
+    perspective: 1200px;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-face {
+    min-width: 0;
+    text-align: center;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-face[hidden] {
+    display: none;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-face.is-revealed {
+    animation: loser-week-turn .3s ease-out;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-images {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(.5rem, 2vw, 1rem);
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-images img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    box-sizing: border-box;
+    padding: .25rem;
+    border: 1px solid rgba(200, 164, 90, .5);
+    border-radius: .5rem;
+    background: #252a20;
+    object-fit: contain;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-description {
+    margin-inline: auto;
+    max-width: 42rem;
+    padding: clamp(.5rem, 2vw, 1rem);
+    color: #f5edda;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-description p {
+    line-height: 1.85;
+}
+
+.drinking-games-page #loser-of-the-week .lang-en {
+    direction: ltr;
+}
+
+.drinking-games-page #loser-of-the-week .lang-ar {
+    direction: rtl;
+    font-family: var(--font-ar);
+    letter-spacing: normal;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 48px;
+    margin-top: 1.25rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid #c8a45a;
+    border-radius: .6rem;
+    background: #81362f;
+    color: #f5edda;
+    font: inherit;
+    font-weight: 700;
+    white-space: normal;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #48231f, 0 5px 10px rgba(0, 0, 0, .2);
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-button:hover {
+    background: #98443b;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-button:focus-visible {
+    outline: 3px solid #fff2cc;
+    outline-offset: 4px;
+}
+
+.drinking-games-page #loser-of-the-week .loser-week-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #48231f;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.drinking-games-page #loser-of-the-week .loser-week-card:hover {
+        transform: translateY(-2px);
+        box-shadow: inset 0 1px 12px rgba(0, 0, 0, .22),
+            0 .5rem 1rem rgba(0, 0, 0, .18);
+    }
+
+}
+
+@media (min-width: 36rem) {
+.drinking-games-page #loser-of-the-week .loser-week-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (min-width: 64rem) {
+.drinking-games-page #loser-of-the-week #loser-week-back .loser-week-images {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+@keyframes loser-week-turn {
+    from { opacity: .5; transform: rotateY(-12deg); }
+    to { opacity: 1; transform: rotateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.drinking-games-page #loser-of-the-week .loser-week-card,
+    .drinking-games-page #loser-of-the-week .loser-week-button {
+        transition: none;
+        transform: none;
+    }
+
+.drinking-games-page #loser-of-the-week .loser-week-card:hover,
+    .drinking-games-page #loser-of-the-week .loser-week-button:active {
+        transform: none;
+    }
+
+.drinking-games-page #loser-of-the-week .loser-week-face.is-revealed {
+        animation: none;
+    }
+
+}
+
+
+.drinking-games-page #loser-of-the-week :is(h2, h3) { overflow-wrap: anywhere; }
+.drinking-games-page #loser-of-the-week h3 { line-height: 1.6; }
+
+/* Relocated Andrey coverage; summary reuses the exact Back button treatment. */
+.drinking-games-page #loser-of-the-week .andrey-coverage { min-width: 0; }
+.drinking-games-page #loser-of-the-week .andrey-coverage > summary { list-style: none; }
+.drinking-games-page #loser-of-the-week .andrey-coverage > summary::-webkit-details-marker { display: none; }
+.drinking-games-page #loser-of-the-week .andrey-coverage-content { min-width: 0; margin-top: 1.5rem; }
+:where(.drinking-games-page) #andrey-coverage .andrey-modal-actions {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .85rem;
+    margin-top: 2rem;
+}
+:where(.drinking-games-page) #andrey-coverage .modal-back-button,
+:where(.drinking-games-page) #andrey-coverage .andrey-profile-link {
+display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: min(100%, 260px);
+    min-height: 48px;
+    padding: .75rem 1.2rem;
+    border: 2px solid var(--dark);
+    border-radius: 7px;
+    color: var(--dark);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+:where(.drinking-games-page) #andrey-coverage .modal-back-button {
+background: var(--primary-green);
+}
+:where(.drinking-games-page) #andrey-coverage .andrey-profile-link {
+background: var(--gold);
+}
+:where(.drinking-games-page) #andrey-coverage .modal-back-button:hover,
+:where(.drinking-games-page) #andrey-coverage .andrey-profile-link:hover {
+background: var(--accent-red);
+}
+:where(.drinking-games-page) #andrey-coverage .modal-back-button:focus-visible,
+:where(.drinking-games-page) #andrey-coverage .andrey-profile-link:focus-visible {
+outline: 3px solid var(--primary-green); outline-offset: 3px;
+}
+@media (max-width: 768px) {
+:where(.drinking-games-page) #andrey-coverage .andrey-modal-actions {
+margin-top: 1.4rem;
+}
+:where(.drinking-games-page) #andrey-coverage .modal-back-button,
+:where(.drinking-games-page) #andrey-coverage .andrey-profile-link {
+width: 100%; max-width: 320px;
+}
+
+}
+.drinking-games-page #andrey-coverage .meet-andrey {
+margin-block: clamp(1.5rem, 3vw, 2.5rem);
+    min-width: 0;
+}
+.drinking-games-page #andrey-coverage .meet-andrey-portrait {
+display: block;
+    width: min(100%, 28rem);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.drinking-games-page #andrey-coverage .meet-andrey h2,
+.drinking-games-page #andrey-coverage .meet-andrey h3 {
+color: #6b451f;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    overflow-wrap: anywhere;
+}
+.drinking-games-page #andrey-coverage .meet-andrey h2 {
+font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+.drinking-games-page #andrey-coverage .meet-andrey h3 {
+font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+.drinking-games-page #andrey-coverage .andrey-modal-actions {
+flex-wrap: wrap;
+}
+.drinking-games-page #andrey-coverage .andrey-modal-actions > * {
+min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading {
+    margin: 1.5rem auto 0;
+    padding: clamp(.85rem, 3vw, 2rem);
+    border-radius: 18px 18px 0 0;
+    background: #252a20;
+    text-align: center;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-alert,
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-place {
+    display: block;
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading .lang-ar {
+    font-family: var(--font-ar);
+    direction: rtl;
+    text-align: center;
+    letter-spacing: normal;
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-alert {
+    color: #FFF5DF;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(92, 28, 36, .65);
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.4rem, 2vw, 1rem);
+    margin-top: .5rem;
+    color: #E9BD69;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: 700;
+    text-shadow: 0 0 .4rem rgba(233, 189, 105, .2),
+        0 3px 5px rgba(92, 28, 36, .65);
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-place > span {
+    min-width: 0;
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-place .lang-en {
+    letter-spacing: .04em;
+}
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-place::before,
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-place::after {
+    content: "";
+    flex: 0 1 3rem;
+    height: 1px;
+    background: #E9BD69;
+    opacity: .7;
+}
+.drinking-games-page #andrey-coverage .west-bank-decoration {
+    box-sizing: border-box;
+    padding: 0 .5rem 1.25rem;
+    border-radius: 0 0 18px 18px;
+    background: #252a20;
+    color: #FFF5DF;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    word-spacing: .35em;
+    direction: ltr;
+}
+@media (max-width: 480px) {
+.drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-place::before,
+    .drinking-games-page #andrey-coverage #meet-andrey-heading .west-bank-place::after {
+        display: none;
+    }
+
+}
