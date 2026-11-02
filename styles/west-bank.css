@@ -1,0 +1,673 @@
+/* Author: Leslie Brockman */
+/* Date: 11-01-2026 */
+.west-bank-page #your-famous .hero-gallery-block,
+.west-bank-page #your-famous .hero-gallery-block :is(.scrollable-gallery, .gallery-card, figure, img) {
+border-color: transparent;
+    box-shadow: none;
+}
+
+:where(.west-bank-page) main {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+}
+
+:where(.west-bank-page) main img {
+max-width: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+:where(.west-bank-page) main p {
+max-width: 600px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block {
+width: min(100%, 980px);
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .scrollable-gallery {
+width: 100%;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .scrollable-gallery {
+display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0 1.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 5px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(207, 17, 39, 0.35);
+    margin: 1.5rem auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card {
+flex: 0 0 200px;
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    border: 0;
+    border-radius: 0;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card img,
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card a img {
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+:where(.west-bank-page) .gallery-card a {
+display: block;
+    width: 100%;
+    height: 100%;
+}
+
+:where(.west-bank-page) .gallery-card a img {
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+:where(.west-bank-page) h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+:where(.west-bank-page) main h2 {
+text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto 1rem;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 1600px) {
+:where(.west-bank-page) .section {
+max-width: 1440px;
+}
+
+:where(.west-bank-page) main p {
+font-size: 1.35rem;
+            max-width: 720px;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex-basis: 340px;
+}
+
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+:where(.west-bank-page) .section {
+padding: 2.4rem 1.4rem;
+}
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+:where(.west-bank-page) .section {
+padding: 2.1rem 1.15rem;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex-basis: 280px;
+}
+
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+:where(.west-bank-page) .section {
+padding: 1.75rem 1rem;
+            margin: 1.75rem auto;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex: 0 0 280px;
+            width: 280px;
+}
+
+}
+
+@media (max-width: 768px) {
+:where(.west-bank-page) main {
+min-height: auto;
+            padding: 1.5rem 0.85rem;
+}
+
+:where(.west-bank-page) main p {
+max-width: 100%;
+            font-size: 1.05rem;
+            line-height: 1.55;
+}
+
+:where(.west-bank-page) .section {
+padding: 2rem 1rem;
+            margin: 1.8rem auto;
+            width: 100%;
+}
+
+:where(.west-bank-page) .scrollable-gallery {
+gap: 1rem;
+            padding: 1rem;
+            margin: 1.5rem auto;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex: 0 0 250px;
+}
+
+:where(.west-bank-page) .gallery-card img {
+height: 250px;
+}
+
+:where(.west-bank-page) main h2 {
+font-size: 1.5rem;
+            margin: 1.5rem auto 0.75rem;
+            padding: 0 1rem;
+}
+
+:where(.west-bank-page) .section,
+:where(.west-bank-page) .scrollable-gallery {
+width: 100%;
+            max-width: 100%;
+}
+
+:where(.west-bank-page) .scrollable-gallery {
+padding-left: 0.5rem;
+            padding-right: 0.5rem;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex: 0 0 clamp(220px, 75vw, 320px);
+}
+
+:where(.west-bank-page) .gallery-card img {
+height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background: #fff;
+}
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+:where(.west-bank-page) main p {
+font-size: 1rem;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex-basis: 250px;
+            width: 250px;
+}
+
+}
+
+@media (max-width: 480px) {
+:where(.west-bank-page) .section {
+padding: 1.4rem 0.85rem;
+            margin: 1.25rem auto;
+}
+
+:where(.west-bank-page) main p {
+font-size: 0.98rem;
+            line-height: 1.5;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex: 0 0 82vw;
+}
+
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+:where(.west-bank-page) .section {
+padding-left: 0.8rem;
+            padding-right: 0.8rem;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex-basis: 82vw;
+            width: 82vw;
+}
+
+}
+
+@media (max-width: 359px) {
+:where(.west-bank-page) .section {
+padding: 0.7rem;
+            margin: 0.9rem auto;
+}
+
+:where(.west-bank-page) .gallery-card {
+flex-basis: 88vw;
+            width: 88vw;
+}
+
+}
+
+@media (max-width: 1199px) {
+:where(.west-bank-page) #your-famous .hero-gallery-block .scrollable-gallery {
+padding: 0.9rem 0 1.1rem;
+                gap: 1.25rem;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card {
+flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card img,
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card a img {
+height: 100%;
+}
+
+}
+
+@media (max-width: 767px) {
+:where(.west-bank-page) #your-famous .hero-gallery-block .scrollable-gallery {
+padding: 0.75rem 0 1rem;
+                gap: 1rem;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card {
+flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card img,
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card a img {
+height: 100%;
+}
+
+}
+
+@media (max-width: 480px) {
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card {
+flex-basis: 200px;
+                width: 200px;
+                height: 200px;
+}
+
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card img,
+:where(.west-bank-page) #your-famous .hero-gallery-block .gallery-card a img {
+height: 100%;
+}
+
+}
+
+.west-bank-page #your-famous {
+box-sizing: border-box;
+    width: 100%;
+    max-width: min(100%, 1200px);
+    min-width: 0;
+    margin-inline: auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 2px solid #303C22;
+    border-radius: 12px;
+    box-shadow:
+        inset 0 0 0 1px #303C22,
+        inset 0 0 0 4px #FFFFFF,
+        inset 0 0 0 7px #151515,
+        inset 0 0 0 10px #C9AA65,
+        inset 0 0 0 13px #A52A32;
+    text-align: center;
+}
+
+.west-bank-page #your-famous .hero-gallery-block {
+max-width: 100%;
+    margin-inline: auto;
+}
+
+.west-bank-page #your-famous :is(h2, h3, p) > .lang-ar {
+text-align: center;
+}
+
+@media (min-width: 100rem) {
+.west-bank-page #your-famous {
+max-width: min(100%, 1440px);
+}
+
+}
+
+body.west-bank-page {
+    min-height: 100vh;
+    background-color: #000000;
+    background-image: none;
+}
+
+:where(.west-bank-page).ok-page .ok-main {
+box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    padding: 1.5rem .75rem;
+    color: #49301e;
+}
+
+:where(.west-bank-page).ok-page .ok-content {
+box-sizing: border-box;
+    width: 100%;
+    max-width: 52rem;
+    min-width: 0;
+    margin-inline: auto;
+    padding: clamp(1rem, 3vw, 3rem);
+    border: 1px solid #a57c49;
+    border-block: 4px double #987044;
+    border-radius: .5rem;
+    background: rgba(255, 250, 235, .86);
+    box-shadow: 0 .6rem 1.8rem rgba(81, 48, 21, .18);
+    overflow-wrap: anywhere;
+}
+
+:where(.west-bank-page).ok-page .ok-content p {
+width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 1rem + .25vw, 1.25rem);
+    line-height: 1.85;
+    text-align: start;
+}
+
+:where(.west-bank-page).ok-page .ok-content .lang-ar {
+font-family: var(--font-ar);
+    direction: rtl;
+    text-align: right;
+    display: block;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    letter-spacing: normal;
+}
+
+:where(.west-bank-page).ok-page .ok-content:lang(ar) {
+direction: rtl;
+}
+
+@media (min-width: 48rem) {
+:where(.west-bank-page).ok-page .ok-main {
+padding: 2.5rem 1.5rem;
+}
+
+}
+
+@media (min-width: 64rem) {
+:where(.west-bank-page).ok-page .ok-main {
+padding: 3rem 2rem;
+}
+
+}
+
+@media (min-width: 90rem) {
+:where(.west-bank-page).ok-page .ok-main {
+padding-block: 4rem;
+}
+
+}
+
+@media (min-width: 120rem) {
+:where(.west-bank-page).ok-page .ok-main {
+padding-block: 5rem;
+}
+
+}
+
+.west-bank-page .west-bank-content {
+max-width: 78rem;
+}
+
+@media (max-width: 768px) {
+.west-bank-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+
+}
+
+.west-bank-page .west-bank-content { background-color: #D9E2CE; }
+
+.west-bank-page :is(.ok-main, #your-famous, .hero-gallery-block, .scrollable-gallery) { min-width: 0; max-width: 100%; }
+
+@media (max-width: 991px) {
+.west-bank-page #your-famous .hero-gallery-block .gallery-card {
+        flex: 0 0 min(200px, 100%);
+        width: min(200px, 100%);
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+.west-bank-page #your-famous .hero-gallery-block .gallery-card img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 575px) {
+.west-bank-page.ok-page .ok-main {
+        padding: 1.5rem .75rem;
+    }
+
+.west-bank-page.ok-page .ok-content {
+        padding: 1rem;
+    }
+
+.west-bank-page .ok-content > h2 {
+        padding-inline: 0;
+    }
+
+}
+
+
+/* Permanent awareness hub: directory additions stay page-scoped. */
+.west-bank-page .hub-intro {
+    padding: clamp(1.25rem, 4vw, 3rem);
+    margin-block: 2rem;
+    border-radius: 1rem;
+    background: #252a20;
+    color: #fff5df;
+    border-block: 3px solid #c9aa65;
+}
+.west-bank-page .hub-intro h2 { color: #e9bd69; font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.3; padding: 0; margin-top: 0; }
+.west-bank-page.ok-page .hub-intro p,
+.west-bank-page.ok-page .hub-intro p .lang-ar { text-align: center; }
+.west-bank-page #umm-al-khair { min-width: 0; scroll-margin-top: 2rem; }
+.west-bank-page.ok-page .hub-intro h2 .lang-ar { text-align: center; }
+
+/* Compact Community Explorer; the shared chrome is activated by body.mpga-page. */
+.west-bank-page .community-explorer { margin-block: 3rem; min-width: 0; }
+.west-bank-page #explorer-controls[hidden] { display: none; }
+.west-bank-page .region-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: .65rem; margin-block: 1.5rem; }
+.west-bank-page :is(.region-choice, .community-choice) { box-sizing: border-box; min-width: 0; max-width: 100%; min-height: 48px; padding: .65rem 1rem; border: 1px solid #987044; border-radius: .5rem; font: inherit; font-weight: 700; color: #303c22; background: #fff5df; white-space: normal; overflow-wrap: anywhere; cursor: pointer; }
+.west-bank-page :is(.region-choice, .community-choice):hover { background: #eee5cf; border-color: #81362f; }
+.west-bank-page :is(.region-choice, .community-choice)[aria-pressed="true"] { background: #303c22; color: #fff5df; border-color: #c9aa65; box-shadow: inset 0 -3px #c9aa65; }
+.west-bank-page .community-explorer :is(button, a):focus-visible,
+.west-bank-page #umm-al-khair:focus-visible { outline: 3px solid #81362f; outline-offset: 4px; }
+.west-bank-page .explorer-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+.west-bank-page :is(.community-selector, .community-profile) { min-width: 0; }
+.west-bank-page .community-selector h3 { font-size: 1.3rem; text-align: center; color: #49301e; }
+.west-bank-page.ok-page :is(#explorer-heading, #community-selector-heading),
+.west-bank-page.ok-page :is(#explorer-heading, #community-selector-heading) .lang-ar { text-align: center; }
+.west-bank-page #community-buttons { display: grid; grid-template-columns: minmax(0, 1fr); grid-auto-rows: 1fr; justify-content: center; gap: .65rem; }
+.west-bank-page .community-choice {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.west-bank-page .community-choice > .lang-ar { text-align: inherit; }
+.west-bank-page .community-profile { padding: clamp(1rem, 3vw, 2rem); border: 1px solid #987044; border-radius: .75rem; background: #fff5df; color: #252a20; overflow-wrap: anywhere; text-align: start; }
+.west-bank-page .community-profile h3 { color: #81362f; font-size: 1.6rem; line-height: 1.4; }
+.west-bank-page .community-profile h4 { margin-block: 1.5rem .5rem; font-size: 1.15rem; }
+.west-bank-page.ok-page .community-profile p { font-size: 1.05rem; line-height: 1.7; margin-block: .75rem; text-indent: 0; }
+.west-bank-page .profile-area { font-weight: 700; }
+.west-bank-page .research-pending { padding: .75rem; background: #e2e8da; border-radius: .4rem; }
+.west-bank-page .community-profile dl { margin-block: 1rem; }
+.west-bank-page .community-profile dt { font-weight: 700; margin-top: .75rem; }
+.west-bank-page .community-profile dd { margin: .15rem 0 0; }
+.west-bank-page .community-profile time { direction: ltr; unicode-bidi: isolate; }
+.west-bank-page .community-profile a { color: #753027; text-decoration: underline; text-underline-offset: .2em; }
+.west-bank-page .profile-feature-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
+.west-bank-page .community-profile img { display: block; width: 100%; height: auto; margin: 1rem auto; }
+@media (max-width: 768px) {
+    .west-bank-page .region-choice { flex: 1 1 8rem; }
+}
+
+/* Community controls stay above the full-width profile at every breakpoint. */
+@media (min-width: 651px) {
+    .west-bank-page #community-buttons { grid-template-columns: repeat(auto-fit, minmax(0, calc((100% - .65rem) / 2))); }
+}
+@media (min-width: 769px) {
+    .west-bank-page #community-buttons { grid-template-columns: repeat(auto-fit, minmax(0, calc((100% - 1.3rem) / 3))); }
+}
+@media (min-width: 1001px) {
+    .west-bank-page #community-buttons { grid-template-columns: repeat(auto-fit, minmax(0, calc((100% - 1.95rem) / 4))); }
+}
+
+/* Reuse the featured heading treatment only inside the active profile heading. */
+.west-bank-page .community-profile .profile-community-heading {
+    margin: 0 0 1.5rem;
+    padding: clamp(.85rem, 3vw, 2rem);
+    border-radius: 18px;
+    background: #252a20;
+    text-align: center;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.west-bank-page .community-profile .profile-community-heading .profile-heading-alert,
+.west-bank-page .community-profile .profile-community-heading .profile-heading-place {
+    display: block;
+}
+
+.west-bank-page .community-profile .profile-community-heading .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+}
+
+.west-bank-page .community-profile .profile-community-heading .lang-ar {
+    font-family: var(--font-ar);
+    direction: rtl;
+    text-align: center;
+    letter-spacing: normal;
+}
+
+.west-bank-page .community-profile .profile-community-heading .profile-heading-alert {
+    color: #FFF5DF;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(92, 28, 36, .65);
+}
+
+.west-bank-page .community-profile .profile-community-heading .profile-heading-place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.4rem, 2vw, 1rem);
+    margin-top: .5rem;
+    color: #E9BD69;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: 700;
+    text-shadow: 0 0 .4rem rgba(233, 189, 105, .2),
+        0 3px 5px rgba(92, 28, 36, .65);
+}
+
+.west-bank-page .community-profile .profile-community-heading .profile-heading-place > span {
+    min-width: 0;
+}
+
+.west-bank-page .community-profile .profile-community-heading .profile-heading-place .lang-en {
+    letter-spacing: .04em;
+}
+
+.west-bank-page .community-profile .profile-community-heading .profile-heading-place::before,
+.west-bank-page .community-profile .profile-community-heading .profile-heading-place::after {
+    content: "";
+    flex: 0 1 3rem;
+    height: 1px;
+    background: #E9BD69;
+    opacity: .7;
+}
+
+.west-bank-page .community-profile .profile-community-heading .profile-heading-decoration {
+    display: block;
+    box-sizing: border-box;
+    padding: .75rem .5rem 0;
+    border-radius: 0;
+    background: #252a20;
+    color: #FFF5DF;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    word-spacing: .35em;
+    direction: ltr;
+}
+
+@media (max-width: 480px) {
+.west-bank-page .community-profile .profile-community-heading .profile-heading-place::before,
+    .west-bank-page .community-profile .profile-community-heading .profile-heading-place::after {
+        display: none;
+    }
+
+}
+
+
+/* The embedded community map keeps OpenStreetMap's own interactive attribution visible. */
+.west-bank-page .community-profile .community-location-map { width: 100%; max-width: 600px; min-width: 0; margin: 1rem auto; text-align: center; }
+.west-bank-page .community-profile .community-location-map iframe { display: block; box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; border: 1px solid #c9aa65; border-radius: .5rem; }
+.west-bank-page .community-profile .community-location-map figcaption { margin-block: .5rem; font-size: .95rem; line-height: 1.5; }
+.west-bank-page .community-profile .community-location-map > a { display: inline-flex; align-items: center; min-height: 44px; font-size: .95rem; }
+@media (max-width: 768px) {
+    .west-bank-page .community-profile .community-location-map iframe { height: 240px; }
+}
+
+/* Reusable map-link button; other profile links and map dimensions stay unchanged. */
+.west-bank-page .community-profile .community-map-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    margin: .65rem auto 0;
+    padding: .6rem .9rem;
+    border: 1px solid #c9aa65;
+    border-radius: 10px;
+    background: #252a20;
+    color: #fff5df;
+    font-size: .95rem;
+    font-weight: 700;
+    text-decoration: none;
+    direction: ltr;
+    overflow-wrap: anywhere;
+}
+.west-bank-page .community-profile .community-map-button-icon { flex: 0 0 auto; color: #e9bd69; }
+.west-bank-page .community-profile .community-map-button:hover { box-shadow: 0 0 .75rem rgba(201, 170, 101, .4); color: #e9bd69; }
+.west-bank-page .community-profile .community-map-button:focus-visible { outline: 3px solid #c9aa65; outline-offset: 4px; }
