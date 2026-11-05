@@ -1,6 +1,7 @@
 /*
 Author: Leslie Brockman
 Date: 10-21-2026
+We keep moving forward. All our ways.
 */
 /* American Nobody Archives: manifest index + validated monthly HTML fragments. */
 "use strict";
