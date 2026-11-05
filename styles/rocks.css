@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-17-2026
-   Date modified: 10/21/2026
+   Date modified: 11/04/2026
 */
 body.rocks-page { background-color: #D9E2CE; }
 .rocks-page .rocks-main { width: min(100%, 1100px); margin: auto; padding: clamp(.65rem, 3vw, 2rem); }
@@ -58,3 +58,6 @@ body.rocks-page { background-color: #D9E2CE; }
 }
 .rocks-page .rocks-dialog > .rocks-profile-website { margin-bottom: 1rem; }
 .rocks-page .rocks-profile-website[hidden] { display: none; }
+
+/* Campaign-only profiles have no personal social accounts to display. */
+.rocks-page .rocks-profile-socials[hidden] { display: none; }
