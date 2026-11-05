@@ -1,6 +1,6 @@
 
 //Author: Leslie Brockman
-//Date modified: 10/21/2026
+//Date modified: 11/04/2026
 "use strict";
 (() => {
     const ids = ['rocks-stage', 'rocks-lane', 'rocks-hit-zone', 'rocks-slingshot', 'rocks-projectile', 'rocks-launch', 'rocks-restart', 'rocks-score', 'rocks-status', 'rocks-dialog', 'rocks-collect', 'rocks-profile-title', 'rocks-profile-portrait', 'rocks-profile-bio', 'rocks-profile-socials', 'rocks-profile-website'];
@@ -98,14 +98,128 @@
                 { platform: 'YouTube', url: 'https://www.youtube.com/channel/UCoZnEQMqVvv_DkF50fupMKw', icon: 'youtube.png' }
             ],
             websiteUrl: 'https://bassemyoussef.xyz/'
+        },
+        {
+            "id": "wael-naouar",
+            "name": "Wael Naouar",
+            "nameAr": "وائل نوار",
+            "portraitUrl": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/wael.jpg",
+            "portraitAlt": "Portrait of Wael Naouar",
+            "portraitAltAr": "صورة وائل نوار",
+            "biography": "Wael Naouar is a Tunisian activist and Palestinian solidarity organizer associated with the Global Sumud Flotilla. He is one of the Sumud 4, whose detention has prompted an international campaign calling for their release.",
+            "biographyAr": "وائل نوار ناشط تونسي ومنظّم لحملات التضامن مع فلسطين، ومرتبط بأسطول الصمود العالمي. وهو أحد أعضاء «أربعة الصمود» الذين أُطلقت حملة دولية للمطالبة بالإفراج عنهم.",
+            "socialLinks": [],
+            "websiteUrl": "https://globalsumudflotilla.org/freethefour/"
+        },
+        {
+            "id": "nabil-channoufi",
+            "name": "Nabil Channoufi",
+            "nameAr": "نبيل الشنوفي",
+            "portraitUrl": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/nabil.jpg",
+            "portraitAlt": "Portrait of Nabil Channoufi",
+            "portraitAltAr": "صورة نبيل الشنوفي",
+            "biography": "Nabil Channoufi is a Tunisian engineer and Palestinian solidarity organizer who helped coordinate the Sumud Land Convoy and participated in organizing the Global Sumud Flotilla. He is one of the Sumud 4.",
+            "biographyAr": "نبيل الشنوفي مهندس تونسي ومنظّم لحملات التضامن مع فلسطين، ساهم في تنسيق قافلة الصمود البرية وشارك في تنظيم أسطول الصمود العالمي. وهو أحد أعضاء «أربعة الصمود».",
+            "socialLinks": [],
+            "websiteUrl": "https://globalsumudflotilla.org/freethefour/"
+        },
+        {
+            "id": "ghassan-henchiri",
+            "name": "Ghassan Henchiri",
+            "nameAr": "غسان الحنشيري",
+            "portraitUrl": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/ghassan.jpg",
+            "portraitAlt": "Portrait of Ghassan Henchiri",
+            "portraitAltAr": "صورة غسان الحنشيري",
+            "biography": "Ghassan Henchiri is a Tunisian activist associated with the Sumud movement and its efforts to support Palestinians. He is one of the Sumud 4, whose detention has drawn international solidarity campaigns.",
+            "biographyAr": "غسان الحنشيري ناشط تونسي مرتبط بحركة الصمود وجهودها لدعم الفلسطينيين. وهو أحد أعضاء «أربعة الصمود» الذين أثار احتجازهم حملات تضامن دولية.",
+            "socialLinks": [],
+            "websiteUrl": "https://globalsumudflotilla.org/freethefour/"
+        },
+        {
+            "id": "ghassan-boughdiri",
+            "name": "Ghassan Boughdiri",
+            "nameAr": "غسان البوغديري",
+            "portraitUrl": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/bghassan.jpg",
+            "portraitAlt": "Portrait of Ghassan Boughdiri",
+            "portraitAltAr": "صورة غسان البوغديري",
+            "biography": "Ghassan Boughdiri is a Tunisian Palestinian solidarity activist involved in the Sumud Land Convoy and Global Sumud Flotilla organizing efforts. He is one of the Sumud 4.",
+            "biographyAr": "غسان البوغديري ناشط تونسي في مجال التضامن مع فلسطين، شارك في جهود تنظيم قافلة الصمود البرية وأسطول الصمود العالمي. وهو أحد أعضاء «أربعة الصمود».",
+            "socialLinks": [],
+            "websiteUrl": "https://globalsumudflotilla.org/freethefour/"
+        },
+        {
+            "id": "greta-thunberg",
+            "name": "Greta Thunberg",
+            "nameAr": "غريتا تونبرغ",
+            "portraitUrl": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/greta.jpg",
+            "portraitAlt": "Portrait of Greta Thunberg",
+            "portraitAltAr": "صورة غريتا تونبرغ",
+            "biography": "Greta Thunberg is a Swedish climate and human rights activist known for founding the Fridays for Future movement. She has participated in humanitarian flotilla missions seeking to challenge restrictions on access to Gaza and raise awareness of Palestinian suffering.",
+            "biographyAr": "غريتا تونبرغ ناشطة سويدية في مجال المناخ وحقوق الإنسان، اشتهرت بتأسيس حركة «أيام الجمعة من أجل المستقبل». شاركت في رحلات بحرية إنسانية هدفت إلى تحدي القيود المفروضة على الوصول إلى غزة وتسليط الضوء على معاناة الفلسطينيين.",
+            "socialLinks": [],
+            "websiteUrl": "https://globalsumudflotilla.org/"
+        },
+        {
+            "id": "francesca-albanese",
+            "name": "Francesca Albanese",
+            "nameAr": "فرانشيسكا ألبانيزي",
+            "portraitUrl": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/fran.jpg",
+            "portraitAlt": "Portrait of Francesca Albanese",
+            "portraitAltAr": "صورة فرانشيسكا ألبانيزي",
+            "biography": "Francesca Albanese is an Italian international lawyer and United Nations Special Rapporteur on human rights in the occupied Palestinian territory. Her work focuses on documenting human rights violations, examining international law, and advocating accountability and protection for Palestinians.",
+            "biographyAr": "فرانشيسكا ألبانيزي محامية إيطالية متخصصة في القانون الدولي، والمقررة الخاصة للأمم المتحدة المعنية بحالة حقوق الإنسان في الأرض الفلسطينية المحتلة. يركز عملها على توثيق انتهاكات حقوق الإنسان ودراسة القانون الدولي والدعوة إلى المساءلة وحماية الفلسطينيين.",
+            "socialLinks": [],
+            "websiteUrl": "https://www.ohchr.org/en/special-procedures/sr-palestine"
+        },
+        {
+            "id": "reema-jallaq",
+            "name": "Reema Jallaq",
+            "nameAr": "ريما جلّاق",
+            "portraitUrl": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/reem.jpg",
+            "portraitAlt": "Portrait of Reema Jallaq",
+            "portraitAltAr": "صورة ريما جلّاق",
+            "biography": "Reema Jallaq, known as The Caucasian Arab, is a Palestinian-American comedian, content creator, and advocate who uses humor, storytelling, and her platform to amplify Palestinian voices, challenge stereotypes, and promote human rights.",
+            "biographyAr": "ريما جلّاق، المعروفة باسم «العربية الشقراء» (The Caucasian Arab)، هي كوميدية وصانعة محتوى أمريكية من أصل فلسطيني، تستخدم الفكاهة وسرد القصص ومنصاتها لإيصال أصوات الفلسطينيين وتحدي الصور النمطية والدفاع عن حقوق الإنسان.",
+            "socialLinks": [
+                {
+                    "platform": "UpScrolled",
+                    "url": "https://upscrolled.com/@thecaucasianarab",
+                    "icon": "upscrolled.png"
+                },
+                {
+                    "platform": "Facebook",
+                    "url": "https://www.facebook.com/profile.php?id=100089036261513",
+                    "icon": "facebook.jpeg"
+                },
+                {
+                    "platform": "Instagram",
+                    "url": "https://www.instagram.com/the_caucasianarab",
+                    "icon": "instagram.jpeg"
+                },
+                {
+                    "platform": "TikTok",
+                    "url": "https://www.tiktok.com/@caucasian_arab",
+                    "icon": "tiktok.png"
+                }
+            ],
+            "websiteUrl": "https://linktr.ee/thecaucasianarab48"
         }
     ];
+    function shuffleProfiles(source) {
+        const shuffled = [...source];
+        for (let index = shuffled.length - 1; index > 0; index -= 1) {
+            const other = Math.floor(Math.random() * (index + 1));
+            [shuffled[index], shuffled[other]] = [shuffled[other], shuffled[index]];
+        }
+        return shuffled;
+    }
     const targets = [];
     let frame = null, previous = null, phase = 'idle', loaded = false;
     let heldPointer = null, heldKey = null, current = null, shot = null, tippedAt = 0;
     let returnFocus = null, statusUntil = 0;
     const arabic = () => document.documentElement.lang === 'ar';
-    const say = (en, ar) => { status.textContent = arabic() ? ar : en; };
+    let lastStatus = ['', ''];
+    const say = (en, ar) => { lastStatus = [en, ar]; status.textContent = arabic() ? ar : en; };
     const profileName = target => arabic() && target.profile.nameAr ? target.profile.nameAr : target.profile.name;
     const active = () => targets.filter(target => target.state === 'active');
     function setState(target, state) {
@@ -113,7 +227,14 @@
         target.element.dataset.state = state;
     }
     function refreshLabels() {
-        targets.forEach(target => { target.label.textContent = profileName(target); });
+        targets.forEach(target => {
+            target.label.textContent = profileName(target);
+            target.label.lang = arabic() && target.profile.nameAr ? 'ar' : 'en';
+            target.label.dir = target.label.lang === 'ar' ? 'rtl' : 'ltr';
+            const image = target.element.querySelector('img');
+            if (image) image.alt = arabic() && target.profile.portraitAltAr ? target.profile.portraitAltAr : target.profile.portraitAlt;
+        });
+        say(...lastStatus);
         lane.setAttribute('aria-label', arabic() ? 'أهداف كرنفالية تجريبية' : 'Placeholder carnival targets');
         if (current) renderProfile(current);
     }
@@ -131,7 +252,7 @@
             container.removeAttribute('aria-hidden');
             const image = document.createElement('img');
             image.src = url;
-            image.alt = profile.portraitAlt || `Portrait of ${profile.name}`;
+            image.alt = arabic() && profile.portraitAltAr ? profile.portraitAltAr : (profile.portraitAlt || `Portrait of ${profile.name}`);
             container.append(image);
         } else {
             container.setAttribute('aria-hidden', 'true');
@@ -142,6 +263,7 @@
         const profile = target.profile;
         title.textContent = profileName(target);
         title.lang = arabic() && profile.nameAr ? 'ar' : 'en';
+        title.dir = title.lang === 'ar' ? 'rtl' : 'ltr';
         renderPortrait(profilePortrait, profile);
         biography.textContent = arabic() && profile.biographyAr ? profile.biographyAr : profile.biography;
         biography.lang = arabic() && profile.biographyAr ? 'ar' : 'en';
@@ -155,14 +277,14 @@
             link.href = url;
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
-            link.setAttribute('aria-label', `${profile.name} — ${social.platform}`);
+            link.setAttribute('aria-label', `${profileName(target)} — ${social.platform}`);
             const icon = document.createElement('img');
             icon.src = `https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/${social.icon}`;
             icon.alt = '';
             link.append(icon);
             socials.append(link);
         }
-        if (!socials.childElementCount) socials.textContent = arabic() ? 'وسائل التواصل: حقل تجريبي فقط — لا يوجد حساب مرتبط.' : 'Social media: placeholder only — no account linked.';
+        socials.hidden = !socials.childElementCount;
         const websiteUrl = validUrl(profile.websiteUrl);
         website.hidden = !websiteUrl;
         if (websiteUrl) website.href = websiteUrl;
@@ -274,7 +396,7 @@
             }
         }
         if (phase === 'tipping' && now - tippedAt >= 580) showProfile();
-        if (statusUntil && now >= statusUntil && phase === 'idle') { status.textContent = ''; statusUntil = 0; }
+        if (statusUntil && now >= statusUntil && phase === 'idle') { say('', ''); statusUntil = 0; }
         paint();
         schedule();
     }
@@ -314,13 +436,13 @@
     collect.addEventListener('click', () => {
         if (phase !== 'popup' || !current || current.state !== 'hit') return;
         setState(current, 'collected');
-        score.textContent = `${targets.filter(target => target.state === 'collected').length} / 6`;
+        score.textContent = `${targets.filter(target => target.state === 'collected').length} / ${profiles.length}`;
         const focus = returnFocus;
         current = null;
         dialog.close();
         const finished = !active().length;
         phase = finished ? 'complete' : 'idle';
-        say(finished ? 'Complete! You collected all six points.' : 'Point collected. Keep going!', finished ? 'اكتملت اللعبة! جمعت النقاط الست.' : 'جمعت نقطة. واصل اللعب!');
+        say(finished ? `Complete! You collected all ${profiles.length} points.` : 'Point collected. Keep going!', finished ? `اكتملت اللعبة! جمعت جميع النقاط (${profiles.length}).` : 'جمعت نقطة. واصل اللعب!');
         paint();
         // Collected targets are hidden: restore to the next available game control.
         if (finished) restart.focus();
@@ -349,12 +471,16 @@
         statusUntil = 0;
         rock.hidden = true;
         if (dialog.open) dialog.close();
+        const roundProfiles = shuffleProfiles(profiles);
+        const roundTargets = roundProfiles.map(profile => targets.find(target => target.profile.id === profile.id));
+        targets.splice(0, targets.length, ...roundTargets);
         targets.forEach((target, index) => {
+            lane.append(target.element);
             setState(target, 'active');
             target.x = index * 144;
             target.element.hidden = false;
         });
-        score.textContent = '0 / 6';
+        score.textContent = `0 / ${profiles.length}`;
         stage.classList.toggle('is-stationary', mode.checked);
         refreshLabels();
         paint();
