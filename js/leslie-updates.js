@@ -1,6 +1,6 @@
 "use strict";
 // Author: Leslie Brockman
-// Date: 10/30/2026
+// Date: 11/04/2026
 const missionDefinitions = [
   {
     "page": "index.html",
@@ -915,12 +915,12 @@ const missionDefinitions = [
   {
     "page": "circus.html",
     "title": [
-      "Circus",
-      "السيرك"
+      "Gaza Circus — Grand Entrance",
+      "سيرك غزة — المدخل الرئيسي"
     ],
     "description": [
-      "Circus teaser and collaboration updates.",
-      "إعلان السيرك وتحديثات التعاون."
+      "Temporary Gaza Circus landing page; Phase 1 complete, further phases planned.",
+      "صفحة سيرك غزة المؤقتة؛ المرحلة الأولى مكتملة والمراحل اللاحقة مخططة."
     ],
     "tasks": [
       {
@@ -1282,50 +1282,6 @@ const missionDefinitions = [
     "group": [
       "archives",
       "love-letters-palestine"
-    ]
-  },
-  {
-    "page": null,
-    "id": "planned-west-bank",
-    "title": [
-      "West Bank",
-      "الضفة الغربية"
-    ],
-    "description": [
-      "Planned page; no destination exists yet. Andrey, You’re Famous, and Loser of the Week remain in drinking-games.html.",
-      "صفحة مخططة بلا وجهة حتى الآن. ما زالت أقسام أندريه وأنت مشهور وخاسر الأسبوع في صفحة ألعاب الشرب."
-    ],
-    "category": "planned",
-    "tasks": [],
-    "plannedTasks": [
-      [
-        "Review Andrey content.",
-        "مراجعة محتوى أندريه."
-      ],
-      [
-        "Update You’re Famous.",
-        "تحديث قسم أنت مشهور."
-      ],
-      [
-        "Update Loser of the Week.",
-        "تحديث قسم خاسر الأسبوع."
-      ],
-      [
-        "Verify media.",
-        "التحقق من الوسائط."
-      ],
-      [
-        "Review bilingual content.",
-        "مراجعة المحتوى باللغتين."
-      ],
-      [
-        "Check links and responsive behavior.",
-        "فحص الروابط والعرض المتجاوب."
-      ]
-    ],
-    "weekly": false,
-    "group": [
-      "planned"
     ]
   },
   {
@@ -1900,56 +1856,6 @@ const missionDefinitions = [
     ]
   },
   {
-    "page": "bopcrap.html",
-    "title": [
-      "bopcrap.html",
-      "bopcrap.html"
-    ],
-    "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
-    ],
-    "category": "periodic",
-    "weekly": false,
-    "tasks": [
-      {
-        "id": "bopcrap:maintenance",
-        "label": [
-          "Review page when needed.",
-          "مراجعة الصفحة عند الحاجة."
-        ]
-      }
-    ],
-    "group": [
-      "main"
-    ]
-  },
-  {
-    "page": "boptest.html",
-    "title": [
-      "boptest.html",
-      "boptest.html"
-    ],
-    "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
-    ],
-    "category": "periodic",
-    "weekly": false,
-    "tasks": [
-      {
-        "id": "boptest:maintenance",
-        "label": [
-          "Review page when needed.",
-          "مراجعة الصفحة عند الحاجة."
-        ]
-      }
-    ],
-    "group": [
-      "main"
-    ]
-  },
-  {
     "page": "contact.html",
     "title": [
       "contact.html",
@@ -1964,31 +1870,6 @@ const missionDefinitions = [
     "tasks": [
       {
         "id": "contact:maintenance",
-        "label": [
-          "Review page when needed.",
-          "مراجعة الصفحة عند الحاجة."
-        ]
-      }
-    ],
-    "group": [
-      "main"
-    ]
-  },
-  {
-    "page": "crimes.html",
-    "title": [
-      "crimes.html",
-      "crimes.html"
-    ],
-    "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
-    ],
-    "category": "periodic",
-    "weekly": false,
-    "tasks": [
-      {
-        "id": "crimes:maintenance",
         "label": [
           "Review page when needed.",
           "مراجعة الصفحة عند الحاجة."
@@ -2550,131 +2431,6 @@ const missionDefinitions = [
     ]
   },
   {
-    "page": "template.html",
-    "title": [
-      "template.html",
-      "template.html"
-    ],
-    "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
-    ],
-    "category": "periodic",
-    "weekly": false,
-    "tasks": [
-      {
-        "id": "template:maintenance",
-        "label": [
-          "Review page when needed.",
-          "مراجعة الصفحة عند الحاجة."
-        ]
-      }
-    ],
-    "group": [
-      "main"
-    ]
-  },
-  {
-    "page": "test-quests.html",
-    "title": [
-      "test-quests.html",
-      "test-quests.html"
-    ],
-    "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
-    ],
-    "category": "periodic",
-    "weekly": false,
-    "tasks": [
-      {
-        "id": "test-quests:maintenance",
-        "label": [
-          "Review page when needed.",
-          "مراجعة الصفحة عند الحاجة."
-        ]
-      }
-    ],
-    "group": [
-      "main"
-    ]
-  },
-  {
-    "page": "test.html",
-    "title": [
-      "test.html",
-      "test.html"
-    ],
-    "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
-    ],
-    "category": "periodic",
-    "weekly": false,
-    "tasks": [
-      {
-        "id": "test:maintenance",
-        "label": [
-          "Review page when needed.",
-          "مراجعة الصفحة عند الحاجة."
-        ]
-      }
-    ],
-    "group": [
-      "main"
-    ]
-  },
-  {
-    "page": "ticket3.html",
-    "title": [
-      "ticket3.html",
-      "ticket3.html"
-    ],
-    "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
-    ],
-    "category": "periodic",
-    "weekly": false,
-    "tasks": [
-      {
-        "id": "ticket3:maintenance",
-        "label": [
-          "Review page when needed.",
-          "مراجعة الصفحة عند الحاجة."
-        ]
-      }
-    ],
-    "group": [
-      "main"
-    ]
-  },
-  {
-    "page": "worldleader.html",
-    "title": [
-      "worldleader.html",
-      "worldleader.html"
-    ],
-    "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
-    ],
-    "category": "periodic",
-    "weekly": false,
-    "tasks": [
-      {
-        "id": "worldleader:maintenance",
-        "label": [
-          "Review page when needed.",
-          "مراجعة الصفحة عند الحاجة."
-        ]
-      }
-    ],
-    "group": [
-      "main"
-    ]
-  },
-  {
     "page": null,
     "id": "planned-big-top",
     "title": [
@@ -2682,8 +2438,8 @@ const missionDefinitions = [
       "🎪 الخيمة الكبرى"
     ],
     "description": [
-      "Personal planning reference for future circus-related development.",
-      "مرجع تخطيط شخصي لتطوير مشاريع السيرك مستقبلًا."
+      "Phase 1 complete: Grand Entrance and HTML structure. Phases 2–5 remain planned.",
+      "المرحلة 1 مكتملة: المدخل الرئيسي وهيكل HTML. المراحل 2–5 قيد الانتظار."
     ],
     "category": "planned",
     "weekly": false,
@@ -2691,7 +2447,194 @@ const missionDefinitions = [
       "planned"
     ],
     "referencePage": "circus.html",
-    "tasks": []
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Phase 2: Complete the design and CSS for the Banner Hall, Main Event, and Popcorn Stand entrances.",
+        "المرحلة 2 قيد الانتظار - تصميم وتنسيق CSS لمداخل قاعة اللافتات والساحة الرئيسية وكشك الفشار"
+      ],
+      [
+        "Phase 3: Build four clown games for the Main Event.",
+        "المرحلة 3 قيد الانتظار - أربع ألعاب للمهرجين في الساحة الرئيسية"
+      ],
+      [
+        "Phase 4: Develop the Popcorn Stand for charities and supporting organizations.",
+        "المرحلة 4 قيد الانتظار - تجهيز كشك الفشار للجمعيات الخيرية والمنظمات الداعمة"
+      ],
+      [
+        "Phase 5: Expand the Banner Hall with performers’ personal stories and social-media links.",
+        "المرحلة 5 قيد الانتظار - لافتات تعرض قصص الفنانين وحساباتهم الشخصية على وسائل التواصل الاجتماعي"
+      ]
+    ]
+  },
+  {
+    "page": "west-bank.html",
+    "title": [
+      "West Bank Explorer",
+      "مستكشف مجتمعات الضفة الغربية"
+    ],
+    "description": [
+      "Weekly editorial maintenance of the 16-community West Bank Explorer.",
+      "الصيانة التحريرية الأسبوعية لمستكشف مجتمعات الضفة الغربية الستة عشر."
+    ],
+    "tasks": [
+      {
+        "id": "west-bank:reporting",
+        "label": [
+          "Review reporting for all 16 communities.",
+          "مراجعة التقارير الخاصة بالمجتمعات الستة عشر."
+        ]
+      },
+      {
+        "id": "west-bank:sources",
+        "label": [
+          "Verify original sources, publication dates and community-specific claims.",
+          "التحقق من المصادر الأصلية وتواريخ النشر والادعاءات الخاصة بكل مجتمع."
+        ]
+      },
+      {
+        "id": "west-bank:recaps",
+        "label": [
+          "Update approved English and Arabic weekly recaps.",
+          "تحديث الملخصات الأسبوعية المعتمدة بالإنجليزية والعربية."
+        ]
+      },
+      {
+        "id": "west-bank:links-maps",
+        "label": [
+          "Check supporting source links and approximate maps.",
+          "فحص روابط المصادر الداعمة والخرائط التقريبية."
+        ]
+      },
+      {
+        "id": "west-bank:bilingual-responsive",
+        "label": [
+          "Verify English/Arabic presentation and responsive behavior.",
+          "التحقق من العرض بالإنجليزية والعربية والسلوك المتجاوب."
+        ]
+      }
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "group": [
+      "main"
+    ]
+  }
+,
+  {
+    "page": "circus-ring.html",
+    "id": "circus-ring",
+    "title": [
+      "Gaza Circus — Main Event",
+      "سيرك غزة — العرض الرئيسي"
+    ],
+    "description": [
+      "Circus destination under development; review when needed.",
+      "وجهة ضمن السيرك قيد التطوير؛ تُراجع عند الحاجة."
+    ],
+    "tasks": [],
+    "category": "periodic",
+    "weekly": false,
+    "group": [
+      "main"
+    ]
+  },
+  {
+    "page": "circus-banners.html",
+    "id": "circus-banners",
+    "title": [
+      "Gaza Circus — Banner Hall",
+      "سيرك غزة — قاعة اللافتات"
+    ],
+    "description": [
+      "Circus destination under development; review when needed.",
+      "وجهة ضمن السيرك قيد التطوير؛ تُراجع عند الحاجة."
+    ],
+    "tasks": [],
+    "category": "periodic",
+    "weekly": false,
+    "group": [
+      "main"
+    ]
+  },
+  {
+    "page": "circus-popcorn.html",
+    "id": "circus-popcorn",
+    "title": [
+      "Gaza Circus — Popcorn Stand",
+      "سيرك غزة — كشك الفشار"
+    ],
+    "description": [
+      "Circus destination under development; review when needed.",
+      "وجهة ضمن السيرك قيد التطوير؛ تُراجع عند الحاجة."
+    ],
+    "tasks": [],
+    "category": "periodic",
+    "weekly": false,
+    "group": [
+      "main"
+    ]
+  },
+  {
+    "page": null,
+    "id": "planned-code-cleanup",
+    "title": [
+      "Code Clean Up",
+      "تنظيف الشيفرة البرمجية"
+    ],
+    "description": [
+      "Planned code maintenance.",
+      "صيانة مخططة للشيفرة البرمجية."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Clean up redundant code.",
+        "تنظيف الشيفرة البرمجية الزائدة أو المكررة."
+      ],
+      [
+        "Translate code comments and notes into Arabic.",
+        "ترجمة التعليقات والملاحظات داخل الشيفرة إلى العربية."
+      ],
+      [
+        "Review, organize, and clean up existing code notes.",
+        "مراجعة الملاحظات الموجودة في الشيفرة وتنظيمها وتنظيفها."
+      ]
+    ]
+  },
+  {
+    "page": null,
+    "id": "planned-archives",
+    "title": [
+      "Archives",
+      "الأرشيف"
+    ],
+    "description": [
+      "Planned archive expansion.",
+      "توسعة مخططة للأرشيف."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "referencePage": "archives/index.html",
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Add older months to the archives.",
+        "إضافة الأشهر السابقة إلى الأرشيف."
+      ],
+      [
+        "Add West Bank pages and coverage to the archives.",
+        "إضافة صفحات الضفة الغربية وتغطيتها إلى الأرشيف."
+      ]
+    ]
   }
 ];
 // Verified direct local references; mapped:false means unaudited resolution.
@@ -2811,6 +2754,7 @@ const dependencyDefinitions = [
       "archives/love-letters-palestine/index.html",
       "archives/ok-series/index.html",
       "archives/other-communications/index.html",
+      "archives/west-bank/index.html",
       "archives/world-leaders/index.html",
       "contact.html",
       "index.html",
@@ -3181,100 +3125,6 @@ const dependencyDefinitions = [
     ]
   },
   {
-    "page": "bopcrap.html",
-    "mapped": true,
-    "css": [],
-    "scripts": [],
-    "links": [],
-    "assets": [
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0023.jpg"
-    ]
-  },
-  {
-    "page": "boptest.html",
-    "mapped": true,
-    "css": [],
-    "scripts": [],
-    "links": [
-      "Leslie.html",
-      "index.html"
-    ],
-    "assets": [
-      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/000.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0006.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0007.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/001.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/002.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/003.webp",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/004.avif",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/004.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/005.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/006.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/007.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/008.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/009.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/010.avif",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/01011.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/023.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/024.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/025.png",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/026.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/027.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/028.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/029.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/030.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/031.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/032.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/033.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/034.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/035.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/036.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/037.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/038.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/039.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/040.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/041.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/042.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/043.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/044.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/045.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/046.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/047.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/050.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/052.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/052.png",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/053.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/054.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/055.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/056.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/057.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_27.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_28.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_29.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_30.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_31.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_32.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_51.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_17.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_3.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_41.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_7.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_17.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_18.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_26.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_27.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_29.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_31.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_34.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_51.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_56.mp4",
-      "https://www.youtube-nocookie.com/embed/5A4xBp2rizQ?si=YUmljbg2wEQ41jcYrel=0&modestbranding=1&enablejsapi=1",
-      "images/40.jpg"
-    ]
-  },
-  {
     "page": "circus.html",
     "mapped": true,
     "css": [
@@ -3283,6 +3133,7 @@ const dependencyDefinitions = [
       "styles/virus.css"
     ],
     "scripts": [
+      "js/circus.js",
       "js/main.js"
     ],
     "links": [
@@ -3296,13 +3147,7 @@ const dependencyDefinitions = [
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
       "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/Abood.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/gazacircus.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tito.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/paypal.png",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/tiktok.png"
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png"
     ]
   },
   {
@@ -3364,51 +3209,6 @@ const dependencyDefinitions = [
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/link7.jpg",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/link8.jpg",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/link9.jpg"
-    ]
-  },
-  {
-    "page": "crimes.html",
-    "mapped": true,
-    "css": [
-      "styles/styles.css"
-    ],
-    "scripts": [
-      "js/main.js"
-    ],
-    "links": [
-      "about.html",
-      "contact.html",
-      "index.html",
-      "legal.html",
-      "leslie.html",
-      "mpga.html",
-      "united.html"
-    ],
-    "assets": [
-      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_27.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_28.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_29.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_30.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_31.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_32.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_51.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_17.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_3.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_41.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_7.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_17.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_18.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_26.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_27.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_29.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_31.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_34.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_51.mp4",
-      "https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_56.mp4",
-      "images/001.jpg",
-      "images/40.jpg"
     ]
   },
   {
@@ -4688,6 +4488,7 @@ const dependencyDefinitions = [
       "rose.html",
       "ticket.html",
       "united.html",
+      "west-bank.html",
       "world_leader.html"
     ],
     "assets": [
@@ -4708,6 +4509,7 @@ const dependencyDefinitions = [
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/mission.png",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/shots.png",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/thisway.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wb.png",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/legal/2128.jpg",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10003.jpg",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10004.jpg",
@@ -5227,56 +5029,6 @@ const dependencyDefinitions = [
     ]
   },
   {
-    "page": "template.html",
-    "mapped": true,
-    "css": [],
-    "scripts": [],
-    "links": [],
-    "assets": []
-  },
-  {
-    "page": "test-quests.html",
-    "mapped": true,
-    "css": [
-      "styles/quests.css",
-      "styles/styles.css"
-    ],
-    "scripts": [
-      "js/main.js"
-    ],
-    "links": [
-      "about.html",
-      "contact.html",
-      "eighth-front.html",
-      "index.html",
-      "legal.html",
-      "leslie.html",
-      "mpga.html",
-      "ticket.html",
-      "united.html"
-    ],
-    "assets": [
-      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Leslie/leslie1.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/bop.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/mb.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/palestine.png",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/red-ribbon.jpeg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/waterislife.png",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/legal/0021.jpg",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/united/ele1.jpg",
-      "images/001.jpg"
-    ]
-  },
-  {
-    "page": "test.html",
-    "mapped": true,
-    "css": [],
-    "scripts": [],
-    "links": [],
-    "assets": []
-  },
-  {
     "page": "ticket.html",
     "mapped": true,
     "css": [
@@ -5321,27 +5073,6 @@ const dependencyDefinitions = [
       "https://www.youtube.com/embed/mSI-5ocLb9I",
       "https://www.youtube.com/embed/x4mRkm8wnEI",
       "images/001.jpg"
-    ]
-  },
-  {
-    "page": "ticket3.html",
-    "mapped": true,
-    "css": [
-      "styles/styles.css"
-    ],
-    "scripts": [
-      "js/main.js"
-    ],
-    "links": [
-      "index.html"
-    ],
-    "assets": [
-      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0020.jpg",
-      "https://www.youtube-nocookie.com/embed/FIImHq2VoA4&t=5256s?rel=0&modestbranding=1&enablejsapi=1",
-      "https://www.youtube-nocookie.com/embed/UKQem63IS6w?rel=0&modestbranding=1&enablejsapi=1",
-      "https://www.youtube-nocookie.com/embed/mDhOVSMUDaE?rel=0&modestbranding=1&enablejsapi=1",
-      "images/40.jpg"
     ]
   },
   {
@@ -5405,30 +5136,177 @@ const dependencyDefinitions = [
     ]
   },
   {
-    "page": "worldleader.html",
+    "page": "west-bank.html",
     "mapped": true,
     "css": [
-      "styles/styles.css"
+      "styles/styles2.css",
+      "styles/west-bank.css"
     ],
     "scripts": [
       "js/main.js",
-      "js/world-leaders.js"
+      "js/west-bank-communities.js",
+      "js/west-bank.js"
     ],
     "links": [
       "about.html",
       "contact.html",
       "index.html",
       "legal.html",
-      "leslie.html",
-      "mpga.html",
-      "united.html"
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cormorant+Garamond:wght@700&display=swap",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/fy4.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/ty78.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/yf1.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/yf2.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/yf3.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/1030.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/1031.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/1032.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/291310.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/297920.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/30006.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A0.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A1.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A10.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A11.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A12.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A13.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A14.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A15.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A16.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A17.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A18.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A19.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A2.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A20.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A21.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A22.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A23.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A24.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A25.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A26.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A27.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A28.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A29.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A3.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A30.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A31.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A32.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A33.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A34.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A35.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A36.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A37.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A38.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A39.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A4.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A40.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A41.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A42.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A43.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A44.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A45.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A46.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A47.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A48.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A49.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A5.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A50.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A51.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A52.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A53.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A54.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A55.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A56.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A57.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A58.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A59.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A6.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A60.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A61.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A62.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A7.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A8.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/A9.jpg"
+    ]
+  }
+,
+  {
+    "page": "circus-ring.html",
+    "mapped": true,
+    "css": [
+      "styles/circus.css",
+      "styles/styles2.css",
+      "styles/virus.css"
+    ],
+    "scripts": [
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "circus.html",
+      "contact.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+    ]
+  },
+  {
+    "page": "circus-banners.html",
+    "mapped": true,
+    "css": [
+      "styles/circus.css",
+      "styles/styles2.css",
+      "styles/virus.css"
+    ],
+    "scripts": [
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "circus.html",
+      "contact.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
       "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap",
-      "images/001.jpg",
-      "images/40.jpg",
-      "images/world-leader-placeholder.svg"
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/Abood.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/gazacircus.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tito.jpg"
+    ]
+  },
+  {
+    "page": "circus-popcorn.html",
+    "mapped": true,
+    "css": [
+      "styles/circus.css",
+      "styles/styles2.css",
+      "styles/virus.css"
+    ],
+    "scripts": [
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "circus-banners.html",
+      "circus.html",
+      "contact.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
     ]
   }
 ];
@@ -5602,12 +5480,14 @@ const dependencyDefinitions = [
                     selector.focus({preventScroll: true});
                     document.getElementById('dependencies-title').scrollIntoView({behavior: 'instant', block: 'start'});
                 });
-                const planning = document.createElement('details');
-                planning.className = 'mission-checklist';
-                bilingual(planning, 'summary', ['Future planning', 'التخطيط المستقبلي']);
-                bilingual(planning, 'p', ['No planning tasks added yet.', 'لم تُضف مهام تخطيط بعد.']);
-                card.append(planning);
-            } else {
+                if (!(mission.plannedTasks || []).length) {
+                    const planning = document.createElement('details');
+                    planning.className = 'mission-checklist';
+                    bilingual(planning, 'summary', ['Future planning', 'التخطيط المستقبلي']);
+                    bilingual(planning, 'p', ['No planning tasks added yet.', 'لم تُضف مهام تخطيط بعد.']);
+                    card.append(planning);
+                }
+            } else if (!(mission.plannedTasks || []).length) {
                 bilingual(card, 'p', ['Awaiting a real page before tasks and dependencies are activated.', 'بانتظار صفحة فعلية لتفعيل المهام والاعتماديات.']);
             }
             const plannedList = document.createElement('ul');
