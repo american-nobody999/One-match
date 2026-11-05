@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman
-   Date modified: 10/21/2026 */
+   Date modified: 11/04/2026 */
 
 body.archive-page,
 body:has(> p > #archive-destination) {
@@ -389,4 +389,12 @@ body:has(> p > #archive-destination) > p {
 
 [data-archive-collection="world-leaders"] .archive-series-card .archive-leader-person {
     margin-top: 0.25rem;
+}
+
+/* Keep the Archives mobile button above the positioned title in their shared grid row. */
+@media (max-width: 768px) {
+    .archive-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
 }
