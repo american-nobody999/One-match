@@ -1,41 +1,9 @@
 //Author: Leslie Brockman
-//Date modified: 10/21/2026
+//Date modified: 11/06/2026
 'use strict';
 
 // Native dialogs provide background inertness, keyboard containment, and Escape handling.
 document.addEventListener('DOMContentLoaded', () => {
-    function initElectionCountdown() {
-        const dialog = document.getElementById('leader-1-modal');
-        if (!dialog) return;
-        const countdown = dialog.querySelector('#countdown');
-        const days = dialog.querySelector('#days');
-        const hours = dialog.querySelector('#hours');
-        const minutes = dialog.querySelector('#minutes');
-        const seconds = dialog.querySelector('#seconds');
-        const status = dialog.querySelector('#countdown-status');
-        if (!countdown || !days || !hours || !minutes || !seconds || !status || countdown.dataset.initialized) return;
-        countdown.dataset.initialized = 'true';
-        // Preserve the original visitor-local midnight target.
-        const targetDate = new Date('January 20, 2029 00:00:00').getTime();
-        let interval = null;
-        function updateCountdown() {
-            const remaining = Math.max(0, targetDate - Date.now());
-            days.textContent = String(Math.floor(remaining / 86400000));
-            hours.textContent = String(Math.floor((remaining % 86400000) / 3600000));
-            minutes.textContent = String(Math.floor((remaining % 3600000) / 60000));
-            seconds.textContent = String(Math.floor((remaining % 60000) / 1000));
-            status.hidden = remaining > 0;
-            if (remaining === 0) {
-                if (interval !== null) clearInterval(interval);
-                interval = null;
-                return false;
-            }
-            return true;
-        }
-        if (updateCountdown()) interval = setInterval(updateCountdown, 1000);
-    }
-    initElectionCountdown();
-
     let activeDialog = null;
     let activeTrigger = null;
     let previousOverflow = '';
@@ -57,7 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('[data-leader-modal]').forEach(trigger => {
         trigger.addEventListener('click', () => {
-            if (activeDialog) return;
+            let returnTrigger = trigger;
+            const isWorkBack = activeDialog?.id === 'leader-work-together-modal'
+                && trigger.dataset.leaderModal === 'leader-1-modal';
+            if (activeDialog) {
+                // Allow chooser paths and the Work Together return through the same cleanup.
+                if (trigger.closest('dialog') !== activeDialog
+                    || (activeDialog.id !== 'leader-1-modal' && !isWorkBack)) return;
+                const previousDialog = activeDialog;
+                returnTrigger = activeTrigger;
+                previousDialog.close();
+                // close events are queued: finish synchronously before opening the next modal.
+                finishClose(previousDialog);
+            }
             const dialog = document.getElementById(trigger.dataset.leaderModal);
             if (!dialog) return;
             const frame = dialog.querySelector('iframe');
@@ -71,9 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (placeholder) placeholder.hidden = hasVideo;
             dialog.showModal();
             // Start at the heading on every open, including after a previous scroll.
-            dialog.querySelector('h2').focus({ preventScroll: true });
+            const focusTarget = isWorkBack
+                ? dialog.querySelector('[data-leader-modal="leader-work-together-modal"]')
+                : dialog.querySelector('h2');
+            (focusTarget || dialog).focus({ preventScroll: true });
             dialog.scrollTop = 0;
-            activeTrigger = trigger;
+            activeTrigger = returnTrigger;
             activeDialog = dialog;
             previousOverflow = document.body.style.overflow;
             document.body.style.overflow = 'hidden';
