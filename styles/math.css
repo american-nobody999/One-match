@@ -1,5 +1,7 @@
 /* Author: Leslie Brockman
- Date: 10-27-2026 */
+ Date: 10-27-2026
+ * Updated: 11-06-2026
+ */
 .edu-page.math-classroom {
     --classroom-accent: #555487;
     --classroom-tint: #ece9f3;
@@ -12,7 +14,7 @@ body.edu-page.math-classroom {
 
 
 /* Migrated flashcard styling: existing controls, states and motion preserved. */
-/* styles.css 5082–5091 */
+/* styles.css 5082–5091--Future reference, include this in prompt controls for resuseable/ same with js--comment and highlight where we resued them in the clean up notes, and comment them so we can find them again easier. start listing depenciencies. WE are not creating another monster.*/
 :where(.edu-page) .edu-content-section {
     max-width: 1000px;
     margin: 2.5rem auto;
@@ -743,3 +745,178 @@ body.edu-page.math-classroom {
     width: 100%;
     height: auto;
 }
+
+/* Student welcome and configurable activity selection: Math scope only. */
+.math-classroom .classroom-main { min-width: 0; }
+.math-classroom .student-playground {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    margin: 2rem auto;
+    padding: clamp(1rem, 4vw, 2.5rem);
+    border: 2px solid #b39045;
+    border-top: .5rem solid #a43535;
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, #fffbee, #e7efdc);
+    color: #183c2b;
+    text-align: center;
+    box-shadow: 0 .5rem 1.5rem #183c2b20;
+}
+.math-classroom .student-playground *,
+.math-classroom .student-return { box-sizing: border-box; }
+.math-classroom .student-playground[hidden],
+.math-classroom .student-playground [hidden],
+.math-classroom [data-learning-activity][hidden],
+.math-classroom .student-return[hidden] { display: none !important; }
+.math-classroom .math-scatter {
+    position: absolute;
+    inset: .5rem;
+    z-index: -1;
+    color: #246748;
+    opacity: .08;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+    user-select: none;
+}
+.math-classroom .student-playground h2,
+.math-classroom .student-playground h3 { color: #183c2b; font-family: 'Chalkboard SE', 'Amiri', cursive; }
+.math-classroom .student-playground p { max-width: 48ch; margin: .75rem auto; text-align: center; text-indent: 0; }
+.math-classroom .student-playground label { display: block; font-weight: 700; }
+.math-classroom .student-form-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+.math-classroom [data-student-name] { width: min(100%, 18rem); min-width: 0; min-height: 48px; padding: .75rem; border: 2px solid #426b52; border-radius: .75rem; background: #fff; color: #17261c; font: inherit; }
+.math-classroom .student-play-button { max-width: 100%; min-height: 48px; padding: .75rem 1.2rem; border: 2px solid #b39045; border-radius: 999px; background: #195638; color: #fff; font: inherit; font-weight: 700; white-space: normal; cursor: pointer; }
+.math-classroom .student-return { display: block; margin: 1.5rem auto 0; }
+.math-classroom .student-greeting { font-size: 1.35rem; font-weight: 700; overflow-wrap: anywhere; }
+.math-classroom .student-game-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1rem; }
+.math-classroom .student-game-card { min-width: 0; padding: 1.25rem; border: 2px solid #276246; border-bottom: .4rem solid #b39045; border-radius: 1.25rem; background: #fffdf5; color: #183c2b; font: inherit; line-height: 1.7; text-align: center; overflow-wrap: anywhere; cursor: pointer; transition: transform 160ms ease, box-shadow 160ms ease; }
+.math-classroom .student-game-card strong,
+.math-classroom .student-game-card span > span { display: block; }
+.math-classroom .game-symbol { display: block; color: #a43535; font-size: 2rem; font-weight: 700; }
+.math-classroom .student-game-card:disabled { border-style: dashed; background: #ebece5; color: #4c554c; cursor: default; }
+.math-classroom .student-game-card:not(:disabled):hover { transform: translateY(-3px); box-shadow: 0 .4rem .8rem #183c2b25; }
+.math-classroom :is(.student-game-card, .student-play-button, [data-student-name]):focus-visible { outline: 3px solid #a43535; outline-offset: 4px; }
+.math-classroom .student-playground .lang-ar { direction: rtl; text-align: center; }
+@media (max-width: 767px) {
+    .math-classroom .student-game-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .math-classroom .student-game-card { transition: none; }
+    .math-classroom .student-game-card:not(:disabled):hover { transform: none; }
+}
+
+/* Carry the classroom palette into the existing flashcards without changing state rules. */
+.math-classroom .math-flashcards {
+    --flashcard-primary: #226143;
+    --flashcard-primary-dark: #153d2b;
+    --flashcard-primary-light: #b39045;
+    --flashcard-accent: #246d49;
+    --flashcard-border: #b9c6ad;
+    --flashcard-text: #18291e;
+    --flashcard-front: #fffdf3;
+}
+.math-classroom .math-flashcards > .edu-content-section { background: linear-gradient(145deg, #fffbee, #e5efdc); }
+.math-classroom .math-flashcards .card-face { border-color: #b3904566; }
+.math-classroom .math-flashcards .card-back { background: linear-gradient(145deg, #f7f1d8, #dbead3); }
+
+/* Friendly classroom companions stay in their own space above the welcome. */
+.math-classroom .math-friends { width: min(100%, 26rem); margin: 0 auto .5rem; pointer-events: none; }
+.math-classroom .math-friends svg { display: block; width: 100%; height: auto; }
+.math-classroom .correct-symbol-game { box-sizing: border-box; max-width: 48rem; margin: 2rem auto; padding: clamp(1rem, 4vw, 2rem); border: 2px solid #b39045; border-radius: 1.5rem; background: #fffbee; color: #183c2b; text-align: center; box-shadow: 0 .5rem 1.5rem #183c2b20; }
+.math-classroom .correct-symbol-game [hidden] { display: none !important; }
+.math-classroom .correct-symbol-game h2 { color: #183c2b; font-family: 'Chalkboard SE', 'Amiri', cursive; }
+.math-classroom .correct-symbol-game p { text-align: center; text-indent: 0; line-height: 1.8; overflow-wrap: anywhere; }
+.math-classroom .correct-symbol-game .lang-ar { direction: rtl; text-align: center; }
+.math-classroom .symbol-equation { direction: ltr; unicode-bidi: isolate; font-size: clamp(1.75rem, 7vw, 3rem); font-weight: 700; margin: 1.5rem 0; }
+.math-classroom .symbol-progress { font-weight: 700; }
+.math-classroom .symbol-answers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; max-width: 24rem; margin: 1rem auto; direction: ltr; }
+.math-classroom [data-symbol-answer] { min-width: 0; min-height: 64px; border: 2px solid #276246; border-radius: 1rem; background: #fff; color: #183c2b; font: 700 2.25rem/1.3 sans-serif; cursor: pointer; }
+.math-classroom [data-symbol-answer]:not(:disabled):hover { background: #e5efdc; }
+.math-classroom .correct-symbol-game button:focus-visible { outline: 3px solid #a43535; outline-offset: 4px; }
+.math-classroom .correct-symbol-game button:disabled { opacity: .65; cursor: default; }
+.math-classroom .symbol-feedback { min-height: 3.6em; color: #205b3e; font-weight: 700; }
+.math-classroom .correct-symbol-game bdi { overflow-wrap: anywhere; }
+@media (min-width: 480px) {
+    .math-classroom .symbol-answers { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* Algebra Level 1: a quiet chalkboard for older learners. */
+.math-classroom .algebra-game { box-sizing: border-box; max-width: 52rem; margin: 2rem auto; padding: clamp(1rem, 4vw, 2rem); border: 2px solid #b39045; border-radius: 1.5rem; background: #fffbee; color: #183c2b; text-align: center; }
+.math-classroom .algebra-game [hidden] { display: none !important; }
+.math-classroom .algebra-game p { line-height: 1.8; text-align: center; text-indent: 0; overflow-wrap: anywhere; }
+.math-classroom .algebra-game .lang-ar { direction: rtl; text-align: center; }
+.math-classroom .algebra-friend { display: block; width: 5rem; max-width: 100%; height: auto; margin: 0 auto; }
+.math-classroom .algebra-roadmap { display: grid; gap: .5rem; padding: 0; list-style: none; }
+.math-classroom .algebra-roadmap li { padding: .65rem; border: 1px dashed #80876c; border-radius: .75rem; background: #e9ebdf; overflow-wrap: anywhere; }
+.math-classroom .algebra-roadmap [data-available="true"] { border: 2px solid #496647; background: #e1edda; font-weight: 700; }
+.math-classroom .algebra-equation { padding: 1.25rem .5rem; border: 3px solid #b39045; border-radius: 1rem; background: #123b2b; color: #fff5d5; font: 700 clamp(1.5rem, 6vw, 2.5rem)/1.7 monospace; direction: ltr; unicode-bidi: isolate; }
+.math-classroom .algebra-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin: .75rem 0; }
+.math-classroom .algebra-game label { display: block; font-weight: 700; }
+.math-classroom [data-algebra-answer] { box-sizing: border-box; width: min(100%, 12rem); min-width: 0; min-height: 48px; padding: .75rem; border: 2px solid #496647; border-radius: .75rem; background: #fff; color: #183c2b; font: inherit; text-align: center; }
+.math-classroom .algebra-game :is(input, button):focus-visible { outline: 3px solid #a43535; outline-offset: 4px; }
+.math-classroom .algebra-game button:disabled { opacity: .6; cursor: default; }
+.math-classroom .algebra-feedback { min-height: 3.6em; font-weight: 700; color: #205b3e; }
+.math-classroom .algebra-steps { padding-inline: 1.75rem .5rem; text-align: start; }
+.math-classroom .algebra-steps li { margin: 1rem 0; }
+.math-classroom .algebra-working { display: block; padding: .75rem; border-inline-start: 3px solid #b39045; background: #eef0e1; color: #18291e; white-space: pre-wrap; overflow-wrap: anywhere; direction: ltr; unicode-bidi: isolate; text-align: left; font: 1rem/1.8 monospace; }
+
+/* All algebra levels reuse the existing chalkboard and controls. */
+.math-classroom .algebra-roadmap li { padding: 0; }
+.math-classroom .algebra-roadmap [data-algebra-select] { display: block; box-sizing: border-box; width: 100%; min-height: 48px; padding: .8rem; border: 0; border-radius: .75rem; background: #e1edda; color: #183c2b; font: inherit; font-weight: 700; text-align: center; white-space: normal; overflow-wrap: anywhere; cursor: pointer; }
+.math-classroom .algebra-roadmap [data-algebra-select]:hover { background: #d1e4c4; }
+.math-classroom .algebra-equation { overflow-wrap: anywhere; }
+.math-classroom .algebra-steps { max-width: 100%; }
+
+/* Simultaneous bilingual copy belongs only to the Math welcome/selector. */
+.math-classroom .student-playground { font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', system-ui, sans-serif; }
+.math-classroom .student-playground :is(.lang-en, .lang-ar) { display: block !important; }
+.math-classroom .student-playground .lang-ar { font-family: 'Amiri', 'Geeza Pro', Tahoma, serif; direction: rtl; text-align: center; }
+.math-classroom .student-playground #game-choice-title { line-height: 1.6; }
+.math-classroom .student-game-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .55rem;
+    padding: clamp(.8rem, 2vw, 1.4rem);
+    border: 1px solid #d5bc85;
+    border-top: .35rem solid #b66c5a;
+    border-bottom: .3rem solid #b39045;
+    border-radius: 1.6rem;
+    background: linear-gradient(155deg, #fffdf5, #f5ead6);
+    box-shadow: inset 0 2px 0 #fffdf6, 0 4px 0 #cdbb9559, 0 10px 20px #5a45251a;
+}
+.math-classroom .student-game-card[data-game="correct-symbol"] { border-top-color: #758958; background: linear-gradient(155deg, #fffdf5, #eceddc); }
+.math-classroom .student-game-card[data-game="algebra"] { border-top-color: #b39045; background: linear-gradient(155deg, #fffdf5, #f0e5d6); }
+.math-classroom .student-game-card .game-card-art { display: block; flex: none; width: min(100%, 15rem); height: auto; overflow: visible; margin-bottom: .25rem; }
+.math-classroom .student-game-card .game-card-title { max-width: 100%; line-height: 1.4; font-size: clamp(1.1rem, 1.7vw, 1.35rem); color: #233e2a; }
+.math-classroom .student-game-card .game-card-title.lang-ar { margin-top: -.2rem; color: #5b6547; font-size: 1.02rem; line-height: 1.8; }
+.math-classroom .student-game-card .game-card-description { max-width: 32ch; font-size: .95rem; line-height: 1.7; color: #4d5747; }
+.math-classroom .student-game-card .game-card-description.lang-ar { font-size: 1.05rem; line-height: 1.85; }
+.math-classroom .student-game-card .game-card-action { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .35rem; max-width: 100%; min-height: 44px; margin-top: auto; padding: .45rem 1.1rem; border: 1px solid #b39045; border-radius: 999px; background: #24583c; color: #fffbee; font-weight: 700; box-shadow: inset 0 1px 0 #ffffff26, 0 3px 0 #173d2b26; }
+.math-classroom .student-game-card .game-card-action :is(.lang-en, .lang-ar) { display: inline !important; }
+.math-classroom .student-game-card:not(:disabled):hover { box-shadow: inset 0 2px 0 #fffdf6, 0 5px 0 #cdbb9559, 0 12px 22px #5a452526; }
+
+/* Game 2 stays bilingual independently of the global language selection. */
+.math-classroom #correct-symbol-activity :is(.lang-en, .lang-ar) { display: block !important; text-align: center; }
+.math-classroom #correct-symbol-activity .lang-en { direction: ltr; }
+.math-classroom #correct-symbol-activity .lang-ar { direction: rtl; font-size: .92em; line-height: 1.65; margin-block-start: .2em; }
+.math-classroom #correct-symbol-activity .student-play-button .lang-ar { line-height: 1.4; margin-block-start: .1em; }
+
+/* Paired English/Arabic gameplay text: Math activities only, never shared chrome. */
+.math-classroom [data-learning-activity] :is(.lang-en, .lang-ar) { display: block !important; }
+.math-classroom [data-learning-activity] .lang-en { direction: ltr; }
+.math-classroom [data-learning-activity] .lang-ar { direction: rtl; font-family: 'Amiri', 'Geeza Pro', Tahoma, serif; font-size: .92em; line-height: 1.65; margin-block-start: .15em; }
+.math-classroom [data-learning-activity] button .lang-ar { line-height: 1.35; margin-block-start: .1em; }
+.math-classroom #math-flashcards-activity .stat { flex-direction: column; gap: .1rem; text-align: center; }
+.math-classroom #math-flashcards-activity .btn-nav .lang-en,
+.math-classroom #math-flashcards-activity .btn-nav .lang-ar { font-size: .72rem; }
+.math-classroom #math-flashcards-activity :is(.question, .answer) { direction: ltr; unicode-bidi: isolate; }
+.math-classroom #math-flashcards-activity .hint { max-width: 95%; line-height: 1.4; text-align: center; }
+.math-classroom #math-flashcards-activity .answer-feedback { line-height: 1.5; }
+.math-classroom #math-flashcards-activity .results-card { box-sizing: border-box; max-height: 90dvh; overflow-y: auto; }
+
+/* Welcome artwork only: preserve the compact panel footprint and clear heading gap. */
+.math-classroom .student-playground > .math-friends { width: min(100%, 26rem); margin: 0 auto .65rem; }
+.math-classroom .student-playground > .math-friends svg { display: block; width: 100%; height: auto; aspect-ratio: 420 / 148; overflow: visible; }
