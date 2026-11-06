@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 10/30/2026
+   Date modified: 11/06/2026
 */
 .ok-israelis-page main {
 display: flex;
@@ -353,3 +353,48 @@ padding-block: 5rem;
     margin-block-start: .75rem;
     line-height: 1.85;
 }
+
+/* November 6 features: isolated portrait and matching bilingual editorial panels. */
+.ok-israelis-page .israelis-feature-portrait {
+    box-sizing: border-box;
+    width: min(100%, 36rem);
+    margin: 1.5rem auto;
+    padding: .3rem;
+    border: 1px solid #B89A4B;
+    border-radius: .5rem;
+    box-shadow: 0 5px 16px rgb(70 51 16 / 18%);
+}
+.ok-israelis-page .israelis-feature-portrait img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: .25rem;
+}
+.ok-israelis-page .israelis-feature-panel {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-block: 1.5rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 2px solid #B89A4B;
+    border-radius: .65rem;
+    background: #f5eddb;
+    color: #28251f;
+    box-shadow: 0 3px 15px rgb(184 154 75 / 20%);
+    overflow-wrap: anywhere;
+}
+.ok-israelis-page .israelis-feature-panel h2 {
+    margin-block: 0 1rem;
+    color: #513f18;
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+.ok-israelis-page .israelis-feature-panel p { margin-block: 0 1rem; line-height: 1.85; text-align: start; }
+.ok-israelis-page .israelis-feature-panel .lang-ar { direction: rtl; text-align: right; }
+.ok-israelis-page .israelis-feature-panel h2 .lang-ar { text-align: center; }
+.ok-israelis-page .israelis-feature-panel .israelis-feature-name { text-align: center; font-weight: bold; }
+.ok-israelis-page .israelis-feature-panel .israelis-hebrew-name { display: block; margin-top: .35rem; font-size: .85em; }
+.ok-israelis-page .israelis-feature-panel .site-button { display: flex; width: fit-content; max-width: 100%; min-height: 44px; margin: 1.25rem auto 0; white-space: normal; text-align: center; }
