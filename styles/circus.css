@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman
-   Date modified: 11/04/2026--ACTIVE--Dont touch this file unless you are working on Phase 2 */
+   Date modified: 11/11/2026--ACTIVE--Dont touch this file unless you are working on Phase 3 */
 body.circus-page-body {
 background-color: #fffdf6;
     background-image:
@@ -810,6 +810,55 @@ body.circus-page-body {
 }
 .circus-banners .circus-performer-links a:hover { background: var(--circus-gold); }
 
+/* Banner Hall developer preview; separate from the preserved performer cards. */
+.circus-page-body .circus-banners .circus-preview-progress {
+    display: block;
+    width: min(100%, 36rem);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.circus-banners .circus-developer-note {
+    display: grid;
+    grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    width: 100%;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 1px solid var(--circus-gold);
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(#c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(135deg, #3d2530, #243b39);
+    box-shadow: inset 0 0 0 4px #e5bd7010, 0 8px 20px #160c1033;
+    text-align: start;
+}
+.circus-banners .circus-developer-david { display: block; width: 100%; max-width: 9rem; height: auto; justify-self: center; }
+.circus-banners .circus-developer-copy { display: grid; gap: 1.25rem; min-width: 0; overflow-wrap: anywhere; }
+.circus-banners .circus-developer-copy > div + div { border-top: 1px dashed #e5bd7066; padding-top: 1rem; }
+.circus-page-body .circus-banners .circus-developer-note h2 {
+    margin: 0 0 .75rem;
+    color: var(--circus-gold);
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1.4;
+    text-align: start;
+}
+.circus-page-body .circus-banners .circus-developer-note p {
+    max-width: none;
+    margin: 0 0 .65rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--circus-cream);
+    text-align: start;
+}
+.circus-banners .circus-developer-copy p:last-child { margin-bottom: 0; }
+.circus-banners .circus-developer-copy [lang="ar"] { font-family: 'Amiri', serif; }
+@media (max-width: 600px) {
+    .circus-banners .circus-developer-note { grid-template-columns: minmax(0, 1fr); }
+    .circus-banners .circus-developer-david { max-width: 7rem; }
+}
+
 /* Phase 4: Popcorn Stand information/support cards only. */
 .circus-popcorn .circus-support-category { width: 100%; min-width: 0; }
 .circus-popcorn .circus-popcorn-support-grid {
@@ -854,6 +903,164 @@ body.circus-page-body {
     color: var(--circus-cream);
 }
 
+/* Popcorn Stand final artwork and single school-information entry. */
+.circus-popcorn .circus-popcorn-progress-frame { width: min(100%, 36rem); min-width: 0; margin: 0 auto; padding: .4rem; border: 5px double var(--circus-gold); border-radius: 1rem; background: var(--circus-ink); box-shadow: var(--circus-shadow); }
+.circus-page-body .circus-popcorn .circus-popcorn-progress-frame img { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; border-radius: .5rem; }
+.circus-popcorn .circus-popcorn-school-link { display: block; color: var(--circus-cream); border-radius: .75rem; text-decoration-color: var(--circus-gold); text-underline-offset: .2em; }
+.circus-popcorn .circus-popcorn-school-label { display: block; font-size: 1.1rem; font-weight: bold; line-height: 1.6; overflow-wrap: anywhere; }
+.circus-popcorn .circus-popcorn-school-label > span { display: block; }
+.circus-popcorn .circus-popcorn-school-link svg { transition: transform 200ms ease, filter 200ms ease; }
+.circus-popcorn .circus-popcorn-school-link:is(:hover, :focus-visible) svg { transform: scale(1.03); filter: drop-shadow(0 0 6px #e5bd7066); }
+.circus-popcorn .circus-popcorn-school-link:focus-visible { outline: 3px solid var(--circus-gold); outline-offset: 5px; }
+@media (prefers-reduced-motion: reduce) {
+    .circus-popcorn .circus-popcorn-school-link svg { transition: none; }
+    .circus-popcorn .circus-popcorn-school-link:is(:hover, :focus-visible) svg { transform: none; }
+}
+
+/* Popcorn Stand Phase 2: decorative concession previews and developer note. */
+.circus-popcorn .circus-developer-note {
+    display: grid;
+    grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    width: 100%;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 1px solid var(--circus-gold);
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(#c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(135deg, #3d2530, #243b39);
+    box-shadow: inset 0 0 0 4px #e5bd7010, 0 8px 20px #160c1033;
+    text-align: start;
+}
+.circus-popcorn .circus-developer-david { display: block; width: 100%; max-width: 9rem; height: auto; justify-self: center; }
+.circus-popcorn .circus-developer-copy { display: grid; gap: 1.25rem; min-width: 0; overflow-wrap: anywhere; }
+.circus-popcorn .circus-developer-copy > div + div { border-top: 1px dashed #e5bd7066; padding-top: 1rem; }
+.circus-page-body .circus-popcorn .circus-developer-note h2 {
+    margin: 0 0 .75rem;
+    color: var(--circus-gold);
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1.4;
+    text-align: start;
+}
+.circus-page-body .circus-popcorn .circus-developer-note p {
+    max-width: none;
+    margin: 0 0 .65rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--circus-cream);
+    text-align: start;
+}
+.circus-popcorn .circus-developer-copy p:last-child { margin-bottom: 0; }
+.circus-popcorn .circus-developer-copy [lang="ar"] { font-family: 'Amiri', serif; }
+@media (max-width: 600px) {
+    .circus-popcorn .circus-developer-note { grid-template-columns: minmax(0, 1fr); }
+    .circus-popcorn .circus-developer-david { max-width: 7rem; }
+}
+
+.circus-popcorn .circus-concession-previews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1rem; width: 100%; min-width: 0; }
+.circus-popcorn .circus-concession-preview { min-width: 0; margin: 0; }
+.circus-popcorn .circus-concession-preview svg { display: block; width: 100%; max-width: 14rem; height: auto; margin: 0 auto; }
+.circus-popcorn .circus-concession-preview figcaption { color: var(--circus-cream); font-weight: bold; font-size: 1.1rem; line-height: 1.6; overflow-wrap: anywhere; }
+.circus-popcorn .circus-concession-preview figcaption span { display: block; }
+@media (max-width: 800px) {
+    .circus-popcorn .circus-concession-previews { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .circus-popcorn .circus-concession-preview:last-child { grid-column: 1 / -1; width: 50%; justify-self: center; }
+}
+@media (max-width: 480px) {
+    .circus-popcorn .circus-concession-previews { grid-template-columns: minmax(0, 1fr); }
+    .circus-popcorn .circus-concession-preview:last-child { grid-column: auto; width: 100%; }
+}
+
+/* Main Event construction artwork: centered, uncropped, circus-gold framing. */
+.circus-ring .circus-ring-progress-frame {
+    width: min(100%, 36rem);
+    min-width: 0;
+    margin: 0 auto;
+    padding: .4rem;
+    border: 5px double var(--circus-gold);
+    border-radius: 1rem;
+    background: var(--circus-ink);
+    box-shadow: var(--circus-shadow);
+}
+.circus-page-body .circus-ring .circus-ring-progress-frame img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: .5rem;
+}
+
+/* Main Event construction preview: decorative illustrations, no game controls. */
+.circus-ring .circus-developer-note {
+    display: grid;
+    grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    width: 100%;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 1px solid var(--circus-gold);
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(#c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(135deg, #3d2530, #243b39);
+    box-shadow: inset 0 0 0 4px #e5bd7010, 0 8px 20px #160c1033;
+    text-align: start;
+}
+.circus-ring .circus-developer-david { display: block; width: 100%; max-width: 9rem; height: auto; justify-self: center; }
+.circus-ring .circus-developer-copy { display: grid; gap: 1.25rem; min-width: 0; overflow-wrap: anywhere; }
+.circus-ring .circus-developer-copy > div + div { border-top: 1px dashed #e5bd7066; padding-top: 1rem; }
+.circus-page-body .circus-ring .circus-developer-note h2 {
+    margin: 0 0 .75rem;
+    color: var(--circus-gold);
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1.4;
+    text-align: start;
+}
+.circus-page-body .circus-ring .circus-developer-note p {
+    max-width: none;
+    margin: 0 0 .65rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--circus-cream);
+    text-align: start;
+}
+.circus-ring .circus-developer-copy p:last-child { margin-bottom: 0; }
+.circus-ring .circus-developer-copy [lang="ar"] { font-family: 'Amiri', serif; }
+@media (max-width: 600px) {
+    .circus-ring .circus-developer-note { grid-template-columns: minmax(0, 1fr); }
+    .circus-ring .circus-developer-david { max-width: 7rem; }
+}
+
+.circus-page-body .circus-ring .circus-mystery-stations {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 2.5rem 1rem;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+.circus-ring .circus-mystery-attraction { grid-column: span 2; min-width: 0; margin: 0; }
+.circus-ring .circus-mystery-attraction:nth-child(4) { grid-column: 2 / span 2; }
+.circus-ring .circus-mystery-attraction:nth-child(5) { grid-column: 4 / span 2; }
+.circus-ring .circus-mystery-attraction svg { display: block; width: 100%; max-width: 18rem; height: auto; margin: 0 auto; }
+.circus-ring .circus-mystery-attraction figcaption,
+.circus-ring .circus-dj-teaser figcaption { color: var(--circus-cream); font-size: 1.1rem; font-weight: bold; line-height: 1.6; overflow-wrap: anywhere; }
+.circus-ring .circus-mystery-attraction figcaption span,
+.circus-ring .circus-dj-teaser figcaption span { display: block; }
+.circus-ring .circus-dj-teaser { width: min(100%, 23rem); min-width: 0; margin: 0 auto; padding: 1rem; border-top: 1px dashed var(--circus-gold); }
+.circus-ring .circus-dj-teaser svg { display: block; width: 100%; height: auto; }
+@media (max-width: 800px) {
+    .circus-page-body .circus-ring .circus-mystery-stations { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .circus-ring .circus-mystery-attraction { grid-column: auto; }
+    .circus-ring .circus-mystery-attraction:nth-child(4) { grid-column: auto; }
+    .circus-ring .circus-mystery-attraction:nth-child(5) { grid-column: 1 / -1; width: 50%; justify-self: center; }
+}
+@media (max-width: 480px) {
+    .circus-page-body .circus-ring .circus-mystery-stations { grid-template-columns: minmax(0, 1fr); border-radius: 2rem; }
+    .circus-ring .circus-mystery-attraction:nth-child(5) { grid-column: auto; width: 100%; }
+}
+
 /* Phase 5A: independent game station layout; no gameplay or inactive controls. */
 .circus-page-body .circus-ring .circus-game-station {
     display: flex;
@@ -867,8 +1074,13 @@ body.circus-page-body {
 .circus-page-body .circus-ring .circus-game-station h3 { margin: 0; }
 .circus-page-body .circus-ring .circus-game-station-description { margin: 0; }
 
-/* Grand Stage: entrance only; existing curtain declarations and variables unchanged. */
-body.circus-entrance-body { background: #111111; }
+/* Phase 2D: consolidated Grand Entrance architecture; destination pages use earlier rules. */
+body.circus-entrance-body {
+    background: #111111;
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
+}
 .circus-entrance {
     --stage-red: #CE1126;
     --stage-green: #007A3D;
@@ -877,125 +1089,205 @@ body.circus-entrance-body { background: #111111; }
     --stage-gold: #D4AF37;
 }
 .circus-page-body main.circus-entrance {
-    background: radial-gradient(ellipse at 15% 0, #d4af3726, transparent 48%),
-                radial-gradient(ellipse at 85% 0, #d4af3726, transparent 48%),
-                linear-gradient(#211819, var(--stage-black) 65%);
+    width: min(100%, 1500px);
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    flex-shrink: 0;
+    background: radial-gradient(ellipse at 15% 0, #d4af3726, transparent 48%), radial-gradient(ellipse at 85% 0, #d4af3726, transparent 48%), linear-gradient(#211819, #111 65%);
     border: 1px solid #d4af3766;
     box-shadow: inset 0 0 35px #d4af3710, 0 15px 40px #0008;
 }
+.circus-entrance .circus-curtain {
+    background: linear-gradient(180deg, #18030888, transparent 20%, #19030988), repeating-linear-gradient(90deg, #310710 0%, #761323 8%, #b13242 13%, #691021 21%, #27060d 30%);
+    box-shadow: inset 0 0 45px #140207, inset 0 -8px 12px #d4af3740;
+}
 .circus-page-body .circus-entrance .circus-marquee {
-    background: radial-gradient(ellipse, #342119, #111111);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(1rem, 2.5vw, 1.8rem) clamp(1.5rem, 5vw, 3.5rem);
+    background: radial-gradient(ellipse at 50% 0, #d4af3733, transparent 65%), linear-gradient(#40111d, #160b0e);
     border-color: var(--stage-gold);
     outline-color: var(--stage-red);
-    box-shadow: inset 0 0 22px #d4af371c, 0 12px 28px #0008;
+    box-shadow: inset 0 0 0 3px #211011, inset 0 0 26px #d4af3726, 0 0 22px #d4af3720, 0 14px 30px #000a;
 }
-.circus-page-body .circus-entrance .circus-marquee h2 { color: var(--stage-gold); }
-.circus-page-body .circus-entrance .circus-show-subtitle { color: var(--stage-white); }
-.circus-page-body .circus-entrance .circus-intro-development {
-    max-width: 65ch;
-    color: #e0d5bf;
-    font-size: .95rem;
+.circus-page-body .circus-entrance .circus-marquee h2 {
+    margin-bottom: .5rem;
+    font-size: clamp(1.45rem, 3.5vw, 2.7rem);
+    line-height: 1.2;
+    color: var(--stage-gold);
 }
+.circus-page-body .circus-entrance .circus-show-subtitle { font-size: clamp(1rem, 2vw, 1.35rem); color: var(--stage-white); }
+.circus-entrance .circus-marquee::before,
+.circus-entrance .circus-marquee::after {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    width: clamp(.65rem, 3vw, 2rem);
+    background: repeating-linear-gradient(90deg, #30060e, #9b2337 30%, #5c0d1e 60%, #21050b);
+    border-inline: 2px solid var(--stage-gold);
+    box-shadow: 0 0 12px #000b, inset 0 -5px 5px #d4af3766;
+    pointer-events: none;
+}
+.circus-entrance .circus-marquee::before { left: 0; }
+.circus-entrance .circus-marquee::after { right: 0; }
 .circus-entrance .circus-destinations {
     position: relative;
     isolation: isolate;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    flex-shrink: 0;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
     grid-template-areas: 'banners main popcorn';
-    align-items: center;
-    gap: clamp(1rem, 2.5vw, 2rem);
-    padding: 3rem .5rem 5rem;
+    align-items: end;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding: 2.5rem clamp(.75rem, 2vw, 1.5rem) 6rem;
+    direction: ltr;
+    background: radial-gradient(ellipse at 50% 100%, #ad7c3433, transparent 68%);
 }
-/* Elliptical performance floor is a background layer; it cannot intercept navigation. */
+/* Low oval beneath the center threshold, rather than an empty backdrop. */
 .circus-entrance .circus-destinations::before {
     content: '';
     position: absolute;
-    inset: 35% 8% 0;
+    inset: 55% 0 0;
+    height: auto;
     z-index: -1;
-    border: 5px double var(--stage-gold);
-    border-radius: 50%;
-    background:
-        radial-gradient(ellipse at 50% 42%, rgb(212 175 55 / 15%) 0%, rgb(167 131 54 / 6%) 32%, transparent 66%),
-        radial-gradient(ellipse at center, #29251e 0%, #1b1b17 48%, #111111 88%);
-    box-shadow:
-        inset 0 10px 22px rgb(0 0 0 / 65%),
-        inset 0 -3px 12px rgb(212 175 55 / 10%),
-        inset 0 0 28px rgb(0 0 0 / 45%),
-        0 12px 24px rgb(0 0 0 / 45%),
-        0 0 22px rgb(17 17 17 / 65%);
+    border: 4px double var(--stage-gold);
+    border-radius: 50% 50% 12% 12% / 25% 25% 8% 8%;
+    background: radial-gradient(circle, #dcc39933 .6px, transparent 1px) 0 0 / 7px 9px, radial-gradient(ellipse at 50% 40%, #947143, #4b3929 60%, #211813);
+    box-shadow: inset 0 8px 15px #0009, inset 0 -3px 8px #dabb7e55, 0 10px 20px #0009;
     pointer-events: none;
+}
+/* Complete illustrated entrances replace the retired CSS tent scenery. */
+.circus-entrance .circus-ticket {
+    display: block;
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    padding: .25rem;
+    border: 2px solid var(--stage-gold);
+    border-radius: .5rem;
+    background: #160c10;
+    box-shadow: 0 12px 24px #0009;
+    overflow-wrap: anywhere;
+    overflow: visible;
+    z-index: 0;
+    transform-origin: center top;
+    transition: transform 300ms ease, filter 300ms ease;
+}
+.circus-entrance .circus-ticket::before,
+.circus-entrance .circus-ticket::after { content: none; }
+.circus-page-body .circus-entrance .circus-entrance-artwork {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border: 0;
+    border-radius: .25rem;
+    box-shadow: none;
+}
+/* Live bilingual link names stay accessible without covering embedded artwork text. */
+.circus-entrance .circus-entrance-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+.circus-entrance .circus-attraction-banners { grid-area: banners; rotate: -3deg; }
+.circus-entrance .circus-attraction-main { grid-area: main; }
+.circus-entrance .circus-attraction-popcorn { grid-area: popcorn; rotate: 3deg; }
+/* Scale the border and artwork together, growing down away from the marquee. */
+.circus-entrance .circus-ticket:is(:hover, :focus-visible) {
+    transform: scale(1.16);
+    box-shadow: 0 12px 24px #0009;
+    filter: drop-shadow(0 0 10px #d4af3766);
+    z-index: 1;
+}
+.circus-entrance .circus-ticket:focus-visible { outline: 3px solid #fff5d6; outline-offset: 6px; }
+/* Persistent framing remains behind the foyer after the animated curtains open. */
+.circus-page-body main.circus-entrance::before,
+.circus-page-body main.circus-entrance::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    width: clamp(.6rem, 3vw, 2.4rem);
+    background:
+        repeating-linear-gradient(90deg, #edc974 0 2px, #926018 2px 3px) center 34% / .5rem 1.5rem no-repeat,
+        radial-gradient(ellipse, #ffe5a1, #a37326) center 32% / .65rem .65rem no-repeat,
+        linear-gradient(160deg, transparent 0 28%, #ecc86b 29% 30%, #785018 31%, transparent 32%),
+        repeating-linear-gradient(95deg, #350711 0%, #a82439 20%, #5f0d20 36%, #d33b4c 48%, #420816 66%);
+    border-inline: 2px solid #ba8c35;
+    border-radius: 0 0 45% 45%;
+    box-shadow: inset 0 0 14px #1b0309, 0 0 12px #0009;
+    pointer-events: none;
+}
+.circus-page-body main.circus-entrance::before { left: 0; }
+.circus-page-body main.circus-entrance::after { right: 0; transform: scaleX(-1); }
+/* The exit has its own normal-flow row at the stage's bottom right. */
+.circus-page-body .circus-entrance .circus-soccer-exit {
+    display: inline-flex;
+    align-self: flex-end;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    min-height: 44px;
+    padding: 2px;
+    border: 2px solid var(--stage-gold);
+    border-radius: 50%;
+    background: #fffdf6;
+    box-shadow: 0 3px 10px #0006;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.circus-entrance .circus-soccer-exit svg { display: block; width: 100%; height: 100%; }
+.circus-page-body .circus-entrance .circus-soccer-exit:is(:hover, :focus-visible) {
+    transform: scale(1.06);
+    background: #fffdf6;
+    box-shadow: 0 0 12px #d4af3766;
+}
+.circus-page-body .circus-entrance .circus-soccer-exit:focus-visible { outline: 3px solid #fff5d6; outline-offset: 5px; }
+/* Miniature foyer: keep all three entrances together at every width. */
+@media (max-width: 1050px) {
+    .circus-page-body main.circus-entrance { padding: clamp(.6rem, 2vw, 1.5rem); }
+    .circus-entrance .circus-destinations {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
+        grid-template-areas: 'banners main popcorn';
+        gap: clamp(.6rem, 3vw, 2rem);
+        padding: 1.5rem .5rem clamp(2.5rem, 8vw, 5rem);
+    }
+    .circus-entrance .circus-ticket { rotate: 0deg; max-width: none; }
+    .circus-page-body .circus-entrance .circus-marquee { padding: clamp(.7rem, 2vw, 1.25rem) clamp(.9rem, 3vw, 2rem); }
+    .circus-page-body .circus-entrance .circus-marquee h2 { font-size: clamp(.95rem, 3vw, 2rem); }
+    .circus-page-body .circus-entrance .circus-show-subtitle { font-size: clamp(.75rem, 2vw, 1.1rem); }
+}
+@media (max-width: 480px) {
+    .circus-entrance .circus-ticket { padding: .1rem; border-width: 1px; border-radius: .3rem; }
+}
+/* Touch feedback avoids a sticky hover zoom; keyboard focus remains visible. */
+@media (hover: none), (pointer: coarse) {
+    .circus-entrance .circus-ticket:hover { transform: none; filter: none; }
+    .circus-entrance .circus-ticket:focus-visible { transform: none; }
+    .circus-entrance .circus-ticket:active { transform: scale(.97); filter: drop-shadow(0 0 6px #d4af3766); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-entrance .circus-ticket { transition: none; }
+    .circus-entrance .circus-ticket:is(:hover, :focus-visible, :active) { transform: none; }
+    .circus-page-body .circus-entrance .circus-soccer-exit { transition: none; }
+    .circus-page-body .circus-entrance .circus-soccer-exit:is(:hover, :focus-visible) { transform: none; }
 }
 
-/* Traditional sandy ring: desktop surface only; existing geometry/mobile floor retained. */
-@media (min-width: 801px) {
-    .circus-entrance .circus-destinations::before {
-        grid-column: 2;
-        grid-row: 1;
-        inset: -2rem -.5rem -3rem;
-        background:
-            radial-gradient(ellipse at 50% 43%, rgb(212 175 94 / 38%) 0%, rgb(174 139 82 / 18%) 34%, transparent 72%),
-            radial-gradient(ellipse at 50% 105%, rgb(190 158 103 / 25%), transparent 58%),
-            radial-gradient(circle, rgb(219 195 153 / 13%) .55px, transparent 1.05px) 1px 2px / 7px 11px,
-            radial-gradient(circle, rgb(10 8 6 / 22%) .65px, transparent 1.2px) 3px 1px / 13px 9px,
-            radial-gradient(circle, rgb(177 146 100 / 11%) .5px, transparent 1px) 5px 4px / 17px 19px,
-            radial-gradient(ellipse at 50% 46%, #66523a 0%, #4b3929 42%, #30251e 72%, #1b1714 100%);
-        box-shadow:
-            inset 0 13px 23px rgb(0 0 0 / 65%),
-            inset 0 0 28px rgb(0 0 0 / 38%),
-            inset 0 -3px 8px rgb(218 187 126 / 30%),
-            0 2px 2px rgb(212 175 55 / 28%),
-            0 12px 24px rgb(0 0 0 / 45%);
-    }
-}
-.circus-entrance .circus-destinations::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: radial-gradient(circle at 7% 12%, #d4af37bb 0 2px, transparent 3px),
-                radial-gradient(circle at 92% 10%, #d4af37bb 0 2px, transparent 3px);
-    pointer-events: none;
-}
-.circus-entrance .circus-ticket {
-    min-height: 12rem;
-    padding: 2.25rem 1.1rem;
-    border: 3px double var(--stage-gold);
-    color: var(--stage-white);
-    box-shadow: 0 9px 0 #210b10, 0 18px 24px #0008;
-    background: linear-gradient(150deg, #841626, #381017);
-    overflow-wrap: anywhere;
-}
-.circus-entrance .circus-ticket::before { border-color: var(--stage-gold); }
-.circus-entrance .circus-ticket::after {
-    content: '';
-    position: absolute;
-    top: .9rem;
-    left: calc(50% - .4rem);
-    width: .8rem;
-    height: .8rem;
-    background: var(--stage-gold);
-    clip-path: polygon(50% 0, 61% 35%, 100% 38%, 70% 60%, 80% 100%, 50% 76%, 20% 100%, 30% 60%, 0 38%, 39% 35%);
-    pointer-events: none;
-}
-.circus-entrance .circus-attraction-banners { grid-area: banners; }
-.circus-entrance .circus-attraction-main {
-    grid-area: main;
-    min-height: 17rem;
-    font-size: clamp(1.6rem, 3vw, 2.3rem);
-    background: linear-gradient(155deg, #007A3D, #143024 60%, #111111);
-    border-top: 6px solid var(--stage-red);
-    border-bottom: 6px solid var(--stage-white);
-    box-shadow: 0 5px 0 #d4af37, 0 13px 0 #153923, 0 24px 30px #000a;
-}
-.circus-entrance .circus-attraction-popcorn {
-    grid-area: popcorn;
-    background: repeating-linear-gradient(90deg, #CE1126 0 1.5rem, #FFFFFF 1.5rem 3rem) top / 100% 1.5rem no-repeat, linear-gradient(#641520, #301318);
-}
-.circus-entrance .circus-ticket:hover { transform: translateY(-3px); }
-/* Desktop foyer: side attractions flank the center-column ring. */
-@media (min-width: 801px) {
-    .circus-entrance .circus-attraction-banners { rotate: -7deg; }
-    .circus-entrance .circus-attraction-popcorn { rotate: 7deg; }
-}
 .circus-intro-dialog {
     box-sizing: border-box;
     width: min(54rem, calc(100% - 2rem));
@@ -1030,23 +1322,3 @@ body.circus-entrance-body { background: #111111; }
 }
 .circus-intro-dialog .circus-intro-control:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
 .circus-intro-dialog .lang-ar { direction: rtl; font-family: Amiri, Georgia, serif; }
-@media (max-width: 800px) {
-    .circus-entrance .circus-destinations { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'main' 'banners' 'popcorn'; padding: 1rem .5rem 3rem; }
-    .circus-entrance .circus-ticket { min-height: 10rem; }
-    .circus-entrance .circus-attraction-main { min-height: 13rem; }
-    .circus-entrance .circus-destinations::before { inset: 2rem 0 65%; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .circus-entrance .circus-ticket { transition: none; }
-    .circus-entrance .circus-ticket:hover { transform: none; }
-}
-
-/* Temporary Friday entrance artwork; remove when restoring the preserved attractions. */
-.circus-page-body .circus-entrance img.circus-temporary-artwork {
-    display: block;
-    width: min(100%, 52rem);
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    border-radius: .5rem;
-}
