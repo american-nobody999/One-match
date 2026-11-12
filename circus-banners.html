@@ -1,9 +1,9 @@
 <!--
 MPAG: Circus page
 Leslie Brockman
-Date last modified: 2026-11-04
+Date last modified: 2026-11-11
 This page for for the kids. 
-Phase 2 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
+Phase 3 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +66,71 @@ Phase 2 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
   </header>
 
 <main class="circus-page circus-experience circus-banners" aria-labelledby="circus-page-heading">
+  <img class="circus-preview-progress" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png" alt="Work Is Progressing / العمل جارٍ" decoding="async">
+  <section class="circus-developer-note" aria-labelledby="circus-developer-heading">
+    <!-- David is decorative; the adjacent bilingual note carries the message. -->
+    <svg class="circus-developer-david" viewBox="0 0 200 230" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="david-metal" x2="1" y2="1"><stop stop-color="#f7e5b6"/><stop offset="1" stop-color="#b58b47"/></linearGradient>
+        <linearGradient id="david-teal" x2="1" y2="1"><stop stop-color="#a4c9bd"/><stop offset="1" stop-color="#46776f"/></linearGradient>
+        <linearGradient id="david-hat" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".25"/><stop offset=".45" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".22"/></linearGradient>
+        <clipPath id="david-hat-curve"><path d="M57 53a42 42 0 0 1 84 0Z"/></clipPath>
+      </defs>
+      <ellipse cx="102" cy="215" rx="70" ry="8" fill="#160c10" opacity=".25"/>
+      <g stroke="#65333a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M75 177v24m44-24v24" fill="none" stroke="#b58b47" stroke-width="14"/>
+        <rect x="57" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
+        <rect x="107" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
+        <rect x="61" y="118" width="75" height="66" rx="20" fill="url(#david-teal)"/>
+        <path d="M75 133h47v31H75z" fill="#702c3a"/>
+        <circle cx="88" cy="146" r="4" fill="#f7df9c" stroke="none"/>
+        <path d="M101 146h12m-29 10h29" stroke="#dbbd78" stroke-width="2"/>
+        <path d="M62 134q-29 11-17 35m89-35q28 7 19 30" fill="none" stroke="#b58b47" stroke-width="12"/>
+        <rect x="48" y="52" width="101" height="67" rx="24" fill="url(#david-metal)"/>
+        <rect x="59" y="66" width="79" height="39" rx="16" fill="#f9edce"/>
+        <path d="M73 81q5-8 10 0m29 0q5-8 10 0m-34 10q11 12 22 0" fill="none"/>
+        <circle cx="69" cy="92" r="4" fill="#c47876" stroke="none"/>
+        <circle cx="128" cy="92" r="4" fill="#c47876" stroke="none"/>
+        <!-- Palestinian flag bands follow the helmet dome, beneath its shading and ridge. -->
+        <g clip-path="url(#david-hat-curve)" stroke="none">
+          <path d="M57 11h84v42H57Z" fill="#009b58"/>
+          <path d="M57 11h84v30Q99 31 57 41Z" fill="#ffffff"/>
+          <path d="M57 11h84v17Q99 18 57 28Z" fill="#111111"/>
+          <path d="M57 11 94 32 57 53Z" fill="#ee263c"/>
+          <path d="M57 53a42 42 0 0 1 84 0Z" fill="url(#david-hat)"/>
+        </g>
+        <path d="M57 53a42 42 0 0 1 84 0" fill="none"/>
+        <path d="M93 18h13v33H93z" fill="#ffffff" fill-opacity=".16" stroke-opacity=".5"/>
+        <rect x="44" y="48" width="110" height="12" rx="6" fill="#009b58"/>
+        <rect x="44" y="48" width="110" height="12" rx="6" fill="url(#david-hat)"/>
+        <g transform="rotate(-12 105 177)">
+          <path d="M44 159h112v30H44z" fill="#b6d6ca"/>
+          <path d="M64 166h55v15H64zm18 0v15m-18-7h55m12-8h13m-13 8h13" fill="none" stroke="#46776f" stroke-width="1.5"/>
+          <ellipse cx="44" cy="174" rx="7" ry="15" fill="#e6edce"/>
+          <ellipse cx="156" cy="174" rx="7" ry="15" fill="#e6edce"/>
+          <path d="M156 168q-7 6 0 12" fill="none" stroke="#46776f" stroke-width="2"/>
+        </g>
+        <circle cx="48" cy="165" r="8" fill="url(#david-metal)"/>
+        <circle cx="148" cy="166" r="8" fill="url(#david-metal)"/>
+      </g>
+    </svg>
+    <div class="circus-developer-copy">
+      <div class="lang-en" lang="en" dir="ltr">
+        <h2 id="circus-developer-heading">A Little Note from the Developers</h2>
+        <p>Welcome to our Banner Hall!</p>
+        <p>What you're seeing is a rough outline of what's coming. Think of these as our design sketches — except we're using the actual website to show you!</p>
+        <p>We're still working on the artwork, performer banners, and all the little details that will bring this hall to life.</p>
+        <p>More coming soon!</p>
+      </div>
+      <div class="lang-ar hidden" lang="ar" dir="rtl">
+        <h2>ملاحظة صغيرة من فريق التطوير</h2>
+        <p>أهلًا بكم في قاعة اللافتات!</p>
+        <p>ما ترونه الآن هو تصور أولي لما هو قادم. اعتبروا هذه رسوماتنا التخطيطية للتصميم، لكننا نستخدم الموقع الحقيقي لنعرضها عليكم!</p>
+        <p>ما زلنا نعمل على الرسومات ولافتات الفنانين وكل التفاصيل الصغيرة التي ستجعل هذه القاعة تنبض بالحياة.</p>
+        <p>المزيد قادم قريبًا!</p>
+      </div>
+    </div>
+  </section>
   <section class="section circus-intro">
     <h2 id="circus-page-heading"><span class="lang-en">The Banner Hall</span><span class="lang-ar hidden" lang="ar" dir="rtl">قاعة اللافتات</span></h2>
   </section>
