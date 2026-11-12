@@ -1,9 +1,9 @@
 <!--
 MPAG: Circus page
 Leslie Brockman
-Date last modified: 2026-11-04
+Date last modified: 2026-11-11
 This page for for the kids. 
-Phase 2 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
+Phase 3 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -66,22 +66,141 @@ Phase 2 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
   </header>
 
 <main class="circus-page circus-experience circus-popcorn" aria-labelledby="circus-page-heading">
+  <figure class="circus-popcorn-progress-frame">
+    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png" alt="Work Is Progressing / العمل جارٍ" decoding="async">
+  </figure>
   <section class="section circus-intro">
     <h2 id="circus-page-heading"><span class="lang-en">THE POPCORN STAND</span><span class="lang-ar hidden" lang="ar" dir="rtl">ركن الفشار</span></h2>
-    <p><span class="lang-en">Explore the stories of the performers and organizations represented in the circus, and learn about their work.</span><span class="lang-ar hidden" lang="ar" dir="rtl">تعرّفوا على قصص المؤدين والمؤسسات المشاركة في السيرك وعلى أعمالهم.</span></p>
   </section>
-  <section class="circus-support-category" aria-labelledby="circus-school-support-heading">
-    <h3 id="circus-school-support-heading"><span class="lang-en">Support Gaza Circus School</span><span class="lang-ar hidden" lang="ar" dir="rtl">دعم مدرسة سيرك غزة</span></h3>
-    <div class="circus-popcorn-support-grid">
-      <!-- Friday updates: add only independently approved bilingual cards and verified destinations. -->
-      <article class="section circus-support-card" aria-labelledby="circus-school-information-heading">
-        <h4 id="circus-school-information-heading"><span class="lang-en">Gaza Circus School</span><span class="lang-ar hidden" lang="ar" dir="rtl">مدرسة سيرك غزة</span></h4>
-        <p><span class="lang-en">Read about Gaza Circus School and its founder, Ahmed Mushtaha, in the Banner Hall.</span><span class="lang-ar hidden" lang="ar" dir="rtl">اقرؤوا عن مدرسة سيرك غزة ومؤسسها أحمد مشتهى في قاعة اللافتات.</span></p>
-        <a class="circus-support-ticket" href="circus-banners.html#circus-school-heading"><span class="lang-en">Gaza Circus School Information</span><span class="lang-ar hidden" lang="ar" dir="rtl">معلومات عن مدرسة سيرك غزة</span></a>
-        <p class="circus-support-note"><span class="lang-en">This is an information link, not a payment destination. No verified donation links are currently listed here.</span><span class="lang-ar hidden" lang="ar" dir="rtl">هذا رابط للمعلومات وليس وجهة للدفع. لا توجد هنا حاليًا روابط تبرع تم التحقق منها.</span></p>
-      </article>
+  <section class="circus-developer-note" aria-labelledby="popcorn-developer-heading">
+    <svg class="circus-developer-david" viewBox="0 0 200 230" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="david-metal" x2="1" y2="1"><stop stop-color="#f7e5b6"/><stop offset="1" stop-color="#b58b47"/></linearGradient>
+        <linearGradient id="david-teal" x2="1" y2="1"><stop stop-color="#a4c9bd"/><stop offset="1" stop-color="#46776f"/></linearGradient>
+        <linearGradient id="david-hat" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".25"/><stop offset=".45" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".22"/></linearGradient>
+        <clipPath id="david-hat-curve"><path d="M57 53a42 42 0 0 1 84 0Z"/></clipPath>
+      </defs>
+      <ellipse cx="102" cy="215" rx="70" ry="8" fill="#160c10" opacity=".25"/>
+      <g stroke="#65333a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M75 177v24m44-24v24" fill="none" stroke="#b58b47" stroke-width="14"/>
+        <rect x="57" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
+        <rect x="107" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
+        <rect x="61" y="118" width="75" height="66" rx="20" fill="url(#david-teal)"/>
+        <path d="M75 133h47v31H75z" fill="#702c3a"/>
+        <circle cx="88" cy="146" r="4" fill="#f7df9c" stroke="none"/>
+        <path d="M101 146h12m-29 10h29" stroke="#dbbd78" stroke-width="2"/>
+        <path d="M62 134q-29 11-17 35m89-35q28 7 19 30" fill="none" stroke="#b58b47" stroke-width="12"/>
+        <rect x="48" y="52" width="101" height="67" rx="24" fill="url(#david-metal)"/>
+        <rect x="59" y="66" width="79" height="39" rx="16" fill="#f9edce"/>
+        <path d="M73 81q5-8 10 0m29 0q5-8 10 0m-34 10q11 12 22 0" fill="none"/>
+        <circle cx="69" cy="92" r="4" fill="#c47876" stroke="none"/>
+        <circle cx="128" cy="92" r="4" fill="#c47876" stroke="none"/>
+        <!-- Palestinian flag bands follow the helmet dome, beneath its shading and ridge. -->
+        <g clip-path="url(#david-hat-curve)" stroke="none">
+          <path d="M57 11h84v42H57Z" fill="#009b58"/>
+          <path d="M57 11h84v30Q99 31 57 41Z" fill="#ffffff"/>
+          <path d="M57 11h84v17Q99 18 57 28Z" fill="#111111"/>
+          <path d="M57 11 94 32 57 53Z" fill="#ee263c"/>
+          <path d="M57 53a42 42 0 0 1 84 0Z" fill="url(#david-hat)"/>
+        </g>
+        <path d="M57 53a42 42 0 0 1 84 0" fill="none"/>
+        <path d="M93 18h13v33H93z" fill="#ffffff" fill-opacity=".16" stroke-opacity=".5"/>
+        <rect x="44" y="48" width="110" height="12" rx="6" fill="#009b58"/>
+        <rect x="44" y="48" width="110" height="12" rx="6" fill="url(#david-hat)"/>
+        <g transform="rotate(-12 105 177)">
+          <path d="M44 159h112v30H44z" fill="#b6d6ca"/>
+          <path d="M64 166h55v15H64zm18 0v15m-18-7h55m12-8h13m-13 8h13" fill="none" stroke="#46776f" stroke-width="1.5"/>
+          <ellipse cx="44" cy="174" rx="7" ry="15" fill="#e6edce"/>
+          <ellipse cx="156" cy="174" rx="7" ry="15" fill="#e6edce"/>
+          <path d="M156 168q-7 6 0 12" fill="none" stroke="#46776f" stroke-width="2"/>
+        </g>
+        <circle cx="48" cy="165" r="8" fill="url(#david-metal)"/>
+        <circle cx="148" cy="166" r="8" fill="url(#david-metal)"/>
+      </g>
+    </svg>
+    <div class="circus-developer-copy">
+      <div class="lang-en" lang="en" dir="ltr">
+        <h2 id="popcorn-developer-heading">A Little Note from the Developers</h2>
+        <p>Welcome to the Popcorn Stand!</p>
+        <p>David here, and we're cooking up something special!</p>
+        <p>This is where we'll introduce the wonderful organizations and people helping bring smiles to children.</p>
+        <p>We're designing our links as circus treats — popcorn, cotton candy, peanuts, and more!</p>
+        <p>Each treat will eventually lead visitors to a story, organization, or verified way to help.</p>
+        <p>Our concession stand is still under construction, but the smiles are already on their way!</p>
+        <p>More coming soon!</p>
+      </div>
+      <div class="lang-ar hidden" lang="ar" dir="rtl">
+        <h2>ملاحظة صغيرة من فريق التطوير</h2>
+        <p>أهلًا بكم في ركن الفشار!</p>
+        <p>معكم ديفيد، ونحن نحضّر شيئًا مميزًا!</p>
+        <p>هنا سنعرّفكم على المؤسسات والأشخاص الرائعين الذين يساعدون في رسم البسمة على وجوه الأطفال.</p>
+        <p>نصمّم روابطنا على شكل حلويات السيرك — الفشار، وغزل البنات، والفول السوداني، والمزيد!</p>
+        <p>ستقود كل حلوى الزوار لاحقًا إلى قصة أو مؤسسة أو طريقة موثوقة للمساعدة.</p>
+        <p>ركن الحلويات لا يزال قيد التجهيز، لكن الابتسامات في الطريق!</p>
+        <p>المزيد قريبًا!</p>
+      </div>
     </div>
   </section>
+  <div class="circus-concession-previews">
+    <figure class="circus-concession-preview">
+      <a class="circus-popcorn-school-link" href="circus-banners.html#circus-school-heading" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 240 265" aria-hidden="true" focusable="false">
+        <ellipse cx="120" cy="246" rx="91" ry="10" fill="#160b15" opacity=".28"/>
+        <path d="M49 213h142l-8 29H57Z" fill="#74273d" stroke="#e5bd70" stroke-width="2"/>
+        <ellipse cx="120" cy="213" rx="77" ry="12" fill="#bd7948" stroke="#f1d48b" stroke-width="2"/>
+        <path d="M64 234h112" stroke="#f4ce80" stroke-width="2" opacity=".45"/>
+        <g fill="#ffe7a0" stroke="#b88740" stroke-width="1"><circle cx="64" cy="224" r="4"/><circle cx="86" cy="228" r="4"/><circle cx="109" cy="230" r="4"/><circle cx="132" cy="230" r="4"/><circle cx="155" cy="228" r="4"/><circle cx="177" cy="224" r="4"/></g>
+        <defs><linearGradient id="treat-popcorn-kernel" x2=".3" y2="1"><stop stop-color="#fff9d1"/><stop offset=".55" stop-color="#ffe6a0"/><stop offset="1" stop-color="#dbab50"/></linearGradient><linearGradient id="treat-popcorn-shade" x2="1" y2="0"><stop stop-color="#54132b" stop-opacity=".25"/><stop offset=".4" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#54132b" stop-opacity=".22"/></linearGradient><clipPath id="treat-popcorn-carton"><path d="M62 109h116l-17 99Q120 222 79 208Z"/></clipPath></defs>
+        <ellipse cx="120" cy="208" rx="55" ry="9" fill="#160b15" opacity=".2"/>
+        <path d="M56 91c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M74 74c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M98 81c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M120 71c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M142 87c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M64 106c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M88 102c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M115 102c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M140 109c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M98 55c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/><path d="M160 127c-5-12 7-21 15-14 9-10 23 1 16 11 10 12-7 24-15 15-9 9-24-1-16-12Z" fill="url(#treat-popcorn-kernel)" stroke="#dca94c" stroke-width="1.4"/>
+        <path d="M62 109h116l-17 99Q120 222 79 208Z" fill="#fff4d8"/>
+        <g clip-path="url(#treat-popcorn-carton)" fill="#d6394b"><path d="m62 109 15 0 12 109H74Zm30 0h15l5 109H96Zm30 0h15l-3 109h-16Zm30 0h15l-12 109h-16Z"/><path d="M60 109h120v110H60Z" fill="url(#treat-popcorn-shade)"/></g>
+        <path d="M62 109h116l-17 99Q120 222 79 208Z" fill="none" stroke="#ad6a43" stroke-width="2"/>
+        <path d="M63 111Q120 122 177 111" fill="none" stroke="#ffe5ad" stroke-width="4"/>
+        <ellipse cx="120" cy="159" rx="28" ry="23" fill="#7f2840" stroke="#f1d08b" stroke-width="2"/>
+        <path d="m120 143 4 10 11 1-8 7 3 11-10-6-10 6 3-11-8-7 11-1Z" fill="#f9dda0"/>
+      </svg>
+        <span class="circus-popcorn-school-label"><span class="lang-en" lang="en">To Gaza Circus School</span><span class="lang-ar hidden" lang="ar" dir="rtl">إلى مدرسة سيرك غزة</span></span>
+      </a>
+    </figure>
+    <figure class="circus-concession-preview">
+      <svg viewBox="0 0 240 265" aria-hidden="true" focusable="false">
+        <ellipse cx="120" cy="246" rx="91" ry="10" fill="#160b15" opacity=".28"/>
+        <path d="M49 213h142l-8 29H57Z" fill="#74273d" stroke="#e5bd70" stroke-width="2"/>
+        <ellipse cx="120" cy="213" rx="77" ry="12" fill="#bd7948" stroke="#f1d48b" stroke-width="2"/>
+        <path d="M64 234h112" stroke="#f4ce80" stroke-width="2" opacity=".45"/>
+        <g fill="#ffe7a0" stroke="#b88740" stroke-width="1"><circle cx="64" cy="224" r="4"/><circle cx="86" cy="228" r="4"/><circle cx="109" cy="230" r="4"/><circle cx="132" cy="230" r="4"/><circle cx="155" cy="228" r="4"/><circle cx="177" cy="224" r="4"/></g>
+        <defs><radialGradient id="treat-candy-pink" cx=".3" cy=".25" r=".8"><stop stop-color="#ffe7ef"/><stop offset=".5" stop-color="#f6a3ca"/><stop offset="1" stop-color="#ca669f"/></radialGradient><radialGradient id="treat-candy-blue" cx=".3" cy=".2" r=".8"><stop stop-color="#e5faff"/><stop offset=".5" stop-color="#91d8ed"/><stop offset="1" stop-color="#599ac7"/></radialGradient><clipPath id="treat-candy-stick"><path d="m108 133 14-2 20 81-12 3Z"/></clipPath></defs>
+        <ellipse cx="124" cy="211" rx="39" ry="6" fill="#160b15" opacity=".2"/>
+        <path d="m108 133 14-2 20 81-12 3Z" fill="#fff4db" stroke="#b78865" stroke-width="2"/>
+        <g clip-path="url(#treat-candy-stick)" stroke="#bd4b71" stroke-width="5"><path d="m110 146 22-10m-18 24 22-10m-18 24 22-10m-18 24 22-10m-18 24 22-10m-18 24 22-10"/></g>
+        <path d="M121 159C160 167 189 135 175 109 197 78 165 49 144 56 142 25 98 29 87 52 50 43 36 80 55 100 30 126 68 160 94 148Q105 169 121 159Z" fill="#572945" opacity=".18" transform="translate(3 5)"/>
+        <path d="M118 155C157 167 189 135 175 109 197 78 165 49 144 56 142 25 98 29 87 52 50 43 36 80 55 100 30 126 68 160 94 148Q105 166 118 155Z" fill="url(#treat-candy-pink)"/>
+        <path d="M119 48C162 39 181 76 159 91 190 105 173 141 144 139 126 164 97 144 99 126 117 123 130 104 119 91 102 74 102 58 119 48Z" fill="url(#treat-candy-blue)"/>
+        <g fill="none" stroke="#fff5f4" stroke-width="4" stroke-linecap="round" opacity=".6"><path d="M66 86Q52 65 84 61M65 119Q82 144 99 126M102 57Q117 43 135 55M140 75Q163 69 161 88M127 126Q149 136 158 119"/></g>
+      </svg>
+      <figcaption><span class="lang-en" lang="en">Something Sweet Is Coming!</span><span class="lang-ar hidden" lang="ar" dir="rtl">شيء جميل قادم!</span></figcaption>
+    </figure>
+    <figure class="circus-concession-preview">
+      <svg viewBox="0 0 240 265" aria-hidden="true" focusable="false">
+        <ellipse cx="120" cy="246" rx="91" ry="10" fill="#160b15" opacity=".28"/>
+        <path d="M49 213h142l-8 29H57Z" fill="#74273d" stroke="#e5bd70" stroke-width="2"/>
+        <ellipse cx="120" cy="213" rx="77" ry="12" fill="#bd7948" stroke="#f1d48b" stroke-width="2"/>
+        <path d="M64 234h112" stroke="#f4ce80" stroke-width="2" opacity=".45"/>
+        <g fill="#ffe7a0" stroke="#b88740" stroke-width="1"><circle cx="64" cy="224" r="4"/><circle cx="86" cy="228" r="4"/><circle cx="109" cy="230" r="4"/><circle cx="132" cy="230" r="4"/><circle cx="155" cy="228" r="4"/><circle cx="177" cy="224" r="4"/></g>
+        <defs><linearGradient id="treat-peanut-bag" x2="1" y2=".3"><stop stop-color="#b5834f"/><stop offset=".28" stop-color="#f9dfaa"/><stop offset=".6" stop-color="#e5bb78"/><stop offset="1" stop-color="#aa7446"/></linearGradient><radialGradient id="treat-peanut-shell" cx=".3" cy=".25" r=".8"><stop stop-color="#ffe1a0"/><stop offset="1" stop-color="#bf884c"/></radialGradient></defs>
+        <ellipse cx="117" cy="211" rx="68" ry="8" fill="#160b15" opacity=".23"/>
+        <path d="m70 69 13-9 12 8 13-8 13 8 13-8 13 8 13-8 8 9-9 36 9 96Q117 221 66 201l12-96Z" fill="url(#treat-peanut-bag)" stroke="#9f6b41" stroke-width="2"/>
+        <path d="M77 81h82M77 91h82M79 190Q117 202 157 190" fill="none" stroke="#9b3945" stroke-width="5"/>
+        <path d="M83 104 75 182m77-78 8 80" fill="none" stroke="#fff0cb" stroke-width="3" opacity=".55"/>
+        <ellipse cx="118" cy="141" rx="30" ry="34" fill="#7a303c" stroke="#f5d58d" stroke-width="3"/>
+        <path d="M110 121C95 116 94 137 105 141 94 157 110 168 120 157 136 160 141 142 128 136 136 123 122 114 110 121Z" fill="url(#treat-peanut-shell)" stroke="#a46e3a" stroke-width="1.5"/>
+        <g fill="url(#treat-peanut-shell)" stroke="#a46e3a" stroke-width="1.5"><path d="M168 179C156 166 144 180 151 190 138 201 150 218 163 210 178 218 192 204 180 193 187 180 180 172 168 179Z"/><path d="M48 190C33 184 29 199 39 205 31 218 47 226 57 214 69 215 75 201 63 197 62 187 54 184 48 190Z"/></g>
+        <g fill="none" stroke="#a46e3a" stroke-width="1.2" opacity=".75"><path d="m106 129 18 21m-19-8 22-9m-17 22 16-11m32 38 16 23m-20-12 23-3m-19 13 17-9m-131 4 13 16m-15-7 20-5"/></g>
+      </svg>
+      <figcaption><span class="lang-en" lang="en">Something Sweet Is Coming!</span><span class="lang-ar hidden" lang="ar" dir="rtl">شيء جميل قادم!</span></figcaption>
+    </figure>
+  </div>
   <a class="circus-return site-button" href="circus.html"><span class="lang-en">Back to the Circus Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل السيرك</span></a>
 </main>
  <footer class="site-footer" data-global-chrome>
