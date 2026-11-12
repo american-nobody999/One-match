@@ -1,20 +1,20 @@
 <!--
 MPAG: Circus page
 Leslie Brockman
-Date last modified: 2026-11-04
+Date last modified: 2026-11-11
 This page for for the kids. 
 Phase 1 Complete - Grand Entrance and html structure
-Phase 2 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design--
+Phase 2 Complete - Banner, Main Floor, Popcorn Stand Entrances css and design
 Phase 3 Pending - 4 Clowns games for Main floor
 Phase 4 Pending - Popcorn Stand set up for the Charities and supporting organizations
 Phase 5 Pending--Banner featuring performers personal social medias and stories.
 
 MPAG: صفحة السيرك
 ليزلي بروكمان
-تاريخ آخر تعديل: 2026-11-04
+تاريخ آخر تعديل: 2026-11-11
 هذه الصفحة من أجل الأطفال.
 المرحلة 1 مكتملة - المدخل الرئيسي وهيكل HTML
-المرحلة 2 قيد الانتظار - تصميم وتنسيق CSS
+المرحلة 2 مكتملة - تصميم وتنسيق CSS
 لمداخل قاعة اللافتات والساحة الرئيسية وكشك الفشار
 المرحلة 3 قيد الانتظار - أربع ألعاب للمهرجين في الساحة الرئيسية
 المرحلة 4 قيد الانتظار - تجهيز كشك الفشار
@@ -36,9 +36,9 @@ MPAG: صفحة السيرك
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles2.css">
-    <link rel="stylesheet" href="styles/circus.css">
-    <link rel="stylesheet" href="styles/virus.css">
+    <link rel="stylesheet" href="/styles/styles2.css">
+    <link rel="stylesheet" href="/styles/circus.css">
+    <link rel="stylesheet" href="/styles/virus.css">
 </head>
 
 <body class="home-page circus-page-body circus-entrance-body">
@@ -88,16 +88,36 @@ MPAG: صفحة السيرك
     <h2 id="circus-page-heading"><span class="lang-en">THE GREATEST SHOW ON EARTH</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعظم عرض على وجه الأرض</span></h2>
     <p class="circus-show-subtitle"><span class="lang-en">THE SHOW MUST GO ON!</span><span class="lang-ar hidden" lang="ar" dir="rtl">يجب أن يستمر العرض!</span></p>
   </section>
-  <img class="circus-temporary-artwork" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png" alt="Gaza Circus School temporary landing artwork with English and Arabic text / لوحة مؤقتة لمدرسة سيرك غزة بنص بالإنجليزية والعربية" loading="eager" decoding="async">
-  <!-- TEMPORARY LANDING: preserved development notice and attractions; restore after removing temporary artwork.
+  <!-- Introductory video notice remains inactive until the approved video is supplied.
   <p class="circus-intro-development"><span class="lang-en">Introductory video — development placeholder. The approved video source has not been supplied yet.</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفيديو الافتتاحي — مساحة مخصّصة أثناء التطوير. لم يُقدَّم مصدر الفيديو المعتمد بعد.</span></p>
+  -->
   <nav class="circus-destinations" aria-label="Circus destinations / وجهات السيرك">
-    <a id="circus-main-attraction" class="circus-ticket circus-attraction-main" href="circus-ring.html"><span class="lang-en">The Main Event</span><span class="lang-ar hidden" lang="ar" dir="rtl">العرض الرئيسي</span></a>
-    <a class="circus-ticket circus-attraction-banners" href="circus-banners.html"><span class="lang-en">The Banner Hall</span><span class="lang-ar hidden" lang="ar" dir="rtl">قاعة اللافتات</span></a>
-    <a class="circus-ticket circus-attraction-popcorn" href="circus-popcorn.html"><span class="lang-en">The Popcorn Stand</span><span class="lang-ar hidden" lang="ar" dir="rtl">كشك الفشار</span></a>
+    <a class="circus-ticket circus-attraction-banners" href="circus-banners.html">
+      <img class="circus-entrance-artwork" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner.png" alt="" loading="eager" decoding="async">
+      <span class="circus-entrance-label"><span class="lang-en">The Banner Hall</span><span class="lang-ar hidden" lang="ar" dir="rtl">قاعة اللافتات</span></span>
+    </a>
+    <a id="circus-main-attraction" class="circus-ticket circus-attraction-main" href="circus-ring.html">
+      <img class="circus-entrance-artwork" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/main.png" alt="" loading="eager" decoding="async">
+      <span class="circus-entrance-label"><span class="lang-en">The Main Event</span><span class="lang-ar hidden" lang="ar" dir="rtl">العرض الرئيسي</span></span>
+    </a>
+    <a class="circus-ticket circus-attraction-popcorn" href="circus-popcorn.html">
+      <img class="circus-entrance-artwork" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/popcorn.png" alt="" loading="eager" decoding="async">
+      <span class="circus-entrance-label"><span class="lang-en">The Popcorn Stand</span><span class="lang-ar hidden" lang="ar" dir="rtl">كشك الفشار</span></span>
+    </a>
   </nav>
-  END TEMPORARY ATTRACTIONS -->
-  <a class="circus-back-recess" href="education/recess.html"><span class="lang-en">Back to Recess</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى الاستراحة</span></a>
+  <a class="circus-back-recess circus-soccer-exit" href="education/recess.html" aria-label="Back to Recess / العودة إلى الاستراحة">
+    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <circle cx="50" cy="50" r="46" fill="#fffdf6" stroke="#171717" stroke-width="3"/>
+      <g fill="none" stroke="#171717" stroke-width="2">
+        <path d="M50 30 31 44 38 66 62 66 69 44Z M50 30V13 M31 44 12 38 M38 66 27 84 M62 66 73 84 M69 44 88 38"/>
+        <path d="m34 7 16 6 16-6M5 48l7-10-1-15m5 58 11 3 10 10m26 0 10-10 11-3m5-58-1 15 7 10"/>
+      </g>
+      <g fill="#171717">
+        <path d="M50 30 31 44 38 66 62 66 69 44Z M34 7 50 13 66 7Q50 0 34 7 M5 48 12 38 11 23Q2 34 5 48 M16 81 27 84 37 94Q23 91 16 81 M63 94 73 84 84 81Q77 91 63 94 M89 23 88 38 95 48Q98 34 89 23"/>
+      </g>
+    </svg>
+    <span class="circus-entrance-label"><span class="lang-en">Back to Recess</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى الاستراحة</span></span>
+  </a>
 </main>
  <footer class="site-footer" data-global-chrome>
         <div class="footer-container">
