@@ -3,7 +3,8 @@
   "series": {
     "ok-america": {
       "months": {
-        "2026-10": "ok-series/ok-america/2026-10.html"
+        "2026-10": "ok-series/ok-america/2026-10.html",
+        "2026-11": "ok-series/ok-america/2026-11.html"
       },
       "collection": "ok-series",
       "title": {
@@ -14,7 +15,8 @@
     },
     "ok-humanity": {
       "months": {
-        "2026-10": "ok-series/ok-humanity/2026-10.html"
+        "2026-10": "ok-series/ok-humanity/2026-10.html",
+        "2026-11": "ok-series/ok-humanity/2026-11.html"
       },
       "collection": "ok-series",
       "title": {
@@ -25,7 +27,8 @@
     },
     "ok-israelis": {
       "months": {
-        "2026-10": "ok-series/ok-israelis/2026-10.html"
+        "2026-10": "ok-series/ok-israelis/2026-10.html",
+        "2026-11": "ok-series/ok-israelis/2026-11.html"
       },
       "collection": "ok-series",
       "title": {
@@ -36,7 +39,8 @@
     },
     "ok-palestine": {
       "months": {
-        "2026-10": "ok-series/ok-palestine/2026-10.html"
+        "2026-10": "ok-series/ok-palestine/2026-10.html",
+        "2026-11": "ok-series/ok-palestine/2026-11.html"
       },
       "collection": "ok-series",
       "title": {
@@ -53,7 +57,8 @@
       },
       "directory": "friday-prayers",
       "months": {
-        "2026-10": "friday-prayers/2026-10.html"
+        "2026-10": "friday-prayers/2026-10.html",
+        "2026-11": "friday-prayers/2026-11.html"
       }
     },
     "trump": {
@@ -64,7 +69,8 @@
       },
       "directory": "world-leaders/trump",
       "months": {
-        "2026-10": "world-leaders/trump/2026-10.html"
+        "2026-10": "world-leaders/trump/2026-10.html",
+        "2026-11": "world-leaders/trump/2026-11.html"
       }
     },
     "iran": {
@@ -75,7 +81,8 @@
       },
       "directory": "world-leaders/iran",
       "months": {
-        "2026-10": "world-leaders/iran/2026-10.html"
+        "2026-10": "world-leaders/iran/2026-10.html",
+        "2026-11": "world-leaders/iran/2026-11.html"
       }
     },
     "pope-leo": {
@@ -97,7 +104,8 @@
       },
       "directory": "love-letters-palestine",
       "months": {
-        "2026-10": "love-letters-palestine/2026-10.html"
+        "2026-10": "love-letters-palestine/2026-10.html",
+        "2026-11": "love-letters-palestine/2026-11.html"
       }
     },
     "other-communications": {
