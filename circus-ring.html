@@ -1,9 +1,9 @@
 <!--
 MPAG: Circus page
 Leslie Brockman
-Date last modified: 2026-11-04
+Date last modified: 2026-11-11
 This page for for the kids. 
-Phase 2 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
+Phase 3 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -66,33 +66,207 @@ Phase 2 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
   </header>
 
 <main class="circus-page circus-experience circus-ring" aria-labelledby="circus-page-heading">
+  <figure class="circus-ring-progress-frame">
+    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png" alt="Work Is Progressing / العمل جارٍ" decoding="async">
+  </figure>
   <section class="section circus-intro">
     <h2 id="circus-page-heading"><span class="lang-en">The Main Event</span><span class="lang-ar hidden" lang="ar" dir="rtl">العرض الرئيسي</span></h2>
-    <p><span class="lang-en">Welcome to the circus ring. Three future games will be introduced here in a later phase.</span><span class="lang-ar hidden" lang="ar" dir="rtl">مرحبًا بكم في حلبة السيرك. ستُقدَّم هنا ثلاث ألعاب مستقبلية في مرحلة لاحقة.</span></p>
   </section>
-  <div class="circus-stations circus-ring-stations">
-  <!-- Independent game boundary: keep future instructions, play area, controls and result inside this station.
-       Scope future state/events to this root; use unique child IDs, global language spans,
-       keyboard/touch controls, reduced motion and text feedback alongside color. No inactive controls yet. -->
-  <section id="circus-game-station-1" class="section circus-placeholder circus-game-station" aria-labelledby="circus-game-1" aria-describedby="circus-game-1-availability">
-    <h3 id="circus-game-1"><span class="lang-en">Game 1 — Placeholder</span><span class="lang-ar hidden" lang="ar" dir="rtl">اللعبة 1 — مساحة مخصّصة</span></h3>
-    <p id="circus-game-1-availability" class="circus-game-station-description"><span class="lang-en">Reserved for a future game. Not playable yet.</span><span class="lang-ar hidden" lang="ar" dir="rtl">مساحة للعبة مستقبلية. لا تتوفر لعبة قابلة للعب بعد.</span></p>
+  <section class="circus-developer-note" aria-labelledby="ring-developer-heading">
+    <svg class="circus-developer-david" viewBox="0 0 200 230" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="david-metal" x2="1" y2="1"><stop stop-color="#f7e5b6"/><stop offset="1" stop-color="#b58b47"/></linearGradient>
+        <linearGradient id="david-teal" x2="1" y2="1"><stop stop-color="#a4c9bd"/><stop offset="1" stop-color="#46776f"/></linearGradient>
+        <linearGradient id="david-hat" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".25"/><stop offset=".45" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".22"/></linearGradient>
+        <clipPath id="david-hat-curve"><path d="M57 53a42 42 0 0 1 84 0Z"/></clipPath>
+      </defs>
+      <ellipse cx="102" cy="215" rx="70" ry="8" fill="#160c10" opacity=".25"/>
+      <g stroke="#65333a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M75 177v24m44-24v24" fill="none" stroke="#b58b47" stroke-width="14"/>
+        <rect x="57" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
+        <rect x="107" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
+        <rect x="61" y="118" width="75" height="66" rx="20" fill="url(#david-teal)"/>
+        <path d="M75 133h47v31H75z" fill="#702c3a"/>
+        <circle cx="88" cy="146" r="4" fill="#f7df9c" stroke="none"/>
+        <path d="M101 146h12m-29 10h29" stroke="#dbbd78" stroke-width="2"/>
+        <path d="M62 134q-29 11-17 35m89-35q28 7 19 30" fill="none" stroke="#b58b47" stroke-width="12"/>
+        <rect x="48" y="52" width="101" height="67" rx="24" fill="url(#david-metal)"/>
+        <rect x="59" y="66" width="79" height="39" rx="16" fill="#f9edce"/>
+        <path d="M73 81q5-8 10 0m29 0q5-8 10 0m-34 10q11 12 22 0" fill="none"/>
+        <circle cx="69" cy="92" r="4" fill="#c47876" stroke="none"/>
+        <circle cx="128" cy="92" r="4" fill="#c47876" stroke="none"/>
+        <!-- Palestinian flag bands follow the helmet dome, beneath its shading and ridge. -->
+        <g clip-path="url(#david-hat-curve)" stroke="none">
+          <path d="M57 11h84v42H57Z" fill="#009b58"/>
+          <path d="M57 11h84v30Q99 31 57 41Z" fill="#ffffff"/>
+          <path d="M57 11h84v17Q99 18 57 28Z" fill="#111111"/>
+          <path d="M57 11 94 32 57 53Z" fill="#ee263c"/>
+          <path d="M57 53a42 42 0 0 1 84 0Z" fill="url(#david-hat)"/>
+        </g>
+        <path d="M57 53a42 42 0 0 1 84 0" fill="none"/>
+        <path d="M93 18h13v33H93z" fill="#ffffff" fill-opacity=".16" stroke-opacity=".5"/>
+        <rect x="44" y="48" width="110" height="12" rx="6" fill="#009b58"/>
+        <rect x="44" y="48" width="110" height="12" rx="6" fill="url(#david-hat)"/>
+        <g transform="rotate(-12 105 177)">
+          <path d="M44 159h112v30H44z" fill="#b6d6ca"/>
+          <path d="M64 166h55v15H64zm18 0v15m-18-7h55m12-8h13m-13 8h13" fill="none" stroke="#46776f" stroke-width="1.5"/>
+          <ellipse cx="44" cy="174" rx="7" ry="15" fill="#e6edce"/>
+          <ellipse cx="156" cy="174" rx="7" ry="15" fill="#e6edce"/>
+          <path d="M156 168q-7 6 0 12" fill="none" stroke="#46776f" stroke-width="2"/>
+        </g>
+        <circle cx="48" cy="165" r="8" fill="url(#david-metal)"/>
+        <circle cx="148" cy="166" r="8" fill="url(#david-metal)"/>
+      </g>
+    </svg>
+    <div class="circus-developer-copy">
+      <div class="lang-en" lang="en" dir="ltr">
+        <h2 id="ring-developer-heading">Hello, circus explorers!</h2>
+        <p>David here, reporting from the Main Event construction crew!</p>
+        <p>We're getting five different learning games ready for the kids, and our DJ is preparing the music!</p>
+        <p>Right now, everything is a surprise. We're keeping our attractions under wraps until they're ready for the big show.</p>
+        <p>More surprises coming soon!</p>
+      </div>
+      <div class="lang-ar hidden" lang="ar" dir="rtl">
+        <h2>مرحبًا يا مستكشفي السيرك!</h2>
+        <p>معكم ديفيد من فريق تجهيز العرض الرئيسي!</p>
+        <p>نحن نحضّر خمس ألعاب تعليمية مختلفة للأطفال، والدي جي يستعد لتشغيل الموسيقى!</p>
+        <p>في الوقت الحالي، كل شيء مفاجأة! سنُبقي ألعابنا مخفية حتى تصبح جاهزة للعرض الكبير.</p>
+        <p>المزيد من المفاجآت قريبًا!</p>
+      </div>
+    </div>
   </section>
-  <!-- Independent game boundary: keep future instructions, play area, controls and result inside this station.
-       Scope future state/events to this root; use unique child IDs, global language spans,
-       keyboard/touch controls, reduced motion and text feedback alongside color. No inactive controls yet. -->
-  <section id="circus-game-station-2" class="section circus-placeholder circus-game-station" aria-labelledby="circus-game-2" aria-describedby="circus-game-2-availability">
-    <h3 id="circus-game-2"><span class="lang-en">Game 2 — Placeholder</span><span class="lang-ar hidden" lang="ar" dir="rtl">اللعبة 2 — مساحة مخصّصة</span></h3>
-    <p id="circus-game-2-availability" class="circus-game-station-description"><span class="lang-en">Reserved for a future game. Not playable yet.</span><span class="lang-ar hidden" lang="ar" dir="rtl">مساحة للعبة مستقبلية. لا تتوفر لعبة قابلة للعب بعد.</span></p>
-  </section>
-  <!-- Independent game boundary: keep future instructions, play area, controls and result inside this station.
-       Scope future state/events to this root; use unique child IDs, global language spans,
-       keyboard/touch controls, reduced motion and text feedback alongside color. No inactive controls yet. -->
-  <section id="circus-game-station-3" class="section circus-placeholder circus-game-station" aria-labelledby="circus-game-3" aria-describedby="circus-game-3-availability">
-    <h3 id="circus-game-3"><span class="lang-en">Game 3 — Placeholder</span><span class="lang-ar hidden" lang="ar" dir="rtl">اللعبة 3 — مساحة مخصّصة</span></h3>
-    <p id="circus-game-3-availability" class="circus-game-station-description"><span class="lang-en">Reserved for a future game. Not playable yet.</span><span class="lang-ar hidden" lang="ar" dir="rtl">مساحة للعبة مستقبلية. لا تتوفر لعبة قابلة للعب بعد.</span></p>
-  </section>
+  <div class="circus-stations circus-ring-stations circus-mystery-stations">
+    <figure class="circus-mystery-attraction">
+      <svg viewBox="0 0 220 270" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="mystery-1-color" x2="1" y2="1"><stop stop-color="#ff7180"/><stop offset=".45" stop-color="#ee263c"/><stop offset="1" stop-color="#9b152a"/></linearGradient>
+          <filter id="mystery-1-glow" x="-35%" y="-30%" width="170%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#e5bd70" flood-opacity=".5"/></filter>
+        </defs>
+        <path d="M110 12 24 225Q110 247 196 225Z" fill="#f78389" opacity=".07"/>
+        <ellipse cx="110" cy="239" rx="82" ry="12" fill="#120b12" opacity=".35"/>
+        <ellipse cx="110" cy="233" rx="75" ry="7" fill="#e5bd70" opacity=".17"/>
+        <g filter="url(#mystery-1-glow)">
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" transform="translate(5 6)" fill="none" stroke="#861426" stroke-width="34" stroke-linecap="round"/>
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" fill="none" stroke="url(#mystery-1-color)" stroke-width="30" stroke-linecap="round"/>
+        <circle cx="115" cy="209" r="18" fill="#861426"/>
+        <circle cx="110" cy="204" r="18" fill="url(#mystery-1-color)"/>
+        <path d="M103 194q7-4 13 0" fill="none" stroke="#fff2ce" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+        <path d="M81 67C88 45 123 42 137 59" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+        </g>
+        <path d="m180 33 4 10 11 3-11 4-4 11-4-11-11-4 11-3Z" fill="#f6d481"/>
+        <circle cx="39" cy="51" r="3" fill="#f78389"/>
+      </svg>
+      <figcaption><span class="lang-en" lang="en">It's a Surprise!</span><span class="lang-ar hidden" lang="ar" dir="rtl">إنها مفاجأة!</span></figcaption>
+    </figure>
+    <figure class="circus-mystery-attraction">
+      <svg viewBox="0 0 220 270" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="mystery-2-color" x2="1" y2="1"><stop stop-color="#67d69b"/><stop offset=".45" stop-color="#009b58"/><stop offset="1" stop-color="#005e37"/></linearGradient>
+          <filter id="mystery-2-glow" x="-35%" y="-30%" width="170%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#e5bd70" flood-opacity=".5"/></filter>
+        </defs>
+        <path d="M110 12 24 225Q110 247 196 225Z" fill="#71d6c9" opacity=".07"/>
+        <ellipse cx="110" cy="239" rx="82" ry="12" fill="#120b12" opacity=".35"/>
+        <ellipse cx="110" cy="233" rx="75" ry="7" fill="#e5bd70" opacity=".17"/>
+        <g filter="url(#mystery-2-glow)">
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" transform="translate(5 6)" fill="none" stroke="#004b2c" stroke-width="34" stroke-linecap="round"/>
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" fill="none" stroke="url(#mystery-2-color)" stroke-width="30" stroke-linecap="round"/>
+        <circle cx="115" cy="209" r="18" fill="#004b2c"/>
+        <circle cx="110" cy="204" r="18" fill="url(#mystery-2-color)"/>
+        <path d="M103 194q7-4 13 0" fill="none" stroke="#fff2ce" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+        <path d="M81 67C88 45 123 42 137 59" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+        </g>
+        <path d="m180 33 4 10 11 3-11 4-4 11-4-11-11-4 11-3Z" fill="#f6d481"/>
+        <circle cx="39" cy="51" r="3" fill="#71d6c9"/>
+      </svg>
+      <figcaption><span class="lang-en" lang="en">It's a Surprise!</span><span class="lang-ar hidden" lang="ar" dir="rtl">إنها مفاجأة!</span></figcaption>
+    </figure>
+    <figure class="circus-mystery-attraction">
+      <svg viewBox="0 0 220 270" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="mystery-3-color" x2="1" y2="1"><stop stop-color="#676a6d"/><stop offset=".45" stop-color="#252629"/><stop offset="1" stop-color="#08090a"/></linearGradient>
+          <filter id="mystery-3-glow" x="-35%" y="-30%" width="170%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#e5bd70" flood-opacity=".5"/></filter>
+        </defs>
+        <path d="M110 12 24 225Q110 247 196 225Z" fill="#be9af2" opacity=".07"/>
+        <ellipse cx="110" cy="239" rx="82" ry="12" fill="#120b12" opacity=".35"/>
+        <ellipse cx="110" cy="233" rx="75" ry="7" fill="#e5bd70" opacity=".17"/>
+        <g filter="url(#mystery-3-glow)">
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" transform="translate(5 6)" fill="none" stroke="#898477" stroke-width="34" stroke-linecap="round"/>
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" fill="none" stroke="url(#mystery-3-color)" stroke-width="30" stroke-linecap="round"/>
+        <circle cx="115" cy="209" r="18" fill="#898477"/>
+        <circle cx="110" cy="204" r="18" fill="url(#mystery-3-color)"/>
+        <path d="M103 194q7-4 13 0" fill="none" stroke="#fff2ce" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+        <path d="M81 67C88 45 123 42 137 59" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+        </g>
+        <path d="m180 33 4 10 11 3-11 4-4 11-4-11-11-4 11-3Z" fill="#f6d481"/>
+        <circle cx="39" cy="51" r="3" fill="#be9af2"/>
+      </svg>
+      <figcaption><span class="lang-en" lang="en">It's a Surprise!</span><span class="lang-ar hidden" lang="ar" dir="rtl">إنها مفاجأة!</span></figcaption>
+    </figure>
+    <figure class="circus-mystery-attraction">
+      <svg viewBox="0 0 220 270" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="mystery-4-color" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".45" stop-color="#f1f1e9"/><stop offset="1" stop-color="#b5b9b1"/></linearGradient>
+          <filter id="mystery-4-glow" x="-35%" y="-30%" width="170%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#e5bd70" flood-opacity=".5"/></filter>
+        </defs>
+        <path d="M110 12 24 225Q110 247 196 225Z" fill="#ffca68" opacity=".07"/>
+        <ellipse cx="110" cy="239" rx="82" ry="12" fill="#120b12" opacity=".35"/>
+        <ellipse cx="110" cy="233" rx="75" ry="7" fill="#e5bd70" opacity=".17"/>
+        <g filter="url(#mystery-4-glow)">
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" transform="translate(5 6)" fill="none" stroke="#92958d" stroke-width="34" stroke-linecap="round"/>
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" fill="none" stroke="url(#mystery-4-color)" stroke-width="30" stroke-linecap="round"/>
+        <circle cx="115" cy="209" r="18" fill="#92958d"/>
+        <circle cx="110" cy="204" r="18" fill="url(#mystery-4-color)"/>
+        <path d="M103 194q7-4 13 0" fill="none" stroke="#fff2ce" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+        <path d="M81 67C88 45 123 42 137 59" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+        </g>
+        <path d="m180 33 4 10 11 3-11 4-4 11-4-11-11-4 11-3Z" fill="#f6d481"/>
+        <circle cx="39" cy="51" r="3" fill="#ffca68"/>
+      </svg>
+      <figcaption><span class="lang-en" lang="en">It's a Surprise!</span><span class="lang-ar hidden" lang="ar" dir="rtl">إنها مفاجأة!</span></figcaption>
+    </figure>
+    <figure class="circus-mystery-attraction">
+      <svg viewBox="0 0 220 270" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="mystery-5-color" x2="1" y2="1"><stop stop-color="#ee263c"/><stop offset=".45" stop-color="#ffffff"/><stop offset="1" stop-color="#009b58"/></linearGradient>
+          <filter id="mystery-5-glow" x="-35%" y="-30%" width="170%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#e5bd70" flood-opacity=".5"/></filter>
+        </defs>
+        <path d="M110 12 24 225Q110 247 196 225Z" fill="#86b9f3" opacity=".07"/>
+        <ellipse cx="110" cy="239" rx="82" ry="12" fill="#120b12" opacity=".35"/>
+        <ellipse cx="110" cy="233" rx="75" ry="7" fill="#e5bd70" opacity=".17"/>
+        <g filter="url(#mystery-5-glow)">
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" transform="translate(5 6)" fill="none" stroke="#005e37" stroke-width="34" stroke-linecap="round"/>
+        <path d="M79 78C79 30 151 29 151 77C151 109 111 111 111 146" fill="none" stroke="url(#mystery-5-color)" stroke-width="30" stroke-linecap="round"/>
+        <circle cx="115" cy="209" r="18" fill="#005e37"/>
+        <circle cx="110" cy="204" r="18" fill="url(#mystery-5-color)"/>
+        <path d="M103 194q7-4 13 0" fill="none" stroke="#fff2ce" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+        <path d="M81 67C88 45 123 42 137 59" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+        </g>
+        <path d="m180 33 4 10 11 3-11 4-4 11-4-11-11-4 11-3Z" fill="#f6d481"/>
+        <circle cx="39" cy="51" r="3" fill="#86b9f3"/>
+      </svg>
+      <figcaption><span class="lang-en" lang="en">It's a Surprise!</span><span class="lang-ar hidden" lang="ar" dir="rtl">إنها مفاجأة!</span></figcaption>
+    </figure>
   </div>
+  <figure class="circus-dj-teaser">
+    <svg viewBox="0 0 320 220" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="ring-dj-desk" x2="1" y2="1"><stop stop-color="#84528e"/><stop offset="1" stop-color="#351f49"/></linearGradient></defs>
+      <ellipse cx="160" cy="202" rx="129" ry="10" fill="#160b15" opacity=".35"/>
+      <path d="M113 119Q111 89 128 71Q129 29 160 25Q191 29 192 71Q209 89 207 119Z" fill="#292333" stroke="#d4af37" stroke-width="2"/>
+      <path d="M136 71Q135 41 160 38Q185 41 184 71M128 76v19m64-19v19" fill="none" stroke="#75bcb0" stroke-width="7" stroke-linecap="round"/>
+      <path d="M151 60Q151 49 163 50Q176 53 163 65v7" fill="none" stroke="#e5bd70" stroke-width="4" stroke-linecap="round"/><circle cx="163" cy="81" r="3" fill="#e5bd70"/>
+      <path d="M140 89 132 115m47-26 8 26" stroke="#534657" stroke-width="5" stroke-linecap="round"/>
+      <path d="M45 113h230l14 68H31Z" fill="url(#ring-dj-desk)" stroke="#e5bd70" stroke-width="3"/>
+      <path d="M31 181h258v14H31Z" fill="#421c32" stroke="#d4af37" stroke-width="2"/>
+      <g stroke="#90c8bc" stroke-width="2" fill="#191b2b"><ellipse cx="91" cy="143" rx="37" ry="22"/><ellipse cx="229" cy="143" rx="37" ry="22"/></g>
+      <g fill="none" stroke="#ddd5bb" stroke-width="1.5"><ellipse cx="91" cy="143" rx="24" ry="14"/><ellipse cx="229" cy="143" rx="24" ry="14"/><path d="m118 125-5 18-12 6m155-24-5 18-12 6"/></g>
+      <g fill="#ee8893"><ellipse cx="91" cy="143" rx="7" ry="4"/><ellipse cx="229" cy="143" rx="7" ry="4"/></g>
+      <g stroke="#f8da8b" stroke-width="2"><path d="M145 126v39m15-39v39m15-39v39"/></g>
+      <path d="M140 139h10m5 12h10m5-18h10" stroke="#79d3bd" stroke-width="5"/>
+      <g fill="#f7d57c"><circle cx="142" cy="175" r="3"/><circle cx="154" cy="175" r="3"/><circle cx="166" cy="175" r="3"/></g><circle cx="178" cy="175" r="3" fill="#ec7898"/>
+      <g fill="#8ed7c5" stroke="#8ed7c5" stroke-width="3"><path d="M65 66V43l17-5v21M245 62V38l16-5v22" fill="none"/><ellipse cx="60" cy="67" rx="6" ry="4"/><ellipse cx="77" cy="60" rx="6" ry="4"/><ellipse cx="240" cy="63" rx="6" ry="4"/><ellipse cx="256" cy="56" rx="6" ry="4"/></g>
+    </svg>
+    <figcaption><span class="lang-en" lang="en">DJ — Getting Ready for the Show!</span><span class="lang-ar hidden" lang="ar" dir="rtl">الدي جي — يستعد للعرض!</span></figcaption>
+  </figure>
   <a class="circus-return site-button" href="circus.html"><span class="lang-en">Back to the Circus Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل السيرك</span></a>
 </main>
  <footer class="site-footer" data-global-chrome>
