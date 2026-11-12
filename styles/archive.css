@@ -1,5 +1,29 @@
 /* Author: Leslie Brockman
-   Date modified: 11/04/2026 */
+   Date modified: 11/11/2026 */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=DM+Serif+Display&family=Nunito:wght@400;600;700&display=swap');
+
+/* English index typography; Arabic retains the shared Arabic font. */
+.archive-main .lang-en { font-family: 'Nunito', sans-serif; }
+.archive-main :is(h2, h3, h4, h5, h6) .lang-en {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+}
+
+/* Keep availability in accessible button names without a visible subtitle. */
+.archive-month-card:not(:disabled) .archive-availability {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+#archive-demo-note { display: none; }
 
 body.archive-page,
 body:has(> p > #archive-destination) {
@@ -398,3 +422,105 @@ body:has(> p > #archive-destination) > p {
         z-index: 1;
     }
 }
+
+/* Main landing-page collection labels; retain Arabic typography and card geometry. */
+#collections .archive-series-card {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#collections .archive-series-card .lang-en {
+    font-family: 'Cinzel', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: .035em;
+}
+
+/* Archived OK America media retain horizontal scrolling and uncropped images. */
+.archive-dialog-writing .ok-america-gallery {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+}
+.archive-dialog-writing .ok-america-gallery .gallery-card {
+    flex: 0 0 75%;
+    width: 75%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: auto;
+}
+.archive-dialog-writing .ok-america-gallery .gallery-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+.archive-dialog-writing .weekly-song-video {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+/* Archived Israeli of the Week: preserve the existing portrait and gold panel. */
+.archive-dialog-writing .israelis-feature-portrait {
+    box-sizing: border-box;
+    width: min(100%, 36rem);
+    margin: 1.5rem auto;
+    padding: .3rem;
+    border: 1px solid #B89A4B;
+    border-radius: .5rem;
+    box-shadow: 0 5px 16px rgb(70 51 16 / 18%);
+}
+.archive-dialog-writing .israelis-feature-portrait img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: .25rem;
+}
+.archive-dialog-writing .israelis-feature-panel {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-block: 1.5rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 2px solid #B89A4B;
+    border-radius: .65rem;
+    background: #f5eddb;
+    color: #28251f;
+    box-shadow: 0 3px 15px rgb(184 154 75 / 20%);
+    overflow-wrap: anywhere;
+}
+.archive-dialog-writing .israelis-feature-panel h2 {
+    margin-block: 0 1rem;
+    color: #513f18;
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+.archive-dialog-writing .israelis-feature-panel p { margin-block: 0 1rem; line-height: 1.85; text-align: start; }
+.archive-dialog-writing .israelis-feature-panel .lang-ar { direction: rtl; text-align: right; }
+.archive-dialog-writing .israelis-feature-panel h2 .lang-ar { text-align: center; }
+.archive-dialog-writing .israelis-feature-panel .israelis-feature-name { text-align: center; font-weight: bold; }
+.archive-dialog-writing .israelis-feature-panel .israelis-hebrew-name { display: block; margin-top: .35rem; font-size: .85em; }
+.archive-dialog-writing .israelis-feature-panel .site-button { display: flex; width: fit-content; max-width: 100%; min-height: 44px; margin: 1.25rem auto 0; white-space: normal; text-align: center; }
+
+/* November 6 Trump snapshot only; inherit the archive's parchment and typography. */
+.trump-nov6-snapshot .trump-nov6-choice { min-width: 0; margin: 1rem 0; padding: clamp(.75rem, 2vw, 1.25rem); border: 1px solid var(--archive-gold); border-radius: 6px; background: var(--archive-paper); }
+.trump-nov6-snapshot .trump-nov6-choice > summary { cursor: pointer; padding: .6rem; color: var(--archive-olive); font-weight: bold; min-height: 44px; }
+.trump-nov6-snapshot .trump-nov6-choice > summary:focus-visible { outline: 3px solid var(--archive-olive); outline-offset: 3px; }
+.trump-nov6-snapshot .trump-path-portrait { display: block; width: min(100%, 20rem); height: auto; margin: 1rem auto; border: 1px solid var(--archive-gold); border-radius: 6px; }
+.trump-nov6-snapshot .trump-path-social img { width: 32px; height: 32px; }
+.trump-nov6-snapshot .video-wrapper { margin-block: 1rem; min-width: 0; }
+.trump-nov6-snapshot iframe { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 1px solid var(--archive-gold); border-radius: 6px; }
+.trump-nov6-snapshot :is(p, a) { overflow-wrap: anywhere; }
