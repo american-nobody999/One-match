@@ -1,7 +1,7 @@
 
 /*
    Author: Leslie Brockman
-   Date: 11-01-2026
+   Date: 11-11-2026
 */
 /* Drinking Games shell and Weekly Song Dedication. */
 :where(.drinking-games-page) main {
@@ -558,6 +558,18 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .drinking-games-page .lounge-jukebox .weekly-song-video { padding: .75rem; background: #170d0d66; border-radius: .75rem; }
+.drinking-games-page #jukebox-dialog .weekly-song-video h3 {
+    margin: .5rem 0 1.5rem;
+    color: #fff5df;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+    font-weight: 700;
+    line-height: 1.55;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+.drinking-games-page #jukebox-dialog .weekly-song-video h3 .lang-ar { font-family: 'Amiri', serif; text-align: center; }
+
 .drinking-games-page #wheel-dialog { text-align: center; border: 3px solid #e9bd69; box-shadow: inset 0 0 0 5px #742b30, inset 0 0 0 7px #c9aa65, 0 1rem 3rem #0008; background: #303c22; }
 .drinking-games-page #wheel-dialog .dialog-top { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 1rem; }
 .drinking-games-page #wheel-dialog #wheel-title,
@@ -836,7 +848,8 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 .drinking-games-page #loser-of-the-week .loser-week-images {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    align-items: start;
+    align-items: stretch;
+    margin-bottom: 1.5rem;
     gap: clamp(.5rem, 2vw, 1rem);
 }
 
@@ -845,7 +858,9 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    height: auto;
+    height: clamp(12rem, 65vw, 20rem);
+    max-height: none;
+    aspect-ratio: auto;
     margin: 0;
     box-sizing: border-box;
     padding: .25rem;
@@ -853,6 +868,7 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
     border-radius: .5rem;
     background: #252a20;
     object-fit: contain;
+    object-position: center;
 }
 
 .drinking-games-page #loser-of-the-week .loser-week-description {
@@ -924,14 +940,10 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 .drinking-games-page #loser-of-the-week .loser-week-images {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
+    .drinking-games-page #loser-of-the-week .loser-week-images img { height: clamp(14rem, 30vw, 22rem); }
 }
-
-@media (min-width: 64rem) {
-.drinking-games-page #loser-of-the-week #loser-week-back .loser-week-images {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
+@media (max-width: 47.999rem) {
+    .drinking-games-page #loser-of-the-week [data-loser-face="back"] > .loser-week-images { grid-template-columns: minmax(0, 1fr); }
 }
 
 @keyframes loser-week-turn {
@@ -1124,3 +1136,39 @@ min-width: 0;
     }
 
 }
+
+/* Reusable weekly award and archived winners; scoped to Loser of the Week. */
+.drinking-games-page #loser-of-the-week .loser-pending { padding: 2rem 1rem; margin: 1rem 0; text-align: center; color: #ffe2a0; font-family: 'Cormorant Garamond', 'Amiri', serif; font-size: clamp(1.4rem, 4vw, 2rem); border: 1px dashed #c9aa65; border-radius: 1rem; }
+.drinking-games-page #loser-of-the-week .loser-trophy-case { margin-top: 2rem; min-width: 0; padding: clamp(.75rem, 3vw, 1.5rem); border: 1px solid #c9aa65; border-radius: 1rem; background: #252f1c; }
+.drinking-games-page #loser-of-the-week .loser-trophy-case > summary { width: fit-content; max-width: 100%; cursor: pointer; }
+.drinking-games-page #loser-of-the-week .loser-trophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 1rem; margin-block: 1.5rem; }
+.drinking-games-page #loser-of-the-week .loser-trophy { display: flex; flex-direction: column; align-items: center; gap: .5rem; min-width: 0; min-height: 44px; padding: 1rem; border: 1px solid #c9aa6580; border-radius: .75rem; background: #303c22; color: #ffe2a0; font: inherit; cursor: pointer; overflow-wrap: anywhere; }
+.drinking-games-page #loser-of-the-week .loser-trophy svg { width: 64px; height: 70px; max-width: 100%; }
+.drinking-games-page #loser-of-the-week .loser-trophy :is(.lang-en, .lang-ar) { text-align: center; }
+.drinking-games-page #loser-of-the-week .loser-trophy-name { font-weight: bold; }
+.drinking-games-page #loser-of-the-week .loser-trophy-date { font-size: .9rem; }
+.drinking-games-page #loser-of-the-week .loser-trophy:is(:hover, [aria-expanded="true"]) { background: #3b462a; border-color: #ffe2a0; }
+.drinking-games-page #loser-of-the-week .loser-trophy:focus-visible { outline: 3px solid #ffe2a0; outline-offset: 4px; }
+.drinking-games-page #loser-of-the-week [data-archived-loser] { min-width: 0; }
+.drinking-games-page #loser-of-the-week [data-archived-loser] > .loser-week-button { margin-bottom: 1.5rem; }
+@media (min-width: 48rem) {
+    .drinking-games-page #loser-of-the-week [data-loser-face="back"] > .loser-week-images { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Featured award reporting sources: one accessible gold link per row. */
+.drinking-games-page #loser-of-the-week [data-current-loser] .loser-source-link {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 44px;
+    padding: .65rem .8rem;
+    border: 1px solid #c9aa6580;
+    border-radius: .4rem;
+    color: #ffe2a0;
+    background: #252f1c;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+    overflow-wrap: anywhere;
+}
+.drinking-games-page #loser-of-the-week [data-current-loser] .loser-source-link:hover { color: #fff5df; background: #3b462a; border-color: #ffe2a0; }
+.drinking-games-page #loser-of-the-week [data-current-loser] .loser-source-link:focus-visible { outline: 3px solid #ffe2a0; outline-offset: 4px; color: #fff5df; background: #3b462a; }
