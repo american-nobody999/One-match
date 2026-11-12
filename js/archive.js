@@ -2,6 +2,8 @@
 Author: Leslie Brockman
 Date: 10-21-2026
 We keep moving forward. All our ways.
+Date Modified: 11-11-2026
+
 */
 /* American Nobody Archives: manifest index + validated monthly HTML fragments. */
 "use strict";
@@ -219,21 +221,50 @@ document.addEventListener('DOMContentLoaded', async () => {
     function parseMonth(source, series, month, url) {
         if (/<!doctype|<\/?(?:html|head|body)(?:\s|\/?>)/i.test(source)) throw new Error('Expected HTML fragments only.');
         const parsed = new DOMParser().parseFromString(source, 'text/html');
-        const tags = new Set(['ARTICLE', 'H2', 'H3', 'H4', 'H5', 'H6', 'TIME', 'DIV', 'SPAN', 'P', 'UL', 'OL', 'LI', 'A', 'STRONG', 'EM', 'B', 'I', 'U', 'S', 'BLOCKQUOTE', 'BR', 'HR', 'CODE', 'PRE', 'DL', 'DT', 'DD', 'SUP', 'SUB', 'CITE', 'ABBR']);
+        const tags = new Set(['ARTICLE', 'H2', 'H3', 'H4', 'H5', 'H6', 'TIME', 'DIV', 'SPAN', 'P', 'UL', 'OL', 'LI', 'A', 'STRONG', 'EM', 'B', 'I', 'U', 'S', 'BLOCKQUOTE', 'BR', 'HR', 'CODE', 'PRE', 'DL', 'DT', 'DD', 'SUP', 'SUB', 'CITE', 'ABBR', 'IMG', 'SECTION', 'IFRAME', 'FIGURE']);
         const attributes = new Set(['class', 'id', 'lang', 'dir', 'datetime', 'href', 'title', 'rel', 'target', 'start', 'type', 'value', 'data-entry-date', 'data-demo']);
         const ids = new Set();
         if (parsed.head.children.length) throw new Error('Unexpected document metadata.');
         for (const element of parsed.body.querySelectorAll('*')) {
-            if (element.namespaceURI !== 'http://www.w3.org/1999/xhtml' || !tags.has(element.tagName)) {
+            const isTrumpChoice = ['DETAILS', 'SUMMARY'].includes(element.tagName)
+                && element.closest('article')?.id === 'trump-2026-11-06';
+            if (element.namespaceURI !== 'http://www.w3.org/1999/xhtml' || (!tags.has(element.tagName) && !isTrumpChoice)) {
                 throw new Error('Unexpected active or unsupported content.');
             }
             for (const attribute of element.attributes) {
+                if (element.tagName === 'IMG' && ['src', 'alt', 'loading'].includes(attribute.name)) continue;
+                if (element.tagName === 'IMG' && ['width', 'height'].includes(attribute.name) &&
+                    /^[1-9][0-9]*$/.test(attribute.value)) continue;
+                if (element.tagName === 'IFRAME' && ['src', 'loading', 'allow', 'referrerpolicy', 'allowfullscreen'].includes(attribute.name)) continue;
+                if (element.tagName === 'SECTION' && attribute.name === 'aria-labelledby' &&
+                    /^[a-z][a-z0-9-]*$/.test(attribute.value)) continue;
+                if (element.tagName === 'DIV' && element.classList.contains('scrollable-gallery') &&
+                    ((attribute.name === 'role' && attribute.value === 'region') ||
+                     attribute.name === 'aria-label' || (attribute.name === 'tabindex' && attribute.value === '0'))) continue;
                 if (!attributes.has(attribute.name) || attribute.name.startsWith('on')) {
                     throw new Error('Unexpected content attribute.');
                 }
                 if (['href', 'target', 'rel'].includes(attribute.name) && element.tagName !== 'A') {
                     throw new Error('Unexpected link attribute.');
                 }
+            }
+            if (element.tagName === 'IFRAME') {
+                const source = new URL(element.getAttribute('src') || '', url);
+                if (source.origin !== 'https://www.youtube-nocookie.com' ||
+                    !/^\/embed\/[A-Za-z0-9_-]{11}$/.test(source.pathname) || source.search || source.hash ||
+                    source.username || source.password || !element.getAttribute('title')) throw new Error('Unsupported video embed.');
+                if (element.getAttribute('loading') !== 'lazy' ||
+                    element.getAttribute('referrerpolicy') !== 'strict-origin-when-cross-origin' ||
+                    !['accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+                        'encrypted-media; picture-in-picture; fullscreen'].includes(element.getAttribute('allow'))) throw new Error('Unsupported video attributes.');
+            }
+            if (element.tagName === 'IMG') {
+                const src = element.getAttribute('src');
+                if (!src || !element.hasAttribute('alt')) throw new Error('Missing image source or alternative text.');
+                const resolved = new URL(src, url);
+                if (!['http:', 'https:'].includes(resolved.protocol)) throw new Error('Unsafe image source.');
+                if (element.hasAttribute('loading') && !['lazy', 'eager'].includes(element.getAttribute('loading'))) throw new Error('Unsupported image loading mode.');
+                element.setAttribute('src', resolved.href);
             }
             if (element.id) {
                 if (ids.has(element.id)) throw new Error('Duplicate fragment ID.');
@@ -435,7 +466,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!route.series || !route.month) {
             loadedKey = null;
             records = [];
-            emptyList('Choose a series and an available month.', 'اختر سلسلة وشهرًا متاحًا.');
+            list.replaceChildren();
             message(...(invalid
                 ? ['This archive link is unavailable or malformed. Please choose a series and an available month.', 'رابط الأرشيف غير متاح أو غير صالح. يُرجى اختيار سلسلة وشهر متاح.']
                 : route.series && !monthButtons.some(button => !button.disabled)
@@ -449,7 +480,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (loadedKey !== key) {
                 loadedKey = null;
                 records = [];
-                emptyList('Loading entries…', 'جارٍ تحميل الإدخالات…');
+                list.replaceChildren();
                 list.setAttribute('aria-busy', 'true');
                 message('Loading the selected month…', 'جارٍ تحميل الشهر المختار…');
                 const result = await loadMonth(route.series, route.month);
