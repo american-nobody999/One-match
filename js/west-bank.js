@@ -1,6 +1,7 @@
 "use strict";
 //Author: Leslie Brockman
 //Date:11-01-2026
+//Date modified: 11-11-2026
 // Explorer only: main.js remains responsible for shared language and navigation.
 (() => {
     const explorer = document.querySelector('.west-bank-page .community-explorer');
@@ -49,6 +50,32 @@
             link.rel = 'noopener noreferrer';
         }
     }
+    function renderPreviousReports(community) {
+        const reports = document.createElement('details');
+        reports.className = 'community-previous-reports';
+        reports.id = `previous-reports-${community.id}`;
+        reports.append(textElement('summary', 'Previous Reports', 'التقارير السابقة'));
+        const history = ['umm-al-khair', 'hebron-city', 'masafer-yatta', 'jenin-refugee-camp', 'yabad', 'khirbet-ras-al-ahmar', 'tammun', 'tulkarm-refugee-camp', 'nur-shams-refugee-camp', 'burin', 'madama', 'yabrud', 'rammun', 'immatin', 'silwan', 'al-walaja'].includes(community.id) && Array.isArray(community.previousReports)
+            ? community.previousReports : [];
+        if (!history.length) {
+            reports.append(textElement('p', 'Previous reports will appear here.', 'ستظهر التقارير السابقة هنا.'));
+        }
+        history.forEach(recap => {
+            const entry = document.createElement('article');
+            entry.append(textElement('h5', recap.dateLabelEn || recap.date, recap.dateLabelAr || recap.date));
+            entry.append(textElement('p', recap.textEn, recap.textAr));
+            entry.append(textElement('h5', 'Weekly recap sources', 'مصادر الملخص الأسبوعي'));
+            recap.sources.forEach(source => {
+                const paragraph = document.createElement('p');
+                const link = textElement('a', source.labelEn, source.labelAr);
+                setLinkDestination(link, source.url);
+                paragraph.append(link);
+                entry.append(paragraph);
+            });
+            reports.append(entry);
+        });
+        profile.append(reports);
+    }
     function renderWeeklyRecap(community) {
         const recap = community.weeklyRecap;
         // Require complete, source-backed editorial data; never infer a recap or its date.
@@ -59,6 +86,7 @@
         if (!ready) {
             profile.append(textElement('h4', 'This Week', 'هذا الأسبوع'));
             profile.append(textElement('p', 'No weekly recap published yet.', 'لم يُنشر ملخص أسبوعي بعد.', 'research-pending'));
+            renderPreviousReports(community);
             return;
         }
         const hasDateLabels = recap.dateLabelEn && recap.dateLabelAr;
@@ -66,6 +94,7 @@
             hasDateLabels ? `This Week — ${recap.dateLabelEn}` : `This Week: ${recap.date} — ${community.nameEn}`,
             hasDateLabels ? `هذا الأسبوع — ${recap.dateLabelAr}` : `هذا الأسبوع: ${recap.date} — ${community.nameAr}`));
         profile.append(textElement('p', recap.textEn, recap.textAr, 'research-pending'));
+        if (!['umm-al-khair', 'hebron-city', 'masafer-yatta', 'jenin-refugee-camp', 'yabad', 'khirbet-ras-al-ahmar', 'tammun', 'tulkarm-refugee-camp', 'nur-shams-refugee-camp', 'burin', 'madama', 'yabrud', 'rammun', 'immatin', 'silwan', 'al-walaja'].includes(community.id)) renderPreviousReports(community);
         profile.append(textElement('h5', 'Weekly recap sources', 'مصادر الملخص الأسبوعي'));
         recap.sources.forEach(source => {
             const paragraph = document.createElement('p');
@@ -74,6 +103,7 @@
             paragraph.append(link);
             profile.append(paragraph);
         });
+        if (['umm-al-khair', 'hebron-city', 'masafer-yatta', 'jenin-refugee-camp', 'yabad', 'khirbet-ras-al-ahmar', 'tammun', 'tulkarm-refugee-camp', 'nur-shams-refugee-camp', 'burin', 'madama', 'yabrud', 'rammun', 'immatin', 'silwan', 'al-walaja'].includes(community.id)) renderPreviousReports(community);
     }
     function selectCommunity(community) {
         communityButtons.forEach((button, id) => {
