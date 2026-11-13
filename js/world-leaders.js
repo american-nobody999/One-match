@@ -1,5 +1,5 @@
 //Author: Leslie Brockman
-//Date modified: 11/06/2026
+//Date modified: 11/11/2026
 'use strict';
 
 // Native dialogs provide background inertness, keyboard containment, and Escape handling.
@@ -25,19 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('[data-leader-modal]').forEach(trigger => {
         trigger.addEventListener('click', () => {
-            let returnTrigger = trigger;
-            const isWorkBack = activeDialog?.id === 'leader-work-together-modal'
-                && trigger.dataset.leaderModal === 'leader-1-modal';
-            if (activeDialog) {
-                // Allow chooser paths and the Work Together return through the same cleanup.
-                if (trigger.closest('dialog') !== activeDialog
-                    || (activeDialog.id !== 'leader-1-modal' && !isWorkBack)) return;
-                const previousDialog = activeDialog;
-                returnTrigger = activeTrigger;
-                previousDialog.close();
-                // close events are queued: finish synchronously before opening the next modal.
-                finishClose(previousDialog);
-            }
+            if (activeDialog) return;
             const dialog = document.getElementById(trigger.dataset.leaderModal);
             if (!dialog) return;
             const frame = dialog.querySelector('iframe');
@@ -51,15 +39,36 @@ document.addEventListener('DOMContentLoaded', () => {
             if (placeholder) placeholder.hidden = hasVideo;
             dialog.showModal();
             // Start at the heading on every open, including after a previous scroll.
-            const focusTarget = isWorkBack
-                ? dialog.querySelector('[data-leader-modal="leader-work-together-modal"]')
-                : dialog.querySelector('h2');
+            const focusTarget = dialog.querySelector('h2');
             (focusTarget || dialog).focus({ preventScroll: true });
             dialog.scrollTop = 0;
-            activeTrigger = returnTrigger;
+            activeTrigger = trigger;
             activeDialog = dialog;
             previousOverflow = document.body.style.overflow;
             document.body.style.overflow = 'hidden';
         });
     });
 });
+
+// January 20, 2029 at noon in America/New_York (EST, UTC-05:00).
+(() => {
+    const fields = document.querySelectorAll('[data-trump-countdown]');
+    if (!fields.length) return;
+    const target = Date.parse('2029-01-20T12:00:00-05:00');
+    let timer;
+    function update() {
+        const remaining = Math.max(0, Math.ceil((target - Date.now()) / 1000));
+        const values = {
+            days: Math.floor(remaining / 86400),
+            hours: Math.floor(remaining / 3600) % 24,
+            minutes: Math.floor(remaining / 60) % 60,
+            seconds: remaining % 60
+        };
+        fields.forEach(field => {
+            field.textContent = String(values[field.dataset.trumpCountdown]).padStart(2, '0');
+        });
+        if (remaining === 0 && timer) clearInterval(timer);
+        return remaining;
+    }
+    if (update() > 0) timer = setInterval(update, 1000);
+})();
