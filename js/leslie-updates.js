@@ -1,6 +1,6 @@
 "use strict";
 // Author: Leslie Brockman
-// Date: 11/04/2026
+// Date: 11/13/2026
 const missionDefinitions = [
   {
     "page": "index.html",
@@ -14,52 +14,45 @@ const missionDefinitions = [
     ],
     "tasks": [
       {
-        "id": "index:review",
+        "id": "index:card-reorganization",
         "label": [
-          "Review and update page.",
-          "مراجعة الصفحة وتحديثها."
+          "Card reorganization",
+          "إعادة تنظيم البطاقات"
         ]
       },
       {
-        "id": "index:featured",
+        "id": "index:card-replacement",
         "label": [
-          "Review featured homepage content.",
-          "مراجعة المحتوى المميز في الرئيسية."
+          "Card replacement",
+          "استبدال البطاقات"
         ]
       },
       {
-        "id": "index:destinations",
+        "id": "index:header-redesign",
         "label": [
-          "Check card destinations.",
-          "فحص وجهات البطاقات."
+          "Header redesign",
+          "إعادة تصميم رأس الصفحة"
         ]
       },
       {
-        "id": "index:images",
+        "id": "index:footer-redesign",
         "label": [
-          "Update images where required.",
-          "تحديث الصور عند الحاجة."
+          "Footer redesign",
+          "إعادة تصميم تذييل الصفحة"
         ]
       },
       {
-        "id": "index:titles",
+        "id": "index:double-check-completed-changes",
         "label": [
-          "Verify English and Arabic titles.",
-          "التحقق من العناوين الإنجليزية والعربية."
+          "Double-check completed homepage changes",
+          "مراجعة التغييرات المنجزة في الصفحة الرئيسية مرة أخرى"
         ]
       },
       {
-        "id": "index:responsive",
+        "id": "index:big-top-phase-5-completion",
         "label": [
-          "Check desktop, tablet, and mobile layout.",
-          "فحص التخطيط على الحاسوب والجهاز اللوحي والهاتف."
-        ]
-      },
-      {
-        "id": "index:navigation",
-        "label": [
-          "Confirm navigation and shared components.",
-          "التحقق من التنقل والمكونات المشتركة."
+          "Update Big Top card through Phase 5 completion",
+          "تحديث بطاقة الخيمة الكبرى حتى اكتمال المرحلة الخامسة"
         ]
       }
     ],
@@ -405,10 +398,17 @@ const missionDefinitions = [
         ]
       },
       {
-        "id": "world_leader:pope",
+        "id": "world_leader:css-redesign-rethink",
         "label": [
-          "Review Pope Leo section.",
-          "مراجعة قسم البابا لاوون."
+          "CSS redesign / rethink",
+          "إعادة تصميم CSS / إعادة التفكير فيه"
+        ]
+      },
+      {
+        "id": "world_leader:add-world-leaders",
+        "label": [
+          "Add more world leaders",
+          "إضافة المزيد من قادة العالم"
         ]
       },
       {
@@ -2438,8 +2438,8 @@ const missionDefinitions = [
       "🎪 الخيمة الكبرى"
     ],
     "description": [
-      "Phase 1 complete: Grand Entrance and HTML structure. Phases 2–5 remain planned.",
-      "المرحلة 1 مكتملة: المدخل الرئيسي وهيكل HTML. المراحل 2–5 قيد الانتظار."
+      "Phases 1 and 2 complete. Phases 3–5 remain under development.",
+      "اكتملت المرحلتان 1 و2. ولا تزال المراحل 3–5 قيد التطوير."
     ],
     "category": "planned",
     "weekly": false,
@@ -2450,10 +2450,6 @@ const missionDefinitions = [
     "tasks": [],
     "plannedTasks": [
       [
-        "Phase 2: Complete the design and CSS for the Banner Hall, Main Event, and Popcorn Stand entrances.",
-        "المرحلة 2 قيد الانتظار - تصميم وتنسيق CSS لمداخل قاعة اللافتات والساحة الرئيسية وكشك الفشار"
-      ],
-      [
         "Phase 3: Build four clown games for the Main Event.",
         "المرحلة 3 قيد الانتظار - أربع ألعاب للمهرجين في الساحة الرئيسية"
       ],
@@ -2462,7 +2458,7 @@ const missionDefinitions = [
         "المرحلة 4 قيد الانتظار - تجهيز كشك الفشار للجمعيات الخيرية والمنظمات الداعمة"
       ],
       [
-        "Phase 5: Expand the Banner Hall with performers’ personal stories and social-media links.",
+        "Phase 5: Expand the Banner Hall with performers' personal stories and social media.",
         "المرحلة 5 قيد الانتظار - لافتات تعرض قصص الفنانين وحساباتهم الشخصية على وسائل التواصل الاجتماعي"
       ]
     ]
@@ -2577,6 +2573,305 @@ const missionDefinitions = [
   },
   {
     "page": null,
+    "id": "planned-online-school",
+    "title": [
+      "Online School",
+      "المدرسة الإلكترونية"
+    ],
+    "description": [
+      "Organize and expand the bilingual Schoolhouse.",
+      "تنظيم المدرسة الإلكترونية وتوسيع مواردها باللغتين."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Organize the Schoolhouse landing page.",
+        "تنظيم الصفحة الرئيسية للمدرسة."
+      ],
+      [
+        "Review subject navigation and page links.",
+        "مراجعة التنقل بين المواد وروابط الصفحات."
+      ],
+      [
+        "Expand the available learning resources.",
+        "توسيع الموارد التعليمية المتاحة."
+      ],
+      [
+        "Maintain English and Arabic accessibility.",
+        "الحفاظ على سهولة الوصول بالإنجليزية والعربية."
+      ],
+      [
+        "Review responsive classroom navigation.",
+        "مراجعة التنقل المتجاوب بين الصفوف الدراسية."
+      ]
+    ],
+    "referencePage": "edu.html"
+  },
+  {
+    "page": null,
+    "id": "planned-abc123",
+    "title": [
+      "ABC123",
+      "ABC123"
+    ],
+    "description": [
+      "Plan three bilingual games for different learner age groups.",
+      "التخطيط لثلاث ألعاب باللغتين لفئات عمرية مختلفة من المتعلمين."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Create the ABC123 CSS.",
+        "إنشاء تنسيقات CSS لصفحة ABC123."
+      ],
+      [
+        "Create the ABC123 JavaScript.",
+        "إنشاء شيفرة JavaScript لصفحة ABC123."
+      ],
+      [
+        "Develop Game 1 for younger learners.",
+        "تطوير اللعبة الأولى للمتعلمين الأصغر سنًا."
+      ],
+      [
+        "Develop Game 2 for intermediate learners.",
+        "تطوير اللعبة الثانية للمتعلمين متوسطي العمر."
+      ],
+      [
+        "Develop Game 3 for older learners.",
+        "تطوير اللعبة الثالثة للمتعلمين الأكبر سنًا."
+      ],
+      [
+        "Add bilingual English and Arabic gameplay.",
+        "إضافة تجربة لعب بالإنجليزية والعربية."
+      ],
+      [
+        "Integrate the games into the Schoolhouse.",
+        "دمج الألعاب في المدرسة."
+      ]
+    ],
+    "referencePage": "education/abc123.html"
+  },
+  {
+    "page": null,
+    "id": "planned-history",
+    "title": [
+      "History",
+      "التاريخ"
+    ],
+    "description": [
+      "Continue the history curriculum while preserving Chapter 1.",
+      "مواصلة تطوير منهج التاريخ مع الحفاظ على عمل الفصل الأول."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Complete Chapter 2.",
+        "إكمال الفصل الثاني."
+      ],
+      [
+        "Develop Chapter 3.",
+        "تطوير الفصل الثالث."
+      ],
+      [
+        "Develop Chapter 4.",
+        "تطوير الفصل الرابع."
+      ],
+      [
+        "Develop Chapter 5.",
+        "تطوير الفصل الخامس."
+      ],
+      [
+        "Develop Chapter 6.",
+        "تطوير الفصل السادس."
+      ],
+      [
+        "Create one additional history game.",
+        "إنشاء لعبة تاريخ إضافية واحدة."
+      ]
+    ],
+    "referencePage": "education/history.html"
+  },
+  {
+    "page": null,
+    "id": "planned-homework",
+    "title": [
+      "Homework",
+      "الواجبات المنزلية"
+    ],
+    "description": [
+      "Develop bilingual practice resources and worksheets.",
+      "تطوير موارد للتدريب وأوراق عمل باللغتين."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Develop Homework page content.",
+        "تطوير محتوى صفحة الواجبات المنزلية."
+      ],
+      [
+        "Add educational practice activities.",
+        "إضافة أنشطة تدريبية تعليمية."
+      ],
+      [
+        "Organize learning resources by subject.",
+        "تنظيم الموارد التعليمية حسب المادة."
+      ],
+      [
+        "Create downloadable or printable worksheets.",
+        "إنشاء أوراق عمل قابلة للتنزيل أو الطباعة."
+      ],
+      [
+        "Include English and Arabic instructions.",
+        "تضمين تعليمات بالإنجليزية والعربية."
+      ]
+    ],
+    "referencePage": "education/homework.html"
+  },
+  {
+    "page": null,
+    "id": "planned-recess",
+    "title": [
+      "Recess",
+      "الاستراحة"
+    ],
+    "description": [
+      "Plan the bilingual soccer puzzle game for the Schoolhouse.",
+      "التخطيط للعبة ألغاز كرة القدم باللغتين ضمن المدرسة."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Design the soccer puzzle game.",
+        "تصميم لعبة ألغاز كرة القدم."
+      ],
+      [
+        "Develop the soccer game JavaScript.",
+        "تطوير شيفرة JavaScript للعبة كرة القدم."
+      ],
+      [
+        "Create the soccer game CSS.",
+        "إنشاء تنسيقات CSS للعبة كرة القدم."
+      ],
+      [
+        "Add bilingual game instructions.",
+        "إضافة تعليمات اللعبة باللغتين."
+      ],
+      [
+        "Connect the game to the Schoolhouse.",
+        "ربط اللعبة بالمدرسة."
+      ]
+    ],
+    "referencePage": "education/recess.html"
+  },
+  {
+    "page": null,
+    "id": "planned-schoolhouse-maintenance",
+    "title": [
+      "Schoolhouse Maintenance",
+      "صيانة المدرسة"
+    ],
+    "description": [
+      "Maintain existing subject games and plan future activities.",
+      "صيانة ألعاب المواد الحالية والتخطيط لأنشطة مستقبلية."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Maintain existing Math games.",
+        "صيانة ألعاب الرياضيات الحالية."
+      ],
+      [
+        "Maintain existing Science games.",
+        "صيانة ألعاب العلوم الحالية."
+      ],
+      [
+        "Maintain existing History games.",
+        "صيانة ألعاب التاريخ الحالية."
+      ],
+      [
+        "Add future educational activities.",
+        "إضافة أنشطة تعليمية مستقبلية."
+      ],
+      [
+        "Keep bilingual gameplay and accessibility consistent.",
+        "الحفاظ على اتساق تجربة اللعب باللغتين وسهولة الوصول."
+      ]
+    ],
+    "referencePages": [
+      "education/math.html",
+      "education/science.html",
+      "education/history.html"
+    ]
+  },
+  {
+    "page": null,
+    "id": "planned-ticket-humanitarian-missions",
+    "title": [
+      "Ticket — Humanitarian Missions",
+      "التذكرة — المهمات الإنسانية"
+    ],
+    "description": [
+      "Expand the Ticket page with the 2027 Red Ribbon campaign, upcoming flotillas, historical missions, and additional humanitarian groups.",
+      "توسيع صفحة التذكرة بإضافة حملة الشريط الأحمر لعام ٢٠٢٧، والأساطيل القادمة، والمهمات السابقة، ومجموعات إنسانية إضافية."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "referencePage": "ticket.html",
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Create \"2027 — Year of the Red Ribbon\" section.",
+        "إنشاء قسم «٢٠٢٧ — عام الشريط الأحمر»."
+      ],
+      [
+        "Create \"Spring 2027 Flotillas\" section.",
+        "إنشاء قسم «أساطيل ربيع ٢٠٢٧»."
+      ],
+      [
+        "Develop a Mission Scrapbook for older missions.",
+        "تطوير ألبوم يوثّق المهمات السابقة."
+      ],
+      [
+        "Add more flotilla groups and humanitarian missions.",
+        "إضافة المزيد من مجموعات الأساطيل والمهمات الإنسانية."
+      ]
+    ]
+  },
+  {
+    "page": null,
     "id": "planned-code-cleanup",
     "title": [
       "Code Clean Up",
@@ -2634,6 +2929,246 @@ const missionDefinitions = [
         "Add West Bank pages and coverage to the archives.",
         "إضافة صفحات الضفة الغربية وتغطيتها إلى الأرشيف."
       ]
+    ]
+  },
+  {
+    "page": "archives/friday-prayers/2026-11.html",
+    "title": [
+      "archives/friday-prayers/2026-11.html",
+      "archives/friday-prayers/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/friday-prayers/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "friday-prayers"
+    ]
+  },
+  {
+    "page": "archives/love-letters-palestine/2026-11.html",
+    "title": [
+      "archives/love-letters-palestine/2026-11.html",
+      "archives/love-letters-palestine/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/love-letters-palestine/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "love-letters-palestine"
+    ]
+  },
+  {
+    "page": "archives/ok-series/ok-america/2026-11.html",
+    "title": [
+      "archives/ok-series/ok-america/2026-11.html",
+      "archives/ok-series/ok-america/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/ok-series/ok-america/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "ok-series",
+      "ok-america"
+    ]
+  },
+  {
+    "page": "archives/ok-series/ok-humanity/2026-11.html",
+    "title": [
+      "archives/ok-series/ok-humanity/2026-11.html",
+      "archives/ok-series/ok-humanity/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/ok-series/ok-humanity/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "ok-series",
+      "ok-humanity"
+    ]
+  },
+  {
+    "page": "archives/ok-series/ok-israelis/2026-11.html",
+    "title": [
+      "archives/ok-series/ok-israelis/2026-11.html",
+      "archives/ok-series/ok-israelis/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/ok-series/ok-israelis/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "ok-series",
+      "ok-israelis"
+    ]
+  },
+  {
+    "page": "archives/ok-series/ok-palestine/2026-11.html",
+    "title": [
+      "archives/ok-series/ok-palestine/2026-11.html",
+      "archives/ok-series/ok-palestine/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/ok-series/ok-palestine/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "ok-series",
+      "ok-palestine"
+    ]
+  },
+  {
+    "page": "archives/west-bank/2026-11.html",
+    "title": [
+      "archives/west-bank/2026-11.html",
+      "archives/west-bank/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/west-bank/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "west-bank"
+    ]
+  },
+  {
+    "page": "archives/world-leaders/iran/2026-11.html",
+    "title": [
+      "archives/world-leaders/iran/2026-11.html",
+      "archives/world-leaders/iran/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/world-leaders/iran/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "world-leaders",
+      "iran"
+    ]
+  },
+  {
+    "page": "archives/world-leaders/trump/2026-11.html",
+    "title": [
+      "archives/world-leaders/trump/2026-11.html",
+      "archives/world-leaders/trump/2026-11.html"
+    ],
+    "description": [
+      "Local project page; review when needed.",
+      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+    ],
+    "category": "weekly",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "archives/world-leaders/trump/2026-11:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "archives",
+      "world-leaders",
+      "trump"
     ]
   }
 ];
@@ -2707,6 +3242,9 @@ const dependencyDefinitions = [
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ],
+    "data": [
+      "archives/manifest.json"
     ]
   },
   {
@@ -2737,6 +3275,9 @@ const dependencyDefinitions = [
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ],
+    "data": [
+      "archives/manifest.json"
     ]
   },
   {
@@ -2793,6 +3334,9 @@ const dependencyDefinitions = [
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ],
+    "data": [
+      "archives/manifest.json"
     ]
   },
   {
@@ -2875,6 +3419,9 @@ const dependencyDefinitions = [
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ],
+    "data": [
+      "archives/manifest.json"
     ]
   },
   {
@@ -2929,6 +3476,9 @@ const dependencyDefinitions = [
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ],
+    "data": [
+      "archives/manifest.json"
     ]
   },
   {
@@ -2951,6 +3501,9 @@ const dependencyDefinitions = [
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ],
+    "data": [
+      "archives/manifest.json"
     ]
   },
   {
@@ -3411,7 +3964,16 @@ const dependencyDefinitions = [
       "styles/styles2.css"
     ],
     "scripts": [
-      "js/main.js"
+      "js/main.js",
+      "js/history-timeline.js",
+      "js/history-ancient.js",
+      "js/history-excavation.js",
+      "js/history-notebook.js",
+      "js/history-expeditions.js",
+      "js/history-celebration.js"
+    ],
+    "shared": [
+      "styles/edu.css"
     ],
     "links": [
       "about.html",
@@ -3461,9 +4023,16 @@ const dependencyDefinitions = [
     "scripts": [
       "js/main.js",
       "js/math-addition.js",
+      "js/math-subtraction.js",
       "js/math-division.js",
       "js/math-multiplication.js",
-      "js/math-subtraction.js"
+      "js/education-game-selector.js",
+      "js/math-correct-symbol.js",
+      "js/math-algebra-challenge.js"
+    ],
+    "shared": [
+      "styles/edu.css",
+      "js/education-game-selector.js"
     ],
     "links": [
       "about.html",
@@ -3519,7 +4088,15 @@ const dependencyDefinitions = [
       "styles/styles2.css"
     ],
     "scripts": [
-      "js/main.js"
+      "js/main.js",
+      "js/education-game-selector.js",
+      "js/science-explorers.js",
+      "js/science-lab.js",
+      "js/science-detectives.js"
+    ],
+    "shared": [
+      "styles/edu.css",
+      "js/education-game-selector.js"
     ],
     "links": [
       "about.html",
@@ -4305,6 +4882,7 @@ const dependencyDefinitions = [
       "styles/styles2.css"
     ],
     "scripts": [
+      "js/featured-data.js",
       "js/featured.js",
       "js/main.js"
     ],
@@ -5308,6 +5886,141 @@ const dependencyDefinitions = [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
       "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
     ]
+  },
+  {
+    "page": "archives/friday-prayers/2026-11.html",
+    "mapped": true,
+    "css": [],
+    "scripts": [],
+    "links": [],
+    "assets": [
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/718.jpg"
+    ]
+  },
+  {
+    "page": "archives/love-letters-palestine/2026-11.html",
+    "mapped": true,
+    "css": [],
+    "scripts": [],
+    "links": [],
+    "assets": []
+  },
+  {
+    "page": "archives/ok-series/ok-america/2026-11.html",
+    "mapped": true,
+    "css": [],
+    "scripts": [],
+    "links": [],
+    "assets": [
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/ty12.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/wtf19.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/wtf20.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/wtf21.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/wtf22.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/wtf23.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/wtf24.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/wtf25.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/wtf26.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf0.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf1.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf10.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf2.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf3.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf4.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf5.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf6.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf7.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf8.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wtf9.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/lost/a-1.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/lost/a-2.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/lost/a-3.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/lost/a-4.jpg",
+      "https://www.youtube-nocookie.com/embed/WEQveK3_o6s"
+    ]
+  },
+  {
+    "page": "archives/ok-series/ok-humanity/2026-11.html",
+    "mapped": true,
+    "css": [],
+    "scripts": [],
+    "links": [],
+    "assets": [
+      "https://www.youtube-nocookie.com/embed/Ey8gm1W-e1Y"
+    ]
+  },
+  {
+    "page": "archives/ok-series/ok-israelis/2026-11.html",
+    "mapped": true,
+    "css": [],
+    "scripts": [],
+    "links": [],
+    "assets": [
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/lost/a.jpg"
+    ]
+  },
+  {
+    "page": "archives/ok-series/ok-palestine/2026-11.html",
+    "mapped": true,
+    "css": [],
+    "scripts": [],
+    "links": [],
+    "assets": [
+      "https://www.youtube-nocookie.com/embed/C2Sn8hCQ4T0"
+    ]
+  },
+  {
+    "page": "archives/west-bank/2026-11.html",
+    "mapped": true,
+    "css": [
+      "styles/archive.css",
+      "styles/styles2.css",
+      "styles/west-bank-archive.css"
+    ],
+    "scripts": [
+      "js/main.js",
+      "js/west-bank-archive.js",
+      "js/west-bank-communities.js",
+      "js/west-bank-reports.js"
+    ],
+    "links": [
+      "about.html",
+      "archives/west-bank/2026-11.html",
+      "archives/west-bank/index.html",
+      "contact.html",
+      "hero.html",
+      "index.html",
+      "legal.html",
+      "mpga.html",
+      "west-bank.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ]
+  },
+  {
+    "page": "archives/world-leaders/iran/2026-11.html",
+    "mapped": true,
+    "css": [],
+    "scripts": [],
+    "links": [],
+    "assets": [
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/2387.jpg",
+      "https://www.youtube-nocookie.com/embed/hgl_aLfYvq8"
+    ]
+  },
+  {
+    "page": "archives/world-leaders/trump/2026-11.html",
+    "mapped": true,
+    "css": [],
+    "scripts": [],
+    "links": [],
+    "assets": [
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/lost/prezp.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg",
+      "https://www.youtube-nocookie.com/embed/5FgmjGFTS8I",
+      "https://www.youtube-nocookie.com/embed/_DRNljTgiyg"
+    ]
   }
 ];
 
@@ -5490,6 +6203,25 @@ const dependencyDefinitions = [
             } else if (!(mission.plannedTasks || []).length) {
                 bilingual(card, 'p', ['Awaiting a real page before tasks and dependencies are activated.', 'بانتظار صفحة فعلية لتفعيل المهام والاعتماديات.']);
             }
+            if (mission.plannedFilename) {
+                const filename = document.createElement('p');
+                filename.textContent = mission.plannedFilename;
+                filename.dir = 'ltr';
+                card.append(filename);
+            }
+            if (mission.referencePages) {
+                const references = document.createElement('ul');
+                mission.referencePages.forEach(page => {
+                    const item = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = page;
+                    link.textContent = page;
+                    link.dir = 'ltr';
+                    item.append(link);
+                    references.append(item);
+                });
+                card.append(references);
+            }
             const plannedList = document.createElement('ul');
             (mission.plannedTasks || []).forEach(labels => bilingual(plannedList, 'li', labels));
             card.append(plannedList);
@@ -5584,7 +6316,8 @@ const dependencyDefinitions = [
         const groups = [
             ['css', ['CSS files', 'ملفات التنسيق']],
             ['scripts', ['JavaScript files', 'ملفات جافاسكريبت']],
-            ['links', ['Direct page links', 'روابط الصفحات المباشرة']]
+            ['links', ['Direct page links', 'روابط الصفحات المباشرة']],
+            ['data', ['JSON / data files (including script-loaded data)', 'ملفات JSON / البيانات (بما فيها البيانات المحمّلة عبر البرامج)']]
         ];
         groups.forEach(([field, title]) => {
             const branch = document.createElement('div');
@@ -5592,24 +6325,24 @@ const dependencyDefinitions = [
             bilingual(branch, 'h3', title);
             const count = document.createElement('span');
             count.className = 'dependency-node';
-            count.textContent = String(record[field].length);
+            count.textContent = String((record[field] || []).length);
             branch.append(count);
             branches.append(branch);
             bilingual(details, 'h3', title);
             const list = document.createElement('ul');
-            record[field].forEach(file => {
+            (record[field] || []).forEach(file => {
                 const li = document.createElement('li');
                 const link = document.createElement('a');
                 link.href = file;
                 link.textContent = file;
                 link.dir = 'ltr';
                 li.append(link);
-                if (file === 'styles/styles2.css' || file === 'js/main.js') {
+                if (['styles/styles2.css', 'js/main.js', 'js/archive.js', 'js/archive-compat.js', 'archives/manifest.json'].includes(file) || record.shared?.includes(file)) {
                     bilingual(li, 'span', [' — shared', ' — مشترك']);
                 }
                 list.append(li);
             });
-            if (!record[field].length) bilingual(list, 'li', ['No direct local references found.', 'لم يُعثر على مراجع محلية مباشرة.']);
+            if (!(record[field] || []).length) bilingual(list, 'li', ['No direct local references found.', 'لم يُعثر على مراجع محلية مباشرة.']);
             details.append(list);
         });
         if (record.assets?.length) {
