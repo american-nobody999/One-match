@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-17-2026
-   Date modified: 11/06/2026
+   Date modified: 11/11/2026
 */
 :where(.world-leaders-page) h2 {
 font-family: var(--font-ar);
@@ -230,15 +230,6 @@ html[lang="ar"] .world-leaders-section, html[lang="ar"] .world-leader-modal { di
     .world-leader-gallery img { width: 100%; }
 }
 
-/* Reduced a further 25% from half width, preserving widescreen proportions. */
-#leader-1-modal .video-wrapper {
-    width: 37.5%;
-    height: auto;
-    padding-bottom: 0;
-    aspect-ratio: 16 / 9;
-    margin: 1.5rem auto;
-}
-
 #leader-2-modal .video-wrapper {
     width: 50%;
     height: auto;
@@ -255,95 +246,6 @@ html[lang="ar"] .world-leaders-section, html[lang="ar"] .world-leader-modal { di
     }
 }
 
-/* Trump dialog only: retain the native dialog sizing, scrolling and backdrop. */
-
-#leader-1-modal .world-leader-gallery-section {
-    width: 100%;
-    min-width: 0;
-    margin-block: 1.5rem;
-    padding: clamp(1.5rem, 3vw, 2.5rem);
-    border: 2px solid #303C22;
-    border-radius: 12px;
-    box-shadow: inset 0 0 0 1px #303C22,
-        inset 0 0 0 4px #FFFFFF,
-        inset 0 0 0 7px #151515,
-        inset 0 0 0 10px #C9AA65,
-        inset 0 0 0 13px #A52A32;
-}
-#leader-1-modal .world-leader-gallery {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    gap: 1rem;
-    padding-block: .5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    scroll-snap-type: x proximity;
-}
-#leader-1-modal .world-leader-gallery img {
-    flex: 0 0 min(100%, 20rem);
-    width: min(100%, 20rem);
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
-    border: 0;
-    box-shadow: none;
-    scroll-snap-align: start;
-}
-
-#leader-1-modal .countdown-section {
-    min-width: 0;
-    margin-block: 1.5rem;
-    padding: clamp(.5rem, 2vw, 1rem);
-    text-align: center;
-}
-#leader-1-modal #countdown {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: .75rem;
-    width: 100%;
-    max-width: 36rem;
-    margin-inline: auto;
-}
-#leader-1-modal .time-box {
-    min-width: 0;
-    padding: 1rem .35rem;
-    border: 1px solid #B89B57;
-    border-radius: 8px;
-    background: #153D2B;
-    color: #F2D88C;
-    box-shadow: inset 0 1px 0 rgba(242, 216, 140, .15), 0 3px 0 #080d09, 0 5px 10px rgba(0, 0, 0, .18);
-}
-#leader-1-modal .time-box > span {
-    display: block;
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 700;
-    line-height: 1.2;
-    font-variant-numeric: tabular-nums;
-    overflow-wrap: anywhere;
-}
-#leader-1-modal .time-box p {
-    margin: .65rem 0 0;
-    font-size: .85rem;
-    line-height: 1.5;
-    color: #E5F2E7;
-}
-#leader-1-modal .time-box .lang-ar { direction: rtl; }
-#leader-1-modal #countdown-status { margin: 1rem 0 0; }
-@media (max-width: 480px) {
-    #leader-1-modal #countdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (prefers-reduced-motion: reduce) {
-    #leader-1-modal .world-leader-gallery { scroll-behavior: auto; }
-}
-
 /* Explore frame belongs to the three card flags, not their card containers. */
 .world-leaders-page .world-leader-card .world-leader-trigger > img {
     outline: 0;
@@ -356,26 +258,112 @@ html[lang="ar"] .world-leaders-section, html[lang="ar"] .world-leader-modal { di
         inset 0 0 0 13px #A52A32;
 }
 
-/* Trump choice flow only: preserve other leader dialogs and page cards. */
-#leader-1-modal .trump-path-choices { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-block: 1.5rem; }
-#leader-1-modal .trump-path-choices .site-button { min-height: 44px; max-width: 100%; white-space: normal; }
-#leader-1-modal .trump-path-choices .site-button:last-child { background: #513126; color: #fff3d7; }
-.trump-path-modal { overflow-wrap: anywhere; }
-.trump-path-modal h2, .trump-path-modal h3 { text-align: center; }
-.trump-path-modal p { margin-block: 1rem; line-height: 1.85; }
-.trump-path-modal .lang-ar { direction: rtl; text-align: right; }
-.trump-path-modal .trump-path-portrait { display: block; width: min(100%, 30rem); max-width: 100%; height: auto; margin: 1rem auto; }
-.trump-path-modal .trump-path-social { display: flex; justify-content: center; margin-block: 1rem; }
-.trump-path-modal .trump-path-social a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
-.trump-path-modal .trump-path-social img { display: block; width: 32px; height: 32px; }
-.trump-path-modal .video-wrapper { position: relative; width: 100%; height: auto; padding: 0; aspect-ratio: 16 / 9; margin-block: 1rem; }
-.trump-path-modal .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.trump-path-modal .site-button { max-width: 100%; min-height: 44px; white-space: normal; }
-:is(#leader-1-modal, .trump-path-modal) :is(button, a):focus-visible { outline: 3px solid #805923; outline-offset: 3px; }
+/* Direct collection link beneath the World Leaders cards. */
+.world-leaders-page .world-leaders-archive-link { display: flex; justify-content: center; width: 100%; margin-block: 2rem 1rem; }
+.world-leaders-page .world-leaders-archive-link .site-button { max-width: 100%; box-sizing: border-box; white-space: normal; overflow-wrap: anywhere; text-align: center; }
+.world-leaders-page .world-leaders-archive-link .lang-ar { text-align: center; }
 
-/* Center only the Work Together destination; preserve Arabic direction. */
-#leader-work-together-modal { text-align: center; }
-#leader-work-together-modal .lang-ar { text-align: center; }
-#leader-work-together-modal p { max-width: 60ch; margin-inline: auto; }
-#leader-work-together-modal .trump-path-reference { display: inline-flex; justify-content: center; }
-#leader-work-together-modal .trump-work-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-block-start: 1rem; }
+/* Iran introduction and prayer action alignment only. */
+#leader-2-modal #leader-2-title,
+#leader-2-modal .iran-publication-date,
+#leader-2-modal .iran-subtitle {
+    text-align: center;
+}
+#leader-2-modal .iran-publication-date {
+    display: block;
+}
+#leader-2-modal .mecca-prayer-card > .site-button {
+    display: flex;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.mecca-prayer-card > h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .mecca-prayer-card > h3 {
+        font-size: 1.6rem;
+    }
+}
+
+/* The Trump feature deliberately uses ordinary, undecorated presentation. */
+.world-leaders-page #leader-1-modal.trump-minimal {
+    min-width: 0;
+    padding: 1rem;
+    background: white;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+.world-leaders-page #leader-1-modal.trump-minimal p {
+    max-width: 100%;
+    margin: 1rem 0 0;
+    font: inherit;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+#leader-1-modal .trump-countdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem;
+    font-size: .8rem;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Humanitarian open letter above the leader collection. */
+.world-leaders-appeal {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 50rem;
+    min-width: 0;
+    margin: 0 auto 2.5rem;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    border: 1px solid #c7bba5;
+    border-radius: .35rem;
+    background: #faf6ed;
+    color: #302b23;
+    box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .12);
+    text-align: start;
+    overflow-wrap: anywhere;
+}
+.world-leaders-appeal .appeal-heading {
+    max-width: 100%;
+    margin: 0 0 .75rem;
+    padding: 0;
+    color: inherit;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.4;
+    text-align: center;
+}
+.world-leaders-appeal .appeal-date {
+    display: block;
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.world-leaders-appeal p {
+    max-width: 100%;
+    margin: 0 0 1.15rem;
+    font-size: clamp(1rem, 1rem + .2vw, 1.15rem);
+    line-height: 1.85;
+}
+.world-leaders-appeal .lang-ar {
+    direction: rtl;
+}
+.world-leaders-appeal p .lang-ar {
+    text-align: right;
+}
+.world-leaders-appeal .appeal-signature {
+    font-weight: 700;
+}
+.world-leaders-appeal p:last-child {
+    margin-bottom: 0;
+}
