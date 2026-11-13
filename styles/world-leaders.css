@@ -325,35 +325,40 @@ html[lang="ar"] .world-leaders-section, html[lang="ar"] .world-leader-modal { di
     max-width: 50rem;
     min-width: 0;
     margin: 0 auto 2.5rem;
-    padding: clamp(1.25rem, 4vw, 2.5rem);
-    border: 1px solid #c7bba5;
-    border-radius: .35rem;
+    padding: clamp(1.5rem, 5vw, 3.25rem);
+    border: 1px solid #b5a071;
+    border-radius: .5rem;
     background: #faf6ed;
-    color: #302b23;
-    box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .12);
+    color: #44372b;
+    box-shadow: 0 .3rem 1.2rem rgba(71, 55, 34, .09);
     text-align: start;
     overflow-wrap: anywhere;
 }
 .world-leaders-appeal .appeal-heading {
     max-width: 100%;
-    margin: 0 0 .75rem;
+    margin: 0 0 1.75rem;
     padding: 0;
     color: inherit;
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1.7rem, 3.5vw, 2.35rem);
     line-height: 1.4;
     text-align: center;
 }
-.world-leaders-appeal .appeal-date {
+.world-leaders-appeal .appeal-heading .lang-en {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+}
+.world-leaders-appeal .appeal-heading::after {
+    content: "";
     display: block;
-    margin-bottom: 1.75rem;
-    font-size: 1rem;
-    text-align: center;
+    width: min(8rem, 40%);
+    height: 1px;
+    margin: 1.25rem auto 0;
+    background: #b5a071;
 }
 .world-leaders-appeal p {
     max-width: 100%;
-    margin: 0 0 1.15rem;
+    margin: 0 0 1.3rem;
     font-size: clamp(1rem, 1rem + .2vw, 1.15rem);
-    line-height: 1.85;
+    line-height: 1.9;
 }
 .world-leaders-appeal .lang-ar {
     direction: rtl;
@@ -362,8 +367,13 @@ html[lang="ar"] .world-leaders-section, html[lang="ar"] .world-leader-modal { di
     text-align: right;
 }
 .world-leaders-appeal .appeal-signature {
+    margin-top: 1.75rem;
     font-weight: 700;
+    color: #59452e;
 }
 .world-leaders-appeal p:last-child {
     margin-bottom: 0;
+    padding-top: .5rem;
+    color: #555b3f;
+    font-size: 1rem;
 }
