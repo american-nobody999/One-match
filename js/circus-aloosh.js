@@ -1,6 +1,6 @@
-/* Author: Leslie Brockman
- * Circus Aloosh Game SVG Symbols/ memeory game
- */
+// Author: Leslie Brockman
+// Circus Aloosh Game SVG Symbols/ memeory game
+ 
 (() => {
     'use strict';
     const game = document.getElementById('aloosh-game');
