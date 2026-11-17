@@ -1,0 +1,222 @@
+  <!-- Author: Leslie Brockman
+       Circus Aloosh Memory Game page.
+       Date modified: 11/16/2026 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Leslie Brockman">
+  <meta name="description" content="Aloosh’s bilingual circus memory game: discover eight matching pairs at the Gaza Circus School.">
+  <title>Aloosh’s Magical Memory Match / لعبة الذاكرة السحرية مع عمو علوش — MPGA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;display=swap" rel="stylesheet">
+  <!-- Page typography only; retain the existing shared-header font imports above. -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700&amp;family=Fredoka:wght@600;700&amp;family=Nunito:wght@400;700&amp;family=Rye&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/styles2.css">
+  <link rel="stylesheet" href="/styles/circus-aloosh.css">
+  <script src="/js/main.js" defer></script>
+  <script src="/js/circus-aloosh.js" defer></script>
+</head>
+<body class="home-page circus-page-body aloosh-page">
+<header class="site-header" data-global-chrome>
+      <div class="header-container">
+
+
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
+          <div class="header-center">
+              <h1 class="site-title state-title">
+                  <span class="lang-en">State of Palestine</span>
+                  <span class="lang-ar">دولة فلسطين</span>
+              </h1>
+              <nav id="circus-navigation" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                          <span class="lang-en">MPGA</span>
+                          <span class="lang-ar">MPGA</span>
+                  </a></li>
+                  <li><a href="about.html" class="nav-btn">
+                        <span class="lang-en">About Us</span>
+                        <span class="lang-ar">من نحن</span>
+                  </a></li>
+                </ul>
+              </nav>
+          </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                      English | العربية
+              </button>
+  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+              <button id="menu-toggle" aria-controls="circus-navigation" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  ☰
+              </button>
+        </div>
+  </header>
+
+<main id="aloosh-game" class="aloosh-game" aria-labelledby="aloosh-title">
+  <!-- CSS/SVG scenery only; never intercepts game or navigation input. -->
+  <div class="aloosh-tent-decor" aria-hidden="true">
+    <div class="aloosh-canopy"></div>
+    <svg class="aloosh-flags" viewBox="0 0 1000 130" preserveAspectRatio="none" focusable="false">
+      <path d="M0 12Q500 160 1000 12" fill="none" stroke="#a76b29" stroke-width="4"/>
+      <g stroke="#f5cd70" stroke-width="2">
+        <path class="aloosh-flag" d="m75 32 52 13-35 48Z" fill="#f5cd70"/>
+        <path class="aloosh-flag" d="m205 61 52 9-30 47Z" fill="#d75c66"/>
+        <path class="aloosh-flag" d="m340 78 52 5-28 45Z" fill="#86b9ac"/>
+        <path class="aloosh-flag" d="m608 83 52-5-24 50Z" fill="#f7c9d6"/>
+        <path class="aloosh-flag" d="m743 70 52-9-22 56Z" fill="#f5cd70"/>
+        <path class="aloosh-flag" d="m873 45 52-13-17 61Z" fill="#86b9ac"/>
+      </g>
+    </svg>
+    <div class="aloosh-side-curtain aloosh-side-curtain--left"><span></span></div>
+    <div class="aloosh-side-curtain aloosh-side-curtain--right"><span></span></div>
+  </div>
+  <header class="aloosh-marquee">
+    <div class="aloosh-marquee-lights" aria-hidden="true"><span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <p class="aloosh-eyebrow"><span class="lang-en" lang="en">Gaza Circus School · The Main Event</span><span class="lang-ar hidden" lang="ar" dir="rtl">مدرسة سيرك غزة · العرض الرئيسي</span></p>
+    <h2 id="aloosh-title"><span class="lang-en" lang="en">Aloosh’s Magical Memory Match</span><span class="lang-ar hidden" lang="ar" dir="rtl">لعبة الذاكرة السحرية مع عمو علوش</span></h2>
+    <p class="aloosh-tagline"><span class="lang-en" lang="en">A little circus magic. Find the matching pairs!</span><span class="lang-ar hidden" lang="ar" dir="rtl">قليل من سحر السيرك. اعثر على الأزواج المتطابقة!</span></p>
+  </header>
+  <div class="aloosh-performance">
+    <div class="aloosh-bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <aside class="aloosh-art-slot aloosh-character" data-asset-state="pending" aria-labelledby="aloosh-character-name">
+      <span id="aloosh-character-name" class="aloosh-character-name"><span class="lang-en" lang="en">Aloosh</span><span class="lang-ar hidden" lang="ar" dir="rtl">عمو علوش</span></span>
+      <!-- Approved Three Match artwork; preserve the full transparent illustration.
+           Existing load/error handling and animation wrappers remain reusable. -->
+      <div class="aloosh-character-reaction">
+        <div class="aloosh-character-idle">
+          <div class="aloosh-character-art">
+            <img class="aloosh-character-image"
+                 src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/a-bubble.png"
+                 data-alt-en="Aloosh the clown blowing colorful bubbles."
+                 data-alt-ar="المهرج عمو علوش ينفخ فقاعات ملونة."
+                 alt="Aloosh the clown blowing colorful bubbles."
+                 decoding="async" hidden>
+          </div>
+        </div>
+      </div>
+      <div class="aloosh-character-bubbles" aria-hidden="true"><i></i><i></i><i></i><i class="aloosh-finale-bubble"></i><i class="aloosh-finale-bubble"></i></div>
+      <span class="aloosh-character-stars" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i></span>
+    </aside>
+    <section class="aloosh-play-stage" aria-labelledby="aloosh-board-title">
+      <h3 id="aloosh-board-title"><span class="lang-en" lang="en">Find the matching circus pairs</span><span class="lang-ar hidden" lang="ar" dir="rtl">اعثر على أزواج رموز السيرك المتطابقة</span></h3>
+      <p id="aloosh-instructions"><span class="lang-en" lang="en">Start the show, then turn over two cards. Matching pairs stay face up. Remember the others and find every pair in your chosen level!</span><span class="lang-ar hidden" lang="ar" dir="rtl">ابدأ العرض، ثم اقلب بطاقتين. تبقى الأزواج المتطابقة مكشوفة. تذكّر أماكن البطاقات الأخرى واعثر على جميع الأزواج في المستوى الذي اخترته!</span></p>
+      <dl class="aloosh-scoreboard">
+        <div><dt><span class="lang-en" lang="en">Moves</span><span class="lang-ar hidden" lang="ar" dir="rtl">المحاولات</span></dt><dd id="aloosh-moves">0</dd></div>
+        <div><dt><span class="lang-en" lang="en">Time</span><span class="lang-ar hidden" lang="ar" dir="rtl">الوقت</span></dt><dd id="aloosh-timer" dir="ltr">00:00</dd></div>
+        <div><dt><span class="lang-en" lang="en">Matches found</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأزواج المتطابقة</span></dt><dd id="aloosh-matches" dir="ltr">0 / 8</dd></div>
+      </dl>
+      <div class="aloosh-game-toolbar">
+      <fieldset class="aloosh-level-selector">
+        <legend><span class="lang-en" lang="en">Choose your level</span><span class="lang-ar hidden" lang="ar" dir="rtl">اختر مستواك</span></legend>
+        <label class="aloosh-level-option">
+          <input type="radio" name="aloosh-level" value="1" checked>
+          <span><strong><span class="lang-en" lang="en">1 · Little Explorer</span><span class="lang-ar hidden" lang="ar" dir="rtl">1 · المستكشف الصغير</span></strong></span>
+        </label>
+        <label class="aloosh-level-option">
+          <input type="radio" name="aloosh-level" value="2">
+          <span><strong><span class="lang-en" lang="en">2 · Circus Apprentice</span><span class="lang-ar hidden" lang="ar" dir="rtl">2 · متدرّب السيرك</span></strong></span>
+        </label>
+        <label class="aloosh-level-option">
+          <input type="radio" name="aloosh-level" value="3">
+          <span><strong><span class="lang-en" lang="en">3 · Circus Star</span><span class="lang-ar hidden" lang="ar" dir="rtl">3 · نجم السيرك</span></strong></span>
+        </label>
+      </fieldset>
+      <div class="aloosh-controls">
+        <button type="button" id="aloosh-start"><span class="lang-en" lang="en">Start the show!</span><span class="lang-ar hidden" lang="ar" dir="rtl">ابدأ العرض!</span></button>
+        <button type="button" id="aloosh-restart" hidden><span class="lang-en" lang="en">Replay · New game</span><span class="lang-ar hidden" lang="ar" dir="rtl">العب مجددًا · لعبة جديدة</span></button>
+      </div>
+      </div>
+      <p id="aloosh-message" class="aloosh-message is-ready" role="status" aria-live="polite" aria-atomic="true"><span class="lang-en" lang="en">The cards are waiting backstage. Ready when you are!</span><span class="lang-ar hidden" lang="ar" dir="rtl">البطاقات تنتظر خلف الكواليس. ابدأ عندما تكون مستعدًا!</span></p>
+      <!-- Selected level prepares 16, 20, or 30 face-down cards; Start enables play. -->
+      <div id="aloosh-board" class="aloosh-board" role="group" aria-labelledby="aloosh-board-title" aria-describedby="aloosh-instructions"></div>
+      <section id="aloosh-victory" class="aloosh-victory" aria-labelledby="aloosh-victory-title" hidden>
+        <div class="aloosh-victory-art" aria-hidden="true">
+          <span class="aloosh-victory-star">✦</span>
+          <svg viewBox="0 0 140 90" focusable="false">
+            <ellipse cx="70" cy="83" rx="48" ry="5" fill="#315e53" opacity=".15"/>
+            <g stroke="#a77830" stroke-width="2" stroke-linejoin="round">
+              <path d="M32 44h76l4 34q-42 10-84 0Z" fill="#FFFFFF"/>
+              <path d="M32 44h18l-3 37-19-3Z" fill="#CE1126"/>
+              <path d="M88 44h20l4 34-21 3Z" fill="#007A3D"/>
+              <path d="M70 12Q56 29 20 47q50 15 100 0Q84 29 70 12Z" fill="#fff0ce"/>
+              <path d="M70 12Q51 30 45 53q-13-1-25-6 36-18 50-35Z" fill="#CE1126"/>
+              <path d="M70 12q19 18 25 41 13-1 25-6-36-18-50-35Z" fill="#007A3D"/>
+              <path d="M20 47q13 12 25 6 13 11 25 4 12 7 25-4 12 6 25-6" fill="none" stroke="#e5b446" stroke-width="4"/>
+              <path d="M58 82V67a12 12 0 0 1 24 0v15" fill="#390e19"/>
+              <circle cx="70" cy="8" r="4" fill="#f5cd70"/>
+            </g>
+          </svg>
+          <span class="aloosh-victory-star">✧</span>
+        </div>
+        <h3 id="aloosh-victory-title"><span class="lang-en" lang="en">Hooray! You Did It!</span><span class="lang-ar hidden" lang="ar" dir="rtl">يا سلام! أحسنت!</span></h3>
+        <p class="aloosh-victory-cheer"><span class="lang-en" lang="en">Aloosh is cheering for you!</span><span class="lang-ar hidden" lang="ar" dir="rtl">عمو علوش يشجعك!</span></p>
+        <dl id="aloosh-final-score" class="aloosh-victory-scores">
+          <div><dt><span class="lang-en" lang="en">Pairs Found</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأزواج المتطابقة</span></dt><dd id="aloosh-final-pairs">0</dd></div>
+          <div><dt><span class="lang-en" lang="en">Moves</span><span class="lang-ar hidden" lang="ar" dir="rtl">المحاولات</span></dt><dd id="aloosh-final-moves">0</dd></div>
+          <div><dt><span class="lang-en" lang="en">Time</span><span class="lang-ar hidden" lang="ar" dir="rtl">الوقت</span></dt><dd id="aloosh-final-time" dir="ltr">00:00</dd></div>
+        </dl>
+        <button type="button" id="aloosh-play-again"><span class="lang-en" lang="en">Play again!</span><span class="lang-ar hidden" lang="ar" dir="rtl">العب مجددًا!</span></button>
+      </section>
+      <noscript><p><span class="lang-en" lang="en">Please enable JavaScript to play Memory Match.</span><span class="lang-ar hidden" lang="ar" dir="rtl">يرجى تفعيل جافاسكريبت للعب لعبة الذاكرة.</span></p></noscript>
+    </section>
+  </div>
+  <div class="aloosh-bubble-exit">
+    <div class="aloosh-exit-bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="aloosh-return" href="circus-ring.html"><span class="lang-en" lang="en">Back to Main Ring</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى الحلبة الرئيسية</span></a>
+  </div>
+</main>
+ <footer class="site-footer" data-global-chrome>
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, a State Rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 <span class="footer-name">American Nobody</span>999 ✌️ 🇵🇸 🧭 👈</span>
+              <span class="lang-ar">&copy; 2026 <span class="footer-name">أمريكان نوبودي</span>999 ✌️ 🇵🇸 🧭 👈</span>
+            </p>
+          </div>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
+  </footer>
+
+
+</body>
+</html>
