@@ -1,5 +1,6 @@
 /* Author: Leslie Brockman
-   Date modified: 11/11/2026--ACTIVE--Dont touch this file unless you are working on Phase 3 */
+ * Circus Game styles.
+ * Date modified: 11/16/2026--ACTIVE--Dont touch this file unless you are working on Phase 4 */
 body.circus-page-body {
 background-color: #fffdf6;
     background-image:
@@ -1035,30 +1036,246 @@ body.circus-page-body {
     .circus-ring .circus-developer-david { max-width: 7rem; }
 }
 
-.circus-page-body .circus-ring .circus-mystery-stations {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 2.5rem 1rem;
-    padding: clamp(1rem, 3vw, 2rem);
+/* Phase 3A: circular tent interior and six reserved attraction positions. */
+.circus-ring .circus-tent { width: 100%; min-width: 0; }
+.circus-page-body .circus-ring .circus-tent-heading { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.circus-ring .circus-tent-scene {
+    position: relative;
+    isolation: isolate;
+    min-width: 0;
+    height: 49rem;
+    overflow: hidden;
+    border: 5px double var(--circus-gold);
+    border-radius: 48% 48% 24% 24% / 15% 15% 10% 10%;
+    perspective: 1000px;
+    background: radial-gradient(ellipse at 50% 10%, #e5bd7038, transparent 50%), #231a18;
+    box-shadow: inset 0 0 55px #000b, var(--circus-shadow);
 }
-.circus-ring .circus-mystery-attraction { grid-column: span 2; min-width: 0; margin: 0; }
-.circus-ring .circus-mystery-attraction:nth-child(4) { grid-column: 2 / span 2; }
-.circus-ring .circus-mystery-attraction:nth-child(5) { grid-column: 4 / span 2; }
-.circus-ring .circus-mystery-attraction svg { display: block; width: 100%; max-width: 18rem; height: auto; margin: 0 auto; }
-.circus-ring .circus-mystery-attraction figcaption,
-.circus-ring .circus-dj-teaser figcaption { color: var(--circus-cream); font-size: 1.1rem; font-weight: bold; line-height: 1.6; overflow-wrap: anywhere; }
-.circus-ring .circus-mystery-attraction figcaption span,
-.circus-ring .circus-dj-teaser figcaption span { display: block; }
-.circus-ring .circus-dj-teaser { width: min(100%, 23rem); min-width: 0; margin: 0 auto; padding: 1rem; border-top: 1px dashed var(--circus-gold); }
-.circus-ring .circus-dj-teaser svg { display: block; width: 100%; height: auto; }
-@media (max-width: 800px) {
-    .circus-page-body .circus-ring .circus-mystery-stations { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .circus-ring .circus-mystery-attraction { grid-column: auto; }
-    .circus-ring .circus-mystery-attraction:nth-child(4) { grid-column: auto; }
-    .circus-ring .circus-mystery-attraction:nth-child(5) { grid-column: 1 / -1; width: 50%; justify-self: center; }
+.circus-ring .circus-tent-wall {
+    position: absolute;
+    inset: 0 0 30%;
+    border-bottom: 8px double var(--circus-gold);
+    border-radius: 45% 45% 50% 50% / 12% 12% 24% 24%;
+    background: radial-gradient(ellipse at 50% 8%, #ffe8b527, transparent 65%),
+        linear-gradient(#160c1044, transparent 35%, #160c10bb),
+        repeating-linear-gradient(92deg, #130c1644 0, #fff1c418 3%, transparent 7%, #110b163d 11%, transparent 15%),
+        linear-gradient(90deg, #4b1627 0%, #853344 16%, #d4bb91 25%, #b99c76 30%, #21483d 39%, #355a49 50%, #21483d 61%, #b99c76 70%, #d4bb91 75%, #853344 84%, #4b1627 100%);
+    box-shadow: inset 2px 0 0 #e5bd7066, inset -2px 0 0 #e5bd7066, inset 35px 0 45px #0008, inset -35px 0 45px #0008, inset 0 -22px 28px #170e19aa, 0 18px 24px #0009;
+    pointer-events: none;
 }
-@media (max-width: 480px) {
-    .circus-page-body .circus-ring .circus-mystery-stations { grid-template-columns: minmax(0, 1fr); border-radius: 2rem; }
-    .circus-ring .circus-mystery-attraction:nth-child(5) { grid-column: auto; width: 100%; }
+.circus-ring .circus-wall-bay {
+    position: absolute;
+    top: 27%;
+    width: 15%;
+    height: 25%;
+    border: 4px double #e5bd7080;
+    border-radius: 45% 45% 5% 5%;
+    background: #231a1855;
+    box-shadow: inset 0 0 18px #0008;
+}
+.circus-ring .circus-wall-bay--left { left: 12%; transform: rotateY(25deg); }
+.circus-ring .circus-wall-bay--center { left: 42.5%; }
+.circus-ring .circus-wall-bay--right { right: 12%; transform: rotateY(-25deg); }
+.circus-ring .circus-tent-rigging {
+    position: absolute;
+    inset: 0 0 auto;
+    width: 100%;
+    height: 36%;
+    color: var(--circus-gold);
+    filter: drop-shadow(0 0 5px #ffe5a180);
+    pointer-events: none;
+}
+.circus-ring .circus-ring-floor {
+    position: absolute;
+    left: 3%;
+    top: 30%;
+    width: 94%;
+    height: 67%;
+    border: 12px double var(--circus-gold);
+    border-radius: 50%;
+    transform: rotateX(25deg);
+    border-color: #f3d08c #b28445 #8a5c2e #e1bd74;
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22337%22%20height%3D%22283%22%20viewBox%3D%220%200%20337%20283%22%3E%3Cfilter%20id%3D%22s%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.74%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23s%29%22%20opacity%3D%22.13%22%2F%3E%3Crect%20x%3D%2217%22%20y%3D%2237%22%20width%3D%221.0%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.130%22%20transform%3D%22rotate%280%2017%2037%29%22%2F%3E%3Crect%20x%3D%2296%22%20y%3D%2260%22%20width%3D%221.6%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2837%2096%2060%29%22%2F%3E%3Crect%20x%3D%22175%22%20y%3D%22129%22%20width%3D%222.2%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.200%22%20transform%3D%22rotate%2874%20175%20129%29%22%2F%3E%3Crect%20x%3D%22254%22%20y%3D%22244%22%20width%3D%222.8%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28111%20254%20244%29%22%2F%3E%3Crect%20x%3D%222%22%20y%3D%22128%22%20width%3D%221.0%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.270%22%20transform%3D%22rotate%28148%202%20128%29%22%2F%3E%3Crect%20x%3D%2281%22%20y%3D%2258%22%20width%3D%221.6%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.130%22%20transform%3D%22rotate%285%2081%2058%29%22%2F%3E%3Crect%20x%3D%22160%22%20y%3D%2234%22%20width%3D%222.2%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2842%20160%2034%29%22%2F%3E%3Crect%20x%3D%22239%22%20y%3D%2256%22%20width%3D%222.8%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.200%22%20transform%3D%22rotate%2879%20239%2056%29%22%2F%3E%3Crect%20x%3D%22318%22%20y%3D%22124%22%20width%3D%221.0%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28116%20318%20124%29%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%22238%22%20width%3D%221.6%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.270%22%20transform%3D%22rotate%28153%2066%20238%29%22%2F%3E%3Crect%20x%3D%22145%22%20y%3D%22121%22%20width%3D%222.2%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2810%20145%20121%29%22%2F%3E%3Crect%20x%3D%22224%22%20y%3D%2250%22%20width%3D%222.8%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2847%20224%2050%29%22%2F%3E%3Crect%20x%3D%22303%22%20y%3D%2225%22%20width%3D%221.0%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.200%22%20transform%3D%22rotate%2884%20303%2025%29%22%2F%3E%3Crect%20x%3D%2251%22%20y%3D%2246%22%20width%3D%221.6%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28121%2051%2046%29%22%2F%3E%3Crect%20x%3D%22130%22%20y%3D%22113%22%20width%3D%222.2%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.270%22%20transform%3D%22rotate%28158%20130%20113%29%22%2F%3E%3Crect%20x%3D%22209%22%20y%3D%22226%22%20width%3D%222.8%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2815%20209%20226%29%22%2F%3E%3Crect%20x%3D%22288%22%20y%3D%22108%22%20width%3D%221.0%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2852%20288%20108%29%22%2F%3E%3Crect%20x%3D%2236%22%20y%3D%2236%22%20width%3D%221.6%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.200%22%20transform%3D%22rotate%2889%2036%2036%29%22%2F%3E%3Crect%20x%3D%22115%22%20y%3D%2210%22%20width%3D%222.2%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28126%20115%2010%29%22%2F%3E%3Crect%20x%3D%22194%22%20y%3D%2230%22%20width%3D%222.8%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.270%22%20transform%3D%22rotate%28163%20194%2030%29%22%2F%3E%3Crect%20x%3D%22273%22%20y%3D%2296%22%20width%3D%221.0%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2820%20273%2096%29%22%2F%3E%3Crect%20x%3D%2221%22%20y%3D%22208%22%20width%3D%221.6%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2857%2021%20208%29%22%2F%3E%3Crect%20x%3D%22100%22%20y%3D%2289%22%20width%3D%222.2%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.200%22%20transform%3D%22rotate%2894%20100%2089%29%22%2F%3E%3Crect%20x%3D%22179%22%20y%3D%2216%22%20width%3D%222.8%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28131%20179%2016%29%22%2F%3E%3Crect%20x%3D%22258%22%20y%3D%22266%22%20width%3D%221.0%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.270%22%20transform%3D%22rotate%28168%20258%20266%29%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%228%22%20width%3D%221.6%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2825%206%208%29%22%2F%3E%3Crect%20x%3D%2285%22%20y%3D%2273%22%20width%3D%222.2%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2862%2085%2073%29%22%2F%3E%3Crect%20x%3D%22164%22%20y%3D%22184%22%20width%3D%222.8%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.200%22%20transform%3D%22rotate%2899%20164%20184%29%22%2F%3E%3Crect%20x%3D%22243%22%20y%3D%2264%22%20width%3D%221.0%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28136%20243%2064%29%22%2F%3E%3Crect%20x%3D%22322%22%20y%3D%22267%22%20width%3D%221.6%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.270%22%20transform%3D%22rotate%28173%20322%20267%29%22%2F%3E%3Crect%20x%3D%2270%22%20y%3D%22239%22%20width%3D%222.2%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2830%2070%20239%29%22%2F%3E%3Crect%20x%3D%22149%22%20y%3D%22257%22%20width%3D%222.8%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2867%20149%20257%29%22%2F%3E%3Crect%20x%3D%22228%22%20y%3D%2244%22%20width%3D%221.0%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.200%22%20transform%3D%22rotate%28104%20228%2044%29%22%2F%3E%3Crect%20x%3D%22307%22%20y%3D%22154%22%20width%3D%221.6%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28141%20307%20154%29%22%2F%3E%3Crect%20x%3D%2255%22%20y%3D%2233%22%20width%3D%222.2%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.270%22%20transform%3D%22rotate%28178%2055%2033%29%22%2F%3E%3Crect%20x%3D%22134%22%20y%3D%22235%22%20width%3D%222.8%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2835%20134%20235%29%22%2F%3E%3Crect%20x%3D%22213%22%20y%3D%22206%22%20width%3D%221.0%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2872%20213%20206%29%22%2F%3E%3Crect%20x%3D%22292%22%20y%3D%22223%22%20width%3D%221.6%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.200%22%20transform%3D%22rotate%28109%20292%20223%29%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%229%22%20width%3D%222.2%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28146%2040%209%29%22%2F%3E%3Crect%20x%3D%22119%22%20y%3D%22118%22%20width%3D%222.8%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.270%22%20transform%3D%22rotate%283%20119%20118%29%22%2F%3E%3Crect%20x%3D%22198%22%20y%3D%22273%22%20width%3D%221.0%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2840%20198%20273%29%22%2F%3E%3Crect%20x%3D%22277%22%20y%3D%22197%22%20width%3D%221.6%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2877%20277%20197%29%22%2F%3E%3Crect%20x%3D%2225%22%20y%3D%22167%22%20width%3D%222.2%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.200%22%20transform%3D%22rotate%28114%2025%20167%29%22%2F%3E%3Crect%20x%3D%22104%22%20y%3D%22183%22%20width%3D%222.8%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28151%20104%20183%29%22%2F%3E%3Crect%20x%3D%22183%22%20y%3D%22245%22%20width%3D%221.0%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.270%22%20transform%3D%22rotate%288%20183%20245%29%22%2F%3E%3Crect%20x%3D%22262%22%20y%3D%2276%22%20width%3D%221.6%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2845%20262%2076%29%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%22230%22%20width%3D%222.2%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2882%2010%20230%29%22%2F%3E%3Crect%20x%3D%2289%22%20y%3D%22153%22%20width%3D%222.8%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.200%22%20transform%3D%22rotate%28119%2089%20153%29%22%2F%3E%3Crect%20x%3D%22168%22%20y%3D%22122%22%20width%3D%221.0%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.235%22%20transform%3D%22rotate%28156%20168%20122%29%22%2F%3E%3Crect%20x%3D%22247%22%20y%3D%22137%22%20width%3D%221.6%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.270%22%20transform%3D%22rotate%2813%20247%20137%29%22%2F%3E%3Crect%20x%3D%22326%22%20y%3D%22198%22%20width%3D%222.2%22%20height%3D%220.9%22%20rx%3D%22.3%22%20fill%3D%22%23d6ae69%22%20opacity%3D%220.130%22%20transform%3D%22rotate%2850%20326%20198%29%22%2F%3E%3Crect%20x%3D%2274%22%20y%3D%2228%22%20width%3D%222.8%22%20height%3D%220.5%22%20rx%3D%22.3%22%20fill%3D%22%23fff1cd%22%20opacity%3D%220.165%22%20transform%3D%22rotate%2887%2074%2028%29%22%2F%3E%3Crect%20x%3D%22153%22%20y%3D%22181%22%20width%3D%221.0%22%20height%3D%220.7%22%20rx%3D%22.3%22%20fill%3D%22%23946a3e%22%20opacity%3D%220.200%22%20transform%3D%22rotate%28124%20153%20181%29%22%2F%3E%3Cpath%20d%3D%22m29%2016%201%20-0.7%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m76%2035%202%200.5%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m123%2092%203%20-0.7%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m170%20187%201%200.5%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m217%2043%202%20-0.7%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m264%20214%203%200.5%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m311%20146%201%20-0.7%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m27%20116%202%200.5%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m74%20124%203%20-0.7%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m121%20170%201%200.5%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m168%20254%202%20-0.7%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m215%2099%203%200.5%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m262%20259%201%20-0.7%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m309%20180%202%200.5%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m25%20139%203%20-0.7%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m72%20136%201%200.5%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m119%20171%202%20-0.7%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m166%20244%203%200.5%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m213%2078%201%20-0.7%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m260%20227%202%200.5%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m307%20137%203%20-0.7%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m23%2085%201%200.5%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m70%2071%202%20-0.7%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m117%2095%203%200.5%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m164%20157%201%20-0.7%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m211%20257%202%200.5%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m258%20118%203%20-0.7%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m305%2017%201%200.5%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m21%20231%202%20-0.7%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m68%20206%203%200.5%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m115%20219%201%20-0.7%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m162%20270%202%200.5%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m209%2082%203%20-0.7%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m256%20209%201%200.5%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.16%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m303%2097%202%20-0.7%22%20stroke%3D%22%23ba8747%22%20stroke-width%3D%220.7%22%20opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m19%2023%203%200.5%22%20stroke%3D%22%23e8ba70%22%20stroke-width%3D%220.9%22%20opacity%3D%220.24%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m66%20264%201%20-0.7%22%20stroke%3D%22%23f6d596%22%20stroke-width%3D%220.5%22%20opacity%3D%220.12%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22m19%2033%20.6%201.4%201.4%20.6-1.4%20.6-.6%201.4-.6-1.4-1.4-.6%201.4-.6Z%22%20fill%3D%22%23ffe6a0%22%20opacity%3D%22.22%22%2F%3E%3Cpath%20d%3D%22m308%2061%20.6%201.4%201.4%20.6-1.4%20.6-.6%201.4-.6-1.4-1.4-.6%201.4-.6Z%22%20fill%3D%22%23ffe6a0%22%20opacity%3D%22.22%22%2F%3E%3Cpath%20d%3D%22m37%20247%20.6%201.4%201.4%20.6-1.4%20.6-.6%201.4-.6-1.4-1.4-.6%201.4-.6Z%22%20fill%3D%22%23ffe6a0%22%20opacity%3D%22.22%22%2F%3E%3Cpath%20d%3D%22m302%20233%20.6%201.4%201.4%20.6-1.4%20.6-.6%201.4-.6-1.4-1.4-.6%201.4-.6Z%22%20fill%3D%22%23ffe6a0%22%20opacity%3D%22.22%22%2F%3E%3C%2Fsvg%3E"), radial-gradient(ellipse at 38% 28%, #fff2c43b, transparent 52%),
+        radial-gradient(ellipse at 75% 80%, #65401e44, transparent 50%),
+        radial-gradient(ellipse at 50% 35%, #f0d79e, #c59d61 63%, #8b6339);
+    box-shadow: inset 0 4px 2px #fff1bd88, inset 0 14px 25px #56361977, inset 0 -5px 10px #fff0c455, 0 4px 0 #dfb466, 0 9px 0 #805633, 0 15px 0 #4b2228, 0 19px 0 #301b22, 0 28px 26px #000a;
+    pointer-events: none;
+}
+.circus-ring .circus-attraction-nav { position: relative; height: 100%; }
+.circus-ring .circus-attraction-positions { position: relative; height: 100%; margin: 0; padding: 0; list-style: none; }
+.circus-ring .circus-attraction-position { position: absolute; width: 27%; min-width: 0; }
+/* Clockwise positions leave the center of the sandy performance floor open. */
+.circus-ring .circus-attraction-position--memory { top: 24%; left: 20%; }
+.circus-ring .circus-attraction-position--juggling { top: 24%; right: 20%; }
+.circus-ring .circus-attraction-position--dance { top: 49%; right: 3%; }
+.circus-ring .circus-attraction-position--jigsaw { bottom: 5%; right: 20%; }
+.circus-ring .circus-attraction-position--banners { bottom: 5%; left: 20%; }
+.circus-ring .circus-attraction-position--popcorn { top: 49%; left: 3%; }
+.circus-ring .circus-attraction-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    margin: 0;
+    padding: .5rem;
+    border: 0;
+    border-radius: .75rem;
+    background: transparent;
+    color: var(--circus-cream);
+    font: inherit;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+.circus-ring .circus-attraction-entry:disabled { opacity: 1; cursor: default; color: var(--circus-cream); -webkit-text-fill-color: currentColor; }
+.circus-ring .circus-attraction-art { display: block; width: 100%; max-width: 8rem; height: auto; color: var(--circus-gold); filter: drop-shadow(0 7px 5px #231a1870); }
+.circus-ring .circus-attraction-label {
+    width: 100%;
+    padding: .45rem .6rem;
+    border: 1px solid var(--circus-gold);
+    border-radius: .35rem;
+    background: #390e19;
+    box-shadow: 0 4px 8px #0005;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.45;
+}
+.circus-ring .circus-attraction-status { margin-top: .25rem; padding: .1rem .5rem; border-radius: .25rem; background: #231a18; color: var(--circus-cream); font-size: .85rem; line-height: 1.5; }
+.circus-ring a.circus-attraction-entry:is(:hover, :focus-visible) { background: #231a1880; }
+.circus-ring a.circus-attraction-entry:is(:hover, :focus-visible) .circus-attraction-label { background: #5c1b28; text-decoration: underline; text-underline-offset: .2em; }
+.circus-ring a.circus-attraction-entry:focus-visible { outline: 3px solid var(--circus-cream); outline-offset: -3px; }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-tent-scene { height: 55rem; perspective: 1400px; }
+    .circus-ring .circus-attraction-position { width: 30%; }
+    .circus-ring .circus-attraction-position--memory,
+    .circus-ring .circus-attraction-position--banners { left: 15%; }
+    .circus-ring .circus-attraction-position--juggling,
+    .circus-ring .circus-attraction-position--jigsaw { right: 15%; }
+    .circus-ring .circus-attraction-art { max-width: 7rem; }
+    .circus-ring .circus-ring-floor { transform: rotateX(15deg); }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-tent-scene { height: auto; border-radius: 40% 40% 1.5rem 1.5rem / 5rem 5rem 1.5rem 1.5rem; }
+    .circus-ring .circus-tent-wall { bottom: 0; border-radius: inherit; border-bottom: 0; }
+    .circus-ring .circus-tent-rigging { height: 10rem; }
+    .circus-ring .circus-wall-bay { top: 3rem; height: 4rem; }
+    .circus-ring .circus-ring-floor { top: 9rem; bottom: 1rem; height: auto; transform: none; border-width: 6px; border-radius: 45% 45% 30% 30% / 5rem 5rem 4rem 4rem; }
+    .circus-ring .circus-attraction-positions { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; height: auto; padding: 9rem 1rem 2rem; }
+    .circus-ring .circus-attraction-position { position: relative; inset: auto; width: min(100%, 21rem); }
+    .circus-ring .circus-attraction-entry { padding: .75rem; background: #231a1833; }
+    .circus-ring .circus-attraction-art { max-width: 7rem; }
+}
+
+/* Phase 3B: reusable miniature stages; all scenery stays independent. */
+.circus-ring .circus-attraction-position { --station-fabric: #702532; --station-trim: var(--circus-gold); }
+.circus-ring .circus-attraction-position--memory { --station-fabric: #35574d; }
+.circus-ring .circus-attraction-position--juggling { --station-fabric: #8c343c; }
+.circus-ring .circus-attraction-position--dance { --station-fabric: #354f59; }
+.circus-ring .circus-attraction-position--jigsaw { --station-fabric: #56503b; }
+.circus-ring .circus-attraction-position--banners { --station-fabric: #702532; }
+.circus-ring .circus-attraction-position--popcorn { --station-fabric: #46776f; }
+.circus-ring .circus-station-stage {
+    position: relative;
+    display: block;
+    isolation: isolate;
+    width: min(100%, 10rem);
+    height: 7.5rem;
+    margin-bottom: .3rem;
+    filter: drop-shadow(0 7px 4px #231a1866);
+}
+.circus-ring .circus-station-arch {
+    position: absolute;
+    inset: 0 8% 12%;
+    border: 5px double var(--station-trim);
+    border-bottom: 0;
+    border-radius: 50% 50% 0 0 / 38% 38% 0 0;
+    background: radial-gradient(ellipse at 50% 0, #fff0d026, transparent 60%),
+        repeating-linear-gradient(90deg, #0003 0 5%, transparent 5% 12%), var(--station-fabric);
+    box-shadow: inset 5px 0 8px #0006, inset -5px 0 8px #0006, 3px 3px 0 #231a18;
+}
+.circus-ring .circus-station-character { position: absolute; inset: 12% 4% 12%; display: flex; align-items: end; justify-content: center; }
+.circus-ring .circus-station-character .circus-attraction-art { width: 100%; height: 100%; max-width: 9rem; overflow: visible; filter: drop-shadow(2px 4px 2px #0005); }
+.circus-ring .circus-station-platform {
+    position: absolute;
+    inset: auto 0 0;
+    height: 20%;
+    border: 2px solid var(--station-trim);
+    border-radius: 50% / 35%;
+    background: linear-gradient(#dfc69b 0 28%, #8d603c 30% 45%, var(--station-fabric) 47% 80%, #231a18);
+    box-shadow: 0 5px 0 #231a18, 0 9px 8px #231a1866;
+}
+.circus-ring .circus-attraction-position--memory .circus-station-platform { border-radius: 15% / 30%; }
+.circus-ring .circus-attraction-position--dance .circus-station-platform { background: repeating-linear-gradient(90deg, transparent 0 18%, #e5bd7055 18% 20%), linear-gradient(#dfc69b, #35515a 40%, #231a18); }
+.circus-ring .circus-attraction-position--banners .circus-station-arch { border-radius: .25rem; border-top-width: 8px; }
+.circus-ring .circus-attraction-position--popcorn .circus-station-arch { border-radius: 15% 15% 0 0; background: repeating-linear-gradient(90deg, #fff0d0 0 16%, #a52e35 16% 32%) top / 100% 28% no-repeat, linear-gradient(#231a18, #46776f); }
+.circus-ring .circus-attraction-position--popcorn .circus-station-platform { border-radius: .25rem; }
+.circus-ring .circus-attraction-label { border: 3px double var(--circus-gold); background: linear-gradient(#5b2830, #390e19); box-shadow: inset 0 0 0 2px #231a18, 0 4px 0 #231a18, 0 7px 9px #0005; }
+.circus-ring .circus-attraction-entry:disabled .circus-attraction-status { border: 1px dashed #e5bd7099; }
+.circus-ring .circus-attraction-open { margin-top: .3rem; padding: .15rem .55rem; border-radius: .3rem; background: var(--circus-cream); color: var(--circus-velvet); font-size: .85rem; font-weight: bold; line-height: 1.5; text-decoration: underline; text-underline-offset: .15em; }
+.circus-ring a.circus-attraction-entry { cursor: pointer; }
+.circus-ring a.circus-attraction-entry:is(:hover, :focus-visible) .circus-station-arch { box-shadow: inset 0 0 15px #e5bd7033, 0 0 10px #e5bd7080; }
+.circus-ring a.circus-attraction-entry:active .circus-attraction-label { box-shadow: inset 0 2px 5px #0008; }
+/* Photo mats sit above the stations, with no image requests or interactive content. */
+.circus-ring .circus-wall-bay { top: 7%; height: 16%; padding: .3rem; border-color: var(--circus-gold); box-shadow: inset 0 0 0 2px #231a18, 3px 5px 8px #0008; }
+.circus-ring .circus-photo-mat { display: block; width: 100%; height: 100%; border: 1px solid #e5bd7066; border-radius: inherit; background: radial-gradient(ellipse, #8b7863, #4c4038); box-shadow: inset 0 0 12px #231a1899; }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-station-stage { width: min(100%, 8.5rem); height: 6.5rem; }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-wall-bay { top: 2.5rem; height: 4rem; }
+    .circus-ring .circus-station-stage { width: min(100%, 12rem); height: 9rem; }
+    .circus-ring .circus-attraction-entry { padding: 1rem; }
+}
+
+/* Phase 3C: decorative SVG loops. Motion stays inside each reserved art area. */
+.circus-ring .circus-station-character .circus-attraction-art { overflow: hidden; pointer-events: none; }
+.circus-ring .circus-art-card { transform-box: fill-box; transform-origin: center; animation: circus-ring-card-reveal 7s ease-in-out infinite; }
+.circus-ring .circus-art-card--second { animation-delay: -.6s; }
+.circus-ring .circus-art-ball { animation: circus-ring-juggle 3.6s linear infinite; }
+.circus-ring .circus-art-ball--second { animation-delay: -1.2s; }
+.circus-ring .circus-art-ball--third { animation-delay: -2.4s; }
+.circus-ring .circus-art-record { transform-box: fill-box; transform-origin: center; animation: circus-ring-record-spin 8s linear infinite; }
+.circus-ring .circus-art-notes { animation: circus-ring-notes-float 4s ease-in-out infinite; }
+.circus-ring .circus-art-light { animation: circus-ring-lights-glow 5s ease-in-out infinite; }
+.circus-ring .circus-art-puzzle-left { animation: circus-ring-puzzle-left 6s ease-in-out infinite; }
+.circus-ring .circus-art-puzzle-right { animation: circus-ring-puzzle-right 6s ease-in-out infinite; }
+.circus-ring .circus-art-banner { transform-box: view-box; transform-origin: 80px 23px; animation: circus-ring-banner-sway 7s ease-in-out infinite; }
+.circus-ring .circus-art-kernel { transform-box: fill-box; transform-origin: center; animation: circus-ring-popcorn-hop 4.8s ease-in-out infinite; }
+.circus-ring .circus-art-kernel--second { animation-delay: -1.6s; }
+.circus-ring .circus-art-kernel--third { animation-delay: -3.2s; }
+@keyframes circus-ring-card-reveal {
+    0%, 20%, 60%, 100% { transform: scaleX(1); }
+    35%, 45% { transform: scaleX(.12); }
+}
+/* One shared oval trajectory, staggered into three evenly spaced balls. */
+@keyframes circus-ring-juggle {
+    0%, 100% { transform: translate(-32px, 13px); }
+    12.5% { transform: translate(-23px, -12px); }
+    25% { transform: translate(0, -24px); }
+    37.5% { transform: translate(23px, -12px); }
+    50% { transform: translate(32px, 13px); }
+    62.5% { transform: translate(23px, 20px); }
+    75% { transform: translate(0, 22px); }
+    87.5% { transform: translate(-23px, 20px); }
+}
+@keyframes circus-ring-record-spin { to { transform: rotate(360deg); } }
+@keyframes circus-ring-notes-float { 0%, 100% { transform: translateY(2px); } 50% { transform: translateY(-4px); } }
+@keyframes circus-ring-lights-glow { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes circus-ring-puzzle-left { 0%, 15%, 85%, 100% { transform: translateX(-9px); } 40%, 60% { transform: translateX(0); } }
+@keyframes circus-ring-puzzle-right { 0%, 15%, 85%, 100% { transform: translateX(9px); } 40%, 60% { transform: translateX(0); } }
+@keyframes circus-ring-banner-sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+@keyframes circus-ring-popcorn-hop {
+    0%, 15%, 65%, 100% { transform: translateY(12px) rotate(-5deg); }
+    40% { transform: translateY(-7px) rotate(8deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-attraction-art * { animation: none; }
+    /* Keep the three balls distinct and the puzzle connected in the static scene. */
+    .circus-ring .circus-art-ball { transform: translate(-30px, 4px); }
+    .circus-ring .circus-art-ball--second { transform: translate(0, -20px); }
+    .circus-ring .circus-art-ball--third { transform: translate(30px, 4px); }
 }
 
 /* Phase 5A: independent game station layout; no gameplay or inactive controls. */
@@ -1322,3 +1539,677 @@ body.circus-entrance-body {
 }
 .circus-intro-dialog .circus-intro-control:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
 .circus-intro-dialog .lang-ar { direction: rtl; font-family: Amiri, Georgia, serif; }
+
+/* Phase 3E: Aloosh destination integration and background spectator tiers. */
+.circus-ring .circus-tent-wall { z-index: 0; }
+.circus-ring .circus-spectator-seating {
+    position: absolute; z-index: 1; top: 18%; left: 3%;
+    width: 94%; height: 23%; overflow: visible;
+    transform: rotateX(8deg); transform-origin: center top;
+    filter: drop-shadow(0 7px 4px #160c1066);
+    pointer-events: none;
+}
+.circus-ring .circus-ring-floor { z-index: 2; }
+.circus-ring .circus-tent-rigging { z-index: 3; }
+.circus-ring .circus-attraction-nav { z-index: 4; }
+.circus-ring :is(.circus-attraction-position--memory, .circus-attraction-position--dance, .circus-attraction-position--jigsaw) .circus-station-character { inset: 2% 0 10%; }
+.circus-ring .circus-station-character :is(.circus-aloosh-attraction-art, .circus-ring-performer-art) { max-width: 10rem; filter: drop-shadow(0 3px 2px #160c1044); }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-spectator-seating { transform: none; height: 21%; }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-spectator-seating { top: 6.7rem; height: 3rem; transform: none; }
+}
+
+/* Main Ring polish: Tito joins Aloosh; positions, floor, and seating are retained. */
+.circus-page-body .circus-ring .circus-tent-heading {
+    font-family: Georgia, 'Times New Roman', serif; font-weight: 900;
+    color: #fff0d0; letter-spacing: .035em; line-height: 1.35;
+    text-shadow: 0 2px 0 #702532, 0 3px 0 #9b6c32, 0 0 10px #e5bd7044;
+}
+.circus-ring .circus-attraction-label { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; color: #fff0d0; line-height: 1.45; text-shadow: 0 1px 1px #160c10; }
+.circus-ring .circus-attraction-label .lang-en { letter-spacing: .015em; }
+.circus-ring .circus-tent-heading .lang-ar,
+.circus-ring .circus-attraction-label .lang-ar { font-family: Amiri, Georgia, serif; letter-spacing: normal; line-height: 1.55; }
+.circus-ring .circus-attraction-position--juggling .circus-station-character { inset: 2% 0 10%; }
+.circus-ring .circus-station-character .circus-tito-attraction-art { max-width: 10rem; filter: drop-shadow(0 3px 2px #160c1044); }
+/* Compact ticket surfaces remain text inside the existing native links/buttons. */
+.circus-ring .circus-attraction-open,
+.circus-ring .circus-attraction-status {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    min-height: 2.4rem; max-width: 100%; margin-top: .4rem; padding: .3rem .7rem;
+    border: 3px double #e5bd70; border-radius: .6rem;
+    font-family: Georgia, 'Times New Roman', serif; font-size: .85rem; font-weight: 700; line-height: 1.35;
+    color: #fff0d0; background: linear-gradient(#3b7167, #235248);
+    box-shadow: inset 0 0 0 1px #fff0d01a, 0 3px 0 #160c10, 0 5px 7px #160c1044;
+    text-align: center; text-decoration: underline; text-underline-offset: .18em;
+    overflow-wrap: anywhere;
+}
+.circus-ring .circus-attraction-open::before,
+.circus-ring .circus-attraction-open::after,
+.circus-ring .circus-attraction-status::before,
+.circus-ring .circus-attraction-status::after {
+    content: ''; position: absolute; top: 25%; bottom: 25%; width: 1px;
+    border-left: 1px dashed #e5bd7080; pointer-events: none;
+}
+.circus-ring .circus-attraction-open::before,
+.circus-ring .circus-attraction-status::before { left: .2rem; }
+.circus-ring .circus-attraction-open::after,
+.circus-ring .circus-attraction-status::after { right: .2rem; }
+.circus-ring .circus-attraction-entry--game .circus-attraction-open { background: linear-gradient(#a83e48, #752333); border-color: #ffda88; color: #fff6df; min-height: 44px; }
+.circus-ring .circus-attraction-entry:disabled .circus-attraction-status { border: 3px double #c8a869; background: linear-gradient(#554535, #392c25); color: #fff0d0; text-decoration: none; box-shadow: inset 0 0 0 1px #e5bd701a, 0 2px 0 #160c10; }
+.circus-ring a.circus-attraction-entry:is(:hover, :focus-visible) .circus-attraction-open { background: #315f54; box-shadow: inset 0 0 8px #e5bd7033, 0 3px 0 #160c10, 0 0 10px #e5bd7055; }
+.circus-ring a.circus-attraction-entry--game:is(:hover, :focus-visible) .circus-attraction-open { background: #8f2d3d; border-color: #fff0d0; }
+.circus-ring a.circus-attraction-entry:focus-visible { outline: 3px solid #fff0d0; outline-offset: -3px; }
+.circus-ring .circus-station-arch::before { content: ''; position: absolute; top: 12%; left: 30%; width: 40%; height: .6rem; border-top: 2px solid #e5bd7099; border-radius: 50%; pointer-events: none; }
+.circus-ring .circus-station-arch::after { content: '✦'; position: absolute; top: -.75rem; left: 35%; width: 30%; color: #e5bd70; font-size: 1.15rem; text-shadow: 0 2px #65333a; pointer-events: none; }
+.circus-ring .circus-seating-lights { filter: drop-shadow(0 0 2px #ffc85f88); }
+@media (max-width: 700px) {
+    .circus-ring .circus-attraction-open, .circus-ring .circus-attraction-status { padding: .4rem .9rem; font-size: .95rem; }
+    .circus-ring a.circus-attraction-entry .circus-attraction-open { min-height: 44px; }
+    .circus-ring .circus-seating-lights { stroke-width: 3px; }
+}
+
+/* Aloosh alone performs openly in the upper-left ring, beneath a soap-bubble link. */
+.circus-ring .circus-attraction-position--memory .circus-aloosh-performance {
+    position: relative; width: 100%; min-height: 14rem; background: none;
+}
+.circus-ring .circus-attraction-position--memory .circus-aloosh-open-art {
+    position: absolute; left: 0; bottom: 0; width: 78%; height: 8rem; pointer-events: none;
+}
+.circus-ring .circus-attraction-position--memory .circus-station-character { inset: 0; }
+.circus-ring .circus-attraction-position--memory .circus-aloosh-attraction-art { max-width: 11rem; overflow: visible; }
+.circus-ring .circus-aloosh-bubble {
+    position: absolute; top: 0; right: 0; width: 72%; min-height: 5.6rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: .85rem .7rem; border: 1px solid #edfcffd9; border-radius: 50%;
+    color: #fff7e5; text-align: center; text-decoration: none;
+    font-family: Georgia, 'Times New Roman', serif; font-size: 14px; font-weight: 700; line-height: 1.4;
+    background: radial-gradient(ellipse at 28% 15%, #ffffffa8, transparent 25%),
+        radial-gradient(ellipse at 85% 75%, #91f7ed66, transparent 42%),
+        radial-gradient(ellipse at 14% 72%, #ed9edb88, transparent 44%),
+        linear-gradient(140deg, #98e8f56b, #9c8cceaa 45%, #ac699cb3);
+    box-shadow: inset 2px 3px 5px #fff9, inset -3px -3px 7px #b6f3f388, 0 0 12px #b2def34d, 0 4px 7px #160c1033;
+    text-shadow: 0 1px 3px #281433; overflow-wrap: anywhere;
+    animation: circus-aloosh-soap-float 7s ease-in-out infinite;
+}
+.circus-ring .circus-aloosh-bubble::before {
+    content: ''; position: absolute; left: 17%; top: 10%; width: 38%; height: 17%;
+    border-top: 3px solid #ffffffe6; border-radius: 50%; transform: rotate(-17deg); pointer-events: none;
+}
+.circus-ring .circus-aloosh-bubble .lang-ar { font-family: Amiri, Georgia, serif; line-height: 1.5; }
+.circus-ring .circus-aloosh-bubble:hover { color: #fff; text-decoration: underline; text-underline-offset: .15em; }
+.circus-ring .circus-aloosh-bubble:focus-visible { outline: 3px solid #fff3a4; outline-offset: 5px; }
+@keyframes circus-aloosh-soap-float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-4px) rotate(1deg); } }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-aloosh-bubble { font-size: 13px; }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-attraction-position--memory .circus-aloosh-performance { min-height: 15rem; }
+    .circus-ring .circus-attraction-position--memory .circus-aloosh-open-art { height: 9rem; width: 75%; }
+    .circus-ring .circus-aloosh-bubble { width: 65%; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-aloosh-bubble { animation: none; }
+}
+
+/* Tito alone performs in the open ring with a decorative barrel and ribbon link. */
+.circus-ring .circus-attraction-position--juggling .circus-tito-performance { position: relative; width: 100%; min-height: 14rem; }
+.circus-ring .circus-attraction-position--juggling .circus-tito-open-art { position: absolute; bottom: 0; right: 0; width: 83%; height: 8.5rem; pointer-events: none; }
+.circus-ring .circus-attraction-position--juggling .circus-station-character { inset: 0; z-index: 2; }
+.circus-ring .circus-attraction-position--juggling .circus-tito-attraction-art { max-width: 11rem; }
+.circus-ring .circus-tito-barrel { position: absolute; bottom: 0; left: 0; width: 32%; height: auto; max-height: 4.8rem; z-index: 1; pointer-events: none; filter: drop-shadow(0 3px 2px #25131544); }
+.circus-ring .circus-tito-ribbon {
+    position: absolute; top: .3rem; left: 0; width: 84%; min-height: 4.4rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: .65rem .8rem; border: 3px double #f5d590;
+    border-radius: 45% 45% 25% 25% / 16% 16% 22% 22%;
+    background: linear-gradient(#9e414d, #722637 55%, #4e192d);
+    box-shadow: inset 0 2px 2px #ffd89a44, inset 0 -3px 5px #32132188, 0 4px 6px #21131b44;
+    color: #fff0cd; font: 700 14px/1.4 Georgia, 'Times New Roman', serif;
+    text-align: center; text-decoration: none; text-shadow: 0 1px 1px #371122; overflow-wrap: anywhere;
+    animation: circus-tito-ribbon-sway 8s ease-in-out infinite;
+}
+.circus-ring .circus-tito-ribbon::before,
+.circus-ring .circus-tito-ribbon::after {
+    content: ''; position: absolute; top: 30%; width: 13px; height: 55%;
+    border: 1px solid #d6af68; background: linear-gradient(135deg, #a95857, #5b1e30);
+    border-radius: 50% 10% 35% 10%; z-index: -1; pointer-events: none;
+}
+.circus-ring .circus-tito-ribbon::before { left: -9px; transform: rotate(12deg); }
+.circus-ring .circus-tito-ribbon::after { right: -9px; transform: rotate(-12deg); }
+.circus-ring .circus-tito-ribbon .lang-en::before,
+.circus-ring .circus-tito-ribbon .lang-en::after { content: ''; display: inline-block; width: 7px; height: 7px; margin: 0 4px; background: #f4cb7b; clip-path: polygon(50% 0, 64% 35%, 100% 38%, 73% 63%, 82% 100%, 50% 80%, 18% 100%, 27% 63%, 0 38%, 36% 35%); }
+.circus-ring .circus-tito-ribbon .lang-ar { font-family: Amiri, Georgia, serif; line-height: 1.5; }
+.circus-ring .circus-tito-ribbon:hover { color: #fff; text-decoration: underline; text-underline-offset: .15em; }
+.circus-ring .circus-tito-ribbon:focus-visible { outline: 3px solid #fff0a0; outline-offset: 5px; }
+@keyframes circus-tito-ribbon-sway { 0%, 100% { transform: rotate(-2deg) translateY(0); } 50% { transform: rotate(1deg) translateY(-3px); } }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-tito-ribbon { font-size: 13px; }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-attraction-position--juggling .circus-tito-performance { min-height: 15rem; }
+    .circus-ring .circus-attraction-position--juggling .circus-tito-open-art { width: 80%; height: 9rem; }
+    .circus-ring .circus-tito-ribbon { width: 79%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-tito-ribbon { animation: none; }
+}
+
+/* Only Aerial Puzzle and Popcorn exchange ring positions. */
+@media (min-width: 701px) {
+    .circus-ring .circus-attraction-position--jigsaw { top: 49%; left: 3%; right: auto; bottom: auto; }
+    .circus-ring .circus-attraction-position--popcorn { top: auto; left: auto; right: 20%; bottom: 5%; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-attraction-position--popcorn { right: 15%; }
+}
+/* Open antique-key performance; the single plaque is the game link. */
+.circus-ring .circus-key-attraction { display: flex; flex-direction: column; align-items: center; gap: .2rem; padding: .3rem; }
+.circus-ring .circus-antique-key { display: block; width: 100%; max-width: 15rem; height: auto; overflow: visible; pointer-events: none; filter: drop-shadow(0 3px 2px #38201644); }
+.circus-ring .circus-key-piece { transform-box: fill-box; transform-origin: center; }
+.circus-ring .circus-key-piece--bow { animation: circus-key-bow-join 7s ease-in-out infinite; }
+.circus-ring .circus-key-piece--teeth { animation: circus-key-teeth-join 7s ease-in-out infinite; }
+.circus-ring .circus-key-sparkle { animation: circus-key-connect-glow 7s ease-in-out infinite; }
+.circus-ring .circus-key-plaque {
+    position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 92%; max-width: 12rem; min-height: 4rem; padding: .6rem .5rem;
+    border: 3px double #fff0b0; border-radius: 38% 38% 15px 15px / 20% 20% 15px 15px;
+    color: #382129; font: 700 14px/1.4 Georgia, 'Times New Roman', serif; text-align: center; text-decoration: none;
+    background: radial-gradient(ellipse at 30% 0, #fff4c5aa, transparent 55%), linear-gradient(#e6ca85, #c2944f);
+    box-shadow: inset 0 2px 1px #fff6, inset 0 -3px 5px #87572955, 0 3px 0 #89582f, 0 0 10px #f3cf7455;
+    overflow-wrap: anywhere;
+}
+.circus-ring .circus-keyhole-mark { display: block; width: 10px; height: 15px; margin-bottom: 3px; background: #633f30; clip-path: polygon(20% 0, 80% 0, 100% 35%, 70% 55%, 95% 100%, 5% 100%, 30% 55%, 0 35%); }
+.circus-ring .circus-key-plaque .lang-ar { font-family: Amiri, Georgia, serif; line-height: 1.5; }
+.circus-ring .circus-key-plaque:hover { color: #241523; text-decoration: underline; text-underline-offset: .15em; }
+.circus-ring .circus-key-plaque:focus-visible { outline: 3px solid #fff0a4; outline-offset: 5px; }
+@keyframes circus-key-bow-join { 0%, 15%, 85%, 100% { transform: translate(-7px, -2px) rotate(-4deg); } 40%, 65% { transform: none; } }
+@keyframes circus-key-teeth-join { 0%, 15%, 85%, 100% { transform: translate(7px, 2px) rotate(4deg); } 40%, 65% { transform: none; } }
+@keyframes circus-key-connect-glow { 0%, 32%, 70%, 100% { opacity: 0; } 43%, 55% { opacity: .8; } }
+@media (max-width: 700px) {
+    .circus-ring .circus-key-plaque { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-key-piece, .circus-ring .circus-key-sparkle { animation: none; transform: none; }
+    .circus-ring .circus-key-sparkle { opacity: .5; }
+}
+
+/* DJ attraction only — Palestinian flag performer and neon entrance title. */
+.circus-ring .circus-flag-dj-entry .circus-flag-dj-art { max-width: 10rem; overflow: visible; }
+.circus-ring .circus-flag-dj-bob { transform-origin: 90px 85px; animation: circus-flag-dj-bob 5s ease-in-out infinite; }
+.circus-ring .circus-flag-dj-pulse { transform-origin: 90px 60px; animation: circus-flag-dj-pulse 3s ease-in-out infinite; }
+.circus-ring .circus-flag-dj-record { animation: circus-flag-record-turn 14s linear infinite; }
+.circus-ring .circus-flag-dj-levels rect { transform-box: fill-box; transform-origin: bottom; animation: circus-flag-levels 2.4s ease-in-out infinite alternate; }
+.circus-ring .circus-flag-dj-levels rect:nth-child(2n) { animation-delay: -1.2s; }
+.circus-ring .circus-flag-dj-levels rect:nth-child(3n) { animation-delay: -.6s; }
+.circus-ring .circus-dj-neon-title {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    max-width: 100%; min-height: 44px; padding: .55rem .85rem; border: 2px solid #89eee5; border-radius: 45% 45% 14px 14px / 14% 14% 14px 14px;
+    background: linear-gradient(145deg, #442146, #20152c); color: #fff0da;
+    font: 700 14px/1.4 Georgia, 'Times New Roman', serif; text-align: center; text-decoration: none;
+    box-shadow: inset 0 0 0 2px #df9ed455, 0 0 7px #6ae3dc66, 0 4px 0 #39223e;
+    text-shadow: 0 0 5px #ef9dda77; overflow-wrap: anywhere;
+}
+.circus-ring .circus-dj-neon-title .lang-ar { font-family: Amiri, Georgia, serif; line-height: 1.5; }
+.circus-ring .circus-dj-neon-title:hover { color: #fff; text-decoration: underline; text-underline-offset: .15em; }
+.circus-ring .circus-dj-neon-title:focus-visible { outline: 3px solid #fff0a4; outline-offset: 5px; }
+@keyframes circus-flag-dj-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes circus-flag-dj-bob { 0%, 100% { transform: translateX(-2px) rotate(-2deg); } 50% { transform: translateX(2px) rotate(2deg); } }
+@keyframes circus-flag-record-turn { to { transform: rotate(360deg); } }
+@keyframes circus-flag-levels { from { transform: scaleY(.5); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-flag-dj-bob, .circus-ring .circus-flag-dj-pulse,
+    .circus-ring .circus-flag-dj-record, .circus-ring .circus-flag-dj-levels rect { animation: none; }
+}
+
+/* DJ Booth only — open clown/flag duet with miniature equipment. */
+.circus-ring .circus-dj-duet { display: flex; flex-direction: column; align-items: center; gap: .35rem; padding: .25rem; }
+.circus-ring .circus-dj-duet-art { display: flex; align-items: end; width: 100%; min-width: 0; }
+.circus-ring .circus-dj-ring-clown { display: block; width: 38%; height: 9rem; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 3px 2px #28152c44); pointer-events: none; }
+.circus-ring .circus-dj-friend { display: block; width: 62%; height: auto; overflow: visible; pointer-events: none; filter: drop-shadow(0 3px 2px #28152c44); }
+.circus-ring .circus-dj-duet .circus-dj-neon-title { box-shadow: inset 0 2px 1px #fff3, inset 0 -3px 5px #180b2788, inset 0 0 0 2px #df9ed455, 0 3px 0 #532a50, 0 0 8px #6ae3dc55; }
+.circus-ring .circus-dj-friend-bob { transform-origin: 100px 110px; animation: circus-flag-dj-bob 5s ease-in-out infinite; }
+.circus-ring .circus-dj-friend-pulse { transform-origin: 100px 95px; animation: circus-flag-dj-pulse 3.5s ease-in-out infinite; }
+.circus-ring .circus-dj-raised-arm { transform-origin: 150px 83px; animation: circus-dj-celebrate 5s ease-in-out infinite; }
+.circus-ring .circus-dj-duet-record { animation: circus-flag-record-turn 15s linear infinite; }
+.circus-ring .circus-dj-duet-meters rect { transform-box: fill-box; transform-origin: bottom; animation: circus-flag-levels 2.8s ease-in-out infinite alternate; }
+.circus-ring .circus-dj-duet-meters rect:nth-child(2n) { animation-delay: -1.4s; }
+.circus-ring .circus-dj-duet-lights { animation: circus-dj-lamp-glow 5s ease-in-out infinite alternate; }
+.circus-ring .circus-dj-duet-notes { animation: circus-dj-notes-float 7s ease-in-out infinite; }
+@keyframes circus-dj-celebrate { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(7deg); } }
+@keyframes circus-dj-lamp-glow { from { opacity: .65; } to { opacity: 1; } }
+@keyframes circus-dj-notes-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-dj-ring-clown { height: 7.5rem; }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-dj-duet-art { max-width: 19rem; }
+    .circus-ring .circus-dj-ring-clown { height: 10rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-dj-friend-bob, .circus-ring .circus-dj-friend-pulse,
+    .circus-ring .circus-dj-raised-arm, .circus-ring .circus-dj-duet-record,
+    .circus-ring .circus-dj-duet-meters rect, .circus-ring .circus-dj-duet-lights,
+    .circus-ring .circus-dj-duet-notes { animation: none; }
+}
+
+/* Banner Hall alone — original fabric artwork, left arrow and ribbon link. */
+.circus-ring .circus-banner-performance { display: flex; flex-direction: column; align-items: center; gap: .4rem; padding: .35rem; }
+.circus-ring .circus-banner-artwork { display: flex; align-items: center; justify-content: center; gap: .3rem; width: 100%; min-width: 0; perspective: 600px; pointer-events: none; }
+.circus-ring .circus-ring-banner-image { display: block; width: 72%; height: 8rem; object-fit: contain; transform-origin: center top; filter: drop-shadow(0 5px 3px #29191e55); animation: circus-banner-fabric-wave 8s ease-in-out infinite; }
+.circus-ring .circus-banner-arrow { display: block; width: 24%; height: auto; flex-shrink: 0; overflow: visible; filter: drop-shadow(0 3px 2px #32172255); animation: circus-banner-point-left 5s ease-in-out infinite; }
+.circus-ring .circus-banner-arrow-sparkle { animation: circus-banner-sparkle 6s ease-in-out infinite alternate; }
+
+
+
+
+
+
+
+@keyframes circus-banner-fabric-wave { 0%, 100% { transform: rotate(-1deg) rotateY(-4deg) rotateX(1deg); } 50% { transform: rotate(1deg) rotateY(4deg) rotateX(-1deg); } }
+@keyframes circus-banner-point-left { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-3px); } }
+@keyframes circus-banner-sparkle { from { opacity: .45; } to { opacity: .9; } }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-ring-banner-image { height: 7rem; }
+
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-banner-artwork { max-width: 19rem; }
+    .circus-ring .circus-ring-banner-image { height: 9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-ring-banner-image, .circus-ring .circus-banner-arrow,
+    .circus-ring .circus-banner-arrow-sparkle { animation: none; transform: none; }
+}
+
+/* Popcorn alone — original artwork paired with Banner Hall's scale and finish. */
+.circus-ring .circus-popcorn-performance { display: flex; flex-direction: column; align-items: center; gap: .4rem; padding: .35rem; }
+.circus-ring .circus-popcorn-artwork { display: flex; align-items: center; justify-content: center; gap: .3rem; width: 100%; min-width: 0; pointer-events: none; }
+.circus-ring .circus-popcorn-image-wrap { position: relative; width: 72%; min-width: 0; }
+.circus-ring .circus-ring-popcorn-image { display: block; width: 100%; height: 8rem; object-fit: contain; filter: drop-shadow(0 5px 3px #29191e55); animation: circus-popcorn-sway 7s ease-in-out infinite; }
+.circus-ring .circus-popcorn-floaters { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.circus-ring .circus-popcorn-floating-kernel { animation: circus-popcorn-kernel-float 6s ease-in-out infinite; }
+.circus-ring .circus-popcorn-floating-kernel--second { animation-delay: -2s; }
+.circus-ring .circus-popcorn-floating-kernel--third { animation-delay: -4s; }
+.circus-ring .circus-popcorn-sparkles { animation: circus-banner-sparkle 6s ease-in-out infinite alternate; }
+.circus-ring .circus-popcorn-arrow { display: block; width: 24%; height: auto; flex-shrink: 0; overflow: visible; filter: drop-shadow(0 3px 2px #32172255); animation: circus-popcorn-point-right 5s ease-in-out infinite; }
+
+
+
+
+
+
+
+@keyframes circus-popcorn-sway { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-3px) rotate(1deg); } }
+@keyframes circus-popcorn-kernel-float { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-10px) rotate(8deg); } }
+@keyframes circus-popcorn-point-right { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-ring-popcorn-image { height: 7rem; }
+
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-popcorn-artwork { max-width: 19rem; }
+    .circus-ring .circus-ring-popcorn-image { height: 9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-ring-popcorn-image, .circus-ring .circus-popcorn-floating-kernel,
+    .circus-ring .circus-popcorn-sparkles, .circus-ring .circus-popcorn-arrow { animation: none; transform: none; }
+}
+
+/* Focused ring refinement — retain artwork, positions and functional links. */
+.circus-ring .circus-aloosh-bubble { right: 20%; }
+@media (min-width: 701px) {
+    .circus-ring .circus-attraction-position--juggling { top: 21%; right: 14%; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-attraction-position--juggling { top: 21%; right: 10%; }
+}
+.circus-ring .circus-dj-duet-art { gap: 2%; }
+.circus-ring .circus-dj-friend { width: 50.84%; flex: 0 0 50.84%; }
+.circus-ring .circus-dj-ring-clown,
+.circus-ring .circus-ring-banner-image,
+.circus-ring .circus-ring-popcorn-image { border: 0; outline: 0; border-radius: 0; background: transparent; box-shadow: none; padding: 0; }
+.circus-ring .circus-dj-duet .circus-dj-neon-title{
+    width: auto; max-width: 100%; min-height: 44px; padding: .3rem .4rem;
+    border: 0; border-radius: 0; background: transparent; box-shadow: none;
+    color: #ffe0a0; font-family: Georgia, 'Times New Roman', serif; font-weight: 700;
+    text-shadow: 0 1px 0 #fff1bf44, 1px 2px 0 #6a3040, 0 0 7px #e7a7cd55;
+}
+.circus-ring .circus-dj-duet .circus-dj-neon-title { color: #b8fff0; text-shadow: 0 1px #fff5, 1px 2px #56305a, 0 0 7px #79dcd955; }
+
+.circus-ring .circus-dj-duet .circus-dj-neon-title:focus-visible{ outline: 3px solid #fff0a4; outline-offset: 4px; }
+
+.circus-ring .circus-ring-banner-image { animation-name: circus-banner-refined-sway; }
+@keyframes circus-banner-refined-sway { 0%, 100% { transform: translateX(-2px) rotate(-1deg) rotateY(-3deg); } 50% { transform: translateX(2px) rotate(1deg) rotateY(3deg); } }
+@media (max-width: 700px) {
+    .circus-ring .circus-aloosh-bubble { right: 20%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-ring-banner-image { animation: none; transform: none; }
+}
+
+/* Lower ring pair: image-only links and small arrow-tail decorations. */
+@media (min-width: 701px) {
+    .circus-ring .circus-attraction-position--banners,
+    .circus-ring .circus-attraction-position--popcorn { bottom: 3%; }
+}
+.circus-ring .circus-banner-artwork, .circus-ring .circus-popcorn-artwork { gap: .15rem; }
+.circus-ring .circus-banner-image-link { display: block; width: 62%; min-width: 0; min-height: 44px; }
+.circus-ring .circus-banner-image-link .circus-ring-banner-image { width: 100%; }
+.circus-ring .circus-popcorn-artwork .circus-popcorn-image-wrap { display: block; width: 62%; min-height: 44px; pointer-events: auto; }
+.circus-ring .circus-banner-artwork .circus-banner-image-link { pointer-events: auto; }
+.circus-ring .circus-banner-arrow, .circus-ring .circus-popcorn-arrow { width: 19%; pointer-events: none; }
+.circus-ring .circus-banner-flag-string { display: block; width: 16%; height: auto; flex-shrink: 0; pointer-events: none; }
+.circus-ring .circus-popcorn-artwork .circus-popcorn-floaters { position: relative; inset: auto; display: block; width: 16%; height: auto; flex-shrink: 0; overflow: visible; pointer-events: none; }
+.circus-ring .circus-banner-mini-flag { transform-origin: 0 0; animation: circus-banner-flag-wave 6s ease-in-out var(--flag-delay, 0s) infinite; }
+.circus-ring .circus-banner-image-link:focus-visible,
+.circus-ring .circus-popcorn-image-wrap:focus-visible { outline: 3px solid #fff0a4; outline-offset: 5px; border-radius: 8px; }
+@keyframes circus-banner-flag-wave { 0%, 100% { transform: rotate(-2deg) skewY(-2deg); } 50% { transform: rotate(3deg) skewY(3deg); } }
+@media (max-width: 700px) {
+    .circus-ring .circus-banner-performance, .circus-ring .circus-popcorn-performance { padding-top: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-banner-mini-flag { animation: none; transform: none; }
+}
+
+/* Attraction links only: illuminated lettering, without underlines in any state. */
+.circus-ring .circus-attraction-positions a,
+.circus-ring .circus-attraction-positions a:is(:link, :visited, :hover, :focus, :active),
+.circus-ring .circus-attraction-positions a:is(:hover, :focus-visible) .circus-attraction-label {
+    text-decoration: none;
+}
+.circus-ring .circus-attraction-positions a > :is(.lang-en, .lang-ar) {
+    transition: color .25s ease, text-shadow .25s ease, translate .25s ease;
+}
+.circus-ring .circus-attraction-positions a:is(:hover, :focus-visible) > :is(.lang-en, .lang-ar) {
+    color: #ffe6a0; text-shadow: 0 1px 0 #fff5, 1px 2px 1px #703443, 0 0 9px #ffc96988;
+    translate: 0 -2px;
+}
+.circus-ring .circus-attraction-positions a:focus-visible { outline: 3px solid #fff0a4; outline-offset: 5px; }
+/* A delicate inscription sits on the open sandy floor, outside attraction links. */
+.circus-ring .circus-dust-support {
+    position: absolute; z-index: 5; top: 53%; left: 34%; width: 32%;
+    text-align: center; color: #fff0c8; pointer-events: none;
+}
+.circus-ring .circus-dust-inscription { margin: 0; font: italic 700 clamp(12px, 1.1vw, 15px)/1.5 Georgia, 'Times New Roman', serif; text-shadow: 0 1px 0 #795026, 0 2px 3px #75471e88, 0 0 7px #ffe3a555; }
+.circus-ring .circus-dust-inscription > span { display: block; }
+.circus-ring .circus-dust-inscription [lang='ar'] { font-family: Amiri, Georgia, serif; font-style: normal; line-height: 1.6; }
+.circus-ring .circus-dust-flag-link { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 66px; min-height: 44px; margin-top: 4px; pointer-events: auto; border-radius: 8px; text-decoration: none; transition: transform .3s ease, filter .3s ease; }
+.circus-ring .circus-dust-flag-link svg { display: block; width: 66px; height: 44px; overflow: visible; pointer-events: none; filter: drop-shadow(0 2px 2px #63462155); }
+.circus-ring .circus-dust-flag-fabric { transform-origin: 10px 30px; animation: circus-support-flag-wave 7s ease-in-out infinite; }
+.circus-ring .circus-dust-flag-link:is(:hover, :focus-visible) { transform: scale(1.05); filter: drop-shadow(0 0 5px #ffe29c88); }
+.circus-ring .circus-dust-flag-link:is(:hover, :focus-visible) .circus-dust-flag-fabric { animation-name: circus-support-flag-wave-more; }
+.circus-ring .circus-dust-flag-link:focus-visible { outline: 3px solid #fff0a4; outline-offset: 4px; }
+.circus-ring .circus-dust-flag-sparkles { opacity: .35; transition: opacity .3s ease; }
+.circus-ring .circus-dust-flag-link:is(:hover, :focus-visible) .circus-dust-flag-sparkles { opacity: 1; }
+.circus-ring .circus-dust-particles { position: absolute; inset: -6px; pointer-events: none; }
+.circus-ring .circus-dust-particles i { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #fff1b6; box-shadow: 0 0 5px #ffe0a0; animation: circus-support-dust 8s ease-in-out infinite; }
+.circus-ring .circus-dust-particles i:nth-child(1) { left: 4%; top: 20%; }
+.circus-ring .circus-dust-particles i:nth-child(2) { left: 30%; top: 0; animation-delay: -2s; }
+.circus-ring .circus-dust-particles i:nth-child(3) { right: 3%; top: 35%; animation-delay: -4s; }
+.circus-ring .circus-dust-particles i:nth-child(4) { left: 12%; bottom: 5%; animation-delay: -6s; }
+.circus-ring .circus-dust-particles i:nth-child(5) { right: 15%; bottom: 15%; animation-delay: -3s; }
+@keyframes circus-support-flag-wave { 0%, 100% { transform: skewY(-2deg) rotate(-1deg); } 50% { transform: skewY(2deg) rotate(1deg); } }
+@keyframes circus-support-flag-wave-more { 0%, 100% { transform: skewY(-4deg) rotate(-2deg); } 50% { transform: skewY(4deg) rotate(2deg); } }
+@keyframes circus-support-dust { 0%, 100% { transform: translateY(0); opacity: .35; } 50% { transform: translateY(-4px); opacity: .8; } }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-dust-support { left: 33%; width: 34%; top: 53%; }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-attraction-nav { display: flex; flex-direction: column; }
+    .circus-ring .circus-dust-support { position: relative; inset: auto; order: 1; width: min(85%, 22rem); margin: 0 auto 1.5rem; }
+    .circus-ring .circus-dust-inscription { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-attraction-positions a > :is(.lang-en, .lang-ar) { transition: none; translate: none; }
+    .circus-ring .circus-dust-flag-fabric, .circus-ring .circus-dust-particles i { animation: none; transform: none; }
+    .circus-ring .circus-dust-flag-link, .circus-ring .circus-dust-flag-sparkles { transition: none; }
+    .circus-ring .circus-dust-flag-link:is(:hover, :focus-visible) { transform: none; }
+}
+
+/* Center support component only — clearer lettering and global language toggle. */
+.circus-ring .circus-dust-support { top: 59%; }
+.circus-ring .circus-dust-inscription {
+    color: #fff2d0; font-size: clamp(16px, 1.45vw, 20px); line-height: 1.5;
+    text-shadow: 0 1px 0 #ad7b3c, 0 2px 2px #59391cb3, 0 0 9px #ffe2a466;
+}
+.circus-ring .circus-dust-inscription > .hidden { display: none; }
+.circus-ring .circus-dust-flag-link { animation: circus-support-flag-float 7s ease-in-out infinite; }
+@keyframes circus-support-flag-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -3px; } }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .circus-ring .circus-dust-support { top: 59%; }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-dust-support { top: auto; margin-top: .5rem; }
+    .circus-ring .circus-dust-inscription { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-dust-flag-link { animation: none; translate: none; }
+}
+
+/* Three upper alcove decorations; existing frame geometry is unchanged. */
+.circus-ring .circus-alcove-art { display: block; width: 100%; height: 100%; padding: 3px; object-fit: contain; pointer-events: none; filter: drop-shadow(0 2px 1px #1b101c44); }
+.circus-ring .circus-alcove-steam path { animation: circus-alcove-steam-rise 7s ease-in-out infinite; }
+.circus-ring .circus-alcove-steam path:nth-child(2) { animation-delay: -2.3s; }
+.circus-ring .circus-alcove-steam path:nth-child(3) { animation-delay: -4.6s; }
+@keyframes circus-alcove-steam-rise { 0%, 100% { transform: translateY(1px); opacity: .3; } 50% { transform: translateY(-3px); opacity: .7; } }
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-alcove-steam path { animation: none; transform: none; opacity: .5; }
+}
+
+/* Bleacher/lighting polish without changing scenery bounds or attraction layout. */
+.circus-ring .circus-soft-spotlight { animation: circus-soft-spotlight-glow 12s ease-in-out var(--spot-delay, 0s) infinite alternate; }
+.circus-ring .circus-dust-inscription {
+    font-family: Georgia, 'Palatino Linotype', Palatino, serif;
+    font-size: clamp(18px, 1.65vw, 23px); color: #fff5d4; font-weight: 700;
+    text-shadow: 1px 1px 0 #792e42, -1px -1px 0 #792e4266, 0 2px 3px #4e1836bb, 0 0 9px #ffda8488;
+}
+.circus-ring .circus-dust-inscription [lang='ar'] { font-family: Amiri, Georgia, serif; }
+.circus-ring .circus-dust-particles i { width: 3px; height: 3px; box-shadow: 0 0 6px #ffdc80, 0 0 2px #fff4c0; }
+@keyframes circus-soft-spotlight-glow { from { opacity: .5; } to { opacity: .9; } }
+@media (max-width: 700px) {
+    .circus-ring .circus-dust-inscription { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-soft-spotlight { animation: none; opacity: .7; }
+}
+
+/* Center inscription only — brighter two-part invitation, unchanged flag/layout. */
+.circus-ring .circus-dust-inscription {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+    font-size: clamp(21px, 2.05vw, 29px); line-height: 1.35; font-weight: 700;
+    text-shadow: 1px 2px 0 #77243d, -1px -1px 0 #6b203b88, 0 3px 4px #48132fbb, 0 0 10px #ffd26d66;
+}
+.circus-ring .circus-dust-question { display: block; color: #ffe169; }
+.circus-ring .circus-dust-invitation { display: block; margin-top: .15em; color: #ffb0ac; }
+.circus-ring .circus-dust-inscription [lang='ar'] { font-family: Amiri, Georgia, serif; }
+.circus-ring .circus-dust-particles i:nth-child(6),
+.circus-ring .circus-dust-particles i:nth-child(7) { width: 7px; height: 7px; border-radius: 0; background: #ffe493; clip-path: polygon(50% 0, 64% 35%, 100% 50%, 64% 65%, 50% 100%, 36% 65%, 0 50%, 36% 35%); }
+.circus-ring .circus-dust-particles i:nth-child(6) { left: -2%; top: 45%; animation-delay: -1s; }
+.circus-ring .circus-dust-particles i:nth-child(7) { right: 0; bottom: 22%; animation-delay: -5s; }
+@media (max-width: 700px) {
+    .circus-ring .circus-dust-inscription { font-size: clamp(19px, 4.7vw, 23px); }
+}
+
+/* Background only: receding seating, wall reflections and diffuse brass lights. */
+.circus-ring .circus-tent-wall::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(ellipse at 50% 22%, transparent 30%, #130c1d33 75%), linear-gradient(110deg, #ffdc9510, transparent 25% 75%, #b7e3dc0c); }
+.circus-ring .circus-dimensional-beam { transform-origin: 0 30px; animation: circus-dimensional-beam-drift 22s ease-in-out var(--beam-phase, 0s) infinite alternate; }
+@keyframes circus-dimensional-beam-drift { from { transform: rotate(-3deg); opacity: .5; } to { transform: rotate(3deg); opacity: .85; } }
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-dimensional-beam { animation: none; transform: none; opacity: .7; }
+}
+
+/* Grandstand depth and ornamental center lettering; geometry remains unchanged. */
+.circus-ring .circus-seat-tier { filter: drop-shadow(0 2px 1px #100b1744); }
+.circus-ring .circus-brass-lens-glow { filter: drop-shadow(0 0 4px #ffe7b788); }
+.circus-ring .circus-spectator-seating { background: radial-gradient(ellipse at 50% 20%, #ffd38b0d, transparent 70%); }
+.circus-ring .circus-dust-inscription {
+    font-family: 'Bodoni MT', Didot, 'Palatino Linotype', Georgia, serif;
+    font-style: normal; font-weight: 900; font-size: clamp(28px, 2.5vw, 40px); line-height: 1.12;
+    text-shadow: -1px -1px 0 #171019, 1px -1px 0 #171019, -1px 1px 0 #171019, 1px 1px 0 #171019, 2px 3px 0 #171019, 3px 4px 2px #17101999;
+}
+.circus-ring .circus-dust-question { color: #fff8e8; -webkit-text-stroke: .5px #171019; text-shadow: 0 -1px #fff, -1px -1px #171019, 1px -1px #171019, -1px 1px #171019, 1px 1px #171019, 2px 3px #171019, 3px 4px 2px #17101988; }
+.circus-ring .circus-dust-invitation { margin-top: .3em; color: #efc86c; -webkit-text-stroke: .5px #171019; text-shadow: 0 -1px #fff5ce, -1px -1px #171019, 1px -1px #171019, -1px 1px #171019, 1px 1px #171019, 2px 3px #171019, 3px 4px #805629, 4px 5px 2px #17101988; }
+@supports (background-clip: text) {
+    .circus-ring .circus-dust-invitation { background: linear-gradient(#fff0b0, #e2b654 45%, #c08c33 65%, #ffe2a0); background-clip: text; color: transparent; }
+}
+@media (min-width: 1200px) {
+    .circus-ring .circus-dust-inscription { font-size: clamp(34px, 2.5vw, 40px); }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-dust-inscription { font-size: clamp(24px, 6vw, 30px); }
+}
+
+/* Center support typography only — upright Victorian-poster black/ivory/gold. */
+.circus-ring .circus-dust-inscription,
+.circus-ring .circus-dust-inscription .circus-dust-question,
+.circus-ring .circus-dust-inscription .circus-dust-invitation {
+    font-family: Rockwell, 'Bodoni MT', 'Book Antiqua', Georgia, serif;
+    font-style: normal; font-weight: 900; font-synthesis: weight;
+    line-height: 1.15; letter-spacing: .015em;
+}
+.circus-ring .circus-dust-inscription { font-size: clamp(26px, 2.5vw, 34px); }
+.circus-ring .circus-dust-inscription .circus-dust-question {
+    color: #fff8e7; background: none; -webkit-text-fill-color: #fff8e7;
+    -webkit-text-stroke: .7px #000;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+        0 2px 0 #000, 1px 3px 0 #d4aa50, 2px 4px 0 #956b21, 3px 5px 2px #0009;
+}
+.circus-ring .circus-dust-inscription .circus-dust-invitation {
+    margin-top: .35em; font-size: 1.08em;
+    color: #edc66a; background: none; -webkit-text-fill-color: #edc66a;
+    -webkit-text-stroke: .7px #000;
+    text-shadow: 0 -1px 0 #fff8e7, -1px -1px 0 #000, 1px -1px 0 #000,
+        -1px 1px 0 #000, 1px 1px 0 #000, 1px 3px 0 #000, 2px 4px 0 #000, 3px 5px 2px #0009;
+}
+.circus-ring .circus-dust-inscription [lang='ar'],
+.circus-ring .circus-dust-inscription [lang='ar'] .circus-dust-question,
+.circus-ring .circus-dust-inscription [lang='ar'] .circus-dust-invitation {
+    font-family: Amiri, 'Traditional Arabic', Georgia, serif; font-style: normal;
+    letter-spacing: normal; line-height: 1.4;
+}
+@supports (background-clip: text) {
+    .circus-ring .circus-dust-inscription .circus-dust-invitation {
+        background: linear-gradient(#fff3bc 0%, #efce79 30%, #bc8b2e 58%, #f4d686 80%, #dfb653 100%);
+        background-clip: text; -webkit-background-clip: text;
+        color: transparent; -webkit-text-fill-color: transparent;
+    }
+}
+@media (min-width: 1200px) {
+    .circus-ring .circus-dust-inscription { font-size: clamp(30px, 2.5vw, 33px); }
+}
+@media (max-width: 700px) {
+    .circus-ring .circus-dust-inscription { font-size: clamp(23px, 5.8vw, 28px); }
+}
+
+/* Unified ring-only English showbill lettering; Arabic and global chrome retained. */
+main.circus-ring {
+    --ring-showbill: 'Rye', Rockwell, 'Book Antiqua', Georgia, serif;
+}
+main.circus-ring :is(h1, h2, h3) > .lang-en,
+main.circus-ring #ring-developer-heading,
+main.circus-ring .circus-attraction-positions a > .lang-en,
+main.circus-ring .circus-dust-inscription > .lang-en,
+main.circus-ring .circus-dust-inscription > .lang-en > span {
+    font-family: var(--ring-showbill); font-style: normal; font-weight: 400;
+    letter-spacing: .015em; overflow-wrap: anywhere;
+}
+main.circus-ring :is(h1, h2, h3) > .lang-en {
+    color: #fff0cf; line-height: 1.35;
+    text-shadow: 0 -1px 0 #fff5, 1px 2px 0 #171019, 2px 3px 0 #a77b36, 3px 4px 3px #0007;
+}
+main.circus-ring .circus-attraction-positions a > .lang-en {
+    font-size: 13px; line-height: 1.5; color: #fff0cf;
+    text-shadow: 0 -1px 0 #fff3, 1px 2px 0 #24131c, 2px 3px 2px #0005;
+}
+main.circus-ring .circus-key-plaque > .lang-en {
+    color: #24151a; text-shadow: 0 1px 0 #fff0b8;
+}
+main.circus-ring .circus-dust-inscription { font-style: normal; font-size: clamp(30px, 2.7vw, 40px); }
+main.circus-ring .circus-dust-inscription > .lang-en > .circus-dust-question { font-size: 1em; line-height: 1.2; }
+main.circus-ring .circus-dust-inscription > .lang-en > .circus-dust-invitation { font-size: 1.12em; line-height: 1.2; }
+main.circus-ring .circus-attraction-positions a:is(:hover, :focus-visible) > .lang-en {
+    color: #ffe6a0; text-shadow: 0 -1px 0 #fff6, 1px 2px 0 #171019, 0 0 8px #e9c26f77;
+}
+@media (max-width: 1000px) {
+    main.circus-ring .circus-dust-inscription { font-size: clamp(25px, 3vw, 32px); }
+}
+@media (max-width: 700px) {
+    main.circus-ring .circus-dust-inscription { font-size: clamp(26px, 6.3vw, 34px); }
+}
+
+/* Architectural light details only; no dimensions or attraction transforms. */
+.circus-ring .circus-seating-lights { filter: drop-shadow(0 0 2px #ffdc8480); }
+.circus-ring .circus-architectural-dust { pointer-events: none; animation: circus-architectural-dust-float 14s ease-in-out infinite alternate; }
+@keyframes circus-architectural-dust-float { from { transform: translate(0, 0); opacity: .25; } to { transform: translate(2px, -5px); opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-architectural-dust { animation: none; transform: none; opacity: .4; }
+}
+
+/* Center-message size correction only: two text rows plus the existing flag. */
+main.circus-ring .circus-dust-support {
+    left: 31%; width: 38%; top: 59%; max-width: 25rem;
+}
+main.circus-ring .circus-dust-inscription {
+    font-size: clamp(14px, 1.35vw, 20px); line-height: 1.15;
+}
+main.circus-ring .circus-dust-inscription > .lang-en > .circus-dust-question,
+main.circus-ring .circus-dust-inscription > .lang-en > .circus-dust-invitation,
+main.circus-ring .circus-dust-inscription [lang='ar'],
+main.circus-ring .circus-dust-inscription [lang='ar'] .circus-dust-question,
+main.circus-ring .circus-dust-inscription [lang='ar'] .circus-dust-invitation {
+    font-size: 1em; line-height: 1.15;
+}
+main.circus-ring .circus-dust-inscription .circus-dust-invitation { margin-top: .12em; }
+main.circus-ring .circus-dust-flag-link { margin-top: 2px; }
+@media (min-width: 701px) and (max-width: 1000px) {
+    main.circus-ring .circus-dust-support { left: 29%; width: 42%; }
+}
+@media (max-width: 700px) {
+    main.circus-ring .circus-dust-support { position: relative; left: auto; top: auto; width: min(90%, 25rem); max-width: 25rem; margin: .25rem auto 1rem; }
+    main.circus-ring .circus-dust-inscription { font-size: clamp(14px, 3.2vw, 18px); }
+}
+@media (min-width: 701px) {
+    main.circus-ring .circus-dust-support { left: 50%; translate: -50% 0; }
+}
+
+/* Traditional architecture only; keep all existing geometry and typography. */
+.circus-ring .circus-wall-drapery { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: drop-shadow(2px 4px 4px #170e1b66); }
+main.circus-ring .circus-dust-inscription .circus-dust-question,
+main.circus-ring .circus-dust-inscription .circus-dust-invitation {
+    -webkit-text-stroke: .2px #2c2119;
+    text-shadow: -.4px 0 #2c211999, .4px 0 #2c211999, 0 .5px 1px #2c211966, 0 0 5px #d6b56b55;
+}
+.circus-ring .circus-tent-rigging { filter: drop-shadow(0 0 3px #e9cd8b33); }
+.circus-ring .circus-aloosh-open-art,
+.circus-ring .circus-tito-open-art,
+.circus-ring .circus-dj-duet-art,
+.circus-ring .circus-banner-artwork,
+.circus-ring .circus-popcorn-artwork { filter: drop-shadow(0 3px 2px #48301f29); }
+@media (max-width: 700px) {
+    .circus-ring .circus-wall-drapery { opacity: .8; }
+}
+
+/* Atmosphere pass: discreet flag-colored first-line shadow, structural depth. */
+main.circus-ring .circus-dust-inscription .circus-dust-question {
+    color: #fff8e7; -webkit-text-fill-color: #fff8e7; -webkit-text-stroke: 0;
+    text-shadow: -.7px .5px 0 #b42e3f, .7px -.4px 0 #187347, 0 0 4px #dcc28044;
+}
+.circus-ring .circus-seat-tier { filter: drop-shadow(0 3px 2px #160d1b66); }
+.circus-ring .circus-wall-drapery { filter: drop-shadow(2px 5px 5px #170e1b88); }
+.circus-ring .circus-aloosh-open-art,
+.circus-ring .circus-tito-open-art,
+.circus-ring .circus-dj-duet-art,
+.circus-ring .circus-banner-artwork,
+.circus-ring .circus-popcorn-artwork { filter: drop-shadow(0 4px 2px #3d271f55); }
+.circus-ring .circus-antique-key { filter: drop-shadow(0 4px 2px #38201655); }
+
+/* Final atmosphere: upper fabric depth only; keep existing wall/alcove geometry. */
+.circus-ring .circus-tent-wall::before {
+    content: ''; position: absolute; inset: 0 0 55%; border-radius: inherit;
+    background: radial-gradient(ellipse at 50% -10%, #fff0bb22, transparent 62%),
+        repeating-conic-gradient(from -40deg at 50% -20%, #110b1526 0deg 4deg, #fff0bb0c 6deg 8deg, transparent 10deg 18deg);
+    box-shadow: inset 0 9px 18px #160c1644; pointer-events: none;
+}
+.circus-ring .circus-structural-ropes { filter: drop-shadow(1px 2px 1px #24151c55); }
