@@ -22,6 +22,8 @@ Still here. I am not going Anywhere. Reference above comments.
     <title>Make Palestine Great Again - MPGA</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
@@ -77,19 +79,45 @@ Still here. I am not going Anywhere. Reference above comments.
 
     <section class="section explore-section" id="links">
       <div class="explore-heading">
+        <svg class="explore-flag" viewBox="0 0 60 30" aria-hidden="true" focusable="false"><path fill="#151515" d="M0 0h60v10H0z"/><path fill="#fff" d="M0 10h60v10H0z"/><path fill="#007a3d" d="M0 20h60v10H0z"/><path fill="#ce1126" d="M0 0l30 15L0 30z"/></svg>
         <h3 class="section-title">
           <span class="lang-en">Explore</span>
           <span class="lang-ar hidden">استكشف</span>
         </h3>
         <p class="explore-kicker">
-          <span class="lang-en">Stories <span aria-hidden="true">•</span> People <span aria-hidden="true">•</span> Places <span aria-hidden="true">•</span> Possibilities</span>
-          <span class="lang-ar hidden">قصص <span aria-hidden="true">•</span> أشخاص <span aria-hidden="true">•</span> أماكن <span aria-hidden="true">•</span> إمكانيات</span>
+          <span class="lang-en">PALESTINE <span aria-hidden="true">•</span> PEOPLE <span aria-hidden="true">•</span> TRUTH <span aria-hidden="true">•</span> HUMANITY</span>
+          <span class="lang-ar hidden">فلسطين <span aria-hidden="true">•</span> الناس <span aria-hidden="true">•</span> الحقيقة <span aria-hidden="true">•</span> الإنسانية</span>
         </p>
         <p class="explore-intro">
           <span class="lang-en">A closer look at a more humane world.</span>
           <span class="lang-ar hidden">نظرة أقرب إلى عالم أكثر إنسانية.</span>
         </p>
       </div>
+
+      <section class="weekly-dispatch" aria-labelledby="weekly-dispatch-title" aria-roledescription="carousel">
+        <h4 id="weekly-dispatch-title"><span class="weekly-dispatch-peace" aria-hidden="true">☮</span> <span class="lang-en">The Weekly Dispatch</span><span class="lang-ar hidden">النشرة الأسبوعية</span> <span class="weekly-dispatch-peace" aria-hidden="true">☮</span></h4>
+        <div class="weekly-dispatch-layout">
+        <div class="weekly-dispatch-feature" hidden>
+          <div class="weekly-dispatch-media">
+            <img class="weekly-dispatch-image" alt="">
+            <button type="button" class="weekly-dispatch-pause" data-dispatch-action="pause" aria-label="Pause automatic rotation" disabled><span aria-hidden="true">❚❚</span> Pause</button>
+          </div>
+          <div class="weekly-dispatch-info">
+            <p class="weekly-dispatch-category"></p>
+            <p class="weekly-dispatch-week" hidden></p>
+            <h5 class="weekly-dispatch-headline"></h5>
+            <p class="weekly-dispatch-organization" hidden></p>
+            <p class="weekly-dispatch-description"></p>
+            <div class="weekly-dispatch-links">
+              <a class="weekly-dispatch-link"></a>
+              <a class="weekly-dispatch-link weekly-dispatch-link-secondary" target="_blank" rel="noopener noreferrer" hidden></a>
+            </div>
+          </div>
+        </div>
+        <p class="weekly-dispatch-empty"><span class="lang-en">Weekly features are being prepared.</span><span class="lang-ar hidden">يجري إعداد مختارات الأسبوع.</span></p>
+        </div>
+        <span class="weekly-dispatch-indicator" role="status" aria-live="off"></span>
+      </section>
 
       <div class="explore-grid">
         <article class="explore-card explore-card-mission">
@@ -417,6 +445,7 @@ Still here. I am not going Anywhere. Reference above comments.
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/weekly-dispatch.js"></script>
 
 </body>
 </html>
