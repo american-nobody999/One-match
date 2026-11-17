@@ -1,0 +1,983 @@
+/* Author: Leslie Brockman
+ * Circus Dance Game styles.
+ */
+ /* I know that some one I don't like is having to read this code. I can read it fine. David reads it fine. Spaces are wastes. Just saying. */
+body:has(#danceGame) { margin: 0; background: #190b29; }
+#danceGame {
+  --gold: #ffd46a; --cream: #fff4d4; --ink: #23112e;
+  box-sizing: border-box; width: 100%; min-height: 100vh;
+  padding: clamp(12px, 3vw, 40px); color: var(--cream);
+  background: radial-gradient(ellipse at 70% 15%, #68266e88, transparent 55%),
+    repeating-linear-gradient(100deg, #270d32 0 45px, #391038 70px, #210d30 100px);
+  font-family: Georgia, 'Times New Roman', serif; line-height: 1.45;
+  isolation: isolate;
+}
+#danceGame *, #danceGame *::before, #danceGame *::after { box-sizing: border-box; }
+#danceGame [hidden] { display: none !important; }
+#danceGame :is(h1, h2, h3, p, figure, dl, dd) { margin: 0; }
+#danceGame :is(section, div, button) { min-width: 0; }
+#danceGame .dance-en, #danceGame .dance-ar { display: block; }
+#danceGame .dance-ar { font-family: 'Amiri', 'Traditional Arabic', serif; letter-spacing: normal; }
+#danceGame h2 { font-size: clamp(1.15rem, 2vw, 1.65rem); text-align: center; color: var(--gold); }
+#danceGame button {
+  font: inherit; font-weight: bold; line-height: 1.35; cursor: pointer;
+  min-height: 48px; border: 2px solid var(--gold); color: var(--ink);
+  border-radius: 18px; padding: 12px; overflow-wrap: anywhere;
+  background: linear-gradient(#ffec9c, #f2ad30); touch-action: manipulation;
+  box-shadow: inset 0 0 0 3px #fff5cf88, 0 5px 0 #6b311c, 0 8px 14px #0008;
+  transition: filter .18s, box-shadow .18s, transform .18s;
+}
+#danceGame button:focus-visible { outline: 4px solid #fff; outline-offset: 5px; }
+#danceGame button:enabled:hover { filter: brightness(1.12); transform: translateY(-2px); }
+#danceGame button:enabled:active { transform: translateY(3px); }
+#danceGame button:disabled { cursor: default; filter: saturate(.45); opacity: .65; }
+#danceGame .dance-marquee {
+  position: relative; max-width: 1080px; margin: 0 auto 32px; text-align: center;
+  border: 6px solid var(--gold); border-radius: 45% 45% 24px 24px / 30px 30px 24px 24px;
+  padding: 24px 24px 30px; background: linear-gradient(#ba163a, #650c28);
+  box-shadow: inset 0 0 0 4px #8d401d, inset 0 0 24px #ffba3f66, 0 8px 0 #7a381e, 0 15px 35px #0009;
+}
+#danceGame .dance-marquee h1 { position: relative; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.15; color: #ffe397; text-shadow: 2px 3px #691426, 3px 5px #250c1c; }
+#danceGame .dance-marquee h1 .dance-ar { font-size: .7em; margin-top: 8px; }
+#danceGame .dance-school-name { position: relative; font-weight: bold; margin-bottom: 12px; }
+#danceGame .dance-marquee__bulbs, #danceGame .dance-stage__bulbs {
+  position: absolute; inset: 4px; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(circle, #fffbd5 0 3px, #ffca4a 4px, transparent 7px) top / 30px 14px repeat-x,
+    radial-gradient(circle, #fffbd5 0 3px, #ffca4a 4px, transparent 7px) bottom / 30px 14px repeat-x;
+  animation: dance-bulbs 3s ease-in-out infinite alternate;
+}
+#danceGame .dance-marquee__curtains { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; }
+#danceGame .dance-marquee__curtains::before, #danceGame .dance-marquee__curtains::after {
+  content: ''; position: absolute; top: 0; width: 18%; height: 100%;
+  background: repeating-linear-gradient(90deg, #5e082a, #bc2543 18px, #680b29 35px); opacity: .7;
+}
+#danceGame .dance-marquee__curtains::before { left: 0; border-radius: 0 0 100% 0; }
+#danceGame .dance-marquee__curtains::after { right: 0; border-radius: 0 0 0 100%; }
+#danceGame .dance-marquee__ornaments::before, #danceGame .dance-marquee__ornaments::after { content: '✦'; position: absolute; top: 40%; color: var(--gold); font-size: 2rem; }
+#danceGame .dance-marquee__ornaments::before { left: 4%; }
+#danceGame .dance-marquee__ornaments::after { right: 4%; }
+#danceGame .dance-studio__layout { display: grid; grid-template-columns: minmax(230px,  .85fr) minmax(0, 2.5fr); gap: 24px; max-width: 1440px; margin: auto; align-items: start; }
+#danceGame .dance-soundboard {
+  position: relative; padding: 22px 16px 105px; border: 6px solid var(--gold); border-radius: 40px;
+  background: radial-gradient(circle at 15% 8%, #e9519a44, transparent 40%), linear-gradient(135deg, #511647, #220d30);
+  box-shadow: inset 0 0 0 4px #a14d26, inset 0 0 25px #fdc44955, 0 10px 0 #481b2b, 0 16px 25px #0008;
+}
+#danceGame .dance-soundboard::before { content: ''; position: absolute; bottom: 25px; left: 12%; width: 50px; height: 50px; border-radius: 50%; border: 4px solid #ffec9c; background: conic-gradient(#bf751d, #fff3a6, #b56614, #ffe68b, #bf751d); box-shadow: 0 0 15px #ffbe4d99; }
+#danceGame .dance-soundboard::after { content: ''; position: absolute; bottom: 24px; right: 10%; width: 46%; height: 56px; border: 3px solid #b560c5; border-radius: 12px; background: repeating-linear-gradient(90deg, transparent 0 7px, #271333 7px 12px), linear-gradient(0deg, #13d7cb, #6ee929 45%, #f7ce39 70%, #fa4b9f); box-shadow: inset 0 0 12px #000; }
+#danceGame .dance-activities { display: grid; gap: 18px; margin-top: 22px; }
+#danceGame .dance-activity { --pad: #ffcd37; position: relative; padding: 16px 12px 16px 38px; background: linear-gradient(#fff9, transparent 45%), var(--pad); border-radius: 40px; }
+#danceGame .dance-activity:nth-child(2) { --pad: #e591fc; }
+#danceGame .dance-activity:nth-child(3) { --pad: #46e5e4; }
+#danceGame .dance-activity:nth-child(4) { --pad: #8ce84d; }
+#danceGame .dance-activity[aria-pressed='true'] { outline: 3px solid #fff8c4; outline-offset: 3px; box-shadow: inset 0 0 0 3px #fff8, 0 5px 0 #6b311c, 0 0 24px var(--pad); }
+#danceGame .dance-activity__indicator { position: absolute; left: 13px; top: calc(50% - 6px); width: 12px; height: 12px; border-radius: 50%; background: #432739; border: 2px solid #71482d; }
+#danceGame [aria-pressed='true'] .dance-activity__indicator { background: #fff5aa; box-shadow: 0 0 12px #fff; }
+#danceGame .dance-performance { display: grid; gap: 20px; }
+#danceGame .dance-stage { position: relative; }
+#danceGame .dance-stage > h2 { margin-bottom: 10px; }
+#danceGame .dance-stage__proscenium {
+  position: relative; isolation: isolate; height: clamp(320px, 37vw, 510px); overflow: hidden;
+  border: 10px solid var(--gold); border-radius: 45px 45px 30px 30px;
+  background: radial-gradient(ellipse at 50% 100%, #df5ddd 0, #562478 35%, #161138 72%);
+  box-shadow: inset 0 0 0 4px #97491d, inset 0 0 30px #0009, 0 0 16px #ffc14799, 0 8px 0 #873b26;
+}
+#danceGame .dance-stage__proscenium::after { content: ''; position: absolute; bottom: -35px; left: 8%; width: 84%; height: 100px; border-radius: 50%; border: 5px solid #f9b2ec88; background: repeating-radial-gradient(ellipse, #b64bd244 0 20px, #ffd47044 23px 27px, #36165155 30px 55px); z-index: -1; }
+#danceGame .dance-stage__curtain { position: absolute; top: 0; bottom: 0; width: 18%; background: repeating-linear-gradient(90deg, #500a28, #bd2246 20px, #700c30 38px); border-bottom: 5px solid #dba64c; z-index: 2; }
+#danceGame .dance-stage__curtain--left { left: 0; border-radius: 0 0 95% 0; }
+#danceGame .dance-stage__curtain--right { right: 0; border-radius: 0 0 0 95%; }
+#danceGame .dance-stage__bulbs { z-index: 5; }
+#danceGame .dance-stage__disco-ball { position: absolute; top: 12px; left: calc(50% - 35px); width: 70px; height: 70px; border-radius: 50%; border: 2px solid #d9faff; background: repeating-linear-gradient(0deg, transparent 0 9px, #f9f9ff99 10px 11px), repeating-linear-gradient(90deg, #4ecdf2 0 9px, #f9f9ff99 10px 11px, #a259cb 12px 21px); box-shadow: inset -12px -8px 14px #420d7f88, 0 0 25px #b9e8ff; z-index: 3; animation: dance-disco 8s ease-in-out infinite alternate; }
+#danceGame .dance-stage__spotlights { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+#danceGame .dance-stage__spotlight { position: absolute; top: -10%; left: 30%; width: 30%; height: 130%; transform-origin: top; clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); opacity: .4; background: linear-gradient(#ff55dd, transparent); animation: dance-light 9s ease-in-out infinite alternate; }
+#danceGame .dance-stage__spotlight--blue { left: 10%; background: linear-gradient(#36f2ef, transparent); animation-delay: -3s; }
+#danceGame .dance-stage__spotlight--gold { left: 60%; background: linear-gradient(#b795ff, transparent); animation-delay: -6s; }
+#danceGame .dance-performer { position: absolute; inset: 85px 20% 22px; display: flex; align-items: end; justify-content: center; z-index: 3; }
+#danceGame .dance-performer__image { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; transform-origin: 50% 90%; filter: drop-shadow(0 12px 10px #15052888); }
+#danceGame .dance-stage__speaker { position: absolute; bottom: 25px; width: 12%; height: 38%; border: 3px solid #ae67ba; border-radius: 12px; background: radial-gradient(circle at 50% 65%, #d948e4 0 10%, #1e152c 12% 25%, #e590e9 27% 29%, transparent 31%), radial-gradient(circle at 50% 22%, #f4b341 0 7%, #1e152c 9% 16%, #b079b9 18% 20%, transparent 22%), #291431; z-index: 3; box-shadow: 0 0 14px #d14cde66; }
+#danceGame .dance-stage__speaker--left { left: 3%; }
+#danceGame .dance-stage__speaker--right { right: 3%; }
+#danceGame .dance-stage__equalizer { position: absolute; bottom: 10px; left: 35%; width: 30%; height: 25px; display: flex; align-items: end; gap: 5px; z-index: 4; }
+#danceGame .dance-stage__equalizer span { flex: 1; height: 100%; background: linear-gradient(#ffcd56, #ed4dd4, #39e4d2); transform-origin: bottom; animation: dance-equalizer 1.5s ease-in-out infinite alternate; }
+#danceGame .dance-stage__equalizer span:nth-child(2n) { animation-delay: -.7s; }
+#danceGame .dance-stage__equalizer span:nth-child(3n) { animation-delay: -.3s; }
+#danceGame .dance-stage__drum { position: relative; width: 60px; height: 45px; margin: 16px 20px -8px auto; border: 4px solid var(--gold); border-radius: 45% / 15%; background: repeating-linear-gradient(70deg, #b51c3a 0 12px, #ffd46a 13px 16px, #8b1233 17px 29px); transform: rotate(-8deg); box-shadow: 3px 5px 8px #0006; }
+#danceGame .dance-instruction, #danceGame .dance-feedback { padding: 14px 18px; border: 2px solid #eaa859; border-radius: 20px; text-align: center; background: linear-gradient(120deg, #50153d, #27133b); box-shadow: inset 0 0 16px #e65dbd22, 0 0 10px #ffb44322; }
+#danceGame .dance-instruction h3 { font-size: .85rem; color: #f7d68d; margin-bottom: 8px; }
+#danceGame #danceInstruction { font-size: clamp(1.1rem, 2.3vw, 1.5rem); font-weight: bold; }
+#danceGame .dance-movements { padding: 16px; border: 4px solid var(--gold); border-radius: 28px; background: #53163f; box-shadow: inset 0 0 16px #e8ab4566, 0 6px 0 #793a24; }
+#danceGame .dance-pads { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+#danceGame .dance-pad { --pad: #ff8bb8; min-height: 125px; padding: 12px 6px; background: linear-gradient(#fff9, transparent 55%), var(--pad); border-radius: 22px; }
+#danceGame .dance-pad--spin { --pad: #6bcfff; }
+#danceGame .dance-pad--clap { --pad: #d68aff; }
+#danceGame .dance-pad--wave { --pad: #ffda4f; }
+#danceGame .dance-pad--stomp { --pad: #52e1ad; }
+#danceGame .dance-pad--freeze { --pad: #6aece3; }
+#danceGame .dance-pad__icon { display: block; font-family: sans-serif; font-size: 2rem; margin-bottom: 8px; line-height: 1; }
+#danceGame .dance-pad--jump .dance-pad__icon::before { content: '↟'; }
+#danceGame .dance-pad--spin .dance-pad__icon::before { content: '⟳'; }
+#danceGame .dance-pad--clap .dance-pad__icon::before { content: '✦'; }
+#danceGame .dance-pad--wave .dance-pad__icon::before { content: '≈'; }
+#danceGame .dance-pad--stomp .dance-pad__icon::before { content: '↧'; }
+#danceGame .dance-pad--freeze .dance-pad__icon::before { content: '❄'; }
+#danceGame .dance-pad.dance-pad--active { opacity: 1; filter: brightness(1.2); transform: translateY(3px); outline: 3px solid #fff; outline-offset: 1px; box-shadow: 0 0 24px var(--pad), inset 0 0 16px #fff; }
+#danceGame .dance-game-info, #danceGame .dance-creative-controls { padding: 18px; border: 3px solid #b674b3; border-radius: 24px; background: linear-gradient(135deg, #50123e, #251232); }
+#danceGame .dance-displays { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+#danceGame .dance-display { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #200d2b; border: 2px solid #ac5895; border-radius: 25px; padding: 10px 20px; color: var(--gold); }
+#danceGame .dance-display dd { font-size: 2rem; font-weight: bold; font-variant-numeric: tabular-nums; }
+#danceGame .dance-countdown { text-align: center; color: var(--gold); font-size: 1.25rem; font-variant-numeric: tabular-nums; margin-bottom: 12px; }
+#danceGame .dance-transport, #danceGame .dance-recording-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+#danceGame #danceStart, #danceGame #routinePlay { background: linear-gradient(#a9f5a0, #26bc85); }
+#danceGame #routineRecord { background: linear-gradient(#ffb8cc, #ef7199); }
+#danceGame .dance-performer--jump { animation: dance-jump .65s ease-out; }
+#danceGame .dance-performer--spin { animation: dance-spin .65s ease-in-out; }
+#danceGame .dance-performer--clap { animation: dance-clap .65s ease-in-out; }
+#danceGame .dance-performer--wave { animation: dance-wave .65s ease-in-out; }
+#danceGame .dance-performer--stomp { animation: dance-stomp .65s ease-out; }
+#danceGame .dance-performer--freeze { animation: dance-freeze .65s steps(1); }
+@keyframes dance-bulbs { from { opacity: .7; } to { opacity: 1; } }
+@keyframes dance-disco { from { transform: rotate(-8deg); } to { transform: rotate(8deg); } }
+@keyframes dance-light { from { transform: rotate(-18deg); opacity: .25; } to { transform: rotate(18deg); opacity: .45; } }
+@keyframes dance-equalizer { from { transform: scaleY(.3); } to { transform: scaleY(1); } }
+@keyframes dance-jump { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-26px) rotate(-4deg); } }
+@keyframes dance-spin { to { transform: rotateY(360deg); } }
+@keyframes dance-clap { 0%, 100% { transform: scale(1); } 30%, 70% { transform: scale(.94, 1.04); } 50% { transform: scale(1.04, .96); } }
+@keyframes dance-wave { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-9deg); } 75% { transform: rotate(9deg); } }
+@keyframes dance-stomp { 0%, 100% { transform: translateY(0); } 35% { transform: translateY(-10px) rotate(4deg); } 55% { transform: translateY(3px) scale(1.04, .96); } }
+@keyframes dance-freeze { 0%, 100% { transform: rotate(-5deg); filter: drop-shadow(0 0 12px #7effff); } }
+@media (max-width: 1050px) {
+  #danceGame .dance-studio__layout { grid-template-columns: minmax(0, 1fr); }
+  #danceGame .dance-soundboard { padding: 20px; border-radius: 28px; }
+  #danceGame .dance-soundboard::before, #danceGame .dance-soundboard::after { display: none; }
+  #danceGame .dance-activities { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  #danceGame .dance-activity { padding: 24px 10px 12px; border-radius: 22px; }
+  #danceGame .dance-activity__indicator { top: 8px; left: calc(50% - 6px); }
+  #danceGame .dance-stage__proscenium { height: 450px; }
+  #danceGame .dance-pads { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  #danceGame { padding: 12px; }
+  #danceGame .dance-marquee { padding: 22px 12px; border-width: 4px; }
+  #danceGame .dance-marquee__ornaments { display: none; }
+  #danceGame .dance-activities { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #danceGame .dance-stage__proscenium { height: 340px; border-width: 6px; border-radius: 26px; }
+  #danceGame .dance-performer { inset: 85px 17% 25px; }
+  #danceGame .dance-stage__speaker { width: 13%; height: 30%; }
+  #danceGame .dance-pads { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #danceGame .dance-pad { min-height: 115px; }
+  #danceGame .dance-movements, #danceGame .dance-game-info, #danceGame .dance-creative-controls { padding: 12px; }
+  #danceGame .dance-display { padding: 10px; flex-wrap: wrap; }
+  #danceGame .dance-recording-controls { grid-template-columns: minmax(0, 1fr); }
+}
+/* Compact console refinement: retain natural label wrapping and touch targets. */
+#danceGame .dance-studio__layout { grid-template-columns: minmax(290px, 1fr) minmax(0, 2.5fr); gap: 18px; }
+#danceGame .dance-soundboard { padding: 14px 12px 65px; border-radius: 28px; }
+#danceGame .dance-soundboard h2 { font-size: 1.2rem; line-height: 1.3; }
+#danceGame .dance-soundboard::before { width: 34px; height: 34px; bottom: 15px; border-width: 3px; }
+#danceGame .dance-soundboard::after { height: 34px; bottom: 15px; border-radius: 8px; }
+#danceGame .dance-activities { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+#danceGame .dance-activity {
+  min-height: 84px; padding: 18px 8px 9px; border-radius: 15px;
+  font-size: .95rem; line-height: 1.35;
+  background: linear-gradient(155deg, #fff9, transparent 48%, #23112e22), var(--pad);
+  box-shadow: inset 0 2px 0 #fff9, inset 0 -3px 7px #40203e44, 0 4px 0 #662d36, 0 6px 10px #0006;
+}
+#danceGame .dance-activity__indicator { width: 9px; height: 9px; top: 6px; left: calc(50% - 4.5px); }
+#danceGame .dance-activity[aria-pressed='true'] {
+  transform: translateY(2px); outline: 2px solid #fff1ad; outline-offset: 1px;
+  box-shadow: inset 0 2px 8px #46203866, inset 0 0 0 2px #fff6, 0 2px 0 #662d36, 0 0 14px var(--pad);
+}
+#danceGame .dance-activity[aria-pressed='true']:enabled:hover { transform: translateY(1px); }
+#danceGame .dance-activity:enabled:active { transform: translateY(3px); box-shadow: inset 0 3px 9px #46203877, 0 1px 0 #662d36, 0 0 10px var(--pad); }
+#danceGame .dance-activity:focus-visible { outline: 4px solid #fff; outline-offset: 4px; }
+#danceGame .dance-performance { gap: 12px; }
+#danceGame .dance-stage > h2 { margin-bottom: 6px; }
+#danceGame .dance-stage__drum { width: 46px; height: 32px; margin: 10px 18px -4px auto; border-width: 3px; }
+#danceGame .dance-instruction, #danceGame .dance-feedback { padding: 8px 12px; border-radius: 15px; }
+#danceGame .dance-instruction h3 { margin-bottom: 3px; }
+#danceGame #danceInstruction { font-size: clamp(1rem, 1.8vw, 1.25rem); }
+#danceGame .dance-movements, #danceGame .dance-game-info, #danceGame .dance-creative-controls { padding: 10px 12px; border-radius: 20px; }
+#danceGame .dance-movements h2, #danceGame .dance-game-info h2, #danceGame .dance-creative-controls h2 { font-size: 1.1rem; line-height: 1.3; }
+#danceGame .dance-pads { gap: 10px; margin-top: 8px; }
+#danceGame .dance-pad {
+  min-height: 88px; padding: 8px 5px; border-radius: 15px;
+  background: linear-gradient(155deg, #fffb, transparent 50%, #23112e22), var(--pad);
+  box-shadow: inset 0 2px 0 #fffc, inset 0 -2px 6px #40203e33, 0 3px 0 #6b3141, 0 5px 9px #0006;
+}
+#danceGame .dance-pad__icon { font-size: 1.5rem; margin-bottom: 4px; }
+#danceGame .dance-displays { gap: 8px; margin: 8px 0; }
+#danceGame .dance-display { padding: 6px 12px; gap: 8px; }
+#danceGame .dance-display dd { font-size: 1.6rem; }
+#danceGame .dance-transport, #danceGame .dance-recording-controls { gap: 10px; margin-top: 10px; }
+#danceGame .dance-transport button, #danceGame .dance-recording-controls button { padding: 7px 10px; }
+@media (max-width: 1050px) {
+  #danceGame .dance-studio__layout { grid-template-columns: minmax(0, 1fr); }
+  #danceGame .dance-soundboard { padding: 12px 12px 58px; }
+  #danceGame .dance-soundboard::before, #danceGame .dance-soundboard::after { display: block; }
+  #danceGame .dance-soundboard::before { left: 16px; bottom: 12px; width: 30px; height: 30px; }
+  #danceGame .dance-soundboard::after { right: 16px; bottom: 12px; width: 35%; height: 30px; }
+}
+@media (min-width: 800px) and (max-width: 1050px) {
+  #danceGame .dance-activities { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  #danceGame .dance-studio__layout { gap: 14px; }
+  #danceGame .dance-activity { padding-inline: 6px; }
+  #danceGame .dance-pad { min-height: 84px; }
+  #danceGame .dance-display { flex-wrap: wrap; }
+}
+/* Unified console: instructions belong to the soundboard; controls share a row. */
+#danceGame .dance-soundboard { padding-bottom: 14px; }
+#danceGame .dance-soundboard::before, #danceGame .dance-soundboard::after { display: none; }
+#danceGame .dance-console-decor { position: relative; height: 48px; margin: 8px 0; pointer-events: none; }
+#danceGame .dance-console-decor::before {
+  content: ''; position: absolute; left: 8%; top: 7px; width: 32px; height: 32px;
+  border: 3px solid #ffec9c; border-radius: 50%;
+  background: conic-gradient(#bf751d, #fff3a6, #b56614, #ffe68b, #bf751d);
+  box-shadow: 0 0 10px #ffbe4d66;
+}
+#danceGame .dance-console-decor::after {
+  content: ''; position: absolute; right: 5%; top: 7px; width: 48%; height: 32px;
+  border: 2px solid #b560c5; border-radius: 8px;
+  background: repeating-linear-gradient(90deg, transparent 0 7px, #271333 7px 12px), linear-gradient(0deg, #13d7cb, #6ee929 45%, #f7ce39 70%, #fa4b9f);
+  box-shadow: inset 0 0 8px #000;
+}
+#danceGame .dance-soundboard .dance-instruction {
+  position: relative; padding: 12px 10px 10px; border: 2px solid var(--gold); border-radius: 12px;
+  background: radial-gradient(ellipse at top, #40215b, #180d2b 85%);
+  box-shadow: inset 0 3px 10px #000b, inset 0 0 0 3px #11091c, 0 0 10px #ffd46a44;
+}
+#danceGame .dance-soundboard .dance-instruction::before {
+  content: ''; display: block; width: 24px; height: 3px; margin: 0 auto 6px;
+  border-radius: 4px; background: #6cf9df; box-shadow: 0 0 8px #6cf9df99;
+}
+#danceGame .dance-soundboard .dance-instruction h3 { font-size: .85rem; line-height: 1.35; margin-bottom: 6px; }
+#danceGame .dance-soundboard #danceInstruction { color: #d2fff5; font-size: 1.1rem; line-height: 1.45; overflow-wrap: anywhere; }
+#danceGame .dance-gameplay-row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 12px; align-items: start; }
+#danceGame .dance-gameplay-row .dance-pads { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+#danceGame .dance-gameplay-row .dance-pad { min-height: 80px; padding: 7px 4px; font-size: .95rem; }
+#danceGame .dance-gameplay-row .dance-pad__icon { font-size: 1.25rem; margin-bottom: 3px; }
+#danceGame .dance-gameplay-row .dance-game-info { padding: 10px; }
+#danceGame .dance-gameplay-row .dance-displays { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 8px 0; }
+#danceGame .dance-gameplay-row .dance-display { flex-wrap: wrap; padding: 6px 8px; gap: 4px; border-radius: 14px; }
+#danceGame .dance-gameplay-row .dance-display dt { font-size: .9rem; }
+#danceGame .dance-gameplay-row .dance-display dd { font-size: 1.4rem; }
+#danceGame .dance-gameplay-row .dance-feedback { padding: 7px; font-size: .95rem; overflow-wrap: anywhere; }
+#danceGame .dance-gameplay-row .dance-countdown { font-size: 1rem; margin-bottom: 6px; }
+#danceGame .dance-gameplay-row .dance-transport { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+#danceGame .dance-gameplay-row .dance-transport button { padding: 6px; font-size: .95rem; }
+/* Both halves of the gameplay console stay adjacent at every viewport. */
+#danceGame .dance-gameplay-row { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 10px; }
+#danceGame .dance-control-slot { min-width: 0; }
+#danceGame .dance-control-slot .dance-creative-controls { padding: 10px; }
+#danceGame .dance-control-slot .dance-recording-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+#danceGame .dance-control-slot .dance-recording-controls button { font-size: .95rem; padding: 7px 5px; min-height: 48px; }
+#danceGame .dance-recording-status { margin-top: 8px; padding: 7px; border: 1px solid #7fe6cb; border-radius: 10px; color: #caffed; background: #180e29; font-size: .95rem; overflow-wrap: anywhere; }
+#danceGame .dance-recording-status::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #73e5bb; box-shadow: 0 0 6px #73e5bb77; }
+#danceGame[data-phase='playback'] .dance-recording-status::before { background: #ffd46a; }
+#danceGame .dance-instruction-art { display: block; width: 100%; max-width: 280px; height: auto; flex-shrink: 0; margin: 0 auto 8px; filter: drop-shadow(0 2px 2px #0007); pointer-events: none; }
+@media (min-width: 1051px) {
+  #danceGame .dance-soundboard { align-self: stretch; display: flex; flex-direction: column; }
+  #danceGame .dance-soundboard .dance-instruction { flex: 1; }
+}
+@media (max-width: 600px) {
+  #danceGame { padding-inline: 6px; }
+  #danceGame .dance-gameplay-row { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 6px; }
+  #danceGame .dance-gameplay-row .dance-movements,
+  #danceGame .dance-gameplay-row .dance-game-info,
+  #danceGame .dance-control-slot .dance-creative-controls { padding: 7px 4px; border-width: 2px; border-radius: 14px; }
+  #danceGame .dance-gameplay-row h2 { font-size: .95rem; }
+  #danceGame .dance-gameplay-row .dance-pads { gap: 5px; }
+  #danceGame .dance-gameplay-row .dance-pad { min-height: 80px; padding: 6px 2px; font-size: .85rem; border-radius: 10px; }
+  #danceGame .dance-gameplay-row .dance-displays { gap: 4px; }
+  #danceGame .dance-gameplay-row .dance-display { padding: 5px 3px; }
+  #danceGame .dance-gameplay-row .dance-display dt { font-size: .8rem; }
+  #danceGame .dance-gameplay-row .dance-feedback { font-size: .85rem; padding: 5px; }
+  #danceGame .dance-gameplay-row .dance-transport,
+  #danceGame .dance-control-slot .dance-recording-controls { gap: 5px; }
+  #danceGame .dance-gameplay-row .dance-transport button,
+  #danceGame .dance-control-slot .dance-recording-controls button { padding: 6px 3px; font-size: .85rem; border-radius: 10px; }
+}
+/* Phase 3D: a cohesive soundboard with a stationary LED instruction screen. */
+#danceGame .dance-soundboard {
+  padding: 12px; border-width: 5px;
+  background: radial-gradient(ellipse at 50% 0, #823c8655, transparent 65%), linear-gradient(145deg, #4f1c59, #24102f);
+  box-shadow: inset 0 0 0 2px #8d482d, inset 0 1px 18px #ffdb7244, 0 6px 0 #481b2b, 0 12px 22px #0007;
+}
+#danceGame .dance-soundboard h2 { font-size: 1.15rem; line-height: 1.3; text-shadow: 0 2px 2px #170921; }
+#danceGame .dance-soundboard .dance-activities { gap: 10px; margin-top: 10px; }
+#danceGame .dance-soundboard .dance-activity {
+  min-height: 84px; padding: 19px 7px 9px; border: 2px solid #e9b752;
+  background: linear-gradient(160deg, #fff9, transparent 45%, #32173433), var(--pad);
+  box-shadow: inset 0 0 0 1px #fff2ad, inset 0 3px 5px #fff5, inset 0 -3px 7px #32173444, 0 4px 0 #743e35, 0 6px 9px #0007;
+  transition: transform .12s ease-out, box-shadow .12s ease-out, filter .12s ease-out;
+}
+#danceGame .dance-soundboard .dance-activity__indicator {
+  width: 8px; height: 8px; left: calc(50% - 4px); top: 6px;
+  background: #342334; border: 1px solid #836c46; box-shadow: inset 0 1px 3px #000b;
+}
+#danceGame .dance-soundboard .dance-activity[aria-pressed='true'] {
+  transform: translateY(2px); border-color: #fff0af;
+  box-shadow: inset 0 3px 8px #32173466, inset 0 0 0 1px #fff8, 0 2px 0 #743e35, 0 0 12px var(--pad);
+}
+#danceGame .dance-soundboard .dance-activity[aria-pressed='true'] .dance-activity__indicator {
+  background: #fff6bd; border-color: #fffce1; box-shadow: 0 0 6px #fff3a9, 0 0 10px var(--pad);
+}
+#danceGame .dance-soundboard .dance-activity:enabled:hover { transform: translateY(-1px); }
+#danceGame .dance-soundboard .dance-activity[aria-pressed='true']:enabled:hover { transform: translateY(1px); }
+#danceGame .dance-soundboard .dance-activity:enabled:active {
+  transform: translateY(3px); box-shadow: inset 0 3px 8px #32173477, 0 1px 0 #743e35, 0 0 8px var(--pad);
+}
+#danceGame .dance-soundboard .dance-activity:focus-visible { outline: 4px solid #fff; outline-offset: 4px; }
+#danceGame .dance-console-decor {
+  height: 42px; margin: 10px 0; border-block: 1px solid #ce955133;
+  background: linear-gradient(90deg, transparent, #110b2322, transparent);
+}
+#danceGame .dance-console-decor::before { top: 5px; left: 8%; width: 30px; height: 30px; }
+#danceGame .dance-console-decor::after { top: 6px; right: 6%; height: 28px; width: 47%; }
+#danceGame .dance-soundboard .dance-instruction {
+  padding: 10px; border: 1px solid #f8d16e; border-radius: 10px;
+  background: radial-gradient(ellipse at 50% 0, #35204977, transparent 80%), #120c22;
+  box-shadow: inset 0 3px 9px #000c, inset 0 0 14px #42d8ce12, 0 0 0 2px #7c4b3655, 0 0 8px #ffd46a33;
+}
+#danceGame .dance-soundboard .dance-instruction h3 { font-size: .8rem; line-height: 1.45; color: #f6d994; margin-bottom: 7px; }
+#danceGame .dance-soundboard #danceInstruction {
+  font-size: 1.05rem; line-height: 1.55; color: #fff4d4;
+  white-space: normal; overflow-wrap: anywhere; text-shadow: 0 0 8px #70eddb33;
+}
+#danceGame .dance-soundboard #danceInstruction .dance-ar { color: #b9fff0; margin-top: 4px; }
+#danceGame .dance-soundboard .dance-instruction,
+#danceGame .dance-soundboard .dance-instruction * { animation: none; transition: none; }
+@media (max-width: 600px) {
+  #danceGame .dance-soundboard { padding: 10px; }
+  #danceGame .dance-soundboard .dance-activity { padding-inline: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-soundboard .dance-activity,
+  #danceGame .dance-soundboard .dance-activity:enabled:hover,
+  #danceGame .dance-soundboard .dance-activity:enabled:active,
+  #danceGame .dance-soundboard .dance-activity[aria-pressed='true'],
+  #danceGame .dance-soundboard .dance-activity[aria-pressed='true']:enabled:hover { transform: none; }
+  #danceGame *, #danceGame *::before, #danceGame *::after { animation: none !important; transition: none !important; }
+  #danceGame button:enabled:hover, #danceGame button:enabled:active, #danceGame .dance-pad.dance-pad--active { transform: none; }
+  #danceGame .dance-activity[aria-pressed='true'], #danceGame .dance-activity[aria-pressed='true']:enabled:hover, #danceGame .dance-activity:enabled:active { transform: none; }
+}
+
+/* Phase 3F — miniature molded circus DJ surfaces; gameplay layout is retained. */
+#danceGame .dance-marquee {
+  isolation: isolate;
+  background: linear-gradient(180deg, #85142f, #540b26 65%, #340c25);
+  border-color: #f3c260 #d59a37 #8e5425 #ffe4a0;
+  box-shadow: inset 0 0 0 4px #25102f, inset 0 0 0 6px #9f6a3b, inset 0 8px 18px #ffca4e22, 0 3px 0 #ffe5a0, 0 9px 0 #6b3525, 0 16px 25px #0008;
+}
+#danceGame .dance-marquee::before {
+  content: ''; position: absolute; inset: 10px; border-radius: inherit; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse at 15% 60%, #42e7e82b, transparent 50%), radial-gradient(ellipse at 85% 40%, #fa54c735, transparent 50%);
+  background-size: 130% 100%; animation: dance-console-wash 12s ease-in-out infinite alternate;
+}
+#danceGame .dance-marquee__curtains::before,
+#danceGame .dance-marquee__curtains::after {
+  background: repeating-linear-gradient(95deg, #310b24 0, #68102c 12px, #a32b42 21px, #4d0a28 34px, #260c24 40px);
+  box-shadow: inset 0 5px 12px #0007; opacity: .85;
+}
+#danceGame .dance-marquee h1 { text-shadow: 0 -1px 0 #fff5c4, 1px 2px 0 #ac5a26, 2px 4px 0 #471021, 3px 6px 5px #160820aa; }
+#danceGame .dance-marquee__bulbs { background: none; animation: none; }
+#danceGame .dance-marquee__bulbs::before,
+#danceGame .dance-marquee__bulbs::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  background: radial-gradient(circle, #fff8cf 0 2px, #ffcc67 3px, #e9983033 6px, transparent 8px) top / 56px 14px repeat-x,
+    radial-gradient(circle, #fff8cf 0 2px, #ffcc67 3px, #e9983033 6px, transparent 8px) bottom / 56px 14px repeat-x;
+  animation: dance-console-bulbs 4s ease-in-out infinite alternate;
+}
+#danceGame .dance-marquee__bulbs::after { background-position: 28px top, 28px bottom; animation-delay: -4s; }
+#danceGame .dance-marquee__ornaments::before,
+#danceGame .dance-marquee__ornaments::after {
+  top: 14px; font-size: 1rem; text-shadow: 0 0 7px #ffce6b99;
+  animation: dance-console-sparkle 9s ease-in-out infinite;
+}
+#danceGame .dance-marquee__ornaments::after { animation-delay: -4.5s; }
+#danceGame .dance-soundboard {
+  border-color: #f8d57e #be853c #88502d #ffe2a0;
+  background: radial-gradient(ellipse at 0 10%, #e369c933, transparent 50%), radial-gradient(ellipse at 100% 70%, #44e6dc22, transparent 45%), linear-gradient(135deg, #5c2c70, #291331 50%, #3b1b49);
+  box-shadow: inset 0 0 0 2px #311032, inset 0 3px 2px #f8cf8a66, inset 0 0 0 6px #613477, inset 0 12px 22px #0008, 0 3px 0 #b07940, 0 9px 0 #24102c, 0 14px 20px #0008;
+}
+#danceGame .dance-soundboard .dance-activities { padding: 5px; border-radius: 18px; background: #170d2588; box-shadow: inset 0 3px 7px #0008, 0 1px 0 #bf81cc44; }
+#danceGame .dance-soundboard .dance-activity {
+  border-radius: 18px; border-color: #ffe7a3 #c78b3a #98612c #ffdc82;
+  background: radial-gradient(ellipse at 30% 0, #fff9, transparent 65%), linear-gradient(180deg, #fff3, transparent 55%, #3e163330), var(--pad);
+  box-shadow: inset 0 2px 1px #fff9, inset 2px 0 4px #fff5, inset 0 -4px 5px #4a24334d, 0 4px 0 #77433e, 0 6px 7px #0008;
+}
+#danceGame .dance-soundboard .dance-activity[aria-pressed='true'] { box-shadow: inset 0 3px 7px #33102f66, inset 0 -1px 2px #fff7, 0 2px 0 #54303b, 0 0 12px var(--pad); }
+#danceGame .dance-soundboard .dance-activity[aria-pressed='true'] .dance-activity__indicator { animation: dance-console-led 5s ease-in-out infinite alternate; }
+#danceGame .dance-console-decor::before {
+  background: linear-gradient(90deg, transparent 46%, #5c361a 47% 54%, transparent 55%) 50% 2px / 100% 7px no-repeat,
+    radial-gradient(circle at 34% 24%, #fff4b6aa, transparent 45%),
+    repeating-radial-gradient(circle, transparent 0 3px, #75431855 4px, #ffe7a666 5px, transparent 6px),
+    conic-gradient(#bd7b27, #fff1b1, #c38432, #8c501c, #ffe39a, #bd7b27);
+  box-shadow: 0 0 0 3px #21102a, 0 0 0 4px #94623f, inset 0 1px 2px #fff8, 0 4px 5px #0009;
+}
+#danceGame .dance-console-decor::after { background: linear-gradient(155deg, #ffffff25, transparent 48%), #100b1e; box-shadow: inset 0 2px 6px #000, 0 1px 0 #d68ee855; }
+#danceGame .dance-console-equalizer { position: absolute; top: 10px; right: 8%; width: 43%; height: 19px; display: flex; gap: 4px; align-items: end; z-index: 1; pointer-events: none; }
+#danceGame .dance-console-equalizer > span { --led: #52ead4; flex: 1; height: 85%; background: repeating-linear-gradient(0deg, transparent 0 3px, #120d2544 3px 4px), var(--led); border-radius: 2px; box-shadow: 0 0 4px var(--led); transform-origin: bottom; animation: dance-console-meter 3.8s ease-in-out infinite alternate; }
+#danceGame .dance-console-equalizer > span:nth-child(2n) { --led: #f0cf58; height: 65%; animation-delay: -1.8s; }
+#danceGame .dance-console-equalizer > span:nth-child(3n) { --led: #e782d6; height: 100%; animation-delay: -2.6s; }
+#danceGame .dance-console-equalizer > span:nth-child(4n) { --led: #92e96c; }
+#danceGame .dance-soundboard .dance-instruction {
+  background: linear-gradient(155deg, #ffffff09, transparent 28%, #ffffff03 29%, transparent 52%), radial-gradient(ellipse at top, #36234c44, transparent 75%), #100b20;
+  border-color: #eec56c; box-shadow: inset 0 4px 10px #000c, inset 0 0 16px #55e9dc0d, 0 0 0 2px #302039, 0 0 7px #efc35944;
+}
+#danceGame .dance-soundboard .dance-instruction::before { width: 35px; background: linear-gradient(90deg, #73f5df 0 60%, transparent 60% 72%, #edd477 72% 84%, transparent 84% 90%, #e294dc 90%); box-shadow: 0 0 7px #6cf9df66; }
+@keyframes dance-console-bulbs { from { opacity: .65; } to { opacity: 1; } }
+@keyframes dance-console-wash { from { background-position: 0 50%; } to { background-position: 100% 50%; } }
+@keyframes dance-console-sparkle { 0%, 65%, 100% { opacity: .55; } 78% { opacity: 1; } }
+@keyframes dance-console-led { from { opacity: .8; } to { opacity: 1; } }
+@keyframes dance-console-meter { from { transform: scaleY(.72); opacity: .75; } to { transform: scaleY(1); opacity: .95; } }
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-console-equalizer > span { transform: none; }
+}
+
+/* Phase 3G — one live stage screen, separate illustrated soundboard guidance. */
+#danceGame .dance-stage .dance-performer { inset: 90px 51% 36px 15%; }
+#danceGame .dance-stage .dance-performer__image { width: 100%; height: 100%; object-fit: contain; }
+#danceGame .dance-stage .dance-stage-command {
+  position: absolute; z-index: 4; left: 50%; right: 14%; top: 30%;
+  padding: 12px 10px; border: 3px solid #e8bc64; border-radius: 18px;
+  background: linear-gradient(150deg, #ffffff0a, transparent 40%), #1c102f;
+  box-shadow: inset 0 2px 0 #fff3, inset 0 0 16px #0a061e, 0 0 0 3px #9b397d, 0 5px 0 #522043, 0 0 14px #57e5df44;
+  overflow-wrap: anywhere; text-align: center;
+}
+#danceGame .dance-stage-command::before { content: ''; display: block; width: 24px; height: 3px; margin: 0 auto 6px; border-radius: 3px; background: #6cf9df; box-shadow: 0 0 7px #6cf9df; }
+#danceGame .dance-stage-command #danceInstruction { font-size: clamp(1rem, 1.7vw, 1.5rem); line-height: 1.45; color: #fff4d4; }
+#danceGame .dance-stage-command #danceInstruction .dance-ar { color: #c2fff1; margin-top: 5px; }
+#danceGame .dance-stage-command, #danceGame .dance-stage-command * { animation: none; transition: none; }
+#danceGame .dance-guidance { padding: 10px; background: #1b102c; border: 1px solid #bf975b; border-radius: 14px; box-shadow: inset 0 2px 8px #0008; }
+#danceGame .dance-guidance__header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+#danceGame .dance-guidance__clown { width: 42px; height: 60px; object-fit: contain; flex-shrink: 0; }
+#danceGame .dance-guidance h3 { font-size: 1rem; line-height: 1.4; color: var(--gold); }
+#danceGame .dance-guidance__steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+#danceGame .dance-guidance__steps li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 8px; align-items: start; font-size: .9rem; line-height: 1.5; }
+#danceGame .dance-guidance__steps svg { width: 32px; height: 32px; filter: drop-shadow(0 2px 1px #0008); }
+#danceGame .dance-guidance__steps .dance-ar { color: #cbf8ed; margin-top: 3px; }
+@media (max-width: 600px) {
+  #danceGame .dance-stage .dance-performer { inset: 85px 53% 36px 14%; }
+  #danceGame .dance-stage .dance-stage-command { left: 48%; right: 7%; top: 31%; padding: 8px 6px; border-width: 2px; border-radius: 12px; }
+    #danceGame .dance-stage-command #danceInstruction { font-size: .9rem; line-height: 1.4; }
+  #danceGame .dance-guidance__steps { gap: 8px; }
+}
+
+/* Phase 3H — soundboard-only surface polish and compact illustrated guidance. */
+#danceGame .dance-soundboard {
+  align-self: start;
+  background: radial-gradient(ellipse at 0 15%, #dc62c535, transparent 48%), radial-gradient(ellipse at 100% 65%, #4de8dd25, transparent 48%), linear-gradient(140deg, #613578, #291531 55%, #3b1d4b);
+  box-shadow: inset 0 0 0 2px #2a102f, inset 0 3px 2px #ffe3a177, inset 0 0 0 5px #704188, inset 0 9px 18px #0008, 0 3px 0 #ad783b, 0 8px 0 #24102c, 0 12px 18px #0007;
+}
+#danceGame .dance-soundboard > h2,
+#danceGame .dance-soundboard .dance-activity .dance-en,
+#danceGame .dance-soundboard .dance-guidance h3 .dance-en { font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: 800; }
+#danceGame .dance-soundboard > h2 { color: #ffe3a0; text-shadow: 0 1px #ffedbc55, 0 3px 2px #1a0a29; }
+#danceGame .dance-soundboard > h2 .dance-ar { color: #fff0c7; font-weight: 700; }
+#danceGame .dance-soundboard .dance-activity .dance-en { font-size: .94rem; text-shadow: 0 1px #fff6; }
+#danceGame .dance-soundboard .dance-activity .dance-ar { font-weight: 700; line-height: 1.45; }
+#danceGame .dance-soundboard .dance-guidance {
+  padding: 8px; border-color: #d2ad70;
+  background: linear-gradient(145deg, #ffffff05, transparent 40%), #1b102a;
+  box-shadow: inset 0 3px 9px #0009, inset 0 0 12px #5cdacb09, 0 1px 0 #edbc7055;
+}
+#danceGame .dance-soundboard .dance-guidance__header { gap: 8px; margin-bottom: 5px; }
+#danceGame .dance-soundboard .dance-guidance__clown { width: 36px; height: 48px; }
+#danceGame .dance-soundboard .dance-guidance h3 { color: #ffe3a0; text-shadow: 0 2px 2px #0008; }
+#danceGame .dance-soundboard .dance-guidance h3 .dance-ar { color: #fff0cc; }
+#danceGame .dance-soundboard .dance-guidance__steps { gap: 6px; }
+#danceGame .dance-soundboard .dance-guidance__steps li { grid-template-columns: 36px minmax(0, 1fr); gap: 7px; font-family: 'Trebuchet MS', Arial, sans-serif; font-size: .9rem; line-height: 1.45; }
+#danceGame .dance-soundboard .dance-guidance__steps li + li { border-top: 1px solid #b58c542b; padding-top: 6px; }
+#danceGame .dance-soundboard .dance-guidance__steps svg { width: 36px; height: 36px; }
+#danceGame .dance-soundboard .dance-guidance__steps .dance-ar { margin-top: 2px; line-height: 1.5; }
+/* Inner-frame bulbs stay in the housing margin, outside labels and controls. */
+#danceGame .dance-soundboard::before {
+  content: ''; display: block; position: absolute; inset: 5px; width: auto; height: auto;
+  border: 0; border-radius: 20px; pointer-events: none;
+  background: radial-gradient(circle, #ffe3a6 0 1px, #e7b34b88 2px, transparent 3px) left / 4px 32px repeat-y,
+    radial-gradient(circle, #ffe3a6 0 1px, #e7b34b88 2px, transparent 3px) right / 4px 32px repeat-y;
+  box-shadow: none; animation: dance-board-lights 6s ease-in-out infinite alternate;
+}
+#danceGame .dance-soundboard::after {
+  content: ''; display: block; position: absolute; inset: 5px; width: auto; height: auto;
+  border: 0; border-radius: 20px; pointer-events: none;
+  background: radial-gradient(circle, #ffcbee 0 1px, transparent 3px) left 50% top 2px / 28px 4px repeat-x,
+    radial-gradient(circle, #96f9e9 0 1px, transparent 3px) left 50% bottom 2px / 28px 4px repeat-x;
+  box-shadow: none; animation: dance-board-lights 6s ease-in-out -6s infinite alternate;
+}
+#danceGame .dance-soundboard .dance-console-decor { margin-block: 7px; }
+#danceGame .dance-soundboard .dance-instruction-art { margin-bottom: 5px; }
+#danceGame .dance-soundboard .dance-instruction-art path[stroke='none'] { transform-box: fill-box; transform-origin: center; animation: dance-board-sparkle 10s ease-in-out infinite; }
+@keyframes dance-board-lights { from { opacity: .55; } to { opacity: .9; } }
+@keyframes dance-board-sparkle { 0%, 65%, 100% { opacity: .6; } 80% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-soundboard::before, #danceGame .dance-soundboard::after,
+  #danceGame .dance-soundboard .dance-instruction-art path { animation: none !important; }
+}
+
+/* Phase 3I — performance pads and standard transport panel only. */
+#danceGame .dance-gameplay-row .dance-movements,
+#danceGame .dance-gameplay-row #standardControls {
+  border-color: #edc777 #ad713b #74432f #f4da96;
+  background: radial-gradient(ellipse at top left, #dc65ce22, transparent 60%), linear-gradient(145deg, #45204e, #22122f);
+  box-shadow: inset 0 2px 0 #fff1b744, inset 0 0 0 2px #22112f, inset 0 -5px 12px #0005, 0 4px 0 #53283f, 0 7px 12px #0006;
+}
+#danceGame .dance-console-star { display: inline-block; width: 14px; height: 14px; vertical-align: middle; margin-right: 5px; filter: drop-shadow(0 1px 2px #ffd46644); }
+#danceGame .dance-gameplay-row .dance-pad {
+  --pad: #fa85bd; position: relative; border-radius: 15px;
+  border-color: #ffe5a5 #c58a48 #8e5735 #ffe0a0;
+  padding-top: 10px;
+  background: radial-gradient(ellipse at 25% 0, #fffa, transparent 65%), linear-gradient(165deg, #fff2, transparent 45%, #38173344), var(--pad);
+  box-shadow: inset 0 2px 0 #fff9, inset 2px 0 3px #fff5, inset 0 -4px 6px #48213e44, 0 4px 0 #68374c, 0 5px 8px #0006, 0 0 7px #f99bdd22;
+  transition: transform .12s ease-out, filter .12s ease-out, box-shadow .12s ease-out;
+}
+#danceGame .dance-gameplay-row .dance-pad--spin { --pad: #66bdff; }
+#danceGame .dance-gameplay-row .dance-pad--clap { --pad: #b990f4; }
+#danceGame .dance-gameplay-row .dance-pad--wave { --pad: #ffb45e; }
+#danceGame .dance-gameplay-row .dance-pad--stomp { --pad: #51daca; }
+#danceGame .dance-gameplay-row .dance-pad--freeze { --pad: #9edff4; }
+#danceGame .dance-gameplay-row .dance-pad::after { content: ''; position: absolute; top: 5px; right: 7px; width: 5px; height: 5px; border-radius: 50%; background: #fff0b0; box-shadow: 0 0 4px #fff0b066; }
+#danceGame .dance-gameplay-row .dance-pad__icon { margin: 0 auto 3px; width: 30px; height: 30px; }
+#danceGame .dance-gameplay-row .dance-pad__icon::before { content: none; }
+#danceGame .dance-gameplay-row .dance-pad__icon svg { display: block; width: 100%; height: 100%; filter: drop-shadow(0 2px 1px #62295366); }
+#danceGame .dance-gameplay-row .dance-pad:enabled:hover { border-color: #fff4c7; box-shadow: inset 0 2px 0 #fffc, 0 4px 0 #68374c, 0 0 12px var(--pad); }
+#danceGame .dance-gameplay-row .dance-pad:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+#danceGame .dance-gameplay-row .dance-pad:enabled:active,
+#danceGame .dance-gameplay-row .dance-pad.dance-pad--active { transform: translateY(2px); box-shadow: inset 0 3px 7px #42213d55, 0 1px 0 #68374c, 0 0 12px var(--pad); }
+#danceGame .dance-gameplay-row .dance-pad:active::after,
+#danceGame .dance-gameplay-row .dance-pad--active::after { background: #fff; box-shadow: 0 0 6px #fff; }
+#danceGame .dance-gameplay-row .dance-pad:disabled { opacity: .85; filter: saturate(.45); color: #302033; }
+#danceGame .dance-gameplay-row .dance-pad.dance-pad--active { opacity: 1; filter: brightness(1.12); }
+#danceGame .dance-mixer-detail { display: block; width: 100%; max-width: 150px; height: 9px; margin: 4px auto; }
+#danceGame .dance-gameplay-row #standardControls { padding: 8px; }
+#danceGame #standardControls .dance-displays { margin: 5px 0; }
+#danceGame #standardControls .dance-display { border: 1px solid #a77654; border-radius: 10px; padding: 5px; background: linear-gradient(140deg, #ffffff05, transparent 45%), #130d21; box-shadow: inset 0 2px 6px #000b, 0 1px 0 #d990c733; }
+#danceGame #standardControls .dance-display dd { color: #ffdc86; font-family: ui-monospace, 'Courier New', monospace; font-size: 1.4rem; text-shadow: 0 0 7px #ffc34c44; }
+#danceGame #standardControls .dance-display:first-child { border-top-color: #65d8d0; }
+#danceGame #standardControls .dance-display:last-child { border-top-color: #d88dcf; }
+#danceGame #standardControls .dance-feedback { padding: 4px 6px; border: 1px solid #ac7e74; border-radius: 10px; line-height: 1.4; background: #201129; box-shadow: inset 0 2px 5px #0005; white-space: normal; overflow-wrap: anywhere; }
+#danceGame #standardControls .dance-transport { margin-top: 6px; gap: 6px; }
+#danceGame #standardControls .dance-transport button { min-height: 48px; padding: 5px 3px; border-radius: 12px; line-height: 1.3; box-shadow: inset 0 2px 0 #fffa, inset 0 -2px 5px #48213e33, 0 3px 0 #68374c, 0 4px 6px #0006; }
+#danceGame .dance-transport-icon { display: inline-block; width: 15px; height: 15px; vertical-align: middle; }
+@media (max-width: 600px) {
+  #danceGame .dance-gameplay-row .dance-pad__icon { width: 25px; height: 25px; }
+  #danceGame .dance-gameplay-row .dance-pad { border-radius: 10px; padding-inline: 2px; }
+  #danceGame .dance-gameplay-row #standardControls { padding: 6px 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-gameplay-row .dance-pad:enabled:hover,
+  #danceGame .dance-gameplay-row .dance-pad:enabled:active,
+  #danceGame .dance-gameplay-row .dance-pad.dance-pad--active { transform: none; }
+}
+
+/* Phase 3J — balanced stage, shared movement symbols, response lighting. */
+#danceGame .dance-icon-library { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+#danceGame .dance-stage .dance-performer { inset: 86px 64% 36px 5%; }
+#danceGame .dance-stage .dance-stage-command {
+  left: 36%; right: 17%; top: 27%; padding: 10px;
+  border-color: #ffe7a0 #ce9651 #975a35 #f9cf79;
+  box-shadow: inset 0 2px 0 #fff4, inset 0 0 18px #5ce8dc12, inset 0 4px 10px #0008, 0 0 0 2px #81336f, 0 5px 0 #48203b, 0 0 12px #5ce8dc33;
+}
+#danceGame .dance-stage .dance-stage__speaker { width: 11%; height: 29%; right: 2%; left: auto; box-shadow: inset 2px 2px 4px #f2b7f333, inset -4px -3px 7px #0008, 3px 5px 7px #0009, 0 0 8px #d14cde33; }
+#danceGame .dance-stage .dance-stage__speaker--left { bottom: 37%; right: 3%; transform: rotate(-8deg); z-index: 2; }
+#danceGame .dance-stage .dance-stage__speaker--right { bottom: 6%; transform: rotate(3deg); z-index: 3; }
+#danceGame .dance-stage .dance-stage__speaker::after { content: ''; position: absolute; inset: 4px; border-radius: 7px; background: linear-gradient(135deg, #8df7f51c, transparent 40%, #f198e715); pointer-events: none; }
+#danceGame .dance-command-icon { display: block; width: clamp(30px, 4vw, 48px); height: auto; margin: 0 auto 5px; filter: drop-shadow(0 2px 1px #0009) drop-shadow(0 0 5px #75ebdb33); }
+#danceGame .dance-stage-command[data-clown-says='true'] { border-top-color: #9df5dc; }
+#danceGame .dance-stage-command[data-clown-says='true'] #danceInstruction .dance-en,
+#danceGame .dance-stage-command[data-clown-says='true'] #danceInstruction .dance-ar { color: #d6fff0; font-weight: 800; }
+#danceGame .dance-stage-command[data-clown-says='false'] { border-top-color: #ffd381; }
+#danceGame .dance-stage-command[data-clown-says='false'] #danceInstruction .dance-en,
+#danceGame .dance-stage-command[data-clown-says='false'] #danceInstruction .dance-ar { color: #ffe4b3; }
+#danceGame .dance-stage[data-response='correct'] .dance-command-icon { filter: drop-shadow(0 0 8px #72edca88); }
+#danceGame .dance-stage[data-response='correct'] .dance-stage-command { outline: 2px solid #8de4c4; outline-offset: 2px; }
+#danceGame .dance-stage[data-response='incorrect'] .dance-stage-command { outline: 2px solid #d9a184; outline-offset: 2px; }
+#danceGame .dance-gameplay-row .dance-pad.dance-pad--response { opacity: 1; filter: brightness(1.12); box-shadow: inset 0 2px 4px #fff7, 0 2px 0 #68374c, 0 0 12px var(--pad); }
+#danceGame .dance-gameplay-row .dance-pad--response::after { background: #fff; box-shadow: 0 0 6px #fff; }
+@media (max-width: 600px) {
+  #danceGame .dance-stage .dance-performer { inset: 84px 67% 36px 3%; }
+  #danceGame .dance-stage .dance-stage-command { left: 33%; right: 13%; top: 28%; padding: 7px 5px; }
+  #danceGame .dance-stage .dance-stage__speaker { width: 8%; height: 23%; right: 1%; border-width: 2px; }
+  #danceGame .dance-stage .dance-stage__speaker--left { right: 2%; bottom: 32%; }
+  #danceGame .dance-stage .dance-stage__speaker--right { bottom: 7%; }
+  #danceGame .dance-command-icon { width: 28px; }
+    #danceGame .dance-stage-command #danceInstruction { font-size: .85rem; line-height: 1.35; }
+}
+
+/* Phase 3K — shared illustrated commands, with no change to console geometry. */
+#danceGame .dance-gameplay-row .dance-pad__icon svg {
+  filter: drop-shadow(0 1px 1px #54254666);
+}
+#danceGame .dance-stage .dance-command-icon {
+  width: clamp(36px, 4.5vw, 54px);
+  filter: drop-shadow(0 2px 1px #08051599) drop-shadow(0 0 5px #8bece333);
+}
+/* Illustration treatment is identical whether or not the command has a prefix. */
+#danceGame .dance-stage-command[data-clown-says='true'],
+#danceGame .dance-stage-command[data-clown-says='false'] { border-top-color: #ffe7a0; }
+#danceGame .dance-stage-command[data-clown-says] #danceInstruction .dance-en { color: #fff4d4; font-weight: 700; }
+#danceGame .dance-stage-command[data-clown-says] #danceInstruction .dance-ar { color: #c2fff1; font-weight: 700; }
+@media (max-width: 600px) {
+  #danceGame .dance-stage .dance-command-icon { width: 32px; }
+}
+
+/* Phase 3L — illustrated stage screen and molded floor LEDs. */
+#danceGame .dance-stage .dance-stage-command {
+  background: linear-gradient(145deg, #ffffff0a, transparent 33%, #ffffff03 35%, transparent 60%), radial-gradient(ellipse at top, #54dfdc0d, transparent 75%), #1b102e;
+  box-shadow: inset 0 3px 8px #080514bb, inset 0 0 16px #66e8e00c, 0 0 0 2px #81336f, 0 5px 0 #48203b, 0 0 12px #5ce8dc33;
+}
+#danceGame .dance-stage .dance-command-icon { width: clamp(46px, 5.5vw, 66px); max-width: 100%; margin-bottom: 6px; filter: drop-shadow(0 2px 1px #09051788) drop-shadow(0 0 6px #8bece32b); }
+#danceGame .dance-stage__equalizer { height: 25px; bottom: 8px; gap: 5px; align-items: end; }
+#danceGame .dance-stage__equalizer > span {
+  --bar-color: #59e9de; height: 83%; min-width: 0; position: relative;
+  border: 1px solid #c7ffed55; border-bottom: 2px solid #192142;
+  border-radius: 5px 5px 3px 3px;
+  background: linear-gradient(90deg, #061e4355, #ffffff44 25%, transparent 50%, #11132f77), linear-gradient(0deg, #22133544, transparent 70%), var(--bar-color);
+  box-shadow: inset 1px 1px 1px #fff7, inset -2px 0 2px #13102c77, 1px 2px 0 #221431, 0 0 5px var(--bar-color);
+  transform-origin: bottom; animation: dance-stage-led 3.8s ease-in-out infinite alternate;
+}
+#danceGame .dance-stage__equalizer > span::before { content: ''; position: absolute; top: 3px; bottom: 4px; left: 22%; width: 2px; border-radius: 2px; background: #ffffff66; pointer-events: none; }
+#danceGame .dance-stage__equalizer > span:nth-child(2n) { --bar-color: #f28acc; height: 65%; animation-delay: -1.4s; }
+#danceGame .dance-stage__equalizer > span:nth-child(3n) { --bar-color: #ae8cff; height: 96%; animation-delay: -2.5s; }
+#danceGame .dance-stage__equalizer > span:nth-child(4n) { --bar-color: #ffd379; height: 75%; animation-delay: -.7s; }
+#danceGame .dance-stage__equalizer > span:nth-child(5n) { --bar-color: #64c9f4; height: 100%; animation-delay: -3s; }
+@keyframes dance-stage-led { from { transform: scaleY(.78); } to { transform: scaleY(1); } }
+@media (max-width: 600px) {
+  #danceGame .dance-stage .dance-command-icon { width: 42px; }
+  #danceGame .dance-stage__equalizer { gap: 3px; height: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-stage__equalizer > span { animation: none !important; transform: none; }
+}
+
+/* Phase 3M — enlarged toy illustrations and layered ambient DJ lighting. */
+#danceGame .dance-gameplay-row .dance-pad__icon { width: 42px; height: 42px; max-width: 100%; margin-bottom: 2px; }
+#danceGame .dance-stage .dance-stage-command {
+  display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 8px; align-items: center;
+}
+#danceGame .dance-stage .dance-stage-command::before { position: absolute; top: 5px; left: calc(50% - 12px); margin: 0; }
+#danceGame .dance-stage .dance-command-icon { width: 100%; max-width: 120px; height: auto; margin: 0 auto; filter: drop-shadow(0 3px 2px #08041399) drop-shadow(0 0 8px #63dacb33); }
+#danceGame .dance-stage-command #danceInstruction { min-width: 0; }
+#danceGame .dance-stage-command:has(.dance-command-icon[hidden]) #danceInstruction { grid-column: 1 / -1; }
+#danceGame .dance-large-art { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 5px 0 8px; pointer-events: none; }
+#danceGame .dance-large-art svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 3px 3px #10071f77); }
+#danceGame .dance-stage__spotlight--cyan-back { left: 5%; width: 45%; background: linear-gradient(#4ef9dd66, transparent 85%); animation-duration: 15s; animation-delay: -7s; }
+#danceGame .dance-stage__spotlight--rose-back { left: 50%; width: 45%; background: linear-gradient(#f997d655, transparent 85%); animation-duration: 18s; animation-delay: -11s; }
+#danceGame .dance-stage__proscenium { background: radial-gradient(ellipse at 15% 90%, #35c9cb33, transparent 50%), radial-gradient(ellipse at 85% 20%, #db6fd52b, transparent 55%), radial-gradient(ellipse at 50% 100%, #b659d8, #43216b 40%, #161138 75%); box-shadow: inset 0 0 0 4px #97491d, inset 0 0 25px #0007, inset 0 -6px 18px #52e8db22, 0 0 16px #ffc14766, 0 8px 0 #873b26; }
+#danceGame .dance-stage__proscenium::before { content: ''; position: absolute; inset: 8px; border-radius: 24px; border-left: 2px solid #4ce8db55; border-right: 2px solid #ef91dc55; pointer-events: none; z-index: 1; animation: dance-ambient-led 11s ease-in-out infinite alternate; }
+#danceGame .dance-stage__proscenium::after { box-shadow: inset 0 6px 12px #ffeeaa22, 0 -4px 18px #bc7de52b; }
+#danceGame .dance-stage .dance-stage__speaker::after { background: radial-gradient(ellipse at 25% 15%, #72f9ea33, transparent 45%), linear-gradient(135deg, #8df7f51c, transparent 40%, #f198e728); }
+#danceGame .dance-stage__equalizer > span { box-shadow: inset 1px 1px 1px #fffa, inset -2px 0 2px #13102c77, 1px 2px 0 #221431, 0 0 7px var(--bar-color); }
+@keyframes dance-ambient-led { from { opacity: .6; } to { opacity: .95; } }
+@media (max-width: 1050px) {
+  #danceGame .dance-large-art { display: none; }
+}
+@media (max-width: 600px) {
+  #danceGame .dance-gameplay-row .dance-pad__icon { width: 34px; height: 34px; }
+  #danceGame .dance-stage .dance-stage-command { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 5px; }
+  #danceGame .dance-stage .dance-command-icon { width: 100%; max-width: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-stage__spotlight, #danceGame .dance-stage__proscenium::before { animation: none !important; }
+}
+
+/* Phase 3N — reference-led sculpted equipment and reliably sized SVG commands. */
+#danceGame .dance-gameplay-row .dance-pad__icon { width: 52px; height: 52px; max-width: 100%; }
+#danceGame .dance-pad__icon svg { aspect-ratio: 1; overflow: visible; }
+#danceGame .dance-stage .dance-stage-command {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 8px;
+}
+#danceGame .dance-stage .dance-command-icon {
+  display: block; width: 100%; height: auto; aspect-ratio: 1;
+  min-height: 88px; max-width: 154px; overflow: visible;
+  filter: drop-shadow(0 4px 2px #0b071a88) drop-shadow(0 0 7px #a77cdd33);
+}
+#danceGame .dance-large-art { grid-template-columns: minmax(0, 1fr); gap: 4px; margin-block: 4px 8px; }
+#danceGame .dance-large-art svg { width: 100%; max-height: 170px; filter: drop-shadow(0 5px 3px #0d071c88) drop-shadow(0 0 8px #ce60d522); }
+#danceGame[data-phase='ended'] #standardControls #danceRestart {
+  border-color: #fff0ad;
+  box-shadow: inset 0 2px 0 #fffc, 0 3px 0 #68374c, 0 0 0 2px #74ded0, 0 0 15px #ffd36f88, 0 0 24px #64e7d144;
+}
+#danceGame .dance-stage__spotlight--cyan-back { opacity: .3; }
+#danceGame .dance-stage__spotlight--rose-back { opacity: .3; }
+@media (max-width: 1050px) {
+  #danceGame .dance-large-art { display: none; margin: 0; }
+}
+@media (max-width: 600px) {
+  #danceGame .dance-gameplay-row .dance-pad__icon { width: 40px; height: 40px; }
+  #danceGame .dance-stage .dance-stage-command { gap: 5px; }
+  #danceGame .dance-stage .dance-command-icon { min-height: 64px; max-width: 100px; }
+}
+
+/* Phase 3O — arched school marquee and coordinated tactile DJ equipment. */
+#danceGame .dance-marquee {
+  border: 0; border-radius: 0; box-shadow: none; background: none;
+  padding: clamp(68px, 8vw, 100px) 28px 14px; margin-bottom: 24px;
+}
+#danceGame .dance-marquee::before { inset: 30px 12px 50px; border-radius: 50% 50% 15px 15px; }
+#danceGame .dance-marquee-arch { position: absolute; inset: 0 0 auto; width: 100%; height: calc(100% - 72px); z-index: -1; pointer-events: none; overflow: visible; filter: drop-shadow(0 7px 6px #0d051b88); }
+#danceGame .dance-marquee__curtains { inset: 30px 14px 70px; z-index: -1; }
+#danceGame .dance-marquee h1 { font-size: clamp(1.65rem, 4.6vw, 3.7rem); line-height: 1.2; padding-bottom: 24px; overflow-wrap: anywhere; }
+#danceGame .dance-marquee h1 .dance-ar { font-size: .56em; margin-top: 6px; }
+#danceGame .dance-booth-subtitle { position: relative; font-family: 'Trebuchet MS', Arial, sans-serif; font-size: clamp(1.1rem, 2.4vw, 1.75rem); font-weight: 800; line-height: 1.3; color: #fff0c4; text-shadow: 0 3px 3px #1c0726; }
+#danceGame .dance-booth-subtitle .dance-ar { font-size: .85em; }
+#danceGame .dance-arch-bulb { fill: #fff4bd; stroke: #f5bd4d; stroke-width: 2px; filter: drop-shadow(0 0 4px #ffc34c); animation: dance-arch-warmth 4.5s ease-in-out var(--bulb-delay, 0s) infinite alternate; }
+#danceGame .dance-large-art { gap: 10px; }
+#danceGame .dance-large-art svg { max-height: 210px; overflow: visible; }
+#danceGame .dance-soundboard .dance-activity,
+#danceGame .dance-gameplay-row .dance-pad {
+  border-width: 3px; border-color: #ffeab0 #ca914a #98602e #ffdb8a;
+  box-shadow: inset 0 3px 1px #fffb, inset 2px 0 4px #fff5, inset 0 -4px 6px #54234355, 0 4px 0 #643344, 0 7px 9px #0006;
+}
+#danceGame .dance-soundboard .dance-activity[aria-pressed='true'] { box-shadow: inset 0 4px 7px #39182d66, inset 0 -1px 1px #fff7, 0 2px 0 #643344, 0 0 12px var(--pad); }
+#danceGame .dance-soundboard .dance-activity:enabled:active,
+#danceGame .dance-gameplay-row .dance-pad:enabled:active { box-shadow: inset 0 3px 6px #39182d55, 0 1px 0 #643344, 0 0 10px var(--pad); }
+#danceGame .dance-soundboard .dance-activity:focus-visible,
+#danceGame .dance-gameplay-row .dance-pad:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+#danceGame .dance-gameplay-row .dance-pad.dance-pad--response { box-shadow: inset 0 2px 4px #fff8, 0 2px 0 #643344, 0 0 13px var(--pad); }
+@keyframes dance-arch-warmth { from { opacity: .72; } to { opacity: 1; } }
+@media (max-width: 1050px) {
+  #danceGame .dance-large-art { display: none; margin: 0; }
+}
+@media (max-width: 600px) {
+  #danceGame .dance-marquee { padding: 48px 16px 10px; }
+  #danceGame .dance-marquee h1 { padding-bottom: 22px; }
+  #danceGame .dance-marquee-arch { height: calc(100% - 60px); }
+  #danceGame .dance-soundboard .dance-activity,
+  #danceGame .dance-gameplay-row .dance-pad { border-width: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-arch-bulb { animation: none !important; opacity: 1; }
+}
+
+/* Phase 3P final correction — status and command share an anchored stage readout. */
+#danceGame .dance-stage-readout {
+  position: absolute; z-index: 4; left: 36%; right: 17%; top: 27%;
+  display: flex; flex-direction: column; align-items: stretch; gap: 6px; min-width: 0;
+}
+#danceGame .dance-stage .dance-stage-readout .dance-stage-command {
+  position: relative; left: auto; right: auto; top: auto; width: 100%;
+}
+#danceGame .dance-stage-readout #danceFeedback {
+  align-self: center; max-width: 100%; margin: 0; padding: 4px 9px;
+  border: 1px solid #e5bf70; border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff0b, transparent 45%), #231032;
+  box-shadow: inset 0 1px 0 #fff3, 0 2px 0 #572947, 0 0 8px #65e6d433;
+  color: #fff0c6; font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: .85rem; font-weight: 700; line-height: 1.3; text-align: center;
+  white-space: normal; overflow-wrap: anywhere;
+}
+#danceGame .dance-stage-readout #danceFeedback .dance-ar { color: #c3fff0; }
+#danceGame #standardControls .dance-transport { margin-top: 4px; }
+@media (max-width: 600px) {
+  #danceGame .dance-stage-readout { left: 33%; right: 13%; top: 25%; gap: 5px; }
+  #danceGame .dance-stage-readout #danceFeedback { font-size: .75rem; padding: 3px 6px; }
+}
+
+/* Phase 3P addition — noninteractive lighting board in standard Game Controls. */
+#danceGame #standardControls .dance-game-lightboard {
+  display: block; width: 100%; height: auto; max-height: 88px; margin: 6px auto;
+  pointer-events: none; filter: drop-shadow(0 2px 2px #10071966);
+}
+#danceGame .dance-game-lightboard .dance-lightboard-led {
+  filter: drop-shadow(0 0 3px var(--lamp));
+  animation: dance-lightboard-led 5s ease-in-out var(--lamp-delay, 0s) infinite alternate;
+}
+#danceGame .dance-game-lightboard .dance-lightboard-meter {
+  animation: dance-lightboard-meter 3.8s ease-in-out var(--meter-delay, 0s) infinite alternate;
+}
+@keyframes dance-lightboard-led { from { opacity: .65; } to { opacity: 1; } }
+@keyframes dance-lightboard-meter { from { transform: scaleY(.65); } to { transform: scaleY(1); } }
+@media (max-width: 600px) {
+  #danceGame #standardControls .dance-game-lightboard { margin-block: 4px; max-height: 65px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-game-lightboard .dance-lightboard-led,
+  #danceGame .dance-game-lightboard .dance-lightboard-meter { animation: none !important; transform: none; }
+}
+
+/* Phase 3Q — scale only the two oversized desktop decorations to 75%. */
+#danceGame .dance-large-art svg { width: 75%; max-height: 157.5px; justify-self: center; }
+#danceGame .dance-large-art { gap: 7.5px; }
+
+/* Phase 3S — all four title lines compose inside the preserved gold arch. */
+#danceGame .dance-marquee {
+  padding: clamp(42px, 5vw, 60px) clamp(18px, 4vw, 46px) 26px;
+  margin-bottom: 24px;
+}
+#danceGame .dance-marquee-arch { inset: 0; width: 100%; height: 100%; }
+#danceGame .dance-marquee::before { inset: 25px 14px 12px; }
+#danceGame .dance-marquee__curtains { inset: 30px 14px 12px; }
+#danceGame .dance-marquee h1 {
+  max-width: 88%; margin: 0 auto; padding: 0;
+  font-size: clamp(1.5rem, 4.3vw, 3.5rem); line-height: 1.15;
+}
+#danceGame .dance-marquee h1 .dance-ar { font-size: .57em; line-height: 1.4; margin-top: 4px; }
+#danceGame .dance-booth-subtitle {
+  width: fit-content; max-width: 90%; margin: 10px auto 0; padding: 0 14px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.05rem, 2.1vw, 1.55rem); line-height: 1.25;
+  color: #ffe09a; text-shadow: 0 1px 0 #fff3, 0 2px 2px #280b2d, 0 0 9px #5bddd922;
+  border-inline: 1px solid #78e6da55;
+}
+#danceGame .dance-booth-subtitle .dance-ar { font-size: .85em; line-height: 1.4; margin-top: 2px; color: #ffedbb; }
+@media (max-width: 600px) {
+  #danceGame .dance-marquee { padding: 42px 14px 23px; margin-bottom: 20px; }
+  #danceGame .dance-marquee h1 { max-width: 96%; font-size: clamp(1.35rem, 5.4vw, 2rem); }
+  #danceGame .dance-marquee h1 .dance-ar { font-size: .66em; margin-top: 4px; }
+  #danceGame .dance-booth-subtitle { margin-top: 8px; padding-inline: 10px; }
+  #danceGame .dance-marquee-arch { height: 100%; }
+}
+
+/* Phase 3T — studio-only replay speed, adjacent to Play Routine. */
+#danceGame #creativeControls .dance-recording-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#danceGame #routinePlay { grid-column: 1; }
+#danceGame .dance-replay-speed { min-width: 0; padding: 5px; border: 1px solid #e7c16a; border-radius: 12px; background: #271335; color: #fff0c9; font-size: .8rem; text-align: center; box-shadow: inset 0 2px 4px #0006; }
+#danceGame .dance-replay-speed select { display: block; width: 100%; min-width: 0; min-height: 44px; margin-top: 3px; border: 2px solid #f2d38a; border-radius: 9px; background: #adf0da; color: #22112f; font: inherit; font-weight: bold; }
+#danceGame .dance-replay-speed select:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+#danceGame[data-activity='creative-studio'][data-phase='playback'] .dance-performer__image { animation-duration: var(--dance-playback-duration, 650ms); }
+
+/* Phase 3U — compact, colorful studio-only controls. */
+#danceGame #creativeControls .dance-recording-status { margin-top: 6px; padding: 5px; font-size: .85rem; line-height: 1.35; }
+#danceGame #creativeControls .dance-recording-status::before { content: none; display: none; }
+#danceGame #creativeControls .dance-studio-status-line { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 6px; text-align: center; }
+#danceGame #creativeControls .dance-studio-status-line .dance-en,
+#danceGame #creativeControls .dance-studio-status-line .dance-ar { display: inline; }
+#danceGame #creativeControls .dance-recording-controls { gap: 8px; align-items: stretch; }
+#danceGame #creativeControls .dance-recording-controls button {
+  --studio-pad: #ff8bc7; min-height: 52px; padding: 6px; border-radius: 13px;
+  border: 2px solid #ffe3a5; color: #28132e;
+  background: linear-gradient(155deg, #ffffff88, transparent 60%, #37112e11), var(--studio-pad);
+  box-shadow: inset 0 2px 0 #fffb, inset 0 -3px 5px #62294b22, 0 3px 0 #6e3652, 0 5px 7px #0005;
+}
+#danceGame #creativeControls #routineRecord { --studio-pad: #ff80bd; }
+#danceGame #creativeControls #routineStop { --studio-pad: #ffab77; }
+#danceGame #creativeControls #routinePlay { --studio-pad: #73efb4; grid-column: auto; }
+#danceGame #creativeControls #routineClear { --studio-pad: #ffdb63; }
+#danceGame #creativeControls .dance-recording-controls button:disabled { opacity: .72; filter: none; box-shadow: inset 0 1px 4px #391b3522, 0 1px 0 #6e3652; }
+#danceGame #creativeControls .dance-recording-controls button:enabled:hover { filter: brightness(1.08); }
+#danceGame #creativeControls .dance-replay-speed { background: linear-gradient(#a3f6f1, #53d8de); color: #28132e; padding: 5px; border: 2px solid #ffe3a5; box-shadow: inset 0 2px 0 #fff9, 0 3px 0 #4e506b; }
+#danceGame #creativeControls .dance-replay-speed select { background: #c6fff3; margin-top: 4px; }
+#danceGame #creativeControls .dance-studio-lights { display: block; width: 100%; height: auto; max-height: 100px; align-self: center; pointer-events: none; filter: drop-shadow(0 2px 2px #100b2666); }
+@media (max-width: 420px) {
+  #danceGame #creativeControls .dance-recording-controls { gap: 6px; }
+  #danceGame #creativeControls .dance-replay-speed { grid-column: 1 / -1; }
+  #danceGame #creativeControls .dance-studio-lights { grid-column: 1 / -1; max-height: 48px; }
+}
+
+/* Phase 3V — gathered entrance drapes and atmospheric outer stonework. */
+#danceGame { position: relative; }
+#danceGame::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22480%22%20height%3D%22350%22%20viewBox%3D%220%200%20480%20350%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22s%22%20x2%3D%22.4%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23684057%22%2F%3E%3Cstop%20offset%3D%22.24%22%20stop-color%3D%22%2343223e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2321162c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cg%20fill%3D%22url%28%23s%29%22%20stroke%3D%22%23160f21%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M8%2028Q43%209%2096%2023l13%2054-22%2024-69-3Q1%2066%208%2028Z%22%2F%3E%3Cpath%20d%3D%22M124%2017l84-9%2023%2038-15%2053-81-4-14-34Z%22%2F%3E%3Cpath%20d%3D%22M253%2015l108%2012%205%2051-36%2022-83-13-11-38Z%22%2F%3E%3Cpath%20d%3D%22M388%2015l80%207%206%2066-76%2013-22-35Z%22%2F%3E%3Cpath%20d%3D%22M18%20120l105-5%2023%2040-30%2048-105-7-6-40Z%22%2F%3E%3Cpath%20d%3D%22M163%20116l80-11%2024%2041-15%2054-95%205-12-41Z%22%2F%3E%3Cpath%20d%3D%22M285%20117l105-9%2024%2055-40%2041-91-9-14-43Z%22%2F%3E%3Cpath%20d%3D%22M430%20119l42-6%206%2093-55-2-12-40Z%22%2F%3E%3Cpath%20d%3D%22M7%20228l81-9%2024%2048-21%2065-82-6Z%22%2F%3E%3Cpath%20d%3D%22M132%20225l109-9%2011%2068-39%2053-85-9-16-55Z%22%2F%3E%3Cpath%20d%3D%22M276%20222l76-1%2029%2044-17%2069-95-5-13-60Z%22%2F%3E%3Cpath%20d%3D%22M401%20228l73-8%202%20107-85%209-13-57Z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23b2837e%22%20opacity%3D%22.17%22%20stroke-width%3D%222%22%3E%3Cpath%20d%3D%22M18%2030q35-12%2069-4M134%2024l67-7M260%2025l87%2010M28%20130l86-6M169%20125l66-10M288%20127l91-9M17%20238l61-9M141%20234l89-10M283%20232l58-2M404%20237l58-8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 480px 350px; opacity: .55;
+  mask-image: linear-gradient(90deg, #000, transparent 22%, transparent 78%, #000), linear-gradient(0deg, #000, transparent 28%);
+}
+#danceGame::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse at 3% 15%, #44e1df22, transparent 28%), radial-gradient(ellipse at 97% 30%, #e465cf22, transparent 30%), radial-gradient(ellipse at 10% 95%, #d9a65415, transparent 35%);
+  background-size: 115% 100%; animation: dance-courtyard-light 18s ease-in-out infinite alternate;
+}
+#danceGame .dance-marquee__curtains { inset: 12px 0 0; overflow: visible; border-radius: 0; z-index: -2; }
+#danceGame .dance-marquee__curtains::before,
+#danceGame .dance-marquee__curtains::after { content: none; display: none; }
+#danceGame .dance-velvet-drape { position: absolute; top: 0; width: clamp(58px, 14%, 150px); height: 100%; max-height: 285px; overflow: visible; pointer-events: none; filter: drop-shadow(0 5px 4px #16091e88); }
+#danceGame .dance-velvet-drape--left { left: -8px; transform: rotate(-4deg); transform-origin: top right; }
+#danceGame .dance-velvet-drape--right { right: -8px; transform: scaleX(-1) rotate(-4deg); transform-origin: center; }
+#danceGame .dance-marquee__ornaments::before,
+#danceGame .dance-marquee__ornaments::after { top: 55%; font-size: .85rem; }
+#danceGame .dance-marquee__ornaments::before { left: 2%; }
+#danceGame .dance-marquee__ornaments::after { right: 2%; }
+@keyframes dance-courtyard-light { from { background-position: 0 0; opacity: .65; } to { background-position: 100% 0; opacity: 1; } }
+@media (max-width: 1050px) {
+  #danceGame::before { opacity: .35; background-size: 400px 292px; }
+  #danceGame .dance-velvet-drape { width: 12%; }
+}
+@media (max-width: 600px) {
+  #danceGame::before { opacity: .22; mask-image: linear-gradient(0deg, #000, transparent 20%); }
+  #danceGame::after { opacity: .6; animation: none; }
+  #danceGame .dance-velvet-drape { width: 45px; max-height: 170px; }
+  #danceGame .dance-velvet-drape--left { left: 0; }
+  #danceGame .dance-velvet-drape--right { right: 0; }
+  #danceGame .dance-curtain-tassel { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame::after { animation: none !important; }
+}
+
+/* Phase 3W — full-page disco atmosphere behind the approved game. */
+#danceGame {
+  background: radial-gradient(ellipse at 50% 0, #c94f9633, transparent 24%),
+    radial-gradient(ellipse at 1% 23%, #2dbbc249, transparent 32%),
+    radial-gradient(ellipse at 99% 42%, #e34fc142, transparent 32%),
+    radial-gradient(ellipse at 10% 72%, #8d66e344, transparent 30%),
+    radial-gradient(ellipse at 90% 92%, #dfad4e2b, transparent 32%),
+    linear-gradient(145deg, #25102f, #200d2b 55%, #30142e);
+}
+#danceGame::after {
+  background: radial-gradient(ellipse at 3% 12%, #48ebdf44, transparent 30%),
+    radial-gradient(ellipse at 98% 25%, #ec71d33b, transparent 30%),
+    radial-gradient(ellipse at 6% 94%, #efc0602b, transparent 28%),
+    radial-gradient(ellipse at 92% 78%, #8764fa33, transparent 30%);
+  background-size: 125% 110%; animation: dance-courtyard-light 22s ease-in-out infinite alternate;
+}
+#danceGame .dance-disco-atmosphere { position: absolute; inset: 0; overflow: hidden; z-index: -1; pointer-events: none; }
+#danceGame .dance-disco-atmosphere * { pointer-events: none; }
+#danceGame .dance-disco-beam {
+  position: absolute; top: -80px; width: 70%; height: min(1400px, 80%);
+  transform-origin: top center; clip-path: polygon(48% 0, 52% 0, 100% 100%, 0 100%);
+  background: linear-gradient(#6df3e033, #4bd2d51a 35%, transparent 90%);
+  animation: dance-outer-beam 24s ease-in-out infinite alternate; opacity: .7;
+}
+#danceGame .dance-disco-beam--cyan { left: -26%; }
+#danceGame .dance-disco-beam--pink { right: -26%; background: linear-gradient(#f889d533, #b14fd51a 40%, transparent 90%); animation-delay: -12s; }
+#danceGame .dance-disco-edge { position: absolute; left: var(--edge-x); top: var(--edge-y); width: clamp(15px, 2vw, 27px); height: auto; transform: translateX(-50%); opacity: .65; filter: drop-shadow(0 0 5px #f1a8e755); animation: dance-edge-twinkle 10s ease-in-out var(--edge-delay) infinite alternate; }
+#danceGame .dance-marquee::before { background: radial-gradient(ellipse at 10% 50%, #52f2e233, transparent 48%), radial-gradient(ellipse at 90% 35%, #f05ace33, transparent 48%); }
+#danceGame .dance-velvet-drape { width: clamp(64px, 16%, 175px); filter: drop-shadow(2px 8px 5px #0d061dcc) drop-shadow(0 0 7px #e5ac4517); }
+#danceGame .dance-velvet-drape--left { left: 0; transform: rotate(-3deg); }
+#danceGame .dance-velvet-drape--right { right: 0; transform: scaleX(-1) rotate(-3deg); }
+@keyframes dance-outer-beam { from { transform: rotate(-10deg); opacity: .45; } to { transform: rotate(10deg); opacity: .75; } }
+@keyframes dance-edge-twinkle { from { opacity: .4; } to { opacity: .8; } }
+@media (max-width: 1050px) {
+  #danceGame .dance-disco-edge:nth-of-type(2n) { display: none; }
+  #danceGame .dance-disco-beam { opacity: .4; animation-duration: 30s; }
+  #danceGame .dance-velvet-drape { width: 13%; }
+}
+@media (max-width: 600px) {
+  #danceGame .dance-disco-edge { display: none; }
+  #danceGame .dance-disco-beam { animation: none; opacity: .3; }
+  #danceGame .dance-velvet-drape { width: 46px; }
+  #danceGame::after { animation: none; opacity: .55; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame::after, #danceGame .dance-disco-beam, #danceGame .dance-disco-edge { animation: none !important; }
+}
+
+/* Stage heading navigation only; performance scenery remains unchanged. */
+#danceGame .dance-stage-heading { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 10px; }
+#danceGame .dance-stage-heading h2 { flex: 1; min-width: 0; text-align: start; }
+#danceGame .dance-ring-return {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 44px; max-width: 55%; padding: 7px 12px;
+  border: 2px solid; border-color: #ffe7a0 #c4914b #80532e #efd08a;
+  border-radius: 14px; background: linear-gradient(145deg, #75448d, #40204f 65%, #2b153c);
+  color: #fff0cc; font: 700 .9rem/1.35 Georgia, 'Times New Roman', serif;
+  text-align: center; text-decoration: none; overflow-wrap: anywhere;
+  text-shadow: 0 1px 1px #1c0c28;
+  box-shadow: inset 0 2px 1px #fff3, inset 0 -3px 5px #160c2788, 0 3px 0 #43243e, 0 0 9px #e8c06633;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+#danceGame .dance-ring-return:hover { filter: brightness(1.12); transform: translateY(-1px); color: #fff7db; }
+#danceGame .dance-ring-return:active { transform: translateY(2px); box-shadow: inset 0 2px 5px #160c2788, 0 1px 0 #43243e; }
+#danceGame .dance-ring-return:focus-visible { outline: 3px solid #fff0a4; outline-offset: 4px; }
+#danceGame .dance-ring-return .hidden { display: none; }
+@media (max-width: 600px) {
+  #danceGame .dance-stage-heading { flex-wrap: wrap; gap: 8px; }
+  #danceGame .dance-stage-heading h2 { flex-basis: 100%; }
+  #danceGame .dance-ring-return { max-width: 100%; font-size: .85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #danceGame .dance-ring-return { transition: none; }
+  #danceGame .dance-ring-return:hover, #danceGame .dance-ring-return:active { transform: none; }
+}
