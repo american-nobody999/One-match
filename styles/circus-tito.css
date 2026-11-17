@@ -1,0 +1,410 @@
+/* Author: Leslie Brockman
+ * Circus Tito Game styles.
+ */
+ /* I like the palette,but i dont love it. I don't to be honest. we will decide on design finalization in phase 6 i dont like it I'm sorry. I need to go through a 1000 pallets and find the perfect colors. */
+body.tito-page {
+    --tito-cream: #FFF4D6; --tito-gold: #FFC83D; --tito-red: #E32645;
+    --tito-burgundy: #E32645; --tito-teal: #00BFAF; --tito-mint: #21D6C2; --tito-ink: #302055;
+    background: #FFF4D6; color: var(--tito-ink);
+}
+.tito-game { position: relative; isolation: isolate; width: min(100%, 1440px); margin: auto; padding: 3.5rem clamp(.7rem, 5vw, 4.5rem) 1.5rem; overflow: hidden; background: radial-gradient(ellipse at 25% 10%, #fff9dfcc, transparent 65%), repeating-linear-gradient(90deg, #FFF4D6 0 4rem, #e0f7ff 4rem 8rem); font-family: Nunito, ui-rounded, system-ui, sans-serif; }
+.tito-game [hidden] { display: none !important; }
+.tito-game p { margin: .4rem 0; text-indent: 0; }
+.tito-game :is(h2, h3, legend, dt, button, .tito-exit a) { font-family: Fredoka, ui-rounded, system-ui, sans-serif; }
+.tito-game :is(h2, h3) { margin: 0; color: #9f1448; line-height: 1.3; }
+.tito-game [lang="ar"], .tito-game:lang(ar), .tito-game :lang(ar) { font-family: 'Baloo Bhaijaan 2', Amiri, Tahoma, sans-serif; letter-spacing: normal; }
+.tito-game :is(p, h2, h3, button, a) .lang-ar { text-align: inherit; line-height: 1.55; }
+.tito-game :is(button, a):focus-visible { outline: 3px solid #00BFAF; outline-offset: 3px; }
+.tito-game .tito-scenery { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.tito-game .tito-canopy { position: absolute; inset: 0 0 auto; height: 7rem; border-bottom: 4px solid #FFC83D; border-radius: 0 0 50% 50% / 0 0 20% 20%; background: linear-gradient(#ffffff33, transparent 70%), repeating-conic-gradient(from -65deg at 50% -100%, #E32645 0deg 12deg, #FFF4D6 12deg 24deg); box-shadow: 0 6px 12px #79531526; }
+.tito-game .tito-curtain { position: absolute; top: 0; bottom: 0; width: clamp(.6rem, 4vw, 3rem); border-inline: 2px solid #FFC83D; border-radius: 0 0 30% 30%; background: repeating-linear-gradient(92deg, #E32645 0%, #00BFAF 20%, #E32645 42%, #00BFAF 65%, #E32645 100%); box-shadow: inset 0 0 12px #E3264566, 0 3px 12px #E3264544; }
+.tito-game .tito-curtain--left { left: 0; }
+.tito-game .tito-curtain--right { right: 0; }
+.tito-game .tito-curtain i { position: absolute; top: 30%; left: -5%; width: 110%; height: .7rem; border: 2px solid #FFC83D; border-radius: 50%; background: #FFC83D; }
+.tito-game .tito-curtain i::after { content: ''; position: absolute; left: 40%; top: .5rem; width: .5rem; height: 2.5rem; border-radius: 30%; background: repeating-linear-gradient(90deg, #FFC83D 0 2px, #FFC83D 2px 3px); }
+.tito-game::after { content: ''; position: absolute; inset: auto 0 0; height: 12rem; z-index: -1; border-top: 3px solid #9f6535; background: linear-gradient(#FFF4D633, transparent 70%), repeating-linear-gradient(98deg, #dfaa71 0 6rem, #a36b3e 6rem calc(6rem + 2px), #edbc7f calc(6rem + 2px) 12rem); box-shadow: inset 0 8px 16px #79531533; pointer-events: none; }
+.tito-game .tito-marquee { position: relative; width: min(100%, 60rem); margin: 0 auto 1rem; padding: 1rem 1rem .7rem; border: 6px double #FFC83D; border-radius: 3rem 3rem 1.5rem 1.5rem; background: linear-gradient(#fffaf0, #FFF4D6); text-align: center; box-shadow: inset 0 0 0 2px #E32645, 0 4px 0 #FFC83D, 0 8px 14px #79531526; }
+.tito-game .tito-marquee h2 { font-family: Rye, Georgia, serif; font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 400; text-wrap: balance; text-shadow: 0 2px 0 #FFC83D; }
+.tito-game .tito-marquee h2 .lang-ar { font-family: 'Baloo Bhaijaan 2', Amiri, sans-serif; font-weight: 700; }
+.tito-game .tito-eyebrow { font-size: .75rem; color: #58309a; }
+.tito-game .tito-marquee > p:last-child { font-weight: 700; color: #00BFAF; }
+.tito-game .tito-bulbs { position: absolute; top: .25rem; left: 8%; right: 8%; display: flex; justify-content: space-between; gap: .3rem; pointer-events: none; }
+.tito-game .tito-bulbs i { width: .45rem; aspect-ratio: 1; border-radius: 50%; background: #fffbd5; box-shadow: 0 0 4px 2px #ffef97, 0 0 9px #ffc940; animation: tito-light 6s ease-in-out infinite; }
+.tito-game .tito-bulbs i:nth-child(even) { animation-delay: -3s; }
+.tito-game .tito-performance { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'game'; align-items: stretch; gap: clamp(.7rem, 2vw, 1.5rem); direction: ltr; }
+.tito-game .tito-play-panel { grid-area: game; min-width: 0; padding: .75rem; border: 5px double #FFC83D; border-radius: 1.25rem; background: #fff7e6; box-shadow: inset 0 0 0 2px #fff, 0 4px 0 #d0a34c, 0 9px 18px #79531526; text-align: center; }
+.tito-game[dir="rtl"] .tito-play-panel { direction: rtl; }
+.tito-game .tito-play-panel > h3 { font-size: clamp(1.2rem, 2.4vw, 1.65rem); }
+.tito-game #tito-instructions { max-width: 65ch; margin: .35rem auto; font-size: .9rem; line-height: 1.5; }
+.tito-game .tito-scoreboard { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; margin: .65rem 0; }
+.tito-game .tito-scoreboard > div { padding: .3rem .5rem; border: 3px double #087D50; border-radius: .8rem; background: linear-gradient(#fff6d2, #f5d78a); box-shadow: 0 3px 0 #087d5033; }
+.tito-game .tito-scoreboard > div:last-child { background: linear-gradient(#e7fffa, #21D6C2); }
+.tito-game .tito-scoreboard dt { font-size: .9rem; font-weight: 600; color: #42216b; }
+.tito-game .tito-scoreboard dd { margin: 0; font-weight: 700; font-size: 1.6rem; line-height: 1.3; font-variant-numeric: tabular-nums; }
+.tito-game .tito-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: .65rem; }
+.tito-game :is(.tito-controls button, .tito-finale button) { min-height: 46px; padding: .5rem 1rem; border: 4px double #ffdb79; border-radius: 2rem; background: linear-gradient(#E32645, #E32645); color: #fff9e9; font: 700 1rem/1.4 Fredoka, ui-rounded, sans-serif; box-shadow: 0 3px 0 #087D50; cursor: pointer; }
+.tito-game .tito-controls #tito-stop { background: #00BFAF; }
+.tito-game :is(.tito-controls button, .tito-finale button):hover:not(:disabled) { filter: brightness(1.08); }
+.tito-game .tito-controls button:disabled { opacity: .6; cursor: default; box-shadow: none; }
+.tito-game .tito-message { min-height: 2.8em; margin: .6rem 0 .25rem; font-size: .9rem; font-weight: 700; color: #58309a; }
+/* Arena scenery never shares the falling objects' interactive layer. */
+.tito-game .tito-arena { --tito-object-size: clamp(56px, 6vw, 72px); position: relative; isolation: isolate; overflow: hidden; direction: ltr; width: 100%; height: clamp(23rem, 50vh, 34rem); border: 5px double #FFC83D; border-radius: 1rem; background: radial-gradient(ellipse at 25% 0, #fffdf1dd, transparent 55%), radial-gradient(ellipse at 75% 0, #FFF4D6cc, transparent 55%), repeating-linear-gradient(90deg, #e1fff8 0 3rem, #c8f7f3 3rem 6rem); box-shadow: inset 0 0 25px #21D6C255; }
+.tito-game .tito-arena-floor { position: absolute; z-index: 0; bottom: 0; left: 0; right: 0; height: 2rem; border-top: 3px solid #FFC83D; background: repeating-linear-gradient(95deg, #dfaa71 0 4rem, #a36b3e 4rem calc(4rem + 2px)); pointer-events: none; }
+.tito-game .tito-arena-welcome { position: absolute; inset: 0; display: grid; place-content: center; color: #316478; pointer-events: none; font-weight: 700; }
+.tito-game .tito-arena-welcome > span { font-size: 3rem; color: #8957c2; }
+.tito-game .juggle-object { position: absolute; z-index: 2; top: 0; left: 0; display: grid; place-items: center; width: var(--tito-object-size); height: var(--tito-object-size); padding: .15rem; border: 2px solid #8957c2; border-radius: 50%; background: #FFF4D6; color: #302055; box-shadow: 0 3px 5px #315e5333; touch-action: manipulation; cursor: pointer; will-change: transform; }
+.tito-game .juggle-object svg { display: block; width: 100%; height: 100%; pointer-events: none; }
+.tito-game .juggle-object:hover { background: #FFF4D6; border-color: #00BFAF; }
+.tito-game .juggle-object:focus-visible { outline: 3px solid #00BFAF; outline-offset: -4px; }
+.tito-game .tito-keyboard-help { font-size: .75rem; line-height: 1.5; margin-top: .4rem; color: #51416e; }
+.tito-game .tito-finale { margin-top: .75rem; padding: .75rem; border: 4px double #087D50; border-radius: 1rem; background: #21D6C2; box-shadow: 0 3px 0 #21D6C2; }
+.tito-game .tito-finale h3 { font-size: 1.4rem; }
+.tito-game .tito-exit { position: relative; width: min(100%, 20rem); margin: 1rem auto 0; padding: 1rem 2rem; text-align: center; }
+.tito-game .tito-exit a { position: relative; z-index: 1; display: grid; place-items: center; min-height: 6rem; padding: 1rem; border: 1px solid #21D6C2; border-radius: 50%; background: radial-gradient(circle at 30% 15%, #fff, transparent 50%), linear-gradient(135deg, #d5eee1, #e0f7ff); box-shadow: inset -4px -4px 8px #21D6C255, 0 5px 10px #315e5326; color: #302055; font-weight: 700; }
+.tito-game .tito-exit a:hover { transform: translateY(-2px); }
+.tito-game .tito-sparkles i { position: absolute; left: 10%; top: 30%; color: #FFC83D; font-size: 1.25rem; font-style: normal; animation: tito-sparkle 8s ease-in-out infinite; }
+.tito-game .tito-sparkles i:nth-child(2) { left: 23%; top: 65%; animation-delay: -3s; }
+.tito-game .tito-sparkles i:nth-child(3) { left: 92%; top: 12%; animation-delay: -5s; }
+.tito-game .tito-symbol-defs { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+@keyframes tito-light { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
+@keyframes tito-sparkle { 0%, 100% { opacity: .35; transform: translateY(4px); } 50% { opacity: .8; transform: translateY(-10px); } }
+@keyframes tito-ovation { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@media (max-width: 1000px) and (min-width: 761px) {
+    .tito-game .tito-performance { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+    .tito-game { padding-top: 2.5rem; }
+    .tito-game .tito-canopy { height: 5rem; }
+    .tito-game .tito-performance { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'game'; gap: .5rem; }
+    .tito-game .tito-marquee { margin-bottom: .6rem; padding: .85rem .65rem .55rem; }
+    .tito-game .tito-play-panel { padding: .6rem .4rem; }
+    .tito-game .tito-arena { height: clamp(21rem, 60vh, 29rem); }
+}
+/* Uncle Tito Phase 2: vivid big top with one wide, centered game stage. */
+.tito-game { padding-top: 4.5rem; background: radial-gradient(ellipse at 15% 20%, #21d6c233, transparent 55%), radial-gradient(ellipse at 90% 15%, #087d5026, transparent 55%), #FFF4D6; }
+.tito-game .tito-performance { width: 90%; max-width: 72rem; margin: auto; display: block; }
+.tito-game .tito-marquee { width: 90%; max-width: 72rem; border: 6px double #FFC83D; background: linear-gradient(#FFFFFF, #FFF4D6); border-radius: 45% 45% 1.5rem 1.5rem / 20% 20% 1.5rem 1.5rem; box-shadow: inset 0 0 0 2px #E32645, 0 4px 0 #087D50, 0 8px 14px #087d5026; }
+.tito-game .tito-marquee h2 { color: #a01848; text-shadow: 0 2px #FFC83D; }
+.tito-game .tito-marquee > p:last-child { color: #285481; }
+.tito-game .tito-canopy { height: 8rem; background: linear-gradient(#ffffff44, transparent 70%), repeating-conic-gradient(from -65deg at 50% -100%, #E32645 0deg 12deg, #FFF4D6 12deg 24deg); }
+.tito-game .tito-curtain { background: repeating-linear-gradient(92deg, #E32645 0%, #ed1747 18%, #ff6c80 33%, #00BFAF 50%, #0e6bdb 70%, #45a5ff 90%); box-shadow: inset 0 0 12px #ffffff33, 0 3px 12px #00bfaf33; }
+.tito-game .tito-curtain i { border-color: #d39a00; }
+.tito-game .tito-bunting { position: absolute; top: .25rem; left: 0; width: 100%; height: 4rem; filter: drop-shadow(0 3px 2px #087d5026); }
+.tito-game .tito-play-panel { position: relative; padding: .65rem; border: 6px double #00BFAF; border-top: 8px solid #E32645; border-radius: 2.5rem 2.5rem 1rem 1rem; background: radial-gradient(ellipse at top, #ffffff, transparent 65%), #FFF4D6; box-shadow: inset 0 0 0 2px #FFC83D, 0 4px 0 #21D6C2, 0 9px 18px #00bfaf26; }
+.tito-game .tito-play-panel > h3 { margin-top: .3rem; color: #6932a3; }
+.tito-game .tito-scoreboard { max-width: 38rem; margin: .55rem auto; }
+.tito-game .tito-scoreboard > div { border-color: #087D50; background: linear-gradient(#fff5b3, #FFC83D); box-shadow: 0 3px #087d5044; }
+.tito-game .tito-scoreboard > div:last-child { background: linear-gradient(#d9fff6, #21D6C2); border-color: #00BFAF; box-shadow: 0 3px #00bfaf44; }
+.tito-game :is(.tito-controls button, .tito-finale button) { background: #E32645; color: #24113b; border-color: #FFC83D; box-shadow: 0 3px 0 #a52b81; font-weight: 700; }
+.tito-game .tito-controls #tito-stop { background: #00BFAF; color: #160d32; box-shadow: 0 3px 0 #6332ac; }
+.tito-game :is(.tito-controls button, .tito-finale button):hover:not(:disabled) { filter: none; background: #FFC83D; color: #302055; }
+.tito-game .tito-controls #tito-stop:hover:not(:disabled) { background: #21D6C2; }
+.tito-game :is(button, a):focus-visible { outline-color: #6422a1; }
+.tito-game .tito-message { color: #62329c; min-height: 2.8em; }
+.tito-game .tito-arena { height: clamp(24rem, 54vh, 34rem); border: 5px double #00BFAF; border-radius: 1.5rem; background: radial-gradient(ellipse at 20% 0, #ffc83d55, transparent 50%), radial-gradient(ellipse at 80% 0, #087d5033, transparent 50%), repeating-linear-gradient(90deg, #e6fff8 0 3rem, #d1f8f1 3rem 6rem); box-shadow: inset 0 0 24px #21d6c244, 0 0 0 2px #FFC83D; }
+.tito-game .tito-arena-floor { border-top: 4px solid #E32645; background: repeating-linear-gradient(95deg, #f4c285 0 4rem, #ba7d40 4rem calc(4rem + 2px)); }
+.tito-game .juggle-object { background: #FFFFFF; border-color: #8957c2; box-shadow: 0 3px 5px #00bfaf33; }
+.tito-game .juggle-object:hover { border-color: #00BFAF; background: #fff7d5; }
+.tito-game .tito-finale { background: #d7fff3; border-color: #087D50; box-shadow: 0 3px #21D6C2; }
+.tito-game .tito-exit a { border-color: #00BFAF; background: radial-gradient(circle at 30% 15%, #ffffff, transparent 50%), linear-gradient(135deg, #bffff2, #eadaff); }
+/* Future leaning portrait sits wholly above the panel's upper-left frame.
+   No image source, visible placeholder, flow height, or arena overlap is added.
+   Keep the approved pose's lower edge at this anchor when the asset is supplied. */
+.tito-game .tito-character-anchor { position: absolute; z-index: 2; left: .5rem; bottom: 100%; width: clamp(6rem, 16vw, 12rem); height: 0; pointer-events: none; }
+.tito-game .tito-character-motion { position: absolute; left: 0; bottom: -.4rem; width: 100%; pointer-events: none; }
+.tito-game .tito-character-image { display: block; width: 100%; height: auto; max-height: 15rem; object-fit: contain; object-position: left bottom; border: 0; border-radius: 0; margin: 0; pointer-events: none; }
+@media (max-width: 1000px) {
+    .tito-game .tito-performance, .tito-game .tito-marquee { width: 96%; }
+    .tito-game .tito-bunting { height: 3.25rem; }
+    .tito-game .tito-character-anchor { width: clamp(5rem, 15vw, 9rem); }
+}
+@media (max-width: 760px) {
+    .tito-game { padding-top: 3.5rem; }
+    .tito-game .tito-performance, .tito-game .tito-marquee { width: 100%; }
+    .tito-game .tito-curtain { width: .6rem; }
+    .tito-game .tito-bunting { height: 2.5rem; }
+    .tito-game .tito-play-panel { padding: .55rem .3rem; border-width: 4px; }
+    .tito-game .tito-arena { height: clamp(22rem, 58vh, 30rem); }
+    .tito-game .tito-character-anchor { left: .25rem; width: clamp(3.5rem, 13vw, 6rem); }
+    .tito-game .tito-character-image { max-height: 7rem; }
+}
+/* SVG collection and miniature finale polish: approved bright palette retained. */
+.tito-game .tito-performance { position: relative; }
+/* The balls stay in the frame gutters, separate from the arena's object buttons. */
+.tito-game .tito-frame-balls { position: absolute; inset: .5rem -1.75rem; z-index: 2; pointer-events: none; }
+.tito-game .tito-frame-balls i {
+    --ball-color: #E32645; --ball-arc: 6px;
+    position: absolute; top: 15%; left: 0; width: 1.3rem; aspect-ratio: 1;
+    border: 1px solid #30205555; border-radius: 50%;
+    background: radial-gradient(ellipse at 30% 24%, #ffffffdd 0 7%, transparent 26%),
+        radial-gradient(ellipse at 35% 25%, transparent 45%, #30205533 100%), var(--ball-color);
+    box-shadow: inset -2px -2px 4px #30205526, 0 3px 4px #087d5026;
+    animation: tito-juggling-arc 6s ease-in-out infinite;
+}
+.tito-game .tito-frame-balls i:nth-child(2) { --ball-color: #FFC83D; --ball-arc: -6px; top: 30%; left: auto; right: 0; animation-delay: -1.2s; }
+.tito-game .tito-frame-balls i:nth-child(3) { --ball-color: #26bf6a; top: 48%; animation-delay: -2.4s; }
+.tito-game .tito-frame-balls i:nth-child(4) { --ball-color: #00BFAF; --ball-arc: -6px; top: 66%; left: auto; right: 0; animation-delay: -3.6s; }
+.tito-game .tito-frame-balls i:nth-child(5) { --ball-color: #087D50; top: 84%; animation-delay: -4.8s; }
+.tito-game .tito-finale {
+    position: relative; padding: .6rem .75rem .85rem;
+    border: 5px double #087D50; border-radius: 1.5rem;
+    background: radial-gradient(ellipse at 15% 0, #ffc83d66, transparent 55%),
+        radial-gradient(ellipse at 85% 0, #21d6c244, transparent 55%), #FFF4D6;
+    box-shadow: inset 0 0 0 2px #FFC83D, 0 4px 0 #00BFAF, 0 8px 14px #087d5026;
+    animation: tito-finale-arrival .7s ease-out;
+}
+.tito-game .tito-finale-art { height: 3.8rem; pointer-events: none; }
+.tito-game .tito-finale-art svg { display: block; width: min(100%, 11rem); height: 100%; margin: auto; }
+.tito-game .tito-finale h3 { color: #7132b3; font-size: clamp(1.3rem, 2.6vw, 1.8rem); text-shadow: 0 1px #FFC83D; }
+.tito-game .tito-finale > p { font-size: .9rem; }
+.tito-game .tito-finale #tito-final-score { width: fit-content; max-width: 100%; margin: .5rem auto .65rem; padding: .35rem .9rem; border: 3px double #00BFAF; border-radius: .8rem; background: #d9fff6; color: #302055; font-weight: 700; font-size: 1.2rem; }
+.tito-game .tito-finale #tito-replay { min-height: 48px; padding: .6rem 1.5rem; background: linear-gradient(#ffe969, #FFC83D); color: #302055; border-color: #E32645; box-shadow: 0 4px 0 #a72c75, 0 6px 9px #087d5026; }
+.tito-game .tito-finale #tito-replay:hover { background: #21D6C2; }
+.tito-game .tito-finale #tito-replay:focus-visible { outline: 3px solid #6422a1; outline-offset: 4px; }
+@keyframes tito-juggling-arc {
+    0%, 100% { transform: translate(0, 6px) rotate(-6deg); }
+    25% { transform: translate(var(--ball-arc), -12px) rotate(0); }
+    50% { transform: translate(0, -22px) rotate(6deg); }
+    75% { transform: translate(calc(-1 * var(--ball-arc)), -12px) rotate(0); }
+}
+@keyframes tito-finale-arrival { from { opacity: .4; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1000px) {
+    .tito-game .tito-frame-balls { inset-inline: -.75rem; }
+    .tito-game .tito-frame-balls i { width: .8rem; --ball-arc: 2px; }
+    .tito-game .tito-frame-balls i:nth-child(even) { --ball-arc: -2px; }
+}
+@media (max-width: 760px) {
+    .tito-game .tito-frame-balls { inset-inline: -.3rem; }
+    .tito-game .tito-frame-balls i { width: .55rem; --ball-arc: 0px; }
+    .tito-game .tito-frame-balls i:nth-child(even) { --ball-arc: 0px; }
+    .tito-game .tito-finale { padding-inline: .5rem; }
+}
+/* Approved illustrated reference: layered curtains, host/marquee, illuminated arena. */
+.tito-game { padding-top: 1rem; background: radial-gradient(ellipse at 50% 10%, #50b4ff, transparent 60%), linear-gradient(#00BFAF, #3a8be9 65%, #087d50); }
+.tito-game .tito-canopy { height: 13rem; border-bottom-width: 6px; }
+.tito-game .tito-scenery::before, .tito-game .tito-scenery::after {
+    content: ''; position: absolute; top: -2rem; width: 34%; height: 12rem;
+    border-bottom: 9px double #FFC83D; border-radius: 0 0 85% 20%;
+    background: repeating-linear-gradient(120deg, #a71934 0%, #ff3659 12%, #cf203c 25%, #ff6379 35%, #b71d37 50%);
+    box-shadow: inset 0 -7px 9px #7b143533, 0 5px 10px #30205544;
+}
+.tito-game .tito-scenery::before { left: 0; transform: rotate(-9deg); transform-origin: left top; }
+.tito-game .tito-scenery::after { right: 0; transform: scaleX(-1) rotate(-9deg); transform-origin: right top; }
+.tito-game .tito-curtain { width: clamp(.8rem, 5vw, 4.5rem); border-inline: 3px solid #FFC83D; background: repeating-linear-gradient(94deg, #a91934 0%, #e32140 18%, #ff536d 34%, #c91b37 54%, #ef3652 72%, #a91934 100%); }
+.tito-game .tito-curtain::before { content: ''; position: absolute; inset: 10% 0 0; z-index: -1; width: 150%; border-inline: 3px double #FFC83D; border-radius: 0 0 40% 40%; background: repeating-linear-gradient(94deg, #1262cf, #00BFAF 20%, #52acff 35%, #0f65db 60%); }
+.tito-game .tito-curtain--left::before { left: 0; }
+.tito-game .tito-curtain--right::before { left: auto; right: 0; }
+.tito-game .tito-curtain i { top: 35%; height: 1rem; background: linear-gradient(#ffef91, #edb321); }
+.tito-game .tito-curtain i::after { width: .85rem; height: 4rem; background: repeating-linear-gradient(90deg, #ffdb58 0 2px, #c78d20 2px 3px); }
+.tito-game .tito-bunting { top: .5rem; height: 7rem; }
+.tito-game .tito-hero { position: relative; isolation: isolate; z-index: 2; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr); align-items: end; gap: .5rem; width: 94%; max-width: 76rem; min-height: clamp(17rem, 25vw, 23rem); margin: 0 auto; direction: ltr; }
+.tito-game .tito-hero .tito-character-anchor { position: relative; left: auto; bottom: auto; align-self: stretch; width: 100%; height: auto; min-width: 0; pointer-events: none; }
+.tito-game .tito-hero .tito-character-motion { position: absolute; inset: 0 0 -1rem; width: 100%; height: auto; }
+.tito-game .tito-hero .tito-character-image { display: block; width: 100%; height: 100%; max-height: none; max-width: none; object-fit: contain; object-position: center bottom; margin: 0; border: 0; border-radius: 0; filter: drop-shadow(0 5px 4px #30205544); }
+.tito-game .tito-title-tent { position: absolute; z-index: -1; width: 40%; height: 90%; left: 27%; top: 0; opacity: .95; pointer-events: none; }
+.tito-game .tito-hero .tito-marquee { width: 100%; margin: 0 0 1.3rem; padding: 1.5rem 1.4rem .8rem; border: 7px solid #f1bb36; border-radius: 48% 48% 25% 25% / 30% 30% 23% 23%; background: radial-gradient(ellipse, #fffdf2, #fff0ce); box-shadow: inset 0 0 0 3px #fff9df, inset 0 0 0 5px #d68a1a, 0 4px 0 #be6f20, 0 9px 15px #30205544; }
+.tito-game .tito-hero .tito-marquee::before, .tito-game .tito-hero .tito-marquee::after { content: '★'; position: absolute; top: 48%; color: #b9770f; font-size: clamp(1rem, 2vw, 1.8rem); text-shadow: 0 1px #ffef91; }
+.tito-game .tito-hero .tito-marquee::before { left: .5rem; }
+.tito-game .tito-hero .tito-marquee::after { right: .5rem; }
+.tito-game .tito-hero .tito-marquee h2 { font-size: clamp(1.5rem, 3.3vw, 3.2rem); line-height: 1.1; text-shadow: 0 1px #fff, 0 3px #e2b657; }
+.tito-game .tito-title-first { display: block; color: #12477e; }
+.tito-game .tito-title-last { display: block; color: #ae1237; }
+.tito-game .tito-marquee h2 .lang-ar { display: inline-block; margin-top: .35rem; padding: .25rem .7rem; border-block: 2px solid #f1bb36; background: #126d7d; color: #fffdf2; font-size: .75em; line-height: 1.4; text-shadow: 0 2px #16475a; }
+.tito-game .tito-hero .tito-eyebrow { font-size: .65rem; margin: 0 0 .15rem; }
+.tito-game .tito-hero .tito-marquee > p:last-child { margin-top: .4rem; color: #285481; font-size: .85rem; }
+.tito-game .tito-hero .tito-bulbs { top: .4rem; }
+.tito-game .tito-performance { width: 96%; max-width: 76rem; }
+.tito-game .tito-play-panel { padding: 1rem .75rem .6rem; border: 10px double #ffda58; border-radius: 3rem 3rem 2rem 2rem; background: linear-gradient(#fffaf0, #fff0ce); box-shadow: inset 0 0 0 3px #e63049, 0 0 0 2px #c2761b, 0 6px 0 #c2761b, 0 10px 20px #30205544; }
+.tito-game .tito-play-panel::before { content: ''; position: absolute; inset: .15rem; border: 5px dotted #fff5a6; border-radius: inherit; box-shadow: 0 0 8px #ffc83d55; pointer-events: none; }
+.tito-game .tito-scrollwork { position: absolute; top: -2rem; left: 35%; width: 30%; height: 3rem; pointer-events: none; filter: drop-shadow(0 2px 1px #79531544); }
+.tito-game .tito-control-row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: 'caught start stop lives'; align-items: center; gap: .65rem; margin: .75rem 0 .5rem; direction: ltr; }
+.tito-game .tito-control-row .tito-scoreboard, .tito-game .tito-control-row .tito-controls { display: contents; }
+.tito-game .tito-scoreboard > div:first-child { grid-area: caught; }
+.tito-game .tito-scoreboard > div:last-child { grid-area: lives; }
+.tito-game #tito-start { grid-area: start; }
+.tito-game #tito-stop { grid-area: stop; }
+.tito-game .tito-control-row .tito-scoreboard > div { min-width: 0; padding: .3rem .6rem; border: 5px double #d99622; border-radius: 2rem; background: radial-gradient(ellipse at top, #d9fff7, #62d5cb); box-shadow: inset 0 0 0 2px #fff1b3, 0 3px 0 #c48728; }
+.tito-game .tito-scoreboard dt { font-size: .85rem; color: #49216c; line-height: 1.3; }
+.tito-game .tito-scoreboard dd { color: #49216c; font-size: 1.8rem; }
+.tito-game .tito-controls button { width: 100%; min-height: 54px; padding: .5rem .6rem; border: 5px double #ffdb58; }
+.tito-game .tito-controls #tito-start { background: linear-gradient(#ff4666, #d80e3b); color: #fff; text-shadow: 0 1px #9d1233; }
+.tito-game .tito-controls #tito-stop { background: linear-gradient(#00BFAF, #0864da); color: #fff; text-shadow: 0 1px #114d91; }
+.tito-game .tito-controls button:disabled { opacity: .65; }
+.tito-game .tito-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.tito-game .tito-hearts { display: flex; justify-content: center; align-items: center; gap: .15rem; height: 2rem; }
+.tito-game .tito-hearts svg { width: 1.9rem; height: 1.9rem; }
+.tito-game .tito-hearts .is-lost { opacity: .25; filter: grayscale(1); }
+.tito-game .tito-message { min-height: 1.5em; margin: .25rem 0 .4rem; font-size: .85rem; }
+.tito-game .tito-arena { height: clamp(24rem, 48vh, 36rem); border: 8px double #e8aa21; border-radius: 2rem; background: radial-gradient(ellipse at 50% 110%, #fff8d8, transparent 65%), repeating-conic-gradient(from -60deg at 50% 100%, #ffffff30 0deg 12deg, transparent 12deg 24deg), linear-gradient(#a7e6df, #c8f0df); box-shadow: 0 0 0 3px #ed3d4f, inset 0 0 18px #6fb8af55; }
+.tito-game .tito-arena::before { content: ''; position: absolute; inset: 0; z-index: 0; background: conic-gradient(from 150deg at 12% 0, transparent 0deg, #fff7a944 12deg, transparent 25deg), conic-gradient(from 150deg at 86% 0, transparent 0deg, #fff7a944 12deg, transparent 25deg); pointer-events: none; }
+.tito-game .tito-arena-floor { background: repeating-linear-gradient(100deg, #e6a766 0 4rem, #b77335 4rem calc(4rem + 2px), #f3c28c calc(4rem + 2px) 8rem); border-top-color: #d59033; }
+.tito-game .juggle-object { border-color: #7a36a9; background: #fffdf2; box-shadow: 0 3px 1px #fff, 0 5px 7px #315e5326; }
+.tito-game .tito-keyboard-help { position: relative; width: 95%; margin: .6rem auto 0; padding: .4rem .8rem; border: 4px double #d99622; border-radius: 2rem; background: #fff8e5; color: #56298a; }
+.tito-game .tito-host-balls { position: absolute; inset: 0; pointer-events: none; }
+.tito-game .tito-host-balls i { position: absolute; top: 15%; right: 18%; width: clamp(.9rem, 2.5vw, 2rem); aspect-ratio: 1; border: 1px solid #c48a29; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #fff9 0 8%, transparent 28%), #E32645; box-shadow: inset -3px -3px 5px #30205544; animation: tito-host-juggle 6s ease-in-out infinite; }
+.tito-game .tito-host-balls i::before { content: ''; position: absolute; inset: -35%; border-left: 2px solid #ffc83d99; border-radius: 50%; pointer-events: none; }
+.tito-game .tito-host-balls i:nth-child(2) { top: 28%; right: 8%; background-color: #FFC83D; animation-delay: -2s; }
+.tito-game .tito-host-balls i:nth-child(3) { top: 40%; right: 20%; background-color: #18be55; animation-delay: -4s; }
+.tito-game .tito-finale { background: radial-gradient(ellipse at top, #fffdf2, #fff0ce); border-color: #db314d; box-shadow: inset 0 0 0 2px #FFC83D, 0 4px 0 #c48728; }
+.tito-game .tito-finale #tito-replay { background: linear-gradient(#ff4666, #d80e3b); color: #fff; border-color: #ffdb58; }
+.tito-game .tito-finale #tito-replay:hover { background: #b91537; }
+.tito-game .tito-exit { width: min(85%, 30rem); margin-top: 1rem; padding: .75rem 1rem; isolation: isolate; }
+.tito-game .tito-exit::before { content: ''; position: absolute; z-index: -1; left: -8%; right: -8%; top: 30%; bottom: 20%; background: repeating-linear-gradient(90deg, #E32645 0 12%, #fff0ce 12% 20%); border-block: 3px solid #FFC83D; clip-path: polygon(0 0, 50% 15%, 100% 0, 96% 50%, 100% 100%, 50% 85%, 0 100%, 4% 50%); }
+.tito-game .tito-exit a { display: flex; justify-content: center; align-items: center; gap: .65rem; min-height: 60px; padding: .5rem 1rem; border: 5px double #ffdb58; border-radius: 2rem; background: linear-gradient(#147b89, #075765); color: #fffdf2; box-shadow: 0 4px 0 #c48728, inset 0 2px 4px #ffffff55, 0 7px 12px #30205533; }
+.tito-game .tito-exit a svg { width: 2.7rem; height: 2.7rem; flex-shrink: 0; }
+.tito-game .tito-exit a:hover { box-shadow: 0 0 12px #ffc83d99, 0 4px 0 #c48728; }
+@keyframes tito-host-juggle { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(7px, -14px); } }
+@media (max-width: 1000px) {
+    .tito-game .tito-hero { min-height: 17rem; grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); }
+    .tito-game .tito-hero .tito-marquee h2 { font-size: clamp(1.35rem, 3vw, 2rem); }
+    .tito-game .tito-control-row { gap: .4rem; }
+    .tito-game .tito-controls button { font-size: .85rem; }
+}
+@media (max-width: 760px) {
+    .tito-game { padding-top: .75rem; }
+    .tito-game .tito-canopy { height: 9rem; }
+    .tito-game .tito-hero { min-height: 13rem; grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); width: 100%; }
+    .tito-game .tito-hero .tito-marquee { padding: 1.1rem .75rem .5rem; border-width: 5px; margin-bottom: 1rem; }
+    .tito-game .tito-hero .tito-marquee::before, .tito-game .tito-hero .tito-marquee::after { display: none; }
+    .tito-game .tito-hero .tito-marquee h2 { font-size: clamp(1.1rem, 3.5vw, 1.7rem); }
+    .tito-game .tito-hero .tito-marquee > p:last-child { font-size: .7rem; }
+    .tito-game .tito-performance { width: 100%; }
+    .tito-game .tito-scrollwork { width: 40%; left: 30%; height: 2rem; top: -1.25rem; }
+    .tito-game .tito-control-row { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: 'caught lives' 'start stop'; gap: .5rem; }
+    .tito-game .tito-controls button { min-height: 46px; }
+    .tito-game .tito-play-panel { padding: .7rem .4rem .5rem; border-width: 7px; border-radius: 2rem 2rem 1rem 1rem; }
+    .tito-game .tito-arena { height: clamp(22rem, 56vh, 30rem); border-width: 6px; border-radius: 1.3rem; }
+    .tito-game .tito-keyboard-help { width: 100%; font-size: .7rem; border-radius: .9rem; }
+    .tito-game .tito-scenery::before, .tito-game .tito-scenery::after { height: 7rem; }
+}
+@media (max-width: 420px) {
+    .tito-game .tito-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-top: 5rem; }
+    .tito-game .tito-hero .tito-character-anchor { position: absolute; left: 0; top: 0; width: 6rem; height: 6rem; }
+    .tito-game .tito-hero .tito-marquee { margin-bottom: .75rem; }
+    .tito-game .tito-title-tent { width: 55%; left: 35%; height: 7rem; }
+    .tito-game .tito-exit { width: 88%; }
+}
+/* Palestinian-inspired set refinement: artwork and gameplay remain independent. */
+.tito-game { --tito-red: #E32645; --tito-gold: #FFC83D; --tito-cream: #FFF4D6; --tito-teal: #00BFAF; --tito-burgundy: #801D39; background: radial-gradient(ellipse at 50% 10%, #00bfafaa, transparent 65%), linear-gradient(#087D50, #00BFAF 65%, #087D50); }
+.tito-game .tito-curtain { background: repeating-linear-gradient(94deg, #801D39 0%, #E32645 20%, #ff5872 37%, #b51e3f 58%, #E32645 78%, #801D39 100%); }
+.tito-game .tito-curtain::before { background: repeating-linear-gradient(94deg, #087D50, #00BFAF 25%, #46dfca 42%, #087D50 70%); }
+.tito-game .tito-scenery::before, .tito-game .tito-scenery::after { background: repeating-linear-gradient(120deg, #801D39 0%, #E32645 18%, #ff5872 35%, #E32645 55%, #a91e3c 75%); }
+.tito-game .tito-canopy { background: linear-gradient(#ffffff33, transparent 70%), repeating-conic-gradient(from -65deg at 50% -100%, #E32645 0deg 10deg, #FFF4D6 10deg 20deg, #087D50 20deg 30deg, #FFC83D 30deg 40deg); }
+.tito-game .tito-title-last { color: #801D39; }
+.tito-game .tito-marquee h2 .lang-ar { background: #087D50; }
+.tito-game .tito-control-row .tito-scoreboard > div { background: radial-gradient(ellipse at top, #e6fff7, #00BFAF); }
+.tito-game .tito-controls #tito-start, .tito-game .tito-finale #tito-replay { background: linear-gradient(#f8425d, #E32645); }
+.tito-game .tito-controls #tito-stop { background: linear-gradient(#087D50, #006b62); color: #FFFFFF; text-shadow: 0 1px #005144; }
+.tito-game .tito-controls #tito-stop:hover:not(:disabled) { background: #006b62; color: #FFFFFF; }
+.tito-game .tito-arena { background: radial-gradient(ellipse at 50% 110%, #FFF4D6, transparent 65%), repeating-conic-gradient(from -60deg at 50% 100%, #ffffff33 0deg 12deg, transparent 12deg 24deg), linear-gradient(#8ce3d6, #d0f5e6); }
+/* Balcony is behind the arm; the entire character layer stays above the frame.
+   It hangs only over the upper-left header area, never into the arena. */
+.tito-game .tito-hero .tito-character-anchor { isolation: isolate; }
+.tito-game .tito-balcony { position: absolute; z-index: 0; left: 3%; top: calc(100% - 3.5rem); width: min(88%, 20rem); height: auto; overflow: visible; pointer-events: none; filter: drop-shadow(0 4px 3px #801d3944); }
+.tito-game .tito-hero .tito-character-motion { z-index: 1; }
+.tito-game .tito-host-balls { z-index: 2; }
+/* Give the hanging cloth clearance without changing the controls or arena. */
+@media (min-width: 761px) {
+    .tito-game .tito-play-panel > h3, .tito-game #tito-instructions { width: 68%; margin-left: auto; margin-right: .25rem; }
+}
+@media (max-width: 760px) {
+    .tito-game .tito-balcony { left: 0; width: 93%; top: calc(100% - 1.2rem); }
+    .tito-game .tito-play-panel > h3, .tito-game #tito-instructions { width: 78%; margin-left: auto; margin-right: 0; }
+}
+@media (max-width: 420px) {
+    .tito-game .tito-hero { padding-top: 8.25rem; }
+    .tito-game .tito-balcony { top: calc(100% - .8rem); width: 100%; }
+    .tito-game .tito-play-panel > h3, .tito-game #tito-instructions { width: auto; margin-inline: 0; }
+}
+/* Extra circus magic: velvet depth, coordinated goldwork, and catch-only sparkles. */
+.tito-game .tito-curtain {
+    border-inline: 4px double #FFC83D;
+    border-radius: 0 0 38% 38% / 0 0 3rem 3rem;
+    background: radial-gradient(circle, #fff5ab 0 2px, #ffc83d88 3px, transparent 7px) center top / 100% 5rem repeat-y,
+        linear-gradient(90deg, #801d3966, transparent 20%, #ffffff22 43%, transparent 58%, #801d3980),
+        repeating-linear-gradient(94deg, #801D39 0%, #bb203d 12%, #E32645 24%, #ff667c 36%, #bc203e 49%, #801D39 64%, #e32645 82%, #ff526d 92%, #801D39 100%);
+    box-shadow: inset 3px 0 8px #ffc83d33, inset -6px 0 10px #801d3966, 3px 0 12px #801d3944;
+}
+.tito-game .tito-curtain::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1.1rem;
+    border-top: 3px solid #FFC83D; border-radius: 0 0 35% 35%;
+    background: radial-gradient(ellipse at top, #FFC83D 0 50%, transparent 55%) 0 0 / .65rem .8rem repeat-x;
+    pointer-events: none;
+}
+.tito-game .tito-curtain i { box-shadow: inset 0 2px 2px #fff4d6aa, 0 4px 6px #801d3955; transform: rotate(-8deg); }
+.tito-game .tito-curtain--right i { transform: rotate(8deg); }
+.tito-game .tito-curtain i::before { content: ''; position: absolute; top: -.25rem; left: 34%; width: .9rem; height: .9rem; border: 2px solid #bd851d; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #fff4d6, #FFC83D 55%, #b57719); }
+.tito-game .tito-curtain i::after { box-shadow: 0 4px 5px #801d3944; }
+.tito-game .tito-marquee-curls { position: absolute; bottom: -.9rem; left: 28%; width: 44%; height: 2rem; filter: drop-shadow(0 2px 1px #801d3944); pointer-events: none; }
+.tito-game .tito-hero .tito-character-anchor { background: radial-gradient(ellipse at 45% 55%, #fff4d677, transparent 70%); }
+.tito-game .tito-frame-balls i { --ball-color: #E32645; background: radial-gradient(ellipse at 28% 22%, #ffffffee 0 8%, transparent 27%), radial-gradient(ellipse at 65% 80%, #801d3944, transparent 65%), var(--ball-color); border-color: #b5771980; box-shadow: inset -3px -3px 5px #801d3926, 0 3px 5px #087d5033; }
+.tito-game .tito-frame-balls i:nth-child(2) { --ball-color: #FFC83D; }
+.tito-game .tito-frame-balls i:nth-child(3) { --ball-color: #087D50; }
+.tito-game .tito-frame-balls i:nth-child(4) { --ball-color: #00BFAF; }
+.tito-game .tito-frame-balls i:nth-child(5) { --ball-color: #FFC83D; }
+/* Keep the host's three balls on the outer upper rim, clear of face and hands. */
+.tito-game .tito-host-balls i { top: 3%; right: 12%; background-color: #E32645; }
+.tito-game .tito-host-balls i:nth-child(2) { top: 8%; right: 1%; background-color: #FFC83D; }
+.tito-game .tito-host-balls i:nth-child(3) { top: 1%; right: 29%; background-color: #087D50; }
+.tito-game .tito-arena { box-shadow: 0 0 0 3px #E32645, 0 0 11px #ffc83d66, inset 0 0 18px #00bfaf33; }
+.tito-game .tito-control-row .tito-scoreboard > div { position: relative; box-shadow: inset 0 0 0 2px #fff4d6bb, 0 3px 0 #c48728, 0 0 7px #ffc83d33; }
+.tito-game .tito-control-row .tito-scoreboard > div::before { content: '✦'; position: absolute; left: .35rem; top: .4rem; color: #8f6014; font-size: .9rem; pointer-events: none; }
+/* Catch feedback stays at the score tile, never over moving targets. */
+.tito-game .tito-catch-sparkles { position: absolute; inset: 0; pointer-events: none; }
+.tito-game .tito-catch-sparkles i { position: absolute; left: 10%; top: 10%; opacity: 0; color: #8f6014; font-size: .9rem; font-style: normal; text-shadow: 0 1px #fff4d6; }
+.tito-game .tito-catch-sparkles i:nth-child(2) { left: 48%; top: 0; color: #087D50; }
+.tito-game .tito-catch-sparkles i:nth-child(3) { left: 84%; top: 15%; color: #E32645; }
+.tito-game .tito-catch-sparkles.is-catching i { animation: tito-catch-twinkle .85s ease-out; }
+@keyframes tito-catch-twinkle { 0% { opacity: 0; transform: translateY(2px) scale(.75); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(-12px) scale(1.05); } }
+@media (max-width: 760px) {
+    .tito-game .tito-curtain { border-inline-width: 2px; }
+    .tito-game .tito-curtain i::after { width: .55rem; height: 2.75rem; }
+    .tito-game .tito-marquee-curls { height: 1.4rem; bottom: -.6rem; }
+    .tito-game .tito-control-row .tito-scoreboard > div::before { font-size: .65rem; left: .2rem; top: .15rem; }
+}
+/* Balcony correction: attach set piece to the portrait's coordinate system,
+   rather than positioning hanging fabric from the game panel's border. */
+.tito-game .tito-hero .tito-character-motion .tito-balcony {
+    top: 72%; left: 3%; width: min(88%, 20rem);
+    z-index: 0; pointer-events: none;
+}
+.tito-game .tito-hero .tito-character-motion .tito-character-image { position: relative; z-index: 1; }
+@media (max-width: 760px) {
+    .tito-game .tito-hero .tito-character-motion .tito-balcony { top: 70%; left: 0; width: 93%; }
+}
+@media (max-width: 420px) {
+    .tito-game .tito-hero .tito-character-motion .tito-balcony { top: 72%; width: 100%; }
+}
+/* Final trophy: presentation stays inside the existing arena, clear of its floor. */
+.tito-game .tito-arena-welcome { padding: 1rem; text-align: center; }
+.tito-game .tito-intro-flag { display: block; width: 7rem; height: auto; margin: 0 auto .6rem; border: 1px solid #801d3933; border-radius: .15rem; box-shadow: 0 4px 7px #087d5026; transform-origin: left center; animation: tito-flag-float 6s ease-in-out infinite; }
+.tito-game .tito-eye-message { margin: .2rem 0; font-family: Fredoka, ui-rounded, sans-serif; font-weight: 700; color: #801D39; font-size: clamp(.95rem, 2.2vw, 1.4rem); line-height: 1.4; text-shadow: 0 1px #FFC83D; }
+.tito-game .tito-eye-message .lang-ar { font-family: 'Baloo Bhaijaan 2', Amiri, sans-serif; }
+.tito-game .tito-trophy { position: absolute; z-index: 1; inset: .5rem .5rem 2.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .3rem; min-width: 0; padding: .35rem; text-align: center; pointer-events: none; animation: tito-trophy-arrive .65s ease-out; }
+.tito-game .tito-trophy-figure { position: relative; height: min(58%, 15rem); width: auto; max-width: 65%; aspect-ratio: 12 / 13; flex-shrink: 1; min-height: 0; }
+.tito-game .tito-trophy-figure > svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 4px 3px #801d3926); }
+.tito-game .tito-trophy-score { position: absolute; top: 25%; left: 30%; width: 40%; height: 19%; display: flex; align-items: center; justify-content: center; color: #801D39; font-family: Fredoka, ui-rounded, sans-serif; font-size: var(--tito-score-size, 2.4rem); font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; white-space: nowrap; direction: ltr; text-shadow: 0 1px #fff3a1; }
+.tito-game .tito-trophy-message { max-width: 40ch; margin: .25rem 0; color: #315e53; font-size: clamp(.85rem, 1.7vw, 1.15rem); line-height: 1.45; font-weight: 700; overflow-wrap: anywhere; }
+.tito-game .tito-trophy-shimmer { opacity: 0; animation: tito-gold-shimmer 1.4s ease-in-out .4s; }
+.tito-game .tito-trophy-balls { position: absolute; inset: 0; pointer-events: none; }
+.tito-game .tito-trophy-balls i { --trophy-ball: #CE1126; position: absolute; left: -6%; top: 40%; width: 1.1rem; aspect-ratio: 1; border: 1px solid #801d3955; border-radius: 50%; background: radial-gradient(circle at 30% 20%, #fff9 0 8%, transparent 30%), var(--trophy-ball); box-shadow: inset -2px -2px 3px #0002; animation: tito-trophy-ball 1.8s ease-in-out 2; }
+.tito-game .tito-trophy-balls i:nth-child(2) { --trophy-ball: #007A3D; left: auto; right: -6%; top: 30%; animation-delay: .12s; }
+.tito-game .tito-trophy-balls i:nth-child(3) { --trophy-ball: #FFC83D; left: 4%; top: 75%; animation-delay: .24s; }
+.tito-game .tito-trophy-balls i:nth-child(4) { --trophy-ball: #00BFAF; left: auto; right: 0; top: 70%; animation-delay: .36s; }
+.tito-game .tito-trophy-sparkles { position: absolute; inset: 0; pointer-events: none; }
+.tito-game .tito-trophy-sparkles i { position: absolute; top: 10%; left: 12%; color: #b77b1d; font-size: 1.1rem; font-style: normal; opacity: 0; animation: tito-catch-twinkle 1.4s ease-out .35s; }
+.tito-game .tito-trophy-sparkles i:nth-child(2) { left: 85%; top: 50%; }
+.tito-game .tito-trophy-sparkles i:nth-child(3) { left: 15%; top: 65%; }
+@keyframes tito-flag-float { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-4px) rotate(1deg); } }
+@keyframes tito-trophy-arrive { from { opacity: 0; transform: translateY(5px) scale(.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes tito-gold-shimmer { 0%, 100% { opacity: 0; transform: translateX(-8px); } 50% { opacity: 1; transform: translateX(8px); } }
+@keyframes tito-trophy-ball { 0%, 100% { transform: translateY(0); } 50% { transform: translate(4px, -12px); } }
+@media (max-width: 420px) {
+    .tito-game .tito-intro-flag { width: 5.5rem; }
+    .tito-game .tito-trophy { gap: .1rem; }
+    .tito-game .tito-trophy-balls i { width: .85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .tito-game *, .tito-game *::before, .tito-game *::after { animation: none !important; transition: none !important; }
+    .tito-game .tito-exit a:hover { transform: none; }
+}
