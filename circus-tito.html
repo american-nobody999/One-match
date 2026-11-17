@@ -1,0 +1,255 @@
+<!-- Author: Leslie Brockman
+     Circus Tito Game page.
+     Date modified: 11/16/2026 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Leslie Brockman">
+  <meta name="description" content="Catch colorful circus surprises with Uncle Tito, Muhammad Nayef Salem, in this bilingual Gaza Circus School game.">
+  <title>Uncle Tito's Juggling Chaos! / فوضى ألعاب الخفة مع عمو تيتو! — MPGA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700&amp;family=Fredoka:wght@600;700&amp;family=Nunito:wght@400;700&amp;family=Rye&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/styles2.css">
+  <link rel="stylesheet" href="/styles/circus-tito.css">
+  <script src="/js/main.js" defer></script>
+  <script src="/js/circus-tito.js" defer></script>
+</head>
+<body class="home-page circus-page-body tito-page">
+<header class="site-header" data-global-chrome>
+      <div class="header-container">
+
+
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
+          <div class="header-center">
+              <h1 class="site-title state-title">
+                  <span class="lang-en">State of Palestine</span>
+                  <span class="lang-ar">دولة فلسطين</span>
+              </h1>
+              <nav id="circus-navigation" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                          <span class="lang-en">MPGA</span>
+                          <span class="lang-ar">MPGA</span>
+                  </a></li>
+                  <li><a href="about.html" class="nav-btn">
+                        <span class="lang-en">About Us</span>
+                        <span class="lang-ar">من نحن</span>
+                  </a></li>
+                </ul>
+              </nav>
+          </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                      English | العربية
+              </button>
+  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+              <button id="menu-toggle" aria-controls="circus-navigation" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  ☰
+              </button>
+        </div>
+  </header>
+
+<main class="tito-game" id="tito-game" aria-labelledby="tito-title">
+  <div class="tito-scenery" aria-hidden="true"><div class="tito-canopy"></div>
+    <svg class="tito-bunting" viewBox="0 0 1000 100" preserveAspectRatio="none" focusable="false">
+      <path d="M0 8Q500 125 1000 8" fill="none" stroke="#FFC83D" stroke-width="3"/>
+      <g stroke="#FFFFFF" stroke-width="2">
+        <path d="m70 24 55 12-35 47Z" fill="#21D6C2"/>
+        <path d="m220 48 55 8-32 43Z" fill="#087D50"/>
+        <path d="m370 63 55 3-28 34Z" fill="#FFC83D"/>
+        <path d="m575 66 55-3-27 37Z" fill="#E32645"/>
+        <path d="m725 56 55-8-23 51Z" fill="#21D6C2"/>
+        <path d="m875 36 55-12-20 59Z" fill="#087D50"/>
+      </g>
+    </svg><div class="tito-curtain tito-curtain--left"><i></i></div><div class="tito-curtain tito-curtain--right"><i></i></div><div class="tito-sparkles"><i>✦</i><i>✧</i><i>✦</i></div></div>
+
+  <div class="tito-hero">
+    <div class="tito-character-anchor">
+      <div class="tito-character-motion">
+      <!-- Independent set piece beneath the performer; approved PNG is unchanged. -->
+      <svg class="tito-balcony" viewBox="0 0 320 150" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="tito-balcony-gold" x2="0" y2="1"><stop stop-color="#fff0a5"/><stop offset=".4" stop-color="#FFC83D"/><stop offset="1" stop-color="#b57719"/></linearGradient>
+          <linearGradient id="tito-flag-folds"><stop stop-color="#000000" stop-opacity=".14"/><stop offset=".25" stop-color="#FFFFFF" stop-opacity=".13"/><stop offset=".5" stop-color="#000000" stop-opacity=".12"/><stop offset=".75" stop-color="#FFFFFF" stop-opacity=".12"/><stop offset="1" stop-color="#000000" stop-opacity=".13"/></linearGradient>
+        </defs>
+        <path d="M15 27Q160 8 305 27l-8 56Q160 109 23 83Z" fill="#087D50" stroke="#b57719" stroke-width="3"/>
+        <g fill="none" stroke="url(#tito-balcony-gold)" stroke-width="5" stroke-linecap="round"><path d="m39 39 4 43m38-47 2 53m39-56v58m39-58v59m39-58-1 56m39-52-2 49m40-44-3 40"/><path d="M22 80Q160 107 298 80"/></g>
+        <!-- Cloth starts under the handrail and belongs to this balcony front. -->
+        <g class="tito-balcony-flag">
+        <path d="M65 30Q156 38 256 29l-6 78Q161 125 71 107Z" fill="#007A3D"/>
+        <path d="M65 30Q156 38 256 29l-2 26Q160 65 67 56Z" fill="#000000"/>
+        <path d="M67 56Q160 65 254 55l-2 26Q161 94 69 82Z" fill="#FFFFFF"/>
+        <path d="m65 30 97 40-91 37Z" fill="#CE1126"/>
+        <path d="M65 30Q156 38 256 29l-6 78Q161 125 71 107Z" fill="url(#tito-flag-folds)"/>
+        <path d="M71 107Q161 125 250 107" fill="none" stroke="#FFC83D" stroke-width="2" opacity=".75"/>
+        </g>
+        <path d="M13 17Q160-1 307 17q8 2 5 11-2 5-11 3Q160 14 19 32 6 34 7 25q-1-6 6-8Z" fill="url(#tito-balcony-gold)" stroke="#b57719" stroke-width="2"/>
+        <path d="M19 20Q160 3 301 20" fill="none" stroke="#fff4d6" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+        <img class="tito-character-image" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tito_ball.png"
+             data-alt-en="Uncle Tito leaning over the circus frame with juggling balls."
+             data-alt-ar="عمو تيتو يستند إلى إطار السيرك مع كرات ألعاب الخفة."
+             alt="Uncle Tito leaning over the circus frame with juggling balls." decoding="async">
+      </div>
+      <div class="tito-host-balls" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <svg class="tito-title-tent" viewBox="0 0 240 160" aria-hidden="true" focusable="false">
+      <path d="M120 13v19m0-19h36l-8 9h-28" fill="#E32645" stroke="#d49b24" stroke-width="3"/>
+      <path d="M120 30Q79 73 20 94h200Q161 73 120 30Z" fill="#FFF4D6" stroke="#d49b24" stroke-width="3"/>
+      <path d="M120 30 20 94h37Zm0 0-31 64h31Zm0 0 31 64h32Zm0 0 100 64h-16Z" fill="#E32645"/>
+      <path d="M34 96h172v53H34Z" fill="#FFF4D6" stroke="#d49b24" stroke-width="3"/>
+      <path d="M34 96h27v53H34Zm54 0h27v53H88Zm54 0h27v53h-27Zm54 0h10v53h-10Z" fill="#E32645"/>
+      <path d="M17 95h206" stroke="#FFC83D" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+  <header class="tito-marquee">
+    <svg class="tito-marquee-curls" viewBox="0 0 320 40" aria-hidden="true" focusable="false"><g fill="none" stroke="#FFC83D" stroke-width="4" stroke-linecap="round"><path d="M138 24q-26-28-54-9T26 25q-22 0-15-14 9-9 16 1M182 24q26-28 54-9t58 10q22 0 15-14-9-9-16 1"/></g><path d="m160 7 4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1Z" fill="#FFC83D" stroke="#b57719"/></svg>
+    <div class="tito-bulbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="tito-eyebrow"><span class="lang-en" lang="en">Gaza Circus School · The Main Event</span><span class="lang-ar hidden" lang="ar" dir="rtl">مدرسة سيرك غزة · العرض الرئيسي</span></p>
+    <h2 id="tito-title"><span class="lang-en" lang="en"><span class="tito-title-first">Uncle Tito’s</span> <span class="tito-title-last">Juggling Chaos!</span></span><span class="lang-ar hidden" lang="ar" dir="rtl">فوضى ألعاب الخفة مع عمو تيتو!</span></h2>
+    <p><span class="lang-en" lang="en">Catch the falling circus surprises!</span><span class="lang-ar hidden" lang="ar" dir="rtl">التقط مفاجآت السيرك المتساقطة!</span></p>
+  </header>
+  </div>
+
+  <div class="tito-performance">
+    <div class="tito-frame-balls" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <section class="tito-play-panel" aria-labelledby="tito-arena-title">
+      <svg class="tito-scrollwork" viewBox="0 0 360 50" aria-hidden="true" focusable="false"><g fill="none" stroke="#e8aa21" stroke-width="5" stroke-linecap="round"><path d="M155 28q-25-30-55-12T30 26q-28 2-18-14 11-12 20 2M205 28q25-30 55-12t70 10q28 2 18-14-11-12-20 2"/></g><path d="m180 4 7 13 15 3-11 11 2 15-13-7-13 7 2-15-11-11 15-3Z" fill="#FFC83D" stroke="#c78d20" stroke-width="2"/></svg>
+      <h3 id="tito-arena-title"><span class="lang-en" lang="en">Step into the juggling ring!</span><span class="lang-ar hidden" lang="ar" dir="rtl">انضم إلى حلبة ألعاب الخفة!</span></h3>
+      <p id="tito-instructions"><span class="lang-en" lang="en">Click or tap the falling objects before they reach the floor. Each catch earns one point. You have three lives!</span><span class="lang-ar hidden" lang="ar" dir="rtl">انقر على الأشياء المتساقطة أو المسها قبل وصولها إلى الأرض. كل التقاط يمنحك نقطة. لديك ثلاث فرص!</span></p>
+      <div class="tito-control-row">
+      <dl class="tito-scoreboard">
+        <div><dt><span class="lang-en" lang="en">Objects Caught</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأشياء الملتقطة</span></dt><dd id="tito-score">0</dd><span class="tito-catch-sparkles" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i></span></div>
+        <div><dt><span class="lang-en" lang="en">Lives Remaining</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفرص المتبقية</span></dt><dd><span id="tito-lives" class="tito-visually-hidden">3</span><span class="tito-hearts" aria-hidden="true"><svg viewBox="0 0 40 38" focusable="false"><path d="M20 34C14 29 3 21 3 12A9 9 0 0 1 20 8a9 9 0 0 1 17 4c0 9-11 17-17 22Z" fill="#E32645" stroke="#b82049" stroke-width="2"/><path d="M8 12q1-5 6-4" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg><svg viewBox="0 0 40 38" focusable="false"><path d="M20 34C14 29 3 21 3 12A9 9 0 0 1 20 8a9 9 0 0 1 17 4c0 9-11 17-17 22Z" fill="#E32645" stroke="#b82049" stroke-width="2"/><path d="M8 12q1-5 6-4" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg><svg viewBox="0 0 40 38" focusable="false"><path d="M20 34C14 29 3 21 3 12A9 9 0 0 1 20 8a9 9 0 0 1 17 4c0 9-11 17-17 22Z" fill="#E32645" stroke="#b82049" stroke-width="2"/><path d="M8 12q1-5 6-4" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg></span></dd></div>
+      </dl>
+      <div class="tito-controls">
+        <button type="button" id="tito-start"><span class="lang-en" lang="en">Start the Show!</span><span class="lang-ar hidden" lang="ar" dir="rtl">ابدأ العرض!</span></button>
+        <button type="button" id="tito-stop" disabled><span class="lang-en" lang="en">Stop the Show</span><span class="lang-ar hidden" lang="ar" dir="rtl">أوقف العرض</span></button>
+      </div>
+      </div>
+      <p class="tito-message" id="tito-message" role="status" aria-live="polite" aria-atomic="true"><span class="lang-en" lang="en">Uncle Tito is warming up backstage!</span><span class="lang-ar hidden" lang="ar" dir="rtl">عمو تيتو يستعد خلف الكواليس!</span></p>
+      <div id="tito-arena" class="tito-arena" role="group" aria-labelledby="tito-arena-title" aria-describedby="tito-instructions tito-keyboard-help">
+        <div class="tito-arena-welcome" id="tito-arena-welcome">
+          <svg class="tito-intro-flag" viewBox="0 0 120 60" aria-hidden="true" focusable="false"><path d="M0 0h120v20H0Z" fill="#000000"/><path d="M0 20h120v20H0Z" fill="#FFFFFF"/><path d="M0 40h120v20H0Z" fill="#007A3D"/><path d="m0 0 40 30L0 60Z" fill="#CE1126"/></svg>
+          <p class="tito-eye-message"><span class="lang-en" lang="en">Keep Your Eye on the Ball!</span><span class="lang-ar hidden" lang="ar" dir="rtl">أبقِ عينك على الكرة!</span></p>
+        </div>
+        <div id="tito-trophy" class="tito-trophy" role="group" aria-labelledby="tito-trophy-message" hidden>
+          <div class="tito-trophy-figure" aria-hidden="true">
+            <svg viewBox="0 0 240 260" focusable="false">
+              <defs>
+                <linearGradient id="tito-trophy-gold"><stop stop-color="#ad6b12"/><stop offset=".22" stop-color="#FFC83D"/><stop offset=".45" stop-color="#fff3a1"/><stop offset=".7" stop-color="#ffd75a"/><stop offset="1" stop-color="#bc7a15"/></linearGradient>
+                <linearGradient id="tito-trophy-shine"><stop stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".65"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+              </defs>
+              <ellipse cx="120" cy="246" rx="82" ry="9" fill="#801D39" opacity=".15"/>
+              <g stroke="#af751a" stroke-width="4" stroke-linejoin="round">
+                <path d="M63 43H27q-12 72 50 80l9-20q-40-2-40-42h20Zm114 0h36q12 72-50 80l-9-20q40-2 40-42h-20Z" fill="url(#tito-trophy-gold)"/>
+                <path d="M58 31h124l-10 80q-5 35-52 48-47-13-52-48Z" fill="url(#tito-trophy-gold)"/>
+                <ellipse cx="120" cy="31" rx="62" ry="11" fill="#ffe791"/>
+                <path d="M107 156h26v36l22 12H85l22-12Z" fill="url(#tito-trophy-gold)"/>
+                <path d="M77 204h86v17H77Z" fill="#007A3D"/>
+                <path d="M66 221h108v18H66Z" fill="#000000"/>
+                <path d="M61 239h118v7H61Z" fill="url(#tito-trophy-gold)"/>
+              </g>
+              <path d="M79 49q-1 35 9 55" fill="none" stroke="#fff8c0" stroke-width="6" stroke-linecap="round" opacity=".8"/>
+              <g transform="rotate(-6 120 137)">
+                <path d="M66 119h108v12H66Z" fill="#000000"/><path d="M66 131h108v12H66Z" fill="#FFFFFF"/><path d="M66 143h108v12H66Z" fill="#007A3D"/><path d="m66 119 26 18-26 18Z" fill="#CE1126"/>
+                <path d="M66 119h108v36H66Z" fill="none" stroke="#d7a33a" stroke-width="2"/>
+              </g>
+              <path class="tito-trophy-shimmer" d="m89 44 16-1 47 66-16 1Z" fill="url(#tito-trophy-shine)"/>
+              <g fill="#FFC83D" stroke="#b77b1d" stroke-width="1.5"><path d="m25 13 4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1Z"/><path d="m215 14 4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1Z"/></g>
+            </svg>
+            <span id="tito-trophy-score" class="tito-trophy-score"></span>
+            <div class="tito-trophy-balls"><i></i><i></i><i></i><i></i></div>
+            <div class="tito-trophy-sparkles"><i>✦</i><i>✧</i><i>✦</i></div>
+          </div>
+          <p id="tito-trophy-message" class="tito-trophy-message"></p>
+          <p class="tito-eye-message"><span class="lang-en" lang="en">Keep Your Eye on the Ball!</span><span class="lang-ar hidden" lang="ar" dir="rtl">أبقِ عينك على الكرة!</span></p>
+        </div>
+        <div class="tito-arena-floor" aria-hidden="true"></div>
+      </div>
+      <p class="tito-keyboard-help" id="tito-keyboard-help"><span class="lang-en" lang="en">Keyboard: Tab to a falling object, then press Enter or Space to catch it. Stop ends the current show.</span><span class="lang-ar hidden" lang="ar" dir="rtl">لوحة المفاتيح: انتقل بمفتاح Tab إلى شيء متساقط، ثم اضغط Enter أو المسافة لالتقاطه. زر الإيقاف ينهي العرض الحالي.</span></p>
+      <section class="tito-finale" id="tito-finale" aria-labelledby="tito-finale-title" hidden>
+        <div class="tito-finale-art" aria-hidden="true">
+          <svg viewBox="0 0 180 82" focusable="false">
+            <path d="M25 66Q90-5 155 66" fill="none" stroke="#087D50" stroke-width="2" stroke-dasharray="3 6" opacity=".5"/>
+            <ellipse cx="90" cy="75" rx="68" ry="4" fill="#087D50" opacity=".12"/>
+            <g stroke-width="2">
+              <circle cx="27" cy="57" r="14" fill="#E32645" stroke="#b82049"/>
+              <circle cx="56" cy="30" r="14" fill="#FFC83D" stroke="#ad7b22"/>
+              <circle cx="90" cy="19" r="14" fill="#26bf6a" stroke="#14773e"/>
+              <circle cx="124" cy="30" r="14" fill="#00BFAF" stroke="#1656ab"/>
+              <circle cx="153" cy="57" r="14" fill="#087D50" stroke="#7132b3"/>
+            </g>
+            <g fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".85">
+              <path d="M20 52q4-5 8-4M49 25q4-5 8-4m26-7q4-5 8-4m26 15q4-5 8-4m22 31q4-5 8-4"/>
+            </g>
+          </svg>
+        </div>
+        <h3 id="tito-finale-title"><span class="lang-en" lang="en">Bravo! What a show!</span><span class="lang-ar hidden" lang="ar" dir="rtl">برافو! يا له من عرض!</span></h3>
+        <p><span class="lang-en" lang="en">Uncle Tito is cheering for you. Every catch is a little victory!</span><span class="lang-ar hidden" lang="ar" dir="rtl">عمو تيتو يشجعك. كل التقاط هو انتصار صغير!</span></p>
+        <p id="tito-final-score"></p>
+        <button type="button" id="tito-replay"><span class="lang-en" lang="en">Play Again!</span><span class="lang-ar hidden" lang="ar" dir="rtl">العب مجددًا!</span></button>
+      </section>
+      <noscript><p><span class="lang-en" lang="en">Enable JavaScript to play Juggling Chaos.</span><span class="lang-ar hidden" lang="ar" dir="rtl">فعّل جافاسكريبت للعب فوضى ألعاب الخفة.</span></p></noscript>
+    </section>
+  </div>
+  
+  <div class="tito-exit"><a href="circus-ring.html"><svg viewBox="0 0 60 60" aria-hidden="true" focusable="false"><path d="M9 31h42v23H9Z" fill="#FFF4D6"/><path d="M9 31h9v23H9Zm18 0h9v23h-9Zm18 0h6v23h-6Z" fill="#E32645"/><path d="M30 8Q20 22 4 32h52Q40 22 30 8Z" fill="#FFF4D6" stroke="#FFC83D" stroke-width="2"/><path d="M30 8 4 32h14Zm0 0v24h14Z" fill="#E32645"/><path d="M25 54V42q5-9 10 0v12" fill="#17666a"/><path d="M30 3v7" stroke="#FFC83D" stroke-width="3"/></svg><span class="lang-en" lang="en">Back to Main Ring</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى الحلبة الرئيسية</span></a></div>
+</main>
+
+ <footer class="site-footer" data-global-chrome>
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, a State Rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 <span class="footer-name">American Nobody</span>999 ✌️ 🇵🇸 🧭 👈</span>
+              <span class="lang-ar">&copy; 2026 <span class="footer-name">أمريكان نوبودي</span>999 ✌️ 🇵🇸 🧭 👈</span>
+            </p>
+          </div>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
+  </footer>
+
+
+</body>
+</html>
