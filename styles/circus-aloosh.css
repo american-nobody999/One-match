@@ -1,0 +1,779 @@
+/* Author: Leslie Brockman
+ * Circus Aloosh Game styles.
+ */
+body.aloosh-page {
+    --aloosh-red: #d75c66;
+    --aloosh-velvet: #f7c9d6;
+    --aloosh-gold: #f5cd70;
+    --aloosh-cream: #fff0ce;
+    --aloosh-ink: #231a18;
+    --aloosh-green: #bfe5d0;
+    --aloosh-pink: #f7c9d6;
+    --aloosh-teal: #86b9ac;
+    --aloosh-gold-ink: #795315;
+    --aloosh-focus: #315e53;
+    background: radial-gradient(ellipse at 10% 5%, #f7c9d680, transparent 48%),
+        radial-gradient(ellipse at 90% 35%, #bfe5d099, transparent 55%),
+        repeating-linear-gradient(90deg, #fff0ce 0 5rem, #fff6e2 5rem 10rem);
+    color: var(--aloosh-ink);
+}
+.aloosh-game { width: min(100%, 1160px); min-width: 0; margin: 0 auto; padding: clamp(.75rem, 3vw, 2rem); }
+.aloosh-game [hidden] { display: none !important; }
+.aloosh-game p { text-indent: 0; margin: .65rem 0; }
+.aloosh-game :is(h2, h3) { font-family: Georgia, serif; line-height: 1.35; color: var(--aloosh-gold-ink); }
+.aloosh-game [lang="ar"] { font-family: Amiri, Georgia, serif; letter-spacing: normal; }
+.aloosh-game :is(h2, h3, p, button) .lang-ar { text-align: inherit; }
+.aloosh-game :is(button, a) { -webkit-tap-highlight-color: transparent; }
+.aloosh-game :is(button, a):focus-visible { outline: 3px solid var(--aloosh-focus); outline-offset: 4px; }
+.aloosh-game :is(.aloosh-controls button, .aloosh-victory button, .aloosh-return) {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; max-width: 100%; padding: .65rem 1rem;
+    border: 2px solid var(--aloosh-gold); border-radius: .5rem;
+    background: var(--aloosh-green); color: var(--aloosh-ink);
+    font: inherit; font-weight: bold; text-align: center; cursor: pointer;
+    box-shadow: 0 3px 0 #86b9ac, 0 5px 9px #79531515;
+}
+.aloosh-game .aloosh-return { margin-bottom: 1.25rem; text-decoration: underline; text-underline-offset: .2em; }
+.aloosh-game :is(.aloosh-controls button, .aloosh-victory button):hover { background: #a9d8bf; }
+.aloosh-game .aloosh-return:hover { background: #a9d8bf; }
+.aloosh-game .aloosh-marquee {
+    position: relative; padding: clamp(1rem, 3vw, 2rem); text-align: center;
+    border: 6px double var(--aloosh-gold); border-radius: 1.5rem 1.5rem .5rem .5rem;
+    background: radial-gradient(ellipse at 50% 0, #fffaf0, transparent 75%), var(--aloosh-pink);
+    box-shadow: inset 0 0 0 2px #fff9eb, 0 8px 20px #79531520;
+}
+.aloosh-game .aloosh-marquee h2 { font-size: clamp(1.75rem, 4vw, 3rem); margin: .5rem 0; text-wrap: balance; text-shadow: 0 1px 0 #fffaf0; }
+.aloosh-game .aloosh-eyebrow { color: #773448; font-size: .9rem; }
+.aloosh-game .aloosh-performance {
+    position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    align-items: start; gap: clamp(.75rem, 2vw, 1.5rem); margin-top: 1.5rem;
+    padding: clamp(.5rem, 2vw, 1.25rem); border: 1px solid var(--aloosh-teal); border-radius: 1rem;
+    background: radial-gradient(ellipse at 20% 0, #fffaf0cc, transparent 60%), linear-gradient(135deg, #fff0ce, #f7dce3 60%, #d9eee2);
+    box-shadow: 0 10px 24px #7953151a;
+}
+.aloosh-game .aloosh-art-slot { position: relative; min-width: 0; margin-top: 4rem; text-align: center; border: 2px double var(--aloosh-gold); border-radius: 50% 50% .75rem .75rem / 20% 20% .75rem .75rem; background: radial-gradient(ellipse at 50% 35%, #fffaf0, #fff0ce 65%, #bfe5d060); box-shadow: 0 5px 12px #79531512; }
+.aloosh-game .aloosh-art-slot svg { display: block; width: 100%; max-width: 15rem; height: auto; margin: auto; }
+.aloosh-game .aloosh-art-slot p { font-size: .9rem; color: var(--aloosh-ink); }
+.aloosh-game .aloosh-play-stage {
+    position: relative; isolation: isolate; min-width: 0; padding: clamp(.5rem, 2vw, 1.5rem);
+    border: 3px double var(--aloosh-gold); border-radius: .75rem;
+    background: radial-gradient(ellipse at top, #fffdf6, transparent 80%), #fff4dc;
+    box-shadow: inset 0 0 20px #f5cd7026, 0 5px 0 #d9bb87, 0 8px 16px #7953151a;
+    text-align: center;
+}
+.aloosh-game .aloosh-play-stage::before,
+.aloosh-game .aloosh-play-stage::after {
+    content: ''; position: absolute; z-index: -1; top: 0; width: .65rem; height: 10rem;
+    border-bottom: 3px solid var(--aloosh-gold); border-radius: 0 0 75% 75%;
+    background: repeating-linear-gradient(90deg, #f7c9d6 0 3px, #d75c66 3px 6px, #ef9ca6 6px 9px);
+    pointer-events: none;
+}
+.aloosh-game .aloosh-play-stage::before { left: 0; }
+.aloosh-game .aloosh-play-stage::after { right: 0; }
+.aloosh-game .aloosh-play-stage h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); margin: 0 0 .5rem; }
+.aloosh-game #aloosh-instructions { max-width: 55ch; margin: .5rem auto 1rem; line-height: 1.6; }
+.aloosh-game .aloosh-scoreboard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin: 1rem 0; }
+.aloosh-game .aloosh-scoreboard > div { min-width: 0; padding: .5rem .25rem; border: 1px solid var(--aloosh-gold); border-radius: .5rem; background: #fffbf1; box-shadow: 0 2px 5px #79531512; }
+.aloosh-game .aloosh-scoreboard dt { font-size: .85rem; color: var(--aloosh-gold-ink); overflow-wrap: anywhere; }
+.aloosh-game .aloosh-scoreboard dd { margin: 0; font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: bold; font-variant-numeric: tabular-nums; }
+.aloosh-game .aloosh-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
+.aloosh-game .aloosh-message { min-height: 3.5em; margin: .9rem 0; color: var(--aloosh-ink); font-weight: bold; }
+/* Practice 6's four-column board and two-sided CSS flip, scoped to this game. */
+.aloosh-game .aloosh-board {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); direction: ltr;
+    gap: clamp(.35rem, 1.2vw, .75rem); min-height: 9rem; max-width: 660px; margin: 0 auto;
+    padding: clamp(.3rem, 1vw, .65rem); border: 3px double var(--aloosh-gold); border-radius: .75rem;
+    background: var(--aloosh-green); box-shadow: inset 0 0 18px #86b9ac40;
+}
+.aloosh-game .memory-card {
+    position: relative; min-width: 44px; min-height: 64px; width: 100%; aspect-ratio: 3 / 4;
+    padding: 0; border: 2px solid var(--aloosh-gold); border-radius: .5rem;
+    background: var(--aloosh-pink); color: var(--aloosh-ink); perspective: 800px; font: inherit; cursor: pointer;
+    box-shadow: 0 3px 0 #86b9ac, 0 4px 6px #315e531a;
+}
+.aloosh-game .card-inner { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .45s ease; }
+.aloosh-game .memory-card.is-flipped .card-inner { transform: rotateY(180deg); }
+.aloosh-game .card-front,
+.aloosh-game .card-back { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: .35rem; padding: .2rem; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.aloosh-game .card-front { background: repeating-linear-gradient(135deg, #f7c9d6 0 8px, #ef9ca6 8px 16px); }
+.aloosh-game .card-front::after { content: ''; position: absolute; inset: 4px; border: 1px solid #a76b29; border-radius: .25rem; }
+.aloosh-game .card-back { transform: rotateY(180deg); background: var(--aloosh-cream); color: var(--aloosh-ink); }
+.aloosh-game .card-symbol { display: block; width: 75%; max-width: 5rem; height: auto; flex-shrink: 1; min-height: 0; }
+.aloosh-game .card-front .card-symbol { width: 85%; }
+.aloosh-game .card-match-mark { position: absolute; top: 0; right: 2px; font-size: .85rem; line-height: 1.1; visibility: hidden; color: #214d3b; }
+.aloosh-game .memory-card.is-matched { border-color: #315e53; outline: 1px dashed #315e53; outline-offset: -5px; }
+.aloosh-game .memory-card.is-matched .card-match-mark { visibility: visible; }
+.aloosh-game .memory-card:disabled { opacity: 1; cursor: default; -webkit-text-fill-color: currentColor; }
+.aloosh-game .memory-card:not(:disabled):hover { border-color: #315e53; }
+.aloosh-game .memory-card.is-matched::after { content: '✦'; position: absolute; top: 0; left: 40%; color: var(--aloosh-gold-ink); opacity: 0; pointer-events: none; animation: aloosh-match-sparkle 1.2s ease-out; }
+.aloosh-game .aloosh-victory { margin-top: 1.5rem; padding: 1.25rem; border: 4px double var(--aloosh-gold); border-radius: .75rem; background: var(--aloosh-green); }
+.aloosh-game .aloosh-celebration { color: var(--aloosh-gold-ink); font-size: 2rem; animation: aloosh-ovation 2s ease-in-out 2; }
+.aloosh-game .aloosh-bubbles { position: absolute; z-index: -1; inset: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
+.aloosh-game .aloosh-bubbles i { position: absolute; left: 3%; top: 35%; width: 2rem; aspect-ratio: 1; border: 1px solid #b45b7b99; border-radius: 50%; box-shadow: inset 4px 3px 4px #fffaf0cc; animation: aloosh-bubble-drift 9s ease-in-out infinite; }
+.aloosh-game .aloosh-bubbles i:nth-child(2) { left: 18%; top: 65%; width: 3rem; animation-delay: -3s; }
+.aloosh-game .aloosh-bubbles i:nth-child(3) { left: 7%; top: 85%; animation-delay: -6s; }
+.aloosh-game .aloosh-bubbles i:nth-child(4) { left: 89%; top: 12%; width: 1.5rem; animation-delay: -2s; }
+.aloosh-game .aloosh-bubbles i:nth-child(5) { left: 45%; top: 90%; animation-delay: -5s; }
+@keyframes aloosh-bubble-drift { 0%, 100% { transform: translateY(0); } 50% { transform: translate(6px, -24px); } }
+@keyframes aloosh-match-sparkle { 0% { opacity: 0; transform: translateY(6px) scale(.6); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(-18px) scale(1.1); } }
+@keyframes aloosh-ovation { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (max-width: 760px) {
+    .aloosh-game .aloosh-performance { grid-template-columns: minmax(0, 1fr); }
+    .aloosh-game .aloosh-art-slot { display: flex; align-items: center; justify-content: center; gap: .5rem; margin: 0; }
+    .aloosh-game .aloosh-art-slot svg { width: 4rem; margin: 0; flex-shrink: 0; }
+    .aloosh-game .aloosh-art-slot p { font-size: .8rem; }
+}
+@media (max-width: 400px) {
+    .aloosh-game { padding: .5rem; }
+    .aloosh-game .aloosh-performance { padding: .25rem; }
+    .aloosh-game .aloosh-play-stage { padding: .5rem .25rem; }
+    .aloosh-game .aloosh-scoreboard dt { font-size: .75rem; }
+}
+/* Phase 3D.2: theatrical tent framing, built from CSS and inline SVG. */
+.aloosh-game {
+    position: relative;
+    isolation: isolate;
+    width: min(100%, 1440px);
+    padding: 8rem clamp(1rem, 5vw, 4.5rem) 2.5rem;
+    overflow: hidden;
+    border-inline: 1px solid #d3a454;
+    background: radial-gradient(ellipse at 30% 15%, #fff0ce88, transparent 55%),
+        repeating-linear-gradient(90deg, #e9c7c9 0 3rem, #efdada 3rem 6rem);
+    box-shadow: inset 0 0 45px #79531526;
+}
+/* Floor stays behind all content, with seams and a warm footlight glow. */
+.aloosh-game::before {
+    content: ''; position: absolute; z-index: -1; inset: auto 0 0; height: 12rem;
+    border-top: 3px solid #a56837;
+    background: linear-gradient(#fff0ce44, transparent 55%),
+        repeating-linear-gradient(0deg, transparent 0 3px, #7953150c 3px 4px),
+        repeating-linear-gradient(98deg, #dba163 0 6rem, #a36b3e 6rem calc(6rem + 2px), #edbc7f calc(6rem + 2px) 12rem);
+    box-shadow: inset 0 14px 24px #79531533;
+    pointer-events: none;
+}
+.aloosh-game .aloosh-tent-decor { position: absolute; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; }
+.aloosh-game .aloosh-canopy {
+    position: absolute; inset: 0 0 auto; height: 11rem;
+    border-bottom: 5px solid var(--aloosh-gold); border-radius: 0 0 50% 50% / 0 0 22% 22%;
+    background: linear-gradient(#ffffff26, transparent 45%, #781b2533),
+        repeating-conic-gradient(from -70deg at 50% -120%, #c32f43 0deg 13deg, #fff0ce 13deg 26deg);
+    box-shadow: 0 6px 15px #79531533;
+}
+.aloosh-game .aloosh-flags { position: absolute; top: .75rem; left: 0; width: 100%; height: 7rem; filter: drop-shadow(0 3px 2px #79531533); }
+.aloosh-game .aloosh-flag { transform-box: fill-box; transform-origin: center top; animation: aloosh-flag-sway 7s ease-in-out infinite; }
+.aloosh-game .aloosh-flag:nth-child(even) { animation-delay: -3.5s; }
+.aloosh-game .aloosh-side-curtain {
+    position: absolute; top: 2rem; bottom: 0; width: clamp(1rem, 5vw, 4rem);
+    border-inline: 2px solid #f5cd70; border-radius: 0 0 35% 35%;
+    background: linear-gradient(180deg, #fff0ce22, transparent 30%, #690e1c44),
+        repeating-linear-gradient(92deg, #8b182b 0%, #c82d44 20%, #ec5364 35%, #aa2037 55%, #761328 75%, #d63a50 100%);
+    box-shadow: 3px 0 12px #6d152d55, inset 0 0 10px #6d152d44;
+    transform-origin: center top; animation: aloosh-curtain-breathe 9s ease-in-out infinite;
+}
+.aloosh-game .aloosh-side-curtain--left { left: 0; }
+.aloosh-game .aloosh-side-curtain--right { right: 0; animation-delay: -4.5s; }
+.aloosh-game .aloosh-side-curtain span {
+    position: absolute; top: 35%; left: -10%; width: 120%; height: 1rem;
+    border: 2px solid #bd8125; border-radius: 50%;
+    background: repeating-linear-gradient(0deg, #f5cd70 0 2px, #bd8125 2px 3px);
+    box-shadow: 0 3px 6px #6d152d66;
+}
+.aloosh-game .aloosh-side-curtain span::after {
+    content: ''; position: absolute; left: 40%; top: .6rem; width: .6rem; height: 3rem;
+    border-radius: 40% 40% 20% 20%; border-top: 5px solid #bd8125;
+    background: repeating-linear-gradient(90deg, #f5cd70 0 2px, #bd8125 2px 3px);
+}
+.aloosh-game .aloosh-marquee {
+    padding: 2.25rem clamp(1rem, 3vw, 2.5rem) 1.75rem;
+    border: 8px solid #e8a839; border-radius: 3rem;
+    background: linear-gradient(#fff9e9, #fff0ce 60%, #f7dbac);
+    box-shadow: inset 0 0 0 3px #fff9e9, inset 0 0 0 5px #d75c66,
+        0 0 0 2px #ba6529, 0 5px 0 #c78028, 0 10px 20px #79531540;
+}
+.aloosh-game .aloosh-eyebrow {
+    position: relative; width: fit-content; max-width: 90%; margin: -4rem auto 1.25rem;
+    padding: .5rem 1.25rem; border: 4px double #e8a839; border-radius: 1.5rem;
+    background: #fff6df; color: #571c36; font-weight: bold; box-shadow: 0 4px 8px #79531533;
+}
+.aloosh-game .aloosh-marquee h2 { position: relative; color: #921e3a; font-size: clamp(1.8rem, 3.8vw, 3.75rem); text-shadow: 0 2px 0 #fff, 1px 3px 0 #c5756333; }
+.aloosh-game .aloosh-tagline { position: relative; padding: .6rem 1rem; border: 3px double var(--aloosh-gold); border-radius: 2rem; background: #17666a; color: #fff9e9; font-weight: bold; box-shadow: 0 3px 7px #79531526; }
+.aloosh-game .aloosh-marquee-lights { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.aloosh-game .aloosh-marquee-lights > span { position: absolute; left: 3%; right: 3%; display: flex; justify-content: space-between; gap: .2rem; }
+.aloosh-game .aloosh-marquee-lights > span:first-child { top: .3rem; }
+.aloosh-game .aloosh-marquee-lights > span:last-child { bottom: .3rem; }
+.aloosh-game .aloosh-marquee-lights i { display: block; width: clamp(.35rem, 1vw, .7rem); aspect-ratio: 1; flex-shrink: 0; border-radius: 50%; background: #fffbd5; box-shadow: 0 0 4px 2px #ffef97, 0 0 11px 4px #ffc94088; animation: aloosh-bulb-warmth 6s ease-in-out infinite; }
+.aloosh-game .aloosh-marquee-lights i:nth-child(even) { animation-delay: -3s; }
+.aloosh-game .aloosh-performance {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr);
+    grid-template-areas: 'character game';
+    direction: ltr; align-items: center; gap: clamp(.75rem, 2vw, 1.75rem);
+    margin-top: 2rem; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none;
+}
+.aloosh-game[dir="rtl"] .aloosh-play-stage { direction: rtl; }
+/* Artwork remains on the left even when the game's reading direction is Arabic. */
+.aloosh-game .aloosh-art-slot {
+    grid-area: character; align-self: stretch; display: flex; flex-direction: column; justify-content: center;
+    margin: 0; padding: .75rem .25rem; border: 0; border-radius: 0;
+    background: radial-gradient(ellipse at center, #fff8dfbb, transparent 70%); box-shadow: none;
+}
+.aloosh-game .aloosh-character-reaction { position: relative; width: 100%; }
+.aloosh-game .aloosh-character-idle { width: 100%; animation: aloosh-character-idle 6s ease-in-out infinite; }
+.aloosh-game .aloosh-character-art { display: flex; align-items: center; width: 100%; aspect-ratio: 2 / 3; transform-origin: center 90%; animation: aloosh-character-wave 8s ease-in-out infinite; }
+.aloosh-game .aloosh-character-art > :is(svg, img) { display: block; width: 100%; max-width: 25rem; height: auto; max-height: 38rem; object-fit: contain; margin: auto; border: 0; border-radius: 0; box-shadow: none; filter: drop-shadow(0 10px 6px #79531526); }
+.aloosh-game .aloosh-art-slot p { position: relative; margin: .75rem auto; padding: .5rem .75rem; max-width: 25ch; border: 3px double var(--aloosh-gold); border-radius: 1rem; background: #fff6df; color: #571c36; direction: inherit; }
+.aloosh-game .aloosh-character-stars { position: absolute; top: 15%; left: 8%; width: 84%; color: #946012; font-size: clamp(1.5rem, 3vw, 2.5rem); word-spacing: 1rem; opacity: 0; pointer-events: none; }
+.aloosh-game .aloosh-art-slot.is-cheering .aloosh-character-reaction { animation: aloosh-character-cheer 1.4s ease-in-out; }
+.aloosh-game .aloosh-art-slot.is-cheering .aloosh-character-stars { animation: aloosh-stars-rise 1.4s ease-out; }
+.aloosh-game .aloosh-art-slot.is-celebrating .aloosh-character-reaction { animation: aloosh-character-finale 2s ease-in-out 2; }
+.aloosh-game .aloosh-art-slot.is-celebrating .aloosh-character-stars { animation: aloosh-stars-rise 2s ease-out 2; }
+.aloosh-game .aloosh-play-stage {
+    grid-area: game; border: 7px double #e9ae38; border-radius: 1.5rem;
+    padding: clamp(.75rem, 2vw, 1.75rem);
+    background: radial-gradient(ellipse at top, #fffdf5, transparent 70%), #fff0ce;
+    box-shadow: inset 0 0 0 3px #d75c66, inset 0 0 0 5px #fffaf0, 0 5px 0 #c88838, 0 12px 22px #79531533;
+}
+.aloosh-game .aloosh-play-stage::before,
+.aloosh-game .aloosh-play-stage::after {
+    content: '✦'; top: .4rem; bottom: auto; width: auto; height: auto; z-index: 0;
+    border: 0; border-radius: 0; background: none; color: #a76b14; font-size: 1.5rem; line-height: 1;
+}
+.aloosh-game .aloosh-play-stage::before { left: .4rem; }
+.aloosh-game .aloosh-play-stage::after { right: .4rem; }
+.aloosh-game .aloosh-play-stage h3 { color: #921e3a; font-size: clamp(1.25rem, 2.6vw, 2.1rem); text-wrap: balance; }
+.aloosh-game .aloosh-scoreboard { gap: clamp(.35rem, 1vw, .8rem); }
+.aloosh-game .aloosh-scoreboard > div { position: relative; padding: .65rem .3rem; border: 4px double #b97b22; border-radius: 1.25rem; background: linear-gradient(#fff6d2, #f5d78a); box-shadow: inset 0 0 0 2px #fff9e9, 0 3px 0 #d79a43, 0 5px 9px #79531526; }
+.aloosh-game .aloosh-scoreboard > div:nth-child(2) { background: linear-gradient(#c9eee2, #86c6b8); }
+.aloosh-game .aloosh-scoreboard dt { color: #571c36; font-weight: bold; }
+.aloosh-game .aloosh-scoreboard dd { color: #571c36; font-size: clamp(1.3rem, 3vw, 2.25rem); line-height: 1.3; }
+.aloosh-game :is(.aloosh-controls button, .aloosh-victory button) { min-height: 52px; padding: .7rem 2rem; border: 5px double #ffdb79; border-radius: 2rem; background: linear-gradient(#eb5264, #bd2141); color: #fffdf3; font-size: clamp(1rem, 2vw, 1.4rem); text-shadow: 0 1px 1px #702532; box-shadow: 0 4px 0 #bf7924, 0 7px 12px #79531533; }
+.aloosh-game :is(.aloosh-controls button, .aloosh-victory button):hover { background: linear-gradient(#d63b53, #a71b38); }
+.aloosh-game .aloosh-return { display: flex; width: fit-content; margin: 2rem auto 0; border: 4px double var(--aloosh-gold); border-radius: 2rem; background: #17666a; color: #fffdf3; box-shadow: 0 4px 0 #bf7924, 0 7px 12px #79531533; }
+.aloosh-game .aloosh-return:hover { background: #125256; }
+.aloosh-game .aloosh-board { position: relative; padding: clamp(.4rem, 1vw, .8rem); border: 5px double #468e80; border-radius: 1.25rem; background: repeating-conic-gradient(from -15deg at 50% 100%, #ffffff14 0deg 15deg, transparent 15deg 30deg), linear-gradient(#c5eddf, #a8dfd0); box-shadow: inset 0 0 0 2px #f3fff7, inset 0 0 20px #86b9ac40; }
+.aloosh-game .aloosh-board:empty::before { content: '✦  ✧  ✦'; position: absolute; inset: 0; display: grid; place-content: center; color: #367669; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: .5rem; opacity: .6; pointer-events: none; }
+.aloosh-game .memory-card { min-height: 74px; border: 3px solid #c38a2e; border-radius: .75rem; box-shadow: 0 3px 0 #7eaa95, 0 5px 7px #315e5326; }
+.aloosh-game .card-front, .aloosh-game .card-back { border-radius: .5rem; }
+.aloosh-game .card-front { background: radial-gradient(circle at 50% 35%, #fff0ce99, transparent 70%), repeating-linear-gradient(135deg, #f7c9d6 0 8px, #ef9ca6 8px 16px); }
+.aloosh-game .memory-card.is-matched { border-color: #315e53; }
+.aloosh-game .aloosh-bubbles { inset: -1rem -.5rem; z-index: 0; }
+.aloosh-game .aloosh-bubbles i { width: 2.75rem; border: 2px solid #fff9e9aa; background: radial-gradient(circle at 28% 25%, #ffffffbb 0 7%, transparent 15%), conic-gradient(from 30deg, #f7c9d622, #86b9ac44, #f5cd7044, #e28aaf44, #f7c9d622); box-shadow: inset 3px 3px 7px #fffaf0bb, inset -3px -3px 6px #86b9ac66, 0 0 0 1px #b45b7b44; }
+/* Bubbles stay around the character and the outer edges, below interactive panels. */
+.aloosh-game .aloosh-bubbles i:nth-child(1) { left: 2%; top: 12%; }
+.aloosh-game .aloosh-bubbles i:nth-child(2) { left: 17%; top: 40%; width: 3.75rem; }
+.aloosh-game .aloosh-bubbles i:nth-child(3) { left: 5%; top: 78%; }
+.aloosh-game .aloosh-bubbles i:nth-child(4) { left: 93%; top: 22%; }
+.aloosh-game .aloosh-bubbles i:nth-child(5) { left: 22%; top: 90%; }
+.aloosh-game .aloosh-art-slot, .aloosh-game .aloosh-play-stage { z-index: 1; }
+@keyframes aloosh-bulb-warmth { 0%, 100% { opacity: .8; } 50% { opacity: 1; } }
+@keyframes aloosh-flag-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes aloosh-curtain-breathe { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(.97); } }
+@keyframes aloosh-character-idle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes aloosh-character-wave { 0%, 100% { transform: rotate(-1deg); } 50% { transform: rotate(1deg); } }
+@keyframes aloosh-character-cheer { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-12px); } 70% { transform: translateY(-4px); } }
+@keyframes aloosh-character-finale { 0%, 100% { transform: translateY(0) rotate(0); } 35% { transform: translateY(-16px) rotate(-2deg); } 65% { transform: translateY(-6px) rotate(2deg); } }
+@keyframes aloosh-stars-rise { 0% { opacity: 0; transform: translateY(15px) scale(.8); } 25%, 60% { opacity: 1; } 100% { opacity: 0; transform: translateY(-20px) scale(1.05); } }
+@media (max-width: 760px) {
+    .aloosh-game { padding: 6rem clamp(.6rem, 3vw, 1.5rem) 2rem; }
+    .aloosh-game .aloosh-canopy { height: 7rem; }
+    .aloosh-game .aloosh-flags { height: 4.5rem; }
+    .aloosh-game .aloosh-marquee { padding: 1.5rem .65rem 1rem; border-radius: 2rem; }
+    .aloosh-game .aloosh-eyebrow { margin-top: -3rem; max-width: 95%; font-size: .75rem; padding: .4rem .6rem; }
+    .aloosh-game .aloosh-tagline { font-size: .85rem; padding: .45rem .5rem; }
+    .aloosh-game .aloosh-performance { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'character' 'game'; margin-top: 1rem; gap: .75rem; }
+    .aloosh-game .aloosh-art-slot { flex-direction: row; align-items: center; gap: .5rem; padding: .25rem; }
+    .aloosh-game .aloosh-character-reaction { width: clamp(5rem, 22vw, 9rem); flex-shrink: 0; }
+    .aloosh-game .aloosh-character-art { aspect-ratio: auto; }
+    .aloosh-game .aloosh-character-art > :is(svg, img) { width: 100%; max-height: 10rem; }
+    .aloosh-game .aloosh-art-slot p { margin: 0; font-size: .8rem; max-width: 24ch; }
+    .aloosh-game .aloosh-character-stars { left: 2%; top: 5%; font-size: 1.25rem; width: 40%; }
+    .aloosh-game .aloosh-play-stage { padding: 1rem .5rem .75rem; border-width: 5px; border-radius: 1rem; }
+    .aloosh-game .aloosh-bubbles i:nth-child(n) { top: 0; left: 5%; width: 2rem; }
+    .aloosh-game .aloosh-bubbles i:nth-child(even) { left: 80%; top: 2%; }
+    .aloosh-game .aloosh-bubbles i:nth-child(3) { left: 20%; top: 6%; }
+    .aloosh-game .aloosh-bubbles i:nth-child(5) { left: 65%; top: 4%; }
+}
+@media (max-width: 400px) {
+    .aloosh-game .aloosh-board { padding: .3rem; gap: .35rem; border-width: 3px; }
+    .aloosh-game .memory-card { border-width: 2px; }
+    .aloosh-game .aloosh-scoreboard > div { padding: .5rem .15rem; border-width: 3px; border-radius: .8rem; }
+    .aloosh-game .aloosh-scoreboard dt { font-size: .72rem; }
+    .aloosh-game .aloosh-tagline { border-radius: 1rem; }
+}
+/* Phase 3D.3: level selection and readable card sizes for all three decks. */
+.aloosh-game .aloosh-symbol-defs { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+.aloosh-game .aloosh-level-selector {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .5rem; min-width: 0; margin: 1rem 0; padding: .75rem .5rem;
+    border: 3px double #b97b22; border-radius: 1rem; background: #fff8e8;
+}
+.aloosh-game .aloosh-level-selector legend { padding-inline: .5rem; font-weight: bold; color: #571c36; }
+.aloosh-game .aloosh-level-option {
+    display: flex; align-items: flex-start; gap: .35rem; min-width: 0; min-height: 48px;
+    padding: .6rem .4rem; border: 2px solid #86b9ac; border-radius: .65rem;
+    background: #e3f2e9; text-align: start; cursor: pointer;
+}
+.aloosh-game .aloosh-level-option input { width: 1.1rem; height: 1.1rem; flex-shrink: 0; margin: .2rem 0 0; accent-color: #17666a; }
+.aloosh-game .aloosh-level-option > span { min-width: 0; overflow-wrap: anywhere; }
+.aloosh-game .aloosh-level-option strong { display: block; font-size: .85rem; line-height: 1.4; }
+.aloosh-game .aloosh-level-option:focus-within { outline: 3px solid var(--aloosh-focus); outline-offset: 2px; }
+.aloosh-game .aloosh-level-option:has(input:checked) { border-color: #17666a; background: #fff0ce; box-shadow: inset 0 0 0 1px #17666a; }
+/* Extra rows grow naturally; higher levels never squeeze cards into one viewport. */
+.aloosh-game .aloosh-board { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.aloosh-game .memory-card { min-height: 100px; }
+.aloosh-game .memory-card:disabled:not(.is-matched) { cursor: default; }
+@media (max-width: 520px) {
+    .aloosh-game .aloosh-board { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .aloosh-game .aloosh-level-selector { grid-template-columns: minmax(0, 1fr); padding: .65rem; }
+    .aloosh-game .aloosh-level-option { align-items: center; min-height: 48px; }
+    .aloosh-game .aloosh-level-option > span { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem .65rem; }
+    .aloosh-game .memory-card { min-height: 96px; }
+}
+/* Phase 3D.4: compact game flow without a separate scrolling board. */
+.aloosh-game { padding-top: 3.25rem; padding-bottom: 1.5rem; }
+.aloosh-game .aloosh-canopy { height: 5.5rem; }
+.aloosh-game .aloosh-flags { top: .25rem; height: 3rem; }
+.aloosh-game .aloosh-marquee { padding: .8rem 1.25rem .65rem; border-width: 6px; border-radius: 2rem; }
+.aloosh-game .aloosh-eyebrow { margin: -1.65rem auto .3rem; padding: .2rem .8rem; font-size: .75rem; border-width: 3px; }
+.aloosh-game .aloosh-marquee h2 { margin: .2rem 0; font-size: clamp(1.4rem, 2.8vw, 2.4rem); line-height: 1.2; }
+.aloosh-game .aloosh-tagline { margin: .35rem 0 0; padding: .2rem .6rem; font-size: .85rem; line-height: 1.45; }
+.aloosh-game .aloosh-performance { margin-top: .85rem; gap: 1rem; align-items: start; }
+.aloosh-game .aloosh-play-stage { padding: .7rem .8rem; }
+.aloosh-game .aloosh-play-stage h3 { margin: 0 1rem .25rem; font-size: clamp(1.05rem, 1.8vw, 1.4rem); }
+.aloosh-game #aloosh-instructions { max-width: 70ch; margin: .25rem auto .45rem; font-size: .85rem; line-height: 1.45; }
+.aloosh-game .aloosh-scoreboard { margin: .4rem 0 .5rem; gap: .5rem; }
+.aloosh-game .aloosh-scoreboard > div { padding: .25rem .3rem; border-width: 3px; border-radius: .8rem; }
+.aloosh-game .aloosh-scoreboard dt { font-size: .75rem; line-height: 1.35; }
+.aloosh-game .aloosh-scoreboard dd { font-size: 1.35rem; line-height: 1.2; }
+.aloosh-game .aloosh-game-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: .6rem; }
+.aloosh-game .aloosh-level-selector { margin: .2rem 0; padding: .3rem .35rem; gap: .3rem; border-width: 2px; border-radius: .65rem; }
+.aloosh-game .aloosh-level-selector legend { font-size: .8rem; }
+.aloosh-game .aloosh-level-option { min-height: 44px; gap: .25rem; padding: .3rem; border-radius: .45rem; }
+.aloosh-game .aloosh-level-option strong { font-size: .75rem; line-height: 1.3; }
+.aloosh-game :is(.aloosh-controls button, .aloosh-victory button) { min-height: 44px; padding: .45rem .85rem; border-width: 4px; font-size: 1rem; line-height: 1.3; }
+.aloosh-game .aloosh-message { min-height: 1.5em; margin: .35rem 0; font-size: .8rem; line-height: 1.45; }
+/* Width cap and square proportions avoid oversized cards on a wide desktop panel. */
+.aloosh-game .aloosh-board { max-width: 25rem; padding: .4rem; gap: .4rem; border-width: 3px; overflow: visible; }
+.aloosh-game .memory-card { aspect-ratio: 1; min-width: 44px; min-height: 84px; border-width: 2px; }
+.aloosh-game .card-symbol { max-width: 3.7rem; width: 68%; }
+/* Replaces pink stripes; the SVG itself carries only the four requested tent colors. */
+.aloosh-game .card-front { background: radial-gradient(ellipse at top, #fffdf5, #fff0ce); }
+.aloosh-game .card-front::after { border-color: #c38a2e; }
+.aloosh-game .card-front .card-symbol { width: 100%; max-width: none; height: 100%; object-fit: contain; }
+/* Full-body replacement artwork is contained; its natural height cannot stretch the game. */
+.aloosh-game .aloosh-art-slot { align-self: start; padding-top: 1rem; }
+.aloosh-game .aloosh-character-art { aspect-ratio: auto; height: clamp(15rem, 38vw, 30rem); }
+.aloosh-game .aloosh-character-art > :is(svg, img) { width: 100%; height: 100%; max-width: 25rem; max-height: 100%; object-fit: contain; }
+.aloosh-game .aloosh-art-slot p { margin: .3rem auto; padding: .3rem .5rem; font-size: .75rem; }
+.aloosh-game .aloosh-return { margin-top: 1rem; padding: .45rem .8rem; font-size: .9rem; }
+@media (min-width: 761px) and (max-width: 1050px) {
+    .aloosh-game .aloosh-performance { grid-template-columns: minmax(0, 1fr) minmax(0, 3.5fr); gap: .65rem; }
+    .aloosh-game .aloosh-game-toolbar { grid-template-columns: minmax(0, 1fr); gap: .3rem; }
+    .aloosh-game .aloosh-character-art { height: 20rem; }
+}
+@media (max-width: 760px) {
+    .aloosh-game { padding-top: 2.75rem; }
+    .aloosh-game .aloosh-canopy { height: 4rem; }
+    .aloosh-game .aloosh-flags { height: 2.25rem; }
+    .aloosh-game .aloosh-marquee { padding: .7rem .65rem .5rem; }
+    .aloosh-game .aloosh-eyebrow { margin-top: -1.5rem; font-size: .65rem; }
+    .aloosh-game .aloosh-tagline { font-size: .75rem; }
+    .aloosh-game .aloosh-performance { gap: .4rem; margin-top: .5rem; }
+    /* A short preview row reserves the asset slot without a tall portrait above the board. */
+    .aloosh-game .aloosh-art-slot { padding: 0; align-self: auto; }
+    .aloosh-game .aloosh-character-reaction { width: 3.5rem; }
+    .aloosh-game .aloosh-character-art { height: 3.5rem; }
+    .aloosh-game .aloosh-art-slot p { margin: 0; padding: .2rem .5rem; font-size: .7rem; }
+    .aloosh-game .aloosh-play-stage { padding: .6rem .4rem; }
+    .aloosh-game .aloosh-game-toolbar { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
+    .aloosh-game .aloosh-level-selector { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .aloosh-game .aloosh-level-option { align-items: flex-start; }
+    .aloosh-game .aloosh-level-option > span { display: block; }
+    .aloosh-game .aloosh-board { max-width: 25rem; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .aloosh-game .memory-card { min-height: 80px; }
+}
+@media (max-width: 400px) {
+    .aloosh-game .aloosh-board { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; padding: .3rem; }
+    .aloosh-game .memory-card { min-height: 84px; }
+    .aloosh-game .aloosh-level-option { flex-wrap: wrap; gap: .1rem; }
+    .aloosh-game .aloosh-level-option input { margin: 0; }
+    .aloosh-game .aloosh-level-option > span { flex-basis: 100%; }
+}
+/* Phase 3D.6: shared face rendering is artwork-only at every difficulty. */
+.aloosh-game .card-back { padding: .15rem; }
+.aloosh-game .card-back .card-symbol {
+    display: block; width: 100%; height: 100%; max-width: none;
+    flex-shrink: 0; margin: auto;
+}
+/* Phase 3D.7: reusable full-body character, asset loading, and event reactions. */
+.aloosh-game .aloosh-character { position: relative; align-self: start; min-width: 0; padding: 1rem .25rem; pointer-events: none; }
+.aloosh-game .aloosh-character-name { display: block; color: #921e3a; font-family: Georgia, serif; font-size: 1.5rem; font-weight: bold; text-align: center; }
+.aloosh-game .aloosh-character[data-asset-state="ready"] .aloosh-character-name {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.aloosh-game .aloosh-character[data-asset-state="pending"] .aloosh-character-reaction { display: none; }
+.aloosh-game .aloosh-character-art { display: flex; justify-content: center; align-items: end; height: clamp(18rem, 38vw, 32rem); }
+.aloosh-game .aloosh-character-art .aloosh-character-image {
+    display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%;
+    margin: 0; object-fit: contain; object-position: center bottom;
+    border: 0; border-radius: 0; filter: drop-shadow(0 9px 6px #79531533);
+}
+.aloosh-game .aloosh-character p.aloosh-character-pending {
+    margin: .35rem auto; padding: 0; border: 0; border-radius: 0; background: none;
+    max-width: 25ch; color: #571c36; box-shadow: none; font-size: .8rem;
+}
+.aloosh-game .aloosh-character-idle { animation: aloosh-character-idle 6s ease-in-out infinite; }
+.aloosh-game .aloosh-character-art { animation: aloosh-character-wave 8s ease-in-out infinite; }
+.aloosh-game .aloosh-character.is-welcoming .aloosh-character-reaction { animation: aloosh-welcome 1.2s ease-in-out; }
+.aloosh-game .aloosh-character.is-cheering .aloosh-character-reaction { animation: aloosh-happy-wiggle 1.4s ease-in-out; }
+.aloosh-game .aloosh-character.is-encouraging .aloosh-character-reaction { transform-origin: center 90%; animation: aloosh-encourage 1.4s ease-in-out; }
+.aloosh-game .aloosh-character.is-celebrating .aloosh-character-reaction { animation: aloosh-finale 3.2s ease-in-out; }
+.aloosh-game .aloosh-character .aloosh-character-stars { display: flex; justify-content: space-around; gap: .5rem; word-spacing: normal; top: 12%; }
+.aloosh-game .aloosh-character-stars i { font-style: normal; color: #d75c66; text-shadow: 0 1px #fff0ce; }
+.aloosh-game .aloosh-character-stars i:nth-child(2) { color: #17666a; }
+.aloosh-game .aloosh-character-stars i:nth-child(3) { color: #a76b14; }
+.aloosh-game .aloosh-character.is-cheering .aloosh-character-stars { animation: none; opacity: 0; }
+.aloosh-game .aloosh-character.is-celebrating .aloosh-character-stars { animation: aloosh-stars-rise 3.2s ease-out; }
+.aloosh-game .aloosh-character-bubbles { position: absolute; inset: 0; pointer-events: none; }
+.aloosh-game .aloosh-character-bubbles i {
+    position: absolute; left: 5%; top: 25%; width: 1.25rem; aspect-ratio: 1;
+    border: 1px solid #fffaf0; border-radius: 50%; opacity: .65;
+    background: radial-gradient(circle at 30% 25%, #fffaf0bb 0 8%, transparent 18%),
+        conic-gradient(#f7c9d655, #86b9ac66, #f5cd7055, #f7c9d655);
+    box-shadow: inset -2px -2px 4px #86b9ac66, 0 0 0 1px #86b9ac66;
+    animation: aloosh-bubble-drift 9s ease-in-out infinite;
+}
+.aloosh-game .aloosh-character-bubbles i:nth-child(2) { left: 82%; top: 45%; width: 1.75rem; animation-delay: -3s; }
+.aloosh-game .aloosh-character-bubbles i:nth-child(3) { left: 12%; top: 72%; animation-delay: -6s; }
+.aloosh-game .aloosh-character.is-cheering .aloosh-character-bubbles i { animation: aloosh-reaction-bubble 1.4s ease-out; }
+.aloosh-game .aloosh-character.is-celebrating .aloosh-character-bubbles i { animation: aloosh-reaction-bubble 3.2s ease-out; }
+@keyframes aloosh-welcome { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-7px); } }
+@keyframes aloosh-happy-wiggle { 0%, 100% { transform: translateY(0) rotate(0); } 30% { transform: translateY(-9px) rotate(-2deg); } 65% { transform: translateY(-4px) rotate(2deg); } }
+@keyframes aloosh-encourage { 0%, 100% { transform: rotate(0); } 45% { transform: rotate(-3deg); } 75% { transform: rotate(1deg); } }
+@keyframes aloosh-finale { 0%, 100% { transform: translateY(0) rotate(0); } 25%, 65% { transform: translateY(-12px) rotate(-2deg); } 45%, 80% { transform: translateY(-4px) rotate(2deg); } }
+@keyframes aloosh-reaction-bubble { 0% { opacity: 0; transform: translateY(14px) scale(.8); } 25% { opacity: .9; } 100% { opacity: 0; transform: translateY(-28px) scale(1.1); } }
+@media (min-width: 761px) and (max-width: 1050px) {
+    .aloosh-game .aloosh-character-art { height: clamp(13rem, 30vw, 22rem); }
+}
+@media (max-width: 760px) {
+    .aloosh-game .aloosh-character { display: flex; flex-direction: row; align-items: center; justify-content: center; padding: .25rem; min-height: 3rem; }
+    .aloosh-game .aloosh-character-reaction { width: 4rem; flex-shrink: 0; }
+    .aloosh-game .aloosh-character-art { height: 5rem; }
+    .aloosh-game .aloosh-character-name { font-size: 1.1rem; }
+    .aloosh-game .aloosh-character p.aloosh-character-pending { margin: 0; font-size: .7rem; max-width: 23ch; }
+    .aloosh-game .aloosh-character-bubbles i:nth-child(n) { top: 30%; left: 12%; width: 1rem; }
+    .aloosh-game .aloosh-character-bubbles i:nth-child(2) { left: 85%; top: 50%; }
+    .aloosh-game .aloosh-character-bubbles i:nth-child(3) { left: 68%; top: 10%; }
+}
+/* Phase 3D.8: approved a-bubble.png, contained in full with no image frame. */
+.aloosh-game .aloosh-character { background: none; border: 0; box-shadow: none; }
+.aloosh-game .aloosh-character-art { height: clamp(22rem, 40vw, 34rem); }
+.aloosh-game .aloosh-character-art .aloosh-character-image {
+    object-fit: contain; object-position: center bottom; background: none;
+    border: 0; border-radius: 0; box-shadow: none;
+}
+/* Positive horizontal movement sends extra bubbles toward the game on the right.
+   The bounded decoration layer and pointer-free component keep controls clear. */
+.aloosh-game .aloosh-character-bubbles { overflow: hidden; }
+.aloosh-game .aloosh-character-bubbles i { left: 50%; top: 25%; animation-name: aloosh-bubble-to-board; }
+.aloosh-game .aloosh-character-bubbles i:nth-child(2) { left: 70%; top: 40%; }
+.aloosh-game .aloosh-character-bubbles i:nth-child(3) { left: 60%; top: 60%; }
+.aloosh-game .aloosh-character.is-cheering .aloosh-character-bubbles i { animation-name: aloosh-match-bubbles-to-board; }
+.aloosh-game .aloosh-character.is-celebrating .aloosh-character-bubbles i { animation-name: aloosh-match-bubbles-to-board; }
+@keyframes aloosh-bubble-to-board {
+    0%, 100% { transform: translate(0, 4px); opacity: .45; }
+    50% { transform: translate(16px, -16px); opacity: .8; }
+}
+@keyframes aloosh-match-bubbles-to-board {
+    0% { transform: translate(0, 10px) scale(.8); opacity: 0; }
+    25% { opacity: .9; }
+    100% { transform: translate(26px, -26px) scale(1.1); opacity: 0; }
+}
+@media (min-width: 761px) and (max-width: 1050px) {
+    .aloosh-game .aloosh-performance { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); }
+    .aloosh-game .aloosh-character-art { height: clamp(16rem, 30vw, 24rem); }
+}
+@media (max-width: 760px) {
+    .aloosh-game .aloosh-character-reaction { width: clamp(5rem, 18vw, 8rem); }
+    .aloosh-game .aloosh-character-art { height: clamp(5rem, 20vw, 8rem); }
+}
+/* Phase 3D.9: curved sign, a full-body host, and connected gameplay spacing. */
+.aloosh-game .aloosh-marquee {
+    width: min(100%, 56rem); margin: 0 auto; padding: .85rem 1.8rem .65rem;
+    border: 6px solid #e8a839;
+    border-radius: 48% 48% 35% 35% / 28% 28% 22% 22%;
+    background: radial-gradient(ellipse at center, #fffaf0, #fff0ce 75%);
+    box-shadow: inset 0 0 0 3px #fff8df, inset 0 0 0 6px #ce4254,
+        0 3px 0 #ae5e2b, 0 7px 15px #79531533;
+}
+.aloosh-game .aloosh-eyebrow { max-width: 85%; margin: -1.65rem auto .35rem; padding: .15rem .65rem; border-radius: 1rem; font-size: .7rem; }
+.aloosh-game .aloosh-marquee h2 { margin: .25rem 0; color: #a51f3b; font-size: clamp(1.4rem, 2.6vw, 2.25rem); line-height: 1.2; }
+/* Subtitle is integrated text on the sign, with no separate green bar. */
+.aloosh-game .aloosh-tagline { margin: .2rem auto 0; padding: 0 .5rem; max-width: 45ch; border: 0; border-radius: 0; background: none; box-shadow: none; color: #6d3541; font-size: .85rem; font-weight: normal; line-height: 1.4; }
+.aloosh-game .aloosh-marquee-lights > span { left: 8%; right: 8%; }
+.aloosh-game .aloosh-performance {
+    width: min(100%, 56rem); grid-template-columns: minmax(0, 20rem) minmax(0, 34rem);
+    grid-template-areas: 'character game'; align-items: end; justify-content: center;
+    gap: clamp(.65rem, 1.8vw, 1.5rem); margin: .75rem auto 0;
+}
+/* Expand the host into existing left stage padding, never across the game column. */
+.aloosh-game .aloosh-character { align-self: end; padding: 0 0 .25rem; }
+.aloosh-game .aloosh-character-reaction { width: calc(100% + clamp(1rem, 3vw, 3rem)); margin-left: calc(-1 * clamp(1rem, 3vw, 3rem)); }
+.aloosh-game .aloosh-character-art { height: clamp(25rem, 47vw, 41rem); }
+.aloosh-game .aloosh-character-art .aloosh-character-image { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+.aloosh-game .aloosh-play-stage { align-self: start; padding: .6rem .55rem; min-width: 0; }
+.aloosh-game .aloosh-play-stage h3 { margin-bottom: .2rem; font-size: clamp(1.05rem, 1.65vw, 1.35rem); }
+.aloosh-game #aloosh-instructions { margin: .2rem auto .35rem; font-size: .82rem; line-height: 1.4; }
+.aloosh-game .aloosh-scoreboard { margin: .3rem 0; gap: .35rem; }
+.aloosh-game .aloosh-scoreboard > div { padding: .2rem .25rem; }
+.aloosh-game .aloosh-game-toolbar { gap: .4rem; margin-bottom: .3rem; }
+.aloosh-game .aloosh-level-selector { margin: .15rem 0; }
+.aloosh-game .aloosh-message { margin: .25rem 0; }
+/* Ready announcements retain the live-region semantics but take no layout space. */
+.aloosh-game .aloosh-message.is-ready {
+    position: absolute; width: 1px; height: 1px; min-height: 0; margin: -1px;
+    padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+.aloosh-game .aloosh-board { width: min(100%, 29rem); max-width: 29rem; padding: .35rem; gap: .4rem; }
+/* Cards stay square; only the board's share of the panel grows. */
+.aloosh-game .memory-card { aspect-ratio: 1; }
+.aloosh-game::before { height: 16rem; }
+.aloosh-game .aloosh-return { margin-top: .75rem; }
+@media (min-width: 901px) and (max-width: 1100px) {
+    .aloosh-game .aloosh-performance { grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr); align-items: end; }
+    .aloosh-game .aloosh-character-reaction { width: 100%; margin-left: 0; }
+    .aloosh-game .aloosh-character-art { height: clamp(19rem, 37vw, 29rem); }
+    .aloosh-game .aloosh-game-toolbar { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+}
+/* Stack before the portrait and the interactive panel become cramped. */
+@media (max-width: 900px) {
+    .aloosh-game .aloosh-performance { width: 100%; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'character' 'game'; gap: .4rem; }
+    .aloosh-game .aloosh-character { display: flex; flex-direction: row; justify-content: center; align-items: end; padding: 0; }
+    .aloosh-game .aloosh-character-reaction { width: clamp(7rem, 24vw, 12rem); margin-left: 0; }
+    .aloosh-game .aloosh-character-art { height: clamp(7rem, 24vw, 12rem); }
+    .aloosh-game .aloosh-play-stage { width: 100%; }
+    .aloosh-game .aloosh-game-toolbar { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+    .aloosh-game .aloosh-board { width: min(100%, 32rem); max-width: 32rem; }
+    .aloosh-game .aloosh-character-bubbles i:nth-child(n) { left: 55%; top: 25%; }
+    .aloosh-game .aloosh-character-bubbles i:nth-child(2) { left: 65%; top: 40%; }
+    .aloosh-game .aloosh-character-bubbles i:nth-child(3) { left: 45%; top: 60%; }
+}
+@media (max-width: 600px) {
+    .aloosh-game .aloosh-marquee { padding: .85rem 1rem .6rem; border-radius: 35% 35% 25% 25% / 16% 16% 14% 14%; }
+    .aloosh-game .aloosh-eyebrow { font-size: .62rem; max-width: 95%; }
+    .aloosh-game .aloosh-tagline { font-size: .75rem; }
+    .aloosh-game .aloosh-character-reaction { width: clamp(6rem, 25vw, 8rem); }
+    .aloosh-game .aloosh-character-art { height: clamp(6rem, 25vw, 8rem); }
+    .aloosh-game .aloosh-play-stage { padding: .5rem .3rem; }
+    .aloosh-game .aloosh-board { width: 100%; }
+}
+/* Phase 3D.10: wider game stage and fifteen-pair deck, with natural page scrolling. */
+.aloosh-game .aloosh-performance {
+    width: 100%; max-width: 80rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
+    gap: clamp(1rem, 2vw, 2rem);
+}
+.aloosh-game .aloosh-play-stage { width: 100%; container-type: inline-size; }
+.aloosh-game .aloosh-board { width: 100%; max-width: 36rem; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.aloosh-game .aloosh-board[data-level="3"] { max-width: none; }
+.aloosh-game .memory-card { min-width: 44px; min-height: 84px; aspect-ratio: 1; }
+.aloosh-game .aloosh-character-reaction { width: calc(100% + clamp(1rem, 3vw, 3rem)); }
+.aloosh-game .aloosh-character-art { height: clamp(30rem, 52vw, 48rem); }
+/* Column count follows actual panel width: wide Level 3 is six columns/five rows. */
+@container (min-width: 32rem) {
+    .aloosh-game .aloosh-board[data-level="3"] { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) {
+    @container (min-width: 40rem) {
+        .aloosh-game .aloosh-board[data-level="3"] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    }
+}
+@media (min-width: 901px) and (max-width: 1199px) {
+    .aloosh-game .aloosh-performance { grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); }
+    .aloosh-game .aloosh-character-reaction { width: 100%; margin-left: 0; }
+    .aloosh-game .aloosh-character-art { height: clamp(20rem, 38vw, 32rem); }
+    .aloosh-game .aloosh-game-toolbar { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+    .aloosh-game .aloosh-performance { grid-template-columns: minmax(0, 1fr); }
+    .aloosh-game .aloosh-character-reaction { width: clamp(7rem, 22vw, 11rem); margin-left: 0; }
+    .aloosh-game .aloosh-character-art { height: clamp(7rem, 22vw, 11rem); }
+    .aloosh-game .aloosh-board { max-width: 36rem; }
+    .aloosh-game .aloosh-board[data-level="3"] { max-width: none; }
+}
+@media (max-width: 600px) {
+    .aloosh-game .aloosh-character-reaction { width: clamp(6rem, 24vw, 8rem); }
+    .aloosh-game .aloosh-character-art { height: clamp(6rem, 24vw, 8rem); }
+    .aloosh-game .aloosh-board[data-level="3"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 400px) {
+    .aloosh-game .aloosh-board,
+    .aloosh-game .aloosh-board[data-level="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+/* Phase 3D.11: let the game panel determine the desktop host's available height.
+   Size containment excludes the illustration from the grid row's intrinsic sizing,
+   so it follows the game without making the row grow or reducing card space. */
+@media (min-width: 901px) {
+    .aloosh-game .aloosh-character {
+        display: block; position: relative; align-self: stretch;
+        contain: size; min-height: 0; min-width: 0;
+        margin: 0; padding: 0; overflow: visible;
+    }
+    .aloosh-game .aloosh-character-reaction {
+        position: absolute; bottom: 0;
+        left: calc(-1 * clamp(1rem, 4vw, 3.5rem)); right: 0;
+        width: auto; height: 92%; min-height: 0;
+        max-width: none; max-height: none; margin: 0;
+    }
+    .aloosh-game .aloosh-character-idle {
+        width: 100%; height: 100%; min-height: 0;
+        max-width: none; max-height: none;
+    }
+    .aloosh-game .aloosh-character-art {
+        width: 100%; height: 100%; min-height: 0;
+        max-width: none; max-height: none; aspect-ratio: auto;
+        align-items: end; justify-content: center;
+    }
+    .aloosh-game .aloosh-character-art .aloosh-character-image {
+        width: 100%; height: 100%; min-height: 0;
+        max-width: none; max-height: none; margin: 0;
+        object-fit: contain; object-position: center bottom;
+    }
+    /* Phase 3D.14: correct the rendered PNG scale on desktop, not the box height.
+       Source: 1536 x 1024. Mostly opaque artwork: x=480..1196, y=44..959.
+       The portrait previously fit the full landscape canvas to the narrow column.
+       1536/716 = 2.1453: fit the illustrated span instead, with the full image
+       still rendered at its natural 3:2 aspect ratio. No crop/mask or asset edit.
+       150cqh caps canvas height at the game row height, giving the body roughly
+       86% of that height when horizontal space permits. */
+    @media (min-width: 1200px) {
+        .aloosh-game .aloosh-character { container-type: size; }
+        .aloosh-game .aloosh-character-art { position: relative; overflow: visible; }
+        .aloosh-game .aloosh-character-art .aloosh-character-image {
+            position: absolute; left: 0; bottom: 0;
+            width: min(214.53%, 150cqh); height: auto;
+            max-width: none; max-height: none; flex-shrink: 0;
+            aspect-ratio: 3 / 2; object-fit: initial;
+            /* Shift the unused left/bottom canvas away from the stage footprint.
+               This transform is on the image; all animation stays on its parents. */
+            transform: translate(-31.25%, 6.25%);
+        }
+    }
+}
+/* Phase 3D.12: compact mint circus finale and actual completed-game score tiles. */
+.aloosh-game .aloosh-victory {
+    position: relative; margin-top: .65rem; padding: .6rem .75rem .8rem;
+    border: 5px double #bc872b; border-radius: 1.25rem;
+    background: radial-gradient(ellipse at top, #ebfaec, transparent 75%), var(--aloosh-green);
+    box-shadow: inset 0 0 0 2px #fff0ce, 0 4px 0 #86b9ac, 0 7px 12px #315e5326;
+}
+.aloosh-game .aloosh-victory-art { display: flex; align-items: center; justify-content: center; gap: 1rem; height: 3.25rem; pointer-events: none; }
+.aloosh-game .aloosh-victory-art svg { width: 5.5rem; height: 3.25rem; flex-shrink: 0; filter: drop-shadow(0 2px 1px #79531526); }
+.aloosh-game .aloosh-victory-star { color: #ad711a; font-size: 1.5rem; }
+.aloosh-game .aloosh-victory-star:last-child { color: #c82d50; }
+.aloosh-game .aloosh-victory #aloosh-victory-title { margin: .15rem 0; color: #a51f3b; font-size: clamp(1.3rem, 2.5vw, 1.8rem); text-shadow: 0 1px #fff9e9; }
+.aloosh-game .aloosh-victory-cheer { margin: .15rem 0 .45rem; font-size: .9rem; color: #315e53; font-weight: bold; }
+.aloosh-game .aloosh-victory-scores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; margin: .45rem auto .65rem; max-width: 28rem; }
+.aloosh-game .aloosh-victory-scores > div { min-width: 0; padding: .3rem .2rem; border: 3px double #bc872b; border-radius: .8rem; background: #fff0ce; box-shadow: 0 2px 0 #bc872b44; }
+.aloosh-game .aloosh-victory-scores > div:nth-child(2) { background: #f9dce5; }
+.aloosh-game .aloosh-victory-scores > div:nth-child(3) { background: #f3f8ec; }
+.aloosh-game .aloosh-victory-scores dt { color: #571c36; font-size: .75rem; font-weight: bold; line-height: 1.4; overflow-wrap: anywhere; }
+.aloosh-game .aloosh-victory-scores dd { margin: 0; font-size: 1.35rem; font-weight: bold; font-variant-numeric: tabular-nums; line-height: 1.3; color: #571c36; }
+.aloosh-game .aloosh-victory #aloosh-play-again { min-height: 44px; padding: .5rem 1.35rem; background: linear-gradient(#e7425b, #af1e3c); border-color: #ffdb79; }
+.aloosh-game .aloosh-victory #aloosh-play-again:hover { background: linear-gradient(#d1324a, #971830); }
+.aloosh-game .aloosh-character-bubbles .aloosh-finale-bubble { display: none; }
+.aloosh-game .aloosh-character.is-celebrating .aloosh-character-bubbles .aloosh-finale-bubble { display: block; animation: aloosh-match-bubbles-to-board 3.2s ease-out; }
+.aloosh-game .aloosh-character-bubbles .aloosh-finale-bubble:nth-child(4) { left: 35%; top: 35%; width: 1.5rem; }
+.aloosh-game .aloosh-character-bubbles .aloosh-finale-bubble:nth-child(5) { left: 75%; top: 65%; width: 1rem; }
+@media (max-width: 400px) {
+    .aloosh-game .aloosh-victory { padding: .45rem .35rem .65rem; }
+    .aloosh-game .aloosh-victory-scores { gap: .25rem; }
+    .aloosh-game .aloosh-victory-scores dt { font-size: .7rem; }
+    .aloosh-game .aloosh-victory-scores dd { font-size: 1.15rem; }
+}
+/* Phase 3D.13: centered soap-bubble exit, separate from the game and footer. */
+.aloosh-game .aloosh-bubble-exit {
+    position: relative; isolation: isolate; display: grid; place-items: center;
+    width: min(100%, 24rem); margin: .8rem auto 0; padding: 1.5rem 2rem;
+}
+.aloosh-game .aloosh-bubble-exit .aloosh-return {
+    position: relative; isolation: isolate; display: flex; align-items: center; justify-content: center;
+    width: min(100%, 13.5rem); min-height: 9rem; margin: 0; padding: 1.5rem 1.2rem;
+    border: 1px solid #629c94; border-radius: 50%;
+    background: radial-gradient(ellipse at 28% 18%, #ffffffee, transparent 42%),
+        radial-gradient(ellipse at 80% 85%, #f7c9d6b3, transparent 65%),
+        linear-gradient(135deg, #eaf9e6ee, #d2eee5ee 50%, #f9e4eded);
+    color: #234b45; font-size: 1rem; font-weight: bold; line-height: 1.5;
+    text-align: center; text-decoration: underline; text-underline-offset: .2em;
+    overflow-wrap: anywhere;
+    box-shadow: inset 3px 5px 9px #ffffffee, inset -5px -5px 12px #86b9ac66,
+        0 0 0 2px #f7c9d680, 0 8px 14px #315e5326;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.aloosh-game .aloosh-bubble-exit .aloosh-return::before {
+    content: ''; position: absolute; z-index: -1; inset: 8% 10%; border-radius: inherit;
+    border-top: 3px solid #ffffffcc; border-left: 1px solid #fffaf099;
+    pointer-events: none;
+}
+.aloosh-game .aloosh-bubble-exit .aloosh-return:is(:hover, :focus-visible) {
+    transform: translateY(-4px) scale(1.035);
+    box-shadow: inset 3px 5px 9px #fff, inset -5px -5px 12px #86b9ac66,
+        0 0 10px 3px #f7c9d699, 0 0 16px 5px #bfe5d066, 0 12px 18px #315e5333;
+}
+.aloosh-game .aloosh-bubble-exit .aloosh-return:focus-visible { outline: 3px solid #17666a; outline-offset: 5px; }
+.aloosh-game .aloosh-exit-bubbles { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.aloosh-game .aloosh-exit-bubbles i {
+    position: absolute; left: 7%; top: 40%; width: 1.5rem; aspect-ratio: 1;
+    border: 1px solid #86b9accc; border-radius: 50%;
+    background: radial-gradient(circle at 28% 23%, #ffffffee 0 8%, transparent 25%),
+        linear-gradient(135deg, #bfe5d066, #f7c9d688);
+    box-shadow: inset 2px 2px 4px #ffffffcc, inset -2px -2px 4px #86b9ac44;
+    animation: aloosh-exit-float 7s ease-in-out infinite;
+}
+.aloosh-game .aloosh-exit-bubbles i:nth-child(2) { left: auto; right: 6%; top: 55%; width: 2rem; animation-delay: -2s; }
+.aloosh-game .aloosh-exit-bubbles i:nth-child(3) { left: 22%; top: 78%; width: .8rem; animation-delay: -4s; }
+.aloosh-game .aloosh-exit-bubbles i:nth-child(4) { left: auto; right: 20%; top: 15%; width: 1.1rem; animation-delay: -5.5s; }
+@keyframes aloosh-exit-float {
+    0%, 100% { transform: translateY(6px); opacity: .45; }
+    50% { transform: translateY(-14px); opacity: .85; }
+}
+@media (max-width: 400px) {
+    .aloosh-game .aloosh-bubble-exit { padding: 1.25rem 1.5rem; }
+    .aloosh-game .aloosh-bubble-exit .aloosh-return { min-height: 8rem; padding: 1.1rem .8rem; font-size: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .aloosh-game .aloosh-bubble-exit .aloosh-return:is(:hover, :focus-visible) { transform: none; }
+}
+/* Phase 3D.15: circus typography stays within the game, away from shared chrome. */
+.aloosh-game {
+    --aloosh-font-body: 'Nunito', ui-rounded, system-ui, sans-serif;
+    --aloosh-font-display: 'Fredoka', ui-rounded, system-ui, sans-serif;
+    --aloosh-font-arabic: 'Baloo Bhaijaan 2', 'Amiri', Tahoma, sans-serif;
+    font-family: var(--aloosh-font-body); font-weight: 400;
+}
+.aloosh-game :is(h3, legend, dt, .aloosh-level-option, .aloosh-character-name) { font-family: var(--aloosh-font-display); font-weight: 600; }
+.aloosh-game :is(.aloosh-controls button, .aloosh-victory button) { font-family: var(--aloosh-font-display); font-weight: 700; }
+.aloosh-game .aloosh-level-option strong { font-weight: 600; }
+.aloosh-game .aloosh-marquee h2 {
+    font-family: 'Rye', 'Bree Serif', Georgia, serif; font-weight: 400;
+    color: #a51f3b; font-size: clamp(1.4rem, 2.6vw, 2.25rem); line-height: 1.3;
+    letter-spacing: .015em; text-wrap: balance;
+    text-shadow: 0 1px 0 #fff0ce, 0 2px 0 #e3b75d, 0 3px 2px #79531526;
+}
+.aloosh-game :is(p, .aloosh-message, .aloosh-tagline) { font-family: var(--aloosh-font-body); }
+/* Arabic text includes dynamic status text; language changes keep proper shaping. */
+.aloosh-game:lang(ar), .aloosh-game :lang(ar) { font-family: var(--aloosh-font-arabic); letter-spacing: normal; }
+.aloosh-game .aloosh-marquee h2 .lang-ar { font-family: var(--aloosh-font-arabic); font-weight: 700; line-height: 1.5; }
+.aloosh-game :is(h3, legend, dt, button, .aloosh-level-option, .aloosh-character-name):lang(ar),
+.aloosh-game :is(h3, legend, dt, button, .aloosh-level-option, .aloosh-character-name) .lang-ar { font-family: var(--aloosh-font-arabic); font-weight: 700; line-height: 1.5; }
+.aloosh-game :is(p, .aloosh-message, .aloosh-tagline):lang(ar),
+.aloosh-game :is(p, .aloosh-tagline) .lang-ar { font-family: var(--aloosh-font-arabic); line-height: 1.6; }
+.aloosh-game .aloosh-bubble-exit .aloosh-return {
+    font-family: var(--aloosh-font-display); font-weight: 700; line-height: 1.4;
+    text-align: center; color: #234b45; text-decoration: none;
+}
+.aloosh-game .aloosh-bubble-exit .aloosh-return .lang-ar { font-family: var(--aloosh-font-arabic); font-weight: 700; line-height: 1.5; text-align: center; }
+.aloosh-game .aloosh-bubble-exit .aloosh-return:is(:link, :visited, :hover, :active, :focus, :focus-visible) { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) {
+    .aloosh-game *, .aloosh-game *::before, .aloosh-game *::after { animation: none !important; transition: none !important; }
+}
