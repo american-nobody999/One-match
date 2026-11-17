@@ -1,5 +1,5 @@
 //Author: Leslie Brockman
-//Date modified: 10/21/2026
+//Date modified: 11/17/2026
 // Modern Quest Board: one reusable, non-modal detail panel.
 (() => {
     'use strict';
@@ -65,11 +65,23 @@
             resourceArea.replaceChildren();
             const destination = source.querySelector('a[href]');
             resourceArea.hidden = !destination;
-            if (destination) {
+            if (card.id === 'quest-5' && destination) {
+                source.querySelectorAll('.mq-destination a[href]').forEach(destinationLink => {
+                    const row = document.createElement('p');
+                    const link = destinationLink.cloneNode(true);
+                    link.classList.add('mq-detail-link');
+                    row.append(link);
+                    resourceArea.append(row);
+                });
+            } else if (destination) {
                 // Clone the trusted template anchor to preserve its URL and security attributes.
                 const link = destination.cloneNode(false);
                 link.setAttribute('class', 'mq-detail-link');
-                bilingualLabel(link, 'Visit Resource ↗', 'زيارة المصدر ↗');
+                if (card.id === 'quest-9') {
+                    bilingualLabel(link, 'Break the Silence', 'اكسروا الصمت');
+                } else {
+                    bilingualLabel(link, 'Visit Resource ↗', 'زيارة المصدر ↗');
+                }
                 resourceArea.append(link);
             }
 
