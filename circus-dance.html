@@ -1,0 +1,361 @@
+<!--Author: Leslie Brockman
+DJ Booth Page
+Date Last Modified 11-16-2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaza Circus School | Clown Says!</title>
+  <link rel="stylesheet" href="styles2.css">
+  <link rel="stylesheet" href="styles/circus-dance.css">
+  <script src="js/circus-dance.js" defer></script>
+</head>
+<body>
+  <main id="danceGame" class="dance-studio" aria-labelledby="danceTitle">
+    <svg class="dance-icon-library" aria-hidden="true" focusable="false"><defs><radialGradient id="dn-red" cx=".32" cy=".2" r=".85"><stop offset="0.0" stop-color="#ffb1bd"/><stop offset="0.5" stop-color="#f7204d"/><stop offset="1.0" stop-color="#98052d"/></radialGradient><radialGradient id="dn-blue" cx=".32" cy=".2" r=".85"><stop offset="0.0" stop-color="#83eaff"/><stop offset="0.5" stop-color="#1776dc"/><stop offset="1.0" stop-color="#233178"/></radialGradient><radialGradient id="dn-gold" cx=".32" cy=".2" r=".85"><stop offset="0.0" stop-color="#fff8a9"/><stop offset="0.5" stop-color="#ffd12c"/><stop offset="1.0" stop-color="#b3640b"/></radialGradient><radialGradient id="dn-skin" cx=".32" cy=".2" r=".85"><stop offset="0.0" stop-color="#fff3c8"/><stop offset="0.5" stop-color="#ffc17d"/><stop offset="1.0" stop-color="#dd785b"/></radialGradient><radialGradient id="dn-purple" cx=".32" cy=".2" r=".85"><stop offset="0.0" stop-color="#f29bff"/><stop offset="0.5" stop-color="#9819dc"/><stop offset="1.0" stop-color="#3c075e"/></radialGradient><radialGradient id="dn-ice" cx=".32" cy=".2" r=".85"><stop offset="0.0" stop-color="#fff"/><stop offset="0.5" stop-color="#80edff"/><stop offset="1.0" stop-color="#3261cf"/></radialGradient><path id="dn-star" d="m0-12 4 8 9 1-6 6 1 9-8-4-8 4 1-9-6-6 9-1Z" fill="url(#dn-gold)" stroke="#ffeaa2" stroke-width="1"/><g id="dn-shoe" stroke-linejoin="round"><path d="M16 26q22-14 43-2l-3 32q31-5 48 11 17 21 0 31-30 18-88-3Q3 86 10 67Z" fill="url(#dn-blue)" stroke="#26326e" stroke-width="2"/><path d="M56 56q36-4 49 13 12 17 0 26-17 11-43 1-17-17-6-40Z" fill="url(#dn-red)" stroke="#a62048" stroke-width="1.5"/><path d="M10 88q45 20 100-2l-1 12q-45 23-99 2Z" fill="url(#dn-gold)" stroke="#ab6816" stroke-width="2"/><path d="M12 91q46 16 94-1" fill="none" stroke="#fff1a0" stroke-width="3"/><path d="M17 27q22 10 42-1l-2 14q-21 12-42 0Z" fill="#fff3cd" stroke="#c55b63"/><path d="m23 29-2 13m13-10-1 13m13-14 2 12" stroke="#ec3655" stroke-width="6"/><path d="M30 49q17-10 28 1M29 58q18-10 30 0M30 67q16-10 28 1" fill="none" stroke="#a8771f" stroke-width="7" stroke-linecap="round"/><path d="M30 47q17-10 28 1M29 56q18-10 30 0M30 65q16-10 28 1" fill="none" stroke="#ffdc38" stroke-width="5" stroke-linecap="round"/><use href="#dn-star" transform="translate(29 79) scale(.7)"/><use href="#dn-star" transform="translate(87 72) scale(.65)"/><path d="M69 62q15-3 23 4M17 58l-2 13" fill="none" stroke="#fff" opacity=".7" stroke-width="4" stroke-linecap="round"/></g><g id="dn-hand" stroke="#ce885e" stroke-width="1.5" stroke-linejoin="round"><path d="M35 106 13 76q-8-13 1-16 6-2 18 14L15 35q-3-12 6-13 7-1 22 35L34 15q-1-12 8-11 9 1 15 46l1-38q1-12 10-8 6 2 4 45l9-28q4-10 11-5 8 4-5 46 21-17 26-9 6 8-11 24-10 13-14 28-10 26-33 19Z" fill="url(#dn-skin)"/><path d="M45 78q20-15 36 4m-35 9q9 15 28 7" fill="none" stroke="#e6a16b" stroke-width="2"/><path d="m23 29 13 30m7-45 9 36m14-37-1 35" stroke="#fff3c9" stroke-width="3" opacity=".75" stroke-linecap="round"/><path d="m36 106 48-2 2 21-43 9Z" fill="url(#dn-blue)" stroke="#254c87"/><path d="m36 106 48-2" stroke="#f52b58" stroke-width="8" stroke-linecap="round"/><use href="#dn-star" transform="translate(63 119) scale(.7)"/></g><symbol id="dance-icon-jump" viewBox="0 0 160 160"><ellipse cx="45" cy="140" rx="28" ry="5" fill="#1c0c27" opacity=".6"/><ellipse cx="117" cy="137" rx="29" ry="5" fill="#1c0c27" opacity=".55"/><use href="#dn-shoe" transform="translate(-1 -1) rotate(-18 50 60) scale(.76)"/><use href="#dn-shoe" transform="translate(81 23) rotate(17 40 50) scale(.67)"/><path d="M21 129q-20-12-14-22m133 20q17-12 13-24M34 121q-5-11-1-18" fill="none" stroke="#e6a2ff" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="dance-icon-spin" viewBox="0 0 160 160"><ellipse cx="80" cy="134" rx="62" ry="10" fill="#36135c"/><ellipse cx="80" cy="131" rx="58" ry="10" fill="none" stroke="#9d68ff" stroke-width="4"/><path d="M17 87C-3 49 127 8 148 48q15 27-47 47-51 19-77 6" fill="none" stroke="#a95b12" stroke-width="13"/><path d="M17 84C-3 46 127 5 148 45q15 27-47 47-51 19-77 6" fill="none" stroke="url(#dn-gold)" stroke-width="9"/><use href="#dn-shoe" transform="translate(21 12) rotate(-8 60 65)"/><path d="M15 91q18 34 89 7" fill="none" stroke="#ffe871" stroke-width="5" stroke-linecap="round"/><use href="#dn-star" transform="translate(132 111) scale(.5)"/><use href="#dn-star" transform="translate(23 29) scale(.55)"/></symbol><symbol id="dance-icon-clap" viewBox="0 0 160 160"><use href="#dn-hand" transform="translate(1 14) rotate(-15 45 70) scale(.68 .9)"/><use href="#dn-hand" transform="translate(159 14) scale(-.68 .9) rotate(-15 45 70)"/><path d="m76 28-8-20 10 3 4 17m8 3 8-22 7 9-10 16m-30 2-16-8 4 12 14 4" fill="url(#dn-gold)" stroke="#ffe495"/><use href="#dn-star" transform="translate(81 48) scale(.45)"/></symbol><symbol id="dance-icon-wave" viewBox="0 0 160 160"><use href="#dn-hand" transform="translate(25 1) rotate(-9 60 75)"/><path d="M20 31q-25 35 2 62M11 42q-10 18-1 31m128-32q22 22 10 43m-6-35q9 12 4 22" fill="none" stroke="url(#dn-gold)" stroke-width="5" stroke-linecap="round"/></symbol><symbol id="dance-icon-stomp" viewBox="0 0 160 160"><ellipse cx="80" cy="131" rx="66" ry="6" fill="#190d25" opacity=".8"/><path d="m24 115-21-14 12 22-13 5 30 5m102-20 23-12-12 23 13 5-31 5M56 133l-14 14 25-8m29-5 19 13-8-13" fill="url(#dn-gold)" stroke="#ffe482"/><use href="#dn-shoe" transform="translate(10 3) rotate(9 65 70) scale(1.22)"/><path d="M33 139h96" stroke="#e38fff" stroke-width="2" opacity=".6"/></symbol><symbol id="dance-icon-freeze" viewBox="0 0 160 160"><ellipse cx="80" cy="137" rx="62" ry="9" fill="none" stroke="#8567fb" stroke-width="4"/><g transform="rotate(0 80 76)"><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="#4366bc" stroke="#77d8ff" stroke-width="2" transform="translate(3 4)"/><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="url(#dn-ice)" stroke="#c0f7ff" stroke-width="1.5"/><path d="M80 11v65m0-19 29-22" fill="none" stroke="#fff" opacity=".85" stroke-width="2"/></g><g transform="rotate(60 80 76)"><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="#4366bc" stroke="#77d8ff" stroke-width="2" transform="translate(3 4)"/><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="url(#dn-ice)" stroke="#c0f7ff" stroke-width="1.5"/><path d="M80 11v65m0-19 29-22" fill="none" stroke="#fff" opacity=".85" stroke-width="2"/></g><g transform="rotate(120 80 76)"><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="#4366bc" stroke="#77d8ff" stroke-width="2" transform="translate(3 4)"/><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="url(#dn-ice)" stroke="#c0f7ff" stroke-width="1.5"/><path d="M80 11v65m0-19 29-22" fill="none" stroke="#fff" opacity=".85" stroke-width="2"/></g><g transform="rotate(180 80 76)"><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="#4366bc" stroke="#77d8ff" stroke-width="2" transform="translate(3 4)"/><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="url(#dn-ice)" stroke="#c0f7ff" stroke-width="1.5"/><path d="M80 11v65m0-19 29-22" fill="none" stroke="#fff" opacity=".85" stroke-width="2"/></g><g transform="rotate(240 80 76)"><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="#4366bc" stroke="#77d8ff" stroke-width="2" transform="translate(3 4)"/><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="url(#dn-ice)" stroke="#c0f7ff" stroke-width="1.5"/><path d="M80 11v65m0-19 29-22" fill="none" stroke="#fff" opacity=".85" stroke-width="2"/></g><g transform="rotate(300 80 76)"><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="#4366bc" stroke="#77d8ff" stroke-width="2" transform="translate(3 4)"/><path d="M72 80V23l8-16 8 16v22l17-14 8 7-25 25v17Z" fill="url(#dn-ice)" stroke="#c0f7ff" stroke-width="1.5"/><path d="M80 11v65m0-19 29-22" fill="none" stroke="#fff" opacity=".85" stroke-width="2"/></g><path d="m80 57 17 19-17 18-17-18Z" fill="url(#dn-ice)" stroke="#e8ffff"/><path d="m80 59-14 17h14Z" fill="#fff" opacity=".8"/></symbol></defs></svg>
+    <div class="dance-disco-atmosphere" aria-hidden="true">
+      <span class="dance-disco-beam dance-disco-beam--cyan"></span>
+      <span class="dance-disco-beam dance-disco-beam--pink"></span>
+<svg class="dance-disco-edge" viewBox="0 0 40 40" focusable="false" style="--edge-x: 2%; --edge-y: 9%; --edge-delay: 0.0s"><path d="m20 1 5 12 13 5-13 5-5 14-5-14-13-5 13-5Z" fill="#ffe2a4"/><circle cx="30" cy="32" r="2" fill="#79f9ed"/></svg>
+<svg class="dance-disco-edge" viewBox="0 0 40 40" focusable="false" style="--edge-x: 96%; --edge-y: 22%; --edge-delay: -1.7s"><path d="M13 29V8l17-4v20M13 13l17-4" fill="none" stroke="#e695ea" stroke-width="4" stroke-linejoin="round"/><ellipse cx="8" cy="30" rx="6" ry="4" fill="#6ce7e6"/><ellipse cx="25" cy="25" rx="6" ry="4" fill="#e695ea"/></svg>
+<svg class="dance-disco-edge" viewBox="0 0 40 40" focusable="false" style="--edge-x: 3%; --edge-y: 47%; --edge-delay: -3.4s"><path d="m20 1 5 12 13 5-13 5-5 14-5-14-13-5 13-5Z" fill="#ffe2a4"/><circle cx="30" cy="32" r="2" fill="#79f9ed"/></svg>
+<svg class="dance-disco-edge" viewBox="0 0 40 40" focusable="false" style="--edge-x: 95%; --edge-y: 66%; --edge-delay: -5.1s"><path d="M13 29V8l17-4v20M13 13l17-4" fill="none" stroke="#e695ea" stroke-width="4" stroke-linejoin="round"/><ellipse cx="8" cy="30" rx="6" ry="4" fill="#6ce7e6"/><ellipse cx="25" cy="25" rx="6" ry="4" fill="#e695ea"/></svg>
+<svg class="dance-disco-edge" viewBox="0 0 40 40" focusable="false" style="--edge-x: 4%; --edge-y: 88%; --edge-delay: -6.8s"><path d="m20 1 5 12 13 5-13 5-5 14-5-14-13-5 13-5Z" fill="#ffe2a4"/><circle cx="30" cy="32" r="2" fill="#79f9ed"/></svg>
+<svg class="dance-disco-edge" viewBox="0 0 40 40" focusable="false" style="--edge-x: 96%; --edge-y: 92%; --edge-delay: -8.5s"><path d="M13 29V8l17-4v20M13 13l17-4" fill="none" stroke="#e695ea" stroke-width="4" stroke-linejoin="round"/><ellipse cx="8" cy="30" rx="6" ry="4" fill="#6ce7e6"/><ellipse cx="25" cy="25" rx="6" ry="4" fill="#e695ea"/></svg>
+    </div>
+    <header class="dance-marquee">
+      <div class="dance-marquee__curtains" aria-hidden="true">
+        <svg class="dance-velvet-drape dance-velvet-drape--left" viewBox="0 0 160 250" focusable="false">
+          <defs>
+            <linearGradient id="dv-velvet"><stop stop-color="#340c29"/><stop offset=".18" stop-color="#9e2845"/><stop offset=".35" stop-color="#4b0d2b"/><stop offset=".5" stop-color="#bd3953"/><stop offset=".65" stop-color="#500c2d"/><stop offset=".82" stop-color="#95223e"/><stop offset="1" stop-color="#2b0a24"/></linearGradient>
+            <linearGradient id="dv-gold" x2=".3" y2="1"><stop stop-color="#fff0b5"/><stop offset=".5" stop-color="#d5a04b"/><stop offset="1" stop-color="#825026"/></linearGradient>
+            <radialGradient id="dw-fold" cx=".35" cy=".25" r=".8"><stop stop-color="#e06a68"/><stop offset=".35" stop-color="#a92945"/><stop offset=".7" stop-color="#5c0c2b"/><stop offset="1" stop-color="#22091e"/></radialGradient>
+            <linearGradient id="dw-fold-edge"><stop stop-color="#e57c6a"/><stop offset=".2" stop-color="#a32b40"/><stop offset=".65" stop-color="#630d2d"/><stop offset="1" stop-color="#27091e"/></linearGradient>
+            <g id="dv-drape-art">
+              <path d="M7 10q68-22 149 8-7 87-116 139l-6 82Q0 238 4 196Z" fill="#280b20"/>
+              <path d="M12 14q11 45 32 108l-9 109q-16 14-27-2 6-44 7-82Z" fill="url(#dw-fold-edge)"/>
+              <path d="M29 17q20 41 30 95L38 229q-12 14-20 0l12-86Z" fill="url(#dw-fold-edge)"/>
+              <path d="M44 18q19 46 29 76L43 151q-11 10-19-2Z" fill="url(#dw-fold-edge)"/>
+              <path d="M8 9Q80-9 155 21q-4 30-24 51Q66 70 8 9Z" fill="url(#dw-fold)"/>
+              <path d="M10 18q66 58 135 30-7 22-24 37Q52 88 10 18Z" fill="url(#dw-fold)"/>
+              <path d="M10 36q48 60 121 37-9 19-29 33Q39 105 10 36Z" fill="url(#dw-fold)"/>
+              <path d="M12 57q35 60 99 39-13 22-37 30Q29 127 12 57Z" fill="url(#dw-fold)"/>
+              <path d="M13 82q23 49 73 35-24 28-54 34Q15 137 13 82Z" fill="url(#dw-fold)"/>
+              <path d="M19 17q69 44 121 22M21 38q55 45 105 29M23 61q36 41 83 31M24 87q20 32 48 25" fill="none" stroke="#ffb18d" opacity=".19" stroke-width="3" stroke-linecap="round"/>
+              <path d="M155 21q-12 84-122 130" fill="none" stroke="#49232b" stroke-width="9" stroke-linecap="round"/>
+              <path d="M153 20q-12 84-122 130" fill="none" stroke="url(#dv-gold)" stroke-width="5" stroke-linecap="round"/>
+              <path d="M13 141q16 9 28 1m-27 4q15 10 26 1m-27 4q15 9 25 1" fill="none" stroke="url(#dv-gold)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M16 142q4 13 21 9m-21-3q6 12 20 6" fill="none" stroke="#fff1b2" stroke-width="1" stroke-dasharray="2 3"/>
+              <g class="dance-curtain-tassel"><path d="M33 152q23 12 19 36" fill="none" stroke="#8a542b" stroke-width="5"/><path d="M32 151q23 12 19 36" fill="none" stroke="#f6d584" stroke-width="3"/><ellipse cx="51" cy="188" rx="6" ry="8" fill="url(#dv-gold)"/><path d="m47 194-7 29q12 10 24 0l-9-29Z" fill="url(#dv-gold)"/><path d="m47 200-3 23m7-24v28m4-27 5 23" stroke="#875226" stroke-width="1.3"/></g>
+            </g>
+          </defs>
+          <use href="#dv-drape-art"/>
+        </svg>
+        <svg class="dance-velvet-drape dance-velvet-drape--right" viewBox="0 0 160 250" focusable="false"><use href="#dv-drape-art"/></svg>
+      </div>
+      <div class="dance-marquee__ornaments" aria-hidden="true"></div>
+      <svg class="dance-marquee-arch" viewBox="0 0 1000 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="do-frame" x2="0" y2="1"><stop stop-color="#fff3bb"/><stop offset=".35" stop-color="#f7cc61"/><stop offset=".65" stop-color="#b97928"/><stop offset="1" stop-color="#ffda82"/></linearGradient></defs>
+        <path d="M12 110Q500-65 988 110v106q0 16-20 16H32q-20 0-20-16Z" fill="#38102d" stroke="#66301f" stroke-width="16"/>
+        <path d="M12 100Q500-75 988 100v106q0 16-20 16H32q-20 0-20-16Z" fill="#6b102c" stroke="url(#do-frame)" stroke-width="12"/>
+        <path d="M28 108Q500-57 972 108v93H28Z" fill="none" stroke="#2d1236" stroke-width="5"/>
+        <circle class="dance-arch-bulb" cx="28.0" cy="90.0" r="5" style="--bulb-delay: 0.00s"/><circle class="dance-arch-bulb" cx="57.5" cy="83.3" r="5" style="--bulb-delay: -0.22s"/><circle class="dance-arch-bulb" cx="87.0" cy="76.7" r="5" style="--bulb-delay: -0.44s"/><circle class="dance-arch-bulb" cx="116.5" cy="70.3" r="5" style="--bulb-delay: -0.66s"/><circle class="dance-arch-bulb" cx="146.0" cy="64.0" r="5" style="--bulb-delay: -0.88s"/><circle class="dance-arch-bulb" cx="175.5" cy="57.9" r="5" style="--bulb-delay: -1.10s"/><circle class="dance-arch-bulb" cx="205.0" cy="52.2" r="5" style="--bulb-delay: -1.32s"/><circle class="dance-arch-bulb" cx="234.5" cy="46.9" r="5" style="--bulb-delay: -1.54s"/><circle class="dance-arch-bulb" cx="264.0" cy="41.9" r="5" style="--bulb-delay: -1.76s"/><circle class="dance-arch-bulb" cx="293.5" cy="37.4" r="5" style="--bulb-delay: -1.98s"/><circle class="dance-arch-bulb" cx="323.0" cy="33.5" r="5" style="--bulb-delay: -2.20s"/><circle class="dance-arch-bulb" cx="352.5" cy="30.0" r="5" style="--bulb-delay: -2.42s"/><circle class="dance-arch-bulb" cx="382.0" cy="27.2" r="5" style="--bulb-delay: -2.64s"/><circle class="dance-arch-bulb" cx="411.5" cy="24.9" r="5" style="--bulb-delay: -2.86s"/><circle class="dance-arch-bulb" cx="441.0" cy="23.3" r="5" style="--bulb-delay: -3.08s"/><circle class="dance-arch-bulb" cx="470.5" cy="22.3" r="5" style="--bulb-delay: -3.30s"/><circle class="dance-arch-bulb" cx="500.0" cy="22.0" r="5" style="--bulb-delay: -3.52s"/><circle class="dance-arch-bulb" cx="529.5" cy="22.3" r="5" style="--bulb-delay: -3.74s"/><circle class="dance-arch-bulb" cx="559.0" cy="23.3" r="5" style="--bulb-delay: -3.96s"/><circle class="dance-arch-bulb" cx="588.5" cy="24.9" r="5" style="--bulb-delay: -4.18s"/><circle class="dance-arch-bulb" cx="618.0" cy="27.2" r="5" style="--bulb-delay: -4.40s"/><circle class="dance-arch-bulb" cx="647.5" cy="30.0" r="5" style="--bulb-delay: -4.62s"/><circle class="dance-arch-bulb" cx="677.0" cy="33.5" r="5" style="--bulb-delay: -4.84s"/><circle class="dance-arch-bulb" cx="706.5" cy="37.4" r="5" style="--bulb-delay: -5.06s"/><circle class="dance-arch-bulb" cx="736.0" cy="41.9" r="5" style="--bulb-delay: -5.28s"/><circle class="dance-arch-bulb" cx="765.5" cy="46.9" r="5" style="--bulb-delay: -5.50s"/><circle class="dance-arch-bulb" cx="795.0" cy="52.2" r="5" style="--bulb-delay: -5.72s"/><circle class="dance-arch-bulb" cx="824.5" cy="57.9" r="5" style="--bulb-delay: -5.94s"/><circle class="dance-arch-bulb" cx="854.0" cy="64.0" r="5" style="--bulb-delay: -6.16s"/><circle class="dance-arch-bulb" cx="883.5" cy="70.3" r="5" style="--bulb-delay: -6.38s"/><circle class="dance-arch-bulb" cx="913.0" cy="76.7" r="5" style="--bulb-delay: -6.60s"/><circle class="dance-arch-bulb" cx="942.5" cy="83.3" r="5" style="--bulb-delay: -6.82s"/><circle class="dance-arch-bulb" cx="972.0" cy="90.0" r="5" style="--bulb-delay: -7.04s"/>
+      </svg>
+      <h1 id="danceTitle">
+        <span class="dance-en">Gaza Circus School</span>
+        <span class="dance-ar" lang="ar" dir="rtl">مدرسة سيرك غزة</span>
+      </h1>
+      <p class="dance-booth-subtitle"><span class="dance-en">The DJ Booth</span><span class="dance-ar" lang="ar" dir="rtl">كشك الدي جي</span></p>
+    </header>
+
+    <div class="dance-studio__layout">
+      <section class="dance-soundboard" aria-labelledby="soundboardTitle">
+        <h2 id="soundboardTitle">
+          <span class="dance-en">Sound Board</span>
+          <span class="dance-ar" lang="ar" dir="rtl">لوحة الأصوات</span>
+        </h2>
+        <div class="dance-activities" role="group" aria-labelledby="soundboardTitle">
+          <button id="activityClownSays" class="dance-activity" type="button" data-activity="clown-says" aria-pressed="true">
+            <span class="dance-activity__indicator" aria-hidden="true"></span>
+            <span class="dance-en">Clown Says!</span>
+            <span class="dance-ar" lang="ar" dir="rtl">المهرج يقول!</span>
+          </button>
+          <button id="activityRememberRoutine" class="dance-activity" type="button" data-activity="remember-routine" aria-pressed="false">
+            <span class="dance-activity__indicator" aria-hidden="true"></span>
+            <span class="dance-en">Remember the Routine</span>
+            <span class="dance-ar" lang="ar" dir="rtl">تذكّر تسلسل الحركات</span>
+          </button>
+          <button id="activityDjChallenge" class="dance-activity" type="button" data-activity="dj-challenge" aria-pressed="false">
+            <span class="dance-activity__indicator" aria-hidden="true"></span>
+            <span class="dance-en">DJ's Final Challenge</span>
+            <span class="dance-ar" lang="ar" dir="rtl">تحدّي الدي جي النهائي</span>
+          </button>
+          <button id="activityCreativeStudio" class="dance-activity" type="button" data-activity="creative-studio" aria-pressed="false" aria-controls="creativeControls">
+            <span class="dance-activity__indicator" aria-hidden="true"></span>
+            <span class="dance-en">Creative Dance Studio</span>
+            <span class="dance-ar" lang="ar" dir="rtl">استوديو الرقص الإبداعي</span>
+          </button>
+        </div>
+        <div class="dance-console-decor" aria-hidden="true">
+          <span class="dance-console-equalizer"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        </div>
+        <div class="dance-large-art" aria-hidden="true"><svg viewBox="0 0 320 210" focusable="false"><defs><radialGradient id="do-metal"><stop stop-color="#faadff"/><stop offset=".3" stop-color="#ab32dc"/><stop offset=".75" stop-color="#5b077e"/><stop offset="1" stop-color="#bf6fea"/></radialGradient></defs><ellipse cx="160" cy="183" rx="130" ry="18" fill="#120719"/><path d="M30 135q130-65 260 0v27q-130 75-260 0Z" fill="url(#dn-gold)" stroke="#b5732b" stroke-width="3"/><ellipse cx="160" cy="136" rx="130" ry="44" fill="url(#dn-purple)" stroke="#ffe4a2" stroke-width="3"/><ellipse cx="160" cy="132" rx="110" ry="35" fill="#241035" stroke="#c251ff" stroke-width="5"/><ellipse cx="160" cy="125" rx="94" ry="29" fill="#22102c" stroke="#3feeff" stroke-width="4"/><path d="M79 72v49q81 45 162 0V72" fill="url(#dn-gold)" stroke="#b97b22" stroke-width="3"/><path d="M88 86v41" stroke="#ad702a" stroke-width="3"/><path d="M91 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M99 86v41" stroke="#ad702a" stroke-width="3"/><path d="M102 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M110 86v41" stroke="#ad702a" stroke-width="3"/><path d="M113 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M121 86v41" stroke="#ad702a" stroke-width="3"/><path d="M124 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M132 86v41" stroke="#ad702a" stroke-width="3"/><path d="M135 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M143 86v41" stroke="#ad702a" stroke-width="3"/><path d="M146 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M154 86v41" stroke="#ad702a" stroke-width="3"/><path d="M157 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M165 86v41" stroke="#ad702a" stroke-width="3"/><path d="M168 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M176 86v41" stroke="#ad702a" stroke-width="3"/><path d="M179 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M187 86v41" stroke="#ad702a" stroke-width="3"/><path d="M190 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M198 86v41" stroke="#ad702a" stroke-width="3"/><path d="M201 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M209 86v41" stroke="#ad702a" stroke-width="3"/><path d="M212 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M220 86v41" stroke="#ad702a" stroke-width="3"/><path d="M223 87v38" stroke="#ffe6a4" stroke-width="2"/><path d="M231 86v41" stroke="#ad702a" stroke-width="3"/><path d="M234 87v38" stroke="#ffe6a4" stroke-width="2"/><ellipse cx="160" cy="73" rx="82" ry="38" fill="url(#do-metal)" stroke="#ffe0a2" stroke-width="5"/><ellipse cx="160" cy="70" rx="74" ry="31" fill="none" stroke="#e39dff" stroke-width="2"/><path d="M160 70 230.0 70.0" stroke="#f2bbff55" stroke-width="9"/><path d="M160 70 209.5 89.8" stroke="#30064d66" stroke-width="9"/><path d="M160 70 160.0 98.0" stroke="#f2bbff55" stroke-width="9"/><path d="M160 70 110.5 89.8" stroke="#30064d66" stroke-width="9"/><path d="M160 70 90.0 70.0" stroke="#f2bbff55" stroke-width="9"/><path d="M160 70 110.5 50.2" stroke="#30064d66" stroke-width="9"/><path d="M160 70 160.0 42.0" stroke="#f2bbff55" stroke-width="9"/><path d="M160 70 209.5 50.2" stroke="#30064d66" stroke-width="9"/><path d="M161 40v16" stroke="#ffeaa9" stroke-width="4" stroke-linecap="round"/><path d="M22 99V55l25-6v39m225 9V55l24 6v36" fill="none" stroke="#ea5cc9" stroke-width="8" stroke-linejoin="round"/><ellipse cx="16" cy="101" rx="12" ry="9" fill="url(#dn-red)"/><ellipse cx="41" cy="90" rx="12" ry="9" fill="url(#dn-purple)"/><ellipse cx="266" cy="99" rx="12" ry="9" fill="url(#dn-ice)"/><ellipse cx="290" cy="99" rx="12" ry="9" fill="url(#dn-ice)"/></svg><svg viewBox="0 0 320 180" focusable="false"><ellipse cx="160" cy="162" rx="150" ry="12" fill="#13091d"/><path d="M27 61h266l21 72v20q-154 31-308 0v-20Z" fill="url(#dn-gold)" stroke="#ffdf8f" stroke-width="3"/><path d="M31 63h258l18 68q-146 25-294 0Z" fill="#34113f" stroke="#cc76e5" stroke-width="3"/><path d="M16 136q144 25 290 0" fill="none" stroke="#fff0aa" stroke-width="3"/><ellipse cx="42" cy="59" rx="20" ry="8" fill="#b66a19"/><path d="M28 51V30q0-25 14-25t14 25v21Z" fill="#38edff" stroke="#fff8" stroke-width="2"/><path d="M36 30v-9" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/><ellipse cx="42" cy="52" rx="20" ry="7" fill="url(#dn-gold)"/><ellipse cx="42" cy="49" rx="13" ry="4" fill="#38edff"/><ellipse cx="89" cy="59" rx="20" ry="8" fill="#b66a19"/><path d="M75 51V30q0-25 14-25t14 25v21Z" fill="#f154db" stroke="#fff8" stroke-width="2"/><path d="M83 30v-9" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/><ellipse cx="89" cy="52" rx="20" ry="7" fill="url(#dn-gold)"/><ellipse cx="89" cy="49" rx="13" ry="4" fill="#f154db"/><ellipse cx="136" cy="59" rx="20" ry="8" fill="#b66a19"/><path d="M122 51V30q0-25 14-25t14 25v21Z" fill="#ffd32b" stroke="#fff8" stroke-width="2"/><path d="M130 30v-9" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/><ellipse cx="136" cy="52" rx="20" ry="7" fill="url(#dn-gold)"/><ellipse cx="136" cy="49" rx="13" ry="4" fill="#ffd32b"/><ellipse cx="183" cy="59" rx="20" ry="8" fill="#b66a19"/><path d="M169 51V30q0-25 14-25t14 25v21Z" fill="#6cf32d" stroke="#fff8" stroke-width="2"/><path d="M177 30v-9" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/><ellipse cx="183" cy="52" rx="20" ry="7" fill="url(#dn-gold)"/><ellipse cx="183" cy="49" rx="13" ry="4" fill="#6cf32d"/><ellipse cx="230" cy="59" rx="20" ry="8" fill="#b66a19"/><path d="M216 51V30q0-25 14-25t14 25v21Z" fill="#b55aff" stroke="#fff8" stroke-width="2"/><path d="M224 30v-9" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/><ellipse cx="230" cy="52" rx="20" ry="7" fill="url(#dn-gold)"/><ellipse cx="230" cy="49" rx="13" ry="4" fill="#b55aff"/><ellipse cx="277" cy="59" rx="20" ry="8" fill="#b66a19"/><path d="M263 51V30q0-25 14-25t14 25v21Z" fill="#ff416b" stroke="#fff8" stroke-width="2"/><path d="M271 30v-9" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/><ellipse cx="277" cy="52" rx="20" ry="7" fill="url(#dn-gold)"/><ellipse cx="277" cy="49" rx="13" ry="4" fill="#ff416b"/><path d="M116 76v65" stroke="#b68a2c" stroke-width="7"/><path d="M116 76v65" stroke="#10091f" stroke-width="4"/><rect x="106" y="90" width="21" height="16" rx="3" fill="#8e481b"/><rect x="106" y="86" width="21" height="15" rx="3" fill="url(#dn-gold)" stroke="#ffe7a1"/><path d="m108 89h16" stroke="#fff1af" stroke-width="2"/><path d="M141 76v65" stroke="#b68a2c" stroke-width="7"/><path d="M141 76v65" stroke="#10091f" stroke-width="4"/><rect x="131" y="110" width="21" height="16" rx="3" fill="#8e481b"/><rect x="131" y="106" width="21" height="15" rx="3" fill="url(#dn-gold)" stroke="#ffe7a1"/><path d="m133 109h16" stroke="#fff1af" stroke-width="2"/><path d="M166 76v65" stroke="#b68a2c" stroke-width="7"/><path d="M166 76v65" stroke="#10091f" stroke-width="4"/><rect x="156" y="90" width="21" height="16" rx="3" fill="#8e481b"/><rect x="156" y="86" width="21" height="15" rx="3" fill="url(#dn-gold)" stroke="#ffe7a1"/><path d="m158 89h16" stroke="#fff1af" stroke-width="2"/><path d="M191 76v65" stroke="#b68a2c" stroke-width="7"/><path d="M191 76v65" stroke="#10091f" stroke-width="4"/><rect x="181" y="110" width="21" height="16" rx="3" fill="#8e481b"/><rect x="181" y="106" width="21" height="15" rx="3" fill="url(#dn-gold)" stroke="#ffe7a1"/><path d="m183 109h16" stroke="#fff1af" stroke-width="2"/><rect x="28" y="90" width="14" height="8" rx="2" fill="#180c23"/><rect x="28" y="88" width="14" height="8" rx="2" fill="#38dfe7" stroke="#ffffff44"/><rect x="45" y="90" width="14" height="8" rx="2" fill="#180c23"/><rect x="45" y="88" width="14" height="8" rx="2" fill="#8c6ef5" stroke="#ffffff44"/><rect x="62" y="90" width="14" height="8" rx="2" fill="#180c23"/><rect x="62" y="88" width="14" height="8" rx="2" fill="#ffca38" stroke="#ffffff44"/><rect x="28" y="101" width="14" height="8" rx="2" fill="#180c23"/><rect x="28" y="99" width="14" height="8" rx="2" fill="#8c6ef5" stroke="#ffffff44"/><rect x="45" y="101" width="14" height="8" rx="2" fill="#180c23"/><rect x="45" y="99" width="14" height="8" rx="2" fill="#ffca38" stroke="#ffffff44"/><rect x="62" y="101" width="14" height="8" rx="2" fill="#180c23"/><rect x="62" y="99" width="14" height="8" rx="2" fill="#f76ec6" stroke="#ffffff44"/><rect x="28" y="112" width="14" height="8" rx="2" fill="#180c23"/><rect x="28" y="110" width="14" height="8" rx="2" fill="#ffca38" stroke="#ffffff44"/><rect x="45" y="112" width="14" height="8" rx="2" fill="#180c23"/><rect x="45" y="110" width="14" height="8" rx="2" fill="#f76ec6" stroke="#ffffff44"/><rect x="62" y="112" width="14" height="8" rx="2" fill="#180c23"/><rect x="62" y="110" width="14" height="8" rx="2" fill="#38dfe7" stroke="#ffffff44"/><rect x="28" y="123" width="14" height="8" rx="2" fill="#180c23"/><rect x="28" y="121" width="14" height="8" rx="2" fill="#f76ec6" stroke="#ffffff44"/><rect x="45" y="123" width="14" height="8" rx="2" fill="#180c23"/><rect x="45" y="121" width="14" height="8" rx="2" fill="#38dfe7" stroke="#ffffff44"/><rect x="62" y="123" width="14" height="8" rx="2" fill="#180c23"/><rect x="62" y="121" width="14" height="8" rx="2" fill="#8c6ef5" stroke="#ffffff44"/><rect x="236" y="90" width="14" height="8" rx="2" fill="#180c23"/><rect x="236" y="88" width="14" height="8" rx="2" fill="#38dfe7" stroke="#ffffff44"/><rect x="253" y="90" width="14" height="8" rx="2" fill="#180c23"/><rect x="253" y="88" width="14" height="8" rx="2" fill="#8c6ef5" stroke="#ffffff44"/><rect x="270" y="90" width="14" height="8" rx="2" fill="#180c23"/><rect x="270" y="88" width="14" height="8" rx="2" fill="#ffca38" stroke="#ffffff44"/><rect x="236" y="101" width="14" height="8" rx="2" fill="#180c23"/><rect x="236" y="99" width="14" height="8" rx="2" fill="#8c6ef5" stroke="#ffffff44"/><rect x="253" y="101" width="14" height="8" rx="2" fill="#180c23"/><rect x="253" y="99" width="14" height="8" rx="2" fill="#ffca38" stroke="#ffffff44"/><rect x="270" y="101" width="14" height="8" rx="2" fill="#180c23"/><rect x="270" y="99" width="14" height="8" rx="2" fill="#f76ec6" stroke="#ffffff44"/><rect x="236" y="112" width="14" height="8" rx="2" fill="#180c23"/><rect x="236" y="110" width="14" height="8" rx="2" fill="#ffca38" stroke="#ffffff44"/><rect x="253" y="112" width="14" height="8" rx="2" fill="#180c23"/><rect x="253" y="110" width="14" height="8" rx="2" fill="#f76ec6" stroke="#ffffff44"/><rect x="270" y="112" width="14" height="8" rx="2" fill="#180c23"/><rect x="270" y="110" width="14" height="8" rx="2" fill="#38dfe7" stroke="#ffffff44"/><rect x="236" y="123" width="14" height="8" rx="2" fill="#180c23"/><rect x="236" y="121" width="14" height="8" rx="2" fill="#f76ec6" stroke="#ffffff44"/><rect x="253" y="123" width="14" height="8" rx="2" fill="#180c23"/><rect x="253" y="121" width="14" height="8" rx="2" fill="#38dfe7" stroke="#ffffff44"/><rect x="270" y="123" width="14" height="8" rx="2" fill="#180c23"/><rect x="270" y="121" width="14" height="8" rx="2" fill="#8c6ef5" stroke="#ffffff44"/></svg></div>
+
+        <section class="dance-guidance" aria-labelledby="danceGuideTitle">
+          <header class="dance-guidance__header">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/clown1.png" alt="" class="dance-guidance__clown">
+
+            <h3 id="danceGuideTitle"><span class="dance-en">Clown Says!</span><span class="dance-ar" lang="ar" dir="rtl">المهرج يقول!</span></h3>
+          </header>
+            
+          <ol class="dance-guidance__steps">
+            <li>
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <defs><linearGradient id="guideHeadsetGold" x2="0.3" y2="1"><stop stop-color="#fff4b8"/><stop offset=".5" stop-color="#ffd36b"/><stop offset="1" stop-color="#b77028"/></linearGradient></defs>
+                <ellipse cx="24" cy="43" rx="18" ry="3" fill="#090615" opacity=".5"/>
+                <path d="M9 29V21a15 15 0 0 1 30 0v8" fill="none" stroke="#682c70" stroke-width="8"/>
+                <path d="M9 25v-5a15 15 0 0 1 30 0v5" fill="none" stroke="#62e6db" stroke-width="5"/>
+                <path d="M12 14q10-12 22 0" fill="none" stroke="#c7fff2" stroke-width="2" stroke-linecap="round"/>
+                <rect x="4" y="24" width="13" height="17" rx="6" fill="url(#guideHeadsetGold)" stroke="#ab622c"/>
+                <rect x="31" y="24" width="13" height="17" rx="6" fill="url(#guideHeadsetGold)" stroke="#ab622c"/>
+                <rect x="12" y="26" width="5" height="13" rx="2.5" fill="#e97acb"/><rect x="31" y="26" width="5" height="13" rx="2.5" fill="#e97acb"/>
+                <path d="M7 28v7m33-7v7" stroke="#fff2ba" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <p id="danceGuideStep1"><span class="dance-en">Listen to the clown.</span><span class="dance-ar" lang="ar" dir="rtl">استمع إلى المهرج.</span></p>
+            </li>
+            <li>
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <defs><linearGradient id="guideCheckClay" x2=".6" y2="1"><stop stop-color="#d79cef"/><stop offset="1" stop-color="#65377f"/></linearGradient></defs>
+                <rect x="5" y="8" width="38" height="37" rx="11" fill="#5c2b52"/>
+                <rect x="5" y="4" width="38" height="37" rx="11" fill="url(#guideCheckClay)" stroke="#ffd77e" stroke-width="3"/>
+                <path d="M11 14q0-5 7-5h13" fill="none" stroke="#fff5d3" stroke-width="2" opacity=".7" stroke-linecap="round"/>
+                <path d="m13 23 8 8 14-16" fill="none" stroke="#65f2a5" stroke-width="10" opacity=".2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="m13 23 8 8 14-16" fill="none" stroke="#88ffb4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="36" cy="35" r="2" fill="#fff0a1"/>
+              </svg>
+              <p id="danceGuideStep2"><span class="dance-en">Press the matching move only when the command begins with “Clown Says!”</span><span class="dance-ar" lang="ar" dir="rtl">اضغط الحركة المطابقة فقط عندما يبدأ الأمر بعبارة «المهرج يقول!».</span></p>
+            </li>
+            <li>
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <defs><linearGradient id="guideWaitClay" x2=".8" y2="1"><stop stop-color="#ffe5a0"/><stop offset=".5" stop-color="#ffc078"/><stop offset="1" stop-color="#e584b1"/></linearGradient></defs>
+                <ellipse cx="25" cy="44" rx="16" ry="3" fill="#090615" opacity=".45"/>
+                <path d="M13 26V15q0-5 5-2V8q3-5 6 0v4q5-5 7 1v5q6-3 6 3v12q0 10-13 10-8 0-12-8l-5-8q0-6 6-1Z" fill="url(#guideWaitClay)" stroke="#bc657f" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M18 15v11m6-14v14m7-8v9" stroke="#ad5e8e" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M15 16v7m6-14v9" stroke="#fff4c3" stroke-width="2" stroke-linecap="round"/>
+                <path d="M18 39q8 4 15-1v6H18Z" fill="#a377dd" stroke="#ffd477" stroke-width="1.5"/>
+                <path d="M5 12 3 9m37 4 4-2" stroke="#eaa5ec" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <p id="danceGuideStep3"><span class="dance-en">Without “Clown Says!”, wait without pressing a move.</span><span class="dance-ar" lang="ar" dir="rtl">بدون «المهرج يقول!»، انتظر ولا تضغط أي حركة.</span></p>
+            </li>
+          </ol>
+        </section>
+      </section>
+
+      <div class="dance-performance">
+        <section class="dance-stage" aria-labelledby="stageTitle">
+          <div class="dance-stage-heading">
+          <h2 id="stageTitle">
+            <span class="dance-en">Dance Stage</span>
+            <span class="dance-ar" lang="ar" dir="rtl">مسرح الرقص</span>
+          </h2>
+          <a class="dance-ring-return" href="circus-ring.html"><span class="dance-en lang-en" lang="en">Back to Main Ring</span><span class="dance-ar lang-ar" lang="ar" dir="rtl">العودة إلى الحلبة الرئيسية</span></a>
+          </div>
+          <div class="dance-stage__proscenium">
+            <div class="dance-stage__bulbs" aria-hidden="true"></div>
+            <div class="dance-stage__curtain dance-stage__curtain--left" aria-hidden="true"></div>
+            <div class="dance-stage__curtain dance-stage__curtain--right" aria-hidden="true"></div>
+            <div class="dance-stage__disco-ball" aria-hidden="true"></div>
+            <div class="dance-stage__speaker dance-stage__speaker--left" aria-hidden="true"></div>
+            <div class="dance-stage__speaker dance-stage__speaker--right" aria-hidden="true"></div>
+            <div class="dance-stage__spotlights" aria-hidden="true">
+              <span class="dance-stage__spotlight dance-stage__spotlight--pink"></span>
+              <span class="dance-stage__spotlight dance-stage__spotlight--blue"></span>
+              <span class="dance-stage__spotlight dance-stage__spotlight--gold"></span>
+              <span class="dance-stage__spotlight dance-stage__spotlight--cyan-back"></span>
+              <span class="dance-stage__spotlight dance-stage__spotlight--rose-back"></span>
+            </div>
+            <figure class="dance-performer">
+              <img id="danceClown" class="dance-performer__image" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/clown1.png" alt="Circus clown ready to dance">
+            </figure>
+        <div class="dance-stage-readout">
+          <p id="danceFeedback" class="dance-feedback" role="status" aria-live="polite" aria-atomic="true">
+              <span class="dance-en">Ready!</span>
+              <span class="dance-ar" lang="ar" dir="rtl">جاهزون!</span>
+            </p>
+        <div class="dance-instruction dance-stage-command" aria-label="Dance command / أمر الرقص" role="status" aria-live="polite" aria-atomic="true">
+          <svg id="danceCommandIcon" class="dance-command-icon" viewBox="0 0 160 160" aria-hidden="true" focusable="false" hidden><use id="danceCommandUse"></use></svg>
+          <p id="danceInstruction">
+            <span class="dance-en">Press Start to dance.</span>
+            <span class="dance-ar" lang="ar" dir="rtl">اضغط ابدأ للرقص.</span>
+          </p>
+        </div>
+        </div>
+            <div class="dance-stage__equalizer" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="dance-stage__drum" aria-hidden="true"></div>
+
+        </section>
+
+        <div class="dance-gameplay-row">
+        <section class="dance-movements" aria-labelledby="movementsTitle">
+          <h2 id="movementsTitle"><svg class="dance-console-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z" fill="#ffd77c" stroke="#b57739"/></svg>
+            <span class="dance-en">Dance Moves</span>
+            <span class="dance-ar" lang="ar" dir="rtl">حركات الرقص</span>
+          </h2>
+          <div class="dance-pads" role="group" aria-labelledby="movementsTitle">
+            <button id="moveJump" class="dance-pad dance-pad--jump" type="button" data-move="jump" aria-label="Jump — اقفز">
+              <span class="dance-pad__icon" aria-hidden="true"><svg viewBox="0 0 160 160" focusable="false"><use href="#dance-icon-jump"></use></svg></span>
+              <span class="dance-en">Jump</span>
+              <span class="dance-ar" lang="ar" dir="rtl">اقفز</span>
+            </button>
+            <button id="moveSpin" class="dance-pad dance-pad--spin" type="button" data-move="spin" aria-label="Spin — دُر">
+              <span class="dance-pad__icon" aria-hidden="true"><svg viewBox="0 0 160 160" focusable="false"><use href="#dance-icon-spin"></use></svg></span>
+              <span class="dance-en">Spin</span>
+              <span class="dance-ar" lang="ar" dir="rtl">دُر</span>
+            </button>
+            <button id="moveClap" class="dance-pad dance-pad--clap" type="button" data-move="clap" aria-label="Clap — صفّق">
+              <span class="dance-pad__icon" aria-hidden="true"><svg viewBox="0 0 160 160" focusable="false"><use href="#dance-icon-clap"></use></svg></span>
+              <span class="dance-en">Clap</span>
+              <span class="dance-ar" lang="ar" dir="rtl">صفّق</span>
+            </button>
+            <button id="moveWave" class="dance-pad dance-pad--wave" type="button" data-move="wave" aria-label="Wave — لوّح">
+              <span class="dance-pad__icon" aria-hidden="true"><svg viewBox="0 0 160 160" focusable="false"><use href="#dance-icon-wave"></use></svg></span>
+              <span class="dance-en">Wave</span>
+              <span class="dance-ar" lang="ar" dir="rtl">لوّح</span>
+            </button>
+            <button id="moveStomp" class="dance-pad dance-pad--stomp" type="button" data-move="stomp" aria-label="Stomp — اخبط بقدمك">
+              <span class="dance-pad__icon" aria-hidden="true"><svg viewBox="0 0 160 160" focusable="false"><use href="#dance-icon-stomp"></use></svg></span>
+              <span class="dance-en">Stomp</span>
+              <span class="dance-ar" lang="ar" dir="rtl">اخبط بقدمك</span>
+            </button>
+            <button id="moveFreeze" class="dance-pad dance-pad--freeze" type="button" data-move="freeze" aria-label="Freeze — تجمّد">
+              <span class="dance-pad__icon" aria-hidden="true"><svg viewBox="0 0 160 160" focusable="false"><use href="#dance-icon-freeze"></use></svg></span>
+              <span class="dance-en">Freeze</span>
+              <span class="dance-ar" lang="ar" dir="rtl">تجمّد</span>
+            </button>
+          </div>
+        </section>
+
+        <div class="dance-control-slot">
+        <section id="standardControls" class="dance-game-info" aria-labelledby="gameInfoTitle">
+          <h2 id="gameInfoTitle"><svg class="dance-console-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z" fill="#ffd77c" stroke="#b57739"/></svg>
+            <span class="dance-en">Game Controls</span>
+            <span class="dance-ar" lang="ar" dir="rtl">أدوات اللعبة</span>
+          </h2>
+          <svg class="dance-mixer-detail" viewBox="0 0 120 12" aria-hidden="true" focusable="false"><path d="M5 6h110" stroke="#74537b"/><g fill="#ffd77c"><rect x="15" y="1" width="5" height="10" rx="2"/><rect x="53" y="1" width="5" height="10" rx="2"/><rect x="91" y="1" width="5" height="10" rx="2"/></g><circle cx="5" cy="6" r="2" fill="#64e8da"/><circle cx="115" cy="6" r="2" fill="#e993de"/></svg>
+          <dl class="dance-displays">
+            <div class="dance-display">
+              <dt><span class="dance-en">Score</span> <span class="dance-ar" lang="ar" dir="rtl">النقاط</span></dt>
+              <dd id="danceScore">0</dd>
+            </div>
+            <div class="dance-display">
+              <dt><span class="dance-en">Round</span> <span class="dance-ar" lang="ar" dir="rtl">الجولة</span></dt>
+              <dd id="danceRound">0</dd>
+            </div>
+          </dl>
+          <svg class="dance-game-lightboard" viewBox="0 0 280 100" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="dp-housing" x2=".3" y2="1"><stop stop-color="#9856af"/><stop offset=".5" stop-color="#4b205f"/><stop offset="1" stop-color="#24102e"/></linearGradient>
+              <linearGradient id="dp-gold" x2="0" y2="1"><stop stop-color="#fff0af"/><stop offset=".45" stop-color="#efbf54"/><stop offset="1" stop-color="#9e5b24"/></linearGradient>
+              <radialGradient id="dp-glass" cx=".3" cy=".2" r=".9"><stop stop-color="#ffffffbb"/><stop offset=".4" stop-color="#ffffff11"/><stop offset="1" stop-color="#170b3033"/></radialGradient>
+            </defs>
+            <ellipse cx="140" cy="90" rx="128" ry="7" fill="#10081c" opacity=".6"/>
+            <path d="M24 32h232l16 43v13q-132 17-264 0V75Z" fill="url(#dp-gold)" stroke="#a56631" stroke-width="2"/>
+            <path d="M26 34h228l13 40q-126 18-254 0Z" fill="url(#dp-housing)" stroke="#ffe2a1" stroke-width="2"/>
+            <path d="M15 79q126 16 250 0" fill="none" stroke="#fff0ab" stroke-width="1.5"/>
+            <g class="dance-lightboard-bulb" style="--lamp: #50e5ef; --lamp-delay: 0.0s">
+              <ellipse cx="40" cy="38" rx="16" ry="6" fill="#30132e"/>
+              <path d="M29 33V21q0-17 11-17t11 17v12Z" fill="#50e5ef" stroke="#ffffff66"/>
+              <path d="M29 33V21q0-17 11-17t11 17v12Z" fill="url(#dp-glass)"/>
+              <path d="M36 13v6" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+              <ellipse cx="40" cy="35" rx="15" ry="5" fill="url(#dp-gold)"/>
+              <ellipse class="dance-lightboard-led" cx="40" cy="32" rx="10" ry="3" fill="#50e5ef"/>
+            </g>
+            <g class="dance-lightboard-bulb" style="--lamp: #ee6bd7; --lamp-delay: -0.8s">
+              <ellipse cx="80" cy="38" rx="16" ry="6" fill="#30132e"/>
+              <path d="M69 33V21q0-17 11-17t11 17v12Z" fill="#ee6bd7" stroke="#ffffff66"/>
+              <path d="M69 33V21q0-17 11-17t11 17v12Z" fill="url(#dp-glass)"/>
+              <path d="M76 13v6" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+              <ellipse cx="80" cy="35" rx="15" ry="5" fill="url(#dp-gold)"/>
+              <ellipse class="dance-lightboard-led" cx="80" cy="32" rx="10" ry="3" fill="#ee6bd7"/>
+            </g>
+            <g class="dance-lightboard-bulb" style="--lamp: #ad85f9; --lamp-delay: -1.6s">
+              <ellipse cx="120" cy="38" rx="16" ry="6" fill="#30132e"/>
+              <path d="M109 33V21q0-17 11-17t11 17v12Z" fill="#ad85f9" stroke="#ffffff66"/>
+              <path d="M109 33V21q0-17 11-17t11 17v12Z" fill="url(#dp-glass)"/>
+              <path d="M116 13v6" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+              <ellipse cx="120" cy="35" rx="15" ry="5" fill="url(#dp-gold)"/>
+              <ellipse class="dance-lightboard-led" cx="120" cy="32" rx="10" ry="3" fill="#ad85f9"/>
+            </g>
+            <g class="dance-lightboard-bulb" style="--lamp: #ffd15b; --lamp-delay: -2.4000000000000004s">
+              <ellipse cx="160" cy="38" rx="16" ry="6" fill="#30132e"/>
+              <path d="M149 33V21q0-17 11-17t11 17v12Z" fill="#ffd15b" stroke="#ffffff66"/>
+              <path d="M149 33V21q0-17 11-17t11 17v12Z" fill="url(#dp-glass)"/>
+              <path d="M156 13v6" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+              <ellipse cx="160" cy="35" rx="15" ry="5" fill="url(#dp-gold)"/>
+              <ellipse class="dance-lightboard-led" cx="160" cy="32" rx="10" ry="3" fill="#ffd15b"/>
+            </g>
+            <g class="dance-lightboard-bulb" style="--lamp: #7ae956; --lamp-delay: -3.2s">
+              <ellipse cx="200" cy="38" rx="16" ry="6" fill="#30132e"/>
+              <path d="M189 33V21q0-17 11-17t11 17v12Z" fill="#7ae956" stroke="#ffffff66"/>
+              <path d="M189 33V21q0-17 11-17t11 17v12Z" fill="url(#dp-glass)"/>
+              <path d="M196 13v6" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+              <ellipse cx="200" cy="35" rx="15" ry="5" fill="url(#dp-gold)"/>
+              <ellipse class="dance-lightboard-led" cx="200" cy="32" rx="10" ry="3" fill="#7ae956"/>
+            </g>
+            <g class="dance-lightboard-bulb" style="--lamp: #ff89ad; --lamp-delay: -4.0s">
+              <ellipse cx="240" cy="38" rx="16" ry="6" fill="#30132e"/>
+              <path d="M229 33V21q0-17 11-17t11 17v12Z" fill="#ff89ad" stroke="#ffffff66"/>
+              <path d="M229 33V21q0-17 11-17t11 17v12Z" fill="url(#dp-glass)"/>
+              <path d="M236 13v6" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+              <ellipse cx="240" cy="35" rx="15" ry="5" fill="url(#dp-gold)"/>
+              <ellipse class="dance-lightboard-led" cx="240" cy="32" rx="10" ry="3" fill="#ff89ad"/>
+            </g>
+<rect x="25" y="48" width="49" height="26" rx="5" fill="#160c24" stroke="#946397"/><rect class="dance-lightboard-meter" x="30" y="60" width="5" height="10" rx="2" fill="#5fe7dc" style="--meter-delay: -0.3s; transform-origin: 32.5px 70px"/><rect class="dance-lightboard-meter" x="38" y="56" width="5" height="14" rx="2" fill="#e38ade" style="--meter-delay: -0.8500000000000001s; transform-origin: 40.5px 70px"/><rect class="dance-lightboard-meter" x="46" y="52" width="5" height="18" rx="2" fill="#ffd67b" style="--meter-delay: -1.4000000000000001s; transform-origin: 48.5px 70px"/><rect class="dance-lightboard-meter" x="54" y="60" width="5" height="10" rx="2" fill="#88ec70" style="--meter-delay: -1.9500000000000002s; transform-origin: 56.5px 70px"/><rect class="dance-lightboard-meter" x="62" y="56" width="5" height="14" rx="2" fill="#aa8af8" style="--meter-delay: -2.5s; transform-origin: 64.5px 70px"/><rect x="206" y="48" width="49" height="26" rx="5" fill="#160c24" stroke="#946397"/><rect class="dance-lightboard-meter" x="211" y="60" width="5" height="10" rx="2" fill="#5fe7dc" style="--meter-delay: -2.11s; transform-origin: 213.5px 70px"/><rect class="dance-lightboard-meter" x="219" y="56" width="5" height="14" rx="2" fill="#e38ade" style="--meter-delay: -2.66s; transform-origin: 221.5px 70px"/><rect class="dance-lightboard-meter" x="227" y="52" width="5" height="18" rx="2" fill="#ffd67b" style="--meter-delay: -3.21s; transform-origin: 229.5px 70px"/><rect class="dance-lightboard-meter" x="235" y="60" width="5" height="10" rx="2" fill="#88ec70" style="--meter-delay: -3.76s; transform-origin: 237.5px 70px"/><rect class="dance-lightboard-meter" x="243" y="56" width="5" height="14" rx="2" fill="#aa8af8" style="--meter-delay: -4.3100000000000005s; transform-origin: 245.5px 70px"/><path d="M94 49v25" stroke="#160c24" stroke-width="4"/><rect x="87" y="56" width="15" height="10" rx="3" fill="#6a351d"/><rect x="87" y="53" width="15" height="10" rx="3" fill="url(#dp-gold)" stroke="#ffdc91"/><path d="m89 55h10" stroke="#fff0b8" stroke-width="1.5"/><path d="M119 49v25" stroke="#160c24" stroke-width="4"/><rect x="112" y="61" width="15" height="10" rx="3" fill="#6a351d"/><rect x="112" y="58" width="15" height="10" rx="3" fill="url(#dp-gold)" stroke="#ffdc91"/><path d="m114 60h10" stroke="#fff0b8" stroke-width="1.5"/><path d="M144 49v25" stroke="#160c24" stroke-width="4"/><rect x="137" y="56" width="15" height="10" rx="3" fill="#6a351d"/><rect x="137" y="53" width="15" height="10" rx="3" fill="url(#dp-gold)" stroke="#ffdc91"/><path d="m139 55h10" stroke="#fff0b8" stroke-width="1.5"/><path d="M169 49v25" stroke="#160c24" stroke-width="4"/><rect x="162" y="61" width="15" height="10" rx="3" fill="#6a351d"/><rect x="162" y="58" width="15" height="10" rx="3" fill="url(#dp-gold)" stroke="#ffdc91"/><path d="m164 60h10" stroke="#fff0b8" stroke-width="1.5"/>
+          </svg>
+          <p id="danceCountdown" class="dance-countdown" role="timer" aria-live="off" hidden></p>
+
+          <div class="dance-transport">
+            <button id="danceStart" type="button"><svg class="dance-transport-icon" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path d="m9 5 12 9-12 9Z" fill="currentColor"/></svg><span class="dance-en">Start</span> <span class="dance-ar" lang="ar" dir="rtl">ابدأ</span></button>
+            <button id="danceRestart" type="button"><svg class="dance-transport-icon" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path d="M7 10a9 9 0 1 1-1 10M7 4v7H1" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="dance-en">Restart</span> <span class="dance-ar" lang="ar" dir="rtl">ابدأ من جديد</span></button>
+          </div>
+        </section>
+
+        <!-- The controller reveals this section for Creative Dance Studio only. -->
+        <section id="creativeControls" class="dance-creative-controls" aria-labelledby="creativeTitle" hidden>
+          <h2 id="creativeTitle">
+            <span class="dance-en">Creative Dance Studio</span>
+            <span class="dance-ar" lang="ar" dir="rtl">استوديو الرقص الإبداعي</span>
+          </h2>
+          <p id="routineStatus" class="dance-recording-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          <div class="dance-recording-controls">
+            <button id="routineRecord" type="button"><span class="dance-en">Record</span> <span class="dance-ar" lang="ar" dir="rtl">سجّل</span></button>
+            <button id="routineStop" type="button"><span class="dance-en">Stop</span> <span class="dance-ar" lang="ar" dir="rtl">أوقف</span></button>
+            <button id="routinePlay" type="button"><span class="dance-en">Play</span> <span class="dance-ar" lang="ar" dir="rtl">شغّل</span></button>
+            <button id="routineClear" type="button"><span class="dance-en">Clear</span> <span class="dance-ar" lang="ar" dir="rtl">امسح</span></button>
+            <label class="dance-replay-speed" for="routineSpeed">
+              <span class="dance-en">Replay speed</span>
+              <span class="dance-ar" lang="ar" dir="rtl">سرعة التشغيل</span>
+              <select id="routineSpeed">
+                <option value="1">1× — Normal / عادي</option>
+                <option value="1.5">1.5× — Fast / سريع</option>
+                <option value="2">2× — Super Fast / سريع جدًا</option>
+              </select>
+            </label>
+            <svg class="dance-studio-lights" viewBox="0 0 100 70" aria-hidden="true" focusable="false"><rect x="3" y="22" width="94" height="42" rx="12" fill="#51266c" stroke="#f5d079" stroke-width="3"/><path d="M8 56h84" stroke="#d8a14f" stroke-width="3"/><ellipse cx="18" cy="46" rx="10" ry="4" fill="#dda955"/><path d="M11 42V27q0-12 7-12t7 12v15Z" fill="#57e6ee" stroke="#ffffff88"/><path d="M16 23v7" stroke="#fff" opacity=".7" stroke-width="2" stroke-linecap="round"/><ellipse cx="39" cy="46" rx="10" ry="4" fill="#dda955"/><path d="M32 42V27q0-12 7-12t7 12v15Z" fill="#fa77cf" stroke="#ffffff88"/><path d="M37 23v7" stroke="#fff" opacity=".7" stroke-width="2" stroke-linecap="round"/><ellipse cx="60" cy="46" rx="10" ry="4" fill="#dda955"/><path d="M53 42V27q0-12 7-12t7 12v15Z" fill="#ffdc65" stroke="#ffffff88"/><path d="M58 23v7" stroke="#fff" opacity=".7" stroke-width="2" stroke-linecap="round"/><ellipse cx="81" cy="46" rx="10" ry="4" fill="#dda955"/><path d="M74 42V27q0-12 7-12t7 12v15Z" fill="#83ef97" stroke="#ffffff88"/><path d="M79 23v7" stroke="#fff" opacity=".7" stroke-width="2" stroke-linecap="round"/></svg>
+
+          </div>
+        </section>
+        </div>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>
