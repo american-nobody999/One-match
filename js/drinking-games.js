@@ -1,6 +1,6 @@
 "use strict";
 //Author: Leslie Brockman
-//Date: 11-11-2026
+//Date: 11-19-2026
 // The lounge owns its dialogs and wheel; main.js owns language and navigation.
 (() => {
     const page = document.querySelector('.drinking-games-page');
@@ -76,12 +76,59 @@
     // Weekly edits belong here. Null mediaUrl means a complete text-only surprise.
     // Supported content types: text, image, video, embed (approved URLs only).
     const surprises = [
-        { sectionId: 1, id: 'bonus-song', titleEn: 'Bonus Song', titleAr: 'أغنية إضافية', type: 'embed', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://www.youtube-nocookie.com/embed/OiYjTb3opAA', mediaTitleEn: 'Bonus Song — YouTube video', mediaTitleAr: 'أغنية إضافية — فيديو يوتيوب' },
-        { sectionId: 2, id: 'meme-madness', titleEn: 'Meme Madness', titleAr: 'جنون الميمات', type: 'image', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/printer.png', mediaTitleEn: 'Political satire featuring an eagle, David, world leaders and an exhausted condemnation printer, with its caption', mediaTitleAr: 'رسم ساخر سياسي يظهر نسرًا وديفيد وقادة عالميين وطابعة بيانات إدانة منهكة، مع التعليق المكتوب' },
-        { sectionId: 3, id: 'surprise-video', titleEn: 'Surprise Video', titleAr: 'فيديو مفاجئ', type: 'text', descriptionEn: "Congratulations! You've unlocked the ability to ignore evidence in six different languages.", descriptionAr: 'تهانينا! لقد اكتسبت القدرة على تجاهل الأدلة بست لغات مختلفة.', mediaUrl: null },
-        { sectionId: 4, id: 'mystery-box', titleEn: '', titleAr: '', type: 'embed', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://www.youtube.com/embed/2aJ3Vfpgh44', mediaTitleEn: 'Mystery Box — YouTube video', mediaTitleAr: 'الصندوق الغامض — فيديو يوتيوب', mediaLoading: 'lazy' },
-        { sectionId: 5, id: 'ridiculous-challenge', titleEn: 'Ridiculous Challenge', titleAr: 'تحدٍّ طريف', type: 'image', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/219.png', mediaTitleEn: 'Political accountability satire artwork with its original text', mediaTitleAr: 'رسم ساخر عن المساءلة السياسية مع نصه الأصلي' },
-        { sectionId: 6, id: 'wild-card', titleEn: 'Wild Card', titleAr: 'المفاجأة الحرة', type: 'text', descriptionEn: "This week's politician achievement: another strongly worded email. The printer is exhausted.", descriptionAr: 'إنجاز السياسيين هذا الأسبوع: رسالة إلكترونية أخرى شديدة اللهجة. الطابعة منهكة.', mediaUrl: null }
+        { sectionId: 1, id: 'bonus-song', titleEn: 'Bonus Song', titleAr: 'أغنية إضافية', type: 'embed', descriptionEn: '', descriptionAr: '', mediaUrl: 'https://www.youtube-nocookie.com/embed/BD9QqlrjSgU', mediaTitleEn: 'Bonus Song — YouTube video', mediaTitleAr: 'أغنية إضافية — فيديو يوتيوب' },
+        {
+            sectionId: 2, id: 'meme-madness', titleEn: 'Meme Madness', titleAr: 'جنون الميمات', type: 'image',
+            descriptionEn: '', descriptionAr: '',
+            mediaUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/mass.png',
+            mediaTitleEn: 'Office cubicle illustration with a bilingual sticky-note message: Creator moves us where we need to be, and always gives us everything we need for the next step.',
+            mediaTitleAr: 'رسم لمقصورة مكتبية مع رسالة باللغتين على ورقة لاصقة: ينقلنا الخالق إلى حيث ينبغي أن نكون، ويمنحنا دائمًا كل ما نحتاج إليه للخطوة التالية.'
+        },
+        {
+            sectionId: 3, id: 'surprise-video', type: 'text', mediaUrl: null,
+            titleEn: 'Important Big Words to Know',
+            titleAr: 'كلمات مهمة وكبيرة يجب معرفتها',
+            numberAr: '٣',
+            descriptionEn: [
+                'cease·fire\n/ˈsiːs.faɪər/ — noun',
+                '1. An agreement between opposing parties to temporarily or permanently stop fighting.',
+                '2. Political dialect, sarcastic: A word that apparently requires a committee, seventeen press conferences, and a refresher course in its own definition.',
+                'Usage: "We announced a ceasefire. Now comes the difficult part: ceasing fire."'
+            ].join('\n\n'),
+            descriptionAr: [
+                'وقف إطلاق النار\n\u2066/ˈsiːs.faɪər/\u2069 — اسم',
+                '١. اتفاق بين أطراف متنازعة على وقف القتال مؤقتًا أو نهائيًا.',
+                '٢. في اللغة السياسية، على سبيل السخرية: كلمة يبدو أنها تتطلّب لجنة وسبعة عشر مؤتمرًا صحفيًا ودورة تنشيطية في تعريفها هي نفسها.',
+                'مثال على الاستعمال: «أعلنّا وقف إطلاق النار. والآن يأتي الجزء الصعب: وقف إطلاق النار فعليًا».'
+            ].join('\n\n')
+        },
+        {
+            sectionId: 4, id: 'mystery-box', type: 'embed',
+            titleEn: 'Breaking News: Reality Has Entered the Chat',
+            titleAr: 'خبر عاجل: الواقع انضمّ إلى الدردشة',
+            descriptionEn: 'Please remain calm. This may be unfamiliar territory.',
+            descriptionAr: 'يرجى التزام الهدوء. قد يكون هذا أمرًا غير مألوف لكم.',
+            mediaUrl: 'https://www.youtube-nocookie.com/embed/i4Doe-IiF8k',
+            mediaTitleEn: 'Breaking News: Reality Has Entered the Chat — YouTube video',
+            mediaTitleAr: 'خبر عاجل: الواقع انضمّ إلى الدردشة — فيديو يوتيوب',
+            mediaLoading: 'lazy'
+        },
+        {
+            sectionId: 5, id: 'ridiculous-challenge', titleEn: 'Ridiculous Challenge', titleAr: 'تحدٍّ طريف', type: 'image',
+            descriptionEn: 'Apparently, the ceasefire came with a tank warranty.',
+            descriptionAr: 'يبدو أن وقف إطلاق النار جاء مع ضمان للدبابات.',
+            mediaUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/report.png',
+            mediaTitleEn: 'Political satire about a ceasefire and a warranty for tanks',
+            mediaTitleAr: 'عمل ساخر سياسي عن وقف إطلاق النار وضمان للدبابات'
+        },
+        {
+            sectionId: 6, id: 'wild-card', titleEn: 'Wild Card', titleAr: 'المفاجأة الحرة', type: 'text',
+            descriptionEn: 'I said I will flip this whole world over for Palestine.',
+            descriptionAr: 'قلتُ إنني سأقلب هذا العالم رأسًا على عقب من أجل فلسطين.',
+            emphasisEn: 'I MEANT THAT.',
+            emphasisAr: 'وكنتُ أعني ما قلتُه تمامًا.',
+            mediaUrl: null
+        }
     ];
     const wheelDialog = document.getElementById('wheel-dialog');
     const wheel = page.querySelector('.challenge-wheel');
@@ -193,12 +240,20 @@
             ? (ar ? 'العجلة تدور…' : 'Spinning…') : '';
         if (selected !== null && !surpriseView.hidden) {
             const surprise = sectionsById.get(surprises[selected].sectionId);
-            title.textContent = surprise.sectionId === 3
-                ? '3. 😂'
-                : `${surprise.sectionId}. ${surprise[ar ? 'titleAr' : 'titleEn']}`;
-            description.classList.toggle('wheel-result-statement', surprise.sectionId === 3 || surprise.sectionId === 6);
-            description.textContent = surprise[ar ? 'descriptionAr' : 'descriptionEn'];
-            description.hidden = surprise.type !== 'text';
+            const titleNumber = (ar ? surprise.numberAr : undefined) ?? surprise.sectionId;
+            title.textContent = `${titleNumber}. ${surprise[ar ? 'titleAr' : 'titleEn']}`;
+            description.classList.toggle('wheel-result-statement', surprise.sectionId === 6);
+            const descriptionText = surprise[ar ? 'descriptionAr' : 'descriptionEn'];
+            description.textContent = descriptionText;
+            const emphasisText = surprise[ar ? 'emphasisAr' : 'emphasisEn'];
+            if (emphasisText) {
+                const lead = document.createElement('span');
+                lead.textContent = descriptionText;
+                const emphasis = document.createElement('strong');
+                emphasis.textContent = emphasisText;
+                description.replaceChildren(lead, ' ', emphasis);
+            }
+            description.hidden = surprise.type !== 'text' && !descriptionText;
             surpriseView.dataset.sectionId = String(surprise.sectionId);
             const image = media.querySelector('img');
             if (image) image.alt = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
@@ -222,6 +277,7 @@
         const ar = document.documentElement.lang === 'ar';
         if (tag === 'img') {
             element.alt = surprise[ar ? 'mediaTitleAr' : 'mediaTitleEn'] || surprise[ar ? 'titleAr' : 'titleEn'];
+            if (surprise.descriptionEn && surprise.descriptionAr) element.setAttribute('aria-describedby', description.id);
         }
         if (tag === 'video') element.controls = true;
         if (tag === 'iframe') {
@@ -330,7 +386,7 @@
     // An explicit editorial decision may extend a winner for another week; retain every award date.
     // Returning winners reuse their existing archive record and awardDates, never duplicate trophies.
     // No timers, scheduling, backend or browser persistence.
-    const currentLoser = {
+    const archivedNikol = {
         "id": "nikol-stelmashvski-2026-11-11",
         "nameEn": "Nikol Stelmashvski",
         "nameAr": "نيكول ستيلماشفسكي",
@@ -432,10 +488,50 @@
         frontImages: null, backImages: null, story: null, sources: null,
         flipLabelEn: 'What He Did', flipLabelAr: 'ماذا فعل؟' };
     const previousLosers = [
+        archivedNikol,
         { id: 'andrey', nameEn: 'Andrey', nameAr: 'أندريه', awardDates: ['2026-10-23', '2026-11-06'],
           cardHtml: "          <div class=\"loser-week-card\" data-loser-card>\n            <div id=\"loser-week-front\" class=\"loser-week-face\" data-loser-face=\"front\">\n              <div class=\"loser-week-images\">\n                <img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/l-2.jpg\" alt=\"Front editorial image 1 of 2 / صورة تحريرية 2\" loading=\"lazy\">\n                <img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/l-1.jpg\" alt=\"Front editorial image 2 of 2 / صورة تحريرية 1\" loading=\"lazy\">\n              </div>\n              <button type=\"button\" id=\"loser-week-more\" class=\"loser-week-button\" data-loser-flip=\"back\" aria-controls=\"loser-week-back\" aria-expanded=\"false\"><span class=\"lang-en\">What He Did</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ماذا فعل؟</span></button>\n            </div>\n            <div id=\"loser-week-back\" class=\"loser-week-face\" data-loser-face=\"back\" hidden inert aria-hidden=\"true\">\n              <div class=\"loser-week-images\">\n                <img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/l-3.jpg\" alt=\"Back editorial image 1 of 3 / صورة تحريرية 3\" loading=\"lazy\">\n                <img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/l-4.jpg\" alt=\"Back editorial image 2 of 3 / صورة تحريرية 4\" loading=\"lazy\">\n                <img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/l-5.jpg\" alt=\"Back editorial image 3 of 3 / صورة تحريرية 5\" loading=\"lazy\">\n              </div>\n              <h3><span class=\"lang-en\">What They Did</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ماذا فعلوا؟</span></h3>\n              <div class=\"loser-week-description loser-week-intro\">\n                <p><span class=\"lang-en\">Violence isn't strength. It's a failure of humanity.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">العنف ليس قوة. إنه إخفاق في الإنسانية.</span></p>\n                <p><span class=\"lang-en\">This week's spotlight is reserved for acts of violence captured and documented by those who witnessed them.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">نسلّط الضوء هذا الأسبوع على أعمال عنف التقطها ووثّقها من شهدوها.</span></p>\n                <p><span class=\"lang-en\">No threats. No retaliation. No celebration of harm.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">لا تهديدات. لا انتقام. لا احتفاء بالأذى.</span></p>\n                <p><span class=\"lang-en\">Just a reminder that actions have consequences, witnesses have voices, and accountability begins when we refuse to look away.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إنه مجرد تذكير بأن للأفعال عواقب، وللشهود أصواتًا، وأن المساءلة تبدأ حين نرفض أن نُشيح بأنظارنا.</span></p>\n                <p><span class=\"lang-en\">Our rocks are made of truth, evidence, and peaceful resistance.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">حجارتنا مصنوعة من الحقيقة والأدلة والمقاومة السلمية.</span></p>\n              </div>\n              <details id=\"andrey-coverage\" class=\"andrey-coverage\">\n                <summary class=\"loser-week-button\"><span class=\"lang-en\">View Andrey Coverage</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">عرض تغطية أندريه</span></summary>\n                <div class=\"andrey-coverage-content\">\n        <h2 id=\"meet-andrey-heading\" class=\"west-bank-heading\"><span class=\"west-bank-alert\"><span class=\"lang-en\">ALL EYES ON THE WEST BANK!</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">كل الأنظار على الضفة الغربية!</span></span><span class=\"west-bank-place\"><span class=\"lang-en\">AL-KHAIR</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">أم الخير</span></span></h2>\n        <div class=\"west-bank-decoration\" aria-hidden=\"true\">✌️ 👀 ✌️</div>\n      <section class=\"meet-andrey\" aria-labelledby=\"meet-andrey-heading\">\n        <img class=\"meet-andrey-portrait\"\n             src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/Andrey/617.jpg\"\n             alt=\"Andrey X peace in cuffs / أندريه إكس: السلام مكبّل اليدين\"\n             loading=\"lazy\">\n        <div class=\"andrey-account\">\n          <p><span class=\"lang-en\">On October 28, 2026, journalist and activist Andrey X was attacked near the Palestinian village of Umm al-Khair in the occupied West Bank.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">في 28 أكتوبر 2026، تعرّض الصحفي والناشط أندريه إكس لاعتداء قرب قرية أم الخير الفلسطينية في الضفة الغربية المحتلة.</span></p>\n          <p><span class=\"lang-en\">Andrey was there alongside American journalist Jasper Nathaniel and fellow journalist Adele Shoko. Video footage shared by Shoko shows a violent confrontation with Israeli settlers, including an armed individual.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">كان أندريه هناك برفقة الصحفي الأمريكي جاسبر ناثانيال وزميلتهما الصحفية أديل شوكو. وتُظهر لقطات فيديو نشرتها شوكو مواجهة عنيفة مع مستوطنين إسرائيليين، بينهم شخص مسلّح.</span></p>\n          <p><span class=\"lang-en\">According to Shoko, Andrey was beaten, suffered a head injury, and lost consciousness multiple times. She also reported that his phone was stolen and that he was denied hospital treatment.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">وبحسب شوكو، تعرّض أندريه للضرب، وأُصيب في رأسه، وفقد الوعي عدة مرات. وأفادت أيضًا بأن هاتفه سُرق وأنه حُرم من العلاج في المستشفى.</span></p>\n          <p><span class=\"lang-en\">Instead of receiving hospital care, Andrey and Jasper were taken into Israeli police custody.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">وبدلًا من تلقي الرعاية في المستشفى، اقتيد أندريه وجاسبر إلى عهدة الشرطة الإسرائيلية.</span></p>\n          <p><span class=\"lang-en\">Israeli police stated that they were investigating allegations arising from the confrontation. Both men were subsequently released, but reportedly barred from entering the West Bank for the remainder of 2026.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">وقالت الشرطة الإسرائيلية إنها تحقق في ادعاءات نشأت عن المواجهة. وأُفرج عن الرجلين لاحقًا، لكن ورد أنهما مُنعا من دخول الضفة الغربية حتى نهاية عام 2026.</span></p>\n          <p><span class=\"lang-en\">Andrey has spent years documenting the experiences of Palestinian communities and bringing attention to violence in the West Bank. His work has helped people around the world witness events they might otherwise never see.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">أمضى أندريه سنوات في توثيق تجارب المجتمعات الفلسطينية وتسليط الضوء على العنف في الضفة الغربية. وقد ساعد عمله الناس في أنحاء العالم على مشاهدة أحداث ربما لم يكونوا ليروها لولاه.</span></p>\n          <p><span class=\"lang-en\">Journalists and witnesses should not face violence for documenting what happens around them.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">لا ينبغي أن يتعرّض الصحفيون والشهود للعنف بسبب توثيق ما يجري من حولهم.</span></p>\n          <p><span class=\"lang-en\">To Andrey, Jasper, Adele, and the people of Umm al-Khair: we see you. Your courage matters, your safety matters, and your voices deserve to be heard.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">إلى أندريه وجاسبر وأديل وأهل أم الخير: نحن نراكم. شجاعتكم مهمة، وسلامتكم مهمة، وأصواتكم تستحق أن تُسمع.</span></p>\n        </div>\n        <div class=\"andrey-modal-actions\">\n          <button class=\"modal-back-button\" id=\"andrey-modal-back\" type=\"button\" onclick=\"window.location.href='index.html'\">\n            <span class=\"lang-en\">Back</span>\n            <span class=\"lang-ar hidden\">رجوع</span>\n          </button>\n          <a class=\"andrey-profile-link\" href=\"hero.html#journalist-13\">\n            <span class=\"lang-en\">Learn More About Andrey</span>\n            <span class=\"lang-ar hidden\">تعرّف أكثر على أندريه</span>\n          </a>\n        </div>\n      </section>\n                </div>\n              </details>\n              <button type=\"button\" id=\"loser-week-return\" class=\"loser-week-button\" data-loser-flip=\"front\" aria-controls=\"loser-week-front\"><span class=\"lang-en\">Back</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">رجوع</span></button>\n            </div>\n          </div>" }
     ];
     const featured = root.querySelector('[data-current-loser]');
+    const currentLoser = {
+        id: 'yinon-levi-2026-11-19',
+        nameEn: 'Yinon Levi',
+        nameAr: 'ينون ليفي',
+        awardDate: '2026-11-19',
+        frontHeading: { en: 'Yinon Levi — Umm al-Khair', ar: 'ينون ليفي — أم الخير' },
+        frontCopy: [
+            { en: 'A Palestinian teacher was killed. The outpost kept growing.', ar: 'قُتل معلّم فلسطيني، واستمرّت البؤرة الاستيطانية في التوسّع.', strong: true },
+            { en: 'Apparently, accountability is still under construction.', ar: 'يبدو أن المساءلة لا تزال قيد الإنشاء.' }
+        ],
+        frontImages: [
+            { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/l1.jpg', altEn: 'First portrait accompanying the Umm al-Khair feature', altAr: 'الصورة الشخصية الأولى المرافقة لموضوع أم الخير' },
+            { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/l2.jpg', altEn: 'Second portrait accompanying the Umm al-Khair feature', altAr: 'الصورة الشخصية الثانية المرافقة لموضوع أم الخير' }
+        ],
+        backImages: [
+            { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/111.jpg', altEn: 'First image accompanying the Umm al-Khair reporting', altAr: 'الصورة الأولى المرافقة للتغطية عن أم الخير' },
+            { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/113.jpg', altEn: 'Second image accompanying the Umm al-Khair reporting', altAr: 'الصورة الثانية المرافقة للتغطية عن أم الخير' },
+            { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/112.jpg', altEn: 'Third image accompanying the Umm al-Khair reporting', altAr: 'الصورة الثالثة المرافقة للتغطية عن أم الخير' }
+        ],
+        storyHeadingEn: 'Awdah Hathaleen — Umm al-Khair',
+        storyHeadingAr: 'عودة الهذالين — أم الخير',
+        story: [
+            { en: 'On July 28, 2025, Palestinian teacher and human rights defender Awdah Hathaleen was fatally shot during a confrontation involving Israeli settlers in Umm al-Khair, in the occupied West Bank, Palestine.', ar: 'في ٢٨ يوليو ٢٠٢٥، قُتل المعلّم الفلسطيني والمدافع عن حقوق الإنسان عودة الهذالين بالرصاص خلال مواجهة شارك فيها مستوطنون إسرائيليون في أم الخير، في الضفة الغربية المحتلة، فلسطين.' },
+            { en: 'Al-Haq and Amnesty International reviewed video evidence and identified Israeli settler Yinon Levi as the person who fired the fatal shot.', ar: 'راجعت مؤسسة الحق ومنظمة العفو الدولية تسجيلات الفيديو، وحدّدتا المستوطن الإسرائيلي ينون ليفي بوصفه من أطلق الرصاصة القاتلة.' },
+            { en: 'Al-Haq’s forensic reconstruction concluded that Hathaleen was unarmed and posed no imminent threat when he was shot.', ar: 'خلصت إعادة بناء الواقعة التي أجرتها وحدة التحقيق الجنائي في مؤسسة الحق إلى أن الهذالين كان أعزل ولم يشكّل تهديدًا وشيكًا عند إطلاق النار عليه.' },
+            { en: 'According to The Times of Israel, Israeli prosecutors charged Levi in August 2026 with reckless homicide, armed trespass, and malicious damage. The report says Levi told the court he acted in self-defense and disputed that he fired the fatal shot.', ar: 'بحسب صحيفة تايمز أوف إسرائيل، وجّه الادعاء الإسرائيلي إلى ليفي في أغسطس ٢٠٢٦ تهم القتل نتيجة التهوّر، والتعدّي على ملكية الغير وهو مسلّح، وإلحاق أضرار عمدًا. وذكرت الصحيفة أن ليفي قال أمام المحكمة إنه تصرّف دفاعًا عن النفس، ونفى أن يكون قد أطلق الرصاصة القاتلة.' },
+            { en: 'Levi has also been subject to international sanctions related to violence and intimidation against Palestinian communities.', ar: 'وسبق أن فُرضت على ليفي عقوبات دولية على خلفية أعمال عنف وترهيب طالت مجتمعات فلسطينية.' },
+            { en: 'Human rights reporting has documented continuing settler outpost construction and displacement pressures affecting Umm al-Khair and surrounding communities.', ar: 'وثّقت تقارير حقوقية استمرار بناء البؤر الاستيطانية والضغوط التي تدفع إلى التهجير في أم الخير والتجمّعات المحيطة بها.' },
+            { en: 'The evidence deserves attention. The community deserves protection. Accountability deserves more than another press release.', ar: 'الأدلّة تستحقّ الاهتمام. وأهالي القرية يستحقّون الحماية. والمساءلة تستحقّ أكثر من مجرّد بيان صحفي آخر.' },
+            { en: 'In memory of Awdah Hathaleen — teacher, father, and defender of his community.', ar: 'في ذكرى عودة الهذالين — معلّم وأب ومدافع عن مجتمعه.', strong: true }
+        ],
+        sourcesHeadingEn: 'Sources and attribution',
+        sourcesHeadingAr: 'المصادر ونَسب التغطية',
+        sources: [
+            { url: 'https://www.alhaq.org/FAI-Unit/27750.html', labelEn: 'Al-Haq — Forensic Investigation', labelAr: 'مؤسسة الحق — التحقيق الجنائي' },
+            { url: 'https://www.timesofisrael.com/extremist-settler-charged-with-reckless-homicide-over-death-of-palestinian-activist/', labelEn: 'The Times of Israel — August 2026 indictment reporting', labelAr: 'تايمز أوف إسرائيل — تغطية لائحة الاتهام في أغسطس ٢٠٢٦' },
+            { url: 'https://www.amnesty.org.au/wp-content/uploads/2026/06/Amnesty-International-Report-Erasing-anything-Palestinian.pdf', labelEn: 'Amnesty International — Documentation of displacement and outpost activity', labelAr: 'منظمة العفو الدولية — توثيق التهجير ونشاط البؤر الاستيطانية' }
+        ]
+    };
     const grid = root.querySelector('[data-trophy-grid]');
     const archive = root.querySelector('[data-archived-loser]');
     let activeTrophy = null;
@@ -521,8 +617,13 @@
             front.id = `loser-${winner.id}-front`;
             front.className = 'loser-week-face';
             front.dataset.loserFace = 'front';
-            front.append(element('h3', winner.nameEn, winner.nameAr));
+            front.append(element('h3', winner.frontHeading?.en ?? winner.nameEn, winner.frontHeading?.ar ?? winner.nameAr));
             front.append(element('p', dateLabel(winner, 'en'), dateLabel(winner, 'ar')));
+            winner.frontCopy?.forEach(copy => {
+                const paragraph = document.createElement('p');
+                paragraph.append(element(copy.strong ? 'strong' : 'span', copy.en, copy.ar));
+                front.append(paragraph);
+            });
             front.append(imageGallery(winner.frontImages));
             const back = document.createElement('div');
             back.id = `loser-${winner.id}-back`;
