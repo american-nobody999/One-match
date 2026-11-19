@@ -1,16 +1,13 @@
-/*
-Author: Leslie Brockman
-Date: 10-27-2026
-*/
-/* abc123 classroom: subject accents for the common education surround. */
+/**
+ * Author: Leslie Brockman
+ * ABC123 Educational Page
+ * Date Modified 11-18-2026
+ * Description: CSS styling for the ABC123 educational page.
+ */
 .edu-page.abc123-classroom {
     --classroom-accent: #944d4d;
     --classroom-tint: #f4e3de;
 }
-
-/* Surround only: Color Garden retains its own controls, canvas and breakpoints. */
-.abc123-classroom .color-garden { width: 100%; margin: 1.5rem auto; }
-.abc123-classroom .color-garden h2 { text-align: center; }
 
 /* Exact landing-page olive background; shared chrome stays independently styled. */
 body.edu-page.abc123-classroom {
@@ -173,3 +170,178 @@ body.edu-page.abc123-classroom {
     .abc123-classroom .schoolhouse-back:focus-visible { transform: none; }
 }
 
+/* Independent activity stations; both languages remain visible. */
+.abc123-classroom .abc-activities {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 1.75rem);
+    width: 100%;
+    margin: 2rem auto 1rem;
+    text-align: center;
+}
+.abc123-classroom .abc-activity {
+    --station-color: #396f42;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    padding: clamp(1.2rem, 2.5vw, 1.8rem);
+    border: 3px solid rgba(75, 80, 38, .28);
+    border-radius: 28px;
+    background: linear-gradient(150deg, #eff8d8, #c2e0a0);
+    color: #1d3526;
+    box-shadow: inset 0 3px 0 rgba(255, 255, 255, .75), 0 7px 0 rgba(69, 91, 35, .28), 0 12px 20px rgba(49, 57, 22, .18);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.abc123-classroom .abc-activity-numbers { --station-color: #8c4b13; background: linear-gradient(150deg, #fff5bc, #f5be65); color: #59330e; }
+.abc123-classroom .abc-activity-shapes { --station-color: #594684; background: linear-gradient(150deg, #e1f4ff, #dfcbf1 65%, #f8d4df); color: #39325b; }
+.abc123-classroom .abc-activity-art { display: flex; align-items: center; justify-content: center; gap: .5rem; min-height: 5rem; font: 700 clamp(2.3rem, 5vw, 3.6rem)/1 Georgia, serif; }
+.abc123-classroom .abc-garden-art span:first-child { color: #d44f72; }
+.abc123-classroom .abc-garden-art span:last-child { color: #e7a732; }
+.abc123-classroom .abc-number-art span { display: grid; place-items: center; width: 1.1em; height: 1.1em; border-radius: .25em; background: #fff6d6; color: #ad521a; box-shadow: inset 0 2px #fff, 0 4px 0 rgba(125, 67, 18, .25); }
+.abc123-classroom .abc-shape-art span:first-child { color: #d45c75; }
+.abc123-classroom .abc-shape-art span:nth-child(2) { color: #6789cf; }
+.abc123-classroom .abc-shape-art span:last-child { color: #9a6fbc; }
+.abc123-classroom .abc-activity h3 { margin: .7rem 0; font: 700 clamp(1.4rem, 2.5vw, 1.8rem)/1.3 "Chalkboard SE", "Comic Sans MS", cursive; color: inherit; }
+.abc123-classroom .abc-activity h3 span, .abc123-classroom .abc-activity p span { display: block; }
+.abc123-classroom .abc-activity [lang="ar"] { font-family: "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif; }
+.abc123-classroom .abc-activity p { max-width: 30ch; margin: 0 0 .8rem; color: inherit; font-size: 1rem; line-height: 1.6; }
+.abc123-classroom .abc-activity .abc-coming-soon { margin-top: auto; font-size: .9rem; font-weight: 700; }
+.abc123-classroom .abc-activity-button { display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .25rem .65rem; min-height: 48px; max-width: 100%; margin-top: auto; padding: .65rem 1.1rem; border: 2px solid var(--station-color); border-radius: 999px; background: var(--station-color); color: #fff; font: inherit; font-weight: 700; line-height: 1.4; text-align: center; text-decoration: none; box-shadow: inset 0 2px rgba(255, 255, 255, .3), 0 4px 0 rgba(0, 0, 0, .2); }
+.abc123-classroom .abc-activity-button:disabled { opacity: .75; cursor: not-allowed; }
+.abc123-classroom .abc-activity-button:focus-visible { outline: 3px solid #172c1a; outline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) {
+    .abc123-classroom .abc-activity-garden:hover { transform: translateY(-3px); box-shadow: inset 0 3px 0 rgba(255, 255, 255, .75), 0 10px 0 rgba(69, 91, 35, .22), 0 15px 22px rgba(49, 57, 22, .2); }
+}
+@media (max-width: 900px) { .abc123-classroom .abc-activities { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .abc123-classroom .abc-activities { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .abc123-classroom .abc-activity { transition: none; } .abc123-classroom .abc-activity-garden:hover { transform: none; } }
+
+/* Stationary garden ornaments sit behind the classroom content. */
+.abc123-classroom .classroom-main { position: relative; isolation: isolate; }
+.abc123-classroom .abc-garden-decor { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.abc123-classroom .abc-garden-decor svg { position: absolute; height: auto; pointer-events: none; filter: drop-shadow(0 3px 2px rgba(75, 76, 38, .18)); }
+.abc123-classroom .abc-garden-decor .abc-decor-defs { width: 0; height: 0; }
+.abc123-classroom .abc-decor-flower { width: clamp(55px, 8vw, 105px); }
+.abc123-classroom .abc-decor-peace { width: clamp(34px, 5vw, 62px); }
+.abc123-classroom .abc-decor-heart { width: clamp(26px, 4vw, 48px); }
+.abc123-classroom .abc-decor-one { top: 10%; left: 0; transform: rotate(-15deg); }
+.abc123-classroom .abc-decor-two { top: 31%; right: 0; transform: rotate(17deg); }
+.abc123-classroom .abc-decor-three { bottom: 7%; left: 1%; transform: rotate(12deg); }
+.abc123-classroom .abc-decor-four { bottom: 4%; right: 1%; transform: rotate(-12deg); }
+.abc123-classroom .abc-decor-five { top: 39%; left: 2%; transform: rotate(-12deg); }
+.abc123-classroom .abc-decor-six { top: 16%; right: 2%; transform: rotate(14deg); }
+.abc123-classroom .abc-decor-seven { bottom: 19%; right: 4%; transform: rotate(14deg); }
+.abc123-classroom .schoolhouse-back { display: flex; margin: 2rem auto 0; }
+@media (max-width: 900px) {
+    .abc123-classroom .abc-decor-flower { width: 60px; }
+    .abc123-classroom .abc-decor-two, .abc123-classroom .abc-decor-seven { display: none; }
+}
+@media (max-width: 600px) {
+    .abc123-classroom .abc-decor-flower { width: 45px; }
+    .abc123-classroom .abc-decor-five, .abc123-classroom .abc-decor-six { display: none; }
+}
+
+
+/* Neon butterflies and clustered flowers remain behind all classroom controls. */
+.abc123-classroom .abc-extra-flower { width: clamp(28px, 5vw, 70px); }
+.abc123-classroom .abc-extra-flower-1 { left: 2%; top: 5%; color: #fff1ce; transform: rotate(-12deg); }
+.abc123-classroom .abc-extra-flower-2 { left: 5%; top: 14%; color: #e991a9; width: 38px; transform: rotate(18deg); }
+.abc123-classroom .abc-extra-flower-3 { right: 3%; top: 7%; color: #c5a7df; transform: rotate(14deg); }
+.abc123-classroom .abc-extra-flower-4 { right: 7%; top: 23%; color: #86d5cf; width: 37px; }
+.abc123-classroom .abc-extra-flower-5 { left: 1%; top: 40%; color: #ffdb6a; width: 36px; }
+.abc123-classroom .abc-extra-flower-6 { left: 6%; top: 45%; color: #f1a470; width: 46px; transform: rotate(-18deg); }
+.abc123-classroom .abc-extra-flower-7 { right: 1%; top: 46%; color: #f4e6c1; transform: rotate(10deg); }
+.abc123-classroom .abc-extra-flower-8 { right: 5%; top: 52%; color: #e78b9b; width: 34px; }
+.abc123-classroom .abc-extra-flower-9 { left: 3%; bottom: 17%; color: #bda1d8; width: 46px; }
+.abc123-classroom .abc-extra-flower-10 { left: 7%; bottom: 8%; color: #7fcfc9; width: 32px; }
+.abc123-classroom .abc-extra-flower-11 { right: 1%; bottom: 14%; color: #ffd75f; width: 40px; }
+.abc123-classroom .abc-extra-flower-12 { right: 6%; bottom: 4%; color: #f2a16d; width: 48px; transform: rotate(16deg); }
+.abc123-classroom .abc-extra-peace { width: clamp(30px, 4vw, 46px); }
+.abc123-classroom .abc-extra-peace-1 { left: 4%; top: 26%; color: #fff4d5; transform: rotate(-18deg); }
+.abc123-classroom .abc-extra-peace-2 { right: 2%; top: 36%; color: #df7e79; transform: rotate(12deg); }
+.abc123-classroom .abc-extra-peace-3 { left: 3%; top: 59%; color: #a987c5; transform: rotate(16deg); }
+.abc123-classroom .abc-extra-peace-4 { right: 4%; top: 66%; color: #70af93; transform: rotate(-15deg); }
+.abc123-classroom .abc-extra-peace-5 { left: 3%; bottom: 2%; color: #d5a939; transform: rotate(10deg); }
+.abc123-classroom .abc-butterfly { position: absolute; width: clamp(50px, 7vw, 86px); pointer-events: none; }
+.abc123-classroom .abc-butterfly-hover { position: relative; width: 100%; aspect-ratio: 1; animation: abc-butterfly-hover 4s ease-in-out infinite alternate; }
+.abc123-classroom .abc-garden-decor .abc-butterfly svg { position: static; display: block; width: 100%; height: 100%; filter: drop-shadow(0 0 4px var(--wing-line)); }
+.abc123-classroom .abc-wing { transform-box: view-box; transform-origin: 50px 50px; backface-visibility: visible; }
+.abc123-classroom .abc-wing-left { animation: abc-wing-left var(--flutter) ease-in-out infinite alternate; }
+.abc123-classroom .abc-wing-right { animation: abc-wing-right var(--flutter) ease-in-out infinite alternate; }
+.abc123-classroom .abc-butterfly-1 { --wing-color: #77e7d0; --wing-line: #26b5c0; --flutter: .7s; top: 3%; left: 1%; }
+.abc123-classroom .abc-butterfly-2 { --wing-color: #e7a6e5; --wing-line: #ee69aa; --flutter: .85s; top: 19%; right: 1%; }
+.abc123-classroom .abc-butterfly-3 { --wing-color: #f8d875; --wing-line: #e8846b; --flutter: 1s; top: 50%; left: 0; }
+.abc123-classroom .abc-butterfly-4 { --wing-color: #8ad7e6; --wing-line: #3ca773; --flutter: 1.2s; bottom: 6%; right: 0; }
+.abc123-classroom .abc-butterfly-2 .abc-butterfly-hover { animation-duration: 3.4s; }
+.abc123-classroom .abc-butterfly-3 .abc-butterfly-hover { animation-duration: 4.5s; }
+.abc123-classroom .abc-butterfly-4 .abc-butterfly-hover { animation-duration: 3.8s; }
+@keyframes abc-wing-left { from { transform: perspective(180px) rotateY(0); } to { transform: perspective(180px) rotateY(48deg); } }
+@keyframes abc-wing-right { from { transform: perspective(180px) rotateY(0); } to { transform: perspective(180px) rotateY(-48deg); } }
+@keyframes abc-butterfly-hover { from { transform: translateY(0); } to { transform: translateY(-7px); } }
+@media (max-width: 900px) {
+    .abc123-classroom .abc-butterfly { width: 54px; }
+    .abc123-classroom :is(.abc-extra-flower-2, .abc-extra-flower-4, .abc-extra-flower-6, .abc-extra-flower-8, .abc-extra-flower-10, .abc-extra-flower-12, .abc-extra-peace-2, .abc-extra-peace-4) { display: none; }
+}
+@media (max-width: 600px) {
+    .abc123-classroom .abc-butterfly { width: 42px; }
+    .abc123-classroom :is(.abc-butterfly-2, .abc-butterfly-3, .abc-extra-flower-3, .abc-extra-flower-5, .abc-extra-flower-7, .abc-extra-flower-9, .abc-extra-peace-1, .abc-extra-peace-3) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .abc123-classroom :is(.abc-butterfly-hover, .abc-wing-left, .abc-wing-right) { animation: none; transform: none; }
+}
+
+/* A dedicated garden strip keeps the artwork visible between classroom content. */
+.abc123-classroom .abc-garden-decor {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    width: 100%;
+    height: 130px;
+    overflow: visible;
+    pointer-events: none;
+}
+.abc123-classroom .abc-garden-decor :is(.abc-decor-flower, .abc-decor-peace, .abc-decor-heart, .abc-extra-flower, .abc-extra-peace, .abc-butterfly) { inset: auto; }
+.abc123-classroom .abc-garden-decor .abc-butterfly { width: clamp(78px, 9vw, 100px); top: 16px; z-index: 1; }
+.abc123-classroom .abc-garden-decor .abc-butterfly-1 { left: 3%; }
+.abc123-classroom .abc-garden-decor .abc-butterfly-2 { left: 27%; }
+.abc123-classroom .abc-garden-decor .abc-butterfly-3 { left: 52%; }
+.abc123-classroom .abc-garden-decor .abc-butterfly-4 { right: 3%; }
+.abc123-classroom .abc-garden-decor :is(.abc-decor-flower, .abc-extra-flower) { bottom: 0; }
+.abc123-classroom .abc-garden-decor .abc-decor-one { left: 0; }
+.abc123-classroom .abc-garden-decor .abc-decor-two { left: 19%; }
+.abc123-classroom .abc-garden-decor .abc-decor-three { right: 19%; }
+.abc123-classroom .abc-garden-decor .abc-decor-four { right: 0; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-1 { left: 8%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-2 { left: 14%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-3 { left: 22%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-4 { left: 30%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-5 { left: 36%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-6 { left: 42%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-7 { left: 48%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-8 { left: 54%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-9 { left: 61%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-10 { left: 68%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-11 { left: 75%; }
+.abc123-classroom .abc-garden-decor .abc-extra-flower-12 { right: 6%; }
+.abc123-classroom .abc-garden-decor :is(.abc-decor-peace, .abc-extra-peace, .abc-decor-heart) { top: 0; }
+.abc123-classroom .abc-garden-decor .abc-decor-five { left: 15%; }
+.abc123-classroom .abc-garden-decor .abc-decor-six { right: 15%; }
+.abc123-classroom .abc-garden-decor .abc-decor-seven { left: 49%; }
+.abc123-classroom .abc-garden-decor .abc-extra-peace-1 { left: 21%; }
+.abc123-classroom .abc-garden-decor .abc-extra-peace-2 { left: 38%; }
+.abc123-classroom .abc-garden-decor .abc-extra-peace-3 { left: 60%; }
+.abc123-classroom .abc-garden-decor .abc-extra-peace-4 { right: 20%; }
+.abc123-classroom .abc-garden-decor .abc-extra-peace-5 { right: 9%; }
+@keyframes abc-wing-left { from { transform: perspective(180px) rotateY(0); } to { transform: perspective(180px) rotateY(62deg); } }
+@keyframes abc-wing-right { from { transform: perspective(180px) rotateY(0); } to { transform: perspective(180px) rotateY(-62deg); } }
+@media (max-width: 900px) {
+    .abc123-classroom .abc-garden-decor { height: 110px; }
+    .abc123-classroom .abc-garden-decor .abc-butterfly { width: 68px; }
+}
+@media (max-width: 600px) {
+    .abc123-classroom .abc-garden-decor { height: 90px; }
+    .abc123-classroom .abc-garden-decor .abc-butterfly { width: 58px; top: 14px; }
+    .abc123-classroom .abc-garden-decor .abc-butterfly-1 { left: 12%; }
+    .abc123-classroom .abc-garden-decor .abc-butterfly-4 { right: 12%; }
+}
