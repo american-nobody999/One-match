@@ -1,7 +1,7 @@
 "use strict";
 //Author: Leslie Brockman
 //Date:11-01-2026
-//Date modified: 11-11-2026
+//Date modified: 11-18-2026
 // regionId is navigation grouping; original IDs/governorates remain stable.
 // Sources support only their listed fields. Dates are ISO; verification means source review, not field investigation.
 // Legacy sourceUrl/sourcePublicationDate mirror the first source; unsupported fields remain null.
@@ -20,7 +20,7 @@ window.WEST_BANK_COMMUNITIES = [
         "sourceUrl": "https://www.ochaopt.org/50Stories/Salem_Umm_al_Khair.html",
         "sourcePublicationDate": null,
         "lastVerifiedDate": "2026-11-01",
-        "featureAnchor": "umm-al-khair",
+        "featureAnchor": null,
         "imagePath": null,
         "regionId": "hebron",
         "backgroundEn": "Umm al-Khair is a Palestinian village in the South Hebron Hills. Amnesty International’s 2022 account describes residents from the Hathaleen tribe whose families were displaced from Tel Arad in the Naqab in 1948 and subsequently bought the land of Umm al-Khair from residents of Yatta.",
@@ -56,6 +56,36 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "textEn": "On November 16, Israeli forces declared Umm al-Khair a closed military zone, forcing Hebron Governor Khaled Dudin and a visiting European delegation to leave. The delegation had arrived to assess conditions following repeated settler attacks and mounting displacement pressure.\n\nVillage council head Khalil al-Hathalin reported continued settler violence, property destruction, and restrictions on residents' movement. Israeli forces have blocked access roads with gates, earth mounds, and concrete barriers, disrupting access to healthcare, education, and essential supplies.\n\nOn November 18, reports indicated that settlers established another outpost between Umm al-Khair and Khashm al-Daraj, erecting tents and temporary structures on grazing land under Israeli military protection.\n\nThe community continues to face settlement expansion, restricted movement, and threats to its homes and agricultural land.\n\nThe immediate concern remains the safety of residents, access to essential services, and the growing threat of forced displacement.",
+            "textAr": "في 16 نوفمبر، أعلنت القوات الإسرائيلية منطقة أم الخير منطقة عسكرية مغلقة، وأجبرت محافظ الخليل خالد دودين ووفدًا أوروبيًا زائرًا على المغادرة. وكان الوفد قد وصل لتقييم الأوضاع بعد اعتداءات متكررة من المستوطنين وتصاعد الضغوط التي تهدد بتهجير السكان.\n\nوأفاد رئيس مجلس القرية خليل الهذالين باستمرار اعتداءات المستوطنين وتدمير الممتلكات وفرض قيود على حركة السكان. كما أغلقت القوات الإسرائيلية طرق الوصول بالبوابات والسواتر الترابية والحواجز الخرسانية، مما أعاق الوصول إلى الرعاية الصحية والتعليم والإمدادات الأساسية.\n\nوفي 18 نوفمبر، أشارت تقارير إلى إقامة بؤرة استيطانية جديدة بين أم الخير وخشم الدرج، حيث نصب مستوطنون خيامًا ومنشآت مؤقتة على أراضي الرعي، وسط تقارير عن حماية من الجيش الإسرائيلي.\n\nولا يزال المجتمع المحلي يواجه التوسع الاستيطاني والقيود على الحركة والتهديدات التي تطال المنازل والأراضي الزراعية.\n\nوتبقى الأولوية العاجلة حماية السكان وضمان وصولهم إلى الخدمات الأساسية ومواجهة خطر التهجير القسري المتزايد.",
+            "emphasizeFinalParagraph": true,
+            "sources": [
+                {
+                    "labelEn": "WAFA — November 16, 2026",
+                    "labelAr": "وفا — ١٦ نوفمبر ٢٠٢٦",
+                    "url": "https://english.wafa.ps/Pages/Details/176989"
+                },
+                {
+                    "labelEn": "Anadolu coverage — November 16, 2026",
+                    "labelAr": "تغطية الأناضول — ١٦ نوفمبر ٢٠٢٦",
+                    "url": "https://www.anews.com.tr/world/2026/11/16/israel-declares-west-bank-village-closed-military-zone-forcing-european-delegation-to-leave"
+                },
+                {
+                    "labelEn": "Saba — November 18, 2026 (reported outpost account)",
+                    "labelAr": "سبأ — ١٨ نوفمبر ٢٠٢٦ (تقرير عن البؤرة الاستيطانية)",
+                    "url": "https://saba.ye/en/news3837822.htm"
+                }
+            ]
+        },
+        "locationMap": {
+            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.170164%2C31.422089%2C35.200164%2C31.442089&layer=mapnik&marker=31.432089%2C35.185164",
+            "largerMapUrl": "https://www.openstreetmap.org/?mlat=31.432089&mlon=35.185164#map=15/31.432089/35.185164"
+        },
+        "previousReports": [
+            {
             "date": "2026-11-11",
             "dateLabelEn": "November 11, 2026",
             "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
@@ -74,11 +104,6 @@ window.WEST_BANK_COMMUNITIES = [
                 }
             ]
         },
-        "locationMap": {
-            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.170164%2C31.422089%2C35.200164%2C31.442089&layer=mapnik&marker=31.432089%2C35.185164",
-            "largerMapUrl": "https://www.openstreetmap.org/?mlat=31.432089&mlon=35.185164#map=15/31.432089/35.185164"
-        },
-        "previousReports": [
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -154,6 +179,40 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "On November 16, Israeli forces detained seven Palestinians and seized a vehicle during a raid on Khirbet Khushm al-Karm in Masafer Yatta, according to WAFA. Anti-settlement activist Osama Makhamreh reported that five members of one family and two brothers staying at a guesthouse were detained.\n\nMakhamreh also reported that Israeli settlers assaulted international activists in Shaab al-Butum, stole a mobile phone, and seized Palestinian-owned water tanks and other property.\n\nThese incidents followed additional restrictions documented by UN OCHA. On November 5 and 7, Israeli forces confiscated four Palestinian vehicles, including two agricultural tractors, and detained nine residents in Halaweh and Khirbet al-Majaz. OCHA reported that all nine were released that day, while one vehicle remained confiscated as of November 13.\n\nResidents continue to face restrictions on movement, transportation, agricultural livelihoods, and access to essential services.",
+            "textAr": "في 16 نوفمبر، احتجزت القوات الإسرائيلية سبعة فلسطينيين وصادرت مركبة خلال اقتحام خربة خشم الكرم في مسافر يطا، وفقًا لوكالة وفا. وأفاد الناشط المناهض للاستيطان أسامة مخامرة بأن المحتجزين شملوا خمسة أفراد من عائلة واحدة وشقيقين كانا في مضافة.\n\nوأفاد مخامرة أيضًا بأن مستوطنين اعتدوا على ناشطين دوليين في شعب البطم، وسرقوا هاتفًا محمولًا، واستولوا على خزانات مياه وممتلكات أخرى تعود لفلسطينيين.\n\nوجاءت هذه الحوادث بعد قيود إضافية وثقها مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية. ففي 5 و7 نوفمبر، صادرت القوات الإسرائيلية أربع مركبات فلسطينية، بينها جراران زراعيان، واحتجزت تسعة سكان في الحلاوة وخربة المجاز. وأفاد المكتب بالإفراج عن التسعة في اليوم نفسه، بينما ظلت إحدى المركبات مصادرة حتى 13 نوفمبر.\n\nولا يزال السكان يواجهون قيودًا على الحركة والنقل وسبل العيش الزراعية والوصول إلى الخدمات الأساسية.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — November 16, 2026",
+                    "labelAr": "وفا — ١٦ نوفمبر ٢٠٢٦",
+                    "url": "https://english.wafa.ps/Pages/Details/177003"
+                },
+                {
+                    "labelEn": "UN OCHA — November 13, 2026",
+                    "labelAr": "أوتشا — ١٣ نوفمبر ٢٠٢٦",
+                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-13-november-2026"
+                }
+            ]
+        },
+        "locationMap": {
+            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.120833%2C31.34%2C35.240833%2C31.42&layer=mapnik",
+            "largerMapUrl": "https://www.openstreetmap.org/#map=12/31.38/35.180833",
+            "captionEn": "Approximate Masafer Yatta area, not an exact community location.",
+            "captionAr": "منطقة مسافر يطا التقريبية، وليست موقعًا دقيقًا لتجمع سكاني محدد.",
+            "titleEn": "Approximate Masafer Yatta area",
+            "titleAr": "منطقة مسافر يطا التقريبية",
+            "buttonLabelEn": "Open Larger Map",
+            "buttonLabelAr": "فتح خريطة أكبر",
+            "latitude": 31.38,
+            "longitude": 35.180833,
+            "geographicReferenceUrl": "https://www.wikidata.org/wiki/Q6782301"
+        },
+        "previousReports": [
+            {
             "date": "2026-11-11",
             "dateLabelEn": "November 11, 2026",
             "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
@@ -182,20 +241,6 @@ window.WEST_BANK_COMMUNITIES = [
                 }
             ]
         },
-        "locationMap": {
-            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.120833%2C31.34%2C35.240833%2C31.42&layer=mapnik",
-            "largerMapUrl": "https://www.openstreetmap.org/#map=12/31.38/35.180833",
-            "captionEn": "Approximate Masafer Yatta area, not an exact community location.",
-            "captionAr": "منطقة مسافر يطا التقريبية، وليست موقعًا دقيقًا لتجمع سكاني محدد.",
-            "titleEn": "Approximate Masafer Yatta area",
-            "titleAr": "منطقة مسافر يطا التقريبية",
-            "buttonLabelEn": "Open Larger Map",
-            "buttonLabelAr": "فتح خريطة أكبر",
-            "latitude": 31.38,
-            "longitude": 35.180833,
-            "geographicReferenceUrl": "https://www.wikidata.org/wiki/Q6782301"
-        },
-        "previousReports": [
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -261,6 +306,50 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "On November 16, a European Union delegation visited Hebron's Old City to review conditions facing Palestinian residents. The Hebron Rehabilitation Committee briefed the delegation on local challenges and accompanied representatives through the area.\n\nThe visit followed a ten-day Israeli military operation that ended November 2. UN OCHA reported that approximately 3,000 Palestinians had been displaced from the Jildah and Ein Deir Bahah neighborhoods, although the figure remained under verification.\n\nFamilies returning home reported damaged belongings and homes used as military positions. Humanitarian organizations continued assessing damage and arranging shelter repairs. OCHA reported that approximately 500 food parcels had been mobilized for distribution through municipal teams.\n\nIn the city's H2 area, residents also face longstanding checkpoint restrictions affecting access to homes, schools, healthcare, markets, and the Ibrahimi Mosque.\n\nThe immediate priorities remain safe movement, adequate shelter, and assistance for families recovering from the operation.",
+            "textAr": "في 16 نوفمبر، زار وفد من الاتحاد الأوروبي البلدة القديمة في الخليل للاطلاع على الظروف التي يواجهها السكان الفلسطينيون. وقد أطلعت لجنة إعمار الخليل الوفد على التحديات المحلية، ورافقت ممثليه في جولة ميدانية بالمنطقة.\n\nوجاءت الزيارة عقب عملية عسكرية إسرائيلية استمرت عشرة أيام وانتهت في 2 نوفمبر. وأفاد مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية بأن نحو 3,000 فلسطيني نزحوا من حيي جلدة وعين دير بحّة، مع الإشارة إلى أن أعداد النازحين لا تزال قيد التحقق.\n\nوأبلغت عائلات عادت إلى منازلها عن أضرار في ممتلكاتها ومنازل استُخدمت مواقع عسكرية. وواصلت المنظمات الإنسانية تقييم الأضرار وترتيب إصلاحات للمساكن. كما أفاد المكتب بتجهيز نحو 500 طرد غذائي لتوزيعها عبر فرق البلدية.\n\nوفي منطقة H2 من المدينة، يواجه السكان أيضًا قيودًا طويلة الأمد عند الحواجز، تؤثر في الوصول إلى المنازل والمدارس والرعاية الصحية والأسواق والمسجد الإبراهيمي.\n\nوتبقى الأولويات العاجلة ضمان حرية الحركة بأمان، وتوفير المأوى الملائم، ومساعدة العائلات المتضررة من العملية العسكرية.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — November 16, 2026",
+                    "labelAr": "وفا — ١٦ نوفمبر ٢٠٢٦",
+                    "url": "https://english.wafa.ps/Pages/Details/176995"
+                },
+                {
+                    "labelEn": "UN OCHA — November 13, 2026",
+                    "labelAr": "أوتشا — ١٣ نوفمبر ٢٠٢٦",
+                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-13-november-2026"
+                },
+                {
+                    "labelEn": "UN OCHA — November 5, 2026",
+                    "labelAr": "أوتشا — ٥ نوفمبر ٢٠٢٦",
+                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-5-november-2026"
+                },
+                {
+                    "labelEn": "UN OCHA — July 10, 2026 (historical H2 context)",
+                    "labelAr": "أوتشا — ١٠ يوليو ٢٠٢٦ (السياق التاريخي لمنطقة H2)",
+                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-10-july-2026"
+                }
+            ]
+        },
+        "locationMap": {
+            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.0638%2C31.50935%2C35.1238%2C31.54935&layer=mapnik&marker=31.52935%2C35.0938",
+            "largerMapUrl": "https://www.openstreetmap.org/?mlat=31.52935&mlon=35.0938#map=13/31.52935/35.0938",
+            "captionEn": "Approximate Hebron City location, not an exact residential address.",
+            "captionAr": "الموقع التقريبي لمدينة الخليل، وليس عنوانًا سكنيًا دقيقًا.",
+            "titleEn": "Approximate Hebron City location",
+            "titleAr": "الموقع التقريبي لمدينة الخليل",
+            "buttonLabelEn": "Open Larger Map",
+            "buttonLabelAr": "فتح خريطة أكبر",
+            "latitude": 31.52935,
+            "longitude": 35.0938,
+            "geographicReferenceUrl": "https://www.geonames.org/285066/hebron.html"
+        },
+        "previousReports": [
+            {
             "date": "2026-11-11",
             "dateLabelEn": "November 11, 2026",
             "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
@@ -279,20 +368,6 @@ window.WEST_BANK_COMMUNITIES = [
                 }
             ]
         },
-        "locationMap": {
-            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.0638%2C31.50935%2C35.1238%2C31.54935&layer=mapnik&marker=31.52935%2C35.0938",
-            "largerMapUrl": "https://www.openstreetmap.org/?mlat=31.52935&mlon=35.0938#map=13/31.52935/35.0938",
-            "captionEn": "Approximate Hebron City location, not an exact residential address.",
-            "captionAr": "الموقع التقريبي لمدينة الخليل، وليس عنوانًا سكنيًا دقيقًا.",
-            "titleEn": "Approximate Hebron City location",
-            "titleAr": "الموقع التقريبي لمدينة الخليل",
-            "buttonLabelEn": "Open Larger Map",
-            "buttonLabelAr": "فتح خريطة أكبر",
-            "latitude": 31.52935,
-            "longitude": 35.0938,
-            "geographicReferenceUrl": "https://www.geonames.org/285066/hebron.html"
-        },
-        "previousReports": [
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -367,6 +442,39 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "Jenin Refugee Camp remains at the center of a prolonged displacement crisis following the Israeli military operation launched on January 21, 2025.\n\nUNRWA reports that the camp was emptied of its residents and that its four schools and health centre remain inaccessible. Education and healthcare services are being provided to displaced families at alternative locations.\n\nHuman Rights Watch documented widespread destruction and forced displacement in Jenin, Tulkarm, and Nur Shams refugee camps, finding that Israeli authorities had prevented displaced residents from returning to their homes.\n\nThe humanitarian consequences extend beyond damaged buildings. Families have lost access to their neighborhoods, schools, healthcare facilities, and established community networks.\n\nAs of this November 19 reporting update, no new camp-specific incident during November 12–18 has been independently confirmed from the sources reviewed.\n\nThe immediate priorities remain safe return, protection of displaced families, access to essential services, and reconstruction of damaged homes and infrastructure.",
+            "textAr": "لا يزال مخيم جنين للاجئين يواجه أزمة نزوح طويلة الأمد منذ بدء العملية العسكرية الإسرائيلية في 21 يناير 2025.\n\nوتفيد وكالة الأونروا بأن المخيم أُفرغ من سكانه، وأن مدارسه الأربع ومركزه الصحي لا تزال غير متاحة. وتُقدَّم خدمات التعليم والرعاية الصحية للأسر النازحة في مواقع بديلة.\n\nووثقت منظمة هيومن رايتس ووتش دمارًا واسع النطاق وتهجيرًا قسريًا في مخيمات جنين وطولكرم ونور شمس، وخلصت إلى أن السلطات الإسرائيلية منعت السكان النازحين من العودة إلى منازلهم.\n\nولا تقتصر الآثار الإنسانية على المباني المتضررة، إذ فقدت العائلات إمكانية الوصول إلى أحيائها ومدارسها ومرافقها الصحية وشبكاتها المجتمعية.\n\nوحتى إعداد هذا التقرير بتاريخ 19 نوفمبر، لم يتأكد بشكل مستقل وقوع حادث جديد داخل المخيم تحديدًا خلال الفترة من 12 إلى 18 نوفمبر، استنادًا إلى المصادر التي جرت مراجعتها.\n\nوتبقى الأولويات العاجلة ضمان العودة الآمنة وحماية الأسر النازحة والوصول إلى الخدمات الأساسية وإعادة إعمار المنازل والبنية التحتية المتضررة.",
+            "sources": [
+                {
+                    "labelEn": "UNRWA — Jenin Camp, January 7, 2026 (historical and ongoing conditions)",
+                    "labelAr": "الأونروا — مخيم جنين، ٧ يناير ٢٠٢٦ (الظروف التاريخية والمستمرة)",
+                    "url": "https://www.unrwa.org/where-we-work/our-locations/occupied-west-bank-including-east-jerusalem/jenin-camp"
+                },
+                {
+                    "labelEn": "Human Rights Watch — All My Dreams Have Been Erased, November 20, 2025 (historical and ongoing conditions)",
+                    "labelAr": "هيومن رايتس ووتش — مُحيت كل أحلامي، ٢٠ نوفمبر ٢٠٢٥ (الظروف التاريخية والمستمرة)",
+                    "url": "https://www.hrw.org/report/2025/11/20/all-my-dreams-have-been-erased/israels-forced-displacement-of-palestinians-in-the"
+                }
+            ]
+        },
+        "locationMap": {
+            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.27778%2C32.45033%2C35.29778%2C32.47033&layer=mapnik&marker=32.46033%2C35.28778",
+            "largerMapUrl": "https://www.openstreetmap.org/?mlat=32.46033&mlon=35.28778#map=15/32.46033/35.28778",
+            "captionEn": "Approximate Jenin Refugee Camp location, not an exact residential address.",
+            "captionAr": "الموقع التقريبي لمخيم جنين للاجئين، وليس عنوانًا سكنيًا دقيقًا.",
+            "titleEn": "Approximate Jenin Refugee Camp location",
+            "titleAr": "الموقع التقريبي لمخيم جنين للاجئين",
+            "buttonLabelEn": "Open Larger Map",
+            "buttonLabelAr": "فتح خريطة أكبر",
+            "latitude": 32.46033,
+            "longitude": 35.28778
+        },
+        "previousReports": [
+            {
             "date": "2026-11-11",
             "dateLabelEn": "November 11, 2026",
             "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
@@ -385,19 +493,6 @@ window.WEST_BANK_COMMUNITIES = [
                 }
             ]
         },
-        "locationMap": {
-            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.27778%2C32.45033%2C35.29778%2C32.47033&layer=mapnik&marker=32.46033%2C35.28778",
-            "largerMapUrl": "https://www.openstreetmap.org/?mlat=32.46033&mlon=35.28778#map=15/32.46033/35.28778",
-            "captionEn": "Approximate Jenin Refugee Camp location, not an exact residential address.",
-            "captionAr": "الموقع التقريبي لمخيم جنين للاجئين، وليس عنوانًا سكنيًا دقيقًا.",
-            "titleEn": "Approximate Jenin Refugee Camp location",
-            "titleAr": "الموقع التقريبي لمخيم جنين للاجئين",
-            "buttonLabelEn": "Open Larger Map",
-            "buttonLabelAr": "فتح خريطة أكبر",
-            "latitude": 32.46033,
-            "longitude": 35.28778
-        },
-        "previousReports": [
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -485,16 +580,27 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "On November 11, reports described Israeli forces entering Ya'bad, southwest of Jenin, raiding a Palestinian home and arresting a resident. The incident adds to concerns about military raids, arrests, and restrictions affecting Palestinian communities in the Jenin governorate.",
-            "textAr": "في 11 نوفمبر، أفادت تقارير بدخول القوات الإسرائيلية إلى بلدة يعبد جنوب غرب جنين، ومداهمة منزل فلسطيني واعتقال أحد السكان. ويضاف هذا الحادث إلى المخاوف المتعلقة بالاقتحامات العسكرية والاعتقالات والقيود التي تؤثر على التجمعات الفلسطينية في محافظة جنين.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "On November 13, Israeli settlers reportedly attacked Palestinian families harvesting olives near Khirbet Srouj, west of Ya'bad, according to local sources cited by Arab News. The families included relatives of brothers Wafiq and Muwafaq Houshiya. Settlers reportedly took harvested olives, agricultural tools, and equipment.\n\nOn November 14, Palestinian news outlets reported another Israeli military entry into Ya'bad. Available reports did not establish whether anyone was detained or injured during that entry.\n\nThe incidents followed earlier restrictions on movement. In October, WAFA reported that Israeli forces installed iron gates at entrances to Ya'bad and roads connecting neighboring villages. The municipality warned that these barriers obstruct travel to schools, workplaces, healthcare facilities, and emergency services.\n\nThe immediate concerns are residents' safety, protection of agricultural livelihoods, and reliable access to roads and essential services.",
+            "textAr": "في 13 نوفمبر، أفادت مصادر محلية نقلت عنها صحيفة عرب نيوز بأن مستوطنين إسرائيليين اعتدوا على عائلات فلسطينية كانت تقطف الزيتون قرب خربة صروج غرب يعبد. وشملت العائلات أقارب الشقيقين وفيق وموفق حوشية. وبحسب التقارير، استولى المستوطنون على الزيتون المقطوف وأدوات ومعدات زراعية.\n\nوفي 14 نوفمبر، أفادت وسائل إعلام فلسطينية بدخول قوات إسرائيلية إلى يعبد مرة أخرى. ولم تؤكد التقارير المتاحة وقوع اعتقالات أو إصابات خلال هذا الدخول.\n\nوجاءت هذه الحوادث بعد قيود سابقة على الحركة. ففي أكتوبر، ذكرت وكالة وفا أن القوات الإسرائيلية نصبت بوابات حديدية عند مداخل يعبد وعلى الطرق التي تربط القرى المجاورة. وحذرت البلدية من أن هذه الحواجز تعيق الوصول إلى المدارس وأماكن العمل والمرافق الصحية وخدمات الطوارئ.\n\nوتتمثل المخاوف العاجلة في سلامة السكان وحماية سبل العيش الزراعية وضمان الوصول المنتظم إلى الطرق والخدمات الأساسية.",
             "sources": [
                 {
-                    "labelEn": "WAFA — Jenin governorate arrests, including Ya'bad, November 11, 2026 (Arabic)",
-                    "labelAr": "وفا — الاحتلال يعتقل 5 مواطنين من جنين، بما يشمل يعبد، 11 نوفمبر 2026",
-                    "url": "https://www.wafa.ps/news/2026/11/11/الاحتلال-يعتقل-5-مواطنين-من-جنين"
+                    "labelEn": "Arab News — November 13, 2026",
+                    "labelAr": "عرب نيوز — 13 نوفمبر 2026",
+                    "url": "https://arabnews.maestronewsroom.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740"
+                },
+                {
+                    "labelEn": "Palestine Post / Nabd — November 14, 2026",
+                    "labelAr": "فلسطين بوست / نبض — 14 نوفمبر 2026",
+                    "url": "https://nabd.com/s/180821407-ed3d25/"
+                },
+                {
+                    "labelEn": "WAFA — October 12, 2026 (historical context)",
+                    "labelAr": "وفا — 12 أكتوبر 2026 (سياق تاريخي)",
+                    "url": "https://english.wafa.ps/Pages/Details/175763"
                 }
             ]
         },
@@ -512,6 +618,20 @@ window.WEST_BANK_COMMUNITIES = [
             "geographicReferenceUrl": "https://mapcarta.com/28086798"
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "On November 11, reports described Israeli forces entering Ya'bad, southwest of Jenin, raiding a Palestinian home and arresting a resident. The incident adds to concerns about military raids, arrests, and restrictions affecting Palestinian communities in the Jenin governorate.",
+            "textAr": "في 11 نوفمبر، أفادت تقارير بدخول القوات الإسرائيلية إلى بلدة يعبد جنوب غرب جنين، ومداهمة منزل فلسطيني واعتقال أحد السكان. ويضاف هذا الحادث إلى المخاوف المتعلقة بالاقتحامات العسكرية والاعتقالات والقيود التي تؤثر على التجمعات الفلسطينية في محافظة جنين.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — Jenin governorate arrests, including Ya'bad, November 11, 2026 (Arabic)",
+                    "labelAr": "وفا — الاحتلال يعتقل 5 مواطنين من جنين، بما يشمل يعبد، 11 نوفمبر 2026",
+                    "url": "https://www.wafa.ps/news/2026/11/11/الاحتلال-يعتقل-5-مواطنين-من-جنين"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -586,16 +706,27 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "On November 4, WAFA reported that Israeli forces ordered 25 families from homes in the western area near Tulkarm Refugee Camp and converted several houses into military positions. Forces also posted a warning at the entrance to the camp's al-Balawneh neighborhood, declaring the camp a closed military zone. The reported measures further restricted access to the camp and affected nearby residents.",
-            "textAr": "في 4 نوفمبر، أفادت وكالة وفا بأن القوات الإسرائيلية أجبرت 25 عائلة على مغادرة منازلها في المنطقة الغربية القريبة من مخيم طولكرم للاجئين، وحوّلت عدة منازل إلى مواقع عسكرية. كما وضعت القوات لافتة تحذيرية عند مدخل حي البلاونة في المخيم، تعلن المخيم منطقة عسكرية مغلقة. وأدت الإجراءات المبلغ عنها إلى فرض مزيد من القيود على الوصول إلى المخيم والتأثير على السكان المجاورين.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "On November 17, Tulkarm Refugee Camp's Popular Committee warned that an Israeli military order would seize land in Tulkarm and Nur Shams camps for military purposes. The order covers roads cut through demolished homes, potentially preventing displaced residents from rebuilding on those sites.\n\nOn November 18, Israeli forces sealed the northern entrance to Tulkarm Refugee Camp with earth mounds, according to eyewitnesses cited by WAFA. Explosions were heard inside the camp, with smoke rising above the area. The cause and extent of the blasts were not immediately established.\n\nResidents remain barred from returning following the military operation that began in January 2025. UNRWA reports that the camp was emptied and its schools and health centre remain inaccessible, with services provided at alternative locations.\n\nThe immediate concerns are continued displacement, blocked access, property rights, and the growing obstacles to returning home and rebuilding.",
+            "textAr": "في 17 نوفمبر، حذرت اللجنة الشعبية لخدمات مخيم طولكرم من أن أمرًا عسكريًا إسرائيليًا يقضي بالاستيلاء على أراضٍ داخل مخيمي طولكرم ونور شمس لأغراض عسكرية. ويشمل الأمر طرقًا شُقت عبر أنقاض منازل مهدمة، مما قد يمنع السكان النازحين من إعادة البناء في تلك المواقع.\n\nوفي 18 نوفمبر، أغلقت القوات الإسرائيلية المدخل الشمالي لمخيم طولكرم بسواتر ترابية، وفقًا لشهود عيان نقلت عنهم وكالة وفا. وسُمعت انفجارات داخل المخيم، وشوهد الدخان يتصاعد من المنطقة. ولم تتضح على الفور أسباب الانفجارات أو حجم آثارها.\n\nولا يزال السكان ممنوعين من العودة منذ العملية العسكرية التي بدأت في يناير 2025. وتفيد الأونروا بأن المخيم أُفرغ من سكانه، وأن مدارسه ومركزه الصحي لا تزال غير متاحة، بينما تُقدَّم الخدمات في مواقع بديلة.\n\nوتبقى المخاوف العاجلة استمرار النزوح وإغلاق طرق الوصول وحقوق الملكية وتزايد العقبات أمام العودة وإعادة الإعمار.",
             "sources": [
                 {
-                    "labelEn": "WAFA — Tulkarm camp access restrictions and nearby displacement, November 4, 2026",
-                    "labelAr": "وفا — قيود الوصول إلى مخيم طولكرم ونزوح السكان المجاورين، 4 نوفمبر 2026",
-                    "url": "https://english.wafa.ps/Pages/Details/176659"
+                    "labelEn": "WAFA — November 17, 2026",
+                    "labelAr": "وفا — 17 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/177089"
+                },
+                {
+                    "labelEn": "WAFA — November 18, 2026",
+                    "labelAr": "وفا — 18 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/177106"
+                },
+                {
+                    "labelEn": "UNRWA — Tulkarm Camp, January 3, 2026 (historical and ongoing conditions)",
+                    "labelAr": "الأونروا — مخيم طولكرم، 3 يناير 2026 (الظروف التاريخية والمستمرة)",
+                    "url": "https://www.unrwa.org/where-we-work/our-locations/occupied-west-bank-including-east-jerusalem/tulkarm-camp"
                 }
             ]
         },
@@ -613,6 +744,20 @@ window.WEST_BANK_COMMUNITIES = [
             "geographicReferenceUrl": "https://mapcarta.com/N920077429"
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "On November 4, WAFA reported that Israeli forces ordered 25 families from homes in the western area near Tulkarm Refugee Camp and converted several houses into military positions. Forces also posted a warning at the entrance to the camp's al-Balawneh neighborhood, declaring the camp a closed military zone. The reported measures further restricted access to the camp and affected nearby residents.",
+            "textAr": "في 4 نوفمبر، أفادت وكالة وفا بأن القوات الإسرائيلية أجبرت 25 عائلة على مغادرة منازلها في المنطقة الغربية القريبة من مخيم طولكرم للاجئين، وحوّلت عدة منازل إلى مواقع عسكرية. كما وضعت القوات لافتة تحذيرية عند مدخل حي البلاونة في المخيم، تعلن المخيم منطقة عسكرية مغلقة. وأدت الإجراءات المبلغ عنها إلى فرض مزيد من القيود على الوصول إلى المخيم والتأثير على السكان المجاورين.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — Tulkarm camp access restrictions and nearby displacement, November 4, 2026",
+                    "labelAr": "وفا — قيود الوصول إلى مخيم طولكرم ونزوح السكان المجاورين، 4 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/176659"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -682,16 +827,27 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "On November 3, WAFA reported explosions near the western entrance of Nur Shams Refugee Camp, east of Tulkarm. Local sources described thick smoke rising from the area, but the precise nature of the explosions remained unclear because of restrictions on access. WAFA also reported continuing military restrictions, infrastructure destruction, and residents being prevented from returning to the camp.",
-            "textAr": "في 3 نوفمبر، أفادت وكالة وفا بوقوع انفجارات قرب المدخل الغربي لمخيم نور شمس للاجئين، شرق طولكرم. ووصفت مصادر محلية تصاعد دخان كثيف من المنطقة، لكن طبيعة الانفجارات الدقيقة ظلت غير واضحة بسبب القيود المفروضة على الوصول. كما أفادت وفا باستمرار القيود العسكرية وتدمير البنية التحتية ومنع السكان من العودة إلى المخيم.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "On November 17, Tulkarm Refugee Camp's Popular Committee warned that an Israeli military order targeted land and roads inside both Tulkarm and Nur Shams refugee camps. The roads were carved through areas where homes had been demolished. The committee warned that military control over these sites could prevent displaced families from rebuilding.\n\nOn November 18, WAFA reported explosions inside Nur Shams Refugee Camp, east of Tulkarm. Witnesses heard successive blasts and saw smoke rising from the camp. The full extent of the damage was not immediately established.\n\nThe developments follow prolonged military restrictions and displacement. A September United Nations human rights report documented the forced displacement of Nur Shams residents and extensive damage to homes and infrastructure.\n\nResidents continue to face barriers to returning, recovering property, and rebuilding their community.\n\nThe immediate concerns are civilian safety, the right of return, and protection of residents' homes and land.",
+            "textAr": "في 17 نوفمبر، حذرت اللجنة الشعبية لخدمات مخيم طولكرم من أمر عسكري إسرائيلي يستهدف أراضي وطرقًا داخل مخيمي طولكرم ونور شمس. وقد شُقت هذه الطرق في مناطق هُدمت فيها منازل. وحذرت اللجنة من أن فرض السيطرة العسكرية على هذه المواقع قد يمنع العائلات النازحة من إعادة البناء.\n\nوفي 18 نوفمبر، أفادت وكالة وفا بوقوع تفجيرات داخل مخيم نور شمس للاجئين شرق طولكرم. وسمع شهود عيان انفجارات متتالية وشاهدوا الدخان يتصاعد من المخيم. ولم يتضح على الفور الحجم الكامل للأضرار.\n\nوتأتي هذه التطورات في ظل قيود عسكرية ونزوح مستمرين منذ فترة طويلة. وقد وثق تقرير للأمم المتحدة بشأن حقوق الإنسان، صدر في سبتمبر، التهجير القسري لسكان مخيم نور شمس والأضرار الواسعة التي لحقت بالمنازل والبنية التحتية.\n\nولا يزال السكان يواجهون عقبات أمام العودة واستعادة ممتلكاتهم وإعادة بناء مجتمعهم.\n\nوتبقى المخاوف العاجلة سلامة المدنيين والحق في العودة وحماية منازل السكان وأراضيهم.",
             "sources": [
                 {
-                    "labelEn": "WAFA — Nur Shams camp explosions and access restrictions, November 3, 2026",
-                    "labelAr": "وفا — انفجارات مخيم نور شمس وقيود الوصول، 3 نوفمبر 2026",
-                    "url": "https://english.wafa.ps/Pages/Details/176631"
+                    "labelEn": "WAFA — November 17, 2026",
+                    "labelAr": "وفا — 17 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/177089"
+                },
+                {
+                    "labelEn": "WAFA — November 18, 2026",
+                    "labelAr": "وفا — 18 نوفمبر 2026",
+                    "url": "https://french.wafa.ps/Pages/Details/248427"
+                },
+                {
+                    "labelEn": "United Nations Human Rights — September 4, 2026 (historical context)",
+                    "labelAr": "الأمم المتحدة لحقوق الإنسان — 4 سبتمبر 2026 (سياق تاريخي)",
+                    "url": "https://palestine.un.org/en/322146-israeli-forces-expelled-palestinian-refugees-three-west-bank-camps-violation-international"
                 }
             ]
         },
@@ -708,6 +864,20 @@ window.WEST_BANK_COMMUNITIES = [
             "longitude": 35.05981
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "On November 3, WAFA reported explosions near the western entrance of Nur Shams Refugee Camp, east of Tulkarm. Local sources described thick smoke rising from the area, but the precise nature of the explosions remained unclear because of restrictions on access. WAFA also reported continuing military restrictions, infrastructure destruction, and residents being prevented from returning to the camp.",
+            "textAr": "في 3 نوفمبر، أفادت وكالة وفا بوقوع انفجارات قرب المدخل الغربي لمخيم نور شمس للاجئين، شرق طولكرم. ووصفت مصادر محلية تصاعد دخان كثيف من المنطقة، لكن طبيعة الانفجارات الدقيقة ظلت غير واضحة بسبب القيود المفروضة على الوصول. كما أفادت وفا باستمرار القيود العسكرية وتدمير البنية التحتية ومنع السكان من العودة إلى المخيم.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — Nur Shams camp explosions and access restrictions, November 3, 2026",
+                    "labelAr": "وفا — انفجارات مخيم نور شمس وقيود الوصول، 3 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/176631"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -777,7 +947,28 @@ window.WEST_BANK_COMMUNITIES = [
                 "supportAr": "النزوح"
             }
         ],
-        "weeklyRecap": {
+        "weeklyRecap": null,
+        "pendingReport": {
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "textEn": "November 19, 2026 — Community reporting update pending. No new incident specific to Khirbet Ras al-Ahmar has been independently verified for this reporting period. Previous reports and community resources remain available below.",
+            "textAr": "١٩ نوفمبر ٢٠٢٦ — تحديث التقرير المجتمعي قيد الإعداد. لم يتم التحقق بشكل مستقل من وقوع حادث جديد يخص خربة الرأس الأحمر تحديدًا خلال فترة التقرير هذه. وتظل التقارير السابقة ومصادر المجتمع متاحة أدناه."
+        },
+        "locationMap": {
+            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.44369%2C32.25600%2C35.46369%2C32.27600&layer=mapnik&marker=32.26600%2C35.45369",
+            "largerMapUrl": "https://www.openstreetmap.org/?mlat=32.26600&mlon=35.45369#map=15/32.26600/35.45369",
+            "captionEn": "Approximate Khirbet Ras al-Ahmar community location, not an exact residential address.",
+            "captionAr": "الموقع التقريبي لتجمع خربة الرأس الأحمر، وليس عنوانًا سكنيًا دقيقًا.",
+            "titleEn": "Approximate Khirbet Ras al-Ahmar community location",
+            "titleAr": "الموقع التقريبي لتجمع خربة الرأس الأحمر",
+            "buttonLabelEn": "Open Larger Map",
+            "buttonLabelAr": "فتح خريطة أكبر",
+            "latitude": 32.266,
+            "longitude": 35.45369,
+            "geographicReferenceUrl": "https://mapcarta.com/N8259280608"
+        },
+        "previousReports": [
+            {
             "date": "2026-11-11",
             "dateLabelEn": "November 11, 2026",
             "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
@@ -795,21 +986,7 @@ window.WEST_BANK_COMMUNITIES = [
                     "url": "https://english.wafa.ps/Pages/Details/176799"
                 }
             ]
-        },
-        "locationMap": {
-            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.44369%2C32.25600%2C35.46369%2C32.27600&layer=mapnik&marker=32.26600%2C35.45369",
-            "largerMapUrl": "https://www.openstreetmap.org/?mlat=32.26600&mlon=35.45369#map=15/32.26600/35.45369",
-            "captionEn": "Approximate Khirbet Ras al-Ahmar community location, not an exact residential address.",
-            "captionAr": "الموقع التقريبي لتجمع خربة الرأس الأحمر، وليس عنوانًا سكنيًا دقيقًا.",
-            "titleEn": "Approximate Khirbet Ras al-Ahmar community location",
-            "titleAr": "الموقع التقريبي لتجمع خربة الرأس الأحمر",
-            "buttonLabelEn": "Open Larger Map",
-            "buttonLabelAr": "فتح خريطة أكبر",
-            "latitude": 32.266,
-            "longitude": 35.45369,
-            "geographicReferenceUrl": "https://mapcarta.com/N8259280608"
-        },
-        "previousReports": [
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -880,6 +1057,50 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "Israeli forces carried out repeated incursions into Tammun, south of Tubas, during November 13–17.\n\nWAFA reported that military patrols entered the town overnight on November 13–14, searched a Palestinian home, and ransacked its contents. Another incursion was reported on November 16, with no arrests reported in Tammun during that operation.\n\nLate on November 17, Israeli soldiers raided the home of former prisoner Nitham Basharat and severely beat him, according to local sources cited by WAFA on November 18. The report did not establish his subsequent medical condition.\n\nThe raids followed an Israeli military decision on November 8 to install an iron gate near Atuf, east of Tammun, adding to movement restrictions affecting surrounding communities.\n\nThe immediate concerns are residents' safety during home raids, protection from assault, and access to roads and essential services.",
+            "textAr": "نفذت القوات الإسرائيلية اقتحامات متكررة لبلدة طمون جنوب طوباس خلال الفترة من 13 إلى 17 نوفمبر.\n\nوأفادت وكالة وفا بأن دوريات عسكرية دخلت البلدة خلال ليلة 13 إلى 14 نوفمبر، وفتشت منزلًا فلسطينيًا وعبثت بمحتوياته. كما أُبلغ عن اقتحام آخر في 16 نوفمبر، دون تسجيل اعتقالات في طمون خلال تلك العملية.\n\nوفي وقت متأخر من 17 نوفمبر، اقتحم جنود إسرائيليون منزل الأسير السابق نظام بشارات واعتدوا عليه بالضرب المبرح، وفقًا لمصادر محلية نقلت عنها وفا في 18 نوفمبر. ولم يوضح التقرير حالته الصحية بعد الاعتداء.\n\nوجاءت هذه الاقتحامات بعد إقامة بوابة حديدية إسرائيلية قرب قرية عاطوف شرق طمون في 8 نوفمبر، مما أضاف قيودًا على حركة السكان في التجمعات المحيطة.\n\nوتبقى المخاوف العاجلة سلامة السكان خلال اقتحام المنازل، وحمايتهم من الاعتداءات، وضمان الوصول إلى الطرق والخدمات الأساسية.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — November 18, 2026: Assault during Tammun home raid",
+                    "labelAr": "وفا — 18 نوفمبر 2026: اعتداء خلال مداهمة منزل في طمون",
+                    "url": "https://english.wafa.ps/Pages/Details/177093"
+                },
+                {
+                    "labelEn": "WAFA — November 14, 2026: Tammun home search",
+                    "labelAr": "وفا — 14 نوفمبر 2026: تفتيش منزل في طمون",
+                    "url": "https://english.wafa.ps/Pages/Details/176909"
+                },
+                {
+                    "labelEn": "WAFA — November 16, 2026: Tammun incursion",
+                    "labelAr": "وفا — 16 نوفمبر 2026: اقتحام طمون",
+                    "url": "https://french.wafa.ps/Pages/Details/248389"
+                },
+                {
+                    "labelEn": "WAFA — November 8, 2026: Gate near Atuf",
+                    "labelAr": "وفا — 8 نوفمبر 2026: بوابة قرب عاطوف",
+                    "url": "https://english.wafa.ps/Pages/Details/176734"
+                }
+            ]
+        },
+        "locationMap": {
+            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.37478%2C32.27275%2C35.39478%2C32.29275&layer=mapnik&marker=32.28275%2C35.38478",
+            "largerMapUrl": "https://www.openstreetmap.org/?mlat=32.28275&mlon=35.38478#map=15/32.28275/35.38478",
+            "captionEn": "Approximate Tammun town location, not an exact residential address.",
+            "captionAr": "الموقع التقريبي لبلدة طمون، وليس عنوانًا سكنيًا دقيقًا.",
+            "titleEn": "Approximate Tammun town location",
+            "titleAr": "الموقع التقريبي لبلدة طمون",
+            "buttonLabelEn": "Open Larger Map",
+            "buttonLabelAr": "فتح خريطة أكبر",
+            "latitude": 32.28275,
+            "longitude": 35.38478,
+            "geographicReferenceUrl": "https://mapcarta.com/12908992"
+        },
+        "previousReports": [
+            {
             "date": "2026-11-11",
             "dateLabelEn": "November 11, 2026",
             "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
@@ -902,21 +1123,7 @@ window.WEST_BANK_COMMUNITIES = [
                     "url": "https://english.wafa.ps/Pages/Details/176734"
                 }
             ]
-        },
-        "locationMap": {
-            "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.37478%2C32.27275%2C35.39478%2C32.29275&layer=mapnik&marker=32.28275%2C35.38478",
-            "largerMapUrl": "https://www.openstreetmap.org/?mlat=32.28275&mlon=35.38478#map=15/32.28275/35.38478",
-            "captionEn": "Approximate Tammun town location, not an exact residential address.",
-            "captionAr": "الموقع التقريبي لبلدة طمون، وليس عنوانًا سكنيًا دقيقًا.",
-            "titleEn": "Approximate Tammun town location",
-            "titleAr": "الموقع التقريبي لبلدة طمون",
-            "buttonLabelEn": "Open Larger Map",
-            "buttonLabelAr": "فتح خريطة أكبر",
-            "latitude": 32.28275,
-            "longitude": 35.38478,
-            "geographicReferenceUrl": "https://mapcarta.com/12908992"
-        },
-        "previousReports": [
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -987,21 +1194,22 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "On November 1, WAFA reported that Israeli forces raided Burin, south of Nablus, searched several homes, and detained four Palestinian residents. On November 6, reporting described Israeli settlers cutting electricity poles supplying the Soufan family home near the Yitzhar settlement. The property houses three families, and local sources described repeated attacks on its electricity supply.",
-            "textAr": "في 1 نوفمبر، أفادت وكالة وفا بأن القوات الإسرائيلية اقتحمت قرية بورين جنوب نابلس، وفتشت عدة منازل واعتقلت أربعة من السكان الفلسطينيين. وفي 6 نوفمبر، أفادت تقارير بأن مستوطنين إسرائيليين قطعوا أعمدة الكهرباء التي تغذي منزل عائلة صوفان بالقرب من مستوطنة يتسهار. ويضم المنزل ثلاث عائلات، ووصفت مصادر محلية اعتداءات متكررة على شبكة الكهرباء الخاصة به.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "Burin, south of Nablus, continues to face attacks on essential infrastructure and restrictions affecting residents' daily lives.\n\nIn its November 13 humanitarian report, UN OCHA documented damage to water pipelines in Burin and nearby Beit Imrin during November 3–9. The damage disrupted water supplies to six households across the two villages. In Burin, Israeli forces and a settlement guard reportedly obstructed repairs, leaving at least two households without running water.\n\nOn November 6, WAFA reported that settlers cut electricity poles supplying the Soufan family's home near the Yitzhar settlement. Local sources described repeated attacks against the property and surrounding agricultural land.\n\nThese documented incidents occurred earlier in November. No additional Burin-specific incident during November 12–18 was confirmed in the sources reviewed.\n\nThe immediate concerns are reliable water and electricity, residents' safety, and protection of homes and agricultural livelihoods.",
+            "textAr": "تواصل قرية بورين جنوب نابلس مواجهة اعتداءات تستهدف البنية التحتية الأساسية وقيودًا تؤثر في الحياة اليومية للسكان.\n\nوثق مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية في تقريره الصادر يوم 13 نوفمبر أضرارًا لحقت بخطوط المياه في بورين وبيت إمرين المجاورة خلال الفترة من 3 إلى 9 نوفمبر. وأدت الأضرار إلى انقطاع المياه عن ست أسر في القريتين. وفي بورين، أفادت التقارير بأن القوات الإسرائيلية وحارسًا لإحدى المستوطنات عرقلوا أعمال الإصلاح، مما ترك أسرتين على الأقل دون مياه جارية.\n\nوفي 6 نوفمبر، أفادت وكالة وفا بأن مستوطنين قطعوا أعمدة الكهرباء التي تغذي منزل عائلة صوفان قرب مستوطنة يتسهار. ووصفت مصادر محلية اعتداءات متكررة تستهدف المنزل والأراضي الزراعية المحيطة به.\n\nوقعت هذه الحوادث الموثقة في وقت سابق من نوفمبر. ولم تؤكد المصادر التي جرت مراجعتها وقوع حادث إضافي يخص بورين تحديدًا خلال الفترة من 12 إلى 18 نوفمبر.\n\nوتبقى المخاوف العاجلة ضمان إمدادات المياه والكهرباء وسلامة السكان وحماية المنازل وسبل العيش الزراعية.",
             "sources": [
                 {
-                    "labelEn": "WAFA — Burin raid, November 1, 2026",
-                    "labelAr": "وفا — اقتحام بورين، 1 نوفمبر 2026",
-                    "url": "https://english.wafa.ps/Pages/Details/176476"
+                    "labelEn": "UN OCHA — November 13, 2026",
+                    "labelAr": "أوتشا — 13 نوفمبر 2026",
+                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-13-november-2026"
                 },
                 {
-                    "labelEn": "Al Shorouk — Burin electricity supply attack, November 6, 2026",
-                    "labelAr": "الشروق — الاعتداء على إمدادات الكهرباء في بورين، 6 نوفمبر 2026",
-                    "url": "https://alshorouk.ps/en/post?id=13062&slug=settlers-burn-tents-in-duma-and-cut-electricity-to-a-home-in-burin"
+                    "labelEn": "WAFA — November 6, 2026",
+                    "labelAr": "وفا — 6 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/176687"
                 }
             ]
         },
@@ -1019,6 +1227,25 @@ window.WEST_BANK_COMMUNITIES = [
             "geographicReferenceUrl": "https://mapcarta.com/12914106"
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "On November 1, WAFA reported that Israeli forces raided Burin, south of Nablus, searched several homes, and detained four Palestinian residents. On November 6, reporting described Israeli settlers cutting electricity poles supplying the Soufan family home near the Yitzhar settlement. The property houses three families, and local sources described repeated attacks on its electricity supply.",
+            "textAr": "في 1 نوفمبر، أفادت وكالة وفا بأن القوات الإسرائيلية اقتحمت قرية بورين جنوب نابلس، وفتشت عدة منازل واعتقلت أربعة من السكان الفلسطينيين. وفي 6 نوفمبر، أفادت تقارير بأن مستوطنين إسرائيليين قطعوا أعمدة الكهرباء التي تغذي منزل عائلة صوفان بالقرب من مستوطنة يتسهار. ويضم المنزل ثلاث عائلات، ووصفت مصادر محلية اعتداءات متكررة على شبكة الكهرباء الخاصة به.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — Burin raid, November 1, 2026",
+                    "labelAr": "وفا — اقتحام بورين، 1 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/176476"
+                },
+                {
+                    "labelEn": "Al Shorouk — Burin electricity supply attack, November 6, 2026",
+                    "labelAr": "الشروق — الاعتداء على إمدادات الكهرباء في بورين، 6 نوفمبر 2026",
+                    "url": "https://alshorouk.ps/en/post?id=13062&slug=settlers-burn-tents-in-duma-and-cut-electricity-to-a-home-in-burin"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -1084,21 +1311,27 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "The most recent community-specific reporting verified for Madama concerns restrictions imposed during October. WAFA reported that Israeli forces closed the village's entrances, severely restricting residents' movement and access to medical care and essential supplies. An October 21 Al Jazeera investigation also documented the village's isolation and difficulties accessing neighboring communities. No separate new attack specifically inside Madama has been verified for November 1–11 in the sources reviewed.",
-            "textAr": "تتعلق أحدث التقارير التي أمكن التحقق منها بشأن قرية مادما بالقيود المفروضة خلال شهر أكتوبر. وأفادت وكالة وفا بأن القوات الإسرائيلية أغلقت مداخل القرية، مما فرض قيودًا شديدة على حركة السكان ووصولهم إلى الرعاية الطبية والإمدادات الأساسية. كما وثق تحقيق نشرته الجزيرة في 21 أكتوبر عزلة القرية والصعوبات التي يواجهها السكان في الوصول إلى التجمعات المجاورة. ولم يتم التحقق من وقوع اعتداء جديد منفصل داخل مادما خلال الفترة من 1 إلى 11 نوفمبر في المصادر التي تمت مراجعتها.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "Madama, south of Nablus, has faced severe restrictions on movement following the closure of its main access roads by Israeli forces in October.\n\nVillage council head Rami Nassar told WAFA that the northern entrance, the road toward Burin, and the western route toward Asira al-Qibliya were blocked. Residents reported difficulty reaching workplaces, schools, medical care, and agricultural land.\n\nOn October 20, WAFA described a medical emergency in which residents had to carry a man suffering a heart attack on foot through mountainous terrain because an ambulance could not reach the village. Nassar also warned of shortages of medicine and essential supplies affecting a population of more than 2,500.\n\nAl Jazeera subsequently documented how the restrictions disrupted schooling, healthcare, and the olive harvest.\n\nNo new Madama-specific incident from November 12–18 was confirmed in the sources reviewed.\n\nThe immediate concerns remain emergency medical access, freedom of movement, and residents' ability to sustain their livelihoods.",
+            "textAr": "واجهت قرية مادما جنوب نابلس قيودًا شديدة على الحركة عقب إغلاق القوات الإسرائيلية طرق الوصول الرئيسية إليها في أكتوبر.\n\nوأبلغ رئيس مجلس القرية رامي نصار وكالة وفا بإغلاق المدخل الشمالي والطريق المؤدي إلى بورين والطريق الغربي باتجاه عصيرة القبلية. وأفاد السكان بصعوبات في الوصول إلى أماكن العمل والمدارس والرعاية الطبية والأراضي الزراعية.\n\nوفي 20 أكتوبر، وثقت وفا حالة طبية طارئة اضطر خلالها السكان إلى حمل رجل أصيب بنوبة قلبية سيرًا عبر منطقة جبلية، بسبب تعذر وصول سيارة الإسعاف إلى القرية. وحذر نصار أيضًا من نقص الأدوية والإمدادات الأساسية، في قرية يزيد عدد سكانها على 2,500 شخص.\n\nووثقت الجزيرة لاحقًا تأثير القيود على التعليم والرعاية الصحية وقطاف الزيتون.\n\nولم تؤكد المصادر التي جرت مراجعتها وقوع حادث جديد يخص مادما تحديدًا خلال الفترة من 12 إلى 18 نوفمبر.\n\nوتبقى المخاوف العاجلة ضمان وصول خدمات الإسعاف والرعاية الطبية، وحرية الحركة، وقدرة السكان على الحفاظ على سبل عيشهم.",
             "sources": [
                 {
-                    "labelEn": "WAFA — Madama closures, published October 20, 2026 (events of October 19)",
-                    "labelAr": "وفا — إغلاق مداخل مادما، نُشر في 20 أكتوبر 2026 (أحداث 19 أكتوبر)",
+                    "labelEn": "WAFA — October 18, 2026 (earlier reporting)",
+                    "labelAr": "وفا — 18 أكتوبر 2026 (تغطية سابقة)",
+                    "url": "https://english.wafa.ps/Pages/Details/176003"
+                },
+                {
+                    "labelEn": "WAFA — October 20, 2026 (earlier reporting)",
+                    "labelAr": "وفا — 20 أكتوبر 2026 (تغطية سابقة)",
                     "url": "https://english.wafa.ps/Pages/Details/176097"
                 },
                 {
-                    "labelEn": "Al Jazeera — Madama isolation investigation, October 21, 2026",
-                    "labelAr": "الجزيرة — تحقيق حول عزلة مادما، 21 أكتوبر 2026",
-                    "url": "https://www.aljazeera.com/features/2026/10/21/from-one-house-to-whole-villages-settlers-have-palestinians-surrounded"
+                    "labelEn": "Al Jazeera — October 23, 2026 (earlier reporting)",
+                    "labelAr": "الجزيرة — 23 أكتوبر 2026 (تغطية سابقة)",
+                    "url": "https://www.aljazeera.com/news/2026/10/23/israeli-roadblocks-disrupt-schools-and-medical-care-in-west-bank-village"
                 }
             ]
         },
@@ -1116,6 +1349,25 @@ window.WEST_BANK_COMMUNITIES = [
             "geographicReferenceUrl": "https://mapcarta.com/N432068943"
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "The most recent community-specific reporting verified for Madama concerns restrictions imposed during October. WAFA reported that Israeli forces closed the village's entrances, severely restricting residents' movement and access to medical care and essential supplies. An October 21 Al Jazeera investigation also documented the village's isolation and difficulties accessing neighboring communities. No separate new attack specifically inside Madama has been verified for November 1–11 in the sources reviewed.",
+            "textAr": "تتعلق أحدث التقارير التي أمكن التحقق منها بشأن قرية مادما بالقيود المفروضة خلال شهر أكتوبر. وأفادت وكالة وفا بأن القوات الإسرائيلية أغلقت مداخل القرية، مما فرض قيودًا شديدة على حركة السكان ووصولهم إلى الرعاية الطبية والإمدادات الأساسية. كما وثق تحقيق نشرته الجزيرة في 21 أكتوبر عزلة القرية والصعوبات التي يواجهها السكان في الوصول إلى التجمعات المجاورة. ولم يتم التحقق من وقوع اعتداء جديد منفصل داخل مادما خلال الفترة من 1 إلى 11 نوفمبر في المصادر التي تمت مراجعتها.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — Madama closures, published October 20, 2026 (events of October 19)",
+                    "labelAr": "وفا — إغلاق مداخل مادما، نُشر في 20 أكتوبر 2026 (أحداث 19 أكتوبر)",
+                    "url": "https://english.wafa.ps/Pages/Details/176097"
+                },
+                {
+                    "labelEn": "Al Jazeera — Madama isolation investigation, October 21, 2026",
+                    "labelAr": "الجزيرة — تحقيق حول عزلة مادما، 21 أكتوبر 2026",
+                    "url": "https://www.aljazeera.com/features/2026/10/21/from-one-house-to-whole-villages-settlers-have-palestinians-surrounded"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -1181,16 +1433,27 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "The latest verified community-specific incidents reviewed for Yabrud occurred in October. According to UN OCHA, Israeli settlers attempted to steal a Palestinian family's vehicle on October 20 and assaulted three family members who intervened, leaving one with a skull fracture and an eye injury. On October 22, settlers damaged the village's main water network and diverted two water lines toward nearby settlement outposts, interrupting water supplies to approximately 700 residents for two days. The UN reported that service was subsequently restored. No separate November 1–11 incident in Yabrud was confirmed in the sources reviewed.",
-            "textAr": "وقعت أحدث الحوادث التي أمكن التحقق منها في قرية يبرود خلال شهر أكتوبر. ووفقًا لمكتب الأمم المتحدة لتنسيق الشؤون الإنسانية، حاول مستوطنون إسرائيليون سرقة مركبة تابعة لعائلة فلسطينية في 20 أكتوبر، واعتدوا على ثلاثة من أفراد العائلة الذين حاولوا منع السرقة، مما أدى إلى إصابة أحدهم بكسر في الجمجمة وإصابة في العين. وفي 22 أكتوبر، ألحق مستوطنون أضرارًا بشبكة المياه الرئيسية للقرية وحوّلوا خطي مياه باتجاه بؤر استيطانية قريبة، مما أدى إلى انقطاع المياه عن نحو 700 من السكان لمدة يومين. وأفادت الأمم المتحدة بإعادة الخدمة لاحقًا. ولم يتم تأكيد وقوع حادث منفصل في يبرود خلال الفترة من 1 إلى 11 نوفمبر في المصادر التي تمت مراجعتها.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "On November 14, Israeli forces closed the entrance gates to Yabrud and neighboring Deir Jarir, east of Ramallah, according to WAFA. The closures followed an incident in which settlers shot and wounded a Palestinian driver at the entrance to Deir Jarir. The shooting occurred in Deir Jarir, not Yabrud.\n\nYabrud has also experienced repeated attacks on residents and infrastructure. On October 22, settlers damaged the village's main water network and diverted two pipelines toward nearby settlement outposts. UN OCHA reported that approximately 700 residents lost water access for two days. The supply was subsequently restored.\n\nEarlier in October, WAFA documented assaults on residents and damage to homes and property.\n\nThe November 14 gate closures are the latest Yabrud-specific development confirmed in the sources reviewed. The October incidents provide historical context.\n\nThe immediate concerns are freedom of movement, residents' safety, and protection of essential infrastructure.",
+            "textAr": "في 14 نوفمبر، أغلقت القوات الإسرائيلية بوابات مداخل قريتي يبرود ودير جرير المجاورة شرق رام الله، وفقًا لوكالة وفا. وجاء الإغلاق عقب إطلاق مستوطنين النار على سائق فلسطيني وإصابته عند مدخل دير جرير. ووقع إطلاق النار في دير جرير، وليس في يبرود.\n\nوشهدت يبرود أيضًا اعتداءات متكررة استهدفت السكان والبنية التحتية. ففي 22 أكتوبر، ألحق مستوطنون أضرارًا بشبكة المياه الرئيسية للقرية وحوّلوا خطي مياه باتجاه بؤر استيطانية مجاورة. وأفاد مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية بأن نحو 700 من السكان فقدوا الوصول إلى المياه لمدة يومين، قبل استعادة الإمدادات لاحقًا.\n\nوفي وقت سابق من أكتوبر، وثقت وكالة وفا اعتداءات على السكان وأضرارًا لحقت بالمنازل والممتلكات.\n\nويُعد إغلاق البوابات في 14 نوفمبر أحدث تطور يخص يبرود أمكن تأكيده في المصادر التي جرت مراجعتها. أما حوادث أكتوبر فتُذكر بوصفها سياقًا تاريخيًا.\n\nوتبقى المخاوف العاجلة حرية التنقل وسلامة السكان وحماية البنية التحتية الأساسية.",
             "sources": [
                 {
-                    "labelEn": "UN OCHA — Humanitarian Situation Report, October 29, 2026",
-                    "labelAr": "أوتشا — تقرير الحالة الإنسانية، 29 أكتوبر 2026",
-                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-29-october-2026"
+                    "labelEn": "WAFA — November 14, 2026: Yabrud and Deir Jarir gate closures",
+                    "labelAr": "وفا — 14 نوفمبر 2026: إغلاق بوابات يبرود ودير جرير",
+                    "url": "https://english.wafa.ps/Pages/Details/176922"
+                },
+                {
+                    "labelEn": "UN OCHA — October 29, 2026: Yabrud water network damage",
+                    "labelAr": "أوتشا — 29 أكتوبر 2026: أضرار شبكة المياه في يبرود",
+                    "url": "https://container.ochaopt.org/content/humanitarian-situation-report-29-october-2026"
+                },
+                {
+                    "labelEn": "WAFA — October 9, 2026: Assault in Yabrud",
+                    "labelAr": "وفا — 9 أكتوبر 2026: اعتداء في يبرود",
+                    "url": "https://english.wafa.ps/Pages/Details/175666"
                 }
             ]
         },
@@ -1208,6 +1471,20 @@ window.WEST_BANK_COMMUNITIES = [
             "geographicReferenceUrl": "https://mapcarta.com/12908312"
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "The latest verified community-specific incidents reviewed for Yabrud occurred in October. According to UN OCHA, Israeli settlers attempted to steal a Palestinian family's vehicle on October 20 and assaulted three family members who intervened, leaving one with a skull fracture and an eye injury. On October 22, settlers damaged the village's main water network and diverted two water lines toward nearby settlement outposts, interrupting water supplies to approximately 700 residents for two days. The UN reported that service was subsequently restored. No separate November 1–11 incident in Yabrud was confirmed in the sources reviewed.",
+            "textAr": "وقعت أحدث الحوادث التي أمكن التحقق منها في قرية يبرود خلال شهر أكتوبر. ووفقًا لمكتب الأمم المتحدة لتنسيق الشؤون الإنسانية، حاول مستوطنون إسرائيليون سرقة مركبة تابعة لعائلة فلسطينية في 20 أكتوبر، واعتدوا على ثلاثة من أفراد العائلة الذين حاولوا منع السرقة، مما أدى إلى إصابة أحدهم بكسر في الجمجمة وإصابة في العين. وفي 22 أكتوبر، ألحق مستوطنون أضرارًا بشبكة المياه الرئيسية للقرية وحوّلوا خطي مياه باتجاه بؤر استيطانية قريبة، مما أدى إلى انقطاع المياه عن نحو 700 من السكان لمدة يومين. وأفادت الأمم المتحدة بإعادة الخدمة لاحقًا. ولم يتم تأكيد وقوع حادث منفصل في يبرود خلال الفترة من 1 إلى 11 نوفمبر في المصادر التي تمت مراجعتها.",
+            "sources": [
+                {
+                    "labelEn": "UN OCHA — Humanitarian Situation Report, October 29, 2026",
+                    "labelAr": "أوتشا — تقرير الحالة الإنسانية، 29 أكتوبر 2026",
+                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-29-october-2026"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -1278,16 +1555,22 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "The most recent verified incident reviewed near Rammun occurred on October 20. UN OCHA reported that Israeli settlers accompanied by Israeli forces attacked Palestinian Bedouin families east of Rammun, detained family members, and stole approximately 100 sheep, moving them toward a nearby settlement outpost. No additional attack specifically in Rammun was independently confirmed for November 1–11 in the sources reviewed.",
-            "textAr": "وقعت أحدث حادثة أمكن التحقق منها بالقرب من رمّون في 20 أكتوبر. وأفاد مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية بأن مستوطنين إسرائيليين برفقة قوات إسرائيلية اعتدوا على عائلات بدوية فلسطينية شرق رمّون، واحتجزوا أفرادًا من العائلات، وسرقوا نحو 100 رأس من الأغنام، واقتادوها باتجاه بؤرة استيطانية قريبة. ولم يتم تأكيد وقوع اعتداء إضافي داخل رمّون خلال الفترة من 1 إلى 11 نوفمبر بصورة مستقلة في المصادر التي تمت مراجعتها.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "Rammun, east of Ramallah, remains exposed to settler violence affecting nearby Palestinian Bedouin families, grazing land, and access roads.\n\nUN OCHA reported that on October 20, Israeli settlers accompanied by Israeli forces attacked Bedouin families east of Rammun. According to the report, family members were detained and approximately 100 sheep were taken from a livestock shelter and driven toward a nearby settlement outpost.\n\nEarlier, on February 7, WAFA reported that armed settlers blocked the road between Rammun and Deir Dibwan and assaulted two Palestinians. One suffered a head injury requiring hospital treatment; the other sustained bruises. Israeli forces also entered Rammun and fired tear gas and stun grenades.\n\nThese are documented earlier incidents, not new November attacks. No additional Rammun-specific incident during November 12–18 was confirmed in the sources reviewed.\n\nThe continuing concerns are residents' safety, livestock and grazing access, and freedom of movement.",
+            "textAr": "تواجه قرية رمّون شرق رام الله مخاطر عنف المستوطنين الذي يؤثر في العائلات البدوية الفلسطينية القريبة وأراضي الرعي وطرق الوصول.\n\nأفاد مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية بأن مستوطنين إسرائيليين، برفقة قوات إسرائيلية، هاجموا عائلات بدوية شرق رمّون في 20 أكتوبر. ووفقًا للتقرير، احتُجز أفراد من العائلات، واستولى المستوطنون على نحو 100 رأس من الأغنام من حظيرة للمواشي وساقوها باتجاه بؤرة استيطانية مجاورة.\n\nوفي وقت سابق، أفادت وكالة وفا في 7 فبراير بأن مستوطنين مسلحين أغلقوا الطريق بين رمّون ودير دبوان واعتدوا على فلسطينيين اثنين. وأصيب أحدهما في رأسه ونُقل إلى المستشفى لتلقي العلاج، بينما أصيب الآخر بكدمات. كما دخلت القوات الإسرائيلية رمّون وأطلقت قنابل الغاز المسيل للدموع والقنابل الصوتية.\n\nهذه حوادث سابقة موثقة، وليست اعتداءات جديدة وقعت في نوفمبر. ولم تؤكد المصادر التي جرت مراجعتها وقوع حادث إضافي يخص رمّون تحديدًا خلال الفترة من 12 إلى 18 نوفمبر.\n\nوتبقى المخاوف المستمرة سلامة السكان وحماية المواشي والوصول إلى أراضي الرعي وحرية التنقل.",
             "sources": [
                 {
-                    "labelEn": "UN OCHA — Humanitarian Situation Report, October 29, 2026",
-                    "labelAr": "أوتشا — تقرير الحالة الإنسانية، 29 أكتوبر 2026",
-                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-29-october-2026"
+                    "labelEn": "UN OCHA — October 29, 2026: Attack east of Rammun",
+                    "labelAr": "أوتشا — 29 أكتوبر 2026: اعتداء شرق رمّون",
+                    "url": "https://container.ochaopt.org/content/humanitarian-situation-report-29-october-2026"
+                },
+                {
+                    "labelEn": "WAFA — February 7, 2026: Assault between Rammun and Deir Dibwan",
+                    "labelAr": "وفا — 7 فبراير 2026: اعتداء بين رمّون ودير دبوان",
+                    "url": "https://english.wafa.ps/Pages/Details/167181"
                 }
             ]
         },
@@ -1304,6 +1587,20 @@ window.WEST_BANK_COMMUNITIES = [
             "longitude": 35.29946
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "The most recent verified incident reviewed near Rammun occurred on October 20. UN OCHA reported that Israeli settlers accompanied by Israeli forces attacked Palestinian Bedouin families east of Rammun, detained family members, and stole approximately 100 sheep, moving them toward a nearby settlement outpost. No additional attack specifically in Rammun was independently confirmed for November 1–11 in the sources reviewed.",
+            "textAr": "وقعت أحدث حادثة أمكن التحقق منها بالقرب من رمّون في 20 أكتوبر. وأفاد مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية بأن مستوطنين إسرائيليين برفقة قوات إسرائيلية اعتدوا على عائلات بدوية فلسطينية شرق رمّون، واحتجزوا أفرادًا من العائلات، وسرقوا نحو 100 رأس من الأغنام، واقتادوها باتجاه بؤرة استيطانية قريبة. ولم يتم تأكيد وقوع اعتداء إضافي داخل رمّون خلال الفترة من 1 إلى 11 نوفمبر بصورة مستقلة في المصادر التي تمت مراجعتها.",
+            "sources": [
+                {
+                    "labelEn": "UN OCHA — Humanitarian Situation Report, October 29, 2026",
+                    "labelAr": "أوتشا — تقرير الحالة الإنسانية، 29 أكتوبر 2026",
+                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-29-october-2026"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -1335,11 +1632,26 @@ window.WEST_BANK_COMMUNITIES = [
         "featureAnchor": null,
         "imagePath": null,
         "regionId": "other-areas",
-        "backgroundEn": "Immatin is a Palestinian village in Qalqilya Governorate, in the northern West Bank.",
-        "backgroundAr": "إماتين قرية فلسطينية تقع في محافظة قلقيلية شمال الضفة الغربية.",
+        "backgroundEn": "Immatin (إماتين) is a Palestinian village east of Qalqilya in the northern West Bank. Olive cultivation, farming, and livestock are important to the local community.\n\nThe village has experienced longstanding restrictions affecting agricultural land and construction. Parts of its surrounding farmland lie in Area C, where Israeli planning restrictions and nearby settlements have affected residents' access to land.\n\nIn July 2026, WAFA reported that Israeli authorities demolished residential and agricultural structures south of Immatin that had served 22 families.",
+        "backgroundAr": "إماتين قرية فلسطينية تقع شرق قلقيلية في شمال الضفة الغربية. وتُعد زراعة الزيتون والزراعة وتربية المواشي من مصادر الرزق المهمة لسكانها.\n\nتواجه القرية منذ سنوات قيودًا تؤثر على الأراضي الزراعية والبناء. وتقع أجزاء من الأراضي المحيطة بها ضمن المنطقة «ج»، حيث أثرت قيود التخطيط الإسرائيلية والمستوطنات المجاورة على وصول السكان إلى أراضيهم.\n\nوفي يوليو 2026، أفادت وكالة وفا بأن السلطات الإسرائيلية هدمت منشآت سكنية وزراعية جنوب إماتين كانت تخدم 22 عائلة.",
         "concernsEn": "WAFA, citing local sources, reported injuries in a settler assault on Palestinians on their land in Immatin on 5 October 2026.",
         "concernsAr": "أفادت وفا، نقلًا عن مصادر محلية، بوقوع إصابات في اعتداء مستوطنين على فلسطينيين في أراضيهم بإماتين في 5 أكتوبر 2026.",
         "sources": [
+            {
+                "labelEn": "WAFA — July 14, 2026: demolitions in Immatin",
+                "labelAr": "وفا — 14 يوليو 2026: عمليات هدم في إماتين",
+                "url": "https://english.wafa.ps/Pages/Details/172644"
+            },
+            {
+                "labelEn": "UN OCHA — Humanitarian Situation Update #295",
+                "labelAr": "أوتشا — تحديث الحالة الإنسانية رقم 295",
+                "url": "https://www.ochaopt.org/content/humanitarian-situation-update-295-west-bank"
+            },
+            {
+                "labelEn": "Land Research Center — Agricultural construction restrictions in Immatin",
+                "labelAr": "مركز أبحاث الأراضي — قيود البناء الزراعي في إماتين",
+                "url": "https://poica.org/2022/03/halt-of-work-notice-for-an-agricultural-room-in-immatin-village-east-qalqilya/"
+            },
             {
                 "labelEn": "WAFA — Assault in Immatin, 5 October 2026",
                 "labelAr": "وفا — اعتداء في إماتين، 5 أكتوبر 2026",
@@ -1355,20 +1667,21 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "During November 1–11, Israeli military operations affected Immatin, east of Qalqilya. Reporting published November 5 described Israeli forces establishing a checkpoint at the village entrance, stopping vehicles, searching them, and checking passengers' identification. A November 10 report described further raids on homes in Immatin, searches of their contents, and the detention of four Palestinians. These reports document both movement restrictions and house raids during the reporting period.",
-            "textAr": "خلال الفترة من 1 إلى 11 نوفمبر، تأثرت قرية إماتين، شرق قلقيلية، بعمليات عسكرية إسرائيلية. ووصفت تقارير نُشرت في 5 نوفمبر إقامة قوات إسرائيلية حاجزًا عسكريًا عند مدخل القرية، حيث أوقفت المركبات وفتشتها ودققت في هويات ركابها. كما أفاد تقرير بتاريخ 10 نوفمبر بمداهمة منازل في إماتين وتفتيش محتوياتها واعتقال أربعة فلسطينيين. وتوثق هذه التقارير قيودًا على الحركة ومداهمات للمنازل خلال فترة التغطية.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "Residents of Immatin, east of Qalqilya, faced repeated movement restrictions and reported settler harassment during November.\n\nAccording to the Palestinian monitoring platform Mo3ta, Israeli forces established checkpoints at the village entrance on November 12, 13, 14, 15, and 16, obstructing traffic. The same source reported that settlers threw stones at Palestinian vehicles traveling between Immatin and Asira al-Qibliya on November 12.\n\nEarlier, on November 8, the monitoring platform recorded an Israeli military raid and the arrest of four residents. Palestinian Information Center also reported four arrests in Immatin in its November 10 coverage.\n\nThese incidents follow longstanding pressure on the community's homes and farmland. In July, WAFA documented the demolition of residential and agricultural structures serving 22 families in an area south of the village.\n\nThe immediate concerns are freedom of movement, residents' safety, and access to agricultural livelihoods.",
+            "textAr": "واجه سكان قرية إماتين شرق قلقيلية قيودًا متكررة على الحركة ومضايقات من المستوطنين خلال نوفمبر، وفقًا للتقارير.\n\nبحسب منصة معطى الفلسطينية للرصد، أقامت القوات الإسرائيلية حواجز عند مدخل القرية أيام 12 و13 و14 و15 و16 نوفمبر، مما أعاق حركة المرور. وأفادت المنصة نفسها بأن مستوطنين رشقوا مركبات فلسطينية بالحجارة على الطريق بين إماتين وعصيرة القبلية في 12 نوفمبر.\n\nوفي وقت سابق، بتاريخ 8 نوفمبر، وثقت المنصة اقتحامًا عسكريًا إسرائيليًا واعتقال أربعة من سكان القرية. كما أفاد المركز الفلسطيني للإعلام باعتقال أربعة فلسطينيين في إماتين ضمن تغطيته المنشورة في 10 نوفمبر.\n\nوتأتي هذه الأحداث في سياق ضغوط طويلة الأمد على منازل السكان وأراضيهم الزراعية. ففي يوليو، وثقت وكالة وفا هدم منشآت سكنية وزراعية كانت تخدم 22 عائلة في منطقة جنوب القرية.\n\nوتبقى المخاوف العاجلة حرية التنقل وسلامة السكان والوصول إلى مصادر الرزق الزراعية.",
             "sources": [
                 {
-                    "labelEn": "UNA / WAFA — Immatin checkpoint, November 5, 2026",
-                    "labelAr": "اتحاد وكالات أنباء التعاون الإسلامي / وفا — حاجز إماتين، 5 نوفمبر 2026",
-                    "url": "https://www.una-oic.org/en/palestinians/2026/11/05/Arrests--raids--and-widespread-attacks/"
+                    "labelEn": "Mo3ta — Immatin locality incident records",
+                    "labelAr": "معطى — سجلات الحوادث في إماتين",
+                    "url": "https://mo3ta.ps/localities/01kyspwtzwfprrr0vej16qs5nc"
                 },
                 {
-                    "labelEn": "Palestinian Information Center — Immatin raids, November 10, 2026",
-                    "labelAr": "المركز الفلسطيني للإعلام — مداهمات إماتين، 10 نوفمبر 2026",
+                    "labelEn": "Palestinian Information Center — November 10, 2026",
+                    "labelAr": "المركز الفلسطيني للإعلام — 10 نوفمبر 2026",
                     "url": "https://english.palinfo.com/news/2026/11/10/373455/"
                 }
             ]
@@ -1386,6 +1699,25 @@ window.WEST_BANK_COMMUNITIES = [
             "longitude": 35.15836
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "During November 1–11, Israeli military operations affected Immatin, east of Qalqilya. Reporting published November 5 described Israeli forces establishing a checkpoint at the village entrance, stopping vehicles, searching them, and checking passengers' identification. A November 10 report described further raids on homes in Immatin, searches of their contents, and the detention of four Palestinians. These reports document both movement restrictions and house raids during the reporting period.",
+            "textAr": "خلال الفترة من 1 إلى 11 نوفمبر، تأثرت قرية إماتين، شرق قلقيلية، بعمليات عسكرية إسرائيلية. ووصفت تقارير نُشرت في 5 نوفمبر إقامة قوات إسرائيلية حاجزًا عسكريًا عند مدخل القرية، حيث أوقفت المركبات وفتشتها ودققت في هويات ركابها. كما أفاد تقرير بتاريخ 10 نوفمبر بمداهمة منازل في إماتين وتفتيش محتوياتها واعتقال أربعة فلسطينيين. وتوثق هذه التقارير قيودًا على الحركة ومداهمات للمنازل خلال فترة التغطية.",
+            "sources": [
+                {
+                    "labelEn": "UNA / WAFA — Immatin checkpoint, November 5, 2026",
+                    "labelAr": "اتحاد وكالات أنباء التعاون الإسلامي / وفا — حاجز إماتين، 5 نوفمبر 2026",
+                    "url": "https://www.una-oic.org/en/palestinians/2026/11/05/Arrests--raids--and-widespread-attacks/"
+                },
+                {
+                    "labelEn": "Palestinian Information Center — Immatin raids, November 10, 2026",
+                    "labelAr": "المركز الفلسطيني للإعلام — مداهمات إماتين، 10 نوفمبر 2026",
+                    "url": "https://english.palinfo.com/news/2026/11/10/373455/"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -1427,11 +1759,18 @@ window.WEST_BANK_COMMUNITIES = [
         "featureAnchor": null,
         "imagePath": null,
         "regionId": "other-areas",
-        "backgroundEn": "Silwan is a Palestinian neighborhood of occupied East Jerusalem, immediately south of Jerusalem's Old City. OCHA’s 2018 account identifies it within the area often called the Holy Basin and describes Batan al-Hawa as one of its densely populated neighbourhoods.",
-        "backgroundAr": "سلوان حي فلسطيني في القدس الشرقية المحتلة، يقع مباشرة جنوب البلدة القديمة في القدس. ويضعها تقرير أوتشا لعام 2018 ضمن المنطقة التي تُسمّى غالبًا الحوض المقدس، ويصف بطن الهوى بأنه أحد أحيائها المكتظة بالسكان.",
+        "backgroundEn": "Silwan is a Palestinian neighborhood area of occupied East Jerusalem, immediately south of the Old City and Al-Aqsa Mosque compound. It includes distinct neighborhoods such as Al-Bustan, Batn al-Hawa, Wadi Hilweh, and Wadi Qaddum.\n\nPalestinian families in Silwan have faced longstanding housing insecurity, including demolition orders, restrictions on building permits, and eviction proceedings involving Israeli settler organizations.\n\nUN OCHA documented the forced eviction of Palestinian families in Batn al-Hawa during 2026 and continuing risks of displacement across East Jerusalem.",
+        "backgroundAr": "سلوان منطقة فلسطينية في القدس الشرقية المحتلة، تقع مباشرة جنوب البلدة القديمة والمسجد الأقصى. وتضم أحياء متميزة، منها البستان وبطن الهوى ووادي حلوة ووادي قدوم.\n\nتواجه العائلات الفلسطينية في سلوان منذ سنوات انعدام الأمن السكني، بما في ذلك أوامر الهدم والقيود على تراخيص البناء وإجراءات الإخلاء المرتبطة بمنظمات استيطانية إسرائيلية.\n\nووثق مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية إخلاء عائلات فلسطينية قسرًا من بطن الهوى خلال عام 2026، إلى جانب استمرار مخاطر التهجير في أنحاء القدس الشرقية.",
         "concernsEn": "OCHA’s late-October 2026 report described a road gate restricting vehicle access in Wadi ar Rababa, Silwan.",
         "concernsAr": "وصف تقرير أوتشا أواخر أكتوبر 2026 بوابة طريق تقيّد وصول المركبات في وادي الربابة بسلوان.",
         "sources": [
+            {
+                "labelEn": "UN OCHA — Humanitarian Situation Report, August 28, 2026",
+                "labelAr": "أوتشا — تقرير الحالة الإنسانية، 28 أغسطس 2026",
+                "url": "https://www.ochaopt.org/content/humanitarian-situation-report-28-august-2026",
+                "supportEn": "East Jerusalem evictions and displacement",
+                "supportAr": "الإخلاء والتهجير في القدس الشرقية"
+            },
             {
                 "labelEn": "UN OCHA — Humanitarian Situation Report, 29 October 2026",
                 "labelAr": "أوتشا — تقرير الحالة الإنسانية، 29 أكتوبر 2026",
@@ -1460,15 +1799,26 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "On November 4, Israeli forces demolished a Palestinian home in the al-Bustan neighborhood of Silwan, in occupied East Jerusalem. According to WAFA, the 80-square-metre home belonged to Suleiman Abu Subaih and housed him and his wife. Jerusalem Governorate reported that the house had stood for 25 years and that bulldozers damaged roads and uprooted trees while clearing access to the property. The demolition is a documented incident within the November 1–11 reporting period.",
-            "textAr": "في 4 نوفمبر، هدمت القوات الإسرائيلية منزلًا فلسطينيًا في حي البستان ببلدة سلوان في القدس الشرقية المحتلة. ووفقًا لوكالة وفا، تبلغ مساحة المنزل 80 مترًا مربعًا، ويعود لسليمان أبو صبيح، وكان يسكنه مع زوجته. وأفادت محافظة القدس بأن المنزل قائم منذ 25 عامًا، وأن الجرافات ألحقت أضرارًا بالطرق واقتلعت أشجارًا أثناء فتح الطريق للوصول إليه. ويُعد الهدم حادثة موثقة خلال فترة التغطية من 1 إلى 11 نوفمبر.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "Palestinian families in Silwan, occupied East Jerusalem, faced further home demolitions during November.\n\nOn November 17, Israeli authorities compelled two residents of Al-Bustan to demolish property, according to a November 18 report by the Palestinian Information Center citing the Jerusalem Governorate. Mohammed Abu Diyab demolished his 60-square-meter home, where he lived with his wife and three children. Shahada Qara'ein was compelled to demolish approximately 50 square meters of storage and parking structures.\n\nEarlier, on November 4, Israeli authorities demolished Suleiman Abu Subaih's home in Al-Bustan. UN OCHA separately documented the displacement of six people in the neighborhood during its November 3–9 reporting period.\n\nThese incidents reflect continuing pressure on Palestinian housing in Silwan. Demolition orders and eviction proceedings affect different neighborhoods and must not be treated as identical cases.\n\nThe immediate concerns are housing security, family displacement, and access to legal protection.",
+            "textAr": "واجهت العائلات الفلسطينية في سلوان بالقدس الشرقية المحتلة عمليات هدم إضافية للمنازل خلال نوفمبر.\n\nفي 17 نوفمبر، أجبرت السلطات الإسرائيلية اثنين من سكان حي البستان على هدم ممتلكاتهما، وفقًا لتقرير نشره المركز الفلسطيني للإعلام في 18 نوفمبر نقلًا عن محافظة القدس. وهدم محمد أبو دياب منزله البالغ مساحته 60 مترًا مربعًا، والذي كان يعيش فيه مع زوجته وأطفالهما الثلاثة. كما أُجبر شحادة قرعين على هدم منشآت للتخزين وموقف للمركبات تبلغ مساحتها نحو 50 مترًا مربعًا.\n\nوفي وقت سابق، في 4 نوفمبر، هدمت السلطات الإسرائيلية منزل سليمان أبو صبيح في حي البستان. ووثق مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية بشكل منفصل تهجير ستة أشخاص من الحي خلال فترة التقرير الممتدة من 3 إلى 9 نوفمبر.\n\nتعكس هذه الأحداث استمرار الضغوط على السكن الفلسطيني في سلوان. وتؤثر أوامر الهدم وإجراءات الإخلاء على أحياء مختلفة، ولا ينبغي التعامل معها بوصفها قضايا متطابقة.\n\nوتبقى المخاوف العاجلة أمن السكن وتهجير العائلات والوصول إلى الحماية القانونية.",
             "sources": [
                 {
-                    "labelEn": "WAFA — Silwan home demolition, November 4, 2026",
-                    "labelAr": "وفا — هدم منزل في سلوان، 4 نوفمبر 2026",
+                    "labelEn": "Palestinian Information Center — November 18, 2026",
+                    "labelAr": "المركز الفلسطيني للإعلام — 18 نوفمبر 2026",
+                    "url": "https://english.palinfo.com/news/2026/11/18/373905/"
+                },
+                {
+                    "labelEn": "UN OCHA — Humanitarian Situation Report, November 13, 2026",
+                    "labelAr": "أوتشا — تقرير الحالة الإنسانية، 13 نوفمبر 2026",
+                    "url": "https://www.ochaopt.org/content/humanitarian-situation-report-13-november-2026"
+                },
+                {
+                    "labelEn": "WAFA — November 4, 2026",
+                    "labelAr": "وفا — 4 نوفمبر 2026",
                     "url": "https://english.wafa.ps/Pages/Details/176654"
                 }
             ]
@@ -1486,6 +1836,20 @@ window.WEST_BANK_COMMUNITIES = [
             "longitude": 35.23696
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "On November 4, Israeli forces demolished a Palestinian home in the al-Bustan neighborhood of Silwan, in occupied East Jerusalem. According to WAFA, the 80-square-metre home belonged to Suleiman Abu Subaih and housed him and his wife. Jerusalem Governorate reported that the house had stood for 25 years and that bulldozers damaged roads and uprooted trees while clearing access to the property. The demolition is a documented incident within the November 1–11 reporting period.",
+            "textAr": "في 4 نوفمبر، هدمت القوات الإسرائيلية منزلًا فلسطينيًا في حي البستان ببلدة سلوان في القدس الشرقية المحتلة. ووفقًا لوكالة وفا، تبلغ مساحة المنزل 80 مترًا مربعًا، ويعود لسليمان أبو صبيح، وكان يسكنه مع زوجته. وأفادت محافظة القدس بأن المنزل قائم منذ 25 عامًا، وأن الجرافات ألحقت أضرارًا بالطرق واقتلعت أشجارًا أثناء فتح الطريق للوصول إليه. ويُعد الهدم حادثة موثقة خلال فترة التغطية من 1 إلى 11 نوفمبر.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — Silwan home demolition, November 4, 2026",
+                    "labelAr": "وفا — هدم منزل في سلوان، 4 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/176654"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -1522,11 +1886,18 @@ window.WEST_BANK_COMMUNITIES = [
         "featureAnchor": null,
         "imagePath": null,
         "regionId": "other-areas",
-        "backgroundEn": "Al-Walaja is a Palestinian village in Bethlehem Governorate, southwest of Jerusalem, near the boundary between Jerusalem and Bethlehem. Al-Walaja is a Palestinian community whose present village developed after displacement from the original village in 1948. UNRWA’s January 2012 profile describes village land divided between Jerusalem’s municipal boundaries and the West Bank’s Area C.",
-        "backgroundAr": "الولجة قرية فلسطينية تقع في محافظة بيت لحم، جنوب غرب القدس، بالقرب من المنطقة الفاصلة بين القدس وبيت لحم. الولجة تجمع فلسطيني نشأت قريته الحالية بعد التهجير من القرية الأصلية عام 1948. ويصف ملف الأونروا الصادر في يناير 2012 أراضي القرية المقسّمة بين الحدود البلدية للقدس والمنطقة «ج» في الضفة الغربية.",
+        "backgroundEn": "Al-Walaja (الولجة) is a Palestinian village northwest of Bethlehem, near Jerusalem. Its residents have historically depended on agriculture, olive groves, and surrounding farmland.\n\nThe village extends across Area C and East Jerusalem, with only a small portion of its built-up area in Area B. Israeli planning restrictions, the separation barrier, and demolition orders have placed longstanding pressure on residents' housing and agricultural livelihoods.\n\nAccording to UN OCHA, Israeli authorities demolished 141 Palestinian-owned structures in Al-Walaja between 2014 and August 2026. The village's UNRWA-operated primary school has also faced demolition proceedings.",
+        "backgroundAr": "الولجة قرية فلسطينية تقع شمال غرب بيت لحم بالقرب من القدس. وقد اعتمد سكانها تاريخيًا على الزراعة وبساتين الزيتون والأراضي الزراعية المحيطة.\n\nتمتد القرية عبر المنطقة «ج» والقدس الشرقية، بينما يقع جزء صغير فقط من مساحتها العمرانية ضمن المنطقة «ب». وقد فرضت قيود التخطيط الإسرائيلية والجدار الفاصل وأوامر الهدم ضغوطًا طويلة الأمد على مساكن السكان ومصادر رزقهم الزراعية.\n\nووفقًا لمكتب الأمم المتحدة لتنسيق الشؤون الإنسانية، هدمت السلطات الإسرائيلية 141 منشأة فلسطينية في الولجة بين عام 2014 وأغسطس 2026. كما واجهت المدرسة الأساسية التابعة للأونروا في القرية إجراءات هدم.",
         "concernsEn": "OCHA’s 20–26 October 2026 account includes residential demolitions in Al-Walaja for lacking Israeli-issued building permits.",
         "concernsAr": "يتضمّن تقرير أوتشا عن 20–26 أكتوبر 2026 هدم مبانٍ سكنية في الولجة لعدم وجود تراخيص بناء إسرائيلية.",
         "sources": [
+            {
+                "labelEn": "UN OCHA — Humanitarian Situation Report, August 7, 2026",
+                "labelAr": "أوتشا — تقرير الحالة الإنسانية، 7 أغسطس 2026",
+                "url": "https://container.ochaopt.org/content/humanitarian-situation-report-7-august-2026",
+                "supportEn": "Demolitions and community background",
+                "supportAr": "عمليات الهدم وخلفية المجتمع"
+            },
             {
                 "labelEn": "UN OCHA — Humanitarian Situation Report, 29 October 2026",
                 "labelAr": "أوتشا — تقرير الحالة الإنسانية، 29 أكتوبر 2026",
@@ -1556,16 +1927,22 @@ window.WEST_BANK_COMMUNITIES = [
             }
         ],
         "weeklyRecap": {
-            "date": "2026-11-11",
-            "dateLabelEn": "November 11, 2026",
-            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
-            "textEn": "No additional incident specifically in Al-Walaja was confirmed for November 1–11 in the sources reviewed. The latest detailed report identified was published October 28, when WAFA reported that Israeli forces demolished a three-story residential building housing five families, comprising 12 people, northwest of Bethlehem. The report also described the uprooting of more than 50 fruit trees, damage to agricultural land, and the destruction of water tanks and other structures. These are October events, retained as historical context rather than presented as new November incidents.",
-            "textAr": "لم يتم تأكيد وقوع حادثة إضافية محددة في قرية الولجة خلال الفترة من 1 إلى 11 نوفمبر في المصادر التي تمت مراجعتها. ونُشر أحدث تقرير مفصل تم العثور عليه في 28 أكتوبر، حين أفادت وكالة وفا بأن القوات الإسرائيلية هدمت مبنى سكنيًا من ثلاثة طوابق كان يؤوي خمس عائلات تضم 12 شخصًا شمال غرب بيت لحم. كما وصف التقرير اقتلاع أكثر من 50 شجرة مثمرة، وإلحاق أضرار بأراضٍ زراعية، وتدمير خزانات مياه ومنشآت أخرى. وهذه أحداث وقعت في أكتوبر، وتُذكر بوصفها سياقًا تاريخيًا لا حوادث جديدة في نوفمبر.",
+            "date": "2026-11-19",
+            "dateLabelEn": "November 19, 2026",
+            "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+            "paragraphs": true,
+            "textEn": "Israeli forces demolished an inhabited Palestinian home in Al-Walaja, northwest of Bethlehem, on November 17.\n\nAccording to WAFA, citing village council head Khader Al-Araj, the 50-square-meter home belonged to Jamal Ismail Absiyeh. Israeli authorities had demolished it approximately a year earlier, and its owner had rebuilt it. Forces also demolished a staircase adjoining Adel Abu Srour's home, citing the absence of building permits.\n\nDuring the operation in Ein Huwayza, Israeli forces closed the area, restricted residents' movement, and fired tear gas and stun grenades. Several residents reportedly suffered from tear gas inhalation. Soldiers also detained 58-year-old Omar Hajjajleh near the demolished home.\n\nThe incident follows longstanding demolition pressure in Al-Walaja. UN OCHA reported in August that Israeli authorities had demolished 141 Palestinian-owned structures in the village since 2014.\n\nThe immediate concerns are housing security, detention, and protection of residents facing further demolition orders.",
+            "textAr": "هدمت القوات الإسرائيلية منزلًا فلسطينيًا مأهولًا في قرية الولجة شمال غرب بيت لحم يوم 17 نوفمبر.\n\nووفقًا لوكالة وفا، نقلًا عن رئيس مجلس قروي الولجة خضر الأعرج، فإن المنزل البالغة مساحته 50 مترًا مربعًا يعود إلى جمال إسماعيل أبسيّة. وكانت السلطات الإسرائيلية قد هدمته قبل نحو عام، ثم أعاد صاحبه بناءه. كما هدمت القوات درجًا ملاصقًا لمنزل عادل أبو سرور، بحجة عدم وجود تراخيص بناء.\n\nوخلال العملية في منطقة عين الحويزة، أغلقت القوات الإسرائيلية المنطقة وقيّدت حركة السكان وأطلقت قنابل الغاز المسيل للدموع والقنابل الصوتية. وأصيب عدد من السكان بحالات اختناق جراء استنشاق الغاز، وفقًا للتقارير. كما اعتقل الجنود عمر حجاجلة، البالغ من العمر 58 عامًا، بالقرب من المنزل المهدوم.\n\nيأتي الحادث في سياق ضغوط طويلة الأمد بسبب عمليات الهدم في الولجة. وأفاد مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية في أغسطس بأن السلطات الإسرائيلية هدمت 141 منشأة فلسطينية في القرية منذ عام 2014.\n\nوتبقى المخاوف العاجلة أمن السكن والاعتقالات وحماية السكان الذين يواجهون أوامر هدم إضافية.",
             "sources": [
                 {
-                    "labelEn": "WAFA — Al-Walaja demolition, October 28, 2026 (historical context)",
-                    "labelAr": "وفا — الهدم في الولجة، 28 أكتوبر 2026 (سياق تاريخي)",
-                    "url": "https://english.wafa.ps/Pages/Details/176410"
+                    "labelEn": "WAFA — November 17, 2026",
+                    "labelAr": "وفا — 17 نوفمبر 2026",
+                    "url": "https://english.wafa.ps/Pages/Details/177031"
+                },
+                {
+                    "labelEn": "Palestinian Information Center — November 17, 2026",
+                    "labelAr": "المركز الفلسطيني للإعلام — 17 نوفمبر 2026",
+                    "url": "https://english.palinfo.com/news/2026/11/17/373865/"
                 }
             ]
         },
@@ -1582,6 +1959,20 @@ window.WEST_BANK_COMMUNITIES = [
             "longitude": 35.16139
         },
         "previousReports": [
+            {
+            "date": "2026-11-11",
+            "dateLabelEn": "November 11, 2026",
+            "dateLabelAr": "١١ نوفمبر ٢٠٢٦",
+            "textEn": "No additional incident specifically in Al-Walaja was confirmed for November 1–11 in the sources reviewed. The latest detailed report identified was published October 28, when WAFA reported that Israeli forces demolished a three-story residential building housing five families, comprising 12 people, northwest of Bethlehem. The report also described the uprooting of more than 50 fruit trees, damage to agricultural land, and the destruction of water tanks and other structures. These are October events, retained as historical context rather than presented as new November incidents.",
+            "textAr": "لم يتم تأكيد وقوع حادثة إضافية محددة في قرية الولجة خلال الفترة من 1 إلى 11 نوفمبر في المصادر التي تمت مراجعتها. ونُشر أحدث تقرير مفصل تم العثور عليه في 28 أكتوبر، حين أفادت وكالة وفا بأن القوات الإسرائيلية هدمت مبنى سكنيًا من ثلاثة طوابق كان يؤوي خمس عائلات تضم 12 شخصًا شمال غرب بيت لحم. كما وصف التقرير اقتلاع أكثر من 50 شجرة مثمرة، وإلحاق أضرار بأراضٍ زراعية، وتدمير خزانات مياه ومنشآت أخرى. وهذه أحداث وقعت في أكتوبر، وتُذكر بوصفها سياقًا تاريخيًا لا حوادث جديدة في نوفمبر.",
+            "sources": [
+                {
+                    "labelEn": "WAFA — Al-Walaja demolition, October 28, 2026 (historical context)",
+                    "labelAr": "وفا — الهدم في الولجة، 28 أكتوبر 2026 (سياق تاريخي)",
+                    "url": "https://english.wafa.ps/Pages/Details/176410"
+                }
+            ]
+            },
             {
                 "date": "2026-11-01",
                 "dateLabelEn": "November 1, 2026",
@@ -1602,5 +1993,367 @@ window.WEST_BANK_COMMUNITIES = [
                 ]
             }
         ]
+    },
+{
+    "id": "jericho",
+    "nameEn": "Jericho",
+    "nameAr": "أريحا",
+    "regionId": "jericho-jordan-valley",
+    "governorateId": "jericho",
+    "governorateEn": "Jericho & Jordan Valley",
+    "governorateAr": "أريحا والأغوار",
+    "descriptionEn": "Community overview: Jericho, Jericho & Jordan Valley.",
+    "descriptionAr": "نبذة عن المجتمع: أريحا، أريحا والأغوار.",
+    "sourceUrl": null,
+    "sourcePublicationDate": null,
+    "lastVerifiedDate": null,
+    "featureAnchor": null,
+    "imagePath": null,
+    "backgroundEn": "Jericho (أريحا) is a Palestinian city in the Jordan Valley, east of Jerusalem and near the Jordan River. Its oasis, fertile agricultural land, and natural springs have supported human settlement for thousands of years.\n\nNorthwest of the modern city lies Ancient Jericho/Tell es-Sultan, an archaeological site with evidence of settlement dating back more than 10,000 years. UNESCO inscribed it on the World Heritage List in 2023.\n\nToday, Jericho is an important residential, agricultural, and cultural center. Its residents depend on access to roads, water, farmland, and services connecting the city with surrounding communities.",
+    "backgroundAr": "أريحا مدينة فلسطينية تقع في غور الأردن، شرق القدس وبالقرب من نهر الأردن. وقد ساعدت واحتها وأراضيها الزراعية الخصبة وينابيعها الطبيعية على استمرار الاستيطان البشري فيها منذ آلاف السنين.\n\nتقع إلى الشمال الغربي من المدينة الحديثة أريحا القديمة/تل السلطان، وهو موقع أثري يحتوي على أدلة على الاستيطان البشري تعود إلى أكثر من عشرة آلاف عام. وأدرجته اليونسكو على قائمة التراث العالمي عام 2023.\n\nوتُعد أريحا اليوم مركزًا سكنيًا وزراعيًا وثقافيًا مهمًا. ويعتمد سكانها على الوصول إلى الطرق والمياه والأراضي الزراعية والخدمات التي تربط المدينة بالتجمعات المحيطة بها.",
+    "concernsEn": null,
+    "concernsAr": null,
+    "sources": [
+        {
+            "labelEn": "UNESCO — Ancient Jericho/Tell es-Sultan",
+            "labelAr": "اليونسكو — أريحا القديمة/تل السلطان",
+            "url": "https://whc.unesco.org/en/list/1687",
+            "supportEn": "Ancient Jericho and World Heritage designation",
+            "supportAr": "أريحا القديمة وإدراجها ضمن التراث العالمي"
+        },
+        {
+            "labelEn": "GeoNames — approximate location of Jericho",
+            "labelAr": "GeoNames — الموقع التقريبي لـأريحا",
+            "url": "https://www.geonames.org/284899/jericho.html",
+            "supportEn": "Approximate geographic coordinates",
+            "supportAr": "الإحداثيات الجغرافية التقريبية"
+        }
+    ],
+    "reportingStart": {
+        "date": "2026-11-20",
+        "labelEn": "November 20, 2026",
+        "labelAr": "٢٠ نوفمبر ٢٠٢٦"
+    },
+    "weeklyRecap": {
+        "date": "2026-11-19",
+        "dateLabelEn": "November 19, 2026",
+        "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+        "paragraphs": true,
+        "textEn": "Jericho and its outskirts experienced escalating settler violence and land disputes during November.\n\nOn November 17, Palestinian woman Fada Fheidat was shot dead during a confrontation involving Israeli settlers in Ein al-Duyuk al-Tahta, on Jericho's outskirts. Palestinian residents said settlers entered the neighborhood and opened fire. The Israeli military gave a different account of how the confrontation began but subsequently said its preliminary investigation indicated that she was likely struck by settler gunfire. Other Palestinians and Israelis were injured.\n\nThe incident followed settlers' reported occupation of eight homes in the same area earlier in November. The circumstances surrounding the claimed property purchases remain disputed.\n\nThese incidents occurred on Jericho's outskirts, not in the city center. Reporting also documented increased fears among Palestinian families over displacement and further settlement expansion.\n\nThe immediate concerns are civilian safety, protection of homes, and accountability for the shooting.",
+        "textAr": "شهدت أريحا ومحيطها تصاعدًا في عنف المستوطنين والنزاعات المتعلقة بالأراضي خلال نوفمبر.\n\nفي 17 نوفمبر، قُتلت الفلسطينية فدا فهيدات بالرصاص خلال مواجهة شارك فيها مستوطنون إسرائيليون في منطقة عين الديوك التحتا على أطراف أريحا. وقال سكان فلسطينيون إن مستوطنين دخلوا المنطقة وأطلقوا النار. وقدمت القوات الإسرائيلية رواية مختلفة عن بداية المواجهة، لكنها قالت لاحقًا إن تحقيقها الأولي يشير إلى أن المرأة قُتلت على الأرجح برصاص مستوطنين. وأصيب فلسطينيون وإسرائيليون آخرون خلال الحادث.\n\nوجاء الحادث بعد تقارير عن استيلاء مستوطنين على ثمانية منازل في المنطقة نفسها في وقت سابق من نوفمبر. ولا تزال ملابسات عمليات شراء العقارات المزعومة محل نزاع.\n\nوقعت هذه الأحداث على أطراف أريحا، وليس في وسط المدينة. كما وثقت تقارير تزايد مخاوف العائلات الفلسطينية من التهجير والتوسع الاستيطاني.\n\nوتبقى المخاوف العاجلة سلامة المدنيين وحماية المنازل والمساءلة عن حادث إطلاق النار.",
+        "sources": [
+            {
+                "labelEn": "Reuters — November 17, 2026",
+                "labelAr": "رويترز — 17 نوفمبر 2026",
+                "url": "https://www.reuters.com/world/middle-east/palestinian-woman-killed-10-wounded-settler-gunfire-official-tv-says-2026-11-17/"
+            },
+            {
+                "labelEn": "Times of Israel — November 18, 2026",
+                "labelAr": "تايمز أوف إسرائيل — 18 نوفمبر 2026",
+                "url": "https://www.timesofisrael.com/idf-probe-suggests-gunfire-that-killed-palestinian-in-jericho-was-likely-aimed-at-stone-throwers/"
+            },
+            {
+                "labelEn": "Al Jazeera — November 6, 2026",
+                "labelAr": "الجزيرة — 6 نوفمبر 2026",
+                "url": "https://www.aljazeera.com/news/2026/11/6/israeli-settlers-seize-8-palestinian-homes-in-jericho-displacing-dozens"
+            }
+        ]
+    },
+    "previousReports": [],
+    "locationMap": {
+        "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.435%2C31.85667%2C35.465%2C31.87667&layer=mapnik&marker=31.86667%2C35.45",
+        "largerMapUrl": "https://www.openstreetmap.org/?mlat=31.86667&mlon=35.45#map=15/31.86667/35.45",
+        "latitude": 31.86667,
+        "longitude": 35.45,
+        "geographicReferenceUrl": "https://www.geonames.org/284899/jericho.html"
     }
+},
+{
+    "id": "aqabat-jaber",
+    "nameEn": "Aqabat Jaber Refugee Camp",
+    "nameAr": "مخيم عقبة جبر",
+    "regionId": "jericho-jordan-valley",
+    "governorateId": "jericho",
+    "governorateEn": "Jericho & Jordan Valley",
+    "governorateAr": "أريحا والأغوار",
+    "descriptionEn": "Community overview: Aqabat Jaber Refugee Camp, Jericho & Jordan Valley.",
+    "descriptionAr": "نبذة عن المجتمع: مخيم عقبة جبر، أريحا والأغوار.",
+    "sourceUrl": null,
+    "sourcePublicationDate": null,
+    "lastVerifiedDate": null,
+    "featureAnchor": null,
+    "imagePath": null,
+    "backgroundEn": "Aqabat Jaber (عقبة جبر) is a Palestinian refugee camp southwest of Jericho in the Jordan Valley. Established in 1948, it is the largest refugee camp in the occupied West Bank by land area, covering approximately 1.67 square kilometers.\n\nBefore 1967, approximately 30,000 refugees lived in the camp. About 25,000 were displaced during the 1967 war. UNRWA's 2025 records list 11,190 registered refugees, a registration figure rather than a current resident count.\n\nThe camp has two UNRWA schools and a primary healthcare center. Residents face longstanding challenges involving unemployment, inadequate housing, wastewater management, and winter flooding. Agriculture and livestock remain important to some families.",
+    "backgroundAr": "يقع مخيم عقبة جبر للاجئين الفلسطينيين جنوب غرب مدينة أريحا في غور الأردن. تأسس المخيم عام 1948، ويُعد أكبر مخيم للاجئين في الضفة الغربية المحتلة من حيث المساحة، إذ تبلغ مساحته نحو 1.67 كيلومتر مربع.\n\nقبل عام 1967، كان يعيش في المخيم نحو 30 ألف لاجئ. وقد نزح نحو 25 ألفًا منهم خلال حرب عام 1967. وتُظهر سجلات الأونروا لعام 2025 وجود 11,190 لاجئًا مسجلًا في المخيم، وهو عدد المسجلين وليس بالضرورة عدد المقيمين حاليًا.\n\nيضم المخيم مدرستين تابعتين للأونروا ومركزًا للرعاية الصحية الأولية. ويواجه السكان تحديات مزمنة تتعلق بالبطالة والسكن غير الملائم وإدارة مياه الصرف الصحي والفيضانات الشتوية. وتظل الزراعة وتربية المواشي مصدر رزق مهمًا لبعض العائلات.",
+    "concernsEn": null,
+    "concernsAr": null,
+    "sources": [
+        {
+            "labelEn": "UNRWA — Aqbat Jabr Camp",
+            "labelAr": "الأونروا — مخيم عقبة جبر",
+            "url": "https://www.unrwa.org/where-we-work/west-bank/aqbat-jabr-camp",
+            "supportEn": "Camp background and services",
+            "supportAr": "خلفية المخيم وخدماته"
+        },
+        {
+            "labelEn": "GeoNames — approximate location of Aqabat Jaber Refugee Camp",
+            "labelAr": "GeoNames — الموقع التقريبي لـمخيم عقبة جبر",
+            "url": "https://www.geonames.org/284929/aqbat-jabr-camp.html",
+            "supportEn": "Approximate geographic coordinates",
+            "supportAr": "الإحداثيات الجغرافية التقريبية"
+        }
+    ],
+    "reportingStart": {
+        "date": "2026-11-20",
+        "labelEn": "November 20, 2026",
+        "labelAr": "٢٠ نوفمبر ٢٠٢٦"
+    },
+    "weeklyRecap": {
+        "date": "2026-11-19",
+        "dateLabelEn": "November 19, 2026",
+        "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+        "paragraphs": true,
+        "textEn": "Israeli military raids continued in Aqabat Jaber Refugee Camp, southwest of Jericho, during November.\n\nOn November 12, Palestinian Information Center reported that Israeli forces entered the camp during a series of operations across the West Bank. The report confirmed the incursion but did not establish camp-specific arrests or casualties.\n\nOn November 14, Sada News reported that Israeli forces arrested a young Palestinian man after entering Aqabat Jaber. The report did not identify the detainee or provide further details about his detention.\n\nEarlier, on November 3, local sources cited by Palestinian media reported that Israeli forces entered the camp, patrolled its streets, and fired live ammunition. Soldiers also reportedly established a checkpoint in the nearby Airport Land area, stopping and searching vehicles and pedestrians.\n\nThe November 3 incident is included as earlier context, not a new November 19 event.\n\nThe immediate concerns are civilian safety during raids, detention practices, and residents' freedom of movement.",
+        "textAr": "استمرت الاقتحامات العسكرية الإسرائيلية لمخيم عقبة جبر للاجئين جنوب غرب أريحا خلال نوفمبر.\n\nفي 12 نوفمبر، أفاد المركز الفلسطيني للإعلام بأن القوات الإسرائيلية اقتحمت المخيم ضمن سلسلة عمليات في أنحاء الضفة الغربية. وأكد التقرير وقوع الاقتحام، لكنه لم يثبت حدوث اعتقالات أو إصابات محددة داخل المخيم.\n\nوفي 14 نوفمبر، أفادت وكالة صدى نيوز بأن القوات الإسرائيلية اعتقلت شابًا فلسطينيًا عقب اقتحام مخيم عقبة جبر. ولم يذكر التقرير هوية المعتقل أو يقدم تفاصيل إضافية عن احتجازه.\n\nوفي وقت سابق، في 3 نوفمبر، أفادت مصادر محلية نقلت عنها وسائل إعلام فلسطينية بأن القوات الإسرائيلية اقتحمت المخيم وجابت شوارعه وأطلقت الرصاص الحي. كما أفادت التقارير بأن الجنود أقاموا حاجزًا في منطقة أرض المطار المجاورة، حيث أوقفوا المركبات والمارة وفتشوهم.\n\nيُذكر حادث 3 نوفمبر بوصفه سياقًا سابقًا، وليس حدثًا جديدًا وقع في 19 نوفمبر.\n\nوتبقى المخاوف العاجلة سلامة المدنيين أثناء الاقتحامات وممارسات الاحتجاز وحرية تنقل السكان.",
+        "sources": [
+            {
+                "labelEn": "Palestinian Information Center — November 12, 2026",
+                "labelAr": "المركز الفلسطيني للإعلام — 12 نوفمبر 2026",
+                "url": "https://english.palinfo.com/news/2026/11/12/373575/"
+            },
+            {
+                "labelEn": "Sada News — November 14, 2026",
+                "labelAr": "صدى نيوز — 14 نوفمبر 2026",
+                "url": "https://www.sadanews.ps/en/news/352965.html"
+            },
+            {
+                "labelEn": "Saba, citing WAFA — November 3, 2026",
+                "labelAr": "سبأ، نقلًا عن وفا — 3 نوفمبر 2026",
+                "url": "https://saba.ye/en/news3826245.htm"
+            }
+        ]
+    },
+    "previousReports": [],
+    "locationMap": {
+        "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.42578%2C31.82987%2C35.45578%2C31.84987&layer=mapnik&marker=31.83987%2C35.44078",
+        "largerMapUrl": "https://www.openstreetmap.org/?mlat=31.83987&mlon=35.44078#map=15/31.83987/35.44078",
+        "latitude": 31.83987,
+        "longitude": 35.44078,
+        "geographicReferenceUrl": "https://www.geonames.org/284929/aqbat-jabr-camp.html"
+    }
+},
+{
+    "id": "al-auja",
+    "nameEn": "Al-Auja",
+    "nameAr": "العوجا",
+    "regionId": "jericho-jordan-valley",
+    "governorateId": "jericho",
+    "governorateEn": "Jericho & Jordan Valley",
+    "governorateAr": "أريحا والأغوار",
+    "descriptionEn": "Community overview: Al-Auja, Jericho & Jordan Valley.",
+    "descriptionAr": "نبذة عن المجتمع: العوجا، أريحا والأغوار.",
+    "sourceUrl": null,
+    "sourcePublicationDate": null,
+    "lastVerifiedDate": null,
+    "featureAnchor": null,
+    "imagePath": null,
+    "backgroundEn": "Al-Auja (العوجا) is a Palestinian town north of Jericho in the Jordan Valley. Its agricultural and herding communities have historically depended on the nearby Al-Auja spring, grazing land, and access to water.\n\nThe surrounding area includes Ras Ein al-Auja, a distinct Bedouin community that experienced prolonged settler attacks and restrictions on water and grazing access. UN OCHA documented its complete displacement in January 2026.\n\nAl-Auja town and Ras Ein al-Auja must not be treated as geographically or administratively identical communities.",
+    "backgroundAr": "العوجا بلدة فلسطينية تقع شمال أريحا في غور الأردن. وقد اعتمدت مجتمعاتها الزراعية والرعوية تاريخيًا على نبع العوجا القريب وأراضي الرعي والوصول إلى المياه.\n\nوتشمل المنطقة المحيطة تجمع رأس عين العوجا البدوي، وهو تجمع منفصل تعرض لاعتداءات متكررة من المستوطنين وقيود على الوصول إلى المياه والمراعي. ووثق مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية تهجير سكانه بالكامل في يناير 2026.\n\nويجب التمييز بين بلدة العوجا وتجمع رأس عين العوجا البدوي وعدم التعامل معهما بوصفهما تجمعًا واحدًا.",
+    "concernsEn": null,
+    "concernsAr": null,
+    "sources": [
+        {
+            "labelEn": "UN OCHA — Humanitarian Situation Update #295",
+            "labelAr": "أوتشا — تحديث الحالة الإنسانية رقم 295",
+            "url": "https://www.ochaopt.org/content/humanitarian-situation-update-295-west-bank",
+            "supportEn": "Community background",
+            "supportAr": "خلفية المجتمع"
+        },
+        {
+            "labelEn": "GeoNames — approximate location of Al-Auja",
+            "labelAr": "GeoNames — الموقع التقريبي لـالعوجا",
+            "url": "https://www.geonames.org/285112/al-awja.html",
+            "supportEn": "Approximate geographic coordinates",
+            "supportAr": "الإحداثيات الجغرافية التقريبية"
+        }
+    ],
+    "reportingStart": {
+        "date": "2026-11-20",
+        "labelEn": "November 20, 2026",
+        "labelAr": "٢٠ نوفمبر ٢٠٢٦"
+    },
+    "weeklyRecap": {
+        "date": "2026-11-19",
+        "dateLabelEn": "November 19, 2026",
+        "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+        "paragraphs": true,
+        "textEn": "Al-Auja and its surrounding communities continue to face serious concerns involving displacement, settler violence, and access to water and agricultural land.\n\nUN OCHA documented the complete displacement of approximately 600 residents of the nearby Ras Ein al-Auja Bedouin community by late January 2026, following repeated settler attacks, threats, and restrictions on access to grazing land and Al-Auja spring.\n\nOn April 9, five Palestinian Bedouin households comprising 35 people were displaced from parts of Al-Auja following reported settler intimidation and attacks. The families relocated to a safer part of the town.\n\nThese incidents are historical context, not newly documented events from November 19.\n\nNo separate, sufficiently verified Al-Auja-specific incident from November 12–18 has been established for this report.\n\nThe continuing concerns are the safety of remaining residents, protection from displacement, and access to water, homes, and livelihoods.",
+        "textAr": "لا تزال العوجا والتجمعات المحيطة بها تواجه مخاوف خطيرة تتعلق بالتهجير وعنف المستوطنين والوصول إلى المياه والأراضي الزراعية.\n\nوثق مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية تهجير نحو 600 شخص من تجمع رأس عين العوجا البدوي المجاور بالكامل بحلول أواخر يناير 2026، بعد اعتداءات وتهديدات متكررة من المستوطنين وقيود على الوصول إلى المراعي ونبع العوجا.\n\nوفي 9 أبريل، تهجرت خمس أسر بدوية فلسطينية تضم 35 شخصًا من مناطق في العوجا، عقب اعتداءات وترهيب من المستوطنين وفقًا للتقارير. وانتقلت الأسر إلى منطقة أكثر أمانًا داخل البلدة.\n\nتُذكر هذه الأحداث بوصفها سياقًا تاريخيًا، وليست أحداثًا جديدة موثقة بتاريخ 19 نوفمبر.\n\nولم يتوفر لهذا التقرير توثيق كافٍ لحادث منفصل ومحدد في العوجا خلال الفترة من 12 إلى 18 نوفمبر.\n\nوتظل المخاوف المستمرة سلامة السكان المتبقين وحمايتهم من التهجير وضمان وصولهم إلى المياه والمنازل ومصادر الرزق.",
+        "sources": [
+            {
+                "labelEn": "UN OCHA — Humanitarian Situation Update #356, February 2026 (historical context)",
+                "labelAr": "أوتشا — تحديث الحالة الإنسانية رقم 356، فبراير 2026 (سياق تاريخي)",
+                "url": "https://www.ochaopt.org/content/humanitarian-situation-update-356-west-bank"
+            },
+            {
+                "labelEn": "UN OCHA — Humanitarian Situation Report, April 17, 2026 (historical context)",
+                "labelAr": "أوتشا — تقرير الحالة الإنسانية، 17 أبريل 2026 (سياق تاريخي)",
+                "url": "https://www.ochaopt.org/content/humanitarian-situation-report-17-april-2026"
+            }
+        ]
+    },
+    "previousReports": [],
+    "locationMap": {
+        "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.45256%2C31.94069%2C35.48256%2C31.96069&layer=mapnik&marker=31.95069%2C35.46756",
+        "largerMapUrl": "https://www.openstreetmap.org/?mlat=31.95069&mlon=35.46756#map=15/31.95069/35.46756",
+        "latitude": 31.95069,
+        "longitude": 35.46756,
+        "geographicReferenceUrl": "https://www.geonames.org/285112/al-awja.html"
+    }
+},
+{
+    "id": "fasayil",
+    "nameEn": "Fasayil",
+    "nameAr": "فصايل",
+    "regionId": "jericho-jordan-valley",
+    "governorateId": "jericho",
+    "governorateEn": "Jericho & Jordan Valley",
+    "governorateAr": "أريحا والأغوار",
+    "descriptionEn": "Community overview: Fasayil, Jericho & Jordan Valley.",
+    "descriptionAr": "نبذة عن المجتمع: فصايل، أريحا والأغوار.",
+    "sourceUrl": null,
+    "sourcePublicationDate": null,
+    "lastVerifiedDate": null,
+    "featureAnchor": null,
+    "imagePath": null,
+    "backgroundEn": "Fasayil is a Palestinian agricultural and herding village north of Jericho in the Jordan Valley. The wider village includes Fasayil al-Tahta, Fasayil al-Wusta, and Fasayil al-Foqa.\n\nThe communities face different planning restrictions because parts of Fasayil fall within Area B and others within Area C. Residents have long reported difficulty expanding homes, accessing sufficient water, and maintaining agricultural livelihoods.\n\nThe Norwegian Refugee Council has documented demolitions and overcrowding in Fasayil, where restrictions on construction have placed pressure on families to leave.",
+    "backgroundAr": "فصايل قرية فلسطينية زراعية ورعوية تقع شمال أريحا في غور الأردن. وتشمل القرية فصايل التحتا وفصايل الوسطى وفصايل الفوقا.\n\nوتواجه هذه التجمعات قيودًا مختلفة على التخطيط والبناء، إذ تقع أجزاء من فصايل في المنطقة «ب» وأجزاء أخرى في المنطقة «ج». ويواجه السكان منذ سنوات صعوبات في توسيع منازلهم والحصول على المياه الكافية والحفاظ على مصادر رزقهم الزراعية.\n\nوقد وثق المجلس النرويجي للاجئين عمليات هدم واكتظاظًا سكنيًا في فصايل، حيث تزيد قيود البناء الضغط على العائلات وتدفع بعضها إلى التفكير في الرحيل.",
+    "concernsEn": null,
+    "concernsAr": null,
+    "sources": [
+        {
+            "labelEn": "Norwegian Refugee Council — Area C is Everything",
+            "labelAr": "المجلس النرويجي للاجئين — المنطقة ج هي كل شيء",
+            "url": "https://www.nrc.no/feature/2023/area-c-is-everything",
+            "supportEn": "Housing and construction restrictions",
+            "supportAr": "السكن وقيود البناء"
+        },
+        {
+            "labelEn": "GeoNames — approximate location of Fasayil",
+            "labelAr": "GeoNames — الموقع التقريبي لـفصايل",
+            "url": "https://www.geonames.org/285102/al-fasayil.html",
+            "supportEn": "Approximate geographic coordinates",
+            "supportAr": "الإحداثيات الجغرافية التقريبية"
+        }
+    ],
+    "reportingStart": {
+        "date": "2026-11-20",
+        "labelEn": "November 20, 2026",
+        "labelAr": "٢٠ نوفمبر ٢٠٢٦"
+    },
+    "weeklyRecap": {
+        "date": "2026-11-19",
+        "dateLabelEn": "November 19, 2026",
+        "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+        "paragraphs": true,
+        "textEn": "A newly documented land-allocation decision raises concerns for Palestinian residents of Fasayil in the Jordan Valley.\n\nAccording to Peace Now, a notice published on November 10 allocated 5,545 dunams of West Bank land for grazing across two sections near Fasayil and Kafr Malik. The eastern section lies on Fasayil land, close to Palestinian homes and a nearby Israeli settler outpost.\n\nPeace Now reported that most of the allocation falls within a military firing zone, with part encroaching on a nature reserve. The decision adds to longstanding concerns over Palestinian access to agricultural and grazing land.\n\nEarlier in February, Jordan Valley Solidarity documented settlers cutting water and electricity access to a family in Fasayil al-Wusta. That incident is historical context, not a new November attack.\n\nNo separately verified Fasayil-specific attack from November 12–18 was established for this report.\n\nThe immediate concerns are access to land, water, housing, and protection against displacement.",
+        "textAr": "يثير قرار جديد موثق بشأن تخصيص أراضٍ للرعي مخاوف لدى السكان الفلسطينيين في فصايل بغور الأردن.\n\nوفقًا لحركة السلام الآن، نُشر في 10 نوفمبر إعلان عن تخصيص 5,545 دونمًا من أراضي الضفة الغربية للرعي، موزعة على منطقتين قرب فصايل وكفر مالك. ويقع القسم الشرقي على أراضي فصايل، بالقرب من منازل فلسطينية وبؤرة استيطانية إسرائيلية مجاورة.\n\nوأفادت الحركة بأن معظم الأراضي المخصصة تقع داخل منطقة عسكرية مخصصة للتدريب، بينما يمتد جزء منها إلى محمية طبيعية. ويضيف القرار إلى المخاوف المستمرة بشأن وصول الفلسطينيين إلى الأراضي الزراعية والمراعي.\n\nوفي فبراير الماضي، وثقت مؤسسة تضامن غور الأردن قيام مستوطنين بقطع المياه والكهرباء عن عائلة في فصايل الوسطى. ويُذكر هذا الحادث بوصفه سياقًا تاريخيًا، وليس اعتداءً جديدًا في نوفمبر.\n\nولم يتوفر لهذا التقرير توثيق مستقل كافٍ لاعتداء محدد في فصايل خلال الفترة من 12 إلى 18 نوفمبر.\n\nوتبقى المخاوف العاجلة الوصول إلى الأراضي والمياه والسكن والحماية من التهجير.",
+        "sources": [
+            {
+                "labelEn": "Peace Now — November 2026 grazing allocations",
+                "labelAr": "السلام الآن — تخصيص أراضٍ للرعي، نوفمبر 2026",
+                "url": "https://peacenow.org.il/en/following-elections-israel-allocates-over-28000-dunams-of-west-bank-land-to-settlers-for-grazing"
+            },
+            {
+                "labelEn": "Jordan Valley Solidarity — February 27, 2026 (historical context)",
+                "labelAr": "تضامن غور الأردن — 27 فبراير 2026 (سياق تاريخي)",
+                "url": "https://jordanvalleysolidarity.org/news/settlers-cut-water-and-electricity-supplies-to-fasayil-al-wusta-family/"
+            }
+        ]
+    },
+    "previousReports": [],
+    "locationMap": {
+        "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.42851%2C32.01509%2C35.45851%2C32.03509&layer=mapnik&marker=32.02509%2C35.44351",
+        "largerMapUrl": "https://www.openstreetmap.org/?mlat=32.02509&mlon=35.44351#map=15/32.02509/35.44351",
+        "latitude": 32.02509,
+        "longitude": 35.44351,
+        "geographicReferenceUrl": "https://www.geonames.org/285102/al-fasayil.html"
+    }
+},
+{
+    "id": "al-jiftlik",
+    "nameEn": "Al-Jiftlik",
+    "nameAr": "الجفتلك",
+    "regionId": "jericho-jordan-valley",
+    "governorateId": "jericho",
+    "governorateEn": "Jericho & Jordan Valley",
+    "governorateAr": "أريحا والأغوار",
+    "descriptionEn": "Community overview: Al-Jiftlik, Jericho & Jordan Valley.",
+    "descriptionAr": "نبذة عن المجتمع: الجفتلك، أريحا والأغوار.",
+    "sourceUrl": null,
+    "sourcePublicationDate": null,
+    "lastVerifiedDate": null,
+    "featureAnchor": null,
+    "imagePath": null,
+    "backgroundEn": "Al-Jiftlik (الجفتلك) is a Palestinian agricultural and herding village in the Jordan Valley, north of Jericho. Residents depend on farming, livestock, water infrastructure, and access to surrounding grazing land.\n\nThe wider Al-Jiftlik area includes smaller communities such as Abu al-Ajaj and al-Musaffah. These communities are geographically related but should not be treated as identical locations.\n\nParts of the surrounding area fall within Area C, where Israeli planning restrictions and military-designated zones have affected housing, agricultural structures, and residents' ability to maintain their livelihoods.",
+    "backgroundAr": "الجفتلك قرية فلسطينية زراعية ورعوية تقع في غور الأردن شمال أريحا. ويعتمد سكانها على الزراعة وتربية المواشي والبنية التحتية للمياه والوصول إلى المراعي المحيطة.\n\nوتضم منطقة الجفتلك الأوسع تجمعات أصغر، منها أبو العجاج والمصفح. وترتبط هذه التجمعات جغرافيًا، لكن لا ينبغي التعامل معها بوصفها مواقع متطابقة.\n\nتقع أجزاء من المنطقة المحيطة ضمن المنطقة «ج»، حيث أثرت قيود التخطيط الإسرائيلية والمناطق المصنفة عسكريًا على المساكن والمنشآت الزراعية وقدرة السكان على الحفاظ على مصادر رزقهم.",
+    "concernsEn": null,
+    "concernsAr": null,
+    "sources": [
+        {
+            "labelEn": "B'Tselem — Demolitions and confiscations, including Al-Jiftlik",
+            "labelAr": "بتسيلم — عمليات الهدم والمصادرة، بما يشمل الجفتلك",
+            "url": "https://www.btselem.org/facing_expulsion_blog?nid=215097",
+            "supportEn": "Demolitions and confiscations",
+            "supportAr": "الهدم والمصادرة"
+        },
+        {
+            "labelEn": "UN OCHA — Humanitarian Situation Report, May 15, 2026",
+            "labelAr": "أوتشا — تقرير الحالة الإنسانية، 15 مايو 2026",
+            "url": "https://www.ochaopt.org/content/humanitarian-situation-report-15-may-2026",
+            "supportEn": "Community context",
+            "supportAr": "سياق المجتمع"
+        },
+        {
+            "labelEn": "Wikidata — approximate location of Al-Jiftlik",
+            "labelAr": "Wikidata — الموقع التقريبي لـالجفتلك",
+            "url": "https://www.wikidata.org/wiki/Q2895719",
+            "supportEn": "Approximate geographic coordinates",
+            "supportAr": "الإحداثيات الجغرافية التقريبية"
+        }
+    ],
+    "reportingStart": {
+        "date": "2026-11-20",
+        "labelEn": "November 20, 2026",
+        "labelAr": "٢٠ نوفمبر ٢٠٢٦"
+    },
+    "weeklyRecap": {
+        "date": "2026-11-19",
+        "dateLabelEn": "November 19, 2026",
+        "dateLabelAr": "١٩ نوفمبر ٢٠٢٦",
+        "paragraphs": true,
+        "textEn": "Palestinian families in the Al-Jiftlik area face renewed displacement pressure following demolitions and expanding settler activity.\n\nUN OCHA reported that between November 3 and 9, Israeli authorities demolished six residential, sanitation, and livestock structures in Al-Jiftlik–Abu al-Ajaj, displacing three Palestinian households comprising 15 people, including six children.\n\nTwo additional families had reportedly already left their homes because of repeated settler harassment.\n\nOn November 12, reporting described growing fears among families near Al-Jiftlik after Israeli settlers established an outpost nearby. Residents expressed concern about further land seizures, intimidation, and displacement.\n\nThe demolitions occurred earlier in November; they are not presented as new November 19 incidents.\n\nThe immediate concerns are housing security, access to agricultural and grazing land, and protection of families facing displacement.",
+        "textAr": "تواجه العائلات الفلسطينية في منطقة الجفتلك ضغوطًا متجددة للتهجير عقب عمليات هدم وتوسع أنشطة المستوطنين.\n\nأفاد مكتب الأمم المتحدة لتنسيق الشؤون الإنسانية بأنه خلال الفترة من 3 إلى 9 نوفمبر، هدمت السلطات الإسرائيلية ست منشآت سكنية وصحية ومخصصة لتربية المواشي في منطقة الجفتلك–أبو العجاج، مما أدى إلى تهجير ثلاث أسر فلسطينية تضم 15 شخصًا، بينهم ستة أطفال.\n\nوكانت عائلتان إضافيتان قد غادرتا منزليهما، وفقًا للتقارير، بسبب المضايقات المتكررة من المستوطنين.\n\nوفي 12 نوفمبر، وصفت تقارير تزايد مخاوف العائلات قرب الجفتلك بعد إقامة مستوطنين إسرائيليين بؤرة استيطانية مجاورة. وأعرب السكان عن قلقهم من مزيد من الاستيلاء على الأراضي والترهيب والتهجير.\n\nوقعت عمليات الهدم في وقت سابق من نوفمبر، ولا تُعرض بوصفها حوادث جديدة وقعت في 19 نوفمبر.\n\nوتبقى المخاوف العاجلة أمن السكن والوصول إلى الأراضي الزراعية والمراعي وحماية العائلات المهددة بالتهجير.",
+        "sources": [
+            {
+                "labelEn": "UN OCHA — Humanitarian Situation Report, November 13, 2026",
+                "labelAr": "أوتشا — تقرير الحالة الإنسانية، 13 نوفمبر 2026",
+                "url": "https://www.ochaopt.org/content/humanitarian-situation-report-13-november-2026"
+            },
+            {
+                "labelEn": "Times of Palestine — November 12, 2026",
+                "labelAr": "تايمز أوف فلسطين — 12 نوفمبر 2026",
+                "url": "https://www.timesofpalestine.com/en/story/settlers-erect-outpost-near-west-bank-village-threatening-ae5f625e51.html"
+            }
+        ]
+    },
+    "previousReports": [],
+    "locationMap": {
+        "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=35.4783333%2C32.1341667%2C35.5083333%2C32.1541667&layer=mapnik&marker=32.1441667%2C35.4933333",
+        "largerMapUrl": "https://www.openstreetmap.org/?mlat=32.1441667&mlon=35.4933333#map=15/32.1441667/35.4933333",
+        "latitude": 32.1441667,
+        "longitude": 35.4933333,
+        "geographicReferenceUrl": "https://www.wikidata.org/wiki/Q2895719"
+    }
+}
 ];
