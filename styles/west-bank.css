@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman */
-/* Date: 11-01-2026 */
+/* Date: 11-18-2026 */
 .west-bank-page #your-famous .hero-gallery-block,
 .west-bank-page #your-famous .hero-gallery-block :is(.scrollable-gallery, .gallery-card, figure, img) {
 border-color: transparent;
@@ -642,8 +642,11 @@ max-width: 78rem;
 .west-bank-page .community-profile .community-location-map iframe { display: block; box-sizing: border-box; width: 100%; max-width: 100%; height: 300px; border: 1px solid #c9aa65; border-radius: .5rem; }
 .west-bank-page .community-profile .community-location-map figcaption { margin-block: .5rem; font-size: .95rem; line-height: 1.5; }
 .west-bank-page .community-profile .community-location-map > a { display: inline-flex; align-items: center; min-height: 44px; font-size: .95rem; }
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .west-bank-page .community-profile .community-location-map iframe { height: 240px; }
+}
+@media (max-width: 768px) {
+    .west-bank-page .community-profile .community-location-map iframe { height: 190px; }
 }
 
 /* Reusable map-link button; other profile links and map dimensions stay unchanged. */
@@ -671,3 +674,187 @@ max-width: 78rem;
 .west-bank-page .community-profile .community-map-button-icon { flex: 0 0 auto; color: #e9bd69; }
 .west-bank-page .community-profile .community-map-button:hover { box-shadow: 0 0 .75rem rgba(201, 170, 101, .4); color: #e9bd69; }
 .west-bank-page .community-profile .community-map-button:focus-visible { outline: 3px solid #c9aa65; outline-offset: 4px; }
+
+/* Each community keeps its current recap visible above this closed history menu. */
+.west-bank-page .community-previous-reports {
+    min-width: 0;
+    margin-block: .75rem 1rem;
+    border: 1px solid #a6bac9;
+    border-radius: .4rem;
+    background: #edf4f8;
+    color: #253e50;
+    overflow-wrap: anywhere;
+}
+.west-bank-page .community-previous-reports > summary {
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: .65rem .85rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: start;
+    cursor: pointer;
+    list-style-type: disclosure-closed;
+    border-radius: inherit;
+}
+.west-bank-page .community-previous-reports[open] > summary {
+    list-style-type: disclosure-open;
+}
+.west-bank-page .community-previous-reports > summary::marker { color: #355d78; }
+.west-bank-page .community-previous-reports > summary:hover { background: #dceaf3; }
+.west-bank-page .community-previous-reports > summary:focus-visible {
+    outline: 3px solid #355d78;
+    outline-offset: 3px;
+    background: #dceaf3;
+}
+.west-bank-page .community-profile .community-previous-reports > p {
+    margin: 0;
+    padding: .75rem .85rem;
+}
+
+/* Jericho and Jordan Valley: regional map and archive accents. */
+.west-bank-page .region-choice[data-region-id="jericho-jordan-valley"] {
+    border-color: #8d713c; box-shadow: inset 0 -3px #b79250;
+}
+.west-bank-page .region-choice[data-region-id="jericho-jordan-valley"][aria-pressed="true"] {
+    background: #48553a; color: #fff8e8; box-shadow: inset 0 -3px #d1aa63;
+}
+.west-bank-page .community-profile:is([data-community-id="jericho"], [data-community-id="aqabat-jaber"], [data-community-id="al-auja"], [data-community-id="fasayil"], [data-community-id="al-jiftlik"]) .community-location-map iframe {
+    border: 3px double #ab864c; box-shadow: 0 3px 8px #303c2233;
+}
+.west-bank-page .community-profile:is([data-community-id="jericho"], [data-community-id="aqabat-jaber"], [data-community-id="al-auja"], [data-community-id="fasayil"], [data-community-id="al-jiftlik"]) .community-map-button-icon { color: #9c7028; }
+.west-bank-page .community-profile:is([data-community-id="jericho"], [data-community-id="aqabat-jaber"], [data-community-id="al-auja"], [data-community-id="fasayil"], [data-community-id="al-jiftlik"]) .community-previous-reports {
+    border-color: #947843; background: #f7f3e7;
+}
+.west-bank-page .community-profile:is([data-community-id="jericho"], [data-community-id="aqabat-jaber"], [data-community-id="al-auja"], [data-community-id="fasayil"], [data-community-id="al-jiftlik"]) .community-previous-reports > summary {
+    color: #263c2c; background: linear-gradient(90deg, #e4ead9, #fffaf0); border-inline-start: 4px solid #a73f39;
+}
+
+/* Hippie-steampunk botanical workshop, scoped to West Bank content. */
+body.west-bank-page {
+    background:
+        radial-gradient(ellipse at 8% 18%, #c49a5133, transparent 30%),
+        radial-gradient(ellipse at 90% 72%, #a65d3b22, transparent 32%),
+        repeating-linear-gradient(45deg, transparent 0 45px, #53674710 46px 47px, transparent 48px 90px),
+        linear-gradient(145deg, #a8b79a, #d3ddc7 48%, #839779);
+    color: #24291f;
+}
+.west-bank-page.ok-page .west-bank-content {
+    background:
+        radial-gradient(circle at 4% 4%, #c49a512b, transparent 25%),
+        radial-gradient(circle at 96% 60%, #6ea67a25, transparent 27%),
+        linear-gradient(135deg, #a8b79a, #d8e1ca 48%, #b5c4a6);
+    border: 3px double #a9854a; border-radius: 12px;
+    box-shadow: inset 0 1px #f7edcf99, 0 10px 24px #303d2940;
+}
+.west-bank-page .hub-intro {
+    position: relative; margin-block: 1rem 2rem; border: 4px double #c49a51;
+    background: radial-gradient(ellipse at 50% 0, #6e805c77, transparent 60%), linear-gradient(145deg, #303d29, #536747 50%, #303d29);
+    box-shadow: inset 0 0 0 3px #25332288, inset 0 4px 15px #18231788, 0 6px 15px #303d2944;
+}
+.west-bank-page .hub-intro::before, .west-bank-page .hub-intro::after {
+    content: '✧'; position: absolute; top: .65rem; color: #e1c78d; font-size: 1rem; pointer-events: none;
+}
+.west-bank-page .hub-intro::before { left: .85rem; }
+.west-bank-page .hub-intro::after { right: .85rem; }
+.west-bank-page .hub-intro h2 { color: #f4d89b; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.6rem, 3.5vw, 2.6rem); text-shadow: 0 2px #253322; }
+.west-bank-page.ok-page .hub-intro p { color: #fff7e6; }
+.west-bank-page .west-bank-divider { display: block; width: min(100%, 320px); height: auto; margin: 1.1rem auto 0; pointer-events: none; filter: drop-shadow(0 2px 2px #1c271baa); }
+.west-bank-page .community-explorer { margin-block: 2rem; }
+.west-bank-page.ok-page :is(#explorer-heading, #community-selector-heading) { color: #303d29; font-family: 'Cormorant Garamond', Georgia, serif; }
+.west-bank-page .region-buttons .region-choice {
+    color: #fff6de; border: 2px solid #a9854a; border-radius: 9px;
+    background: linear-gradient(#65795a, #303d29 70%); box-shadow: inset 0 2px #e0c18055, 0 3px #705033, 0 5px 8px #303d2933;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.west-bank-page .region-buttons .region-choice:hover { color: #fff8e9; background: linear-gradient(#758965, #405238); transform: translateY(-2px); }
+.west-bank-page .region-buttons .region-choice[aria-pressed="true"] { color: #fff9e9; border-color: #e2be78; background: linear-gradient(#83503a, #303d29 65%); box-shadow: inset 0 0 0 1px #f1dfae77, 0 3px #705033, 0 0 9px #c49a5177; }
+.west-bank-page .community-selector .community-choice {
+    border: 2px solid #ae8951; background: linear-gradient(#fff8e7, #e5d5b4); color: #303d29;
+    box-shadow: inset 0 1px #fff9ed, 0 3px #9a794d, 0 5px 7px #303d2926;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.west-bank-page .community-selector .community-choice::before { content: '✧'; color: #a65d3b; margin-inline-end: .4em; }
+.west-bank-page .community-selector .community-choice:hover { transform: translateY(-2px); background: #fff8e8; }
+.west-bank-page .community-selector .community-choice[aria-pressed="true"] { background: linear-gradient(#607554, #303d29); color: #fff6df; border-color: #d2ad68; box-shadow: inset 0 2px #d8b87566, 0 3px #705033; }
+.west-bank-page .community-selector .community-choice[aria-pressed="true"]::before { color: #f0d28b; }
+.west-bank-page .community-profile {
+    border: 3px double #b28b50; border-radius: 12px; color: #24291f;
+    background: radial-gradient(ellipse at 15% 0, #fff9e8, transparent 45%), linear-gradient(145deg, #f7edd5, #f1e5c8 60%, #eadab9);
+    box-shadow: inset 0 2px #fffaf0, 0 7px 16px #303d2933;
+}
+.west-bank-page .community-profile .profile-community-heading { border: 2px solid #c49a51; background: linear-gradient(145deg, #303d29, #536747); box-shadow: inset 0 0 0 3px #25332288, 0 4px 9px #303d2933; }
+.west-bank-page .community-profile .profile-community-heading .profile-heading-alert { font-size: clamp(1.45rem, 3vw, 2.35rem); }
+.west-bank-page .community-profile .profile-community-heading .profile-heading-place { font-size: clamp(1.8rem, 4vw, 3rem); }
+.west-bank-page .community-profile .profile-community-heading .profile-heading-decoration { background: transparent; }
+.west-bank-page .community-profile h4, .west-bank-page .community-profile h5 { color: #37472f; font-family: 'Cormorant Garamond', Georgia, serif; }
+.west-bank-page .community-profile .research-pending { background: #e3ead8; border-inline-start: 3px solid #a9854a; }
+.west-bank-page .community-profile .community-location-map { padding: .5rem; border: 3px ridge #c49a51; border-radius: .7rem; background: #536747; box-shadow: inset 0 2px 6px #303d2988, 0 4px 8px #303d292b; }
+.west-bank-page .community-profile .community-location-map iframe { border: 2px solid #b68e50; }
+.west-bank-page .community-profile .community-location-map figcaption { color: #fff8e8; }
+.west-bank-page .community-profile[data-community-id] .community-previous-reports { border: 2px solid #a9854a; background: #f5e9ce; color: #24291f; box-shadow: 0 3px 7px #303d292b; }
+.west-bank-page .community-profile[data-community-id] .community-previous-reports > summary {
+    position: relative; color: #fff6df; background: linear-gradient(#667958, #303d29); border: 1px solid #c49a51;
+    box-shadow: inset 0 2px #efdbac55, 0 3px #79593b; padding-inline-end: 2.4rem;
+}
+.west-bank-page .community-profile[data-community-id] .community-previous-reports > summary::after { content: '☮'; position: absolute; inset-inline-end: .8rem; color: #efd18d; }
+.west-bank-page .community-profile[data-community-id] .community-previous-reports > summary::marker { color: #efd18d; }
+.west-bank-page .community-profile[data-community-id] .community-previous-reports > summary:hover { background: linear-gradient(#778b68, #3a4b34); }
+.west-bank-page .community-profile .community-previous-reports > article { margin: .8rem; padding: .8rem; border-radius: .45rem; background: #fff8e7; }
+.west-bank-page .community-profile .community-previous-reports > article > h5:first-child { padding: .5rem .7rem; border: 1px solid #b68b4d; border-radius: .35rem; background: #485b3c; color: #fff5dc; box-shadow: inset 0 2px #e9cd9055, 0 3px #826143; }
+.west-bank-page #your-famous { border-color: #b38b4f; box-shadow: 0 5px 14px #303d2933; }
+@media (max-width: 575px) {
+    .west-bank-page .hub-intro { padding: 1.15rem; }
+    .west-bank-page .region-buttons { gap: .5rem; }
+    .west-bank-page .community-profile .community-location-map { padding: .3rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .west-bank-page :is(.region-choice, .community-choice) { transition: none; }
+    .west-bank-page :is(.region-choice, .community-choice):hover { transform: none; }
+}
+
+/* Hebron and Umm al-Khair: individual weekly archive drawers. */
+.west-bank-page .community-current-report {
+    margin-block: 1.4rem; padding: 1rem; border: 3px double #b99151; border-radius: .7rem;
+    background: linear-gradient(145deg, #fff9e9, #ead9b5); box-shadow: inset 0 2px #fffaf0, 0 4px 9px #303d2930;
+}
+.west-bank-page .community-current-report h4 { margin-top: 0; }
+.west-bank-page .community-report-archive { margin-block: 1.5rem; }
+.west-bank-page .report-tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+.west-bank-page .report-date-tile {
+    display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: .35rem .6rem;
+    min-width: 0; min-height: 60px; padding: .6rem .7rem; border: 3px ridge #b99151; border-radius: .55rem;
+    background: linear-gradient(145deg, #657657, #303d29 70%); color: #fff4d6; text-align: start;
+    font: inherit; cursor: pointer; box-shadow: inset 0 2px #f5d99a55, 0 3px #795637, 0 5px 8px #303d2933;
+    transition: box-shadow .18s ease, background .18s ease;
+}
+.west-bank-page .report-date-tile svg { grid-row: span 2; width: 32px; height: 32px; pointer-events: none; }
+.west-bank-page .report-tile-date { min-width: 0; font-weight: 700; overflow-wrap: anywhere; }
+.west-bank-page .report-tile-action { grid-column: 2; color: #f4db9e; font-size: .82rem; }
+.west-bank-page .report-tile-chevron { grid-column: 3; grid-row: 1 / span 2; color: #f4db9e; font-size: 1.4rem; transition: transform .2s ease; }
+.west-bank-page .report-date-tile[aria-expanded="true"] { background: linear-gradient(#81513a, #303d29); box-shadow: inset 0 0 0 1px #f3d79888, 0 3px #795637, 0 0 9px #c49a5177; }
+.west-bank-page .report-date-tile[aria-expanded="true"] .report-tile-chevron { transform: rotate(180deg); }
+.west-bank-page .report-date-tile:hover { box-shadow: inset 0 2px #f5d99a88, 0 3px #795637, 0 0 9px #c49a5188; }
+.west-bank-page .report-date-tile:focus-visible { outline: 3px solid #81362f; outline-offset: 4px; }
+.west-bank-page .report-tile-panel[hidden] { display: none; }
+.west-bank-page .report-tile-panel {
+    margin-top: 1rem; padding: clamp(.85rem, 2vw, 1.25rem); border: 2px solid #b99151; border-radius: .5rem;
+    background: repeating-linear-gradient(0deg, #77543408 0 1px, transparent 1px 7px), linear-gradient(145deg, #fff9e9, #f1e5c8);
+    box-shadow: inset 0 0 0 3px #fff8e466, 0 4px 8px #303d2926; animation: report-panel-appear .2s ease-out;
+}
+.west-bank-page .report-tile-panel h5:first-child { margin-top: 0; color: #6a4229; font-size: 1.2rem; }
+@keyframes report-panel-appear { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 575px) { .west-bank-page .report-tile-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) {
+    .west-bank-page :is(.report-date-tile, .report-tile-chevron) { transition: none; }
+    .west-bank-page .report-tile-panel { animation: none; }
+}
+
+/* Shared pale-blue current reporting panel for every community. */
+.west-bank-page .community-profile .community-current-report {
+    border: 2px solid #b99151; border-left: 6px solid #397399;
+    background: linear-gradient(145deg, #edf7fc, #d7eaf4); color: #203c4d;
+    box-shadow: inset 0 2px #fff, 0 4px 9px #303d2930;
+}
+.west-bank-page .community-profile .community-current-report h4,
+.west-bank-page .community-profile .community-current-report h5 { color: #244e69; }
+.west-bank-page .community-profile .community-current-report .research-pending { background: #e6f2f8; border-inline-start-color: #6098b7; }
