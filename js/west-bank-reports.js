@@ -1,6 +1,7 @@
 "use strict";
 //Author: Leslie Brockman
 //Date:11-01-2026
+//Date modified: 11-18-2026
 // One record per reviewed original report. Edit this array for weekly updates.
 // communityIds = explicit mentions; regionIds/governorateIds = broader context only.
 // Publication date controls sorting and month membership; report/review dates are separate.
