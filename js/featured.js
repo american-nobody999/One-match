@@ -1,5 +1,5 @@
 // Author: Leslie Brockman
-//date modified: 2026-11-11
+//date modified: 2026-11-19
 // Portrait archive and one shared story viewer. Content lives in featured-data.js.Clean up. This is going to get annoying after a few months
 "use strict";
 (() => {
@@ -124,6 +124,7 @@
         content.append(header);
         const body = element('div', 'featured-story-body');
         hero.biography.forEach(data => body.append(paragraph(data)));
+        if (hero.artwork) body.append(image(hero.artwork, 'featured-card-portrait'));
         const socials = element('div', 'featured-socials');
         hero.socialLinks.forEach(data => {
             const anchor = link(data, 'featured-social-link');
