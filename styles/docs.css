@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman
-   Date: 10-23-2026 */
+   Date: 11-19-2026 */
 .docs-page .featured-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -15,36 +15,117 @@ html[lang="ar"] .docs-page main {
     }
 }
 
-/* Card 2 only: display the complete informational image across the back face. */
-.docs-page #doc-future-back {
-    padding: 0;
-    gap: 0;
+.docs-page .featured-gallery .featured-card {
+    box-sizing: border-box;
+    width: 100%;
+    padding: .65rem;
+    border-color: #b7a17a;
+    background: #303c22;
 }
 
+.docs-page .featured-card-inner {
+    position: relative;
+    min-width: 0;
+    block-size: clamp(26rem, 70vw, 36rem);
+    perspective: 80rem;
+}
+
+.docs-page .featured-card-face {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    gap: .75rem;
+    padding: .85rem;
+    border-radius: .55rem;
+    background: #fbf7ec;
+    color: #303c22;
+    backface-visibility: hidden;
+    transition: transform .4s ease;
+}
+
+.docs-page .featured-card-face[inert] {
+    pointer-events: none;
+}
+
+.docs-page .featured-card-front {
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    transform: rotateY(0deg);
+}
+
+.docs-page .featured-card-back {
+    grid-template-rows: auto minmax(0, 1fr);
+    transform: rotateY(180deg);
+}
+
+.docs-page .is-flipped .featured-card-front {
+    transform: rotateY(-180deg);
+}
+
+.docs-page .is-flipped .featured-card-back {
+    transform: rotateY(0deg);
+}
+
+.docs-page .featured-card-photo,
 .docs-page #doc-future-back .healthcare-card-back-image {
     display: block;
     width: 100%;
     height: 100%;
+    min-width: 0;
     min-height: 0;
     object-fit: contain;
     object-position: center;
-    border-radius: inherit;
+    border-radius: .45rem;
+    background: #e9e4d6;
 }
 
-/* Keep the existing return control reachable over the full-size image. */
-.docs-page #doc-future-back .featured-flip-button {
-    position: absolute;
-    inset-block-end: .75rem;
-    inset-inline-end: .75rem;
+.docs-page .featured-flip-button {
+    justify-self: center;
+    max-inline-size: 100%;
+    min-block-size: 44px;
+    padding: .5rem 1rem;
+    border: 1px solid #475632;
+    border-radius: .45rem;
+    background: #35482f;
+    color: #fff9e8;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .15s ease;
 }
 
-/* Relocated homepage gallery: retain its frame layers inside Card 1 only. */
+.docs-page .featured-card-back .featured-flip-button {
+    justify-self: start;
+}
+
+.docs-page .featured-flip-button:hover {
+    border-color: #744133;
+    background: #744133;
+}
+
+.docs-page .featured-card-details {
+    min-width: 0;
+    min-height: 0;
+    padding: .5rem;
+    overflow: auto;
+    line-height: 1.65;
+    text-align: start;
+}
+
+.docs-page .featured-card-details .site-button {
+    box-sizing: border-box;
+    --button-background: #35482f;
+    --button-border: #475632;
+    --button-text: #fff9e8;
+    --button-hover-background: #744133;
+}
+
+/* Keep the existing gallery frame inside the scrollable biography face. */
 .docs-page #doc-safiya-back .docs-hostages-gallery {
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    margin: 1.5rem auto .5rem;
+    margin: 1rem auto .5rem;
     padding: 1.25rem;
     border: 2px solid #303C22;
     border-radius: 12px;
@@ -96,6 +177,16 @@ html[lang="ar"] .docs-page main {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .docs-page .featured-card-face,
+    .docs-page .featured-flip-button,
+    .docs-page .featured-card-details .site-button {
+        transition: none;
+    }
+
+    .docs-page .featured-card-details .site-button {
+        transform: none;
+    }
+
     .docs-page #doc-safiya-back .scrollable-gallery {
         scroll-behavior: auto;
     }
