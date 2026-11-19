@@ -1,5 +1,5 @@
 // Author: Leslie Brockman
-// Date modified: 11/17/2026 
+// Date modified: 11/19/2026 
 // Homepage only. Changed weekly
 
 'use strict';
@@ -85,6 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
             destinationUrl: 'quests.html',
             destinationLabel: { en: "Explore Leslie's Quests", ar: 'استكشفوا مهام ليزلي' },
             week: { en: '', ar: '' }
+        },
+        {
+            slot: 'Feature slot 6 — Dr. Hussam Abu Safiya', active: true,
+            category: { en: 'HEALTHCARE WORKERS', ar: 'العاملون في الرعاية الصحية' },
+            headline: { en: 'Dr. Hussam Abu Safiya — Bring Him Home!', ar: 'الدكتور حسام أبو صفية — أعيدوه إلى بيته!' },
+            description: {
+                en: "On November 18, 2026, an Israeli court extended Dr. Hussam Abu Safiya's detention for another six months, without charges or trial, citing an alleged threat to Israel's security.\n\nThe Palestinian pediatrician and director of Gaza's Kamal Adwan Hospital has been detained since December 2024.\n\nMeanwhile, his humanitarian service continues to receive international recognition, including the **2026 Arab Doctor Award** and the **2026 Gianni Rufini Award**.\n\nThe United Nations has called for his immediate release.",
+                ar: 'في ١٨ نوفمبر ٢٠٢٦، مدّدت محكمة إسرائيلية احتجاز الدكتور حسام أبو صفية ستة أشهر أخرى، من دون توجيه تهم إليه أو محاكمته، بدعوى أنه يشكّل تهديدًا لأمن إسرائيل.\n\nويُحتجز طبيب الأطفال الفلسطيني ومدير مستشفى كمال عدوان في غزة منذ ديسمبر ٢٠٢٤.\n\nوفي الوقت نفسه، يواصل عمله الإنساني نيل التقدير الدولي، بما في ذلك **جائزة الطبيب العربي لعام ٢٠٢٦** و**جائزة جياني روفيني لعام ٢٠٢٦**.\n\nوقد دعت الأمم المتحدة إلى الإفراج الفوري عنه.'
+            },
+            imageUrl: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/biosite/01.jpg',
+            imageAlt: { en: 'Poster with a portrait of Dr. Hussam Abu Safiya.', ar: 'ملصق يحمل صورة الدكتور حسام أبو صفية.' },
+            destinationUrl: 'biosite/index.html',
+            destinationLabel: { en: 'Give Us Back Our Dolly!', ar: 'أعيدوا إلينا دميتنا!' },
+            week: { en: '', ar: '' }
         }
     ];
     // END WEEKLY EDITING AREA
@@ -137,7 +151,15 @@ document.addEventListener('DOMContentLoaded', () => {
         indicator.textContent = activeFeatures.length ? text(`Feature ${currentIndex + 1} of ${activeFeatures.length}`, `المختار ${currentIndex + 1} من ${activeFeatures.length}`) : text('No active features', 'لا توجد مختارات نشطة');
         if (activeFeatures.length) {
             const item = activeFeatures[currentIndex];
-            ['category', 'headline', 'description'].forEach(key => { find(`.weekly-dispatch-${key}`).textContent = item[key][lang]; });
+            ['category', 'headline'].forEach(key => { find(`.weekly-dispatch-${key}`).textContent = item[key][lang]; });
+            const description = find('.weekly-dispatch-description');
+            const descriptionParts = item.description[lang].split(/\*\*([^*]+)\*\*/);
+            description.replaceChildren(...descriptionParts.map((part, index) => {
+                if (index % 2 === 0) return part;
+                const emphasis = document.createElement('strong');
+                emphasis.textContent = part;
+                return emphasis;
+            }));
             if (image.getAttribute('src') !== item.imageUrl) image.src = item.imageUrl;
             image.alt = item.imageAlt[lang];
             const organization = find('.weekly-dispatch-organization');
