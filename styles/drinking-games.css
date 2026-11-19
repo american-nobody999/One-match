@@ -1,7 +1,7 @@
 
 /*
    Author: Leslie Brockman
-   Date: 11-11-2026
+   Date: 11-19-2026
 */
 /* Drinking Games shell and Weekly Song Dedication. */
 :where(.drinking-games-page) main {
@@ -495,29 +495,60 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 .drinking-games-page .lounge-dialog .lang-ar { font-family: var(--font-ar); direction: rtl; text-align: right; }
 .drinking-games-page .game-card { background: #ffffff08; }
 
-/* Game Room popup artwork and action only. */
+/* Game Room tiles and return control. */
 .drinking-games-page #game-room-dialog .dialog-top {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
 }
 .drinking-games-page #game-room-dialog #game-room-title {
-    grid-row: 2;
     min-width: 0;
     color: #FF4FA3;
     text-align: center;
 }
-.drinking-games-page #game-room-dialog #game-room-title .lang-ar { text-align: center; }
-.drinking-games-page #game-room-dialog .dialog-top > .dialog-close {
-    grid-row: 1;
-    justify-self: end;
+.drinking-games-page #game-room-dialog :is(#game-room-title, .game-card) .lang-ar { text-align: center; }
+.drinking-games-page #game-room-dialog .dialog-close {
+    position: relative;
+    display: flex;
+    inline-size: 3rem;
+    margin: 1.25rem auto 0;
+    padding: .25rem;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+.drinking-games-page #game-room-dialog .game-room-close-label {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 .drinking-games-page #game-room-dialog .lounge-button { background: #FF4FA3; color: #151515; }
 
+.drinking-games-page #game-room-dialog .game-room-tiles {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+}
+@media (min-width: 48rem) {
+    .drinking-games-page #game-room-dialog .game-room-tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 .drinking-games-page #game-room-dialog .game-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
+    text-align: center;
+}
+.drinking-games-page #game-room-dialog .game-card:is(:hover, :focus-within) {
+    box-shadow: 0 .5rem 1.5rem #15151555;
+}
+.drinking-games-page #game-room-dialog .game-card h3 {
+    margin: 0;
+    color: #FF4FA3;
 }
 .drinking-games-page #game-room-dialog .game-room-popup-artwork {
     display: block;
@@ -526,14 +557,13 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
     height: auto;
     margin: 0 auto;
 }
-.drinking-games-page #game-room-dialog .game-card > .lounge-button { align-self: center; }
+.drinking-games-page #game-room-dialog .game-card > .lounge-button { margin-block-start: auto; }
 
 .drinking-games-page #game-room-dialog .lounge-note {
-    text-align: center;
+    margin: 0;
     font-size: clamp(1rem, 2vw, 1.15rem);
     line-height: 1.75;
 }
-.drinking-games-page #game-room-dialog .lounge-note .lang-ar { text-align: center; }
 
 
 .drinking-games-page .lounge-note { margin-top: 1.5rem; }
@@ -678,45 +708,166 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 
 /* Mystery reveal uses the existing wheel dialog, never a nested modal. */
 .drinking-games-page :is(#wheel-play, #wheel-surprise)[hidden] { display: none; }
-.drinking-games-page .wheel-surprise { padding: clamp(1rem, 4vw, 3rem); background: #15151540; border-radius: 1rem; }
-.drinking-games-page .surprise-mark { color: #eec876; font-size: 4rem; margin: 0; }
+.drinking-games-page #wheel-dialog #wheel-surprise {
+    --result-brass: #d5ad66;
+    --result-teal: #58dfcd;
+    --result-pink: #ff71ae;
+    position: relative;
+    box-sizing: border-box;
+    inline-size: min(100%, 52rem);
+    min-inline-size: 0;
+    margin-inline: auto;
+    padding: clamp(1.15rem, 4vw, 2.75rem);
+    border: 4px ridge var(--result-brass);
+    border-radius: clamp(1rem, 4vw, 2rem);
+    background:
+        linear-gradient(90deg, transparent, var(--result-teal), transparent) center .4rem / 65% 1px no-repeat,
+        linear-gradient(90deg, transparent, var(--result-pink), transparent) center calc(100% - .4rem) / 65% 1px no-repeat,
+        radial-gradient(circle at .65rem .65rem, #ffe4a4 0 1px, #a0643b 2px 3px, transparent 4px) bottom left / 1.3rem 1.3rem no-repeat,
+        radial-gradient(circle at .65rem .65rem, #ffe4a4 0 1px, #a0643b 2px 3px, transparent 4px) bottom right / 1.3rem 1.3rem no-repeat,
+        radial-gradient(ellipse at top, #254538, #14241e 58%, #141819 100%);
+    color: #faefd8;
+    box-shadow: inset 0 0 0 2px #794331, inset 0 0 1.4rem #0a100daf, 0 .5rem 1.25rem #080c0a99;
+    text-align: center;
+}
 
-/* Only Challenge 1 replaces the shared result ornament. */
-.drinking-games-page #wheel-dialog .wheel-result__peace { display: none; }
-.drinking-games-page #wheel-dialog #wheel-surprise:is([data-section-id="1"], [data-section-id="2"], [data-section-id="3"], [data-section-id="4"]) > .surprise-mark { display: none; }
-.drinking-games-page #wheel-dialog #wheel-surprise:is([data-section-id="1"], [data-section-id="2"], [data-section-id="3"], [data-section-id="4"]) > .wheel-result__peace {
-    display: block;
-    width: fit-content;
-    margin: 0 auto 4px;
+.drinking-games-page #wheel-dialog #wheel-surprise::before,
+.drinking-games-page #wheel-dialog #wheel-surprise::after {
+    content: "";
+    position: absolute;
+    inset-block-start: .7rem;
+    inline-size: clamp(.85rem, 4vw, 1.7rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, #ffe4a4 0 10%, #432d20 11% 23%, #ab7148 24% 52%, transparent 54%),
+        repeating-conic-gradient(#cf9a5e 0deg 18deg, transparent 18deg 36deg);
+    pointer-events: none;
+}
+.drinking-games-page #wheel-dialog #wheel-surprise::before { inset-inline-start: .7rem; }
+.drinking-games-page #wheel-dialog #wheel-surprise::after { inset-inline-end: .7rem; }
+
+/* All six results share one brass peace emblem. */
+.drinking-games-page #wheel-dialog #wheel-surprise > .wheel-result__peace {
+    display: grid;
+    place-items: center;
+    inline-size: 3.3rem;
+    aspect-ratio: 1;
+    margin: 0 auto .55rem;
+    border: 3px ridge #d5ad66;
+    border-radius: 50%;
+    background: radial-gradient(circle at 36% 26%, #50674a, #24382c 48%, #151b17 80%);
+    box-shadow: inset 0 0 .4rem #080e0b, 0 0 .65rem #56d9a94f;
     font-family: "DejaVu Sans", "Arial Unicode MS", sans-serif;
-    font-size: 42px;
+    font-size: 2.1rem;
     font-weight: 700;
     line-height: 1;
-    color: #f3c66d;
-    text-align: center;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .45), 0 0 10px rgba(243, 198, 109, .2);
+    color: #ffe3a0;
+    text-shadow: 0 -1px #fff4cc, 0 2px #8e5026, 0 3px 4px #080e0b;
+    animation: wheel-peace-shimmer 2s ease-in-out 2;
 }
 
+@keyframes wheel-peace-shimmer {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.22); }
+}
+
+.drinking-games-page #wheel-dialog #wheel-surprise .wheel-wild-art { display: none; }
+.drinking-games-page #wheel-dialog #wheel-surprise[data-section-id="6"] .wheel-wild-art {
+    display: block;
+    inline-size: min(100%, 22rem);
+    block-size: auto;
+    margin: 0 auto .9rem;
+}
+.drinking-games-page #wheel-dialog #wheel-surprise .wheel-wild-table {
+    transform-box: view-box;
+    transform-origin: 50% 54%;
+    animation: wheel-wild-table-flip 3.6s infinite;
+}
+
+@keyframes wheel-wild-table-flip {
+    0%, 9.2% { transform: translateY(0) rotate(0deg); }
+    16.5% { transform: translateY(0) rotate(-15deg); animation-timing-function: ease-out; }
+    28.1% { transform: translateY(-24px) rotate(155deg); animation-timing-function: ease-in; }
+    43.4% { transform: translateY(0) rotate(368deg); animation-timing-function: ease-out; }
+    50.7% { transform: translateY(-7px) rotate(354deg); animation-timing-function: ease-in; }
+    61.1%, 100% { transform: translateY(0) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .drinking-games-page #wheel-dialog #wheel-surprise :is(.wheel-result__peace, .wheel-wild-table) {
+        animation: none;
+    }
+}
+
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-title {
+    margin: .55rem 0 1rem;
+    color: #ffe3a0;
+    font: 700 clamp(1.4rem, 4vw, 2.65rem)/1.25 'Cormorant Garamond', Georgia, serif;
+    overflow-wrap: anywhere;
+    text-shadow: 0 1px #70432b, 0 2px 3px #0b100c;
+}
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-title:lang(ar) {
+    font-family: var(--font-ar, Amiri, serif);
+    line-height: 1.45;
+}
 .drinking-games-page #surprise-title:focus-visible { outline: 3px solid #eec876; outline-offset: 4px; }
-.drinking-games-page #surprise-media :is(img, video, iframe) { display: block; width: 100%; max-width: 36rem; margin: 1rem auto; }
-.drinking-games-page #surprise-media iframe { aspect-ratio: 16 / 9; border: 0; }
-/* Wheel result media and shared statement typography. */
-.drinking-games-page #wheel-dialog #surprise-media .wheel-result-media {
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-description { margin-block: 0 1rem; }
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-description:lang(ar) { font-family: var(--font-ar, Amiri, serif); }
+.drinking-games-page #wheel-dialog #wheel-surprise[data-section-id="5"] #surprise-description {
+    max-inline-size: 52ch;
+    margin-inline: auto;
+    color: #ffe3a0;
+}
+
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-media:not(:empty) {
+    box-sizing: border-box;
+    inline-size: fit-content;
+    max-inline-size: 100%;
+    margin: 1rem auto 1.25rem;
+    padding: clamp(.25rem, 1.5vw, .65rem);
+    border: 3px groove #ba844e;
+    border-radius: .8rem;
+    background: #101617;
+    box-shadow: inset 0 0 .75rem #000, 0 1px 0 #f2bf773d;
+}
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-media .wheel-result-media {
     box-sizing: border-box;
     display: block;
-    width: min(100%, 500px);
+    width: 500px;
     max-width: 100%;
     height: auto;
-    margin: 1.25rem auto;
     object-fit: contain;
-    border: 1px solid #c9aa65;
-    border-radius: .65rem;
+    border: 1px solid #84563c;
+    border-radius: .35rem;
 }
-.drinking-games-page #wheel-dialog #surprise-media iframe.wheel-result-media {
-    width: min(100%, 36rem);
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-media iframe.wheel-result-media {
+    width: 36rem;
     aspect-ratio: 16 / 9;
 }
+
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-back {
+    border: 3px ridge var(--result-brass);
+    border-radius: 1.25rem;
+    background: linear-gradient(#34594a, #1c342c 52%, #141d1a);
+    color: #fff0c1;
+    box-shadow: inset 0 1px #f9d59566, 0 3px 0 #613b27;
+    text-shadow: 0 1px #080c0a;
+    text-align: center;
+}
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-back:hover {
+    border-color: var(--result-teal);
+}
+.drinking-games-page #wheel-dialog #wheel-surprise #surprise-back .lang-ar { text-align: center; }
+
+/* Wheel result dictionary and statement typography. */
 .drinking-games-page #wheel-dialog #surprise-description[hidden] { display: none; }
+.drinking-games-page #wheel-dialog #wheel-surprise[data-section-id="3"] #surprise-description {
+    max-inline-size: 60ch;
+    margin-inline: auto;
+    text-align: start;
+    white-space: pre-line;
+}
 .drinking-games-page #wheel-dialog #surprise-description.wheel-result-statement {
     box-sizing: border-box;
     display: grid;
@@ -739,6 +890,13 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
     font-family: var(--font-ar);
     direction: rtl;
     letter-spacing: normal;
+}
+.drinking-games-page #wheel-dialog #surprise-description.wheel-result-statement strong {
+    margin-block-start: .4rem;
+    color: #fff0b6;
+    font-size: 1.35em;
+    font-weight: 900;
+    line-height: 1.2;
 }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
     .drinking-games-page #wheel-dialog #surprise-description.wheel-result-statement {
@@ -1156,7 +1314,7 @@ min-width: 0;
 }
 
 /* Featured award reporting sources: one accessible gold link per row. */
-.drinking-games-page #loser-of-the-week [data-current-loser] .loser-source-link {
+.drinking-games-page #loser-of-the-week :is([data-current-loser], [data-archived-loser]) .loser-source-link {
     display: block;
     box-sizing: border-box;
     max-width: 100%;
@@ -1170,5 +1328,19 @@ min-width: 0;
     text-underline-offset: .2em;
     overflow-wrap: anywhere;
 }
-.drinking-games-page #loser-of-the-week [data-current-loser] .loser-source-link:hover { color: #fff5df; background: #3b462a; border-color: #ffe2a0; }
-.drinking-games-page #loser-of-the-week [data-current-loser] .loser-source-link:focus-visible { outline: 3px solid #ffe2a0; outline-offset: 4px; color: #fff5df; background: #3b462a; }
+.drinking-games-page #loser-of-the-week :is([data-current-loser], [data-archived-loser]) .loser-source-link:hover { color: #fff5df; background: #3b462a; border-color: #ffe2a0; }
+.drinking-games-page #loser-of-the-week :is([data-current-loser], [data-archived-loser]) .loser-source-link:focus-visible { outline: 3px solid #ffe2a0; outline-offset: 4px; color: #fff5df; background: #3b462a; }
+
+/* Relocated West Bank gallery: preserve its original display. */
+.drinking-games-page #umm-al-khair { min-width: 0; scroll-margin-top: 2rem; }
+.drinking-games-page #umm-al-khair:focus-visible { outline: 3px solid #81362f; outline-offset: 4px; }
+.drinking-games-page #your-famous { box-sizing: border-box; width: 100%; max-width: 1200px; min-width: 0; margin: 2rem auto 0; padding: clamp(1.5rem, 3vw, 2.5rem); border: 2px solid #b38b4f; border-radius: 12px; box-shadow: 0 5px 14px #303d2933; text-align: center; }
+.drinking-games-page #your-famous .hero-gallery-block { width: min(100%, 980px); max-width: 100%; margin-inline: auto; border-color: transparent; box-shadow: none; }
+.drinking-games-page #your-famous .scrollable-gallery { display: flex; width: 100%; min-width: 0; max-width: 100%; gap: 1.5rem; padding: 1rem 0 1.25rem; overflow-x: auto; overflow-y: hidden; border: 5px solid transparent; border-radius: 12px; box-shadow: none; margin: 1.5rem auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; }
+.drinking-games-page #your-famous .gallery-card { flex: 0 0 200px; width: 200px; height: 200px; aspect-ratio: 1; border: 0; border-radius: 0; box-shadow: none; }
+.drinking-games-page #your-famous .gallery-card a { display: block; width: 100%; height: 100%; }
+.drinking-games-page #your-famous .gallery-card img { display: block; width: 100%; max-width: 100%; height: 100%; margin: 0; object-fit: cover; border-radius: 12px; border-color: transparent; box-shadow: none; }
+.drinking-games-page #your-famous :is(h2, h3, p) > .lang-ar { text-align: center; }
+@media (max-width: 1199px) { .drinking-games-page #your-famous .scrollable-gallery { padding: .9rem 0 1.1rem; gap: 1.25rem; } }
+@media (max-width: 991px) { .drinking-games-page #your-famous .gallery-card { flex: 0 0 min(200px, 100%); width: min(200px, 100%); max-width: 100%; min-width: 0; height: auto; } }
+@media (max-width: 767px) { .drinking-games-page #your-famous .scrollable-gallery { padding: .75rem 0 1rem; gap: 1rem; } }
