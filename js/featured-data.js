@@ -1,9 +1,103 @@
 // Author: Leslie Brockman
-//date modified: 2026-11-11
+//date modified: 2026-11-19
 // Weekly archive: add a record at the beginning; use null for undocumented dates.
 // Bilingual fields accept plain text or text/emphasis runs. Links use HTTPS URLs.
 "use strict";
 window.MPGAFeaturedHeroes = [
+    {
+        "id": "moh-at",
+        "featuredDate": "2026-11-13",
+        "dateLabels": {
+            "en": "November 13, 2026",
+            "ar": "١٣ نوفمبر ٢٠٢٦"
+        },
+        "names": {
+            "en": "Moh At (Mohamed Freij)",
+            "ar": "موه آت (محمد فريج)"
+        },
+        "portrait": {
+            "url": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/featured/moh.jpg",
+            "alt": "Featured image of Moh At (Mohamed Freij) / صورة مميزة لموه آت (محمد فريج)"
+        },
+        "storyHeading": {
+            "en": "Palestine Is a People, a Story, a Home",
+            "ar": "فلسطين شعب وحكاية ووطن"
+        },
+        "biography": [
+            {
+                "en": "Mohamed Freij, known as Moh At, is a young Palestinian artist from Gaza whose drawings speak of identity, memory, resilience, and the meaning of home.",
+                "ar": "محمد فريج، المعروف باسم موه آت، فنان فلسطيني شاب من غزة، تعبّر رسوماته عن الهوية والذاكرة والصمود ومعنى الوطن."
+            },
+            {
+                "en": "At 23, Mohamed uses his creativity to tell stories that cannot be reduced to headlines or statistics. While supporting his mother and four younger siblings, he continues to create artwork that reflects the lives, dreams, and experiences of Palestinians.",
+                "ar": "في الثالثة والعشرين من عمره، يستخدم محمد إبداعه ليروي قصصًا لا يمكن اختزالها في العناوين الإخبارية أو الأرقام. وبينما يساهم في إعالة والدته وإخوته الأربعة الأصغر سنًا، يواصل إبداع أعمال فنية تعكس حياة الفلسطينيين وأحلامهم وتجاربهم."
+            },
+            {
+                "en": "Palestine is not just a land. It is a people, a story, and a home. Through Mohamed's artwork, we are reminded that Palestine lives in its people, its memories, its creativity, and the stories passed from one generation to the next.",
+                "ar": "فلسطين ليست مجرد أرض، بل هي شعب وحكاية ووطن. ومن خلال أعمال محمد الفنية، نتذكر أن فلسطين تعيش في أهلها وذكرياتهم وإبداعهم والحكايات التي تنتقل من جيل إلى جيل."
+            },
+            {
+                "en": "His collection, Deep Roots, Open Skies, celebrates those connections through art. His illustrated diary, I Draw So I Don't Disappear, shares his personal experiences and the role art plays in bearing witness.",
+                "ar": "تحتفي مجموعته الفنية «جذور عميقة، آفاق مفتوحة» بهذه الروابط من خلال الفن. أما يومياته المصوّرة «أرسم كي لا أختفي»، فتروي جانبًا من تجاربه الشخصية ودور الفن في توثيق ما يعيشه."
+            }
+        ],
+        "artwork": {
+            "url": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/featured/moh2.jpg",
+            "alt": "Artwork shared by Moh At (Mohamed Freij) / عمل فني شاركه موه آت (محمد فريج)"
+        },
+        "socialLinks": [
+            {
+                "url": "https://www.facebook.com/profile.php?id=61578289435550",
+                "label": "Facebook / فيسبوك",
+                "icon": {
+                    "url": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg",
+                    "alt": ""
+                }
+            }
+        ],
+        "supportLinks": [
+            {
+                "id": "moh-at-family",
+                "url": "https://chuffed.org/pay/campaign/019da023-0d59-709c-b5b7-8b289637abbc",
+                "label": {
+                    "en": "Support Mohamed and His Family",
+                    "ar": "ادعم محمد وعائلته"
+                }
+            },
+            {
+                "id": "moh-at-collection",
+                "url": "https://nierika-art-for-palestine.myshopify.com/collections/deep-roots-open-skies",
+                "label": {
+                    "en": "Explore Deep Roots, Open Skies",
+                    "ar": "استكشف «جذور عميقة، آفاق مفتوحة»"
+                }
+            },
+            {
+                "id": "moh-at-diary",
+                "url": "https://ko-fi.com/s/d823eb253c",
+                "label": {
+                    "en": "Explore His Illustrated Diary",
+                    "ar": "استكشف يومياته المصوّرة"
+                }
+            }
+        ],
+        "videos": [],
+        "sections": [
+            {
+                "heading": {
+                    "en": "Support Mohamed and His Family",
+                    "ar": "ادعم محمد وعائلته"
+                },
+                "paragraphs": [],
+                "linkIds": [
+                    "moh-at-family",
+                    "moh-at-collection",
+                    "moh-at-diary"
+                ],
+                "videoIds": []
+            }
+        ]
+    },
     {
         "id": "mohannad",
         "featuredDate": "2026-11-06",
