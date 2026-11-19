@@ -1,0 +1,199 @@
+<!-- Practice 4: The Cosmic Oracle
+     Author: Leslie Brockman
+     Date Modified: 11-18-2026
+     Description: A cosmic fortune-telling arcade machine simulation. This is my merge dragons. My candy crush. Don't judge. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Free Advice | MPGA Arcade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Cinzel+Decorative:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&amp;family=Marcellus+SC&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles2.css">
+    <link rel="stylesheet" href="styles/cosmic-oracle.css">
+    <script src="js/cosmic-oracle.js" defer></script>
+</head>
+<body class="arcade-page cosmic-oracle-page">
+    <header class="site-header" data-global-chrome>
+      <div class="header-container">
+
+  <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
+          <div class="header-center">
+              <h1 class="site-title state-title">
+                  <span class="lang-en">State of Palestine</span>
+                  <span class="lang-ar">دولة فلسطين</span>
+              </h1>
+              <nav id="cosmic-navigation" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-menu">
+                  <li><a href="index.html" class="nav-btn">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-ar">الرئيسية</span>
+                  </a></li>
+                  <li><a href="mpga.html" class="nav-btn">
+                          <span class="lang-en">MPGA</span>
+                          <span class="lang-ar">MPGA</span>
+                  </a></li>
+                  <li><a href="about.html" class="nav-btn">
+                        <span class="lang-en">About Us</span>
+                        <span class="lang-ar">من نحن</span>
+                  </a></li>
+                </ul>
+              </nav>
+          </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                      English | العربية
+              </button>
+  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+              <button id="menu-toggle" aria-controls="cosmic-navigation" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  ☰
+              </button>
+        </div>
+  </header>
+    <div class="observatory-atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
+    <main class="arcade" lang="en">
+        <div class="oracle-layout" id="oracleLayout">
+        <section class="machine" aria-labelledby="machineTitle">
+            <div class="machine-top">
+                <svg class="celestial-crown" viewBox="0 0 340 95" aria-hidden="true" focusable="false">
+                    <defs><radialGradient id="crownSphere" cx="35%" cy="30%"><stop stop-color="#e9f8ff"/><stop offset=".3" stop-color="#53e5ff"/><stop offset=".7" stop-color="#704fc3"/><stop offset="1" stop-color="#111331"/></radialGradient></defs>
+                    <path d="M30 86 Q170 5 310 86 M50 86 Q170 25 290 86" fill="none" stroke="#c18f4d" stroke-width="5"/><path d="M35 82 Q170 12 305 82 M54 83 Q170 31 286 83" fill="none" stroke="#f5cf76" stroke-width="1.5"/>
+                    <path d="M68 69l-4-7m32-7-3-8m33-3-1-8m45 6v-9m45 11 1-8m29 17 3-8m30 24 4-7" stroke="#f5cf76" stroke-width="2"/>
+                    <ellipse cx="170" cy="61" rx="54" ry="18" fill="none" stroke="#53e5ff" stroke-opacity=".7" stroke-width="1.5" transform="rotate(-14 170 61)"/><path d="M170 20v64M131 62h78M142 36l56 49M198 36l-56 49" stroke="#d8ad62" stroke-opacity=".65" stroke-width="1"/>
+                    <circle cx="170" cy="59" r="20" fill="url(#crownSphere)" stroke="#dcb46c" stroke-width="3"/><circle cx="163" cy="52" r="3" fill="#fff" opacity=".85"/>
+                    <g fill="#a9703d" stroke="#f5cf76" stroke-width="2"><path d="M86 74l3-6 7-1 3 5 7 1 2 6-5 5-7-1-4 5-7-2-1-7-5-3z"/><path d="M240 74l3-6 7-1 3 5 7 1 2 6-5 5-7-1-4 5-7-2-1-7-5-3z"/></g><g fill="#271b27" stroke="#f5cf76" stroke-width="2"><circle cx="94" cy="78" r="5"/><circle cx="248" cy="78" r="5"/></g><g fill="#e9f8ff"><circle cx="120" cy="47" r="2"/><circle cx="220" cy="45" r="2"/><circle cx="273" cy="68" r="1.5"/></g>
+                    <path d="M18 91H322" stroke="#b58a42" stroke-width="6"/><path d="M18 89H322" stroke="#f5cf76" stroke-width="1"/>
+                </svg>
+                <span class="marquee-stars" aria-hidden="true">✦ ✧ ✦</span>
+                <p class="machine-label">MPGA PRESENTS</p>
+                <h1 id="machineTitle">COSMIC FREE ADVICE</h1>
+                <p class="machine-slogan">THE UNIVERSE HAS OPINIONS</p>
+                <span class="marquee-stars" aria-hidden="true">✦ ✧ ✦</span>
+            </div>
+            <div class="machine-body">
+                <svg class="cabinet-hardware hardware-left" viewBox="0 0 48 160" aria-hidden="true" focusable="false"><path d="M24 2v40m0 76v40" fill="none" stroke="#ae7946" stroke-width="8"/><path d="M24 2v40m0 76v40" fill="none" stroke="#f5cf76" stroke-opacity=".65" stroke-width="2"/><g transform="translate(24 80)"><g class="gear-wheel"><path d="M-5-23h10l2 6 5 2 6-3 7 7-3 6 2 5 6 2v10l-6 2-2 5 3 6-7 7-6-3-5 2-2 6H-5l-2-6-5-2-6 3-7-7 3-6-2-5-6-2V2l6-2 2-5-3-6 7-7 6 3 5-2Z" transform="scale(.72)" fill="#a7753e" stroke="#f5cf76" stroke-width="2"/><circle r="10" fill="#36212a" stroke="#e7ba68" stroke-width="3"/><circle r="4" fill="#18bfff"/></g></g><circle cx="24" cy="22" r="4" fill="#f5cf76"/><circle cx="24" cy="138" r="4" fill="#f5cf76"/></svg>
+                <svg class="cabinet-hardware hardware-right" viewBox="0 0 48 160" aria-hidden="true" focusable="false"><path d="M24 2v40m0 76v40" fill="none" stroke="#ae7946" stroke-width="8"/><path d="M24 2v40m0 76v40" fill="none" stroke="#f5cf76" stroke-opacity=".65" stroke-width="2"/><g transform="translate(24 80)"><g class="gear-wheel"><path d="M-5-23h10l2 6 5 2 6-3 7 7-3 6 2 5 6 2v10l-6 2-2 5 3 6-7 7-6-3-5 2-2 6H-5l-2-6-5-2-6 3-7-7 3-6-2-5-6-2V2l6-2 2-5-3-6 7-7 6 3 5-2Z" transform="scale(.72)" fill="#a7753e" stroke="#f5cf76" stroke-width="2"/><circle r="10" fill="#36212a" stroke="#e7ba68" stroke-width="3"/><circle r="4" fill="#a45cff"/></g></g><circle cx="24" cy="22" r="4" fill="#f5cf76"/><circle cx="24" cy="138" r="4" fill="#f5cf76"/></svg>
+                <div class="celestial-window">
+                    <div class="star star-one" aria-hidden="true">✦</div>
+                    <div class="star star-two" aria-hidden="true">✧</div>
+                    <div class="star star-three" aria-hidden="true">✦</div>
+                    <div class="star star-four" aria-hidden="true">✧</div>
+                    <svg class="moon" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                        <defs>
+                            <linearGradient id="moonSurface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffbea"/><stop offset=".48" stop-color="#e9d6ad"/><stop offset="1" stop-color="#b49161"/></linearGradient>
+                            <clipPath id="moonClip"><path d="M69 9C43 13 28 31 28 50s15 37 41 41C37 96 12 76 12 50S37 4 69 9Z"/></clipPath>
+                        </defs>
+                        <path d="M69 9C43 13 28 31 28 50s15 37 41 41C37 96 12 76 12 50S37 4 69 9Z" fill="url(#moonSurface)" stroke="#dfc48d" stroke-width="2" stroke-linejoin="round"/>
+                        <g clip-path="url(#moonClip)" fill="#8c755e" opacity=".18"><circle cx="23" cy="31" r="5"/><circle cx="26" cy="65" r="7"/><circle cx="17" cy="49" r="3"/><circle cx="38" cy="79" r="4"/><circle cx="39" cy="19" r="3"/></g>
+                        <path d="M69 9C43 13 28 31 28 50s15 37 41 41" fill="none" stroke="#715c51" stroke-opacity=".4" stroke-width="3"/>
+                        <path d="M23 32Q30 17 44 14" fill="none" stroke="#fffbea" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <div class="planet planet-one" aria-hidden="true">🪐</div>
+                    <div class="planet planet-two" aria-hidden="true">✺</div>
+                    <div class="planet planet-three" aria-hidden="true">✧</div>
+                    <span class="shooting-star shooting-star-one" aria-hidden="true"></span>
+                    <span class="shooting-star shooting-star-two" aria-hidden="true"></span>
+                    <span class="shooting-star shooting-star-three" aria-hidden="true"></span>
+                    <span class="shooting-star shooting-star-four" aria-hidden="true"></span>
+                </div>
+                <div class="machine-controls">
+                    <button type="button" id="revealBtn" class="reveal-btn">
+                        SCAN THE COSMOS
+                    </button>
+                </div>
+                <div class="ticket-slot">
+                    <p>FREE ADVICE DISPENSED HERE</p>
+                    <div class="slot-opening" aria-hidden="true"></div>
+                </div>
+                <div class="ticket-area" id="ticketArea" aria-hidden="true">
+                    <div class="mini-ticket" id="miniTicket" hidden>
+                        <span>✦ COSMIC MESSAGE ✦</span>
+                        <span id="miniTicketNumber">NO. 001</span>
+                    </div>
+                </div>
+                <p class="window-message" id="windowMessage" role="status">
+                    The stars are waiting...
+                </p>
+            </div>
+            <div class="machine-base">
+                <span>✦</span>
+                <p>EST. SOMEWHERE IN THE UNIVERSE</p>
+                <span>✦</span>
+            </div>
+        </section>
+        <div class="advice-panel" aria-live="polite">
+            <article class="fortune-ticket" id="fortuneTicket" hidden>
+                <div class="ticket-heading">
+                    <span>✦ COSMIC MESSAGE ✦</span>
+                    <span id="ticketNumber">NO. 001</span>
+                </div>
+                <div class="ticket-symbol" id="ticketSymbol" aria-hidden="true">🌙</div>
+                <h3 id="fortuneTitle">Your Advice Awaits</h3>
+                <p class="fortune-text" id="fortuneText">The universe is preparing your message.</p>
+                <p class="fortune-omen" id="fortuneOmen"></p>
+                <div class="ticket-seal" aria-hidden="true"><span>✧ MPGA ✧</span><span>☮ ☾</span><span>◌ ✦ ◌</span></div>
+                <button type="button" class="ticket-return" id="ticketReturn" aria-label="Return cosmic message">↶</button>
+                <div class="ticket-footer">
+                    <span>COSMIC FREE ADVICE</span>
+                    <span>✦ ✧ ✦</span>
+                </div>
+            </article>
+        </div>
+        </div>
+        <footer class="page-footer">
+            <p>Free advice. Questionable qualifications. Absolutely no refunds.</p>
+            <p>Powered by caffeine, cosmic chaos, and JavaScript.</p>
+        </footer>
+    </main>
+    <footer class="site-footer" data-global-chrome>
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, a State Rises</span>
+              <span class="lang-ar">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 <span class="footer-name">American Nobody</span>999 ✌️ 🇵🇸 🧭 👈</span>
+              <span class="lang-ar">&copy; 2026 <span class="footer-name">أمريكان نوبودي</span>999 ✌️ 🇵🇸 🧭 👈</span>
+            </p>
+          </div>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
+  </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
