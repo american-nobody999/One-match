@@ -1,6 +1,6 @@
 // js/main.js
 //Author: Leslie Brockman
-//Date modified: 11/17/2026
+//Date modified: 11/19/2026
 "use strict";
 document.addEventListener('DOMContentLoaded', function() {
    // ============== LANGUAGE TOGGLE ==============
