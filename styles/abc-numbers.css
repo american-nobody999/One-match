@@ -1,0 +1,257 @@
+/**
+ * Author: Leslie Brockman
+ * ABC Numbers Educational Page
+ * Date Modified 11-18-2026
+ * Description: CSS styling for the ABC Numbers educational page.
+ */
+
+body.abc-numbers-classroom { background: radial-gradient(ellipse at top, #fff6cc, transparent 65%), linear-gradient(145deg, #f9dc8d, #f5c3a0 55%, #d5ead1); }
+.abc-numbers-classroom [hidden] { display: none !important; }
+.abc-numbers-classroom .numbers-main { text-align: center; }
+.abc-numbers-classroom .numbers-intro, .abc-numbers-classroom .number-game { margin: 1.5rem auto; padding: clamp(1.2rem, 4vw, 2.5rem); border: 3px solid #d99a59; border-radius: 28px; background: #fff9e9; box-shadow: inset 0 3px #fff, 0 7px 0 rgba(153, 91, 39, .2), 0 12px 22px rgba(104, 69, 38, .15); }
+.abc-numbers-classroom h2 { color: #45391e; font: 700 clamp(1.6rem, 4vw, 2.3rem)/1.35 "Chalkboard SE", "Comic Sans MS", cursive; }
+.abc-numbers-classroom :is(h2, h3, p, .choice-card) > [lang] { display: block; }
+.abc-numbers-classroom [lang="ar"] { font-family: "Geeza Pro", "Traditional Arabic", serif; }
+.abc-numbers-classroom .number-friends { display: flex; justify-content: center; gap: .5rem; }
+.abc-numbers-classroom .number-friends span { display: grid; place-items: center; width: 2em; height: 2em; border-radius: 35%; background: #ffd36d; color: #653a17; font: 700 1.4rem Georgia, serif; box-shadow: inset 0 3px #fff8d7, 0 4px #d89b50; }
+.abc-numbers-classroom .number-friends span:nth-child(2) { background: #b9dfc0; }
+.abc-numbers-classroom .number-friends span:nth-child(3) { background: #f7b8a7; }
+.abc-numbers-classroom .number-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.abc-numbers-classroom .choice-card, .abc-numbers-classroom .game-control, .abc-numbers-classroom .game-back { cursor: pointer; font: inherit; }
+.abc-numbers-classroom .choice-card { min-height: 170px; padding: 1.4rem; border: 3px solid #c47a48; border-radius: 24px; background: linear-gradient(145deg, #ffe7a6, #f4b58c); color: #4c2d1a; box-shadow: inset 0 3px #fff5da, 0 6px #c9875d; }
+.abc-numbers-classroom .choice-card:nth-child(2) { border-color: #739c72; background: linear-gradient(145deg, #e4f5cd, #a9d8bd); box-shadow: inset 0 3px #fff, 0 6px #82ae8f; }
+.abc-numbers-classroom .choice-card strong { font-size: 1.3rem; }
+.abc-numbers-classroom .choice-card span { margin-top: .35rem; }
+.abc-numbers-classroom .number-game { background: linear-gradient(145deg, #fff9e9, #fce9cb); }
+.abc-numbers-classroom .game-back, .abc-numbers-classroom .game-control { min-height: 48px; padding: .6rem 1rem; border: 2px solid #6d4b29; border-radius: 999px; background: #315f43; color: #fff; font-weight: 700; box-shadow: inset 0 2px rgba(255,255,255,.3), 0 3px #b87b4d; }
+.abc-numbers-classroom .game-back span + span, .abc-numbers-classroom .game-control span + span { margin-inline-start: .6rem; }
+.abc-numbers-classroom .puzzle-board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; width: min(100%, 340px); margin: 1.25rem auto; padding: .8rem; border: 4px solid #a7683a; border-radius: 22px; background: #d79558; box-shadow: inset 0 3px 8px rgba(83, 40, 13, .35), 0 5px #a7683a; }
+.abc-numbers-classroom .number-tile, .abc-numbers-classroom .line-slot, .abc-numbers-classroom .tray-block { display: grid; place-items: center; min-width: 0; min-height: 56px; border: 2px solid rgba(76, 53, 34, .35); border-radius: 14px; background: var(--block-color, #ffe19a); color: #25291f; font: 700 clamp(1.4rem, 3vw, 2rem)/1 Georgia, serif; box-shadow: inset 0 3px rgba(255,255,255,.65), inset 0 -4px rgba(0,0,0,.09), 0 3px rgba(99, 63, 28, .25); cursor: pointer; touch-action: manipulation; }
+.abc-numbers-classroom .puzzle-board > * { aspect-ratio: 1; }
+.abc-numbers-classroom .puzzle-empty { border: 2px dashed #855529; border-radius: 14px; background: rgba(92, 48, 20, .2); }
+.abc-numbers-classroom .number-line, .abc-numbers-classroom .number-tray { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: .4rem; margin: 1rem auto; padding: .8rem; border: 3px solid #a7c196; border-radius: 18px; background: #e8f3d9; }
+.abc-numbers-classroom .number-tray { background: #e8bd8b; border-color: #b97d4e; min-height: 84px; }
+.abc-numbers-classroom .line-slot { position: relative; background: #fffdf3; border-style: dashed; }
+.abc-numbers-classroom .line-slot .slot-number { position: absolute; top: 2px; left: 5px; color: #555d46; font: 700 .7rem sans-serif; }
+.abc-numbers-classroom .line-slot.filled { background: var(--block-color); border-style: solid; }
+.abc-numbers-classroom .tray-block[aria-pressed="true"] { outline: 4px solid #713b25; outline-offset: 2px; }
+.abc-numbers-classroom .game-status { min-height: 1.6em; font-weight: 700; color: #315f43; }
+.abc-numbers-classroom :is(button, a):focus-visible { outline: 3px solid #223d2c; outline-offset: 3px; }
+@media (hover: hover) { .abc-numbers-classroom :is(.choice-card, .number-tile, .tray-block, .line-slot):hover { filter: brightness(1.06); } }
+@media (max-width: 700px) { .abc-numbers-classroom .number-line, .abc-numbers-classroom .number-tray { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 340px; } }
+@media (max-width: 600px) { .abc-numbers-classroom .number-choices { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .abc-numbers-classroom * { transition: none !important; animation: none !important; } }
+
+/* Compact classroom welcome and decorative number margins. */
+.abc-numbers-classroom .numbers-main { position: relative; isolation: isolate; padding-inline: clamp(2.75rem, 6vw, 5rem); }
+.abc-numbers-classroom .numbers-intro { padding: .85rem 1rem; margin: 1rem auto 1.25rem; }
+.abc-numbers-classroom .numbers-intro h2 { margin: .5rem 0 0; }
+.abc-numbers-classroom .schoolhouse-back { display: inline-flex; width: fit-content; min-height: 44px; align-items: center; justify-content: center; padding: .5rem 1rem; border: 2px solid #c99d4c; border-radius: 999px; background: linear-gradient(#397653, #204a34); color: #fff8df; font-weight: 700; white-space: nowrap; text-decoration: none; box-shadow: inset 0 2px rgba(195, 244, 205, .4), 0 4px 0 #98703a; transition: transform .2s ease, box-shadow .2s ease; }
+.abc-numbers-classroom .schoolhouse-back:hover { color: #fff; transform: translateY(-2px); box-shadow: inset 0 2px rgba(195, 244, 205, .5), 0 6px 0 #98703a; }
+.abc-numbers-classroom .schoolhouse-back:focus-visible { outline: 3px solid #244b34; outline-offset: 4px; }
+.abc-numbers-classroom .choice-card { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.abc-numbers-classroom .choice-illustration { display: block; width: min(100%, 165px); height: auto; margin: .65rem auto; filter: drop-shadow(0 4px 2px rgba(95, 59, 30, .2)); pointer-events: none; }
+.abc-numbers-classroom .numbers-background { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.abc-numbers-classroom .numbers-background span { position: absolute; font: 900 clamp(1.8rem, 3.5vw, 3rem)/1 "Chalkboard SE", "Comic Sans MS", cursive; color: #f3c761; -webkit-text-stroke: .6px rgba(91, 80, 54, .55); text-shadow: 0 2px #fff4d6, 2px 4px 3px rgba(111, 76, 54, .3); animation: numbers-bob 3s ease-in-out infinite alternate; }
+.abc-numbers-classroom .numbers-background span:nth-child(1) { left: 1%; top: 5%; }
+.abc-numbers-classroom .numbers-background span:nth-child(2) { right: 1%; top: 10%; color: #83cda5; animation-duration: 3.7s; animation-delay: -.8s; }
+.abc-numbers-classroom .numbers-background span:nth-child(3) { left: 2%; top: 24%; color: #bba1d9; animation-duration: 2.8s; animation-delay: -1.3s; }
+.abc-numbers-classroom .numbers-background span:nth-child(4) { right: 2%; top: 32%; color: #ed9f99; animation-duration: 3.4s; }
+.abc-numbers-classroom .numbers-background span:nth-child(5) { left: 1%; top: 45%; color: #90c7db; animation-duration: 3.9s; animation-delay: -.4s; }
+.abc-numbers-classroom .numbers-background span:nth-child(6) { right: 1%; top: 53%; color: #eaa76c; animation-duration: 2.7s; }
+.abc-numbers-classroom .numbers-background span:nth-child(7) { left: 2%; top: 68%; color: #88caa8; animation-duration: 3.5s; animation-delay: -1s; }
+.abc-numbers-classroom .numbers-background span:nth-child(8) { right: 2%; top: 75%; color: #bba1d9; animation-duration: 3.2s; }
+.abc-numbers-classroom .numbers-background span:nth-child(9) { left: 1%; bottom: 3%; color: #efad94; animation-duration: 3.8s; animation-delay: -1.7s; }
+@keyframes numbers-bob { from { transform: translateY(0) rotate(-5deg); } to { transform: translateY(-7px) rotate(5deg); } }
+@media (max-width: 900px) { .abc-numbers-classroom .numbers-background span:nth-child(even) { display: none; } }
+@media (max-width: 600px) { .abc-numbers-classroom .numbers-main { padding-inline: 1rem; } .abc-numbers-classroom .numbers-background span:not(:first-child):not(:last-child) { display: none; } .abc-numbers-classroom .numbers-background span:first-child { top: .4rem; right: .5rem; left: auto; } .abc-numbers-classroom .numbers-background span:last-child { bottom: .1rem; } }
+@media (prefers-reduced-motion: reduce) { .abc-numbers-classroom .numbers-background span { animation: none; } .abc-numbers-classroom .schoolhouse-back { transition: none; } .abc-numbers-classroom .schoolhouse-back:hover { transform: none; } }
+
+/* Molded number toys and dimensional activity illustrations. */
+.abc-numbers-classroom .numbers-background span {
+    font-size: clamp(2rem, 3.8vw, 3.25rem);
+    -webkit-text-stroke: .35px rgba(93, 68, 44, .3);
+    text-shadow: -1px -2px 0 rgba(255, 255, 255, .85), 1px 1px 0 rgba(255, 255, 255, .4), 2px 2px 0 var(--toy-edge), 3px 3px 0 var(--toy-edge), 4px 5px 4px rgba(83, 57, 39, .3), 0 0 6px var(--toy-glow);
+}
+.abc-numbers-classroom .numbers-background span:nth-child(1) { color: #ffd633; --toy-edge: #b87a12; --toy-glow: #ffe890; }
+.abc-numbers-classroom .numbers-background span:nth-child(2) { color: #61e6a6; --toy-edge: #288c63; --toy-glow: #a9f2ce; }
+.abc-numbers-classroom .numbers-background span:nth-child(3) { color: #b388ff; --toy-edge: #7350ac; --toy-glow: #d8c1ff; }
+.abc-numbers-classroom .numbers-background span:nth-child(4) { color: #ff87bd; --toy-edge: #b44d7c; --toy-glow: #ffc2dc; }
+.abc-numbers-classroom .numbers-background span:nth-child(5) { color: #70c9fa; --toy-edge: #3b80b2; --toy-glow: #bde9ff; }
+.abc-numbers-classroom .numbers-background span:nth-child(6) { color: #ff9b42; --toy-edge: #b65b21; --toy-glow: #ffd09b; }
+.abc-numbers-classroom .numbers-background span:nth-child(7) { color: #53d9d0; --toy-edge: #278c87; --toy-glow: #a6f4ed; }
+.abc-numbers-classroom .numbers-background span:nth-child(8) { color: #ab6ce8; --toy-edge: #6f3f9e; --toy-glow: #dab8ff; }
+.abc-numbers-classroom .numbers-background span:nth-child(9) { color: #ff8f83; --toy-edge: #bd554f; --toy-glow: #ffc5b8; }
+@keyframes numbers-bob {
+    0% { transform: translateY(0) rotate(-4deg) scale(1.04, .96); }
+    20% { transform: translateY(-2px) rotate(-2deg) scale(.98, 1.03); }
+    65% { transform: translateY(-7px) rotate(4deg) scale(1, 1.02); }
+    100% { transform: translateY(-6px) rotate(3deg) scale(1); }
+}
+.abc-numbers-classroom .choice-card { background: linear-gradient(145deg, #ffeca5, #f6ac7d); box-shadow: inset 0 3px rgba(255, 255, 255, .85), inset 0 -3px rgba(153, 91, 39, .09), 0 7px #bb7850, 0 11px 14px rgba(104, 69, 38, .18); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.abc-numbers-classroom .choice-card:nth-child(2) { background: linear-gradient(145deg, #e7f7cc, #9ed8b4); box-shadow: inset 0 3px rgba(255, 255, 255, .85), inset 0 -3px rgba(50, 100, 67, .08), 0 7px #72a581, 0 11px 14px rgba(65, 100, 70, .18); }
+.abc-numbers-classroom .choice-illustration { filter: drop-shadow(0 5px 3px rgba(90, 51, 25, .3)); }
+.abc-numbers-classroom .choice-illustration rect { filter: drop-shadow(0 2px 1px rgba(92, 57, 30, .26)); }
+.abc-numbers-classroom .choice-illustration g rect { stroke: #fff9e5; stroke-width: 2.5px; }
+.abc-numbers-classroom .choice-illustration rect[fill="#f5ce6d"], .abc-numbers-classroom .choice-illustration rect[fill="#f5d47a"] { fill: #ffdb5e; }
+.abc-numbers-classroom .choice-illustration rect[fill="#addcbd"], .abc-numbers-classroom .choice-illustration rect[fill="#a7d9b9"] { fill: #89dbae; }
+.abc-numbers-classroom .choice-illustration rect[fill="#f3a996"], .abc-numbers-classroom .choice-illustration rect[fill="#eab1a2"] { fill: #f39485; }
+.abc-numbers-classroom .choice-illustration rect[stroke-dasharray] { fill: #9a653c; stroke: #ffe1ac; }
+@media (hover: hover) and (pointer: fine) {
+    .abc-numbers-classroom .choice-card:hover { transform: translateY(-2px); border-color: #e5a356; }
+    .abc-numbers-classroom .choice-card:nth-child(2):hover { border-color: #a6d19d; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .abc-numbers-classroom .numbers-background span { animation: none; }
+    .abc-numbers-classroom .choice-card { transition: none; }
+    .abc-numbers-classroom .choice-card:hover { transform: none; }
+}
+
+/* Number kites: each numeral, string and bow float together. */
+.abc-numbers-classroom .numbers-background span {
+    width: 2.2rem;
+    text-align: center;
+    animation-name: numbers-float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.abc-numbers-classroom .numbers-background span::before {
+    content: '';
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    width: 10px;
+    height: var(--string-length, 34px);
+    border-left: 1.5px solid #fff0c1;
+    border-radius: 50%;
+    transform: rotate(-8deg);
+    filter: drop-shadow(1px 1px 1px rgba(115, 78, 45, .35));
+}
+.abc-numbers-classroom .numbers-background span::after {
+    content: '';
+    position: absolute;
+    top: calc(95% + var(--string-length, 34px));
+    left: calc(50% - 6px);
+    width: 13px;
+    height: 7px;
+    background: linear-gradient(35deg, transparent 42%, #e98094 43% 57%, transparent 58%), linear-gradient(-35deg, transparent 42%, #e98094 43% 57%, transparent 58%);
+    filter: drop-shadow(0 1px 1px rgba(105, 70, 44, .3));
+}
+.abc-numbers-classroom .numbers-background span:nth-child(1) { left: .4rem; top: 5%; --string-length: 30px; animation-duration: 3.2s; }
+.abc-numbers-classroom .numbers-background span:nth-child(3) { left: .4rem; top: 24%; --string-length: 36px; animation-duration: 4.1s; }
+.abc-numbers-classroom .numbers-background span:nth-child(5) { left: .4rem; top: 43%; --string-length: 29px; animation-duration: 3.6s; }
+.abc-numbers-classroom .numbers-background span:nth-child(7) { left: .4rem; top: 62%; --string-length: 39px; animation-duration: 4.5s; }
+.abc-numbers-classroom .numbers-background span:nth-child(9) { left: .4rem; top: 81%; bottom: auto; --string-length: 33px; animation-duration: 3.9s; }
+.abc-numbers-classroom .numbers-background span:nth-child(2) { right: .4rem; top: 14%; --string-length: 34px; animation-duration: 4.2s; }
+.abc-numbers-classroom .numbers-background span:nth-child(4) { right: .4rem; top: 34%; --string-length: 30px; animation-duration: 3.8s; }
+.abc-numbers-classroom .numbers-background span:nth-child(6) { right: .4rem; top: 54%; --string-length: 38px; animation-duration: 4.6s; }
+.abc-numbers-classroom .numbers-background span:nth-child(8) { right: .4rem; top: 74%; --string-length: 32px; animation-duration: 3.5s; }
+@keyframes numbers-float {
+    from { transform: translate(0, 0) rotate(-3deg); }
+    to { transform: translate(3px, -10px) rotate(3deg); }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+    .abc-numbers-classroom .numbers-background span:nth-child(even) { display: block; }
+    .abc-numbers-classroom .numbers-background span { font-size: 1.8rem; --string-length: 24px; }
+    .abc-numbers-classroom .numbers-background span::before { height: min(var(--string-length), 24px); }
+    .abc-numbers-classroom .numbers-background span::after { top: calc(95% + 24px); }
+}
+@media (max-width: 600px) {
+    .abc-numbers-classroom .numbers-background span:first-child { top: .4rem; left: auto; right: .2rem; --string-length: 20px; }
+    .abc-numbers-classroom .numbers-background span:last-child { top: auto; bottom: 2rem; left: .2rem; --string-length: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .abc-numbers-classroom .numbers-background span { animation: none; }
+}
+
+/* Mobile: reserve clear space above and below the active classroom content. */
+@media (max-width: 600px) {
+    .abc-numbers-classroom .numbers-main { padding-top: 5rem; padding-bottom: 5rem; }
+    .abc-numbers-classroom .numbers-background span:nth-child(n+2):nth-child(-n+8) { display: none; }
+    .abc-numbers-classroom .numbers-background span:nth-child(1),
+    .abc-numbers-classroom .numbers-background span:nth-child(9) {
+        display: block;
+        left: calc(50% - 1.1rem);
+        right: auto;
+        font-size: 2rem;
+        --string-length: 20px;
+    }
+    .abc-numbers-classroom .numbers-background span:nth-child(1) { top: 12px; bottom: auto; }
+    .abc-numbers-classroom .numbers-background span:nth-child(9) { top: auto; bottom: 36px; }
+}
+
+/* Curved SVG strings and folded bows travel with each number kite. */
+.abc-numbers-classroom .numbers-background span::before,
+.abc-numbers-classroom .numbers-background span::after { content: none; }
+.abc-numbers-classroom .kite-string { position: absolute; top: 88%; left: 50%; width: 32px; height: 76px; overflow: visible; transform: translateX(-50%); pointer-events: none; filter: drop-shadow(0 1px 1px rgba(112, 76, 45, .2)); }
+.abc-numbers-classroom .kite-bow, .abc-numbers-classroom .kite-tails { transform-box: fill-box; transform-origin: center; }
+.abc-numbers-classroom .kite-bow { animation: kite-ribbon-sway 3.6s ease-in-out infinite alternate; }
+.abc-numbers-classroom .kite-tails { animation: kite-tail-sway 2.8s ease-in-out infinite alternate; }
+.abc-numbers-classroom .numbers-background span:nth-child(3n) .kite-bow { animation-duration: 4.3s; animation-delay: -.8s; }
+.abc-numbers-classroom .numbers-background span:nth-child(3n + 1) .kite-bow { animation-duration: 3.1s; animation-delay: -1.2s; }
+@keyframes kite-ribbon-sway { from { transform: rotate(-3deg); } to { transform: rotate(4deg); } }
+@keyframes kite-tail-sway { from { transform: rotate(-2deg); } to { transform: rotate(3deg); } }
+@media (min-width: 601px) and (max-width: 900px) {
+    .abc-numbers-classroom .kite-string { width: 27px; height: 64px; }
+}
+@media (max-width: 600px) {
+    .abc-numbers-classroom .numbers-main { padding-top: 7rem; padding-bottom: 7rem; }
+    .abc-numbers-classroom .kite-string { width: 26px; height: 62px; }
+    .abc-numbers-classroom .numbers-background span:nth-child(9) { bottom: 64px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .abc-numbers-classroom :is(.kite-bow, .kite-tails) { animation: none; }
+}
+
+/* Active game panels: warm playroom lettering and toy-like controls. */
+.abc-numbers-classroom .number-game {
+    position: relative;
+    isolation: isolate;
+    border-color: #d79760;
+    background: radial-gradient(ellipse at 50% 55%, rgba(255, 228, 159, .42), transparent 45%), linear-gradient(145deg, #fffaf0, #fbe6cc);
+    box-shadow: inset 0 3px rgba(255, 255, 255, .9), inset 0 0 0 4px rgba(255, 223, 176, .35), 0 7px 0 rgba(153, 91, 39, .25), 0 12px 22px rgba(104, 69, 38, .18);
+}
+.abc-numbers-classroom .number-game h2 {
+    color: #573820;
+    font-family: 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    letter-spacing: .015em;
+    text-shadow: 0 1px #fff6de, 1px 2px 2px rgba(123, 75, 38, .2);
+}
+.abc-numbers-classroom .number-game h2 [lang="ar"] { font-family: Amiri, 'Geeza Pro', 'Traditional Arabic', serif; color: #67422c; letter-spacing: normal; }
+.abc-numbers-classroom .number-game > p:not(.moves):not(.game-status) { color: #765035; font-size: 1rem; line-height: 1.55; margin: .6rem auto 1rem; }
+.abc-numbers-classroom .game-corner-art { position: absolute; z-index: -1; top: .6rem; width: clamp(32px, 5vw, 52px); height: auto; pointer-events: none; opacity: .75; }
+.abc-numbers-classroom .game-corner-left { left: .6rem; }
+.abc-numbers-classroom .game-corner-right { right: .6rem; }
+.abc-numbers-classroom .game-back, .abc-numbers-classroom .game-control {
+    border: 2px solid #ad7845;
+    background: linear-gradient(#4c9060, #285a3c);
+    box-shadow: inset 0 2px rgba(255, 255, 255, .4), inset 0 -2px rgba(0, 0, 0, .12), 0 4px 0 #aa7045;
+    transition: box-shadow .2s ease, filter .2s ease;
+}
+.abc-numbers-classroom .game-control { background: linear-gradient(#d98155, #a74b31); }
+.abc-numbers-classroom :is(.game-back, .game-control):hover { filter: brightness(1.1); box-shadow: inset 0 2px rgba(255, 255, 255, .45), 0 4px 0 #aa7045, 0 0 8px rgba(235, 176, 87, .35); }
+.abc-numbers-classroom .number-game .moves { display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: .25rem; margin: .35rem auto; padding: .35rem .8rem; border: 2px solid #d99a59; border-radius: 999px; background: #fff1c9; color: #684321; font-weight: 700; line-height: 1.4; box-shadow: inset 0 2px #fff, 0 3px 0 rgba(160, 105, 53, .2); }
+.abc-numbers-classroom .number-game .moves > [lang] { display: inline; }
+.abc-numbers-classroom .number-game .game-status { color: #315f43; font-size: 1rem; line-height: 1.5; }
+@media (max-width: 600px) { .abc-numbers-classroom .game-corner-art { width: 30px; opacity: .55; } .abc-numbers-classroom .number-game h2 { font-size: clamp(1.35rem, 6vw, 1.7rem); } }
+@media (prefers-reduced-motion: reduce) { .abc-numbers-classroom :is(.game-back, .game-control) { transition: none; } }
+
+/* A compact return control beneath each game's actions. */
+.abc-numbers-classroom .number-game .game-back { display: flex; align-items: center; justify-content: center; width: 44px; min-width: 44px; min-height: 44px; margin: 1rem auto 0; padding: 0; border-color: #c99d4c; background: linear-gradient(#397653, #204a34); color: #fff8df; font-size: 1.4rem; line-height: 1; }
+
+/* Number-line counting clues and short illustrated guide. */
+.abc-numbers-classroom #line-game .line-instruction { color: #654025; font-size: clamp(1.1rem, 2.4vw, 1.3rem); font-weight: 700; }
+.abc-numbers-classroom .line-guide { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: .5rem; margin: .5rem auto 1rem; }
+.abc-numbers-classroom .line-guide-step { flex: 0 1 110px; display: flex; flex-direction: column; align-items: center; padding: .4rem; border: 2px solid #d9b986; border-radius: 16px; background: #fff7da; color: #513c29; font-size: .9rem; font-weight: 700; line-height: 1.3; box-shadow: inset 0 2px #fff, 0 3px rgba(137, 87, 45, .18); }
+.abc-numbers-classroom .line-guide-step:nth-child(2) { background: #e4f6e7; }
+.abc-numbers-classroom .line-guide-step:nth-child(3) { background: #f4e4fa; }
+.abc-numbers-classroom .line-guide-step svg { display: block; width: 70px; height: 48px; max-width: 100%; pointer-events: none; }
+.abc-numbers-classroom .line-guide-step span { display: block; }
+.abc-numbers-classroom #line-game .number-line { background: #d8f3dc; border-color: #84b993; box-shadow: inset 0 3px 8px rgba(49, 95, 67, .15); }
+.abc-numbers-classroom #line-game .line-slot:not(.filled) { background: #fffbed; border-color: #b99a57; padding: 3px; }
+.abc-numbers-classroom #line-game .counting-clue { display: block; width: min(100%, 50px); height: auto; max-height: 48px; pointer-events: none; filter: drop-shadow(0 1px 1px rgba(70, 45, 30, .2)); }
+.abc-numbers-classroom #line-game .number-tray { background: linear-gradient(145deg, #ffdfac, #e5ad7d); border-color: #bf8052; box-shadow: inset 0 3px rgba(255,255,255,.55), 0 3px rgba(137, 87, 45, .2); }
+.abc-numbers-classroom #line-game :is(.tray-block, .line-slot.filled) { filter: saturate(1.2); }
+@media (max-width: 600px) { .abc-numbers-classroom .line-guide { gap: .3rem; } .abc-numbers-classroom .line-guide-step { flex: 1 1 70px; min-width: 0; font-size: .8rem; } .abc-numbers-classroom .line-guide-step svg { width: 55px; height: 42px; } }
