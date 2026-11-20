@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 11/06/2026
+   Date modified: 11/19/2026
 */
 .ok-israelis-page main {
 display: flex;
@@ -61,7 +61,7 @@ body.ok-israelis-page {
 --ok-parchment-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/paperbg.jpg");
     min-height: 100vh;
     background-color: #ddc49a;
-    background-image: var(--ok-parchment-image);
+    background-image: linear-gradient(155deg, #342826a0, #a67e5b40 58%, #34282680), var(--ok-parchment-image);
     background-position: center top;
     
     background-size: cover;
@@ -88,7 +88,7 @@ box-sizing: border-box;
     border: 1px solid #a57c49;
     border-block: 4px double #987044;
     border-radius: .5rem;
-    background: rgba(255, 250, 235, .86);
+    background: linear-gradient(150deg, #fcf4e5, #e8d5b7 72%, #e5d4b9);
     box-shadow: 0 .6rem 1.8rem rgba(81, 48, 21, .18);
     overflow-wrap: anywhere;
 }
@@ -116,27 +116,6 @@ font-family: var(--font-ar);
 direction: rtl;
 }
 
-.ok-israelis-page .weekly-song {
-width: 100%;
-    min-width: 0;
-    margin-block: clamp(1.5rem, 3vw, 2.5rem) 1rem;
-}
-
-.ok-israelis-page .weekly-song-video {
-display: block;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    margin: 0 auto clamp(1rem, 2vw, 1.5rem);
-    border: 2px solid #987044;
-    border-radius: .4rem;
-    background: #49301e;
-    box-shadow: 0 .25rem .75rem rgba(81, 48, 21, .15);
-}
-
 @media (min-width: 48rem) {
 .ok-israelis-page .ok-main {
 padding: 2.5rem 1.5rem;
@@ -148,9 +127,6 @@ padding: 2.5rem 1.5rem;
 padding: 3rem 2rem;
 }
 
-.ok-israelis-page .weekly-song {
-max-width: 44rem; margin-inline: auto;
-}
 }
 
 @media (min-width: 90rem) {
@@ -180,20 +156,6 @@ padding-block: 5rem;
     padding: 0 1.5rem;
     color: var(--dark);
 }
-
-.ok-israelis-page .weekly-song h2 {
-    margin: 0 0 1.25rem;
-    color: #6b451f;
-    font-size: clamp(1.35rem, 3vw, 2rem);
-    line-height: 1.5;
-    text-align: center;
-}
-
-.ok-israelis-page .weekly-song h2 .lang-ar {
-    text-align: center;
-}
-
-.ok-israelis-page .ok-content { background-color: #D9E2CE; }
 
 .ok-israelis-page .ok-archive-link {
     display: flex;
@@ -354,47 +316,120 @@ padding-block: 5rem;
     line-height: 1.85;
 }
 
-/* November 6 features: isolated portrait and matching bilingual editorial panels. */
-.ok-israelis-page .israelis-feature-portrait {
-    box-sizing: border-box;
-    width: min(100%, 36rem);
-    margin: 1.5rem auto;
-    padding: .3rem;
-    border: 1px solid #B89A4B;
-    border-radius: .5rem;
-    box-shadow: 0 5px 16px rgb(70 51 16 / 18%);
-}
-.ok-israelis-page .israelis-feature-portrait img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    border-radius: .25rem;
-}
+/* Matching antique editorial panels for the two weekly features. */
 .ok-israelis-page .israelis-feature-panel {
+    --israelis-brass: #c79b61;
+    --israelis-gold: #f6d69e;
+    --israelis-copper: #9c6245;
+    position: relative;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+    min-inline-size: 0;
     margin-block: 1.5rem;
-    padding: clamp(1rem, 3vw, 2rem);
-    border: 2px solid #B89A4B;
-    border-radius: .65rem;
-    background: #f5eddb;
-    color: #28251f;
-    box-shadow: 0 3px 15px rgb(184 154 75 / 20%);
+    padding: clamp(1.2rem, 4vw, 2.5rem);
+    border: 4px ridge var(--israelis-brass);
+    border-radius: .95rem;
+    background:
+        radial-gradient(circle at .65rem .65rem, #f3d49b 0 1px, var(--israelis-copper) 2px 3px, transparent 4px) bottom left / 1.3rem 1.3rem no-repeat,
+        radial-gradient(circle at .65rem .65rem, #f3d49b 0 1px, var(--israelis-copper) 2px 3px, transparent 4px) bottom right / 1.3rem 1.3rem no-repeat,
+        linear-gradient(150deg, #3d2e28, #2c2523 48%, #20201f);
+    color: #fbefdc;
+    box-shadow: inset 0 0 0 1px var(--israelis-copper), inset 0 0 1.15rem #1a1511b3,
+        0 .4rem 1rem #38231d44;
     overflow-wrap: anywhere;
 }
-.ok-israelis-page .israelis-feature-panel h2 {
-    margin-block: 0 1rem;
-    color: #513f18;
-    text-align: center;
-    font-size: clamp(1.5rem, 3vw, 2rem);
+
+.ok-israelis-page .israelis-feature-panel::before,
+.ok-israelis-page .israelis-feature-panel::after {
+    content: "";
+    position: absolute;
+    inset-block-start: .55rem;
+    inline-size: clamp(.75rem, 2.5vw, 1.1rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, #f1d6a0 0 12%, #623e2c 13% 23%, #a67446 25% 47%, transparent 49%),
+        repeating-conic-gradient(var(--israelis-brass) 0deg 18deg, transparent 18deg 36deg);
+    pointer-events: none;
 }
-.ok-israelis-page .israelis-feature-panel p { margin-block: 0 1rem; line-height: 1.85; text-align: start; }
-.ok-israelis-page .israelis-feature-panel .lang-ar { direction: rtl; text-align: right; }
-.ok-israelis-page .israelis-feature-panel h2 .lang-ar { text-align: center; }
-.ok-israelis-page .israelis-feature-panel .israelis-feature-name { text-align: center; font-weight: bold; }
-.ok-israelis-page .israelis-feature-panel .israelis-hebrew-name { display: block; margin-top: .35rem; font-size: .85em; }
-.ok-israelis-page .israelis-feature-panel .site-button { display: flex; width: fit-content; max-width: 100%; min-height: 44px; margin: 1.25rem auto 0; white-space: normal; text-align: center; }
+
+.ok-israelis-page .israelis-feature-panel::before { inset-inline-start: .55rem; }
+.ok-israelis-page .israelis-feature-panel::after { inset-inline-end: .55rem; }
+
+.ok-israelis-page .israelis-feature-portrait {
+    box-sizing: border-box;
+    inline-size: min(100%, 24rem);
+    margin: 1rem auto 1.35rem;
+    padding: .3rem;
+    border: 3px groove var(--israelis-brass);
+    border-radius: .55rem;
+    background: #1f1d1a;
+    box-shadow: inset 0 0 .6rem #171613, 0 .25rem .65rem #1913109c;
+}
+
+.ok-israelis-page .israelis-feature-portrait img {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    object-fit: contain;
+    border-radius: .25rem;
+}
+
+.ok-israelis-page .israelis-feature-panel h2,
+.ok-israelis-page .israelis-feature-panel > h3 {
+    margin: 0 0 .85rem;
+    padding: 0 .35rem .5rem;
+    border-block-end: 3px double var(--israelis-copper);
+    color: var(--israelis-gold);
+    font-size: clamp(1.45rem, 3vw, 1.95rem);
+    line-height: 1.3;
+    text-align: center;
+}
+
+.ok-israelis-page .israelis-feature-panel > h3 { font-size: clamp(1.25rem, 2.6vw, 1.6rem); }
+
+.ok-israelis-page .israelis-feature-panel p {
+    max-inline-size: 44rem;
+    margin: 0 auto .85rem;
+    font-size: clamp(1.05rem, 1rem + .2vw, 1.12rem);
+    line-height: 1.7;
+    text-align: start;
+}
+
+.ok-israelis-page .israelis-feature-panel p .lang-en { font-family: 'Lora', Georgia, serif; }
+.ok-israelis-page .israelis-feature-panel strong { color: #ffe1aa; }
+.ok-israelis-page .israelis-feature-panel :is(h2, h3, .israelis-feature-name, .site-button) .lang-ar { text-align: inherit; }
+.ok-israelis-page .israelis-feature-panel .israelis-feature-name { text-align: center; font-weight: 700; }
+.ok-israelis-page .israelis-feature-panel .israelis-hebrew-name { display: block; margin-block-start: .35rem; font-size: .8em; }
+
+.ok-israelis-page .israelis-feature-sources {
+    max-inline-size: 44rem;
+    margin: 1.15rem auto 0;
+    padding-block-start: .65rem;
+    border-block-start: 1px solid var(--israelis-copper);
+    text-align: start;
+}
+
+.ok-israelis-page .israelis-feature-sources h3 { margin: 0 0 .35rem; color: var(--israelis-gold); }
+.ok-israelis-page .israelis-feature-sources ul { margin: 0; padding-inline-start: 1.3rem; }
+.ok-israelis-page .israelis-feature-sources li + li { margin-block-start: .35rem; }
+.ok-israelis-page .israelis-feature-sources a { color: var(--israelis-gold); text-underline-offset: .2em; }
+.ok-israelis-page .israelis-feature-sources a:focus-visible { outline: 3px solid #ffe1aa; outline-offset: 3px; }
+
+.ok-israelis-page .israelis-feature-panel .site-button {
+    --button-background: #613e3a;
+    --button-border: var(--israelis-brass);
+    --button-text: #fff2d6;
+    --button-hover-background: #774643;
+    --button-focus: #ffe1aa;
+    display: flex;
+    width: fit-content;
+    margin: 1.25rem auto 0;
+    text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ok-israelis-page .israelis-feature-panel .site-button {
+        transition: none;
+        transform: none;
+    }
+}
