@@ -1,3 +1,10 @@
+/*Author: Leslie Brockman
+Date: 11-20-2026
+EDU page canvas only; individual activities retain their own backgrounds. */
+body.edu-page {
+  background: #708238;
+}
+
 /* =========================================
    COLOR GARDEN
    ========================================= */
