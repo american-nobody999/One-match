@@ -1,5 +1,6 @@
 /* Author: Leslie Brockman
-   Date: 10/30/2026 */
+   Date: 10/30/2026 
+   Date Modified: 11/20/2026 */
 body.command-page {
     background: #0b120e;
     color: #dcebdc;
@@ -22,14 +23,34 @@ body.command-page {
 .command-center .lang-ar { font-family: var(--font-ar), serif; }
 .command-welcome { margin-block-end: 2rem; }
 .command-center .terminal-panel {
+    position: relative;
     min-width: 0;
     padding: clamp(1rem, 3vw, 2rem);
     margin-block: 1.5rem;
-    background: #142219;
-    border: 1px solid #77965f;
+    background:
+        repeating-linear-gradient(90deg, transparent 0 30px, #70cdf509 30px 31px) border-box,
+        repeating-linear-gradient(0deg, transparent 0 28px, #79e49b09 28px 29px) border-box,
+        linear-gradient(145deg, #19382b, #101e1b 54%, #111719);
+    border: 1px solid #a88251;
     border-radius: 18px;
-    box-shadow: 0 0 20px #8cf88c0d;
+    box-shadow: inset 0 0 0 1px #47382b, inset 0 0 1rem #6ec7ff23,
+        0 .45rem 1.15rem #040a08a6;
 }
+
+.command-center .terminal-panel::before,
+.command-center .terminal-panel::after {
+    content: "";
+    position: absolute;
+    inset-inline: .6rem;
+    block-size: .5rem;
+    background:
+        radial-gradient(circle, #ffe2a0 0 15%, #aa7546 23% 45%, #593c2a 56%, transparent 68%) left / .5rem .5rem no-repeat,
+        radial-gradient(circle, #ffe2a0 0 15%, #aa7546 23% 45%, #593c2a 56%, transparent 68%) right / .5rem .5rem no-repeat,
+        linear-gradient(90deg, #82c2df66, transparent 16% 84%, #82c2df66) center / calc(100% - 1rem) 1px no-repeat;
+    pointer-events: none;
+}
+.command-center .terminal-panel::before { inset-block-start: .4rem; }
+.command-center .terminal-panel::after { inset-block-end: .4rem; }
 .transmissions, .mission-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
 .transmissions article, .mission-card {
     min-width: 0;
@@ -186,7 +207,6 @@ body.command-page {
 .command-center .transmissions,
 .command-center #mission-summary,
 .command-center #mission-message { text-align: center; }
-.command-center .inventory-group:has(> .mission-grid > #mission-planned-big-top) > summary { text-align: center; }
 
 /* Dashboard accents reused from Color Garden, arcade, recess, and math games. */
 .command-center .terminal-panel {
@@ -197,7 +217,12 @@ body.command-page {
     --dashboard-phosphor: #62ed7e;
     --dashboard-ivory: #fff6d9;
     color: var(--dashboard-ivory);
-    box-shadow: none;
+}
+.command-center .terminal-panel > h2 {
+    padding-block-end: .35rem;
+    border-block-end: 1px solid #ae805267;
+    color: var(--dashboard-phosphor);
+    text-shadow: 0 0 .42rem #75dfff45;
 }
 .command-center #transmissions-title { color: var(--dashboard-blue); }
 .command-center #missions-title { color: var(--dashboard-pink); }
@@ -213,12 +238,21 @@ body.command-page {
 .command-center .terminal-panel .mission-task input { accent-color: var(--dashboard-phosphor); }
 .command-center .terminal-panel a { color: var(--dashboard-blue); }
 .command-center .terminal-panel a:hover { color: var(--dashboard-yellow); text-decoration-thickness: 2px; }
-.command-center .terminal-panel button:hover {
+.command-center .terminal-panel :is(button, select):not(:disabled):is(:hover, :focus-visible) {
     color: var(--dashboard-ivory);
-    border-color: var(--dashboard-pink);
-    box-shadow: 0 0 8px #f472b626;
+    border-color: var(--dashboard-blue);
+    box-shadow: 0 0 .5rem #6eceff33;
 }
 .command-center .terminal-panel :focus-visible { outline-color: var(--dashboard-blue); }
+.command-center .mission-checklist > summary:is(:hover, :focus-visible),
+.command-center .terminal-panel .mission-task:is(:hover, :focus-within) {
+    background-color: #62ed7e12;
+    text-shadow: 0 0 .35rem #62ed7e46;
+}
+.command-center .dependency-root:is(:hover, :focus-visible) {
+    border-color: var(--dashboard-blue);
+    box-shadow: 0 0 .45rem #6eceff40;
+}
 .command-center .inventory-views button[aria-pressed="true"] {
     color: var(--dashboard-yellow);
     border-color: var(--dashboard-blue);
@@ -241,7 +275,10 @@ body.command-page {
 .command-center #dependency-details ul:nth-of-type(2) a { color: var(--dashboard-pink); }
 .command-center #dependency-details h3:nth-of-type(3),
 .command-center #dependency-details ul:nth-of-type(3) a { color: var(--dashboard-yellow); }
-.command-center #dependency-details a:hover { color: var(--dashboard-ivory); }
+.command-center #dependency-details a:is(:hover, :focus-visible) {
+    color: var(--dashboard-ivory);
+    text-shadow: 0 0 .4rem #6eceff60;
+}
 
 /* Planned reference links and actions remain distinct keyboard targets. */
 .command-center .planned-reference-actions {
@@ -259,4 +296,101 @@ body.command-page {
         position: relative;
         z-index: 1;
     }
+}
+
+/* World Clockwork instruments. */
+.command-center .world-clockwork h2 {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.command-center .world-clocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(.75rem, 2vw, 1.5rem);
+}
+
+.command-center .world-clock {
+    display: grid;
+    justify-items: center;
+    gap: .4rem;
+    inline-size: clamp(6rem, 12vw, 8rem);
+    min-inline-size: 0;
+    margin: 0;
+}
+
+.command-center .world-clock-dial {
+    inline-size: 100%;
+    aspect-ratio: 1;
+    padding: .25rem;
+    border: 3px ridge #bb8b50;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, transparent 56%, #f2c584 57% 60%, #713f28 61% 63%, transparent 64%),
+        repeating-conic-gradient(#523321 0deg 3deg, transparent 3deg 10deg),
+        linear-gradient(145deg, #ffe2a4, #9b6140 55%, #d7ad65 80%, #6b3e2a);
+    box-shadow: inset 0 0 0 1px #53331e, 0 .3rem .65rem #040604e0;
+}
+
+.command-center .world-clock-face {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 30%, #fff3d3, #efdbab 70%, #bf9864);
+    box-shadow: 0 0 0 1px #75472c, 0 0 0 2px #e4b36a, 0 0 .35rem #f8da9180;
+}
+
+.command-center .world-clock-track { fill: none; stroke: #765333; stroke-width: 1.3; stroke-dasharray: .19 .81; }
+.command-center .world-clock-rivets { fill: #f0c273; stroke: #72442d; stroke-width: .6; }
+.command-center .world-clock-numerals { fill: #35291e; font: 700 7px Georgia, serif; }
+.command-center .world-clock-hour { fill: #392820; stroke: #83563b; stroke-width: .5; }
+.command-center .world-clock-minute { fill: #775035; stroke: #3c2820; stroke-width: .5; }
+.command-center .world-clock-second { fill: none; stroke: #992e42; stroke-width: 1.2; stroke-linecap: round; }
+.command-center .world-clock-pin { fill: #dfa84e; stroke: #71502a; stroke-width: 1; }
+.command-center .world-clock-pin-highlight { fill: #fff1bb; }
+
+.command-center .world-clock-label {
+    display: grid;
+    place-items: center;
+    min-block-size: 2.5rem;
+    color: #f7dfa9;
+    font: 700 .9rem Georgia, serif;
+    text-align: center;
+}
+
+.command-center .world-clock-label svg { display: block; inline-size: 2.55rem; block-size: auto; }
+
+.command-center .clockwork-plaque {
+    inline-size: min(100%, 41rem);
+    margin: 1rem auto 0;
+    padding: .65rem clamp(.75rem, 3vw, 1.5rem);
+    border: 3px double #bb8b50;
+    border-radius: .55rem;
+    background: linear-gradient(140deg, #5c3e31, #362925 55%, #4d3031);
+    color: #fff2d9;
+    box-shadow: inset 0 1px #e6b87a66, inset 0 0 .4rem #ffafbf28,
+        0 0 .4rem #86d8ef29, 0 .2rem .6rem #060a0780;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+
+.command-center .clockwork-plaque p { margin: 0; }
+.command-center .clockwork-plaque p + p { margin-block-start: .45rem; }
+
+@media (max-width: 34rem) {
+    .command-center .world-clocks {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 7rem));
+    }
+    .command-center .world-clock { justify-self: center; inline-size: min(100%, 6.5rem); }
+    .command-center .world-clock:last-child { grid-column: 1 / -1; }
 }
