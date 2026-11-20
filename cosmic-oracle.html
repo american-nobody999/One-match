@@ -1,6 +1,6 @@
 <!-- Practice 4: The Cosmic Oracle
      Author: Leslie Brockman
-     Date Modified: 11-18-2026
+     Date Modified: 11-20-2026
      Description: A cosmic fortune-telling arcade machine simulation. This is my merge dragons. My candy crush. Don't judge. -->
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +55,7 @@
         </div>
   </header>
     <div class="observatory-atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
-    <main class="arcade" lang="en">
+    <main class="arcade" lang="en" dir="ltr">
         <div class="oracle-layout" id="oracleLayout">
         <section class="machine" aria-labelledby="machineTitle">
             <div class="machine-top">
@@ -69,9 +69,9 @@
                     <path d="M18 91H322" stroke="#b58a42" stroke-width="6"/><path d="M18 89H322" stroke="#f5cf76" stroke-width="1"/>
                 </svg>
                 <span class="marquee-stars" aria-hidden="true">✦ ✧ ✦</span>
-                <p class="machine-label">MPGA PRESENTS</p>
-                <h1 id="machineTitle">COSMIC FREE ADVICE</h1>
-                <p class="machine-slogan">THE UNIVERSE HAS OPINIONS</p>
+                <p class="machine-label"><span class="lang-en" lang="en">MPGA PRESENTS</span><span class="lang-ar hidden" lang="ar">تقدّم <bdi lang="en">MPGA</bdi></span></p>
+                <h1 id="machineTitle"><span class="lang-en" lang="en">COSMIC FREE ADVICE</span><span class="lang-ar hidden" lang="ar">نصائح كونية مجانية</span></h1>
+                <p class="machine-slogan"><span class="lang-en" lang="en">THE UNIVERSE HAS OPINIONS</span><span class="lang-ar hidden" lang="ar">للكون آراء</span></p>
                 <span class="marquee-stars" aria-hidden="true">✦ ✧ ✦</span>
             </div>
             <div class="machine-body">
@@ -102,51 +102,51 @@
                 </div>
                 <div class="machine-controls">
                     <button type="button" id="revealBtn" class="reveal-btn">
-                        SCAN THE COSMOS
+                        <span class="lang-en" lang="en">SCAN THE COSMOS</span><span class="lang-ar hidden" lang="ar">افحص الكون</span>
                     </button>
                 </div>
                 <div class="ticket-slot">
-                    <p>FREE ADVICE DISPENSED HERE</p>
+                    <p><span class="lang-en" lang="en">FREE ADVICE DISPENSED HERE</span><span class="lang-ar hidden" lang="ar">تُصرَف النصائح المجانية هنا</span></p>
                     <div class="slot-opening" aria-hidden="true"></div>
                 </div>
                 <div class="ticket-area" id="ticketArea" aria-hidden="true">
                     <div class="mini-ticket" id="miniTicket" hidden>
-                        <span>✦ COSMIC MESSAGE ✦</span>
-                        <span id="miniTicketNumber">NO. 001</span>
+                        <span><span class="lang-en" lang="en">✦ COSMIC MESSAGE ✦</span><span class="lang-ar hidden" lang="ar">✦ رسالة كونية ✦</span></span>
+                        <span class="ticket-number"><span class="lang-en" lang="en">NO.</span><span class="lang-ar hidden" lang="ar">رقم</span> <bdi id="miniTicketNumber" dir="ltr">001</bdi></span>
                     </div>
                 </div>
                 <p class="window-message" id="windowMessage" role="status">
-                    The stars are waiting...
+                    <span class="lang-en" lang="en">The stars are waiting...</span><span class="lang-ar hidden" lang="ar">النجوم تنتظر…</span>
                 </p>
             </div>
             <div class="machine-base">
                 <span>✦</span>
-                <p>EST. SOMEWHERE IN THE UNIVERSE</p>
+                <p><span class="lang-en" lang="en">EST. SOMEWHERE IN THE UNIVERSE</span><span class="lang-ar hidden" lang="ar">تأسّست في مكانٍ ما من الكون</span></p>
                 <span>✦</span>
             </div>
         </section>
         <div class="advice-panel" aria-live="polite">
             <article class="fortune-ticket" id="fortuneTicket" hidden>
                 <div class="ticket-heading">
-                    <span>✦ COSMIC MESSAGE ✦</span>
-                    <span id="ticketNumber">NO. 001</span>
+                    <span><span class="lang-en" lang="en">✦ COSMIC MESSAGE ✦</span><span class="lang-ar hidden" lang="ar">✦ رسالة كونية ✦</span></span>
+                    <span class="ticket-number"><span class="lang-en" lang="en">NO.</span><span class="lang-ar hidden" lang="ar">رقم</span> <bdi id="ticketNumber" dir="ltr">001</bdi></span>
                 </div>
                 <div class="ticket-symbol" id="ticketSymbol" aria-hidden="true">🌙</div>
-                <h3 id="fortuneTitle">Your Advice Awaits</h3>
-                <p class="fortune-text" id="fortuneText">The universe is preparing your message.</p>
+                <h3 id="fortuneTitle"><span class="lang-en" lang="en">Your Advice Awaits</span><span class="lang-ar hidden" lang="ar">نصيحتك بانتظارك</span></h3>
+                <p class="fortune-text" id="fortuneText"><span class="lang-en" lang="en">The universe is preparing your message.</span><span class="lang-ar hidden" lang="ar">الكون يُعِدّ رسالتك.</span></p>
                 <p class="fortune-omen" id="fortuneOmen"></p>
                 <div class="ticket-seal" aria-hidden="true"><span>✧ MPGA ✧</span><span>☮ ☾</span><span>◌ ✦ ◌</span></div>
                 <button type="button" class="ticket-return" id="ticketReturn" aria-label="Return cosmic message">↶</button>
                 <div class="ticket-footer">
-                    <span>COSMIC FREE ADVICE</span>
+                    <span><span class="lang-en" lang="en">COSMIC FREE ADVICE</span><span class="lang-ar hidden" lang="ar">نصائح كونية مجانية</span></span>
                     <span>✦ ✧ ✦</span>
                 </div>
             </article>
         </div>
         </div>
         <footer class="page-footer">
-            <p>Free advice. Questionable qualifications. Absolutely no refunds.</p>
-            <p>Powered by caffeine, cosmic chaos, and JavaScript.</p>
+            <p><span class="lang-en" lang="en">Free advice. Questionable qualifications. Absolutely no refunds.</span><span class="lang-ar hidden" lang="ar">نصائح مجانية. مؤهلات مشكوك فيها. لا استرداد للمبالغ، قطعًا.</span></p>
+            <p><span class="lang-en" lang="en">Powered by caffeine, cosmic chaos, and JavaScript.</span><span class="lang-ar hidden" lang="ar">يعمل بالكافيين والفوضى الكونية و<bdi lang="en">JavaScript</bdi>.</span></p>
         </footer>
     </main>
     <footer class="site-footer" data-global-chrome>
