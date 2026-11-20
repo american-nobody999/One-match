@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             slot: 'Feature slot 3 — Featured Hero of the Week', active: true,
             category: { en: 'FEATURED HERO OF THE WEEK', ar: 'بطل الأسبوع المميز' },
-            headline: { en: 'Moh At (Mohamed Freij)', ar: 'موه آت (محمد فريج)' },
+            headline: { en: 'Shaima Kaabneh', ar: 'شيماء كعابنة' },
             description: {
                 en: "Meet this week's Featured Hero. Discover their story, their work, and why we're celebrating them.",
                 ar: 'تعرّفوا إلى بطل هذا الأسبوع المميز، واكتشفوا قصته وعمله وسبب احتفائنا به.'
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imageAlt: { en: 'Featured Hero artwork.', ar: 'عمل فني للبطل المميز.' },
             destinationUrl: 'featured-hero.html',
             destinationLabel: { en: 'Meet Our Featured Hero', ar: 'تعرّفوا إلى بطلنا المميز' },
-            week: { en: '', ar: '' }
+            week: { en: 'Friday, November 20, 2026', ar: 'الجمعة، ٢٠ نوفمبر ٢٠٢٦' }
         },
         {
             slot: 'Feature slot 4 — West Bank This Week', active: true,
