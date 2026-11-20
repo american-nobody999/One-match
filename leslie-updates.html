@@ -1,197 +1,396 @@
+/* Author: Leslie Brockman
+   Date: 10/30/2026 
+   Date Modified: 11/20/2026 */
+body.command-page {
+    background: #0b120e;
+    color: #dcebdc;
+}
+.command-center {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1rem, 4vw, 3rem);
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+.command-center *, .command-center *::before, .command-center *::after { box-sizing: border-box; }
+.command-center h2, .command-center h3 {
+    font-family: ui-monospace, "Courier New", monospace;
+    color: #a7f3a2;
+    line-height: 1.4;
+}
+.command-center h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+.command-center h3 { font-size: 1.15rem; }
+.command-center .lang-ar { font-family: var(--font-ar), serif; }
+.command-welcome { margin-block-end: 2rem; }
+.command-center .terminal-panel {
+    position: relative;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 2rem);
+    margin-block: 1.5rem;
+    background:
+        repeating-linear-gradient(90deg, transparent 0 30px, #70cdf509 30px 31px) border-box,
+        repeating-linear-gradient(0deg, transparent 0 28px, #79e49b09 28px 29px) border-box,
+        linear-gradient(145deg, #19382b, #101e1b 54%, #111719);
+    border: 1px solid #a88251;
+    border-radius: 18px;
+    box-shadow: inset 0 0 0 1px #47382b, inset 0 0 1rem #6ec7ff23,
+        0 .45rem 1.15rem #040a08a6;
+}
 
-<!-- Author: Leslie Brockman
-     Date: 11-13/2026 -->
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>American Nobody — Mission Control</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/styles2.css">
-  <link rel="stylesheet" href="styles/leslie-updates.css">
-</head>
-<body class="command-page united-page">
-<header class="site-header" data-global-chrome>
-      <div class="header-container">
+.command-center .terminal-panel::before,
+.command-center .terminal-panel::after {
+    content: "";
+    position: absolute;
+    inset-inline: .6rem;
+    block-size: .5rem;
+    background:
+        radial-gradient(circle, #ffe2a0 0 15%, #aa7546 23% 45%, #593c2a 56%, transparent 68%) left / .5rem .5rem no-repeat,
+        radial-gradient(circle, #ffe2a0 0 15%, #aa7546 23% 45%, #593c2a 56%, transparent 68%) right / .5rem .5rem no-repeat,
+        linear-gradient(90deg, #82c2df66, transparent 16% 84%, #82c2df66) center / calc(100% - 1rem) 1px no-repeat;
+    pointer-events: none;
+}
+.command-center .terminal-panel::before { inset-block-start: .4rem; }
+.command-center .terminal-panel::after { inset-block-end: .4rem; }
+.transmissions, .mission-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.transmissions article, .mission-card {
+    min-width: 0;
+    padding: 1.2rem;
+    border: 1px solid #647e51;
+    border-radius: 12px;
+    background: #0d1811;
+}
+.command-center a { color: #c5f3b4; text-decoration: underline; text-underline-offset: .2em; }
+.command-center button, .command-center select {
+    max-width: 100%;
+    min-height: 44px;
+    padding: .7rem 1rem;
+    border: 1px solid #b3c88d;
+    border-radius: 8px;
+    background: #243b29;
+    color: #f2edcd;
+    font: inherit;
+}
+.command-center button { cursor: pointer; white-space: normal; }
+.command-center button:hover { background: #345339; }
+.command-center :focus-visible { outline: 3px solid #f4ce73; outline-offset: 4px; }
+.command-center label { display: block; margin-block: .7rem; }
+.command-center .mission-task { display: flex; align-items: flex-start; gap: .75rem; padding-block: .5rem; cursor: pointer; }
+.mission-task input { flex: 0 0 auto; width: 24px; height: 24px; accent-color: #a7f3a2; margin-block-start: .2rem; }
+.command-center progress { width: 100%; accent-color: #a7f3a2; }
+#storage-status { color: #e7cc79; }
+.dependency-map { padding-block: 1.5rem; text-align: center; }
+.dependency-node { display: inline-block; max-width: 100%; border: 1px solid #a7f3a2; border-radius: 10px; padding: .6rem 1rem; background: #1c3121; }
+.dependency-branches { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block-start: 1rem; }
+.dependency-branch { border-block-start: 2px solid #77965f; padding: 1rem; min-width: 0; }
+#dependency-details ul { padding-inline-start: 1.5rem; }
+#dependency-details li { margin-block: .5rem; }
+@media (min-width: 700px) {
+    .transmissions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .dependency-branches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 
-  <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
-        <div class="header-logo mpga-wordmark">
-          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+/* Phase 2 mission controls: retain the existing terminal layout. */
+.command-center .mission-category {
+    color: #e7cc79;
+    font-size: .9rem;
+    border-inline-start: 3px solid #77965f;
+    padding-inline-start: .6rem;
+}
+.command-center .mission-checklist { margin-block: 1rem; }
+.command-center .mission-checklist > summary {
+    cursor: pointer;
+    min-height: 44px;
+    padding-block: .6rem;
+    color: #c5f3b4;
+}
+#mission-summary { border-block: 1px solid #647e51; margin-block: 1rem; padding-block: .75rem; }
+#mission-message { color: #a7f3a2; }
 
-          <div class="header-center">
-              <h1 class="site-title state-title">
-                  <span class="lang-en">State of Palestine</span>
-                  <span class="lang-ar">دولة فلسطين</span>
-              </h1>
-              <nav id="united-navigation" class="main-nav" aria-label="Main navigation">
-                <ul class="nav-menu">
-                  <li><a href="index.html" class="nav-btn">
-                        <span class="lang-en">Home</span>
-                        <span class="lang-ar">الرئيسية</span>
-                  </a></li>
-                  <li><a href="mpga.html" class="nav-btn">
-                          <span class="lang-en">MPGA</span>
-                          <span class="lang-ar">MPGA</span>
-                  </a></li>
-                  <li><a href="about.html" class="nav-btn">
-                        <span class="lang-en">About Us</span>
-                        <span class="lang-ar">من نحن</span>
-                  </a></li>                 
-                </ul>
-              </nav>
-          </div>
-              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
-                      English | العربية
-              </button>
-  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
-              <button id="menu-toggle" aria-controls="united-navigation" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                  ☰
-              </button>
-        </div>
-  </header>
-<main class="command-center" id="command-center">
-<div class="command-welcome">
-  <div class="command-emblem" aria-hidden="true">
-    <svg class="hero-emblem-art" viewBox="0 0 400 100" width="400" height="100" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="command-hero-gold" x1="0" y1="0" x2="0.8" y2="1">
-          <stop offset="0" stop-color="#f0d58d"/><stop offset=".5" stop-color="#d8b35f"/><stop offset="1" stop-color="#a47e35"/>
-        </linearGradient>
-        <g id="command-hero-branch">
-        <path d="M24 70 Q85 87 151 36" fill="none" stroke="#a58e55" stroke-width="2.4" stroke-linecap="round"/>
-        <path d="M41 74 Q20 66 24 47 Q43 52 41 74Z" fill="#82966c"/>
-        <path d="M54 75 Q38 91 25 85 Q34 70 54 75Z" fill="#a6b58b"/>
-        <path d="M66 73 Q45 58 53 41 Q73 50 66 73Z" fill="#71865c"/>
-        <path d="M80 68 Q65 91 48 87 Q56 70 80 68Z" fill="#8fa27b"/>
-        <path d="M91 63 Q73 44 83 30 Q101 42 91 63Z" fill="#a6b58b"/>
-        <path d="M106 56 Q97 80 79 79 Q85 60 106 56Z" fill="#71865c"/>
-        <path d="M119 48 Q106 29 118 18 Q133 32 119 48Z" fill="#8fa27b"/>
-        <path d="M133 42 Q132 64 113 68 Q115 49 133 42Z" fill="#a6b58b"/>
-        <path d="M141 38 Q137 20 152 15 Q160 29 141 38Z" fill="#a58e55"/>
-        </g>
-      </defs>
-      <use href="#command-hero-branch"/>
-      <use href="#command-hero-branch" transform="translate(400 0) scale(-1 1)"/>
-      <g fill="none" stroke="#171b10" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="200" cy="50" r="32"/><path d="M200 18V82 M200 50L177.4 72.6 M200 50L222.6 72.6"/>
-      </g>
-      <g fill="none" stroke="url(#command-hero-gold)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="200" cy="50" r="32"/><path d="M200 18V82 M200 50L177.4 72.6 M200 50L222.6 72.6"/>
-      </g>
-    </svg>
-  </div>
-  <h2 class="command-hero-title">
-    <span class="lang-en" lang="en" dir="ltr"><span class="hero-brand"><span class="hero-american">AMERICAN</span> <span class="hero-nobody">NOBODY</span></span><span class="hero-command">COMMAND CENTER</span></span>
-    <span class="lang-ar hidden" lang="ar" dir="rtl"><span class="hero-brand"><span class="hero-american">أمريكي</span> <span class="hero-nobody">نوبودي</span></span><span class="hero-command">مركز القيادة</span></span>
-  </h2>
-  <div class="hero-divider" aria-hidden="true">
-    <svg class="divider-flourish" viewBox="0 0 48 28" width="48" height="28" aria-hidden="true" focusable="false"><path d="M3 23Q25 23 44 5" fill="none" stroke="#ac975f" stroke-width="1.5"/><path d="M12 22Q4 14 10 7Q19 13 12 22Z" fill="#82966c"/><path d="M20 19Q23 27 33 22Q29 15 20 19Z" fill="#ac975f"/><path d="M29 15Q21 6 28 2Q37 7 29 15Z" fill="#a6b58b"/><path d="M36 11Q40 18 46 12Q42 7 36 11Z" fill="#82966c"/></svg>
-    <svg class="hero-flag" viewBox="0 0 120 64" width="60" height="32" aria-hidden="true" focusable="false">
-      <defs><linearGradient id="command-flag-fabric"><stop offset="0" stop-color="#000000" stop-opacity=".04"/><stop offset=".45" stop-color="#ffffff" stop-opacity=".10"/><stop offset="1" stop-color="#000000" stop-opacity=".08"/></linearGradient></defs>
-      <path d="M4 4Q32 0 60 4T116 4V22.67Q88 26.67 60 22.67T4 22.67Z" fill="#000000"/>
-      <path d="M4 22.67Q32 18.67 60 22.67T116 22.67V41.33Q88 45.33 60 41.33T4 41.33Z" fill="#ffffff"/>
-      <path d="M4 41.33Q32 37.33 60 41.33T116 41.33V60Q88 64 60 60T4 60Z" fill="#007a3d"/>
-      <path d="M4 4L60 32L4 60Z" fill="#ce1126"/>
-      <path d="M4 4Q32 0 60 4T116 4V60Q88 64 60 60T4 60Z" fill="url(#command-flag-fabric)"/>
-    </svg>
-    <svg class="divider-flourish divider-flourish-mirror" viewBox="0 0 48 28" width="48" height="28" aria-hidden="true" focusable="false"><path d="M3 23Q25 23 44 5" fill="none" stroke="#ac975f" stroke-width="1.5"/><path d="M12 22Q4 14 10 7Q19 13 12 22Z" fill="#82966c"/><path d="M20 19Q23 27 33 22Q29 15 20 19Z" fill="#ac975f"/><path d="M29 15Q21 6 28 2Q37 7 29 15Z" fill="#a6b58b"/><path d="M36 11Q40 18 46 12Q42 7 36 11Z" fill="#82966c"/></svg>
-  </div>
-</div>
-<section class="terminal-panel" aria-labelledby="transmissions-title"><h2 id="transmissions-title"><span class="lang-en" lang="en" dir="ltr">Weekly Transmissions</span><span class="lang-ar hidden" lang="ar" dir="rtl">الرسائل الأسبوعية</span></h2>
-<!-- WEEKLY EDIT: fill transmission-date-value (use a dated time element when publishing) and transmission-number-value; update panel bodies in both languages. -->
-<p id="publication-date"><span id="transmission-date-label"><span class="lang-en" lang="en" dir="ltr">Transmission Date:</span><span class="lang-ar hidden" lang="ar" dir="rtl">تاريخ الرسالة:</span></span> <br><span id="transmission-date-value" aria-labelledby="transmission-date-label"><time datetime="2026-11-13"><span class="lang-en" lang="en" dir="ltr">November 13, 2026</span><span class="lang-ar hidden" lang="ar" dir="rtl">١٣ نوفمبر ٢٠٢٦</span></time></span></p>
-<p id="transmission-number"><span id="transmission-number-label"><span class="lang-en" lang="en" dir="ltr">Transmission #:</span><span class="lang-ar hidden" lang="ar" dir="rtl">رقم الرسالة:</span></span> <br><span id="transmission-number-value" aria-labelledby="transmission-number-label">003</span></p>
-<div class="transmissions">
-<article><h3><span class="lang-en" lang="en" dir="ltr">This Week</span><span class="lang-ar hidden" lang="ar" dir="rtl">هذا الأسبوع</span></h3><p><span class="lang-en" lang="en" dir="ltr">This week, we completed Phase 2 of the Gaza Circus School, continued expanding our Schoolhouse History activities, organized the November archives, and updated our featured content and weekly collections.</span><span class="lang-ar hidden" lang="ar" dir="rtl">هذا الأسبوع، أكملنا المرحلة الثانية من مدرسة سيرك غزة، وواصلنا توسيع أنشطة التاريخ في مدرستنا، ونظّمنا أرشيف نوفمبر، وحدّثنا محتوانا المميّز ومجموعاتنا الأسبوعية.</span></p>
-<p><span class="lang-en" lang="en" dir="ltr">We refreshed our Friday Prayers and continued documenting Palestine while supporting humanitarian advocacy.</span><span class="lang-ar hidden" lang="ar" dir="rtl">جدّدنا أدعية الجمعة، وواصلنا توثيق فلسطين ودعم المناصرة الإنسانية.</span></p>
-<p><span class="lang-en" lang="en" dir="ltr">We also began transforming Mission Control into a practical project-management system by organizing page tasks, correcting dependency records, and expanding our development roadmap.</span><span class="lang-ar hidden" lang="ar" dir="rtl">وبدأنا أيضًا تحويل مركز التحكم إلى نظام عملي لإدارة المشاريع، من خلال تنظيم مهام الصفحات وتصحيح سجلات الاعتماديات وتوسيع خارطة طريق التطوير.</span></p>
-<p><span class="lang-en" lang="en" dir="ltr">Our mission continues to bring together education, creativity, documentation, and solidarity with Palestine.</span><span class="lang-ar hidden" lang="ar" dir="rtl">تواصل مهمتنا الجمع بين التعليم والإبداع والتوثيق والتضامن مع فلسطين.</span></p></article>
-<article><h3><span class="lang-en" lang="en" dir="ltr">Next Week</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأسبوع القادم</span></h3><p><span class="lang-en" lang="en" dir="ltr">Next week, we'll continue building Gaza Circus Phases 3 through 5, expand the Schoolhouse with more lessons and games, and welcome more journalists and creators into our network.</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأسبوع القادم، سنواصل بناء المراحل من الثالثة إلى الخامسة من سيرك غزة، ونوسّع المدرسة بمزيد من الدروس والألعاب، ونرحّب بمزيد من الصحفيين وصنّاع المحتوى في شبكتنا.</span></p>
-<p><span class="lang-en" lang="en" dir="ltr">We'll also update the Ticket page, continue improving Mission Control, and carry forward our documentation and humanitarian mission for Palestine.</span><span class="lang-ar hidden" lang="ar" dir="rtl">وسنحدّث أيضًا صفحة التذكرة، ونواصل تحسين مركز التحكم، ونمضي قدمًا في مهمتنا التوثيقية والإنسانية من أجل فلسطين.</span></p></article>
-</div>
-<details id="week-2026-11-06" class="weekly-change-record">
-<summary><span class="lang-en" lang="en" dir="ltr">Week ending November 6, 2026 — Transmission 002</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأسبوع المنتهي في ٦ نوفمبر ٢٠٢٦ — الرسالة 002</span></summary>
-<p><span class="lang-en" lang="en" dir="ltr">Transmission Date:</span><span class="lang-ar hidden" lang="ar" dir="rtl">تاريخ الرسالة:</span> <time datetime="2026-11-06"><span class="lang-en" lang="en" dir="ltr">November 6, 2026</span><span class="lang-ar hidden" lang="ar" dir="rtl">٦ نوفمبر ٢٠٢٦</span></time></p>
-<p><span class="lang-en" lang="en" dir="ltr">Transmission #:</span><span class="lang-ar hidden" lang="ar" dir="rtl">رقم الرسالة:</span> 002</p>
-<div class="transmissions">
-<article><h3><span class="lang-en" lang="en" dir="ltr">This Week</span><span class="lang-ar hidden" lang="ar" dir="rtl">هذا الأسبوع</span></h3><p><span class="lang-en" lang="en" dir="ltr">We completed Phase 1 of our Gaza Circus, expanded our coverage of the West Bank, and published our weekly content updates. Our work continues to bring together education, creativity, documentation, and solidarity with Palestine.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أكملنا المرحلة الأولى من بناء سيرك غزة، ووسّعنا تغطيتنا للضفة الغربية، ونشرنا تحديثات المحتوى الأسبوعية. ونواصل عملنا للجمع بين التعليم والإبداع والتوثيق والتضامن مع فلسطين.</span></p></article>
-<article><h3><span class="lang-en" lang="en" dir="ltr">Next Week</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأسبوع القادم</span></h3><p><span class="lang-en" lang="en" dir="ltr">We'll continue constructing the circus, welcome more influencers and journalists into our network, and carry forward our mission for Palestine.</span><span class="lang-ar hidden" lang="ar" dir="rtl">سنواصل بناء السيرك، ونرحّب بالمزيد من المؤثرين والصحفيين ضمن شبكتنا، ونمضي قدمًا في مهمتنا من أجل فلسطين.</span></p></article>
-</div>
-</details>
-<details id="week-2026-10-30" class="weekly-change-record">
-<summary><span class="lang-en" lang="en" dir="ltr">Week ending October 30, 2026 — Development changes</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأسبوع المنتهي في 30 أكتوبر 2026 — تغييرات التطوير</span></summary>
-<p><span class="lang-en" lang="en" dir="ltr">Week ending:</span><span class="lang-ar hidden" lang="ar" dir="rtl">نهاية الأسبوع:</span> <time datetime="2026-10-30">2026-10-30</time></p>
-<h4><span class="lang-en" lang="en" dir="ltr">Heroes — hero.html</span><span class="lang-ar hidden" lang="ar" dir="rtl">صفحة الأبطال — hero.html</span></h4>
-<ul>
-<li><span class="lang-en" lang="en" dir="ltr">Redesigned the Journalist Directory for one-card navigation, dropdown selection, Previous/Next controls and counters; reordered the page to introduction, journalists, research sources, then memorials.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أُعيد تصميم دليل الصحفيين لعرض بطاقة واحدة مع قائمة اختيار وأزرار السابق والتالي والعدادات؛ ورُتبت الأقسام: المقدمة ثم الصحفيون ثم مصادر البحث ثم التأبين.</span></li>
-<li><span class="lang-en" lang="en" dir="ltr">Refined typography, backgrounds, borders, portraits and image shadows; improved Research Sources navigation/styling and the Their Voices Remain gallery while preserving its photographs.</span><span class="lang-ar hidden" lang="ar" dir="rtl">حُسنت الخطوط والخلفيات والحدود والصور وظلالها، وتنقل مصادر البحث ومظهرها ومعرض أصواتهم باقية مع الحفاظ على صوره.</span></li>
-<li><span class="lang-en" lang="en" dir="ltr">Added five journalist profiles: Sam Stein, The Gaza, Adele Shoko, Infinite Jaz, and Ali Al-Jafarawi. Added two research-source cards: The Times of Palestine and Al Mayadeen. These are content additions within hero.html, not new pages.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أُضيفت ملفات سام ستاين وغزة وأديل شوكو وإنفينيت جاز وعلي الجعفراوي، وبطاقتا تايمز أوف فلسطين والميادين كمحتوى داخل hero.html وليس كصفحات جديدة.</span></li>
-<li><span class="lang-en" lang="en" dir="ltr">Audited journalist accounts, website and support links; removed identified dead/duplicate links and corrected selected image paths. External availability remains Pending Verification in manual browser QA.</span><span class="lang-ar hidden" lang="ar" dir="rtl">رُوجعت حسابات الصحفيين وروابط المواقع والدعم وأُزيلت روابط مكررة أو معطلة محددة وصُححت مسارات صور. توافر الوجهات الخارجية قيد التحقق ضمن الفحص اليدوي.</span></li>
-</ul>
-<h4><span class="lang-en" lang="en" dir="ltr">New page-specific script — js/hero.js</span><span class="lang-ar hidden" lang="ar" dir="rtl">برنامج جديد خاص بالصفحة — js/hero.js</span></h4>
-<ul>
-<li><span class="lang-en" lang="en" dir="ltr">Created this week in the local implementation: one shared initializer independently controls journalists, research sources and memorials, dropdowns, Previous/Next, counters, profile-hash reveal and bilingual directory labels.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أُنشئ ضمن تنفيذ هذا الأسبوع: مُهيئ مشترك يدير أدلة الصحفيين ومصادر البحث والتأبين باستقلالية، مع قوائم الاختيار والسابق والتالي والعدادات وروابط الملفات المباشرة وتسميات الدليل باللغتين.</span></li>
-</ul>
-<h4><span class="lang-en" lang="en" dir="ltr">Homepage — index.html</span><span class="lang-ar hidden" lang="ar" dir="rtl">الصفحة الرئيسية — index.html</span></h4>
-<ul>
-<li><span class="lang-en" lang="en" dir="ltr">Moved Mission Control first into a centered dedicated row with See the Madness on its button; renamed What’s Happening NOW to Big Top and paired it beside West Bank. Updated Coming Soon and Don’t Click Me Yet labels and responsive grid alignment.</span><span class="lang-ar hidden" lang="ar" dir="rtl">نُقل مركز التحكم إلى الصف الأول المستقل في المنتصف بزر شاهد الجنون؛ وأُعيدت تسمية بطاقة ما يحدث الآن إلى Big Top ووُضعت بجانب الضفة الغربية، مع تحديث عبارات قريبًا ولا تضغط عليّ بعد ومحاذاة الشبكة المتجاوبة.</span></li>
-</ul>
-<h4><span class="lang-en" lang="en" dir="ltr">Mission Control — leslie-updates.html</span><span class="lang-ar hidden" lang="ar" dir="rtl">مركز التحكم — leslie-updates.html</span></h4>
-<ul>
-<li><span class="lang-en" lang="en" dir="ltr">Created and developed the local dashboard this week: bilingual transmissions, grouped All Pages inventory, flat Weekly Updates, stable browser-local tasks, confirmed reset, planned-project references and a verified local dependency explorer. This record documents published project changes independently of visitor checkmarks.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أُنشئت وطُورت اللوحة المحلية هذا الأسبوع: رسائل باللغتين وجرد مجمع لجميع الصفحات وعرض أسبوعي مسطح ومهام محلية ثابتة وإعادة بدء مؤكدة ومراجع المشاريع المخططة ومستكشف الاعتماديات المحلية. يوثق هذا السجل تغييرات المشروع باستقلال عن علامات الزائر.</span></li>
-<li><span class="lang-en" lang="en" dir="ltr">Reconciled all 75 existing HTML pages, including education, archives and bioSite. Their creation dates are not established by this inventory; no newly discovered page is claimed as created this week.</span><span class="lang-ar hidden" lang="ar" dir="rtl">طُوبق الجرد مع جميع صفحات HTML الموجودة وعددها 75، بما فيها التعليم والأرشيف والموقع الشخصي. لا يثبت الجرد تواريخ إنشائها ولا تُنسب صفحة مكتشفة حديثًا إلى إنشاء هذا الأسبوع.</span></li>
-</ul>
-</details>
-</section>
-<section class="terminal-panel" aria-labelledby="missions-title"><h2 id="missions-title"><span class="lang-en" lang="en" dir="ltr">Permanent Mission Board</span><span class="lang-ar hidden" lang="ar" dir="rtl">لوحة المهام الدائمة</span></h2><div id="mission-summary" role="status"></div><div id="mission-message" role="status"></div><button id="restart-mission" type="button" disabled><span class="lang-en" lang="en" dir="ltr">Restart Mission</span><span class="lang-ar hidden" lang="ar" dir="rtl">إعادة بدء المهمة</span></button><p id="storage-status" role="status"></p><p class="inventory-transparency"><span class="lang-en" lang="en" dir="ltr">Page information describes the published project. Checkmarks are your browser-local notes, not the website’s published development status.</span><span class="lang-ar hidden" lang="ar" dir="rtl">معلومات الصفحات تصف المشروع المنشور. علامات الإنجاز ملاحظات محلية في متصفحك، وليست حالة تطوير الموقع المنشورة.</span></p><div class="inventory-views" role="group" aria-label="Inventory view / عرض جرد الصفحات"><button type="button" id="view-all" aria-pressed="true"><span class="lang-en" lang="en" dir="ltr">All Pages</span><span class="lang-ar hidden" lang="ar" dir="rtl">جميع الصفحات</span></button><button type="button" id="view-weekly" aria-pressed="false"><span class="lang-en" lang="en" dir="ltr">Weekly Updates</span><span class="lang-ar hidden" lang="ar" dir="rtl">التحديثات الأسبوعية</span></button></div><div id="mission-board"></div><noscript><span class="lang-en" lang="en" dir="ltr">Enable JavaScript to use the checklist and dependency explorer.</span><span class="lang-ar hidden" lang="ar" dir="rtl">فعّل جافاسكريبت لاستخدام قائمة المهام ومستكشف الاعتماديات.</span></noscript></section>
-<section class="terminal-panel" aria-labelledby="dependencies-title"><h2 id="dependencies-title"><span class="lang-en" lang="en" dir="ltr">System Dependencies</span><span class="lang-ar hidden" lang="ar" dir="rtl">اعتماديات النظام</span></h2><p><span class="lang-en" lang="en" dir="ltr">Select a page to explore its local styles, scripts, navigation links, and JSON/data dependencies, including data loaded by scripts. Shared files are marked.</span><span class="lang-ar hidden" lang="ar" dir="rtl">اختر صفحة لاستكشاف ملفات التنسيق والبرامج وروابط التنقل المحلية واعتماديات JSON/البيانات، بما فيها البيانات المحمّلة عبر البرامج. الملفات المشتركة محددة.</span></p><label for="dependency-page"><span class="lang-en" lang="en" dir="ltr">Choose a page</span><span class="lang-ar hidden" lang="ar" dir="rtl">اختر صفحة</span></label><select id="dependency-page"></select><div id="dependency-map" class="dependency-map"></div><div id="dependency-details" aria-live="polite"></div></section>
-</main>
-<footer class="site-footer" data-global-chrome>
-        <div class="footer-container">
-        <div class="footer-row">
-          <a href="legal.html" class="footer-btn footer-btn-left">
-            <span class="lang-en">Legal</span>
-            <span class="lang-ar">قانوني</span>
-          </a>
+/* Inventory views share the original mission cards and completion state. */
+.command-center .inventory-views { display: flex; flex-wrap: wrap; gap: .75rem; margin-block: 1rem; }
+.command-center .inventory-views button[aria-pressed="true"] { border-color: #f4ce73; background: #345339; }
+.command-center .inventory-group { min-width: 0; margin-block: 1rem; }
+.command-center .inventory-group > summary { min-height: 44px; padding: .75rem; cursor: pointer; color: #e7cc79; }
+.command-center .inventory-group .inventory-group { grid-column: 1 / -1; }
+.command-center .inventory-group > .mission-grid { padding-block: .5rem; }
+.command-center .inventory-transparency { color: #e7cc79; }
+.command-center [hidden] { display: none !important; }
 
-          <div class="footer-content">
-            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
-              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-                <g>
-                  <path d="M70 25Q38 27 10 9" fill="none"/>
-                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
-                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
-                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
-                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
-                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
-                </g>
-                <g transform="translate(140 0) scale(-1 1)">
-                  <path d="M70 25Q38 27 10 9" fill="none"/>
-                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
-                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
-                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
-                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
-                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
-                </g>
-              </g>
-            </svg>
-            <p class="footer-text">
-              <span class="lang-en">From the Ashes, A State rises</span>
-              <span class="lang-ar">من الرماد، تنهض دولة</span>
-            </p>
-            <p class="copyright">
-              <span class="lang-en">&copy; 2026 American Nobody999</span>
-              <span class="lang-ar">&copy; 2026 أمريكي Nobody999</span>
-            </p>
-          </div>
-          <a href="contact.html" class="footer-btn footer-btn-right">
-            <span class="lang-en">Contact Us</span>
-            <span class="lang-ar">اتصل بنا</span>
-          </a>
-            </div>
-        </div>
-  </footer>
-<script src="js/main.js"></script>
-<script src="js/leslie-updates.js" defer></script>
-</body>
-</html>
+/* Page-card grids: identical containers in All Pages and Weekly Updates. */
+.command-center .mission-grid {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+}
+.command-center .mission-card {
+    padding: .85rem;
+    overflow-wrap: anywhere;
+}
+.command-center .mission-card > h3 { margin-block: 0 .5rem; }
+.command-center .mission-card > p { margin-block: .5rem; }
+.command-center .mission-card .mission-checklist { margin-block: .5rem; }
+.command-center .mission-card .mission-task > span { min-width: 0; }
+@media (min-width: 600px) {
+    .command-center .mission-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 900px) {
+    .command-center .mission-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) {
+    .command-center { max-width: 1900px; padding-inline: 1.25rem; }
+    .command-center .mission-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* Centered vintage sign; ornaments use CSS, with no image/font dependencies. */
+.command-center .command-welcome {
+    text-align: center;
+    padding-block: clamp(1rem, 4vw, 3.5rem);
+    margin-block-end: clamp(1.5rem, 4vw, 3rem);
+}
+.command-center .command-emblem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.75rem, 3vw, 2rem);
+    margin-block-end: 1rem;
+}
+.command-center .hero-emblem-art {
+    display: block;
+    width: min(100%, 400px);
+    height: auto;
+    flex: 0 1 400px;
+}
+.command-center .command-hero-title {
+    font-family: Rockwell, "Rockwell Nova", "Roboto Slab", Georgia, "Times New Roman", serif;
+    font-weight: 900;
+    font-size: clamp(1.65rem, 4.8vw, 5rem);
+    line-height: 1.15;
+    letter-spacing: .035em;
+    margin: 0;
+    text-shadow: 0 3px 0 #050b06, 0 5px 12px #0008;
+}
+.command-center .command-hero-title .lang-ar { font-weight: 700; letter-spacing: 0; }
+.command-center .hero-brand, .command-center .hero-command { display: block; }
+.command-center .hero-american { color: #f0e6cb; }
+.command-center .hero-nobody { color: #a7b784; }
+.command-center .hero-command { color: #d8b35f; margin-block-start: .2em; }
+.command-center .hero-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(.5rem, 2vw, 1rem);
+    max-width: 560px;
+    margin: 1.5rem auto 0;
+}
+.command-center .hero-divider::before, .command-center .hero-divider::after {
+    content: "";
+    flex: 1;
+    min-width: 0;
+    height: 1px;
+    background: #ac975f;
+}
+.command-center .divider-flourish {
+    display: block;
+    width: clamp(24px, 5vw, 40px);
+    height: auto;
+    flex: 0 0 auto;
+}
+.command-center .divider-flourish-mirror { transform: scaleX(-1); }
+.command-center .hero-flag {
+    display: block;
+    width: clamp(44px, 6vw, 64px);
+    height: auto;
+    flex: 0 0 auto;
+}
+.command-center .command-emblem, .command-center .hero-divider { direction: ltr; }
+.command-center .terminal-panel > h2,
+.command-center .terminal-panel > p,
+.command-center .transmissions,
+.command-center #mission-summary,
+.command-center #mission-message { text-align: center; }
+
+/* Dashboard accents reused from Color Garden, arcade, recess, and math games. */
+.command-center .terminal-panel {
+    --dashboard-blue: #9ad7ff;
+    --dashboard-pink: #f472b6;
+    --dashboard-yellow: #ffd60a;
+    --dashboard-violet: #818cf8;
+    --dashboard-phosphor: #62ed7e;
+    --dashboard-ivory: #fff6d9;
+    color: var(--dashboard-ivory);
+}
+.command-center .terminal-panel > h2 {
+    padding-block-end: .35rem;
+    border-block-end: 1px solid #ae805267;
+    color: var(--dashboard-phosphor);
+    text-shadow: 0 0 .42rem #75dfff45;
+}
+.command-center #transmissions-title { color: var(--dashboard-blue); }
+.command-center #missions-title { color: var(--dashboard-pink); }
+.command-center #dependencies-title { color: var(--dashboard-yellow); }
+.command-center .transmissions article:first-child h3 { color: var(--dashboard-violet); }
+.command-center .transmissions article:last-child h3 { color: var(--dashboard-blue); }
+.command-center .mission-card > h3 { color: var(--dashboard-ivory); }
+.command-center .mission-category { color: var(--dashboard-yellow); border-inline-start-color: var(--dashboard-pink); }
+.command-center .terminal-panel progress { accent-color: var(--dashboard-blue); }
+.command-center .terminal-panel progress::-webkit-progress-bar { background: #0d1811; }
+.command-center .terminal-panel progress::-webkit-progress-value { background: var(--dashboard-blue); }
+.command-center .terminal-panel progress::-moz-progress-bar { background: var(--dashboard-blue); }
+.command-center .terminal-panel .mission-task input { accent-color: var(--dashboard-phosphor); }
+.command-center .terminal-panel a { color: var(--dashboard-blue); }
+.command-center .terminal-panel a:hover { color: var(--dashboard-yellow); text-decoration-thickness: 2px; }
+.command-center .terminal-panel :is(button, select):not(:disabled):is(:hover, :focus-visible) {
+    color: var(--dashboard-ivory);
+    border-color: var(--dashboard-blue);
+    box-shadow: 0 0 .5rem #6eceff33;
+}
+.command-center .terminal-panel :focus-visible { outline-color: var(--dashboard-blue); }
+.command-center .mission-checklist > summary:is(:hover, :focus-visible),
+.command-center .terminal-panel .mission-task:is(:hover, :focus-within) {
+    background-color: #62ed7e12;
+    text-shadow: 0 0 .35rem #62ed7e46;
+}
+.command-center .dependency-root:is(:hover, :focus-visible) {
+    border-color: var(--dashboard-blue);
+    box-shadow: 0 0 .45rem #6eceff40;
+}
+.command-center .inventory-views button[aria-pressed="true"] {
+    color: var(--dashboard-yellow);
+    border-color: var(--dashboard-blue);
+    box-shadow: 0 0 8px #9ad7ff26;
+}
+.command-center .mission-card:focus-within { border-color: var(--dashboard-violet); }
+.command-center .mission-checklist > summary { color: var(--dashboard-blue); }
+.command-center #mission-summary { border-block-color: var(--dashboard-violet); }
+.command-center #mission-message { color: var(--dashboard-phosphor); }
+.command-center .dependency-root { border-color: var(--dashboard-violet); }
+.command-center .dependency-branch:nth-child(1) { --dependency-accent: var(--dashboard-blue); }
+.command-center .dependency-branch:nth-child(2) { --dependency-accent: var(--dashboard-pink); }
+.command-center .dependency-branch:nth-child(3) { --dependency-accent: var(--dashboard-yellow); }
+.command-center .dependency-branch { border-block-start-color: var(--dependency-accent); }
+.command-center .dependency-branch h3 { color: var(--dependency-accent); }
+.command-center .dependency-branch .dependency-node { color: var(--dependency-accent); border-color: var(--dependency-accent); }
+.command-center #dependency-details h3:nth-of-type(1),
+.command-center #dependency-details ul:nth-of-type(1) a { color: var(--dashboard-blue); }
+.command-center #dependency-details h3:nth-of-type(2),
+.command-center #dependency-details ul:nth-of-type(2) a { color: var(--dashboard-pink); }
+.command-center #dependency-details h3:nth-of-type(3),
+.command-center #dependency-details ul:nth-of-type(3) a { color: var(--dashboard-yellow); }
+.command-center #dependency-details a:is(:hover, :focus-visible) {
+    color: var(--dashboard-ivory);
+    text-shadow: 0 0 .4rem #6eceff60;
+}
+
+/* Planned reference links and actions remain distinct keyboard targets. */
+.command-center .planned-reference-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+    margin-block: .75rem;
+}
+.command-center .planned-reference-actions > a { overflow-wrap: anywhere; }
+
+/* Match united.css: keep the mobile hamburger above the overlapping title. */
+@media (max-width: 768px) {
+    .command-page .site-header[data-global-chrome] .menu-toggle {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* World Clockwork instruments. */
+.command-center .world-clockwork h2 {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.command-center .world-clocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(.75rem, 2vw, 1.5rem);
+}
+
+.command-center .world-clock {
+    display: grid;
+    justify-items: center;
+    gap: .4rem;
+    inline-size: clamp(6rem, 12vw, 8rem);
+    min-inline-size: 0;
+    margin: 0;
+}
+
+.command-center .world-clock-dial {
+    inline-size: 100%;
+    aspect-ratio: 1;
+    padding: .25rem;
+    border: 3px ridge #bb8b50;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, transparent 56%, #f2c584 57% 60%, #713f28 61% 63%, transparent 64%),
+        repeating-conic-gradient(#523321 0deg 3deg, transparent 3deg 10deg),
+        linear-gradient(145deg, #ffe2a4, #9b6140 55%, #d7ad65 80%, #6b3e2a);
+    box-shadow: inset 0 0 0 1px #53331e, 0 .3rem .65rem #040604e0;
+}
+
+.command-center .world-clock-face {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 30%, #fff3d3, #efdbab 70%, #bf9864);
+    box-shadow: 0 0 0 1px #75472c, 0 0 0 2px #e4b36a, 0 0 .35rem #f8da9180;
+}
+
+.command-center .world-clock-track { fill: none; stroke: #765333; stroke-width: 1.3; stroke-dasharray: .19 .81; }
+.command-center .world-clock-rivets { fill: #f0c273; stroke: #72442d; stroke-width: .6; }
+.command-center .world-clock-numerals { fill: #35291e; font: 700 7px Georgia, serif; }
+.command-center .world-clock-hour { fill: #392820; stroke: #83563b; stroke-width: .5; }
+.command-center .world-clock-minute { fill: #775035; stroke: #3c2820; stroke-width: .5; }
+.command-center .world-clock-second { fill: none; stroke: #992e42; stroke-width: 1.2; stroke-linecap: round; }
+.command-center .world-clock-pin { fill: #dfa84e; stroke: #71502a; stroke-width: 1; }
+.command-center .world-clock-pin-highlight { fill: #fff1bb; }
+
+.command-center .world-clock-label {
+    display: grid;
+    place-items: center;
+    min-block-size: 2.5rem;
+    color: #f7dfa9;
+    font: 700 .9rem Georgia, serif;
+    text-align: center;
+}
+
+.command-center .world-clock-label svg { display: block; inline-size: 2.55rem; block-size: auto; }
+
+.command-center .clockwork-plaque {
+    inline-size: min(100%, 41rem);
+    margin: 1rem auto 0;
+    padding: .65rem clamp(.75rem, 3vw, 1.5rem);
+    border: 3px double #bb8b50;
+    border-radius: .55rem;
+    background: linear-gradient(140deg, #5c3e31, #362925 55%, #4d3031);
+    color: #fff2d9;
+    box-shadow: inset 0 1px #e6b87a66, inset 0 0 .4rem #ffafbf28,
+        0 0 .4rem #86d8ef29, 0 .2rem .6rem #060a0780;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+
+.command-center .clockwork-plaque p { margin: 0; }
+.command-center .clockwork-plaque p + p { margin-block-start: .45rem; }
+
+@media (max-width: 34rem) {
+    .command-center .world-clocks {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 7rem));
+    }
+    .command-center .world-clock { justify-self: center; inline-size: min(100%, 6.5rem); }
+    .command-center .world-clock:last-child { grid-column: 1 / -1; }
+}
