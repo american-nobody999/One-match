@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 11-18-2026
+   Date modified: 11-19-2026
 */
 .ok-palestine-page main {
 display: flex;
@@ -331,4 +331,109 @@ text-align: center;
     .ok-palestine-page .love-image-frame:hover, .ok-palestine-page .love-letter-button:hover { transform: none; }
     .ok-palestine-page .love-rose-arrow { transition: none; }
     .ok-palestine-page .love-letter-button:hover .love-rose-arrow { transform: none; }
+}
+
+/* Weekly editorial panels. The love-letter section retains its own frame. */
+.ok-palestine-page .section-header {
+    --palestine-ivory: #faf0dc;
+    --palestine-gold: #f3d08b;
+    --palestine-brass: #b58a4e;
+    --palestine-panel: linear-gradient(145deg, #1e3b30, #182b24 45%, #191d1c);
+}
+
+.ok-palestine-page .section-header > :is(.section-title, .quote-of-day, .ok-palestine-message, .weekly-song) {
+    box-sizing: border-box;
+    min-inline-size: 0;
+    border: 3px double var(--palestine-brass);
+    border-radius: .85rem;
+    background: var(--palestine-panel);
+    color: var(--palestine-ivory);
+    box-shadow: inset 0 0 0 1px #895837, inset 0 0 1.25rem #11171399, 0 .35rem 1rem #30271942;
+}
+
+.ok-palestine-page .section-header > .section-title {
+    margin-block-end: 1.25rem;
+    padding: .65rem clamp(.7rem, 3vw, 1.75rem);
+    border-block-end-color: #ab4d49;
+    color: var(--palestine-gold);
+    line-height: 1.2;
+    text-shadow: 0 2px #36251c;
+}
+
+.ok-palestine-page .section-header > .quote-of-day {
+    position: relative;
+    margin-block: 1.25rem 1.7rem;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    border: 4px ridge var(--palestine-brass);
+    background:
+        radial-gradient(circle at .65rem .65rem, #f0d393 0 1px, #965a39 2px 3px, transparent 4px) left bottom / 1.3rem 1.3rem no-repeat,
+        radial-gradient(circle at .65rem .65rem, #f0d393 0 1px, #965a39 2px 3px, transparent 4px) right bottom / 1.3rem 1.3rem no-repeat,
+        var(--palestine-panel);
+}
+
+.ok-palestine-page .quote-of-day::before,
+.ok-palestine-page .quote-of-day::after {
+    content: "";
+    position: absolute;
+    inset-block-start: .45rem;
+    inline-size: clamp(.7rem, 2vw, 1rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, #f6dba0 0 12%, #593624 14% 28%, #b48148 30% 51%, transparent 53%),
+        repeating-conic-gradient(#c09863 0deg 18deg, transparent 18deg 36deg);
+    pointer-events: none;
+}
+
+.ok-palestine-page .quote-of-day::before { inset-inline-start: .45rem; }
+.ok-palestine-page .quote-of-day::after { inset-inline-end: .45rem; }
+
+.ok-palestine-page .section-header .quote-title,
+.ok-palestine-page .section-header .quote-of-day cite {
+    color: var(--palestine-gold);
+}
+
+.ok-palestine-page .section-header .quote-of-day cite {
+    margin-block-start: .7rem;
+}
+
+.ok-palestine-page .section-header > .day-counter {
+    display: inline-block;
+    padding: .25rem .85rem;
+    border: 1px solid #906b3b;
+    border-radius: 2rem;
+    background: #244236;
+    color: var(--palestine-gold);
+}
+
+.ok-palestine-page .section-header > .ok-palestine-message {
+    padding: clamp(1rem, 4vw, 2.75rem);
+}
+
+.ok-palestine-page .ok-palestine-message .ok-palestine-intro,
+.ok-palestine-page .ok-palestine-message .ok-palestine-intro .lang-ar {
+    max-inline-size: 40rem;
+    text-align: start;
+}
+
+.ok-palestine-page .ok-palestine-message .ok-palestine-intro + .ok-palestine-intro {
+    margin-block-start: .85rem;
+}
+
+.ok-palestine-page .ok-palestine-message strong {
+    color: #ffe1a1;
+    font-weight: 700;
+}
+
+.ok-palestine-page .section-header > .weekly-song {
+    margin-block: clamp(1.25rem, 4vw, 2.25rem);
+    padding: clamp(.7rem, 3vw, 1.6rem);
+    border-block-start-color: #ab4d49;
+}
+
+.ok-palestine-page .weekly-song > .weekly-song-video {
+    margin: 0 auto;
+    border: 3px groove var(--palestine-brass);
+    background: #161918;
+    box-shadow: 0 .25rem .75rem #0b110f99;
 }
