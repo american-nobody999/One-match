@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman
-   Date modified: 10/21/2026 */
+   Date modified: 11/19/2026 */
 :where(.faith-page) main {
 display: flex;
     flex-direction: column;
@@ -34,30 +34,38 @@ display: block;
 max-width: 1100px;
 }
 
-:where(.faith-page) .faith-intro-copy {
-margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 900px;
-    width: 100%;
+.faith-page .faith-intro > .faith-intro-copy {
+    box-sizing: border-box;
+    width: min(100%, 560px);
+    margin: 0 auto .65rem;
+    padding: .65rem clamp(.75rem, 3vw, 1.1rem);
 }
 
-:where(.faith-page) .faith-intro-copy .lang-en p,
-:where(.faith-page) .faith-intro-copy .lang-ar p {
-text-align: center;
+.faith-page .faith-intro-copy p {
+    margin: 0 auto .4rem;
+    font-size: .95rem;
+    line-height: 1.5;
+    text-align: center;
     text-indent: 0;
 }
 
-:where(.faith-page) .faith-intro {
-background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/0026.jpg");
+.faith-page .faith-intro-copy p:last-child { margin-block-end: 0; }
+
+.faith-page .section.faith-intro {
+    box-sizing: border-box;
+    width: min(calc(100% - 1.25rem), 880px);
+    min-height: 0;
+    padding: clamp(.75rem, 2vw, 1.1rem);
+    background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/0026.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
 }
 
-:where(.faith-page) .faith-intro .section-title {
-color: var(--gold);
+.faith-page .faith-intro .section-title {
+    margin: 0 auto .65rem;
+    color: var(--gold);
     -webkit-text-stroke: 1px #000;
     text-shadow: 0 1px 0 #000;
     display: inline-block;
@@ -65,39 +73,53 @@ color: var(--gold);
     box-shadow: 0 0 14px rgba(255, 255, 255, 0.95);
 }
 
-:where(.faith-page) .faith-link-grid {
-display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 0.5rem 0 0.25rem;
-    scroll-behavior: smooth;
-    justify-content: flex-start;
-    align-items: stretch;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+.faith-page .faith-link-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(.75rem, 2.5vw, 1.25rem);
 }
 
-:where(.faith-page) .faith-link-item {
-flex: 0 0 280px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-    scroll-snap-align: start;
+.faith-page .faith-link-item {
+    box-sizing: border-box;
+    flex: 0 0 clamp(140px, 20vw, 190px);
+    max-inline-size: 100%;
+    padding: 2px;
+    border: 2px solid #a57d4e;
+    border-radius: 9px;
+    background: #f7eddc;
+    box-shadow: 0 3px 8px #31251f45;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
-:where(.faith-page) .faith-link-item img {
-display: block;
+.faith-page .faith-link-item img {
+    display: block;
     width: 100%;
-    height: 320px;
-    object-fit: cover;
+    max-width: none;
+    aspect-ratio: 8 / 5;
+    margin: 0;
+    border-radius: 5px;
+    object-fit: contain;
 }
 
-:where(.faith-page) .prayer-section {
-background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/0035.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+@media (hover: hover) and (pointer: fine) {
+    .faith-page .faith-link-item:hover {
+        transform: translateY(-3px);
+        border-color: #d4a961;
+        box-shadow: 0 5px 10px #31251f66;
+    }
+}
+
+.faith-page .faith-link-item:focus-visible {
+    outline: 3px solid #ffe2a6;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px #402c20;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faith-page .faith-link-item { transition: none; }
+    .faith-page .faith-link-item:hover { transform: none; }
 }
 
 :where(.faith-page) .prayer-section .section-title {
@@ -151,18 +173,8 @@ max-width: 980px;
 text-align: right;
 }
 
-:where(.faith-page) .faith-link-grid::-webkit-scrollbar {
-height: 10px;
-}
 
-:where(.faith-page) .faith-link-grid::-webkit-scrollbar-thumb {
-background: var(--primary-green);
-    border-radius: 10px;
-}
 
-:where(.faith-page) .faith-link-grid::-webkit-scrollbar-track {
-background: transparent;
-}
 
 :where(.faith-page) .text-content {
 border: 4px solid var(--primary-green);
@@ -212,10 +224,6 @@ font-size: 2.5rem;
 font-size: 1.35rem;
             max-width: 720px;
 }
-
-:where(.faith-page) .faith-link-item {
-flex-basis: 340px;
-}
 }
 
 @media (min-width: 1200px) and (max-width: 1599px) {
@@ -238,11 +246,6 @@ font-size: 2rem;
 :where(.faith-page) .section {
 padding: 1.75rem 1rem;
             margin: 1.75rem auto;
-}
-
-:where(.faith-page) .faith-link-item {
-flex: 0 0 280px;
-            width: 280px;
 }
 }
 
@@ -272,14 +275,6 @@ font-size: 1.9rem;
 padding: 1rem;
 }
 
-:where(.faith-page) .faith-link-item {
-flex-basis: 230px;
-}
-
-:where(.faith-page) .faith-link-item img {
-height: 270px;
-}
-
 :where(.faith-page) .prayer-body {
 padding: 1.15rem;
 }
@@ -298,15 +293,6 @@ font-size: 1.5rem;
 width: 100%;
             max-width: 100%;
 }
-
-:where(.faith-page) .faith-link-grid {
-padding-left: 0.5rem;
-            padding-right: 0.5rem;
-}
-
-:where(.faith-page) .faith-link-item {
-flex: 0 0 clamp(220px, 75vw, 320px);
-}
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -316,11 +302,6 @@ font-size: 1.8rem;
 
 :where(.faith-page) main p {
 font-size: 1rem;
-}
-
-:where(.faith-page) .faith-link-item {
-flex-basis: 250px;
-            width: 250px;
 }
 }
 
@@ -340,25 +321,12 @@ font-size: 1.55rem;
 font-size: 0.98rem;
             line-height: 1.5;
 }
-
-:where(.faith-page) .faith-link-item {
-flex-basis: 200px;
-}
-
-:where(.faith-page) .faith-link-item img {
-height: 235px;
-}
 }
 
 @media (min-width: 420px) and (max-width: 575px) {
 :where(.faith-page) .section {
 padding-left: 0.8rem;
             padding-right: 0.8rem;
-}
-
-:where(.faith-page) .faith-link-item {
-flex-basis: 82vw;
-            width: 82vw;
 }
 }
 
@@ -370,11 +338,6 @@ font-size: 1.3rem;
 :where(.faith-page) .section {
 padding: 0.7rem;
             margin: 0.9rem auto;
-}
-
-:where(.faith-page) .faith-link-item {
-flex-basis: 88vw;
-            width: 88vw;
 }
 }
 
@@ -390,6 +353,163 @@ flex-basis: 88vw;
 .faith-page .section,
 .faith-page .faith-link-grid,
 .faith-page .prayer-body { min-width: 0; max-width: 100%; }
-.faith-page .faith-link-grid { width: 100%; }
 .faith-page .faith-intro-copy,
 .faith-page .prayer-copy { overflow-wrap: anywhere; }
+
+/* Page surround and the existing Friday prayer cards. */
+body.faith-page {
+    background: repeating-linear-gradient(125deg, #d2a4710c 0 1px, transparent 1px 12px),
+        radial-gradient(ellipse at top, #573244, transparent 55%),
+        linear-gradient(145deg, #35222e, #201c23 54%, #2c2029);
+}
+
+.faith-page .faith-prayer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    width: min(calc(100% - 1.25rem), 92rem);
+    margin: 2.5rem auto 0;
+}
+
+@media (min-width: 60rem) {
+    .faith-page .faith-prayer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.faith-page .section.prayer-section {
+    --prayer-brass: #b48552;
+    --prayer-copper: #885843;
+    --prayer-rose: repeating-radial-gradient(ellipse at 43% 38%, #e28c88 0 5%, #ab475c 10% 15%, #582739 20% 25%, #a84b5d 26% 31%, #61263e 35% 46%, transparent 52%);
+    --prayer-leaf: radial-gradient(ellipse, #667956 0 35%, #344b3a 46% 58%, transparent 66%);
+    --prayer-rivet: radial-gradient(circle, #f4d49d 0 20%, #a36744 37% 55%, #633b39 62%, transparent 70%);
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(1.15rem, 4vw, 2rem) clamp(.85rem, 4vw, 2rem);
+    border: 5px double var(--prayer-brass);
+    border-radius: .9rem;
+    background-color: #eadfcf;
+    background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/0035.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    box-shadow: inset 0 0 0 1px var(--prayer-copper), inset 0 0 1rem #98594825,
+        0 .45rem 1.1rem #21151f70;
+}
+
+.faith-page .section.prayer-section::before,
+.faith-page .section.prayer-section::after {
+    --rose-size: clamp(1rem, 3.5vw, 1.9rem);
+    content: "";
+    position: absolute;
+    inset-inline: .35rem;
+    border-inline: 1px solid var(--prayer-copper);
+    block-size: var(--rose-size);
+    background:
+        var(--prayer-rose) left center / var(--rose-size) var(--rose-size) no-repeat,
+        var(--prayer-rose) right center / var(--rose-size) var(--rose-size) no-repeat,
+        var(--prayer-leaf) left var(--rose-size) center / 1rem .45rem no-repeat,
+        var(--prayer-leaf) right var(--rose-size) center / 1rem .45rem no-repeat,
+        var(--prayer-rivet) center / .38rem .38rem no-repeat,
+        linear-gradient(90deg, var(--prayer-brass), #963e54 22%, transparent 44% 56%, #963e54 78%, var(--prayer-brass)) center / 100% 1px no-repeat;
+    pointer-events: none;
+}
+
+.faith-page .section.prayer-section::before { inset-block-start: .15rem; }
+.faith-page .section.prayer-section::after {
+    --rose-size: clamp(.8rem, 2vw, 1.3rem);
+    inset-block-end: .15rem;
+}
+
+.faith-page .prayer-section > :is(.section-title, .section-date) {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto .65rem;
+    padding: .2rem .6rem;
+    border-radius: .25rem;
+    background: #f8f1e5;
+    color: #432a35;
+    text-align: center;
+}
+
+.faith-page .prayer-section > .section-title { font-size: clamp(1.5rem, 2vw, 1.9rem); }
+.faith-page .prayer-section > .section-title .lang-en { font-family: 'Cormorant Garamond', Georgia, serif; }
+.faith-page .prayer-section > .section-title .lang-ar { font-family: 'Amiri', serif; }
+.faith-page .prayer-section > .section-date { font-size: 1rem; }
+.faith-page .prayer-section .prayer-body { border: 1px solid #bb956e; }
+.faith-page .prayer-section .prayer-image { max-width: min(100%, 15rem); }
+
+.faith-page .prayer-section .prayer-copy p {
+    max-inline-size: 40rem;
+    margin: 0 auto .8rem;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.faith-page .prayer-section .prayer-copy.lang-en { font-family: 'Lora', Georgia, serif; }
+.faith-page .prayer-section .prayer-copy.lang-ar { font-family: 'Amiri', serif; direction: rtl; }
+.faith-page .prayer-section .prayer-copy.lang-ar p { font-size: 1.05rem; }
+
+/* Native prayer disclosures and their garden controls. */
+.faith-page .prayer-letter > .prayer-invitation,
+.faith-page .prayer-return {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    margin-inline: auto;
+    padding: .35rem .75rem;
+    border: 2px solid #a97a48;
+    border-radius: .6rem;
+    background: linear-gradient(#fff5e4, #efdac3);
+    color: #72263c;
+    box-shadow: inset 0 1px #fff9ee, 0 2px 4px #44232f40;
+    text-align: center;
+    cursor: pointer;
+}
+
+.faith-page .prayer-letter > .prayer-invitation { list-style: none; }
+.faith-page .prayer-invitation::-webkit-details-marker { display: none; }
+
+.faith-page .prayer-invitation .lang-en {
+    font: 400 clamp(1.7rem, 2.5vw, 2.4rem)/1.1 'Great Vibes', 'Cormorant Garamond', cursive;
+    text-shadow: 0 1px #dcca96;
+}
+
+.faith-page .prayer-invitation .lang-ar {
+    font: 700 clamp(1.45rem, 2.4vw, 2rem)/1.3 'Amiri', serif;
+}
+
+.faith-page :is(.prayer-invitation, .prayer-return)::before {
+    content: "";
+    inline-size: .85rem;
+    aspect-ratio: 1;
+    flex: none;
+    background: var(--prayer-rose);
+}
+
+.faith-page .prayer-letter[open] > .prayer-invitation { margin-block-end: .85rem; }
+
+.faith-page .prayer-return {
+    margin-block-start: 1rem;
+    font: 700 .95rem/1.4 Georgia, serif;
+}
+
+.faith-page .prayer-return .lang-ar { font-family: 'Amiri', serif; }
+
+.faith-page :is(.prayer-invitation, .prayer-return):hover {
+    border-color: #72263c;
+    background: #ffedda;
+}
+
+.faith-page :is(.prayer-invitation, .prayer-return):focus-visible {
+    outline: 3px solid #72263c;
+    outline-offset: 3px;
+}
