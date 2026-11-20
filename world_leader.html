@@ -1,6 +1,6 @@
 <!--Author: Leslie Brockman
     date: 10-09-2026
-    Date modified: 2026-11-13-->
+    Date modified: 2026-11-20-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +12,7 @@
     <title>World Leaders - American Nobody</title>
     
 
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;family=Cormorant+Garamond:wght@600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;family=Cormorant+Garamond:wght@600&amp;family=Lora:wght@400;700&amp;display=swap" rel="stylesheet">
     
 
     <link rel="stylesheet" href="styles/styles2.css">
@@ -60,10 +60,10 @@
   </header>
 
     <main class="world-leaders-main">
-        <div class="world-leaders-date">
-            <span class="lang-en">November 13, 2026</span>
-            <span class="lang-ar hidden" lang="ar" dir="rtl">١٣ نوفمبر ٢٠٢٦</span>
-        </div>
+        <time class="world-leaders-date" datetime="2026-11-20">
+            <span class="lang-en" lang="en" dir="ltr">Friday, November 20, 2026</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">الجمعة، ٢٠ نوفمبر ٢٠٢٦</span>
+        </time>
         <section class="world-leaders-appeal" aria-labelledby="world-leaders-appeal-heading">
             <h2 id="world-leaders-appeal-heading" class="appeal-heading"><span class="lang-en">An Appeal to the Leaders of the World</span><span class="lang-ar hidden" lang="ar" dir="rtl">نداء إلى قادة العالم</span></h2>
             <p><span class="lang-en">Dear World Leaders,</span><span class="lang-ar hidden" lang="ar" dir="rtl">إلى قادة العالم الكرام،</span></p>
@@ -91,14 +91,12 @@
                         <div><span data-trump-countdown="minutes">00</span><br><span class="lang-en">Minutes</span><span class="lang-ar hidden" lang="ar" dir="rtl">دقائق</span></div>
                         <div><span data-trump-countdown="seconds">00</span><br><span class="lang-en">Seconds</span><span class="lang-ar hidden" lang="ar" dir="rtl">ثوانٍ</span></div>
                     </div>
-                    <p><span class="lang-en">I'm putting as much effort into this week as you are for peace and America first.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أبذل هذا الأسبوع من الجهد بقدر ما تبذله أنت من أجل السلام وأمريكا أولًا.</span></p>
-                    <p><span class="lang-en">You don't want to work together? That's fine.</span><span class="lang-ar hidden" lang="ar" dir="rtl">لا تريد أن نعمل معًا؟ حسنًا، لا بأس.</span></p>
-                    <p><span class="lang-en">You still work for me.</span><span class="lang-ar hidden" lang="ar" dir="rtl">ما زلت تعمل لديّ.</span></p>
-                    <p><span class="lang-en">You're not even getting a song this week.</span><span class="lang-ar hidden" lang="ar" dir="rtl">لن تحصل حتى على أغنية هذا الأسبوع.</span></p>
-                    <p><span class="lang-en">You don't need to make a deal—or you can't.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أنت لا تحتاج إلى إبرام صفقة—أو أنك لا تستطيع.</span></p>
-                    <p><span class="lang-en">Big difference.</span><span class="lang-ar hidden" lang="ar" dir="rtl">هناك فرق كبير.</span></p>
-                    <p><span class="lang-en">Maybe we need to find someone who can.</span><span class="lang-ar hidden" lang="ar" dir="rtl">ربما علينا أن نجد شخصًا يستطيع.</span></p>
-                    <p><span class="lang-en">You can have your placard back when you earn it.</span><span class="lang-ar hidden" lang="ar" dir="rtl">يمكنك استعادة لافتتك عندما تستحقّها.</span></p>
+                    <div class="trump-gesture" role="img" aria-label="Peace hand sign / إشارة السلام باليد">✌️</div>
+                    <p><span class="lang-en" lang="en" dir="ltr">There are two fingers. Subtract one. Even this administration can do that math.</span><span class="lang-ar hidden" lang="ar" dir="rtl">هناك إصبعان. اطرح واحدًا. حتى هذه الإدارة تستطيع إجراء هذه العملية الحسابية.</span></p>
+                    <p><span class="lang-en" lang="en" dir="ltr"><strong>You still work for me.</strong></span><span class="lang-ar hidden" lang="ar" dir="rtl"><strong>ما زلت تعمل لديّ.</strong></span></p>
+                    <p><span class="lang-en" lang="en" dir="ltr"><strong>And the slaughter needs to end. Now.</strong></span><span class="lang-ar hidden" lang="ar" dir="rtl"><strong>ويجب أن تتوقّف المذبحة. الآن.</strong></span></p>
+                    <p><span class="lang-en" lang="en" dir="ltr">Do what you have to do, if you can do anything at all.</span><span class="lang-ar hidden" lang="ar" dir="rtl">افعل ما يتعيّن عليك فعله، إن كنت تستطيع فعل أيّ شيء أصلًا.</span></p>
+                    <p><span class="lang-en" lang="en" dir="ltr">You haven't earned it back.</span><span class="lang-ar hidden" lang="ar" dir="rtl">لم تستحقّ استعادته بعد.</span></p>
                 </section>
                 <article class="world-leader-card">
                     <!-- Replace image src and alt when leader 2's image is supplied. -->
@@ -130,7 +128,7 @@
          https://www.youtube-nocookie.com/embed/VIDEO_ID when supplied. No autoplay. -->
     <dialog id="leader-2-modal" class="world-leader-modal" role="dialog" aria-modal="true" aria-label="Iranian Citizens / المواطنون الإيرانيون" aria-describedby="leader-2-description" tabindex="-1">
         <h2 id="leader-2-title"><span class="lang-en">Good Morning Dear Iran</span><span class="lang-ar hidden" lang="ar" dir="rtl">صباح الخير يا إيران العزيزة</span></h2>
-        <time class="iran-publication-date" datetime="2026-11-13"><span class="lang-en">Friday, November 13, 2026</span><span class="lang-ar hidden" lang="ar" dir="rtl">الجمعة، ١٣ نوفمبر ٢٠٢٦</span></time>
+        <time class="iran-publication-date" datetime="2026-11-20"><span class="lang-en">Friday, November 20, 2026</span><span class="lang-ar hidden" lang="ar" dir="rtl">الجمعة، ٢٠ نوفمبر ٢٠٢٦</span></time>
         <p class="iran-subtitle"><span class="lang-en">An Appreciation for Keeping Palestine in Focus</span><span class="lang-ar hidden" lang="ar" dir="rtl">تقدير لإبقاء فلسطين في دائرة الاهتمام</span></p>
         <p id="leader-2-description">
             <span class="lang-en">
