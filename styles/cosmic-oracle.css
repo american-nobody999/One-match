@@ -904,7 +904,6 @@ body {
     font-size: clamp(1.2rem, 3vw, 1.9rem); line-height: 1.25; letter-spacing: .045em;
     color: #f5d78b; text-shadow: 0 1px #fff3c5, 0 2px #6c3a2c, 1px 3px #321b4d;
 }
-.arcade :lang(ar) { font-family: 'Amiri', 'Traditional Arabic', serif; }
 .machine-label, .machine-slogan, .machine-controls button, .ticket-slot p,
 .mini-ticket, .ticket-heading, .ticket-footer, .machine-base p {
     font-family: 'Marcellus SC', Georgia, serif;
@@ -1227,3 +1226,18 @@ body::after {
     to { text-shadow: 0 1px 1px #e9faff, 0 0 6px #278bff, 0 0 14px #50eaffcc, 0 0 22px #9460ff99; }
 }
 @media (prefers-reduced-motion: reduce) { .machine-slogan { animation: none; } }
+
+/* Keep the machine and advice panel in their original grid columns. */
+.arcade[dir="rtl"] .oracle-layout { direction: ltr; }
+.arcade[dir="rtl"] .oracle-layout > * { direction: rtl; }
+
+.arcade[lang="ar"] :is(.lang-ar, .ticket-number, #fortuneTitle, .fortune-text, .fortune-omen) {
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    letter-spacing: normal;
+}
+.arcade[lang="ar"] :is(.machine-top h1, .reveal-btn, #fortuneTitle) {
+    line-height: 1.4;
+}
+.arcade[lang="ar"] .reveal-btn { white-space: normal; }
+.arcade[lang="ar"] .ticket-number { white-space: nowrap; }
+.arcade[lang="ar"] :is(.ticket-heading, .ticket-footer) { flex-wrap: wrap; }
