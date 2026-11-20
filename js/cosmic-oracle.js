@@ -5,7 +5,7 @@
  * Author: Leslie Brockman
  * The Cosmic Oracle
  * Phase 2 - Random Fortune Generator
- * Date Modified 11-18-2026
+ * Date Modified 11-20-2026
  * Description: JavaScript for the cosmic fortune-telling arcade machine simulation. Includes integration for random fortune generation and user interaction.
  */
 
@@ -18,84 +18,144 @@ const fortunes = [
         title: "The Wandering Planet",
         symbol: "🪐",
         fortune: "You are destined for great things. Unfortunately, the universe forgot to specify which things.",
-        omen: "Cosmic advice: Bring snacks."
+        omen: "Cosmic advice: Bring snacks.",
+        ar: {
+            title: "الكوكب التائه",
+            fortune: "قُدّر لك أن تحقّق أمورًا عظيمة. للأسف، نسي الكون أن يحدّد أيّ أمور.",
+            omen: "نصيحة كونية: أحضر معك بعض الوجبات الخفيفة."
+        }
     },
     {
         number: "002",
         title: "The Suspicious Moon",
         symbol: "🌙",
         fortune: "Someone is thinking about you. They probably want to know why you haven't answered their message.",
-        omen: "Cosmic advice: Check your notifications."
+        omen: "Cosmic advice: Check your notifications.",
+        ar: {
+            title: "القمر المرتاب",
+            fortune: "ثمة من يفكّر فيك. على الأرجح، يريد أن يعرف لماذا لم تردّ على رسالته.",
+            omen: "نصيحة كونية: تحقّق من إشعاراتك."
+        }
     },
     {
         number: "003",
         title: "The Galactic Committee",
         symbol: "🌌",
         fortune: "The stars have formed a committee to discuss your future. A second committee has been appointed to investigate the first.",
-        omen: "Cosmic advice: Do not expect minutes."
+        omen: "Cosmic advice: Do not expect minutes.",
+        ar: {
+            title: "لجنة المجرّة",
+            fortune: "شكّلت النجوم لجنة لمناقشة مستقبلك. وعُيّنت لجنة ثانية للتحقيق مع الأولى.",
+            omen: "نصيحة كونية: لا تتوقّع محضرًا للاجتماع."
+        }
     },
     {
         number: "004",
         title: "The Diplomatic Fog",
         symbol: "🌫️",
         fortune: "A powerful voice will express deep concern. The concern will be forwarded to another department.",
-        omen: "Cosmic advice: Your patience has expired."
+        omen: "Cosmic advice: Your patience has expired.",
+        ar: {
+            title: "الضباب الدبلوماسي",
+            fortune: "سيعبّر صوت نافذ عن قلق بالغ. وسيُحال القلق إلى قسم آخر.",
+            omen: "نصيحة كونية: انتهت صلاحية صبرك."
+        }
     },
     {
         number: "005",
         title: "Mercury's Complaint Department",
         symbol: "☿",
         fortune: "Your complaint has reached Mercury. Mercury is currently unavailable and suggests contacting Venus.",
-        omen: "Cosmic advice: Please remain on the line."
+        omen: "Cosmic advice: Please remain on the line.",
+        ar: {
+            title: "قسم الشكاوى في عطارد",
+            fortune: "وصلت شكواك إلى عطارد. عطارد غير متاح حاليًا ويقترح التواصل مع الزهرة.",
+            omen: "نصيحة كونية: يُرجى البقاء على الخط."
+        }
     },
     {
         number: "006",
         title: "The Rebellious Comet",
         symbol: "☄️",
         fortune: "You were born to follow your own path. The universe would appreciate it if you stopped asking for directions.",
-        omen: "Cosmic advice: Take the scenic route."
+        omen: "Cosmic advice: Take the scenic route.",
+        ar: {
+            title: "المذنّب المتمرّد",
+            fortune: "وُلدت لتسلك طريقك الخاص. وسيقدّر لك الكون لو توقّفت عن طلب الإرشادات.",
+            omen: "نصيحة كونية: اسلك الطريق ذا المناظر الخلّابة."
+        }
     },
     {
         number: "007",
         title: "Saturn's Performance Review",
         symbol: "🪐",
         fortune: "Saturn has reviewed your recent decisions. The rings are impressed. The moons have concerns.",
-        omen: "Cosmic advice: Schedule a follow-up."
+        omen: "Cosmic advice: Schedule a follow-up.",
+        ar: {
+            title: "تقييم الأداء لدى زحل",
+            fortune: "راجع زحل قراراتك الأخيرة. الحلقات معجبة. أمّا الأقمار فلديها تحفّظات.",
+            omen: "نصيحة كونية: حدّد موعدًا للمتابعة."
+        }
     },
     {
         number: "008",
         title: "The Cosmic Customer Service Desk",
         symbol: "✨",
         fortune: "Your request for a peaceful week has been received. Estimated processing time: Three to five business eternities.",
-        omen: "Cosmic advice: Your call is important."
+        omen: "Cosmic advice: Your call is important.",
+        ar: {
+            title: "مكتب خدمة العملاء الكوني",
+            fortune: "تلقّينا طلبك لقضاء أسبوع هادئ. المدّة المقدّرة للمعالجة: من ثلاثة إلى خمسة دهور عمل.",
+            omen: "نصيحة كونية: اتصالك يهمّنا."
+        }
     },
     {
         number: "009",
         title: "The Overworked Sun",
         symbol: "☀️",
         fortune: "You are a shining example of perseverance. The sun would like to know whether you can cover its next shift.",
-        omen: "Cosmic advice: Apply sunscreen."
+        omen: "Cosmic advice: Apply sunscreen.",
+        ar: {
+            title: "الشمس المُنهَكة من العمل",
+            fortune: "أنت مثال ساطع على المثابرة. تودّ الشمس أن تعرف إن كان بإمكانك أن تنوب عنها في مناوبتها القادمة.",
+            omen: "نصيحة كونية: ضع واقيًا من الشمس."
+        }
     },
     {
         number: "010",
         title: "The Lost Constellation",
         symbol: "⭐",
         fortune: "Your future is written in the stars. Unfortunately, somebody spilled coffee on the map.",
-        omen: "Cosmic advice: Follow the crumbs."
+        omen: "Cosmic advice: Follow the crumbs.",
+        ar: {
+            title: "الكوكبة الضائعة",
+            fortune: "مستقبلك مكتوب في النجوم. للأسف، سكب أحدهم القهوة على الخريطة.",
+            omen: "نصيحة كونية: اتبع أثر الفتات."
+        }
     },
     {
         number: "011",
         title: "The Intergalactic Audit",
         symbol: "🌠",
         fortune: "The universe has audited your life choices. Several receipts are missing, but your sense of humor remains deductible.",
-        omen: "Cosmic advice: Keep your paperwork."
+        omen: "Cosmic advice: Keep your paperwork.",
+        ar: {
+            title: "التدقيق بين المجرّات",
+            fortune: "دقّق الكون في اختياراتك في الحياة. بعض الإيصالات مفقودة، لكن حسّك الفكاهي ما زال قابلًا للخصم الضريبي.",
+            omen: "نصيحة كونية: احتفظ بأوراقك."
+        }
     },
     {
         number: "012",
         title: "The Cosmic Plot Twist",
         symbol: "🌑",
         fortune: "Everything is about to make sense. Not today, obviously. The universe enjoys dramatic suspense.",
-        omen: "Cosmic advice: Stay for the sequel."
+        omen: "Cosmic advice: Stay for the sequel.",
+        ar: {
+            title: "المنعطف الكوني في الحبكة",
+            fortune: "قريبًا سيصبح لكل شيء معنى. ليس اليوم، طبعًا. فالكون يستمتع بالتشويق الدرامي.",
+            omen: "نصيحة كونية: ابقَ لمشاهدة الجزء التالي."
+        }
     }
 ];
 
@@ -109,12 +169,16 @@ const fortuneTicket = document.getElementById("fortuneTicket");
 const miniTicket = document.getElementById("miniTicket");
 const miniTicketNumber = document.getElementById("miniTicketNumber");
 const oracleLayout = document.getElementById("oracleLayout");
+const oracle = oracleLayout.closest("main");
 const ticketNumber = document.getElementById("ticketNumber");
 const ticketSymbol = document.getElementById("ticketSymbol");
 const fortuneTitle = document.getElementById("fortuneTitle");
 const fortuneText = document.getElementById("fortuneText");
 const fortuneOmen = document.getElementById("fortuneOmen");
-const windowMessage = document.getElementById("windowMessage");
+const statusEnglish = document.querySelector("#windowMessage .lang-en");
+const statusArabic = document.querySelector("#windowMessage .lang-ar");
+const waitingStatus = [statusEnglish.textContent, statusArabic.textContent];
+const englishPageTitle = document.title;
 
 // Application state
 
@@ -155,16 +219,41 @@ function selectRandomFortune() {
     return fortunes[currentFortuneIndex];
 }
 
+function setWindowMessage(english, arabic) {
+    statusEnglish.textContent = english;
+    statusArabic.textContent = arabic;
+}
+
+function renderFortuneText(fortune) {
+    const isArabic = oracle.lang === "ar";
+    const copy = isArabic ? fortune.ar : fortune;
+    fortuneTitle.textContent = copy.title;
+    fortuneText.textContent = isArabic ? `«${copy.fortune}»` : `"${copy.fortune}"`;
+    fortuneOmen.textContent = copy.omen;
+}
+
+function syncOracleLanguage() {
+    const isArabic = document.documentElement.lang === "ar";
+    oracle.lang = isArabic ? "ar" : "en";
+    oracle.dir = isArabic ? "rtl" : "ltr";
+    document.title = isArabic ? "نصائح كونية مجانية | صالة ألعاب MPGA" : englishPageTitle;
+    ticketReturn.setAttribute("aria-label", isArabic ? "أعِد الرسالة الكونية" : "Return cosmic message");
+
+    if (currentFortuneIndex !== -1) {
+        renderFortuneText(fortunes[currentFortuneIndex]);
+    }
+}
+
 // Display the selected fortune on the ticket.
 
 function displayFortune(fortune) {
     if (!fortune) {
-        windowMessage.textContent = "The cosmos has misplaced its advice.";
+        setWindowMessage("The cosmos has misplaced its advice.", "أضاع الكون نصيحته.");
         return;
     }
 
-    ticketNumber.textContent = `NO. ${fortune.number}`;
-    miniTicketNumber.textContent = `NO. ${fortune.number}`;
+    ticketNumber.textContent = fortune.number;
+    miniTicketNumber.textContent = fortune.number;
     const illustration = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     illustration.setAttribute("viewBox", "0 0 160 120");
     illustration.setAttribute("aria-hidden", "true");
@@ -172,9 +261,7 @@ function displayFortune(fortune) {
     artwork.setAttribute("href", `images/cosmic-advice-illustrations.svg#art-${fortune.number}`);
     illustration.append(artwork);
     ticketSymbol.replaceChildren(illustration);
-    fortuneTitle.textContent = fortune.title;
-    fortuneText.textContent = `"${fortune.fortune}"`;
-    fortuneOmen.textContent = fortune.omen;
+    renderFortuneText(fortune);
 
     miniTicket.classList.remove("dispense");
     miniTicket.hidden = true;
@@ -188,7 +275,7 @@ function displayFortune(fortune) {
     fortuneTicket.hidden = false;
     oracleLayout.classList.add("has-advice");
 
-    windowMessage.textContent = "The universe has spoken!";
+    setWindowMessage("The universe has spoken!", "لقد تكلّم الكون!");
 }
 
 // Reveal a new fortune.
@@ -252,7 +339,7 @@ async function returnTicket() {
         miniTicket.hidden = true;
         miniTicket.classList.remove("dispense");
         oracleLayout.classList.remove("has-advice");
-        windowMessage.textContent = "The stars are waiting...";
+        setWindowMessage(...waitingStatus);
     } finally {
         revealBtn.disabled = false;
         ticketReturn.disabled = false;
@@ -261,6 +348,10 @@ async function returnTicket() {
 }
 
 // Event listeners
+
+const languageObserver = new MutationObserver(syncOracleLanguage);
+languageObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+syncOracleLanguage();
 
 revealBtn.addEventListener("click", revealFortune);
 ticketReturn.addEventListener("click", returnTicket);
