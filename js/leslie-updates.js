@@ -1,6 +1,6 @@
 "use strict";
 // Author: Leslie Brockman
-// Date: 11/13/2026
+// Date: 11/20/2026
 const missionDefinitions = [
   {
     "page": "index.html",
@@ -1316,8 +1316,8 @@ const missionDefinitions = [
       "arcade.html"
     ],
     "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+      "Arcade launch page for Flipping the World for Palestine, Rocks, and Cosmic Free Advice.",
+      "صفحة ألعاب تطلق لعبة قلب العالم من أجل فلسطين، ولعبة الحجارة، ونصائح كونية مجانية."
     ],
     "category": "periodic",
     "weekly": false,
@@ -1912,8 +1912,8 @@ const missionDefinitions = [
       "education/abc123.html"
     ],
     "description": [
-      "Local project page; review when needed.",
-      "ملف ضمن المشروع؛ يُراجع عند الحاجة."
+      "Classroom hub for Color Garden, numbers, and shapes practice.",
+      "صفّ يضمّ حديقة الألوان وتمارين الأرقام والأشكال."
     ],
     "category": "periodic",
     "weekly": false,
@@ -2438,8 +2438,8 @@ const missionDefinitions = [
       "🎪 الخيمة الكبرى"
     ],
     "description": [
-      "Phases 1 and 2 complete. Phases 3–5 remain under development.",
-      "اكتملت المرحلتان 1 و2. ولا تزال المراحل 3–5 قيد التطوير."
+      "Phases 1 through 3 complete. Phases 4 and 5 remain under development.",
+      "اكتملت المراحل من الأولى إلى الثالثة. ولا تزال المرحلتان الرابعة والخامسة قيد التطوير."
     ],
     "category": "planned",
     "weekly": false,
@@ -2450,16 +2450,12 @@ const missionDefinitions = [
     "tasks": [],
     "plannedTasks": [
       [
-        "Phase 3: Build four clown games for the Main Event.",
-        "المرحلة 3 قيد الانتظار - أربع ألعاب للمهرجين في الساحة الرئيسية"
-      ],
-      [
         "Phase 4: Develop the Popcorn Stand for charities and supporting organizations.",
-        "المرحلة 4 قيد الانتظار - تجهيز كشك الفشار للجمعيات الخيرية والمنظمات الداعمة"
+        "المرحلة الرابعة: تطوير كشك الفشار للجمعيات الخيرية والمنظمات الداعمة."
       ],
       [
         "Phase 5: Expand the Banner Hall with performers' personal stories and social media.",
-        "المرحلة 5 قيد الانتظار - لافتات تعرض قصص الفنانين وحساباتهم الشخصية على وسائل التواصل الاجتماعي"
+        "المرحلة الخامسة: توسيع قاعة اللافتات لتشمل قصص الفنّانين الشخصية وحساباتهم على وسائل التواصل الاجتماعي."
       ]
     ]
   },
@@ -2579,8 +2575,8 @@ const missionDefinitions = [
       "المدرسة الإلكترونية"
     ],
     "description": [
-      "Organize and expand the bilingual Schoolhouse.",
-      "تنظيم المدرسة الإلكترونية وتوسيع مواردها باللغتين."
+      "Continue developing the Schoolhouse with interactive homework, recess activities, and weekly learning resources.",
+      "مواصلة تطوير المدرسة بالواجبات المنزلية التفاعلية وأنشطة الاستراحة والموارد التعليمية الأسبوعية."
     ],
     "category": "planned",
     "weekly": false,
@@ -2590,76 +2586,27 @@ const missionDefinitions = [
     "tasks": [],
     "plannedTasks": [
       [
-        "Organize the Schoolhouse landing page.",
-        "تنظيم الصفحة الرئيسية للمدرسة."
+        "Homework: Complete page-specific CSS and JavaScript.",
+        "الواجبات المنزلية: استكمال تنسيقات CSS وشيفرة JavaScript الخاصة بالصفحة."
       ],
       [
-        "Review subject navigation and page links.",
-        "مراجعة التنقل بين المواد وروابط الصفحات."
+        "Homework Games: Build and integrate remaining interactive learning games.",
+        "ألعاب الواجبات المنزلية: تطوير الألعاب التعليمية التفاعلية المتبقية ودمجها."
       ],
       [
-        "Expand the available learning resources.",
-        "توسيع الموارد التعليمية المتاحة."
+        "Recess: Complete page-specific CSS and JavaScript.",
+        "الاستراحة: استكمال تنسيقات CSS وشيفرة JavaScript الخاصة بالصفحة."
       ],
       [
-        "Maintain English and Arabic accessibility.",
-        "الحفاظ على سهولة الوصول بالإنجليزية والعربية."
+        "Recess Games: Develop remaining playground activities, including the planned soccer game.",
+        "ألعاب الاستراحة: تطوير أنشطة الملعب المتبقية، بما فيها لعبة كرة القدم المخططة."
       ],
       [
-        "Review responsive classroom navigation.",
-        "مراجعة التنقل المتجاوب بين الصفوف الدراسية."
+        "Weekly Learning Board: Update current lessons, activities, and weekly learning information.",
+        "لوحة التعلّم الأسبوعية: تحديث الدروس والأنشطة الحالية ومعلومات التعلّم الأسبوعية."
       ]
     ],
     "referencePage": "edu.html"
-  },
-  {
-    "page": null,
-    "id": "planned-abc123",
-    "title": [
-      "ABC123",
-      "ABC123"
-    ],
-    "description": [
-      "Plan three bilingual games for different learner age groups.",
-      "التخطيط لثلاث ألعاب باللغتين لفئات عمرية مختلفة من المتعلمين."
-    ],
-    "category": "planned",
-    "weekly": false,
-    "group": [
-      "planned"
-    ],
-    "tasks": [],
-    "plannedTasks": [
-      [
-        "Create the ABC123 CSS.",
-        "إنشاء تنسيقات CSS لصفحة ABC123."
-      ],
-      [
-        "Create the ABC123 JavaScript.",
-        "إنشاء شيفرة JavaScript لصفحة ABC123."
-      ],
-      [
-        "Develop Game 1 for younger learners.",
-        "تطوير اللعبة الأولى للمتعلمين الأصغر سنًا."
-      ],
-      [
-        "Develop Game 2 for intermediate learners.",
-        "تطوير اللعبة الثانية للمتعلمين متوسطي العمر."
-      ],
-      [
-        "Develop Game 3 for older learners.",
-        "تطوير اللعبة الثالثة للمتعلمين الأكبر سنًا."
-      ],
-      [
-        "Add bilingual English and Arabic gameplay.",
-        "إضافة تجربة لعب بالإنجليزية والعربية."
-      ],
-      [
-        "Integrate the games into the Schoolhouse.",
-        "دمج الألعاب في المدرسة."
-      ]
-    ],
-    "referencePage": "education/abc123.html"
   },
   {
     "page": null,
@@ -2725,12 +2672,12 @@ const missionDefinitions = [
     "tasks": [],
     "plannedTasks": [
       [
-        "Develop Homework page content.",
-        "تطوير محتوى صفحة الواجبات المنزلية."
+        "Complete the Homework page-specific CSS and JavaScript.",
+        "استكمال تنسيقات CSS وشيفرة JavaScript الخاصة بصفحة الواجبات المنزلية."
       ],
       [
-        "Add educational practice activities.",
-        "إضافة أنشطة تدريبية تعليمية."
+        "Build and integrate the remaining interactive educational practice games.",
+        "تطوير ألعاب التدريب التعليمية التفاعلية المتبقية ودمجها."
       ],
       [
         "Organize learning resources by subject.",
@@ -2755,8 +2702,8 @@ const missionDefinitions = [
       "الاستراحة"
     ],
     "description": [
-      "Plan the bilingual soccer puzzle game for the Schoolhouse.",
-      "التخطيط للعبة ألغاز كرة القدم باللغتين ضمن المدرسة."
+      "Develop the remaining bilingual playground activities, including the planned soccer game.",
+      "تطوير أنشطة الملعب المتبقية باللغتين، بما فيها لعبة كرة القدم المخططة."
     ],
     "category": "planned",
     "weekly": false,
@@ -2766,16 +2713,12 @@ const missionDefinitions = [
     "tasks": [],
     "plannedTasks": [
       [
-        "Design the soccer puzzle game.",
-        "تصميم لعبة ألغاز كرة القدم."
+        "Complete the Recess page-specific CSS and JavaScript.",
+        "استكمال تنسيقات CSS وشيفرة JavaScript الخاصة بصفحة الاستراحة."
       ],
       [
-        "Develop the soccer game JavaScript.",
-        "تطوير شيفرة JavaScript للعبة كرة القدم."
-      ],
-      [
-        "Create the soccer game CSS.",
-        "إنشاء تنسيقات CSS للعبة كرة القدم."
+        "Develop the remaining playground activities, including the planned soccer puzzle game.",
+        "تطوير أنشطة الملعب المتبقية، بما فيها لعبة ألغاز كرة القدم المخططة."
       ],
       [
         "Add bilingual game instructions.",
@@ -3170,6 +3113,204 @@ const missionDefinitions = [
       "world-leaders",
       "trump"
     ]
+  },
+  {
+    "page": "education/color-garden.html",
+    "title": [
+      "education/color-garden.html",
+      "education/color-garden.html"
+    ],
+    "description": [
+      "Interactive painting and color practice.",
+      "نشاط تفاعلي للرسم والتدرّب على الألوان."
+    ],
+    "category": "periodic",
+    "weekly": false,
+    "tasks": [
+      {
+        "id": "education/color-garden:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "education"
+    ]
+  },
+  {
+    "page": "education/abc-numbers.html",
+    "title": [
+      "education/abc-numbers.html",
+      "education/abc-numbers.html"
+    ],
+    "description": [
+      "Interactive number and counting practice.",
+      "تمارين تفاعلية للأرقام والعدّ."
+    ],
+    "category": "periodic",
+    "weekly": false,
+    "tasks": [
+      {
+        "id": "education/abc-numbers:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "education"
+    ]
+  },
+  {
+    "page": "education/abc-shapes.html",
+    "title": [
+      "education/abc-shapes.html",
+      "education/abc-shapes.html"
+    ],
+    "description": [
+      "Interactive shape recognition practice.",
+      "تمارين تفاعلية للتعرّف إلى الأشكال."
+    ],
+    "category": "periodic",
+    "weekly": false,
+    "tasks": [
+      {
+        "id": "education/abc-shapes:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "education"
+    ]
+  },
+  {
+    "page": "cosmic-oracle.html",
+    "title": [
+      "cosmic-oracle.html",
+      "cosmic-oracle.html"
+    ],
+    "description": [
+      "Cosmic Free Advice arcade machine and illustrated advice cards.",
+      "آلة نصائح كونية مجانية وبطاقات نصائح مصوّرة."
+    ],
+    "category": "periodic",
+    "weekly": false,
+    "tasks": [
+      {
+        "id": "cosmic-oracle:maintenance",
+        "label": [
+          "Review page when needed.",
+          "مراجعة الصفحة عند الحاجة."
+        ]
+      }
+    ],
+    "group": [
+      "main"
+    ]
+  },
+  {
+    "page": null,
+    "id": "planned-art",
+    "title": [
+      "Art Gallery Redesign",
+      "إعادة تصميم معرض الفن"
+    ],
+    "description": [
+      "Restructure the Art Gallery, refine its visual design, and expand the collection with additional artists and their work.",
+      "إعادة تنظيم معرض الفن وتحسين تصميمه البصري وتوسيع مجموعته بإضافة مزيد من الفنّانين وأعمالهم."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Review and restructure the existing art.html layout.",
+        "مراجعة تخطيط صفحة art.html الحالية وإعادة تنظيمه."
+      ],
+      [
+        "Redesign and refine the page-specific CSS.",
+        "إعادة تصميم تنسيقات CSS الخاصة بالصفحة وتحسينها."
+      ],
+      [
+        "Improve artist galleries, navigation, and presentation.",
+        "تحسين معارض الفنّانين والتنقّل بينها وطريقة عرضها."
+      ],
+      [
+        "Add more artists and their artwork.",
+        "إضافة مزيد من الفنّانين وأعمالهم الفنية."
+      ],
+      [
+        "Preserve artist attribution, image credits, and source links.",
+        "الحفاظ على نسب الأعمال والصور إلى أصحابها وروابط المصادر."
+      ],
+      [
+        "Maintain English and Arabic accessibility.",
+        "الحفاظ على سهولة الوصول بالإنجليزية والعربية."
+      ]
+    ],
+    "referencePage": "art.html"
+  },
+  {
+    "page": null,
+    "id": "planned-dolly",
+    "title": [
+      "Bring Dolly Home",
+      "أعيدوا دولي إلى الديار"
+    ],
+    "description": [
+      "Create a dedicated humanitarian advocacy page focused on bringing hostages home safely, supporting their families, and calling for their release.",
+      "إنشاء صفحة للمناصرة الإنسانية تركّز على عودة الرهائن إلى ديارهم سالمين، ودعم عائلاتهم، والمطالبة بالإفراج عنهم."
+    ],
+    "category": "planned",
+    "weekly": false,
+    "group": [
+      "planned"
+    ],
+    "tasks": [],
+    "plannedTasks": [
+      [
+        "Create dolly.html with the existing American Nobody header, footer, and bilingual structure.",
+        "إنشاء صفحة dolly.html باستخدام ترويسة موقع أمريكان نوبودي وتذييله وبنيته القائمة باللغتين."
+      ],
+      [
+        "Create a dedicated styles/dolly.css stylesheet.",
+        "إنشاء ملف تنسيق مخصّص باسم styles/dolly.css."
+      ],
+      [
+        "Create a dedicated js/dolly.js script.",
+        "إنشاء ملف جافاسكريبت مخصّص باسم js/dolly.js."
+      ],
+      [
+        "Develop the page's introduction, purpose, and humanitarian message.",
+        "صياغة مقدّمة الصفحة وهدفها ورسالتها الإنسانية."
+      ],
+      [
+        "Add verified information and appropriate sources before publishing individual hostage profiles or claims.",
+        "إضافة معلومات موثّقة ومصادر مناسبة قبل نشر ملفات عن رهائن بأعيانهم أو أي ادّعاءات."
+      ],
+      [
+        "Include peaceful advocacy resources and relevant support links.",
+        "إدراج موارد للمناصرة السلمية وروابط دعم ذات صلة."
+      ],
+      [
+        "Design an accessible, responsive layout consistent with the website.",
+        "تصميم تخطيط متجاوب وسهل الوصول يتّسق مع الموقع."
+      ]
+    ],
+    "plannedFilename": "dolly.html",
+    "statusLabel": [
+      "Planned / not started",
+      "مخطط / لم يبدأ العمل بعد"
+    ]
   }
 ];
 // Verified direct local references; mapped:false means unaudited resolution.
@@ -3209,6 +3350,7 @@ const dependencyDefinitions = [
     "links": [
       "about.html",
       "contact.html",
+      "cosmic-oracle.html",
       "flip.html",
       "index.html",
       "legal.html",
@@ -3217,6 +3359,7 @@ const dependencyDefinitions = [
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/cosmos.png",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/flip.jpg",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/rock.jpg"
     ]
@@ -3691,6 +3834,9 @@ const dependencyDefinitions = [
     ],
     "links": [
       "about.html",
+      "circus-banners.html",
+      "circus-popcorn.html",
+      "circus-ring.html",
       "contact.html",
       "education/recess.html",
       "index.html",
@@ -3700,7 +3846,53 @@ const dependencyDefinitions = [
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
       "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap",
-      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png"
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner.png",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/main.png",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/popcorn.png"
+    ],
+    "projectPages": [
+      {
+        "page": "circus.html",
+        "label": [
+          "Circus Entrance",
+          "مدخل السيرك"
+        ]
+      },
+      {
+        "page": "circus-ring.html",
+        "label": [
+          "Main Ring",
+          "الحلبة الرئيسية"
+        ]
+      },
+      {
+        "page": "circus-aloosh.html",
+        "label": [
+          "Aloosh’s Memory Match",
+          "لعبة الذاكرة مع علوش"
+        ]
+      },
+      {
+        "page": "circus-tito.html",
+        "label": [
+          "Uncle Tito’s Juggling",
+          "لعبة الخفّة مع العم تيتو"
+        ]
+      },
+      {
+        "page": "circus-jigsaw.html",
+        "label": [
+          "Ariel’s Jigsaw Puzzle",
+          "أحجية أرييل"
+        ]
+      },
+      {
+        "page": "circus-dance.html",
+        "label": [
+          "DJ Dance Booth / Clown Says",
+          "منصّة الرقص / المهرّج يقول"
+        ]
+      }
     ]
   },
   {
@@ -3933,20 +4125,22 @@ const dependencyDefinitions = [
   {
     "page": "education/abc123.html",
     "mapped": true,
+    "shared": ["styles/edu.css"],
     "css": [
       "styles/abc123.css",
-      "styles/color-garden.css",
       "styles/edu.css",
       "styles/styles2.css"
     ],
     "scripts": [
-      "js/color-garden.js",
       "js/main.js"
     ],
     "links": [
       "about.html",
       "contact.html",
       "edu.html",
+      "education/abc-numbers.html",
+      "education/abc-shapes.html",
+      "education/color-garden.html",
       "index.html",
       "legal.html",
       "mpga.html"
@@ -5588,7 +5782,26 @@ const dependencyDefinitions = [
       "mpga.html"
     ],
     "assets": [
-      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/abdul.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/bassem.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/guy.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/hamaz.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/jacob_b.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/sammy.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/bghassan.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/fran.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/ghassan.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/greta.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/nabil.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/reem.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/rocks/wael.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/instagram.jpeg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/tiktok.png",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/upscrolled.png",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/x.jpg",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/youtube.png"
     ]
   },
   {
@@ -5824,7 +6037,12 @@ const dependencyDefinitions = [
     ],
     "links": [
       "about.html",
-      "circus.html",
+      "circus-aloosh.html",
+      "circus-banners.html",
+      "circus-dance.html",
+      "circus-jigsaw.html",
+      "circus-popcorn.html",
+      "circus-tito.html",
       "contact.html",
       "index.html",
       "legal.html",
@@ -5832,7 +6050,13 @@ const dependencyDefinitions = [
     ],
     "assets": [
       "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
-      "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+      "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap",
+      "https://fonts.googleapis.com/css2?family=Rye&display=swap",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner.png",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/clown1.png",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/popcorn.png",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tata.png"
     ]
   },
   {
@@ -6021,12 +6245,217 @@ const dependencyDefinitions = [
       "https://www.youtube-nocookie.com/embed/5FgmjGFTS8I",
       "https://www.youtube-nocookie.com/embed/_DRNljTgiyg"
     ]
+  },
+  {
+    "page": "education/color-garden.html",
+    "mapped": true,
+    "shared": ["styles/edu.css"],
+    "css": [
+      "styles/color-garden.css",
+      "styles/edu.css",
+      "styles/styles2.css"
+    ],
+    "scripts": [
+      "js/color-garden.js",
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "contact.html",
+      "education/abc123.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/bug.png"
+    ]
+  },
+  {
+    "page": "education/abc-numbers.html",
+    "mapped": true,
+    "shared": ["styles/edu.css"],
+    "css": [
+      "styles/abc-numbers.css",
+      "styles/edu.css",
+      "styles/styles2.css"
+    ],
+    "scripts": [
+      "js/abc-numbers.js",
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "contact.html",
+      "education/abc123.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ]
+  },
+  {
+    "page": "education/abc-shapes.html",
+    "mapped": true,
+    "shared": ["styles/edu.css"],
+    "css": [
+      "styles/abc-shapes.css",
+      "styles/edu.css",
+      "styles/styles2.css"
+    ],
+    "scripts": [
+      "js/abc-shapes.js",
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "contact.html",
+      "education/abc123.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+    ]
+  },
+  {
+    "page": "cosmic-oracle.html",
+    "mapped": true,
+    "css": [
+      "styles/cosmic-oracle.css",
+      "styles/styles2.css"
+    ],
+    "scripts": [
+      "js/cosmic-oracle.js",
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "contact.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Marcellus+SC&display=swap",
+      "images/cosmic-advice-illustrations.svg",
+      "images/cosmic-observatory-crystals.svg"
+    ]
+  },
+  {
+    "page": "circus-aloosh.html",
+    "mapped": true,
+    "css": [
+      "styles/circus-aloosh.css",
+      "styles/styles2.css"
+    ],
+    "scripts": [
+      "js/circus-aloosh.js",
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "circus-ring.html",
+      "contact.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700&family=Fredoka:wght@600;700&family=Nunito:wght@400;700&family=Rye&display=swap",
+      "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/a-bubble.png"
+    ]
+  },
+  {
+    "page": "circus-tito.html",
+    "mapped": true,
+    "css": [
+      "styles/circus-tito.css",
+      "styles/styles2.css"
+    ],
+    "scripts": [
+      "js/circus-tito.js",
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "circus-ring.html",
+      "contact.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700&family=Fredoka:wght@600;700&family=Nunito:wght@400;700&family=Rye&display=swap",
+      "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap",
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tito_ball.png"
+    ]
+  },
+  {
+    "page": "circus-jigsaw.html",
+    "mapped": true,
+    "css": [
+      "styles/circus-jigsaw.css",
+      "styles/styles2.css"
+    ],
+    "scripts": [
+      "js/circus-jigsaw.js",
+      "js/main.js"
+    ],
+    "links": [
+      "about.html",
+      "circus-ring.html",
+      "contact.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
+    ],
+    "assets": [
+      "https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&family=Fredoka:wght@600;700&family=Nunito:wght@400;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+    ]
+  },
+  {
+    "page": "circus-dance.html",
+    "mapped": true,
+    "css": [
+      "styles/circus-dance.css"
+    ],
+    "scripts": [
+      "js/circus-dance.js"
+    ],
+    "links": [
+      "circus-ring.html"
+    ],
+    "assets": [
+      "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/clown1.png"
+    ],
+    "unresolved": [
+      "styles2.css"
+    ]
+  },
+  {
+    "page": "dolly.html",
+    "plannedFiles": [
+      "dolly.html",
+      "styles/dolly.css",
+      "js/dolly.js"
+    ]
   }
 ];
 
 (() => {
     const key = 'american-nobody:leslie-missions:v1';
     const board = document.getElementById('mission-board');
+    const plannedPages = document.getElementById('planned-pages');
     const status = document.getElementById('storage-status');
     const restart = document.getElementById('restart-mission');
     const selector = document.getElementById('dependency-page');
@@ -6083,8 +6512,7 @@ const dependencyDefinitions = [
         main: ['Main Website', 'الموقع الرئيسي'],
         archives: ['Archives', 'الأرشيف'],
         education: ['Education', 'التعليم'],
-        biosite: ['bioSite', 'الموقع الشخصي'],
-        planned: ['Planned Pages', 'صفحات مخططة']
+        biosite: ['bioSite', 'الموقع الشخصي']
     };
     function getGroup(path) {
         let parent = groupedBoard;
@@ -6167,28 +6595,27 @@ const dependencyDefinitions = [
     missionDefinitions.forEach(mission => {
         const card = document.createElement('article');
         card.className = 'mission-card';
-        const container = getGroup(mission.group);
-        renderedCards.push({mission, card, container});
         const missionId = mission.page || mission.id;
         card.id = `mission-${missionId.replace(/[^a-z0-9-]/gi, '-')}`;
         bilingual(card, 'h3', mission.title);
-        const badge = bilingual(card, 'p', categories[mission.category]);
+        const badge = bilingual(card, 'p', mission.statusLabel || categories[mission.category]);
         badge.className = 'mission-category';
         if (!mission.page) {
             bilingual(card, 'p', mission.description);
-            if (mission.referencePage) {
-                const reference = document.createElement('a');
-                reference.href = mission.referencePage;
-                reference.textContent = mission.referencePage;
-                reference.dir = 'ltr';
+            const dependencyPage = mission.referencePage || mission.plannedFilename;
+            if (dependencyPage) {
                 const actions = document.createElement('div');
                 actions.className = 'planned-reference-actions';
+                const reference = document.createElement(mission.referencePage ? 'a' : 'span');
+                if (mission.referencePage) reference.href = mission.referencePage;
+                reference.textContent = dependencyPage;
+                reference.dir = 'ltr';
                 actions.append(reference);
                 card.append(actions);
                 const inspect = bilingual(actions, 'button', ['View Dependencies', 'عرض الاعتماديات']);
                 inspect.type = 'button';
                 inspect.addEventListener('click', () => {
-                    selector.value = mission.referencePage;
+                    selector.value = dependencyPage;
                     showDependencies();
                     selector.focus({preventScroll: true});
                     document.getElementById('dependencies-title').scrollIntoView({behavior: 'instant', block: 'start'});
@@ -6202,12 +6629,6 @@ const dependencyDefinitions = [
                 }
             } else if (!(mission.plannedTasks || []).length) {
                 bilingual(card, 'p', ['Awaiting a real page before tasks and dependencies are activated.', 'بانتظار صفحة فعلية لتفعيل المهام والاعتماديات.']);
-            }
-            if (mission.plannedFilename) {
-                const filename = document.createElement('p');
-                filename.textContent = mission.plannedFilename;
-                filename.dir = 'ltr';
-                card.append(filename);
             }
             if (mission.referencePages) {
                 const references = document.createElement('ul');
@@ -6225,9 +6646,11 @@ const dependencyDefinitions = [
             const plannedList = document.createElement('ul');
             (mission.plannedTasks || []).forEach(labels => bilingual(plannedList, 'li', labels));
             card.append(plannedList);
-            container.append(card);
+            plannedPages.append(card);
             return;
         }
+        const container = getGroup(mission.group);
+        renderedCards.push({mission, card, container});
         const pageLink = document.createElement('a');
         pageLink.href = mission.page;
         pageLink.textContent = mission.page;
@@ -6301,10 +6724,24 @@ const dependencyDefinitions = [
         const record = dependencyDefinitions.find(item => item.page === selector.value);
         map.replaceChildren();
         details.replaceChildren();
+        if (record?.plannedFiles?.length) {
+            bilingual(details, 'h3', ['Planned files', 'الملفات المخططة']);
+            bilingual(details, 'p', ['These files are proposed and have not been created.', 'هذه ملفات مقترحة لم تُنشأ بعد.']);
+            const files = document.createElement('ul');
+            record.plannedFiles.forEach(path => {
+                const item = document.createElement('li');
+                item.dir = 'ltr';
+                item.textContent = path;
+                files.append(item);
+            });
+            details.append(files);
+            return;
+        }
         if (!record || record.mapped === false) {
             bilingual(details, 'p', ['Dependency information not yet mapped.', 'لم تُرسم معلومات الاعتماديات بعد.']);
             return;
         }
+        const sharedFiles = ['styles/styles2.css', 'js/main.js', 'js/archive.js', 'js/archive-compat.js', 'archives/manifest.json'];
         const center = document.createElement('a');
         center.className = 'dependency-node dependency-root';
         center.href = record.page;
@@ -6337,7 +6774,7 @@ const dependencyDefinitions = [
                 link.textContent = file;
                 link.dir = 'ltr';
                 li.append(link);
-                if (['styles/styles2.css', 'js/main.js', 'js/archive.js', 'js/archive-compat.js', 'archives/manifest.json'].includes(file) || record.shared?.includes(file)) {
+                if (sharedFiles.includes(file) || record.shared?.includes(file)) {
                     bilingual(li, 'span', [' — shared', ' — مشترك']);
                 }
                 list.append(li);
@@ -6359,6 +6796,43 @@ const dependencyDefinitions = [
             });
             details.append(assets);
         }
+        if (record.projectPages?.length) {
+            bilingual(details, 'h3', ['Big Top project inventory', 'ملفات مشروع الخيمة الكبرى']);
+            const projectList = document.createElement('ul');
+            record.projectPages.forEach(({page, label}) => {
+                const pageRecord = dependencyDefinitions.find(item => item.page === page);
+                const row = document.createElement('li');
+                const title = bilingual(row, 'a', label);
+                title.href = page;
+                const files = document.createElement('ul');
+                [page, ...pageRecord.css, ...pageRecord.scripts].forEach(file => {
+                    const item = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = file;
+                    link.textContent = file;
+                    link.dir = 'ltr';
+                    item.append(link);
+                    if (sharedFiles.includes(file) || pageRecord.shared?.includes(file)) {
+                        bilingual(item, 'span', [' — shared', ' — مشترك']);
+                    }
+                    files.append(item);
+                });
+                row.append(files);
+                projectList.append(row);
+            });
+            details.append(projectList);
+        }
+        if (record.unresolved?.length) {
+            bilingual(details, 'h3', ['Unresolved local references', 'مراجع محلية غير متوفرة']);
+            const missing = document.createElement('ul');
+            record.unresolved.forEach(file => {
+                const item = document.createElement('li');
+                item.dir = 'ltr';
+                item.textContent = file;
+                missing.append(item);
+            });
+            details.append(missing);
+        }
         map.append(branches);
     }
     selector.addEventListener('change', showDependencies);
@@ -6372,4 +6846,37 @@ const dependencyDefinitions = [
     }
     new MutationObserver(syncLanguage).observe(document.documentElement, {attributes: true, attributeFilter: ['lang']});
     syncLanguage();
+})();
+
+(() => {
+    const template = document.getElementById('world-clock-face');
+    const clocks = Array.from(document.querySelectorAll('.world-clock'), clock => {
+        const face = template.content.firstElementChild.cloneNode(true);
+        clock.querySelector('.world-clock-dial').append(face);
+        return {
+            face,
+            names: { en: clock.dataset.nameEn, ar: clock.dataset.nameAr },
+            hands: ['hour', 'minute', 'second'].map(unit => face.querySelector(`.world-clock-${unit}`)),
+            formatter: new Intl.DateTimeFormat('en-GB', {
+                timeZone: clock.dataset.zone, hourCycle: 'h23',
+                hour: '2-digit', minute: '2-digit', second: '2-digit'
+            })
+        };
+    });
+
+    function updateClocks() {
+        const now = new Date();
+        const language = document.documentElement.lang === 'ar' ? 'ar' : 'en';
+        clocks.forEach(({face, names, hands, formatter}) => {
+            const parts = formatter.formatToParts(now);
+            const [hour, minute, second] = parts.filter(part => part.type !== 'literal').map(part => Number(part.value));
+            const angles = [30 * (hour % 12 + minute / 60 + second / 3600), 6 * (minute + second / 60), 6 * second];
+            hands.forEach((hand, index) => hand.setAttribute('transform', `rotate(${angles[index]} 50 50)`));
+            face.setAttribute('lang', language);
+            face.setAttribute('aria-label', `${names[language]}: ${parts.map(part => part.value).join('')}`);
+        });
+    }
+
+    updateClocks();
+    window.setInterval(updateClocks, 1000);
 })();
