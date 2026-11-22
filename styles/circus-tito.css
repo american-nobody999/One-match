@@ -1,7 +1,8 @@
 /* Author: Leslie Brockman
  * Circus Tito Game styles.
+ * Date: 11-21-2026
  */
- /* I like the palette,but i dont love it. I don't to be honest. we will decide on design finalization in phase 6 i dont like it I'm sorry. I need to go through a 1000 pallets and find the perfect colors. */
+ 
 body.tito-page {
     --tito-cream: #FFF4D6; --tito-gold: #FFC83D; --tito-red: #E32645;
     --tito-burgundy: #E32645; --tito-teal: #00BFAF; --tito-mint: #21D6C2; --tito-ink: #302055;
