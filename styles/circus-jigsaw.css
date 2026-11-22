@@ -1,5 +1,6 @@
 /* Author: Leslie Brockman
  * Circus Jigsaw Game styles.
+ * Date: 11-21-2026
  */
  
 html:has(body.jigsaw-page) { height: auto; max-height: none; overflow-x: clip; overflow-y: auto; }
