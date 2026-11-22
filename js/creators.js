@@ -1,5 +1,5 @@
 //Author:Leslie Brockman
-//Date last modified: 2026-11-06
+//Date last modified: 2026-11-21
 "use strict";
 
 const creators = [
@@ -743,8 +743,7 @@ function renderSocialIcons(linksHTML) {
     return linksHTML.replace(/\{\{social:(facebook|instagram|tiktok|threads|youtube|paypal)\}\}/g, (_, platform) => socialIcons[platform]);
 }
 
-// Cards are rendered once so the shared controller attaches exactly one set of
-// listeners. Filtering and pagination only change which cards are hidden.
+// Cards are rendered once. Filtering and pagination only change their visibility.
 (() => {
     const pageSize = 3;
     const search = document.getElementById('creator-search');
@@ -777,7 +776,7 @@ function renderSocialIcons(linksHTML) {
         // These fragments are preserved local editorial content, never user input.
         card.innerHTML = `
           <div class="featured-card-inner">
-            <div class="featured-card-face featured-card-front" data-featured-face="front" id="${id}-front">
+            <div class="featured-card-face featured-card-front" data-featured-face="front" id="${id}-front" aria-hidden="false">
               ${creator.portraitHTML}
               <h3 id="${id}-name">${creator.frontNameHTML || creator.nameHTML}</h3>
               <button type="button" class="featured-flip-button" data-featured-flip="back" aria-controls="${id}-back" aria-expanded="false">${bilingual('More', 'المزيد')}</button>
@@ -796,6 +795,30 @@ function renderSocialIcons(linksHTML) {
         card.querySelector('.featured-card-front > img').classList.add('featured-card-photo');
         results.append(card);
         return card;
+    });
+
+    // Delegate native button clicks so pointer and keyboard activation share one handler.
+    results.addEventListener('click', event => {
+        const button = event.target.closest('button[data-featured-flip]');
+        const card = button?.closest('[data-featured-card]');
+        if (!card || card.parentElement !== results || card.hidden) return;
+
+        const front = card.querySelector('[data-featured-face="front"]');
+        const back = card.querySelector('[data-featured-face="back"]');
+        const more = front.querySelector('[data-featured-flip="back"]');
+        const flipped = button.dataset.featuredFlip === 'back';
+        const activeFace = flipped ? back : front;
+        const inactiveFace = flipped ? front : back;
+        const nextButton = flipped ? back.querySelector('[data-featured-flip="front"]') : more;
+
+        card.classList.toggle('is-flipped', flipped);
+        more.setAttribute('aria-expanded', String(flipped));
+        activeFace.inert = false;
+        activeFace.setAttribute('aria-hidden', 'false');
+        // Move focus before hiding the face containing the activated button.
+        nextButton.focus();
+        inactiveFace.inert = true;
+        inactiveFace.setAttribute('aria-hidden', 'true');
     });
 
     const all = document.createElement('option');
@@ -859,5 +882,4 @@ function renderSocialIcons(linksHTML) {
     }
     new MutationObserver(syncLanguage).observe(document.documentElement, {attributes: true, attributeFilter: ['lang']});
     syncLanguage();
-    import('./featured.js');
 })();
