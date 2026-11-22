@@ -1,5 +1,6 @@
 /* Author: Leslie Brockman
  * Circus Dance Game styles.
+ * Date: 11-21-2026
  */
  /* I know that some one I don't like is having to read this code. I can read it fine. David reads it fine. Spaces are wastes. Just saying. */
 body:has(#danceGame) { margin: 0; background: #190b29; }
