@@ -292,14 +292,14 @@ const creators = [
   },
   {
     "id": "creator-27",
-    "name": "Firas Mikdad (Uncle Firas)",
-    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Firas Mikdad (Uncle Firas)</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">عمّو فراس</span>",
-    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/clown1.jpg\" alt=\"Firas Mikdad (Uncle Firas)\" loading=\"lazy\">",
-    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Firas Mikdad, known as Uncle Firas, is a Palestinian artist and children's entertainer who uses clown performances, humor, and playful activities to bring smiles to children's faces. Through his performances, he creates moments of laughter and happiness, reminding children that childhood deserves joy, imagination, and beautiful memories.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">فراس مقداد، المعروف باسم عمّو فراس، فنان فلسطيني ومقدّم عروض ترفيهية للأطفال، يستخدم فن المهرج والمرح والأنشطة الترفيهية لرسم الابتسامة على وجوه الأطفال. ومن خلال عروضه، يصنع لحظات من الضحك والسعادة، ويذكّر الأطفال بأن الطفولة تستحق الفرح والخيال والذكريات الجميلة.</span></p>",
-    "linksHTML": "<div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/firas.mikdad\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a></div>",
-    "section": "Family Appeals and Mutual Aid",
-    "sectionHTML": "\n      <span class=\"lang-en\">Family Appeals and Mutual Aid</span>\n      <span class=\"lang-ar\">نداءات العائلات والتكافل المتبادل</span>\n    ",
-    "nameAr": "عمّو فراس"
+    "name": "Mohannad",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Mohannad</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">مهند</span>",
+    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/featured/mt.jpg\" alt=\"Portrait of Mohannad from Gaza / صورة مهند من غزة\" loading=\"lazy\">",
+    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Mohannad is a Palestinian filmmaker, athlete, and digital content creator from Gaza. Through his social media presence, he shares his creativity, personality, and passion for filmmaking while connecting with people around the world.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">مهند صانع أفلام ورياضي وصانع محتوى رقمي فلسطيني من غزة. ومن خلال حضوره على وسائل التواصل الاجتماعي، يشارك إبداعه وشخصيته وشغفه بصناعة الأفلام، ويتواصل مع الناس في مختلف أنحاء العالم.</span></p><p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Follow Mohannad on Facebook to discover his videos, creative projects, and the stories he chooses to share. You can also visit the fundraising page provided to support Mohannad and his family in Gaza.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">تابع مهند على فيسبوك لاكتشاف مقاطع الفيديو ومشاريعه الإبداعية والقصص التي يختار مشاركتها. ويمكنك أيضًا زيارة صفحة جمع التبرعات المقدمة لدعم مهند وعائلته في غزة.</span></p>",
+    "linksHTML": "<div class=\"creator-support-buttons\"><a class=\"site-button\" href=\"https://www.gofundme.com/f/help-muhannad-and-his-family-in-gaza\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Visit His Fundraiser</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">زيارة صفحة جمع التبرعات</span></a></div><div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/profile.php?id=61594428160534\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a></div>",
+    "section": "Digital Creator",
+    "sectionHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Digital Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">صانع محتوى رقمي</span>",
+    "nameAr": "مهند"
   },
   {
     "id": "creator-28",
