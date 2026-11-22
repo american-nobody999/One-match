@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 11/19/2026
+   Date modified: 11/21/2026
 */
 
 /* ===================================== */
@@ -684,9 +684,9 @@ html[lang="ar"] .explore-card-title {
 }
 
 /* Big Top invitation: illuminated circus marquee lettering. */
+.home-page .explore-button.big-top-button { max-width: 100%; gap: .4rem; }
 .big-top-invitation {
-    display: block; width: fit-content; max-width: 100%; min-height: 44px;
-    margin: .4rem auto 0; padding: .25rem .5rem;
+    display: inline-block; min-width: 0; overflow-wrap: anywhere;
     font-family: Rockwell, 'Book Antiqua', Georgia, serif;
     font-size: clamp(1.15rem, 2.1vw, 1.5rem); font-weight: 900;
     line-height: 1.4; letter-spacing: .05em; text-align: center; text-decoration: none;
@@ -695,11 +695,9 @@ html[lang="ar"] .explore-card-title {
     animation: big-top-marquee-colors 1.2s ease-in-out infinite;
 }
 .big-top-invitation [lang='ar'] { font-family: Amiri, 'Traditional Arabic', serif; letter-spacing: normal; }
-.big-top-invitation::before, .big-top-invitation::after { content: '✦'; display: inline-block; margin-inline: .3em; color: #e2bb68; font-size: .65em; -webkit-text-stroke: 0; text-shadow: 0 0 5px rgba(226, 187, 104, .7); animation: big-top-star-glow 1.2s ease-in-out infinite alternate; }
-.big-top-invitation::after { animation-direction: alternate-reverse; }
-.home-page .explore-button:hover + .big-top-invitation { filter: brightness(1.2) drop-shadow(0 0 4px rgba(226, 187, 104, .65)); }
-.big-top-invitation:hover { text-decoration: none; filter: brightness(1.1); }
-.big-top-invitation:focus-visible { outline: 3px solid #d4ac51; outline-offset: 3px; border-radius: 6px; }
+.big-top-sparkle { display: inline-block; margin-inline: .3em; color: #e2bb68; font-size: .65em; -webkit-text-stroke: 0; text-shadow: 0 0 5px rgba(226, 187, 104, .7); animation: big-top-star-glow 1.2s ease-in-out infinite alternate; }
+.big-top-sparkle:last-child { animation-direction: alternate-reverse; }
+.big-top-button:is(:hover, :focus-visible) .big-top-invitation { filter: brightness(1.2) drop-shadow(0 0 4px rgba(226, 187, 104, .65)); }
 @keyframes big-top-marquee-colors {
     0%, 100% { color: #f03243; transform: scale(1); }
     17% { color: #39e879; }
@@ -710,7 +708,7 @@ html[lang="ar"] .explore-card-title {
 }
 @keyframes big-top-star-glow { from { color: #e2bb68; text-shadow: 0 0 4px rgba(226, 187, 104, .55); } to { color: #65e58a; text-shadow: 0 0 7px rgba(101, 229, 138, .65); } }
 @media (prefers-reduced-motion: reduce) {
-    .big-top-invitation, .big-top-invitation::before, .big-top-invitation::after { animation: none; }
+    .big-top-invitation, .big-top-sparkle { animation: none; }
     .big-top-invitation { color: #f4c85e; }
 }
 
