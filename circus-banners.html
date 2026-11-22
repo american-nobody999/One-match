@@ -1,9 +1,7 @@
 <!--
 MPAG: Circus page
 Leslie Brockman
-Date last modified: 2026-11-11
-This page for for the kids. 
-Phase 3 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
+Date last modified: 2026-11-21
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +17,9 @@ Phase 3 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles2.css">
-    <link rel="stylesheet" href="styles/circus.css">
-    <link rel="stylesheet" href="styles/virus.css">
+    <link rel="stylesheet" href="/styles/styles2.css">
+    <link rel="stylesheet" href="/styles/circus.css">
+    <link rel="stylesheet" href="/styles/virus.css">
 </head>
 
 <body class="home-page circus-page-body">
@@ -66,89 +64,203 @@ Phase 3 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
   </header>
 
 <main class="circus-page circus-experience circus-banners" aria-labelledby="circus-page-heading">
-  <img class="circus-preview-progress" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png" alt="Work Is Progressing / العمل جارٍ" decoding="async">
-  <section class="circus-developer-note" aria-labelledby="circus-developer-heading">
-    <!-- David is decorative; the adjacent bilingual note carries the message. -->
-    <svg class="circus-developer-david" viewBox="0 0 200 230" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="david-metal" x2="1" y2="1"><stop stop-color="#f7e5b6"/><stop offset="1" stop-color="#b58b47"/></linearGradient>
-        <linearGradient id="david-teal" x2="1" y2="1"><stop stop-color="#a4c9bd"/><stop offset="1" stop-color="#46776f"/></linearGradient>
-        <linearGradient id="david-hat" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".25"/><stop offset=".45" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".22"/></linearGradient>
-        <clipPath id="david-hat-curve"><path d="M57 53a42 42 0 0 1 84 0Z"/></clipPath>
-      </defs>
-      <ellipse cx="102" cy="215" rx="70" ry="8" fill="#160c10" opacity=".25"/>
-      <g stroke="#65333a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M75 177v24m44-24v24" fill="none" stroke="#b58b47" stroke-width="14"/>
-        <rect x="57" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
-        <rect x="107" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
-        <rect x="61" y="118" width="75" height="66" rx="20" fill="url(#david-teal)"/>
-        <path d="M75 133h47v31H75z" fill="#702c3a"/>
-        <circle cx="88" cy="146" r="4" fill="#f7df9c" stroke="none"/>
-        <path d="M101 146h12m-29 10h29" stroke="#dbbd78" stroke-width="2"/>
-        <path d="M62 134q-29 11-17 35m89-35q28 7 19 30" fill="none" stroke="#b58b47" stroke-width="12"/>
-        <rect x="48" y="52" width="101" height="67" rx="24" fill="url(#david-metal)"/>
-        <rect x="59" y="66" width="79" height="39" rx="16" fill="#f9edce"/>
-        <path d="M73 81q5-8 10 0m29 0q5-8 10 0m-34 10q11 12 22 0" fill="none"/>
-        <circle cx="69" cy="92" r="4" fill="#c47876" stroke="none"/>
-        <circle cx="128" cy="92" r="4" fill="#c47876" stroke="none"/>
-        <!-- Palestinian flag bands follow the helmet dome, beneath its shading and ridge. -->
-        <g clip-path="url(#david-hat-curve)" stroke="none">
-          <path d="M57 11h84v42H57Z" fill="#009b58"/>
-          <path d="M57 11h84v30Q99 31 57 41Z" fill="#ffffff"/>
-          <path d="M57 11h84v17Q99 18 57 28Z" fill="#111111"/>
-          <path d="M57 11 94 32 57 53Z" fill="#ee263c"/>
-          <path d="M57 53a42 42 0 0 1 84 0Z" fill="url(#david-hat)"/>
-        </g>
-        <path d="M57 53a42 42 0 0 1 84 0" fill="none"/>
-        <path d="M93 18h13v33H93z" fill="#ffffff" fill-opacity=".16" stroke-opacity=".5"/>
-        <rect x="44" y="48" width="110" height="12" rx="6" fill="#009b58"/>
-        <rect x="44" y="48" width="110" height="12" rx="6" fill="url(#david-hat)"/>
-        <g transform="rotate(-12 105 177)">
-          <path d="M44 159h112v30H44z" fill="#b6d6ca"/>
-          <path d="M64 166h55v15H64zm18 0v15m-18-7h55m12-8h13m-13 8h13" fill="none" stroke="#46776f" stroke-width="1.5"/>
-          <ellipse cx="44" cy="174" rx="7" ry="15" fill="#e6edce"/>
-          <ellipse cx="156" cy="174" rx="7" ry="15" fill="#e6edce"/>
-          <path d="M156 168q-7 6 0 12" fill="none" stroke="#46776f" stroke-width="2"/>
-        </g>
-        <circle cx="48" cy="165" r="8" fill="url(#david-metal)"/>
-        <circle cx="148" cy="166" r="8" fill="url(#david-metal)"/>
-      </g>
-    </svg>
-    <div class="circus-developer-copy">
-      <div class="lang-en" lang="en" dir="ltr">
-        <h2 id="circus-developer-heading">A Little Note from the Developers</h2>
-        <p>Welcome to our Banner Hall!</p>
-        <p>What you're seeing is a rough outline of what's coming. Think of these as our design sketches — except we're using the actual website to show you!</p>
-        <p>We're still working on the artwork, performer banners, and all the little details that will bring this hall to life.</p>
-        <p>More coming soon!</p>
-      </div>
-      <div class="lang-ar hidden" lang="ar" dir="rtl">
-        <h2>ملاحظة صغيرة من فريق التطوير</h2>
-        <p>أهلًا بكم في قاعة اللافتات!</p>
-        <p>ما ترونه الآن هو تصور أولي لما هو قادم. اعتبروا هذه رسوماتنا التخطيطية للتصميم، لكننا نستخدم الموقع الحقيقي لنعرضها عليكم!</p>
-        <p>ما زلنا نعمل على الرسومات ولافتات الفنانين وكل التفاصيل الصغيرة التي ستجعل هذه القاعة تنبض بالحياة.</p>
-        <p>المزيد قادم قريبًا!</p>
-      </div>
+  <header class="circus-hall-entrance">
+    <div class="circus-hall-marquee">
+      <h2 id="circus-page-heading"><span class="lang-en">The Banner Hall</span><span class="lang-ar hidden" lang="ar" dir="rtl">قاعة اللافتات</span></h2>
+      <span class="circus-hall-marquee-ornaments" aria-hidden="true">
+        <span class="circus-hall-marquee-bulbs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <svg class="circus-hall-marquee-scroll circus-hall-marquee-scroll-left" viewBox="0 0 110 54" focusable="false">
+          <path d="M4 49C20 18 59 4 104 4M8 48C29 28 58 18 87 17c12 0 12 9 4 10-6 1-8-5-3-6M15 44c10-2 22-3 24 3 1 4-6 5-9 2" fill="none" stroke="#5b301e" stroke-width="4" stroke-linecap="round"/>
+          <path d="M4 48C20 17 59 3 104 3M8 47C29 27 58 17 87 16c12 0 12 9 4 10-6 1-8-5-3-6M15 43c10-2 22-3 24 3 1 4-6 5-9 2" fill="none" stroke="#e4b56e" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="circus-hall-marquee-inlay circus-hall-marquee-inlay-left"></span>
+        <svg class="circus-hall-marquee-tassel circus-hall-marquee-tassel-left" viewBox="0 0 30 52" focusable="false">
+          <path d="M18 2C8 9 9 15 15 22" fill="none" stroke="#713c22" stroke-width="5" stroke-linecap="round"/>
+          <path d="M18 2C8 9 9 15 15 22" fill="none" stroke="#e7b76a" stroke-width="3.4" stroke-dasharray="1.7 1.2" stroke-linecap="round"/>
+          <path d="M11 27h8q0 11 7 22-11 5-22 0 7-11 7-22Z" fill="#72253d" stroke="#4a1c29" stroke-width="1.2"/>
+          <path d="M12 30 8 49m7-18v20m3-21 4 19" fill="none" stroke="#e7b872" stroke-width="1.2"/>
+          <rect x="10" y="21" width="10" height="9" rx="3.5" fill="#ad7340" stroke="#f4ce8b"/>
+          <path d="M12 24h6" stroke="#ffe4a9" stroke-linecap="round"/>
+        </svg>
+        <svg class="circus-hall-marquee-scroll circus-hall-marquee-scroll-right" viewBox="0 0 110 54" focusable="false">
+          <path d="M4 49C20 18 59 4 104 4M8 48C29 28 58 18 87 17c12 0 12 9 4 10-6 1-8-5-3-6M15 44c10-2 22-3 24 3 1 4-6 5-9 2" fill="none" stroke="#5b301e" stroke-width="4" stroke-linecap="round"/>
+          <path d="M4 48C20 17 59 3 104 3M8 47C29 27 58 17 87 16c12 0 12 9 4 10-6 1-8-5-3-6M15 43c10-2 22-3 24 3 1 4-6 5-9 2" fill="none" stroke="#e4b56e" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="circus-hall-marquee-inlay circus-hall-marquee-inlay-right"></span>
+        <svg class="circus-hall-marquee-tassel circus-hall-marquee-tassel-right" viewBox="0 0 30 52" focusable="false">
+          <path d="M18 2C8 9 9 15 15 22" fill="none" stroke="#713c22" stroke-width="5" stroke-linecap="round"/>
+          <path d="M18 2C8 9 9 15 15 22" fill="none" stroke="#e7b76a" stroke-width="3.4" stroke-dasharray="1.7 1.2" stroke-linecap="round"/>
+          <path d="M11 27h8q0 11 7 22-11 5-22 0 7-11 7-22Z" fill="#72253d" stroke="#4a1c29" stroke-width="1.2"/>
+          <path d="M12 30 8 49m7-18v20m3-21 4 19" fill="none" stroke="#e7b872" stroke-width="1.2"/>
+          <rect x="10" y="21" width="10" height="9" rx="3.5" fill="#ad7340" stroke="#f4ce8b"/>
+          <path d="M12 24h6" stroke="#ffe4a9" stroke-linecap="round"/>
+        </svg>
+      </span>
     </div>
-  </section>
-  <section class="section circus-intro">
-    <h2 id="circus-page-heading"><span class="lang-en">The Banner Hall</span><span class="lang-ar hidden" lang="ar" dir="rtl">قاعة اللافتات</span></h2>
-  </section>
+    <figure class="circus-hall-scene" aria-hidden="true">
+      <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner.png" alt="" decoding="async">
+      <span class="circus-hall-gear"></span>
+      <span class="circus-hall-gear"></span>
+    </figure>
+  </header>
+  <svg class="circus-hall-icon-definitions" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="circus-icon-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.8V2.4c-.3 0-1.4-.2-2.7-.2-2.9 0-4.9 1.8-4.9 5v2.3H7V13h3v9z"/></symbol>
+    <symbol id="circus-icon-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="circus-icon-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M14.1 2h3.3c.1 2.4 1.5 4 4.1 4.4v3.3a8 8 0 0 1-4.1-1.4v7.3a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1V13a2.8 2.8 0 1 0 1.7 2.6z"/></symbol>
+    <symbol id="circus-icon-youtube" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M21.7 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.7.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12c0 1.6.1 3.2.3 4.8a2.8 2.8 0 0 0 2 2c1.9.5 7.7.5 7.7.5s5.8 0 7.7-.5a2.8 2.8 0 0 0 2-2c.2-1.6.3-3.2.3-4.8s-.1-3.2-.3-4.8zM10 8.9v6.2l5.4-3.1z"/></symbol>
+  </svg>
   <div class="circus-stations circus-banners-stations">
+    <div class="circus-hall-canopy" aria-hidden="true"></div>
+    <svg class="circus-hall-lighting-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="hall-spotlight-brass" x2=".9" y2="1">
+          <stop stop-color="#4e2a20"/><stop offset=".22" stop-color="#b47942"/><stop offset=".39" stop-color="#ffe4a3"/>
+          <stop offset=".58" stop-color="#aa6531"/><stop offset=".79" stop-color="#e9b570"/><stop offset="1" stop-color="#4a241d"/>
+        </linearGradient>
+        <linearGradient id="hall-spotlight-copper" x2="1" y2=".8">
+          <stop stop-color="#482424"/><stop offset=".27" stop-color="#f4b47e"/><stop offset=".5" stop-color="#b76e4b"/><stop offset="1" stop-color="#542d29"/>
+        </linearGradient>
+        <radialGradient id="hall-spotlight-beam" cx="0" cy=".5" r="1">
+          <stop stop-color="#ffe8a7" stop-opacity=".55"/>
+          <stop offset=".48" stop-color="#ffc67a" stop-opacity=".23"/>
+          <stop offset=".76" stop-color="#ec8e47" stop-opacity=".09"/>
+          <stop offset="1" stop-color="#ec8e47" stop-opacity="0"/>
+        </radialGradient>
+        <g id="hall-spotlight-mount">
+          <rect x="70" y="61" width="23" height="73" rx="7" fill="#3c242a" stroke="url(#hall-spotlight-brass)" stroke-width="3"/>
+          <path d="M82 115h17V94h13" fill="none" stroke="#39232a" stroke-width="12" stroke-linejoin="round"/>
+          <path d="M82 115h17V94h13" fill="none" stroke="url(#hall-spotlight-brass)" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M80 70h3m-3 54h3" stroke="#ffdc98" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <g id="hall-spotlight-housing">
+          <rect x="52" y="67" width="79" height="54" rx="13" fill="#4e2930" stroke="url(#hall-spotlight-brass)" stroke-width="5"/>
+          <path d="M62 75h60m-60 37h60M66 82h28m-28 7h28m-28 7h28m-28 7h28" stroke="url(#hall-spotlight-copper)" stroke-width="2"/>
+          <path d="M118 70l25-8v64l-25-8Z" fill="url(#hall-spotlight-brass)" stroke="#633925" stroke-width="2"/>
+          <ellipse cx="143" cy="94" rx="9" ry="30" fill="#f9bb63" stroke="#f7d795" stroke-width="3"/>
+          <ellipse cx="143" cy="94" rx="4" ry="22" fill="#ffefbd"/>
+        </g>
+      </defs>
+    </svg>
+    <div class="circus-hall-lighting" aria-hidden="true">
+      <svg class="circus-hall-spotlight circus-hall-spotlight-left-one" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-left-two" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-left-three" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-right-one" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-right-two" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-right-three" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-final circus-hall-spotlight-final-left" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-final circus-hall-spotlight-final-right" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+    </div>
     <!-- Friday updates: edit this complete bilingual performer article independently. Source: preserved pre-Phase-1 circus page. -->
     <article class="section circus-poster circus-performer" aria-labelledby="circus-school-heading">
-      <h3 id="circus-school-heading"><span class="lang-en">Gaza Circus School</span>
-      <span class="lang-ar hidden" lang="ar" dir="rtl">مدرسة سيرك غزة</span></h3>
-      <figure class="circus-performer-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/gazacircus.jpg" alt="Youth circus training in Gaza" loading="lazy"></figure>
+      <h3 id="circus-school-heading"><span class="lang-en">Ringmaster Ahmed</span>
+      <span class="lang-ar hidden" lang="ar" dir="rtl">مدير الحلبة أحمد</span></h3>
+      <figure class="circus-performer-photo">
+        <img class="lang-en" lang="en" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner1.jpg" alt="Ahmed Mushtaha, founder and director of Gaza Circus School" loading="lazy">
+        <img class="lang-ar hidden" lang="ar" dir="rtl" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner1.jpg" alt="أحمد مشتهى، مؤسس ومدير مدرسة سيرك غزة" loading="lazy">
+      </figure>
       <div class="circus-performer-story">
-        <p><span class="lang-en">Ahmed Mushtaha is the founder and director of the Gaza Circus School, an initiative created to bring circus arts, creativity, and moments of joy to children in Gaza. Since its beginnings in 2011, the school has used acrobatics, juggling, gymnastics, clown performances, and entertainment activities to create positive experiences for children and communities. Despite the destruction of the school's facilities and equipment, Ahmed and his team continue their work through performances and community projects. The Colors of Joy project is one of their efforts to bring happiness directly to children through small gifts and community support.</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">أحمد مشتهى هو مؤسس ومدير مدرسة سيرك غزة، وهي مبادرة أُنشئت لتقديم فنون السيرك والإبداع ولحظات الفرح للأطفال في غزة. ومنذ تأسيسها عام 2011، استخدمت المدرسة فنون الأكروبات، والتلاعب بالكرات، والجمباز، وعروض المهرجين والأنشطة الترفيهية لخلق تجارب إيجابية للأطفال والمجتمعات. وعلى الرغم من تدمير مرافق المدرسة ومعداتها، يواصل أحمد وفريقه عملهم من خلال العروض والمشاريع المجتمعية. ويُعد مشروع ألوان الفرح إحدى مبادراتهم لإيصال السعادة مباشرة إلى الأطفال عبر الهدايا الصغيرة والدعم المجتمعي.</span></p>
+        <p><span class="lang-en">Ahmed Mushtaha founded the Gaza Circus School in 2011 to bring creativity, laughter, and joy to Palestinian children. Through juggling, acrobatics, gymnastics, and clown performances, Ahmed and his team have given children opportunities to play, learn, and smile. Although the school's facilities and equipment were destroyed, the performers continue bringing moments of happiness and emotional support to children across Gaza.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">أسس أحمد مشتهى مدرسة سيرك غزة عام 2011 ليحمل الإبداع والضحك والفرح إلى الأطفال الفلسطينيين. ومن خلال فن رمي الأشياء والتقاطها والألعاب البهلوانية والجمباز وعروض المهرجين، أتاح أحمد وفريقه للأطفال فرصًا للعب والتعلّم والابتسام. وعلى الرغم من تدمير مرافق المدرسة ومعداتها، يواصل الفنانون تقديم لحظات من السعادة والدعم النفسي للأطفال في أنحاء غزة.</span></p>
       </div>
       <div class="circus-performer-links">
-        <a href="https://www.facebook.com/ahmd.fwaz.mshthy" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.instagram.com/gazacircus_school/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.tiktok.com/@gazacircusschool" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <a href="https://seattlegazamutualaid.org/gaza-circus" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/ahmd.fwaz.mshthy" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-facebook">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-facebook"></use></svg>
+          <span class="circus-hall-link-name lang-en">Facebook</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">فيسبوك</span>
+        </a>
+        <a href="https://www.instagram.com/stories/gaza_circus_school/" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-instagram">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-instagram"></use></svg>
+          <span class="circus-hall-link-name lang-en">Instagram</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">إنستغرام</span>
+        </a>
+        <a href="https://www.tiktok.com/@gazacircusschool" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-tiktok">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-tiktok"></use></svg>
+          <span class="circus-hall-link-name lang-en">TikTok</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">تيك توك</span>
+        </a>
+        <a href="https://www.youtube.com/@circusschoolteamstrip3042/featured" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-youtube">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-youtube"></use></svg>
+          <span class="circus-hall-link-name lang-en">YouTube</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">يوتيوب</span>
+        </a>
+        <a href="https://chuffed.org/project/190283-ahmeds-family-survival-fund" target="_blank" rel="noopener noreferrer" class="circus-hall-ticket circus-hall-fundraiser">
+          <span class="lang-en">Ahmed's Family Survival Fund</span>
+          <span class="lang-ar hidden" lang="ar" dir="rtl">صندوق نجاة عائلة أحمد</span>
+        </a>
+        <a href="https://seattlegazamutualaid.org/gaza-circus" target="_blank" rel="noopener noreferrer" class="circus-hall-ticket">
         <span class="lang-en">Gaza Circus School Information</span>
         <span class="lang-ar hidden" lang="ar" dir="rtl">معلومات عن مدرسة سيرك غزة</span>
       </a>
@@ -156,48 +268,183 @@ Phase 3 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
     </article>
     <!-- Friday updates: edit this complete bilingual performer article independently. Source: preserved pre-Phase-1 circus page. -->
     <article class="section circus-poster circus-performer" aria-labelledby="circus-tito-heading">
-      <h3 id="circus-tito-heading"><span class="lang-en">Tito The clown!</span>
+      <h3 id="circus-tito-heading"><span class="lang-en">Uncle Tito</span>
       <span class="lang-ar hidden" lang="ar" dir="rtl">تيتو المهرج!</span></h3>
       <figure class="circus-performer-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tito.jpg" alt="Circus performers in Gaza" loading="lazy"></figure>
       <div class="circus-performer-story">
-        <p><span class="lang-en">Muhammad Nayef Salem, better known as “Uncle Tito,” is a Palestinian clown and circus performer from Gaza who has dedicated his work to bringing moments of happiness to children living through extremely difficult circumstances. Salem began performing circus arts at a young age and received training from Italian circus instructors. He earned first-place certificates in both stilt walking and clown performance, developing skills that allowed him to work professionally with children.</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">محمد نايف سالم، المعروف باسم “العم تيتو”، هو مهرج ومؤدٍّ سيركي فلسطيني من غزة كرّس عمله لجلب لحظات السعادة إلى الأطفال الذين يعيشون في ظروف شديدة الصعوبة. بدأ سالم ممارسة فنون السيرك في سن مبكرة، وتلقى تدريبًا على يد مدربين إيطاليين في هذا المجال. وحصل على شهادات المركز الأول في المشي على العصي وأداء المهرجين، مما مكّنه من العمل مع الأطفال بصورة احترافية.</span></p>
-        <p><span class="lang-en">Before the war, Salem performed in schools and kindergartens, where his performances and friendly personality made him popular with children and families. His work became especially meaningful during the war, as he continued using humor, clowning, and performance to create moments of joy for children experiencing displacement, fear, and hardship.</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">قبل الحرب، كان سالم يقدم عروضًا في المدارس ورياض الأطفال، حيث جعل أداؤه وشخصيته الودودة منه محبوبًا لدى الأطفال والعائلات. وأصبح عمله أكثر أهمية خلال الحرب، إذ واصل استخدام الفكاهة وفنون المهرجين والعروض لخلق لحظات من الفرح للأطفال الذين يعيشون النزوح والخوف والمعاناة.</span></p>
-        <p><span class="lang-en">Known affectionately as “Uncle Tito,” Salem represents the important role that entertainers can play during humanitarian crises. His performances provide children with opportunities to laugh, play, and briefly experience something resembling normal childhood. He has also expressed ambitions to continue developing his circus skills and obtain equipment that would allow him to expand his performances. His story illustrates how art and entertainment can become powerful tools for hope, connection, and emotional relief.</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">يُعرف سالم بمحبة باسم “العم تيتو”، وهو يجسّد الدور المهم الذي يمكن للفنانين والمرفّهين أن يؤدوه خلال الأزمات الإنسانية. إذ تمنح عروضه الأطفال فرصة للضحك واللعب واختبار شيء يشبه الطفولة الطبيعية ولو لفترة قصيرة. كما عبّر عن طموحه إلى مواصلة تطوير مهاراته في السيرك والحصول على معدات تتيح له توسيع عروضه. وتوضح قصته كيف يمكن للفن والترفيه أن يصبحا أداتين قويتين للأمل والتواصل والراحة النفسية.</span></p>
+        <p><span class="lang-en">Muhammad Nayef Salem, affectionately known as 'Uncle Tito,' is a Palestinian clown and circus performer from Gaza. He began training at the Gaza Circus School as a child, developing skills in clowning, juggling, and circus performance. Today, Tito brings laughter, games, and creative activities to children in shelters and communities across northern Gaza, using the joy of performance to offer comfort and emotional support during difficult times.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">محمد نايف سالم، المعروف بمحبة باسم «العم تيتو»، هو مهرج وفنان سيرك فلسطيني من غزة. بدأ تدريبه في مدرسة سيرك غزة في طفولته، وطوّر مهاراته في فن التهريج ورمي الأشياء والتقاطها وتقديم عروض السيرك. واليوم، يرسم تيتو الضحكات على وجوه الأطفال في مراكز الإيواء والمجتمعات المحلية في أنحاء شمال غزة، ويقدّم لهم الألعاب والأنشطة الإبداعية، مستعينًا بالبهجة التي تبعثها عروضه ليمنحهم الراحة والدعم النفسي في الأوقات الصعبة.</span></p>
       </div>
       <div class="circus-performer-links">
-        <a href="https://www.facebook.com/mhmd.nayf.salm" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.facebook.com/mhmd.nayf.salm" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-facebook">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-facebook"></use></svg>
+          <span class="circus-hall-link-name lang-en">Facebook</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">فيسبوك</span>
+        </a>
+        <a href="https://www.instagram.com/uncle_tito_6/" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-instagram">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-instagram"></use></svg>
+          <span class="circus-hall-link-name lang-en">Instagram</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">إنستغرام</span>
+        </a>
+        <a href="https://www.youtube.com/@Uncle_tito6/shorts" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-youtube">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-youtube"></use></svg>
+          <span class="circus-hall-link-name lang-en">YouTube</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">يوتيوب</span>
+        </a>
+        <div class="circus-hall-tito-website">
+          <a href="https://www.uncle-tito.com/" target="_blank" rel="noopener noreferrer" class="circus-hall-ticket">
+            <span class="lang-en">Uncle Tito's Website</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">موقع عمو تيتو الإلكتروني</span>
+          </a>
+        </div>
       </div>
     </article>
     <!-- Friday updates: edit this complete bilingual performer article independently. Source: preserved pre-Phase-1 circus page. -->
     <article class="section circus-poster circus-performer" aria-labelledby="circus-aloosh-heading">
-      <h3 id="circus-aloosh-heading"><span class="lang-en">Clown Aloosh</span>
+      <h3 id="circus-aloosh-heading"><span class="lang-en">Uncle Aloosh</span>
       <span class="lang-ar hidden" lang="ar" dir="rtl">المهرج ألووش</span></h3>
       <figure class="circus-performer-photo"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/Abood.jpg" alt="Youth circus training in Gaza" loading="lazy"></figure>
       <div class="circus-performer-story">
-        <p><span class="lang-en">Aloosh is a Palestinian clown and performer from Gaza who uses circus arts, humor, and entertainment to bring moments of happiness to children experiencing the hardships of life in the Gaza Strip. He is associated with the Gaza Circus School, an organization focused on clowning, juggling, and circus performance.</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">ألووش هو مهرج ومؤدي فلسطيني من غزة يستخدم فنون السيرك والفكاهة والترفيه لجلب لحظات السعادة إلى الأطفال الذين يواجهون صعوبات الحياة في قطاع غزة. وهو مرتبط بمدرسة غزة للسيرك، وهي مؤسسة تركز على المهرجية والمناولة والتمثيل السيركي.</span></p>
-        <p><span class="lang-en">Aloosh works alongside fellow performer Maroosh and other members of the Gaza Circus School to give children opportunities to laugh, play, and experience moments of normal childhood despite the surrounding violence and displacement. During the conflict, the performers continued their activities in different areas of Gaza, following displaced communities and performing around damaged schools, hospitals, and other locations where children and families were receiving assistance.</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">يعمل ألووش إلى جانب زميله المؤدي ماروش وأعضاء آخرين في مدرسة سيرك غزة، ليمنحوا الأطفال فرصًا للضحك واللعب وتجربة لحظات من الطفولة الطبيعية رغم العنف والنزوح المحيطين بهم. وخلال النزاع، واصل المؤدون أنشطتهم في مناطق مختلفة من غزة، متنقلين مع المجتمعات النازحة، وقدموا عروضهم قرب المدارس والمستشفيات وغيرها من المواقع المتضررة حيث كانت العائلات والأطفال يتلقون المساعدة.</span></p>
-        <p><span class="lang-en">The Gaza Circus School has also maintained connections with international supporters, including CISS (Cooperazione Internazionale Sud Sud), which has helped coordinate and support humanitarian activities involving the performers. Aloosh’s work demonstrates how creative expression can serve a humanitarian purpose. Through comedy and circus performance, he and his fellow performers provide children with moments of joy, connection, and emotional relief during an extremely difficult period. Their work shows how art can help preserve hope and a sense of community even in the midst of crisis.</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">كما حافظت مدرسة سيرك غزة على روابطها مع داعمين دوليين، من بينهم CISS (Cooperazione Internazionale Sud Sud)، التي ساعدت في تنسيق ودعم الأنشطة الإنسانية المتعلقة بالمؤدين. ويُظهر عمل ألووش كيف يمكن للتعبير الإبداعي أن يؤدي دورًا إنسانيًا. فمن خلال الكوميديا وفنون السيرك، يمنح ألووش وزملاؤه الأطفال لحظات من الفرح والتواصل والراحة النفسية خلال فترة شديدة الصعوبة. ويبيّن عملهم كيف يمكن للفن أن يساعد في الحفاظ على الأمل وروح المجتمع حتى وسط الأزمات.</span></p>
+        <p><span class="lang-en">Alaa Meqdad, affectionately known as 'Uncle Aloosh,' is a Palestinian clown and comedian who brings laughter and moments of joy to children across Gaza. He uses comedy, games, and circus performances to help children find moments of happiness during difficult circumstances. Despite displacement and hardship, Aloosh continues sharing his creativity and humor with families and communities throughout Gaza.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">علاء مقداد، المعروف بمحبة باسم «العم ألووش»، هو مهرج وفنان كوميدي فلسطيني يرسم الضحكات على وجوه الأطفال ويمنحهم لحظات من الفرح في أنحاء غزة. ويستخدم الكوميديا والألعاب وعروض السيرك لمساعدة الأطفال على إيجاد لحظات من السعادة في ظل ظروف صعبة. ورغم النزوح والمشقة، يواصل ألووش مشاركة إبداعه وروح الدعابة مع العائلات والمجتمعات المحلية في أنحاء غزة.</span></p>
       </div>
       <div class="circus-performer-links">
-        <a href="https://www.cissong.org" target="_blank" rel="noopener noreferrer">CISS</a>
-        <a href="https://www.hcim2026.org/solidarity-activity" target="_blank" rel="noopener noreferrer">
-        <span class="lang-en">Gaza Circus School</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">مدرسة غزة للسيرك</span>
-      </a>
-        <a href="https://www.freegazacircus.org" target="_blank" rel="noopener noreferrer">
-        <span class="lang-en">Free Gaza Circus</span>
-        <span class="lang-ar hidden" lang="ar" dir="rtl">سيرك غزة الحر</span>
-      </a>
+        <a href="https://www.facebook.com/aloo300" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-facebook">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-facebook"></use></svg>
+          <span class="circus-hall-link-name lang-en">Facebook</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">فيسبوك</span>
+        </a>
+        <a href="https://www.youtube.com/@alooosh_clown" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-youtube">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-youtube"></use></svg>
+          <span class="circus-hall-link-name lang-en">YouTube</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">يوتيوب</span>
+        </a>
+      </div>
+    </article>
+    <article class="section circus-poster circus-performer" aria-labelledby="circus-tata-heading">
+      <h3 id="circus-tata-heading"><span class="lang-en">Uncle Tata</span>
+      <span class="lang-ar hidden" lang="ar" dir="rtl">عمو تاتا</span></h3>
+      <figure class="circus-performer-photo">
+        <img class="lang-en" lang="en" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner4.jpg" alt="Uncle Tata, circus performer" loading="lazy">
+        <img class="lang-ar hidden" lang="ar" dir="rtl" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner4.jpg" alt="عمو تاتا، فنان سيرك" loading="lazy">
+      </figure>
+      <div class="circus-performer-story">
+        <p><span class="lang-en">Tareq Abu Shqair, known as 'Uncle Tata,' is a Palestinian circus performer and clown from Gaza. His circus skills include aerial rope performances, balance, strength, and flexibility. Through colorful characters and theatrical expression, Tata celebrates the creativity and playful spirit of circus arts, bringing imagination and entertainment to his audiences.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">طارق أبو شقير، المعروف باسم «عمو تاتا»، هو فنان سيرك ومهرج فلسطيني من غزة. وتشمل مهاراته في السيرك العروض الهوائية على الحبل، والتوازن، والقوة، والمرونة. ومن خلال شخصيات زاهية الألوان والتعبير المسرحي، يحتفي تاتا بالإبداع والروح المرحة لفنون السيرك، ويقدّم لجمهوره عروضًا تنبض بالخيال وتبعث على التسلية.</span></p>
+      </div>
+      <div class="circus-performer-links">
+        <a href="https://www.facebook.com/tarq.abw.shqyr/photos" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-facebook">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-facebook"></use></svg>
+          <span class="circus-hall-link-name lang-en">Facebook</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">فيسبوك</span>
+        </a>
+      </div>
+    </article>
+    <article class="section circus-poster circus-performer" aria-labelledby="circus-bibo-heading">
+      <h3 id="circus-bibo-heading"><span class="lang-en">Uncle Bibo</span>
+      <span class="lang-ar hidden" lang="ar" dir="rtl">عمو بيبو</span></h3>
+      <figure class="circus-performer-photo">
+        <img class="lang-en" lang="en" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner5.jpg" alt="Uncle Bibo, Palestinian clown and performer" loading="lazy">
+        <img class="lang-ar hidden" lang="ar" dir="rtl" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner5.jpg" alt="عمو بيبو، مهرج وفنان استعراضي فلسطيني" loading="lazy">
+      </figure>
+      <div class="circus-performer-story">
+        <p><span class="lang-en">Belal Matar, affectionately known as 'Uncle Bibo,' is a Palestinian clown and children's entertainer from Gaza. He discovered his love of performing at a young age and developed his talents through comedy, colorful costumes, games, and face painting. Despite displacement and difficult circumstances, Bibo continues bringing laughter, play, and moments of happiness to children in Gaza's communities and shelters.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">بلال مطر، المعروف بمحبة باسم «عمو بيبو»، هو مهرج وفنان ترفيهي للأطفال من غزة، وهو فلسطيني. اكتشف حبّه لتقديم العروض في سن مبكرة، وطوّر مواهبه من خلال الكوميديا والأزياء الزاهية والألعاب والرسم على الوجوه. ورغم النزوح والظروف الصعبة، يواصل بيبو إضحاك الأطفال وإتاحة الفرص لهم للعب ومنحهم لحظات من السعادة في المجتمعات المحلية ومراكز الإيواء في غزة.</span></p>
+      </div>
+      <div class="circus-performer-links">
+        <a href="https://www.facebook.com/belal.matar.7796/photos" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-facebook">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-facebook"></use></svg>
+          <span class="circus-hall-link-name lang-en">Facebook</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">فيسبوك</span>
+        </a>
+        <a href="https://www.gofundme.com/f/rwf7bj-help-rebuild-a-life-support-for-my-brother" target="_blank" rel="noopener noreferrer" class="circus-hall-ticket circus-hall-fundraiser">
+          <span class="lang-en">Support Uncle Bibo ❤️</span>
+          <span class="lang-ar hidden" lang="ar" dir="rtl">ادعموا عمو بيبو ❤️</span>
+        </a>
+      </div>
+    </article>
+    <article class="section circus-poster circus-performer" aria-labelledby="circus-zezo-heading">
+      <h3 id="circus-zezo-heading"><span class="lang-en">Uncle Zezo</span>
+      <span class="lang-ar hidden" lang="ar" dir="rtl">عمو زيزو</span></h3>
+      <figure class="circus-performer-photo">
+        <img class="lang-en" lang="en" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner6.jpg" alt="Uncle Zezo, Palestinian clown and performer" loading="lazy">
+        <img class="lang-ar hidden" lang="ar" dir="rtl" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner6.jpg" alt="عمو زيزو، مهرج وفنان استعراضي فلسطيني" loading="lazy">
+      </figure>
+      <div class="circus-performer-story">
+        <p><span class="lang-en">Uncle Zezo, also known as Abdel Rahim Al-Batsh, is a Palestinian clown and performer who brings laughter, comfort, and moments of joy to children in Gaza. Through colorful costumes, playful performances, and community activities, he uses circus arts to connect with children facing difficult circumstances. His work focuses on psychosocial support, creativity, and helping young people experience the happiness of childhood.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">عمو زيزو، المعروف أيضًا باسم عبد الرحيم البطش، هو مهرج وفنان استعراضي فلسطيني يمنح أطفال غزة الضحك والراحة ولحظات من الفرح. ومن خلال الأزياء الزاهية والعروض المرحة والأنشطة المجتمعية، يستخدم فنون السيرك للتواصل مع الأطفال الذين يواجهون ظروفًا صعبة. يركّز عمله على الدعم النفسي والاجتماعي والإبداع ومساعدة الصغار على عيش لحظات السعادة في طفولتهم.</span></p>
+      </div>
+      <div class="circus-performer-links">
+        <a href="https://www.instagram.com/uncle_zezo_/" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-instagram">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-instagram"></use></svg>
+          <span class="circus-hall-link-name lang-en">Instagram — Uncle Zezo</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">إنستغرام — عمو زيزو</span>
+        </a>
+        <a href="https://chuffed.org/project/168780-support-young-talent" target="_blank" rel="noopener noreferrer" class="circus-hall-ticket circus-hall-fundraiser">
+          <span class="lang-en">Support Young Talent</span>
+          <span class="lang-ar hidden" lang="ar" dir="rtl">ادعموا المواهب الشابة</span>
+        </a>
+      </div>
+    </article>
+    <article class="section circus-poster circus-performer" aria-labelledby="circus-majoud-heading">
+      <h3 id="circus-majoud-heading"><span class="lang-en">Uncle Majoud</span>
+      <span class="lang-ar hidden" lang="ar" dir="rtl">عمو مجود</span></h3>
+      <figure class="circus-performer-photo">
+        <img class="lang-en" lang="en" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner7.jpg" alt="Uncle Majoud, Palestinian clown and circus performer" loading="lazy">
+        <img class="lang-ar hidden" lang="ar" dir="rtl" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner7.jpg" alt="عمو مجود، مهرج وفنان سيرك فلسطيني" loading="lazy">
+      </figure>
+      <div class="circus-performer-story">
+        <p><span class="lang-en">Majd Al-Maidana, affectionately known as Uncle Majoud, is a Palestinian clown and circus performer from Gaza. Through playful performances, humor, and creative activities, he brings laughter and encouragement to children living through difficult circumstances. For Majoud, circus performance is about giving children moments of happiness, imagination, and hope.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">مجد الميدنة، المعروف باسم عمو مجود، هو مهرج وفنان سيرك فلسطيني من غزة. من خلال العروض المرحة والفكاهة والأنشطة الإبداعية، ينشر الضحك والتشجيع بين الأطفال الذين يعيشون ظروفًا صعبة. وبالنسبة إلى عمو مجود، فإن فن السيرك وسيلة لمنح الأطفال لحظات من السعادة والخيال والأمل.</span></p>
+      </div>
+      <div class="circus-performer-links">
+        <a href="https://www.instagram.com/uncle_majoud/" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-instagram">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-instagram"></use></svg>
+          <span class="circus-hall-link-name lang-en">Instagram — Uncle Majoud</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">إنستغرام — عمو مجود</span>
+        </a>
+        <a href="https://chuffed.org/project/help-on-stilts" target="_blank" rel="noopener noreferrer" class="circus-hall-ticket circus-hall-fundraiser">
+          <span class="lang-en">Support Uncle Majoud and His Family</span>
+          <span class="lang-ar hidden" lang="ar" dir="rtl">ادعموا عمو مجود وعائلته</span>
+        </a>
+        <a href="https://chuffed.org/project/135004-praying-to-eat-and-speak-again-majoods-brother" target="_blank" rel="noopener noreferrer" class="circus-hall-ticket circus-hall-fundraiser">
+          <span class="lang-en">Support Majoud's Brother</span>
+          <span class="lang-ar hidden" lang="ar" dir="rtl">ادعموا شقيق مجود</span>
+        </a>
+      </div>
+    </article>
+    <article class="section circus-poster circus-performer" aria-labelledby="circus-fufu-heading">
+      <h3 id="circus-fufu-heading"><span class="lang-en">Uncle Fufu</span>
+      <span class="lang-ar hidden" lang="ar" dir="rtl">عمو فوفو</span></h3>
+      <figure class="circus-performer-photo">
+        <img class="lang-en" lang="en" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner8.jpg" alt="Uncle Fufu, Palestinian clown and children's entertainer" loading="lazy">
+        <img class="lang-ar hidden" lang="ar" dir="rtl" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner8.jpg" alt="عمو فوفو، مهرج وفنان ترفيهي فلسطيني للأطفال" loading="lazy">
+      </figure>
+      <div class="circus-performer-story">
+        <p><span class="lang-en">Mohammed, affectionately known as Uncle Fufu, is a Palestinian clown and children's entertainer from Gaza. Through colorful performances and playful characters, he has brought laughter and entertainment to children in his community. After his family's home was destroyed, Mohammed began seeking support to help his family rebuild their lives. His story reminds us of the people behind the smiles and the importance of supporting the performers who bring joy to others.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">محمد، المعروف باسم عمو فوفو، هو مهرج وفنان ترفيهي للأطفال من غزة. من خلال عروضه الملونة وشخصياته المرحة، أدخل الضحك والبهجة إلى قلوب الأطفال في مجتمعه. وبعد تدمير منزل عائلته، بدأ محمد يسعى للحصول على الدعم لمساعدة أسرته على إعادة بناء حياتها. تذكّرنا قصته بالأشخاص الذين يقفون خلف الابتسامات وبأهمية دعم الفنانين الذين ينشرون الفرح بين الآخرين.</span></p>
+      </div>
+      <div class="circus-performer-links">
+        <a href="https://www.instagram.com/uncle_fufu_/" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-instagram">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-instagram"></use></svg>
+          <span class="circus-hall-link-name lang-en">Instagram — Uncle Fufu</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">إنستغرام — عمو فوفو</span>
+        </a>
+        <a href="https://www.spotfund.com/story/a9b943bd-9343-4c62-b0b7-5f08294cb04c" target="_blank" rel="noopener noreferrer" class="circus-hall-ticket circus-hall-fundraiser">
+          <span class="lang-en">Help Mohammed Rebuild a Home</span>
+          <span class="lang-ar hidden" lang="ar" dir="rtl">ساعد محمد في إعادة بناء منزله</span>
+        </a>
       </div>
     </article>
   </div>
-  <a class="circus-return site-button" href="circus.html"><span class="lang-en">Back to the Circus Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل السيرك</span></a>
+  <a class="circus-return site-button circus-hall-exit" href="circus.html">
+    <svg class="circus-hall-exit-arrow" viewBox="0 0 48 30" aria-hidden="true" focusable="false">
+      <path d="M3 15 19 3v8h24l2 4-2 4H19v8Z" fill="#b9824d" stroke="#f5c988" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M9 15 16 9v4h24" fill="none" stroke="#fff0bc" stroke-width="1.3" stroke-linecap="round"/>
+    </svg>
+    <span class="lang-en">Back to the Circus Entrance</span>
+    <span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل السيرك</span>
+  </a>
 </main>
  <footer class="site-footer" data-global-chrome>
         <div class="footer-container">
