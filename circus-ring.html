@@ -1,9 +1,7 @@
 <!--
 MPAG: Circus page
 Leslie Brockman
-Date last modified: 2026-11-16
-This page for for the kids. 
-Phase 4 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
+Date last modified: 2026-11-21
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,16 +14,15 @@ Phase 4 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
     
 <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rye&amp;display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles2.css">
-    <link rel="stylesheet" href="styles/circus.css">
-    <link rel="stylesheet" href="styles/virus.css">
+    <link rel="stylesheet" href="/styles/styles2.css">
+    <link rel="stylesheet" href="/styles/circus.css">
+    <link rel="stylesheet" href="/styles/virus.css">
 </head>
 
-<body class="home-page circus-page-body">
+<body class="home-page circus-page-body circus-main-ring-page">
     
 <header class="site-header" data-global-chrome>
       <div class="header-container">
@@ -67,161 +64,244 @@ Phase 4 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
   </header>
 
 <main class="circus-page circus-experience circus-ring" aria-labelledby="circus-page-heading">
-  <figure class="circus-ring-progress-frame">
-    <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/circus-progress.png" alt="Work Is Progressing / العمل جارٍ" decoding="async">
-  </figure>
-  <section class="section circus-intro">
-    <h2 id="circus-page-heading"><span class="lang-en">The Main Event</span><span class="lang-ar hidden" lang="ar" dir="rtl">العرض الرئيسي</span></h2>
-  </section>
-  <section class="circus-developer-note" aria-labelledby="ring-developer-heading">
-    <svg class="circus-developer-david" viewBox="0 0 200 230" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="david-metal" x2="1" y2="1"><stop stop-color="#f7e5b6"/><stop offset="1" stop-color="#b58b47"/></linearGradient>
-        <linearGradient id="david-teal" x2="1" y2="1"><stop stop-color="#a4c9bd"/><stop offset="1" stop-color="#46776f"/></linearGradient>
-        <linearGradient id="david-hat" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".25"/><stop offset=".45" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".22"/></linearGradient>
-        <clipPath id="david-hat-curve"><path d="M57 53a42 42 0 0 1 84 0Z"/></clipPath>
-      </defs>
-      <ellipse cx="102" cy="215" rx="70" ry="8" fill="#160c10" opacity=".25"/>
-      <g stroke="#65333a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M75 177v24m44-24v24" fill="none" stroke="#b58b47" stroke-width="14"/>
-        <rect x="57" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
-        <rect x="107" y="198" width="32" height="15" rx="7" fill="url(#david-teal)"/>
-        <rect x="61" y="118" width="75" height="66" rx="20" fill="url(#david-teal)"/>
-        <path d="M75 133h47v31H75z" fill="#702c3a"/>
-        <circle cx="88" cy="146" r="4" fill="#f7df9c" stroke="none"/>
-        <path d="M101 146h12m-29 10h29" stroke="#dbbd78" stroke-width="2"/>
-        <path d="M62 134q-29 11-17 35m89-35q28 7 19 30" fill="none" stroke="#b58b47" stroke-width="12"/>
-        <rect x="48" y="52" width="101" height="67" rx="24" fill="url(#david-metal)"/>
-        <rect x="59" y="66" width="79" height="39" rx="16" fill="#f9edce"/>
-        <path d="M73 81q5-8 10 0m29 0q5-8 10 0m-34 10q11 12 22 0" fill="none"/>
-        <circle cx="69" cy="92" r="4" fill="#c47876" stroke="none"/>
-        <circle cx="128" cy="92" r="4" fill="#c47876" stroke="none"/>
-        <!-- Palestinian flag bands follow the helmet dome, beneath its shading and ridge. -->
-        <g clip-path="url(#david-hat-curve)" stroke="none">
-          <path d="M57 11h84v42H57Z" fill="#009b58"/>
-          <path d="M57 11h84v30Q99 31 57 41Z" fill="#ffffff"/>
-          <path d="M57 11h84v17Q99 18 57 28Z" fill="#111111"/>
-          <path d="M57 11 94 32 57 53Z" fill="#ee263c"/>
-          <path d="M57 53a42 42 0 0 1 84 0Z" fill="url(#david-hat)"/>
-        </g>
-        <path d="M57 53a42 42 0 0 1 84 0" fill="none"/>
-        <path d="M93 18h13v33H93z" fill="#ffffff" fill-opacity=".16" stroke-opacity=".5"/>
-        <rect x="44" y="48" width="110" height="12" rx="6" fill="#009b58"/>
-        <rect x="44" y="48" width="110" height="12" rx="6" fill="url(#david-hat)"/>
-        <g transform="rotate(-12 105 177)">
-          <path d="M44 159h112v30H44z" fill="#b6d6ca"/>
-          <path d="M64 166h55v15H64zm18 0v15m-18-7h55m12-8h13m-13 8h13" fill="none" stroke="#46776f" stroke-width="1.5"/>
-          <ellipse cx="44" cy="174" rx="7" ry="15" fill="#e6edce"/>
-          <ellipse cx="156" cy="174" rx="7" ry="15" fill="#e6edce"/>
-          <path d="M156 168q-7 6 0 12" fill="none" stroke="#46776f" stroke-width="2"/>
-        </g>
-        <circle cx="48" cy="165" r="8" fill="url(#david-metal)"/>
-        <circle cx="148" cy="166" r="8" fill="url(#david-metal)"/>
-      </g>
-    </svg>
-    <div class="circus-developer-copy">
-      <div class="lang-en" lang="en" dir="ltr">
-        <h2 id="ring-developer-heading">Hello, circus explorers!</h2>
-        <p>David here, reporting from the Main Event construction crew!</p>
-        <p>Today we're inspecting the tent colors, polishing the decorations, and making sure every tassel is ready for the spotlight! More circus magic is coming soon!</p>
-        <p>Right now, everything is a surprise. We're keeping our attractions under wraps until they're ready for the big show.</p>
-        <p>More surprises coming soon!</p>
+  <div class="ring-shooting-stars ring-shooting-stars--outer" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <section class="circus-tent" aria-labelledby="circus-page-heading">
+    <div class="ring-proscenium">
+      <div class="ring-shooting-stars ring-shooting-stars--curtain" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
       </div>
-      <div class="lang-ar hidden" lang="ar" dir="rtl">
-        <h2>مرحبًا يا مستكشفي السيرك!</h2>
-        <p>معكم ديفيد من فريق تجهيز العرض الرئيسي!</p>
-        <p>اليوم نتفقد ألوان الخيمة، ونلمّع الزينة، ونتأكد من أن كل شرّابة جاهزة لتتألق تحت الأضواء! المزيد من سحر السيرك قادم قريبًا!</p>
-        <p>في الوقت الحالي، كل شيء مفاجأة! سنُبقي ألعابنا مخفية حتى تصبح جاهزة للعرض الكبير.</p>
-        <p>المزيد من المفاجآت قريبًا!</p>
-      </div>
+      <header class="ring-marquee">
+        <h2 id="circus-page-heading"><span class="lang-en">The Main Event</span><span class="lang-ar hidden" lang="ar" dir="rtl">العرض الرئيسي</span></h2>
+        <svg class="ring-marquee-crest" viewBox="0 0 400 58" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="ring-marquee-gilt" x2="0" y2="100%">
+              <stop stop-color="#fff5bd"/><stop offset=".25" stop-color="#e8ad5a"/><stop offset=".48" stop-color="#a66029"/><stop offset=".73" stop-color="#ffd58b"/><stop offset="1" stop-color="#784023"/>
+            </linearGradient>
+            <g id="ring-crest-scroll">
+              <path d="M5 51q28 3 44-15T84 22q14 4 6 13-5 5-10-1" fill="none" stroke="#51251f" stroke-width="7"/>
+              <path d="M5 49q28 3 44-15T84 20q14 4 6 13-5 5-10-1" fill="none" stroke="url(#ring-marquee-gilt)" stroke-width="5"/>
+              <path d="M23 47q5-10 3-17 10 7 5 14m8-6q7-9 6-16 9 7 5 12m12-8q8-5 9-11 7 6 2 9" fill="url(#ring-marquee-gilt)" stroke="#a26330"/>
+            </g>
+          </defs>
+          <use href="#ring-crest-scroll"/><use href="#ring-crest-scroll" transform="translate(400 0) scale(-1 1)"/>
+          <path d="M55 50Q200 14 345 50" fill="none" stroke="url(#ring-marquee-gilt)" stroke-width="6"/>
+          <path class="ring-bulbs" d="M55 50Q200 14 345 50"/>
+          <circle cx="200" cy="24" r="20" fill="#4f1426" stroke="url(#ring-marquee-gilt)" stroke-width="5"/>
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="200" cy="24.6" r="11.8" stroke="#270c18" stroke-width="4"/>
+            <circle cx="200" cy="24" r="11.8" stroke="url(#ring-marquee-gilt)" stroke-width="2.6"/>
+            <path d="M200 12.5v23M200 25l-8 7.5m8-7.5 8 7.5" stroke="#270c18" stroke-width="4"/>
+            <path d="M200 12.5v23M200 25l-8 7.5m8-7.5 8 7.5" stroke="url(#ring-marquee-gilt)" stroke-width="2.5"/>
+            <path d="M191.3 17a11 11 0 0 1 11-4" stroke="#fff3b9" stroke-width=".8"/>
+          </g>
+        </svg>
+      </header>
     </div>
-  </section>
-  <!-- Phase 3A: scenery and destination positions; artwork remains temporary. -->
-  <section class="circus-tent" aria-labelledby="ring-attractions-heading">
-    <h2 id="ring-attractions-heading" class="circus-tent-heading"><span class="lang-en" lang="en">Around the Ring</span><span class="lang-ar hidden" lang="ar" dir="rtl">حول الحلبة</span></h2>
     <div class="circus-tent-scene">
       <div class="circus-tent-wall" aria-hidden="true">
         <svg class="circus-wall-drapery" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true" focusable="false">
           <defs><linearGradient id="wall-velvet-fold"><stop stop-color="#320f22"/><stop offset=".2" stop-color="#9e3a49"/><stop offset=".36" stop-color="#561429"/><stop offset=".55" stop-color="#b35457"/><stop offset=".7" stop-color="#57172b"/><stop offset="1" stop-color="#270e20"/></linearGradient><linearGradient id="wall-rope-gold"><stop stop-color="#f4dfaa"/><stop offset=".5" stop-color="#ba8a43"/><stop offset="1" stop-color="#78502e"/></linearGradient>
           <g id="wall-side-drape"><path d="M0 0h108Q96 115 41 206q-12 28-13 57l41 210Q25 494 0 477Z" fill="url(#wall-velvet-fold)" stroke="#371424" stroke-width="2"/><path d="M13 7q62 101 30 191M31 5q54 72 31 154M12 274q12 86 28 189" stroke="#e8aa7f" opacity=".16" stroke-width="3" fill="none"/><path d="M106 0Q94 116 40 207" stroke="#c99f5b" stroke-width="3" fill="none"/><path d="M2 248q19 12 35-2m-35 6q20 13 36-2" fill="none" stroke="url(#wall-rope-gold)" stroke-width="5"/><path d="M29 253q26 9 19 41" fill="none" stroke="url(#wall-rope-gold)" stroke-width="3"/><ellipse cx="48" cy="295" rx="5" ry="7" fill="url(#wall-rope-gold)"/><path d="m43 300-9 26q13 12 28 1l-9-27Z" fill="url(#wall-rope-gold)" stroke="#865b30" stroke-width=".8"/>
-<path d="M41 306q-2 12-4 20m7-21-2 24m6-24v26m4-26 3 24m0-23 5 20" fill="none" stroke="#79512e" stroke-width="1"/>
-<path d="M44 304q-2 12-2 21m6-22v25m5-23 3 21" fill="none" stroke="#f9e4a4" stroke-width="1.2" opacity=".7"/>
-<path d="M43 297q5 3 10 0" stroke="#fff1be" stroke-width="1.2" fill="none"/></g></defs>
+<path d="M41 306q-2 12-4 20m7-21-2 24m6-24v26m4-26 3 24m0-23 5 20" fill="none" stroke="#79512e" stroke-width="1.4"/>
+<path d="M44 304q-2 12-2 21m6-22v25m5-23 3 21" fill="none" stroke="#ffdc85" stroke-width="1.4" opacity=".78"/>
+<path d="M43 297q5 3 10 0" stroke="#fff1be" stroke-width="1.2" fill="none"/>
+          <path d="M105 10Q92 115 41 206q-12 28-13 57l39 200" fill="none" stroke="#351425" stroke-width="4" stroke-opacity=".52"/>
+          <path d="M105 10Q92 115 41 206q-12 28-13 57l39 200" fill="none" stroke="#e0ad72" stroke-width="1.35" stroke-dasharray="2 3" stroke-linecap="round"/>
+          <path d="M32 250q8 7 19 4m-18 1q8 8 18 4" fill="none" stroke="#b78150" stroke-width="1.4" stroke-linecap="round"/>
+          </g></defs>
+          <g id="ring-corner-swag">
+            <path d="M7 5h225Q162 76 37 59Z" fill="url(#wall-velvet-fold)" stroke="#3d1427" stroke-width="4"/>
+            <path d="M27 42Q130 75 220 10M34 53q108 26 189-43" fill="none" stroke="#f4ad88" stroke-opacity=".26" stroke-width="3"/>
+            <path d="M35 60Q155 78 232 5" fill="none" stroke="#ddb371" stroke-width="4" stroke-dasharray="1 4" stroke-linecap="round"/>
+          </g>
+          <use href="#ring-corner-swag" transform="translate(1000 0) scale(-1 1)"/>
           <use href="#wall-side-drape"/><use href="#wall-side-drape" transform="translate(1000 0) scale(-1 1)"/>
-        <g fill="none" stroke-linecap="round"><path d="M275 12q75 70 150 0m150 0q75 70 150 0M340 2q160 90 320 0" stroke="#6b472d" stroke-width="5"/><path d="M275 10q75 70 150 0m150 0q75 70 150 0M340 0q160 90 320 0" stroke="#d9bd82" stroke-width="3"/><path d="M275 10q75 70 150 0m150 0q75 70 150 0" stroke="#9a753c" stroke-width="1.5" stroke-dasharray="2 5"/></g><g transform="translate(290 24)"><path d="M-5 0q9 13 1 43l5-5 5 6Q15 15 5 0Z" fill="#7c293b" stroke="#40252b" stroke-width=".7"/><path d="M0 5q8 12 1 34" fill="none" stroke="#fff0c7" opacity=".2" stroke-width="1.5"/><path d="M-2 0q-12-12-16-5-2 7 14 8m7-3q12-12 16-5 2 7-14 8" fill="none" stroke="#d9bb7b" stroke-width="2"/><ellipse cx="0" cy="0" rx="6" ry="3" fill="#d4ae67"/><path d="M7 4q10 10 6 21" fill="none" stroke="#ceaa65" stroke-width="2"/><path d="m10 25-4 13q7 5 14 0l-4-13Z" fill="url(#wall-rope-gold)"/><path d="m10 28-1 9m4-10v12m3-11 2 9" stroke="#7a542f" stroke-width=".7"/></g><g transform="translate(390 31)"><path d="M-5 0q9 13 1 33l5-5 5 6Q15 15 5 0Z" fill="#e5d1aa" stroke="#40252b" stroke-width=".7"/><path d="M0 5q8 12 1 24" fill="none" stroke="#fff0c7" opacity=".2" stroke-width="1.5"/><path d="M-2 0q-12-12-16-5-2 7 14 8m7-3q12-12 16-5 2 7-14 8" fill="none" stroke="#d9bb7b" stroke-width="2"/><ellipse cx="0" cy="0" rx="6" ry="3" fill="#d4ae67"/><path d="M7 4q10 10 6 21" fill="none" stroke="#ceaa65" stroke-width="2"/><path d="m10 25-4 13q7 5 14 0l-4-13Z" fill="url(#wall-rope-gold)"/><path d="m10 28-1 9m4-10v12m3-11 2 9" stroke="#7a542f" stroke-width=".7"/></g><g transform="translate(610 31)"><path d="M-5 0q9 13 1 39l5-5 5 6Q15 15 5 0Z" fill="#af8544" stroke="#40252b" stroke-width=".7"/><path d="M0 5q8 12 1 30" fill="none" stroke="#fff0c7" opacity=".2" stroke-width="1.5"/><path d="M-2 0q-12-12-16-5-2 7 14 8m7-3q12-12 16-5 2 7-14 8" fill="none" stroke="#d9bb7b" stroke-width="2"/><ellipse cx="0" cy="0" rx="6" ry="3" fill="#d4ae67"/><path d="M7 4q10 10 6 21" fill="none" stroke="#ceaa65" stroke-width="2"/><path d="m10 25-4 13q7 5 14 0l-4-13Z" fill="url(#wall-rope-gold)"/><path d="m10 28-1 9m4-10v12m3-11 2 9" stroke="#7a542f" stroke-width=".7"/></g><g transform="translate(710 24)"><path d="M-5 0q9 13 1 47l5-5 5 6Q15 15 5 0Z" fill="#7c293b" stroke="#40252b" stroke-width=".7"/><path d="M0 5q8 12 1 38" fill="none" stroke="#fff0c7" opacity=".2" stroke-width="1.5"/><path d="M-2 0q-12-12-16-5-2 7 14 8m7-3q12-12 16-5 2 7-14 8" fill="none" stroke="#d9bb7b" stroke-width="2"/><ellipse cx="0" cy="0" rx="6" ry="3" fill="#d4ae67"/><path d="M7 4q10 10 6 21" fill="none" stroke="#ceaa65" stroke-width="2"/><path d="m10 25-4 13q7 5 14 0l-4-13Z" fill="url(#wall-rope-gold)"/><path d="m10 28-1 9m4-10v12m3-11 2 9" stroke="#7a542f" stroke-width=".7"/></g></svg>
-        <!-- Small decorative alcove vignettes within the existing arched mounts. -->
-        <div class="circus-wall-bay circus-wall-bay--left"><span class="circus-photo-mat"><svg class="circus-alcove-art" viewBox="0 0 120 115" aria-hidden="true" focusable="false"><defs><linearGradient id="alcove-vest-blue" x2=".7" y2="1"><stop stop-color="#73b9ef"/><stop offset=".45" stop-color="#347bb2"/><stop offset="1" stop-color="#153f6b"/></linearGradient></defs><ellipse cx="60" cy="103" rx="38" ry="5" fill="#1b1422" opacity=".45"/><path d="m38 19 13-5q9 13 18 0l13 5-3 24 16 14-7 44H32l-7-44 16-14Z" fill="url(#alcove-vest-blue)" stroke="#183650" stroke-width="2" stroke-linejoin="round"/><path d="m51 16 9 23 9-23M60 39v60" fill="none" stroke="#b0d8f2" stroke-width="2"/><path d="M37 75h17v17H36m31-17h17l1 17H67" fill="#286293" stroke="#6ca3cc"/><path d="M34 59h52v14H34Z" fill="#204d7e"/><text x="60" y="70" fill="#fff" font-family="Arial, sans-serif" font-size="12" font-weight="900" text-anchor="middle">PRESS</text><g transform="translate(66 43) scale(.6)"><path d="M0 0h24v5H0Z" fill="#000000"/><path d="M0 5h24v5H0Z" fill="#FFFFFF"/><path d="M0 10h24v5H0Z" fill="#007A3D"/><path d="m0 0 10 7.5L0 15Z" fill="#CE1126"/></g><path d="M39 23 36 43m-3 36-2 12m49-52 6 12" fill="none" stroke="#bce4ff" opacity=".4" stroke-width="2" stroke-linecap="round"/></svg></span></div>
-        <div class="circus-wall-bay circus-wall-bay--center"><span class="circus-photo-mat"><svg class="circus-alcove-art" viewBox="0 0 120 115" aria-hidden="true" focusable="false"><defs><linearGradient id="alcove-cup" x2=".6" y2="1"><stop stop-color="#fff5db"/><stop offset=".5" stop-color="#e5bf8e"/><stop offset="1" stop-color="#a16b4b"/></linearGradient></defs><ellipse cx="60" cy="101" rx="40" ry="6" fill="#231722" opacity=".4"/><ellipse cx="60" cy="96" rx="41" ry="8" fill="#b78766" stroke="#ecc58e"/><path d="M86 48q28-3 20 22-5 13-21 9" fill="none" stroke="#dfb88c" stroke-width="8"/><path d="M88 50q22-1 15 19" fill="none" stroke="#fff0cd" stroke-width="2"/><path d="M28 42h61l-4 39q-3 17-26 17T32 81Z" fill="url(#alcove-cup)" stroke="#a77955" stroke-width="1.5"/><ellipse cx="59" cy="43" rx="31" ry="8" fill="#f6d9b2" stroke="#fff0cb" stroke-width="2"/><ellipse cx="59" cy="44" rx="25" ry="5" fill="#613b2e"/><path d="M38 56v21q0 8 7 12" fill="none" stroke="#fff9e1" opacity=".7" stroke-width="3" stroke-linecap="round"/><g transform="translate(47 63)"><path d="M0 0h24v5H0Z" fill="#000000"/><path d="M0 5h24v5H0Z" fill="#FFFFFF"/><path d="M0 10h24v5H0Z" fill="#007A3D"/><path d="m0 0 10 7.5L0 15Z" fill="#CE1126"/></g><g class="circus-alcove-steam" fill="none" stroke="#fff0d0" stroke-width="2.5" stroke-linecap="round"><path d="M47 34q-8-7 0-14t0-12"/><path d="M62 32q-8-7 0-14t0-12"/><path d="M77 34q-8-7 0-14t0-12"/></g></svg></span></div>
-        <div class="circus-wall-bay circus-wall-bay--right"><span class="circus-photo-mat"><svg class="circus-alcove-art" viewBox="0 0 120 115" aria-hidden="true" focusable="false"><defs><linearGradient id="alcove-blueprint" x2=".5" y2="1"><stop stop-color="#84c8e9"/><stop offset=".5" stop-color="#3c8dc0"/><stop offset="1" stop-color="#23547f"/></linearGradient><radialGradient id="alcove-ball"><stop stop-color="#ffffff99"/><stop offset=".4" stop-color="#ffffff11"/><stop offset="1" stop-color="#00000055"/></radialGradient></defs><ellipse cx="60" cy="103" rx="47" ry="5" fill="#201624" opacity=".4"/><path d="m24 26 68-7 11 65-66 12q-16-13-13-70Z" fill="url(#alcove-blueprint)" stroke="#add5eb"/><path d="m27 29 64-7m-60 18 63-8m-60 19 61-8m-59 19 60-9m-57 20 59-9M44 26l9 62m9-65 9 62m9-64 8 61" stroke="#c4ecff" opacity=".25" fill="none"/><path d="M25 26q-15-7-13 7l10 60q6 13 15 3L27 34q-3-9-9-4" fill="#75b5d9" stroke="#b5dff2"/><path d="m44 58 18-24 22 20m-36 3 3 23 31-5-3-21M60 79l-2-16 11-2 2 16" fill="none" stroke="#d9f1ff" stroke-width="2"/><path d="m49 47 27-4" stroke="#ffd68d" stroke-width="2"/><g><circle cx="17" cy="98" r="9" fill="#e5658d"/><circle cx="17" cy="98" r="9" fill="url(#alcove-ball)"/><circle cx="101" cy="94" r="10" fill="#68dfcd"/><circle cx="101" cy="94" r="10" fill="url(#alcove-ball)"/><circle cx="85" cy="104" r="7" fill="#f2c45c"/><circle cx="85" cy="104" r="7" fill="url(#alcove-ball)"/></g></svg></span></div>
+        </svg>
+        <div class="ring-wall-displays">
+          <div class="ring-wall-display">
+            <div class="circus-wall-bay"><span class="circus-photo-mat"><svg class="circus-alcove-art" viewBox="0 0 120 115" aria-hidden="true" focusable="false"><defs><linearGradient id="alcove-vest-blue" x2=".7" y2="1"><stop stop-color="#73b9ef"/><stop offset=".45" stop-color="#347bb2"/><stop offset="1" stop-color="#153f6b"/></linearGradient></defs><ellipse cx="60" cy="103" rx="38" ry="5" fill="#1b1422" opacity=".45"/><path d="m38 19 13-5q9 13 18 0l13 5-3 24 16 14-7 44H32l-7-44 16-14Z" fill="url(#alcove-vest-blue)" stroke="#183650" stroke-width="2" stroke-linejoin="round"/><path d="m51 16 9 23 9-23M60 39v60" fill="none" stroke="#b0d8f2" stroke-width="2"/><path d="M37 75h17v17H36m31-17h17l1 17H67" fill="#286293" stroke="#6ca3cc"/><path d="M34 59h52v14H34Z" fill="#204d7e"/><text x="60" y="70" fill="#fff" font-family="Arial, sans-serif" font-size="12" font-weight="900" text-anchor="middle">PRESS</text><g transform="translate(66 43) scale(.6)"><path d="M0 0h24v5H0Z" fill="#000000"/><path d="M0 5h24v5H0Z" fill="#FFFFFF"/><path d="M0 10h24v5H0Z" fill="#007A3D"/><path d="m0 0 10 7.5L0 15Z" fill="#CE1126"/></g><path d="M39 23 36 43m-3 36-2 12m49-52 6 12" fill="none" stroke="#bce4ff" opacity=".4" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+          </div>
+          <div class="ring-wall-display">
+            <div class="circus-wall-bay"><span class="circus-photo-mat"><svg class="circus-alcove-art" viewBox="0 0 120 115" aria-hidden="true" focusable="false"><defs><linearGradient id="alcove-cup" x2=".6" y2="1"><stop stop-color="#fff5db"/><stop offset=".5" stop-color="#e5bf8e"/><stop offset="1" stop-color="#a16b4b"/></linearGradient></defs><ellipse cx="60" cy="101" rx="40" ry="6" fill="#231722" opacity=".4"/><ellipse cx="60" cy="96" rx="41" ry="8" fill="#b78766" stroke="#ecc58e"/><path d="M86 48q28-3 20 22-5 13-21 9" fill="none" stroke="#dfb88c" stroke-width="8"/><path d="M88 50q22-1 15 19" fill="none" stroke="#fff0cd" stroke-width="2"/><path d="M28 42h61l-4 39q-3 17-26 17T32 81Z" fill="url(#alcove-cup)" stroke="#a77955" stroke-width="1.5"/><ellipse cx="59" cy="43" rx="31" ry="8" fill="#f6d9b2" stroke="#fff0cb" stroke-width="2"/><ellipse cx="59" cy="44" rx="25" ry="5" fill="#613b2e"/><path d="M38 56v21q0 8 7 12" fill="none" stroke="#fff9e1" opacity=".7" stroke-width="3" stroke-linecap="round"/><g transform="translate(47 63)"><path d="M0 0h24v5H0Z" fill="#000000"/><path d="M0 5h24v5H0Z" fill="#FFFFFF"/><path d="M0 10h24v5H0Z" fill="#007A3D"/><path d="m0 0 10 7.5L0 15Z" fill="#CE1126"/></g><g class="circus-alcove-steam" fill="none" stroke="#fff0d0" stroke-width="2.5" stroke-linecap="round"><path d="M47 34q-8-7 0-14t0-12"/><path d="M62 32q-8-7 0-14t0-12"/><path d="M77 34q-8-7 0-14t0-12"/></g></svg></span></div>
+          </div>
+          <div class="ring-wall-display">
+            <div class="circus-wall-bay"><span class="circus-photo-mat"><svg class="circus-alcove-art" viewBox="0 0 120 115" aria-hidden="true" focusable="false"><defs><linearGradient id="alcove-blueprint" x2=".5" y2="1"><stop stop-color="#84c8e9"/><stop offset=".5" stop-color="#3c8dc0"/><stop offset="1" stop-color="#23547f"/></linearGradient><radialGradient id="alcove-ball"><stop stop-color="#ffffff99"/><stop offset=".4" stop-color="#ffffff11"/><stop offset="1" stop-color="#00000055"/></radialGradient></defs><ellipse cx="60" cy="103" rx="47" ry="5" fill="#201624" opacity=".4"/><path d="m24 26 68-7 11 65-66 12q-16-13-13-70Z" fill="url(#alcove-blueprint)" stroke="#add5eb"/><path d="m27 29 64-7m-60 18 63-8m-60 19 61-8m-59 19 60-9m-57 20 59-9M44 26l9 62m9-65 9 62m9-64 8 61" stroke="#c4ecff" opacity=".25" fill="none"/><path d="M25 26q-15-7-13 7l10 60q6 13 15 3L27 34q-3-9-9-4" fill="#75b5d9" stroke="#b5dff2"/><path d="m44 58 18-24 22 20m-36 3 3 23 31-5-3-21M60 79l-2-16 11-2 2 16" fill="none" stroke="#d9f1ff" stroke-width="2"/><path d="m49 47 27-4" stroke="#ffd68d" stroke-width="2"/><g><circle cx="17" cy="98" r="9" fill="#e5658d"/><circle cx="17" cy="98" r="9" fill="url(#alcove-ball)"/><circle cx="101" cy="94" r="10" fill="#68dfcd"/><circle cx="101" cy="94" r="10" fill="url(#alcove-ball)"/><circle cx="85" cy="104" r="7" fill="#f2c45c"/><circle cx="85" cy="104" r="7" fill="url(#alcove-ball)"/></g></svg></span></div>
+          </div>
+        </div>
       </div>
-      <!-- Decorative elevated benches: below the wall frames, behind floor and stations. -->
       <svg class="circus-spectator-seating" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <defs>
-          <linearGradient id="bench-wood" x2="0" y2="1"><stop stop-color="#d6a56a"/><stop offset=".35" stop-color="#a16d40"/><stop offset="1" stop-color="#392625"/></linearGradient>
-          <linearGradient id="bench-fascia" x2="0" y2="1"><stop stop-color="#68402b"/><stop offset=".25" stop-color="#533325"/><stop offset="1" stop-color="#241b20"/></linearGradient>
-          <linearGradient id="bench-upholstery" x2="0" y2="1"><stop stop-color="#d08b88"/><stop offset=".22" stop-color="#ac5869"/><stop offset=".55" stop-color="#843448"/><stop offset="1" stop-color="#4e2034"/></linearGradient>
+          <linearGradient id="ring-tier-wood" x2="0" y2="100%">
+            <stop stop-color="#c68e55"/><stop offset=".28" stop-color="#835132"/><stop offset="1" stop-color="#321927"/>
+          </linearGradient>
+          <pattern id="ring-tier-grain" width="70" height="11" patternUnits="userSpaceOnUse">
+            <path d="M1 3q14-3 30 0t35 0M6 8q12-2 22 0m10-1q10 2 27 0" fill="none" stroke="#f2ba77" stroke-opacity=".38"/>
+          </pattern>
+          <g id="ring-seating-tier">
+            <path d="M0 9Q500 116 1000 9v20Q500 140 0 29Z" fill="url(#ring-tier-wood)" stroke="#241320" stroke-width="2"/>
+            <path d="M1 14Q500 121 999 14v11Q500 132 1 25Z" fill="url(#ring-tier-grain)"/>
+            <path d="M2 7Q500 114 998 7" fill="none" stroke="#391524" stroke-width="12"/>
+            <path d="M2 4Q500 111 998 4" fill="none" stroke="#803044" stroke-width="7"/>
+            <path d="M1 13Q500 120 999 13" fill="none" stroke="#e6b576" stroke-width="2"/>
+            <path d="M143 37v11m180 15v10m354-10v10m180-36v11" fill="none" stroke="#572e32" stroke-width="2"/>
+            <path d="M2 26Q500 136 998 26" fill="none" stroke="#2c1722" stroke-width="4" opacity=".75"/>
+            <path d="M96 32q9 8 15 2m106 18q9 8 15 2m536 0q6 6 15-2m106-18q6 6 15-2" fill="none" stroke="#b88049" stroke-width="3"/>
+            <path class="circus-seating-lights" d="M28 23q63 14 129 26m686 0q66-12 129-26" fill="none" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 24"/>
+          </g>
         </defs>
-        <path d="M140 8Q500 68 860 8L995 165Q500 255 5 165Z" fill="#1d1320" opacity=".6"/>
-        <path d="M142 12q-18-4-24-14m737 14q18-4 24-14M26 140q-16-8-20-25m968 25q16-8 20-25" fill="none" stroke="#64432c" stroke-width="7" stroke-linecap="round"/>
-        <g class="circus-seat-tier">
-          <path d="M145 35Q500 109 855 35" fill="none" stroke="#100c15" stroke-width="11" opacity=".7"/>
-          <path d="M145 21Q500 90 855 21v10Q500 104 145 31Z" fill="url(#bench-fascia)" stroke="#352023" stroke-width="1.5"/>
-          <path d="M145 12Q500 77 855 12v9Q500 90 145 21Z" fill="url(#bench-wood)" stroke="#d4a66d" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M151 14Q500 79 849 14" fill="none" stroke="url(#bench-upholstery)" stroke-width="7" stroke-linecap="round"/>
-          <path d="M154 12Q500 76 846 12" fill="none" stroke="#f2b3a2" stroke-opacity=".32" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M147 22Q500 92 853 22" fill="none" stroke="#d6ab5c" stroke-width="2"/>
-          <path d="M145 26Q500 96 855 26" fill="none" stroke="#1d131c" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 42"/>
-          <path class="circus-seating-lights" d="M145 26Q500 96 855 26" fill="none" stroke="#ffe4a0" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 42"/>
-        <path d="M251.5 26.6q-2 4 0 7" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M253.5 28.6v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M358.0 37.3q-2 4 0 7" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M360.0 39.3v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M464.5 42.2q-2 4 0 7" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M466.5 44.2v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M571.0 41.2q-2 4 0 7" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M573.0 43.2v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M677.5 34.4q-2 4 0 7" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M679.5 36.4v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M784.0 21.7q-2 4 0 7" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M786.0 23.7v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M299.3 51.0q4 7 0 12h18q-4-5 0-12" fill="#573627" stroke="#271b20" stroke-width="1.2"/><path d="M302.3 52.0q3 5 0 8" fill="none" stroke="#b3804b" stroke-opacity=".5"/><path d="M682.7 51.0q4 7 0 12h18q-4-5 0-12" fill="#573627" stroke="#271b20" stroke-width="1.2"/><path d="M685.7 52.0q3 5 0 8" fill="none" stroke="#b3804b" stroke-opacity=".5"/></g>
-        <g class="circus-seat-tier">
-          <path d="M110 74Q500 156 890 74" fill="none" stroke="#100c15" stroke-width="11" opacity=".7"/>
-          <path d="M110 58Q500 135 890 58v12Q500 151 110 70Z" fill="url(#bench-fascia)" stroke="#352023" stroke-width="1.5"/>
-          <path d="M110 48Q500 121 890 48v10Q500 135 110 58Z" fill="url(#bench-wood)" stroke="#d4a66d" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M116 50Q500 123 884 50" fill="none" stroke="url(#bench-upholstery)" stroke-width="8" stroke-linecap="round"/>
-          <path d="M119 48Q500 120 881 48" fill="none" stroke="#f2b3a2" stroke-opacity=".32" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M112 59Q500 137 888 59" fill="none" stroke="#d6ab5c" stroke-width="2"/>
-          <path d="M110 63Q500 141 890 63" fill="none" stroke="#1d131c" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 42"/>
-          <path class="circus-seating-lights" d="M110 63Q500 141 890 63" fill="none" stroke="#ffe4a0" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 42"/>
-        <path d="M227.0 64.6q-2 4 0 8" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M229.0 66.6v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M344.0 76.7q-2 4 0 8" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M346.0 78.7v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M461.0 82.1q-2 4 0 8" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M463.0 84.1v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M578.0 81.0q-2 4 0 8" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M580.0 83.0v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M695.0 73.4q-2 4 0 8" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M697.0 75.4v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M812.0 59.1q-2 4 0 8" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M814.0 61.1v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M280.4 92.9q4 7 0 12h18q-4-5 0-12" fill="#573627" stroke="#271b20" stroke-width="1.2"/><path d="M283.4 93.9q3 5 0 8" fill="none" stroke="#b3804b" stroke-opacity=".5"/><path d="M701.6 92.9q4 7 0 12h18q-4-5 0-12" fill="#573627" stroke="#271b20" stroke-width="1.2"/><path d="M704.6 93.9q3 5 0 8" fill="none" stroke="#b3804b" stroke-opacity=".5"/></g>
-        <g class="circus-seat-tier">
-          <path d="M70 115Q500 202 930 115" fill="none" stroke="#100c15" stroke-width="11" opacity=".7"/>
-          <path d="M70 98Q500 180 930 98v13Q500 197 70 111Z" fill="url(#bench-fascia)" stroke="#352023" stroke-width="1.5"/>
-          <path d="M70 87Q500 165 930 87v11Q500 180 70 98Z" fill="url(#bench-wood)" stroke="#d4a66d" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M76 89Q500 167 924 89" fill="none" stroke="url(#bench-upholstery)" stroke-width="9" stroke-linecap="round"/>
-          <path d="M79 87Q500 164 921 87" fill="none" stroke="#f2b3a2" stroke-opacity=".32" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M72 99Q500 182 928 99" fill="none" stroke="#d6ab5c" stroke-width="2"/>
-          <path d="M70 103Q500 186 930 103" fill="none" stroke="#1d131c" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 42"/>
-          <path class="circus-seating-lights" d="M70 103Q500 186 930 103" fill="none" stroke="#ffe4a0" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 42"/>
-        <path d="M199.0 104.9q-2 4 0 9" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M201.0 106.9v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M328.0 117.8q-2 4 0 9" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M330.0 119.8v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M457.0 123.6q-2 4 0 9" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M459.0 125.6v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M586.0 122.4q-2 4 0 9" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M588.0 124.4v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M715.0 114.2q-2 4 0 9" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M717.0 116.2v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M844.0 99.0q-2 4 0 9" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M846.0 101.0v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M258.8 135.6q4 7 0 12h18q-4-5 0-12" fill="#573627" stroke="#271b20" stroke-width="1.2"/><path d="M261.8 136.6q3 5 0 8" fill="none" stroke="#b3804b" stroke-opacity=".5"/><path d="M723.2 135.6q4 7 0 12h18q-4-5 0-12" fill="#573627" stroke="#271b20" stroke-width="1.2"/><path d="M726.2 136.6q3 5 0 8" fill="none" stroke="#b3804b" stroke-opacity=".5"/></g>
-        <g class="circus-seat-tier">
-          <path d="M25 159Q500 251 975 159" fill="none" stroke="#100c15" stroke-width="11" opacity=".7"/>
-          <path d="M25 141Q500 228 975 141v14Q500 246 25 155Z" fill="url(#bench-fascia)" stroke="#352023" stroke-width="1.5"/>
-          <path d="M25 129Q500 212 975 129v12Q500 228 25 141Z" fill="url(#bench-wood)" stroke="#d4a66d" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M31 131Q500 214 969 131" fill="none" stroke="url(#bench-upholstery)" stroke-width="10" stroke-linecap="round"/>
-          <path d="M34 129Q500 211 966 129" fill="none" stroke="#f2b3a2" stroke-opacity=".32" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M27 142Q500 230 973 142" fill="none" stroke="#d6ab5c" stroke-width="2"/>
-          <path d="M25 146Q500 234 975 146" fill="none" stroke="#1d131c" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 42"/>
-          <path class="circus-seating-lights" d="M25 146Q500 234 975 146" fill="none" stroke="#ffe4a0" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 42"/>
-        <path d="M167.5 148.2q-2 4 0 10" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M169.5 150.2v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M310.0 161.9q-2 4 0 10" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M312.0 163.9v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M452.5 168.1q-2 4 0 10" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M454.5 170.1v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M595.0 166.8q-2 4 0 10" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M597.0 168.8v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M737.5 158.1q-2 4 0 10" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M739.5 160.1v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M880.0 141.9q-2 4 0 10" fill="none" stroke="#4d2234" stroke-opacity=".5" stroke-width="1.4"/><path d="M882.0 143.9v3" stroke="#edb09b" stroke-opacity=".2"/><path d="M234.5 181.4q4 7 0 12h18q-4-5 0-12" fill="#573627" stroke="#271b20" stroke-width="1.2"/><path d="M237.5 182.4q3 5 0 8" fill="none" stroke="#b3804b" stroke-opacity=".5"/><path d="M747.5 181.4q4 7 0 12h18q-4-5 0-12" fill="#573627" stroke="#271b20" stroke-width="1.2"/><path d="M750.5 182.4q3 5 0 8" fill="none" stroke="#b3804b" stroke-opacity=".5"/></g>
-      <path d="M163 27Q480 97 837 27" fill="none" stroke="#c3915833" stroke-width="1" stroke-dasharray="19 8 5 15"/><path d="M128 63Q480 141 872 63" fill="none" stroke="#c3915833" stroke-width="1" stroke-dasharray="19 8 5 15"/><path d="M88 102Q480 185 912 102" fill="none" stroke="#c3915833" stroke-width="1" stroke-dasharray="19 8 5 15"/><path d="M43 144Q480 232 957 144" fill="none" stroke="#c3915833" stroke-width="1" stroke-dasharray="19 8 5 15"/><path d="M369.2 47.3q5 5 10 0m-8 1-3 6m6-6 4 5" fill="none" stroke="#d1ad65" stroke-width="1.5" stroke-linecap="round"/><path d="M366.2 56.3v9h10" fill="none" stroke="#241a1d" stroke-width="3" stroke-linejoin="round"/><path d="M624.8 47.3q5 5 10 0m-8 1-3 6m6-6 4 5" fill="none" stroke="#d1ad65" stroke-width="1.5" stroke-linecap="round"/><path d="M621.8 56.3v9h10" fill="none" stroke="#241a1d" stroke-width="3" stroke-linejoin="round"/><path d="M356.6 86.8q5 5 10 0m-8 1-3 6m6-6 4 5" fill="none" stroke="#d1ad65" stroke-width="1.5" stroke-linecap="round"/><path d="M353.6 95.8v9h10" fill="none" stroke="#241a1d" stroke-width="3" stroke-linejoin="round"/><path d="M637.4 86.8q5 5 10 0m-8 1-3 6m6-6 4 5" fill="none" stroke="#d1ad65" stroke-width="1.5" stroke-linecap="round"/><path d="M634.4 95.8v9h10" fill="none" stroke="#241a1d" stroke-width="3" stroke-linejoin="round"/><path d="M342.2 127.9q5 5 10 0m-8 1-3 6m6-6 4 5" fill="none" stroke="#d1ad65" stroke-width="1.5" stroke-linecap="round"/><path d="M339.2 136.9v9h10" fill="none" stroke="#241a1d" stroke-width="3" stroke-linejoin="round"/><path d="M651.8 127.9q5 5 10 0m-8 1-3 6m6-6 4 5" fill="none" stroke="#d1ad65" stroke-width="1.5" stroke-linecap="round"/><path d="M648.8 136.9v9h10" fill="none" stroke="#241a1d" stroke-width="3" stroke-linejoin="round"/><path d="M326.0 172.1q5 5 10 0m-8 1-3 6m6-6 4 5" fill="none" stroke="#d1ad65" stroke-width="1.5" stroke-linecap="round"/><path d="M323.0 181.1v9h10" fill="none" stroke="#241a1d" stroke-width="3" stroke-linejoin="round"/><path d="M668.0 172.1q5 5 10 0m-8 1-3 6m6-6 4 5" fill="none" stroke="#d1ad65" stroke-width="1.5" stroke-linecap="round"/><path d="M665.0 181.1v9h10" fill="none" stroke="#241a1d" stroke-width="3" stroke-linejoin="round"/></svg>
-      <svg class="circus-tent-rigging" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <defs><linearGradient id="ring-brass-housing" x2=".5" y2="1"><stop stop-color="#f5db9b"/><stop offset=".28" stop-color="#b88c49"/><stop offset=".6" stop-color="#715134"/><stop offset="1" stop-color="#392735"/></linearGradient><radialGradient id="ring-haze-0" cx=".5" cy="0" r="1"><stop stop-color="#ffdaa0" stop-opacity=".19"/><stop offset=".5" stop-color="#ffdaa0" stop-opacity=".07"/><stop offset="1" stop-color="#ffdaa0" stop-opacity="0"/></radialGradient><radialGradient id="ring-lens-0"><stop stop-color="#fff9e5"/><stop offset=".4" stop-color="#ffdaa0"/><stop offset="1" stop-color="#926c42"/></radialGradient><radialGradient id="ring-haze-1" cx=".5" cy="0" r="1"><stop stop-color="#fff1d8" stop-opacity=".19"/><stop offset=".5" stop-color="#fff1d8" stop-opacity=".07"/><stop offset="1" stop-color="#fff1d8" stop-opacity="0"/></radialGradient><radialGradient id="ring-lens-1"><stop stop-color="#fff9e5"/><stop offset=".4" stop-color="#fff1d8"/><stop offset="1" stop-color="#926c42"/></radialGradient><radialGradient id="ring-haze-2" cx=".5" cy="0" r="1"><stop stop-color="#f2dfb6" stop-opacity=".19"/><stop offset=".5" stop-color="#f2dfb6" stop-opacity=".07"/><stop offset="1" stop-color="#f2dfb6" stop-opacity="0"/></radialGradient><radialGradient id="ring-lens-2"><stop stop-color="#fff9e5"/><stop offset=".4" stop-color="#f2dfb6"/><stop offset="1" stop-color="#926c42"/></radialGradient></defs><g class="circus-structural-ropes" fill="none" stroke-linecap="round"><path d="M110 5Q61 92 50 232M890 5q49 87 60 227" stroke="#68472d" stroke-width="5"/><path d="M110 5Q61 92 50 232M890 5q49 87 60 227" stroke="#e5c98e" stroke-width="3"/><path d="M110 5Q61 92 50 232M890 5q49 87 60 227" stroke="#9c753f" stroke-width="2" stroke-dasharray="2 5"/><g fill="#caa25c" stroke="#694c30" stroke-width="1"><circle cx="110" cy="5" r="4"/><circle cx="890" cy="5" r="4"/><circle cx="50" cy="232" r="4"/><circle cx="950" cy="232" r="4"/></g></g><path d="M30 52Q500 9 970 52" fill="none" stroke="#936a41" stroke-width="3"/><g transform="translate(220 42)"><g class="circus-dimensional-beam" style="--beam-phase: 0s"><ellipse cx="0" cy="148" rx="89" ry="137" fill="url(#ring-haze-0)"/><ellipse cx="0" cy="189" rx="128" ry="113" fill="url(#ring-haze-0)" opacity=".5"/><ellipse cx="0" cy="255" rx="125" ry="52" fill="url(#ring-haze-0)" opacity=".6"/><g class="circus-architectural-dust" fill="#ffedbc"><circle cx="-25" cy="102" r="1.2"/><circle cx="13" cy="138" r="1"/><circle cx="-43" cy="192" r="1.3"/><circle cx="35" cy="228" r="1.1"/><circle cx="3" cy="263" r="1"/></g></g><path d="M-20 1v-14h40V1" fill="none" stroke="#b79459" stroke-width="4"/><path d="M-20-5Q0-13 20-5l4 29q-24 12-48 0Z" fill="url(#ring-brass-housing)" stroke="#6f5134" stroke-width="2"/><path d="M-23 18-31 31l12 6 38-1 12-5-8-13" fill="url(#ring-brass-housing)" stroke="#dfbd7a"/><ellipse cx="0" cy="29" rx="21" ry="7" fill="#2e2530" stroke="#e1ba6b" stroke-width="3"/><ellipse class="circus-brass-lens-glow" cx="0" cy="29" rx="16" ry="4.5" fill="url(#ring-lens-0)"/><path d="M-14-1q8-4 18-2m-21 6 2 10" fill="none" stroke="#ffe9b4" opacity=".6" stroke-width="2" stroke-linecap="round"/><circle cx="-22" cy="7" r="3" fill="#cfaa69"/><circle cx="22" cy="7" r="3" fill="#cfaa69"/></g><g transform="translate(500 42)"><g class="circus-dimensional-beam" style="--beam-phase: -6s"><ellipse cx="0" cy="148" rx="89" ry="137" fill="url(#ring-haze-1)"/><ellipse cx="0" cy="189" rx="128" ry="113" fill="url(#ring-haze-1)" opacity=".5"/><ellipse cx="0" cy="255" rx="125" ry="52" fill="url(#ring-haze-1)" opacity=".6"/><g class="circus-architectural-dust" fill="#ffedbc"><circle cx="-25" cy="102" r="1.2"/><circle cx="13" cy="138" r="1"/><circle cx="-43" cy="192" r="1.3"/><circle cx="35" cy="228" r="1.1"/><circle cx="3" cy="263" r="1"/></g></g><path d="M-20 1v-14h40V1" fill="none" stroke="#b79459" stroke-width="4"/><path d="M-20-5Q0-13 20-5l4 29q-24 12-48 0Z" fill="url(#ring-brass-housing)" stroke="#6f5134" stroke-width="2"/><path d="M-23 18-31 31l12 6 38-1 12-5-8-13" fill="url(#ring-brass-housing)" stroke="#dfbd7a"/><ellipse cx="0" cy="29" rx="21" ry="7" fill="#2e2530" stroke="#e1ba6b" stroke-width="3"/><ellipse class="circus-brass-lens-glow" cx="0" cy="29" rx="16" ry="4.5" fill="url(#ring-lens-1)"/><path d="M-14-1q8-4 18-2m-21 6 2 10" fill="none" stroke="#ffe9b4" opacity=".6" stroke-width="2" stroke-linecap="round"/><circle cx="-22" cy="7" r="3" fill="#cfaa69"/><circle cx="22" cy="7" r="3" fill="#cfaa69"/></g><g transform="translate(780 42)"><g class="circus-dimensional-beam" style="--beam-phase: -12s"><ellipse cx="0" cy="148" rx="89" ry="137" fill="url(#ring-haze-2)"/><ellipse cx="0" cy="189" rx="128" ry="113" fill="url(#ring-haze-2)" opacity=".5"/><ellipse cx="0" cy="255" rx="125" ry="52" fill="url(#ring-haze-2)" opacity=".6"/><g class="circus-architectural-dust" fill="#ffedbc"><circle cx="-25" cy="102" r="1.2"/><circle cx="13" cy="138" r="1"/><circle cx="-43" cy="192" r="1.3"/><circle cx="35" cy="228" r="1.1"/><circle cx="3" cy="263" r="1"/></g></g><path d="M-20 1v-14h40V1" fill="none" stroke="#b79459" stroke-width="4"/><path d="M-20-5Q0-13 20-5l4 29q-24 12-48 0Z" fill="url(#ring-brass-housing)" stroke="#6f5134" stroke-width="2"/><path d="M-23 18-31 31l12 6 38-1 12-5-8-13" fill="url(#ring-brass-housing)" stroke="#dfbd7a"/><ellipse cx="0" cy="29" rx="21" ry="7" fill="#2e2530" stroke="#e1ba6b" stroke-width="3"/><ellipse class="circus-brass-lens-glow" cx="0" cy="29" rx="16" ry="4.5" fill="url(#ring-lens-2)"/><path d="M-14-1q8-4 18-2m-21 6 2 10" fill="none" stroke="#ffe9b4" opacity=".6" stroke-width="2" stroke-linecap="round"/><circle cx="-22" cy="7" r="3" fill="#cfaa69"/><circle cx="22" cy="7" r="3" fill="#cfaa69"/></g></svg>
-      <div class="circus-ring-floor" aria-hidden="true"></div>
-      <nav class="circus-attraction-nav" aria-labelledby="ring-attractions-heading">
-        <div class="circus-dust-support">
-          <p class="circus-dust-inscription"><span class="lang-en" lang="en"><span class="circus-dust-question">Enjoying our show so far?</span> <span class="circus-dust-invitation">Please go support</span></span><span class="lang-ar hidden" lang="ar" dir="rtl"><span class="circus-dust-question">هل تستمتعون بعرضنا حتى الآن؟</span> <span class="circus-dust-invitation">تفضّلوا بتقديم الدعم</span></span></p>
-          <span class="circus-dust-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-          <a class="circus-dust-flag-link" href="circus-banners.html#circus-school-heading" aria-label="Support Gaza Circus School / ادعموا مدرسة سيرك غزة">
-            <svg viewBox="0 0 90 60" aria-hidden="true" focusable="false">
-              <defs><clipPath id="ring-support-flag-clip"><path d="M10 9q17-5 34 0t35 0v42q-18 5-35 0t-34 0Z"/></clipPath><linearGradient id="ring-support-fold"><stop stop-color="#ffffff33"/><stop offset=".3" stop-color="#00000022"/><stop offset=".6" stop-color="#ffffff22"/><stop offset="1" stop-color="#00000033"/></linearGradient></defs>
-              <g class="circus-dust-flag-fabric">
-                <g clip-path="url(#ring-support-flag-clip)"><path d="M10 4h69v19H10Z" fill="#000000"/><path d="M10 23h69v14H10Z" fill="#FFFFFF"/><path d="M10 37h69v19H10Z" fill="#007A3D"/><path d="m10 5 30 25-30 25Z" fill="#CE1126"/><path d="M10 4h69v52H10Z" fill="url(#ring-support-fold)"/></g>
-                <path d="M10 9q17-5 34 0t35 0" fill="none" stroke="#ffffff66" stroke-width="1"/>
-              </g>
-              <g class="circus-dust-flag-sparkles" fill="#ffe4a1"><path d="m82 1 2 5 5 2-5 2-2 5-2-5-5-2 5-2ZM6 43l2 4 4 1-4 2-2 4-1-4-4-2 4-1Z"/></g>
-            </svg>
-          </a>
-        </div>
+        <use href="#ring-seating-tier" transform="translate(53 65) scale(.894 .95)"/>
+        <use href="#ring-seating-tier" transform="translate(18 98) scale(.964 1)"/>
+        <path d="M19 117Q500 221 981 117" fill="none" stroke="#42221e" stroke-width="8"/>
+        <path d="M19 115Q500 219 981 115" fill="none" stroke="#d39a52" stroke-width="3"/>
+      </svg>
+      <svg class="ring-audience" viewBox="0 0 1000 235" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="ring-velvet" x2="0" y2="1"><stop stop-color="#ad3043"/><stop offset=".45" stop-color="#691127"/><stop offset="1" stop-color="#310917"/></linearGradient>
+          <radialGradient id="ring-lantern-glass"><stop stop-color="#fff8cb"/><stop offset=".55" stop-color="#ffc461"/><stop offset="1" stop-color="#ad4d20"/></radialGradient>
+          <g id="ring-palestinian-flag">
+            <path d="M0 0h50v10H0Z" fill="#111016"/>
+            <path d="M0 10h50v10H0Z" fill="#fff6de"/>
+            <path d="M0 20h50v10H0Z" fill="#087545"/>
+            <path d="M0 0 19 15 0 30Z" fill="#cf233d"/>
+          </g>
+          <path id="ring-puppet-cut" d="M2 2Q15 7 28 3T48 1q4 11 0 26Q35 24 23 28T2 29Q-1 17 2 2Z"/>
+          <clipPath id="ring-puppet-clip"><use href="#ring-puppet-cut"/></clipPath>
+          <linearGradient id="ring-puppet-folds">
+            <stop stop-color="#160a1d" stop-opacity=".42"/>
+            <stop offset=".22" stop-color="#ffedc7" stop-opacity=".32"/>
+            <stop offset=".46" stop-color="#270c21" stop-opacity=".2"/>
+            <stop offset=".65" stop-color="#fff0d0" stop-opacity=".26"/>
+            <stop offset="1" stop-color="#1a0f24" stop-opacity=".42"/>
+          </linearGradient>
+          <linearGradient id="ring-puppet-shoe" x2="0" y2="100%">
+            <stop stop-color="#be7251"/><stop offset=".4" stop-color="#843552"/><stop offset="1" stop-color="#36182d"/>
+          </linearGradient>
+          <g id="ring-puppet-glove">
+            <path d="M-3 2q-3-2-2-5 1-2 3 1l1-3q2-2 3 1 3 0 3 3t-2 5Z" fill="#fff2d6" stroke="#90654e" stroke-width="1"/>
+            <path d="M-1 0q2-1 3 0" fill="none" stroke="#b48b70" stroke-linecap="round"/>
+          </g>
+          <g id="ring-puppet-shoe-shape">
+            <path d="M-6 2q0-4 5-4l3-2 4 2v5Q0 6-6 2Z" fill="url(#ring-puppet-shoe)" stroke="#4d2a32"/>
+            <path d="M-4 1q3-2 6-1" fill="none" stroke="#ffce97" stroke-linecap="round" opacity=".66"/>
+          </g>
+          <g id="ring-puppet-face">
+            <g clip-path="url(#ring-puppet-clip)">
+              <path d="M0 0h50v10Q37 7 24 10T0 10Z" fill="#111016"/>
+              <path d="M0 10q12 4 24 0T50 10v10q-14-3-26 0T0 20Z" fill="#fff6de"/>
+              <path d="M0 20q12 4 24 0t26 0v10H0Z" fill="#087545"/>
+              <path d="M0 0 19 15 0 30Z" fill="#cf233d"/>
+              <path d="M0 0h50v30H0Z" fill="url(#ring-puppet-folds)"/>
+            </g>
+            <use href="#ring-puppet-cut" fill="none" stroke="#4e3030" stroke-width="1.2"/>
+            <path d="M6 26q9 1 16-2m18 1 5 1" fill="none" stroke="#271424" stroke-opacity=".45" stroke-linecap="round"/>
+            <path d="M5 4q10 4 20 1m5-1q8-2 14-1" fill="none" stroke="#fff1d4" stroke-opacity=".65" stroke-linecap="round"/>
+            <ellipse cx="24" cy="14" rx="4.4" ry="5.7" fill="#fffaf0" stroke="#51312f"/>
+            <ellipse cx="36" cy="13" rx="4.4" ry="5.7" fill="#fffaf0" stroke="#51312f"/>
+            <ellipse cx="25" cy="14.5" rx="2.2" ry="3" fill="#302135"/>
+            <ellipse cx="37" cy="13.5" rx="2.2" ry="3" fill="#302135"/>
+            <path d="M25 13h.1m12-1h.1" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M24 21q6 3 12-1-3 8-9 6Z" fill="#732b42" stroke="#432531"/>
+            <path d="M26 22q4 1 8-1" fill="none" stroke="#fff1d4" stroke-linecap="round"/>
+          </g>
+          <g id="ring-spectator">
+            <ellipse cx="26" cy="49" rx="25" ry="4" fill="#1b1117" opacity=".57"/>
+            <path d="M14 29Q5 35 1 25m39 3q6 1 11-9M17 36l-4 9m23-9 6 10" fill="none" stroke="#352128" stroke-width="4" stroke-linecap="round"/>
+            <use href="#ring-puppet-shoe-shape" x="12" y="45"/>
+            <use href="#ring-puppet-shoe-shape" x="42" y="46"/>
+            <use class="ring-puppet-fabric" href="#ring-puppet-face" x="3" y="9"/>
+            <use href="#ring-puppet-glove" x="1" y="25"/>
+          </g>
+          <g id="ring-wave-flag">
+            <path d="M51 23V0" stroke="#d6a84f" stroke-width="2"/>
+            <use href="#ring-palestinian-flag" transform="translate(51 0) scale(.38)"/>
+            <use href="#ring-puppet-glove" x="51" y="22"/>
+          </g>
+          <g id="ring-lantern">
+            <path d="M0-36V-12m-10 9L0-15 10-3m-8 27-2 7-2-7" fill="none" stroke="#edb457" stroke-width="3"/>
+            <path d="M-14-4h28L8 25H-8Z" fill="#794022" stroke="#4a2621" stroke-width="2"/>
+            <path d="M-12-3h24L7 24H-7Z" fill="url(#ring-lantern-glass)" stroke="#df9436" stroke-width="2"/>
+            <path d="M-10-1h20m-17 23H7" stroke="#ffe3a0" opacity=".75"/>
+            <path d="M-2 17q-5-4 2-13 7 9 2 13Z" fill="#fff7cc" opacity=".8"/>
+            <path d="m-5-2 2 24M5-2 3 22" stroke="#7a3e21"/>
+          </g>
+        </defs>
+        <g transform="translate(78 59)"><use class="ring-lantern ring-lantern-swing" href="#ring-lantern"/></g>
+        <g transform="translate(922 59)"><use class="ring-lantern ring-lantern-swing ring-lantern-swing--right" href="#ring-lantern"/></g>
+        <g transform="translate(110 103) scale(1.04) rotate(-6)">
+          <use href="#ring-spectator"/>
+          <use class="ring-wave" href="#ring-wave-flag"/>
+        </g>
+        <g transform="translate(223 127) scale(.89) rotate(7)">
+          <use href="#ring-spectator"/>
+          <path d="M40 32q8 10 11-3" fill="none" stroke="#352128" stroke-width="4" stroke-linecap="round"/>
+          <use href="#ring-puppet-glove" x="50" y="30"/>
+        </g>
+        <g transform="translate(725 119) scale(.92) rotate(-8)">
+          <use href="#ring-spectator"/>
+          <path d="M43 30q12-4 10-15" fill="none" stroke="#352128" stroke-width="4" stroke-linecap="round"/>
+          <use href="#ring-puppet-glove" x="53" y="14"/>
+          <path d="m45 11-3 1m7-5-1-3" stroke="#ffdeaa" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(830 99) scale(1.08) rotate(5)">
+          <use href="#ring-spectator"/>
+          <path d="M40 32q5 9-7 9" fill="none" stroke="#352128" stroke-width="4" stroke-linecap="round"/>
+          <use href="#ring-puppet-glove" x="33" y="41"/>
+          <use href="#ring-puppet-glove" x="26" y="39"/>
+        </g>
+        <g transform="translate(367 98) scale(.75) rotate(-5)">
+          <use href="#ring-spectator"/>
+          <path d="M42 27q8-2 10-12" fill="none" stroke="#352128" stroke-width="4" stroke-linecap="round"/>
+          <use href="#ring-puppet-glove" x="53" y="14"/>
+        </g>
+        <g transform="translate(474 121) scale(.84)">
+          <use href="#ring-spectator"/>
+          <use class="ring-wave" href="#ring-wave-flag"/>
+        </g>
+        <g transform="translate(583 98) scale(.76) rotate(6)">
+          <use href="#ring-spectator"/>
+          <path d="M42 28q12 1 14-11" fill="none" stroke="#352128" stroke-width="4" stroke-linecap="round"/>
+          <use href="#ring-puppet-glove" x="56" y="16"/>
+        </g>
+      </svg>
+      <div class="circus-ring-floor" aria-hidden="true">
+        <svg class="ring-inlay" viewBox="0 0 50 30" preserveAspectRatio="none" focusable="false">
+          <use href="#ring-palestinian-flag"/>
+        </svg>
+        <svg class="circus-ring-floor-stars" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+          <defs><path id="ring-floor-spark" d="M0-1.25 .25-.25 1.25 0 .25.25 0 1.25-.25.25-1.25 0-.25-.25Z"/></defs>
+          <g fill="#fff0b7" opacity=".55">
+            <use href="#ring-floor-spark" transform="translate(22 53) scale(.62)"/>
+            <use href="#ring-floor-spark" transform="translate(31 69) scale(.38)"/>
+            <use href="#ring-floor-spark" transform="translate(42 79) scale(.63)"/>
+            <use href="#ring-floor-spark" transform="translate(62 75) scale(.42)"/>
+            <use href="#ring-floor-spark" transform="translate(76 63) scale(.57)"/>
+            <use href="#ring-floor-spark" transform="translate(84 49) scale(.46)"/>
+          </g>
+        </svg>
+      </div>
+      <svg class="ring-props" viewBox="0 0 200 76" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="ring-prop-ball" cx=".3" cy=".28" r=".72">
+            <stop stop-color="#a9d48a"/><stop offset=".45" stop-color="#388052"/><stop offset="1" stop-color="#134932"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="50" cy="66" rx="43" ry="7" fill="#1e1012" opacity=".65"/>
+        <path d="M17 31h37l6 31q-24 10-49 0Z" fill="url(#ring-velvet)" stroke="#e6ab4e" stroke-width="3"/>
+        <ellipse cx="35" cy="31" rx="19" ry="5" fill="url(#ring-link-carton)" stroke="#db9a44" stroke-width="2"/>
+        <path d="m24 60 9-18 11 18" fill="none" stroke="#f1bb64" stroke-width="3"/>
+        <circle cx="68" cy="61" r="9" fill="url(#ring-prop-ball)" stroke="#eec56d"/><circle cx="66" cy="58" r="2" fill="#fff2bd"/>
+        <circle cx="82" cy="66" r="6" fill="#a32338" stroke="#eec56d"/>
+        <ellipse cx="162" cy="43" rx="20" ry="28" transform="rotate(25 162 43)" fill="none" stroke="#c97d35" stroke-width="4"/>
+        <ellipse cx="167" cy="44" rx="20" ry="28" transform="rotate(25 167 44)" fill="none" stroke="url(#ring-link-gold)" stroke-width="2"/>
+        <path d="M107 34q-6 9 2 27m8-29q5 14-1 31" fill="none" stroke="#e0aa60"/>
+        <ellipse cx="104" cy="25" rx="7" ry="10" fill="#a42341" stroke="#e9977c"/><ellipse cx="117" cy="22" rx="7" ry="11" fill="#1a794d" stroke="#a7c975"/>
+        <path d="M101 24q0-4 3-5m10 2q0-4 3-5" fill="none" stroke="#fff4c0" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="m129 15 10 12-10 13-10-13Zm0 25q8 6 0 15t2 10" fill="#a92339" stroke="#f8d791" stroke-width="1.5"/>
+        <path d="M129 15v25l10-13Z" fill="#15784c"/>
+      </svg>
+      <nav class="circus-attraction-nav" aria-labelledby="circus-page-heading">
         <ol class="circus-attraction-positions">
           <li class="circus-attraction-position circus-attraction-position--memory">
             <div class="circus-aloosh-performance">
@@ -253,7 +333,7 @@ Phase 4 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
                   </svg>
                 </span>
               </span>
-              <a class="circus-aloosh-bubble" href="circus-aloosh.html">
+              <a class="circus-aloosh-bubble ring-game-plaque" href="circus-aloosh.html">
                 <span class="lang-en" lang="en">Aloosh's Memory Match</span>
                 <span class="lang-ar hidden" lang="ar" dir="rtl">لعبة ذاكرة علوش</span>
               </a>
@@ -265,22 +345,22 @@ Phase 4 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
                 <!-- Approved Tito portrait remains decorative beside the bilingual game link. -->
                 <span class="circus-station-character">
                   <svg class="circus-attraction-art circus-tito-attraction-art" viewBox="0 0 180 125" aria-hidden="true" focusable="false">
+                    <svg x="19" y="64" width="53" height="63.6" viewBox="0 0 100 120" aria-hidden="true" focusable="false">
+                      <defs><linearGradient id="ring-tito-wood"><stop stop-color="#58182b"/><stop offset=".3" stop-color="#c34546"/><stop offset=".55" stop-color="#a42c37"/><stop offset="1" stop-color="#53162b"/></linearGradient><linearGradient id="ring-tito-band" x2=".2" y2="1"><stop stop-color="#fff0b4"/><stop offset=".45" stop-color="#dca653"/><stop offset="1" stop-color="#8a5026"/></linearGradient></defs>
+                      <ellipse cx="50" cy="111" rx="43" ry="6" fill="#321b19" opacity=".3"/>
+                      <path d="M19 16q-18 43 0 86 30 14 62 0 17-43 0-86Z" fill="url(#ring-tito-wood)" stroke="#6e2931" stroke-width="2"/>
+                      <path d="M30 20q-12 40 0 81m17-80q-4 42 0 83m19-83q9 41 0 82" fill="none" stroke="#66212e" stroke-width="2"/>
+                      <path d="M26 27q-9 29-5 49m17-48q-4 23-2 46" fill="none" stroke="#ffad8270" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M14 33q36 13 72 0l2 9q-38 14-76 0Zm-2 45q38 14 76 0l-3 10q-35 14-70 0Z" fill="url(#ring-tito-band)" stroke="#b9803c"/>
+                      <ellipse cx="50" cy="17" rx="31" ry="9" fill="#7e3537" stroke="#e5b971" stroke-width="3"/>
+                      <ellipse cx="50" cy="16" rx="25" ry="5" fill="#bb6853"/>
+                      <path d="m50 48 5 10 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2Z" fill="url(#ring-tito-band)" stroke="#ffde90"/>
+                    </svg>
                     <image href="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/tito_ball.png" x="0" y="0" width="180" height="125" preserveAspectRatio="xMidYMax meet"/>
                   </svg>
                 </span>
-                <svg class="circus-tito-barrel" viewBox="0 0 100 120" aria-hidden="true" focusable="false">
-                  <defs><linearGradient id="ring-tito-wood"><stop stop-color="#58182b"/><stop offset=".3" stop-color="#c34546"/><stop offset=".55" stop-color="#a42c37"/><stop offset="1" stop-color="#53162b"/></linearGradient><linearGradient id="ring-tito-band" x2=".2" y2="1"><stop stop-color="#fff0b4"/><stop offset=".45" stop-color="#dca653"/><stop offset="1" stop-color="#8a5026"/></linearGradient></defs>
-                  <ellipse cx="50" cy="111" rx="43" ry="6" fill="#321b19" opacity=".3"/>
-                  <path d="M19 16q-18 43 0 86 30 14 62 0 17-43 0-86Z" fill="url(#ring-tito-wood)" stroke="#6e2931" stroke-width="2"/>
-                  <path d="M30 20q-12 40 0 81m17-80q-4 42 0 83m19-83q9 41 0 82" fill="none" stroke="#66212e" stroke-width="2"/>
-                  <path d="M26 27q-9 29-5 49m17-48q-4 23-2 46" fill="none" stroke="#ffad8270" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M14 33q36 13 72 0l2 9q-38 14-76 0Zm-2 45q38 14 76 0l-3 10q-35 14-70 0Z" fill="url(#ring-tito-band)" stroke="#b9803c"/>
-                  <ellipse cx="50" cy="17" rx="31" ry="9" fill="#7e3537" stroke="#e5b971" stroke-width="3"/>
-                  <ellipse cx="50" cy="16" rx="25" ry="5" fill="#bb6853"/>
-                  <path d="m50 48 5 10 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2Z" fill="url(#ring-tito-band)" stroke="#ffde90"/>
-                </svg>
               </span>
-              <a class="circus-tito-ribbon" href="circus-tito.html">
+              <a class="circus-tito-ribbon ring-game-plaque" href="circus-tito.html">
                 <span class="lang-en" lang="en">Uncle Tito's Juggling Chaos</span>
                 <span class="lang-ar hidden" lang="ar" dir="rtl">فوضى ألعاب العم تيتو</span>
               </a>
@@ -348,49 +428,7 @@ Phase 4 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
                   <g class="circus-dj-duet-notes" fill="none" stroke-width="3" stroke-linecap="round"><path d="M14 67V51l12-3v15" stroke="#eab0ef"/><ellipse cx="10" cy="68" rx="4" ry="3" fill="#eab0ef"/><ellipse cx="22" cy="64" rx="4" ry="3" fill="#eab0ef"/><path d="M181 110V92l10 3" stroke="#7aeee5"/><ellipse cx="177" cy="111" rx="4" ry="3" fill="#7aeee5"/></g>
                 </svg>
               </div>
-              <a class="circus-dj-neon-title" href="circus-dance.html"><span class="lang-en" lang="en">DJ Dance Booth</span><span class="lang-ar hidden" lang="ar" dir="rtl">كشك الدي جي</span></a>
-            </div>
-          </li>
-          <li class="circus-attraction-position circus-attraction-position--popcorn">
-            <div class="circus-popcorn-performance">
-              <div class="circus-popcorn-artwork">
-                <a class="circus-popcorn-image-wrap" href="circus-popcorn.html" aria-label="Popcorn Stand / كشك الفشار">
-                  <img class="circus-ring-popcorn-image" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/popcorn.png" alt="">
-
-                </a>
-                <svg class="circus-popcorn-floaters" viewBox="0 50 160 65" aria-hidden="true" focusable="false">
-                    <defs><radialGradient id="ring-popcorn-kernel"><stop stop-color="#fffce2"/><stop offset=".6" stop-color="#ffe9aa"/><stop offset="1" stop-color="#d2a964"/></radialGradient><path id="ring-popcorn-kernel-shape" d="M-4 4q-7 0-5-5-2-6 4-6 4-6 8-1 7-1 6 5 5 6-2 8-4 4-7-1Z" fill="url(#ring-popcorn-kernel)" stroke="#cba564" stroke-width=".7"/></defs>
-                    <g transform="translate(35 92)"><g class="circus-popcorn-floating-kernel"><use href="#ring-popcorn-kernel-shape"/></g></g>
-                    <g transform="translate(80 82)"><g class="circus-popcorn-floating-kernel circus-popcorn-floating-kernel--second"><use href="#ring-popcorn-kernel-shape"/></g></g>
-                    <g transform="translate(120 94)"><g class="circus-popcorn-floating-kernel circus-popcorn-floating-kernel--third"><use href="#ring-popcorn-kernel-shape"/></g></g>
-                    <g class="circus-popcorn-sparkles" fill="#fff0b0"><path d="m17 60 2 5 5 2-5 2-2 5-2-5-5-2 5-2Zm122 16 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z"/></g>
-                  </svg>
-                <svg class="circus-popcorn-arrow" viewBox="0 0 100 65" aria-hidden="true" focusable="false">
-                  <defs><linearGradient id="ring-popcorn-arrow-gold" x2=".3" y2="1"><stop stop-color="#fff0b1"/><stop offset=".45" stop-color="#e9bc64"/><stop offset="1" stop-color="#9e642f"/></linearGradient><linearGradient id="ring-popcorn-arrow-red" x2=".3" y2="1"><stop stop-color="#dd7e79"/><stop offset=".55" stop-color="#a13d4c"/><stop offset="1" stop-color="#652437"/></linearGradient></defs>
-                  <g transform="translate(100 0) scale(-1 1)">
-                    <path d="M7 33 36 9q5-3 5 3v12h45q6 0 6 6v14q0 6-6 6H41v11q0 5-5 1L7 40q-4-4 0-7Z" fill="#60303a"/>
-                    <path d="M7 28 36 5q5-3 5 3v12h45q6 0 6 6v14q0 6-6 6H41v11q0 5-5 1L7 35q-4-4 0-7Z" fill="url(#ring-popcorn-arrow-red)" stroke="url(#ring-popcorn-arrow-gold)" stroke-width="4" stroke-linejoin="round"/>
-                    <path d="M17 29 34 15m15 11h33" fill="none" stroke="#ffe6a6" stroke-width="2" stroke-linecap="round" opacity=".8"/>
-                    <path class="circus-popcorn-sparkles" d="m76 2 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z" fill="#fff0af"/>
-                  </g>
-                </svg>
-              </div>
-                  
-            </div>
-          </li>
-          <li class="circus-attraction-position circus-attraction-position--banners">
-            <div class="circus-banner-performance">
-              <div class="circus-banner-artwork">
-                <svg class="circus-banner-arrow" viewBox="0 0 100 65" aria-hidden="true" focusable="false">
-                  <defs><linearGradient id="ring-banner-arrow-gold" x2=".3" y2="1"><stop stop-color="#fff0b1"/><stop offset=".45" stop-color="#e9bc64"/><stop offset="1" stop-color="#9e642f"/></linearGradient><linearGradient id="ring-banner-arrow-red" x2=".3" y2="1"><stop stop-color="#dd7e79"/><stop offset=".55" stop-color="#a13d4c"/><stop offset="1" stop-color="#652437"/></linearGradient></defs>
-                  <path d="M7 33 36 9q5-3 5 3v12h45q6 0 6 6v14q0 6-6 6H41v11q0 5-5 1L7 40q-4-4 0-7Z" fill="#60303a"/>
-                  <path d="M7 28 36 5q5-3 5 3v12h45q6 0 6 6v14q0 6-6 6H41v11q0 5-5 1L7 35q-4-4 0-7Z" fill="url(#ring-banner-arrow-red)" stroke="url(#ring-banner-arrow-gold)" stroke-width="4" stroke-linejoin="round"/>
-                  <path d="M17 29 34 15m15 11h33" fill="none" stroke="#ffe6a6" stroke-width="2" stroke-linecap="round" opacity=".8"/>
-                  <path class="circus-banner-arrow-sparkle" d="m76 2 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z" fill="#fff0af"/>
-                </svg>
-                <svg class="circus-banner-flag-string" viewBox="0 0 100 55" aria-hidden="true" focusable="false"><defs><linearGradient id="ring-flag-fold"><stop stop-color="#ffffff33"/><stop offset=".45" stop-color="#00000022"/><stop offset=".7" stop-color="#ffffff22"/><stop offset="1" stop-color="#00000033"/></linearGradient></defs><path d="M2 12q48 15 96 0" fill="none" stroke="#dfc68c" stroke-width="2"/><g transform="translate(5 14)"><g class="circus-banner-mini-flag" style="--flag-delay: 0.0s"><path d="M0 0h26v7H0Z" fill="#000000"/><path d="M0 7h26v7H0Z" fill="#FFFFFF"/><path d="M0 14h26v7H0Z" fill="#007A3D"/><path d="m0 0 11 10.5L0 21Z" fill="#CE1126"/><path d="M0 0h26v21H0Z" fill="url(#ring-flag-fold)"/></g></g><g transform="translate(36 18)"><g class="circus-banner-mini-flag" style="--flag-delay: -0.7s"><path d="M0 0h26v7H0Z" fill="#000000"/><path d="M0 7h26v7H0Z" fill="#FFFFFF"/><path d="M0 14h26v7H0Z" fill="#007A3D"/><path d="m0 0 11 10.5L0 21Z" fill="#CE1126"/><path d="M0 0h26v21H0Z" fill="url(#ring-flag-fold)"/></g></g><g transform="translate(67 14)"><g class="circus-banner-mini-flag" style="--flag-delay: -1.4s"><path d="M0 0h26v7H0Z" fill="#000000"/><path d="M0 7h26v7H0Z" fill="#FFFFFF"/><path d="M0 14h26v7H0Z" fill="#007A3D"/><path d="m0 0 11 10.5L0 21Z" fill="#CE1126"/><path d="M0 0h26v21H0Z" fill="url(#ring-flag-fold)"/></g></g></svg>
-                <a class="circus-banner-image-link" href="circus-banners.html" aria-label="Banner Hall / قاعة اللافتات"><img class="circus-ring-banner-image" src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/banner.png" alt=""></a>
-              </div>
+              <a class="circus-dj-neon-title ring-game-plaque" href="circus-dance.html"><span class="lang-en" lang="en">Uncle Bebo’s Booth</span><span class="lang-ar hidden" lang="ar" dir="rtl">ركن العم بيبو</span></a>
             </div>
           </li>
           <li class="circus-attraction-position circus-attraction-position--jigsaw">
@@ -422,15 +460,87 @@ Phase 4 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
                 <g class="circus-key-sparkle" fill="#fff0ae"><path d="m126 32 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z"/><circle cx="139" cy="33" r="2"/></g>
                 </g>
               </svg>
-              <a class="circus-key-plaque" href="circus-jigsaw.html">
-                <span class="circus-keyhole-mark" aria-hidden="true"></span>
-                <span class="lang-en" lang="en">Aerial Puzzle Circus</span>
-                <span class="lang-ar hidden" lang="ar" dir="rtl">سيرك الألغاز الهوائية</span>
+              <a class="circus-key-plaque ring-game-plaque" href="circus-jigsaw.html">
+                <span class="lang-en" lang="en">Uncle Tata’s Puzzle</span>
+                <span class="lang-ar hidden" lang="ar" dir="rtl">أحجية العم تاتا</span>
               </a>
             </div>
           </li>
         </ol>
       </nav>
+      <div class="ring-side-links">
+        <a href="circus-banners.html">
+          <svg viewBox="0 0 122 78" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="ring-link-gold" x2="0" y2="100%">
+                <stop stop-color="#fff1b1"/><stop offset=".3" stop-color="#e2ac52"/><stop offset=".61" stop-color="#8d4b28"/><stop offset=".86" stop-color="#efbb66"/><stop offset="1" stop-color="#643421"/>
+              </linearGradient>
+              <linearGradient id="ring-link-velvet">
+                <stop stop-color="#2e0b1d"/><stop offset=".25" stop-color="#a9394b"/><stop offset=".47" stop-color="#521128"/><stop offset=".72" stop-color="#90283e"/><stop offset="1" stop-color="#3a1024"/>
+              </linearGradient>
+              <path id="ring-link-arrow" d="M0 9 13 0v5h17v8H13v5Z"/>
+            </defs>
+            <ellipse cx="64" cy="71" rx="39" ry="4" fill="#1b1018" opacity=".7"/>
+            <path d="M37 19 63 6l26 13" fill="none" stroke="#dfb475" stroke-width="2.5"/>
+            <path d="M36 20h55v42L64 72 36 62Z" fill="url(#ring-link-velvet)" stroke="url(#ring-link-gold)" stroke-width="4"/>
+            <path d="M42 25h43v33l-21 9-22-9Z" fill="none" stroke="#dbab65" stroke-width="1"/>
+            <path d="M44 52q12 12 20 10 12 0 19-10m-35 4q5 1 8 5m16 0q4-4 8-5" fill="none" stroke="#f1c77d" stroke-width="1.2"/>
+            <path d="M31 20h65" stroke="url(#ring-link-gold)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M47 63v8m10-3v7m13-6v6m10-11v7" stroke="#ebba6e" stroke-width="2" stroke-linecap="round"/>
+            <use href="#ring-palestinian-flag" transform="translate(49 31) scale(.59)"/>
+            <use href="#ring-link-arrow" x="12" y="42" fill="url(#ring-link-gold)" stroke="#653423"/>
+          </svg>
+          <span class="ring-link-name lang-en" lang="en">Banner Hall</span>
+          <span class="ring-link-name lang-ar hidden" lang="ar" dir="rtl">قاعة اللافتات</span>
+        </a>
+        <a class="ring-link-entrance" href="circus.html">
+          <svg viewBox="0 0 122 78" aria-hidden="true" focusable="false">
+            <ellipse cx="61" cy="74" rx="48" ry="3" fill="#1b1018" opacity=".7"/>
+            <path d="M15 39Q44 25 61 5q18 20 46 34H15Z" fill="#fff0cb" stroke="url(#ring-link-gold)" stroke-width="3"/>
+            <path d="M21 37Q49 25 61 5 56 25 41 37Zm31 0q8-15 9-32 4 16 12 32Zm30 0Q72 25 61 5q19 20 40 32Z" fill="#8d2335"/>
+            <path d="M24 69V43h74v26Z" fill="#3d1428" stroke="url(#ring-link-gold)" stroke-width="4"/>
+            <path d="M34 69V49h54v20Z" fill="url(#ring-link-velvet)"/>
+            <path d="M44 69V53q17-9 34 0v16Z" fill="#261022"/>
+            <path d="M33 67V49m55 0v18" stroke="#e4ae5e" stroke-width="5"/>
+            <rect x="27" y="34" width="68" height="15" rx="4" fill="#65192e" stroke="url(#ring-link-gold)" stroke-width="2"/>
+            <path d="M21 29h80M33 65V50m55 0v15" class="ring-bulbs"/>
+            <path d="M15 71h92" stroke="url(#ring-link-gold)" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <span class="ring-link-name lang-en" lang="en">Back to Circus Entrance</span>
+          <span class="ring-link-name lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل السيرك</span>
+        </a>
+        <a href="circus-popcorn.html">
+          <svg viewBox="0 0 122 78" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="ring-link-kernel" cx=".32" cy=".27" r=".78">
+                <stop stop-color="#fff2c1"/><stop offset=".55" stop-color="#f3c071"/><stop offset="1" stop-color="#a35a30"/>
+              </radialGradient>
+              <linearGradient id="ring-link-carton">
+                <stop stop-color="#7c4632"/><stop offset=".24" stop-color="#fff0bd"/><stop offset=".63" stop-color="#e6af6f"/><stop offset="1" stop-color="#8d5435"/>
+              </linearGradient>
+              <path id="ring-link-popcorn" d="M-6 3q-4-5 1-7 1-5 6-3 4-1 5 3 4 2 2 6-3 5-9 3Z"/>
+            </defs>
+            <ellipse cx="58" cy="72" rx="40" ry="4" fill="#1b1018" opacity=".7"/>
+            <path d="M26 30h61l-7 31H34Z" fill="url(#ring-link-velvet)" stroke="url(#ring-link-gold)" stroke-width="2.5"/>
+            <path d="M33 34v23m47-23v23" stroke="#f1cb87" stroke-width="2"/>
+            <path d="M22 14h67l9 13H15Z" fill="#f3d9a7" stroke="url(#ring-link-gold)" stroke-width="2"/>
+            <path d="m25 15-6 11h12l4-11Zm22 0-3 11h13V15Zm20 0 2 11h13l-5-11Zm16 0 5 11h8l-8-11Z" fill="#a22e41"/>
+            <path d="M17 28q7 7 14 0 7 7 14 0 7 7 14 0 7 7 14 0 7 7 14 0 5 6 10 0" fill="none" stroke="#e9b76c" stroke-width="2"/>
+            <g fill="url(#ring-link-kernel)" stroke="#ab652f" stroke-width=".7">
+              <use href="#ring-link-popcorn" x="43" y="40"/><use href="#ring-link-popcorn" x="54" y="37"/><use href="#ring-link-popcorn" x="65" y="39"/><use href="#ring-link-popcorn" x="74" y="41"/>
+            </g>
+            <path d="M27 46h61v8H27Z" fill="url(#ring-link-carton)" stroke="#c59556"/>
+            <g fill="#653041" stroke="url(#ring-link-gold)" stroke-width="2.5">
+              <circle cx="43" cy="62" r="11"/><circle cx="74" cy="62" r="9"/>
+            </g>
+            <path d="M43 52v20m-10-10h20m21-8v16m-8-8h16" stroke="#ecc378" stroke-width="1.3"/>
+            <circle cx="43" cy="62" r="2.5" fill="#f6d692"/><circle cx="74" cy="62" r="2.5" fill="#f6d692"/>
+            <use href="#ring-link-arrow" transform="translate(114 38) scale(-1 1)" fill="url(#ring-link-gold)" stroke="#653423"/>
+          </svg>
+          <span class="ring-link-name lang-en" lang="en">Popcorn Stand</span>
+          <span class="ring-link-name lang-ar hidden" lang="ar" dir="rtl">ركن الفشار</span>
+        </a>
+      </div>
     </div>
   </section>
 </main>
@@ -480,6 +590,6 @@ Phase 4 Pending - Banner, Main Floor, Popcorn Stand Entrances css and design
         </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
