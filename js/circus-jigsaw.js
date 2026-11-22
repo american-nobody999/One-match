@@ -1,8 +1,8 @@
-
   //Author: Leslie Brockman
   // Circus Jigsaw Game controller.
   // Retains native pointer capture/delta dragging; adds generated geometry, snapping,
   //keyboard placement, lifecycle cleanup, and image-relative resize-safe positions. 
+  //Date: 11-21-2026
 (() => {
     'use strict';
     const game = document.getElementById('jigsaw-game');
