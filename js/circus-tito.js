@@ -1,5 +1,6 @@
 // Author: Leslie Brockman
 // Circus Tito Game controller.
+//Date: 11-21-2026
 (() => {
     'use strict';
     const game = document.getElementById('tito-game');
