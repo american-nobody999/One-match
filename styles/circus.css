@@ -1,6 +1,6 @@
 /* Author: Leslie Brockman
  * Circus Game styles.
- * Date modified: 11/16/2026--ACTIVE--Dont touch this file unless you are working on Phase 4 */
+ * Date modified: 11-21-2026*/
 body.circus-page-body {
 background-color: #fffdf6;
     background-image:
@@ -727,18 +727,6 @@ body.circus-page-body {
     background: radial-gradient(ellipse, #e5bd7015, #231a18);
     box-shadow: inset 0 0 20px #0005;
 }
-.circus-page-body .circus-popcorn .circus-intro { padding-top: 5rem; position: relative; overflow: hidden; }
-.circus-popcorn .circus-intro::before {
-    content: '';
-    position: absolute;
-    inset: 0 0 auto;
-    height: 3rem;
-    border-bottom: 5px solid var(--circus-gold);
-    border-radius: 0 0 25% 25%;
-    background: repeating-linear-gradient(90deg, #a52e35 0 2rem, #fff0d0 2rem 4rem);
-    pointer-events: none;
-}
-.circus-page-body .circus-popcorn-stations .circus-placeholder { border: 4px double var(--circus-gold); background: linear-gradient(#573321, #32141b); }
 @media (max-width: 800px) {
     .circus-experience .circus-stations { grid-template-columns: 1fr; }
     .circus-experience .circus-destinations { grid-template-columns: 1fr; }
@@ -752,24 +740,338 @@ body.circus-page-body {
     .circus-experience .circus-ticket:hover { transform: none; }
 }
 
-/* Phase 3: expandable Banner Hall exhibition; no other circus page selectors. */
-.circus-page-body .circus-banners .circus-banners-stations {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr));
-    align-items: start;
-    gap: 3rem 2rem;
+/* Banner Hall theatrical entrance and hanging performer posters. */
+.circus-page-body main.circus-banners {
+    --hall-brass: linear-gradient(#5c3016, #ecb66c 24%, #fff0ae 39%, #a15e28 58%, #46200f 94%);
+    --hall-bulb: radial-gradient(circle, #fff8d6 0 12%, #ffce81 20%, #ffad4666 40%, transparent 69%);
+    width: min(100%, 1480px);
+    gap: clamp(1.5rem, 3vw, 3rem);
+    padding: clamp(.9rem, 3vw, 3rem);
+    border-inline: 1px solid #9f663b;
+    background:
+        radial-gradient(ellipse at 50% 3%, #ffba6a45, transparent 42%),
+        repeating-linear-gradient(45deg, transparent 0 17px, #ed9b5414 18px 19px, transparent 20px 36px),
+        repeating-linear-gradient(-45deg, transparent 0 17px, #ed9b5414 18px 19px, transparent 20px 36px),
+        repeating-linear-gradient(90deg, #321018, #651b2a 7%, #42101a 14%);
+    box-shadow: inset 0 0 5rem #120809;
 }
+.circus-banners .circus-hall-entrance {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+}
+.circus-banners .circus-hall-marquee {
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+    width: min(100%, 46rem);
+    padding: clamp(1rem, 3vw, 1.8rem) clamp(.65rem, 4vw, 2rem);
+    border: 4px solid transparent;
+    border-radius: 44% 44% .75rem .75rem / 54% 54% .75rem .75rem;
+    background:
+        var(--hall-bulb) left bottom / 1.35rem 1rem repeat-x padding-box,
+        radial-gradient(ellipse at 50% 42%, #a8334866, transparent 62%) padding-box,
+        repeating-linear-gradient(90deg, #ffbb8d0e 0 1px, transparent 3px 8px, #29081722 12px 14px) padding-box,
+        radial-gradient(ellipse at 50% 30%, #702637, #4d1629 69%, #270f1c) padding-box,
+        var(--hall-brass) border-box;
+    box-shadow: inset 0 0 0 1px #ffdf9c70, inset 0 0 1.35rem #210a16,
+        0 3px #7d4a2b, 0 7px #502610, 0 14px 30px #1e080c, 0 0 24px #ffb44855;
+}
+.circus-banners .circus-hall-marquee-ornaments {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+.circus-banners .circus-hall-marquee-ornaments::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px solid #d09a55;
+    border-radius: inherit;
+    box-shadow: 0 0 0 1px #4e2a23, inset 0 0 .5rem #e8a94a33;
+}
+.circus-page-body .circus-banners .circus-hall-marquee h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #ffe3a2;
+    font-size: clamp(1.8rem, 6vw, 4.4rem);
+    text-shadow: 0 1px #fff2c7, 0 3px #6a3024, 0 5px .32rem #240d16;
+}
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+    .circus-banners .circus-hall-marquee h2 span {
+        background: linear-gradient(#fff8d9 24%, #f9db90 52%, #e2aa61 79%, #ffdc94 92%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: none;
+        filter: drop-shadow(0 2px 0 #743c26) drop-shadow(0 4px 2px #250d18);
+    }
+}
+.circus-banners .circus-hall-marquee-bulbs {
+    position: absolute;
+    inset: 0;
+}
+.circus-banners .circus-hall-marquee-bulbs i {
+    position: absolute;
+    left: var(--hall-bulb-x);
+    top: var(--hall-bulb-y);
+    width: clamp(.33rem, 1vw, .62rem);
+    aspect-ratio: 1;
+    border: 1px solid #aa7439;
+    border-radius: 50%;
+    background: radial-gradient(circle at 44% 38%, #fff5c5 15%, #f7c16b 46%, #986233 74%);
+    box-shadow: 0 0 .4rem #ffc7778c;
+    transform: translate(-50%, -50%);
+    animation: circus-hall-marquee-shimmer 9s ease-in-out var(--hall-bulb-delay) infinite;
+}
+.circus-banners .circus-hall-marquee-bulbs i:nth-child(1) { --hall-bulb-x: 12%; --hall-bulb-y: 23%; --hall-bulb-delay: -1s; }
+.circus-banners .circus-hall-marquee-bulbs i:nth-child(2) { --hall-bulb-x: 23%; --hall-bulb-y: 11%; --hall-bulb-delay: -2s; }
+.circus-banners .circus-hall-marquee-bulbs i:nth-child(3) { --hall-bulb-x: 36%; --hall-bulb-y: 5%; --hall-bulb-delay: -3s; }
+.circus-banners .circus-hall-marquee-bulbs i:nth-child(4) { --hall-bulb-x: 50%; --hall-bulb-y: 4%; --hall-bulb-delay: -4s; }
+.circus-banners .circus-hall-marquee-bulbs i:nth-child(5) { --hall-bulb-x: 64%; --hall-bulb-y: 5%; --hall-bulb-delay: -5s; }
+.circus-banners .circus-hall-marquee-bulbs i:nth-child(6) { --hall-bulb-x: 77%; --hall-bulb-y: 11%; --hall-bulb-delay: -6s; }
+.circus-banners .circus-hall-marquee-bulbs i:nth-child(7) { --hall-bulb-x: 88%; --hall-bulb-y: 23%; --hall-bulb-delay: -7s; }
+.circus-banners .circus-hall-marquee-scroll,
+.circus-banners .circus-hall-marquee-tassel,
+.circus-banners .circus-hall-marquee-inlay {
+    position: absolute;
+    filter: drop-shadow(0 2px 2px #200c17aa);
+}
+.circus-banners .circus-hall-marquee-scroll {
+    top: 7%;
+    width: clamp(2rem, 9vw, 6rem);
+    height: auto;
+}
+.circus-banners .circus-hall-marquee-tassel {
+    top: calc(100% - .26rem);
+    width: clamp(.75rem, 2.2vw, 1.35rem);
+    height: auto;
+}
+.circus-banners .circus-hall-marquee-inlay {
+    bottom: .62rem;
+    width: clamp(.5rem, 1.5vw, .78rem);
+    aspect-ratio: 1;
+    border: 1px solid #d69b57;
+    border-radius: .08rem;
+    background: conic-gradient(#4b2224 0 25%, #a73342 25% 50%, #f5e6cc 50% 75%, #2e6150 75%);
+    transform: rotate(45deg);
+}
+.circus-banners :is(.circus-hall-marquee-scroll-left, .circus-hall-marquee-tassel-left, .circus-hall-marquee-inlay-left) { left: 1.8%; }
+.circus-banners :is(.circus-hall-marquee-scroll-right, .circus-hall-marquee-tassel-right, .circus-hall-marquee-inlay-right) { right: 1.8%; }
+.circus-banners :is(.circus-hall-marquee-scroll-right, .circus-hall-marquee-tassel-right) { transform: scaleX(-1); }
+@keyframes circus-hall-marquee-shimmer {
+    0%, 100% { box-shadow: 0 0 .32rem #ffc77770; }
+    42% { box-shadow: 0 0 .72rem #ffd38cab, inset 0 0 .16rem #fff0ba; }
+}
+@media (max-width: 480px) {
+    .circus-banners .circus-hall-marquee-scroll { top: 13%; width: 1.8rem; }
+    .circus-banners .circus-hall-marquee-inlay { bottom: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-banners .circus-hall-marquee-bulbs i { animation: none; }
+}
+.circus-banners .circus-hall-scene {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    justify-items: center;
+    width: min(100%, 66rem);
+    margin: -.35rem 0 0;
+    padding: clamp(.75rem, 3vw, 2rem) clamp(.6rem, 6vw, 5rem);
+    border: 5px double #c99250;
+    border-radius: .35rem .35rem 40% 40% / .35rem .35rem 5% 5%;
+    background: radial-gradient(ellipse at 50% 0, #f5aa5f55, transparent 65%), linear-gradient(95deg, #150b0d, #512420 46%, #150b0d);
+    box-shadow: 0 1rem 2rem #15070bcc, inset 0 0 3rem #0f090a;
+}
+.circus-banners .circus-hall-scene img {
+    display: block;
+    width: min(100%, 54rem);
+    max-width: 100%;
+    height: auto;
+    max-height: 40rem;
+    object-fit: contain;
+    margin: 0;
+    border-radius: .2rem;
+    filter: drop-shadow(0 .7rem .85rem #0b0709);
+}
+.circus-banners .circus-hall-scene::before,
+.circus-banners .circus-hall-scene::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset-block: 0 5%;
+    width: clamp(.7rem, 9vw, 8rem);
+    border-bottom: .5rem ridge #bd8745;
+    background:
+        radial-gradient(ellipse at 50% 24%, #ffb77357, transparent 58%),
+        linear-gradient(transparent 59%, #33141c 60%, #e9b467 62%, #69321a 65%, transparent 67%),
+        repeating-linear-gradient(90deg, #340c16, #8f2236 24%, #611629 45%, #3f0d1a 65%);
+    pointer-events: none;
+}
+.circus-banners .circus-hall-scene::before {
+    left: 0;
+    border-radius: 0 0 85% 8%;
+    box-shadow: .8rem .2rem 1.8rem #11080a;
+}
+.circus-banners .circus-hall-scene::after {
+    right: 0;
+    border-radius: 0 0 8% 85%;
+    box-shadow: -.8rem .2rem 1.8rem #11080a;
+}
+.circus-banners .circus-hall-gear {
+    position: absolute;
+    bottom: -.55rem;
+    left: clamp(.6rem, 3vw, 2rem);
+    width: clamp(1.55rem, 5vw, 3.4rem);
+    aspect-ratio: 1;
+    border: .25rem dotted #e5ae5c;
+    border-radius: 50%;
+    background: radial-gradient(circle, #271012 0 17%, #efc783 19% 26%, #72401f 28% 45%, #bb7c39 48% 57%, #452116 60%);
+    box-shadow: 0 .25rem .4rem #1b0a0c;
+    pointer-events: none;
+}
+.circus-banners .circus-hall-gear:last-child { right: clamp(.6rem, 3vw, 2rem); left: auto; }
+.circus-page-body .circus-banners .circus-banners-stations {
+    position: relative;
+    isolation: isolate;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 3.9rem clamp(1.2rem, 4vw, 3rem);
+    padding: 4.5rem clamp(.35rem, 2vw, 1.5rem) 1.6rem;
+    border: 0;
+    border-top: .55rem ridge #d8a668;
+    background:
+        radial-gradient(ellipse at 26% 10%, #de994746, transparent 42%),
+        radial-gradient(ellipse at 74% 13%, #ffc26a47, transparent 42%),
+        repeating-linear-gradient(101deg, #eac68a0c 0 1px, transparent 1px 11px),
+        linear-gradient(90deg, #210b17, #611e32 19%, #361824 48%, #5d1b2f 81%, #210b17);
+}
+.circus-banners .circus-banners-stations::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    border-inline: .35rem double #bd864e;
+    box-shadow: inset 0 0 2.8rem #180a13;
+    background:
+        var(--hall-bulb) left top / .78rem 1.55rem repeat-y,
+        var(--hall-bulb) right .78rem / .78rem 1.55rem repeat-y,
+        radial-gradient(ellipse, #ffc47c55, #b8414628 40%, transparent 68%) left 10% / 1.55rem 22% no-repeat,
+        radial-gradient(ellipse, #ffd08b55, #4b8b5f30 42%, transparent 68%) right 75% / 1.55rem 22% no-repeat,
+        linear-gradient(90deg, #23403255, transparent 15% 85%, #23403255),
+        repeating-linear-gradient(45deg, transparent 0 19px, #f4b87310 20px 21px, transparent 22px 40px),
+        repeating-linear-gradient(-45deg, transparent 0 19px, #f4b87310 20px 21px, transparent 22px 40px);
+    animation: circus-hall-wall-shimmer 14s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+.circus-banners .circus-hall-canopy {
+    position: absolute;
+    inset: -.45rem 0 auto;
+    height: 3.55rem;
+    z-index: -1;
+    border-top: .45rem ridge #e1ad69;
+    background:
+        var(--hall-bulb) center top / 1.1rem .72rem repeat-x,
+        radial-gradient(ellipse, #ffcd7770, #b9564433 45%, transparent 72%) left top / 28% .95rem no-repeat,
+        radial-gradient(ellipse, #ffca7d60, #55906a38 45%, transparent 72%) right top / 24% .95rem no-repeat,
+        radial-gradient(ellipse 55% 100% at 50% 0, #a8374b 0 42%, #6c1b32 63%, #3e1422 79%, #e0ad64 84%, #83552f 90%, transparent 94%) 0 0 / 16.6667% 100% repeat-x;
+    filter: drop-shadow(0 .4rem .35rem #160910);
+    animation: circus-hall-canopy-shimmer 12s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+.circus-banners .circus-hall-canopy::before {
+    content: '';
+    position: absolute;
+    inset: -.65rem 0 auto;
+    height: .8rem;
+    background:
+        radial-gradient(ellipse closest-side, #fff0ab, #915429 72%, transparent 79%) left / 1.35rem 100% no-repeat,
+        radial-gradient(ellipse closest-side, #fff0ab, #915429 72%, transparent 79%) right / 1.35rem 100% no-repeat;
+}
+.circus-banners .circus-hall-canopy::after {
+    content: '';
+    position: absolute;
+    inset: 53% 0 -.4rem;
+    background:
+        radial-gradient(ellipse, #ffe0a1 0 17%, #b67c43 22% 40%, transparent 48%) 0 55% / 16.6667% 65% repeat-x,
+        radial-gradient(ellipse 7% 70% at 50% 7%, #ba8652 0 58%, transparent 68%) 0 0 / 16.6667% 100% repeat-x;
+}
+
 .circus-page-body .circus-banners .circus-performer {
     min-width: 0;
-    padding: clamp(1.1rem, 3vw, 2rem);
+    padding: clamp(.85rem, 1.45vw, 1.35rem);
+    border: 5px ridge #d7a25f;
+    border-radius: .55rem .55rem 13% 13% / .55rem .55rem 1.4rem 1.4rem;
+    background:
+        radial-gradient(ellipse at 50% 0, #ffcb805b, transparent 40%),
+        radial-gradient(ellipse at 3% 34%, #4e8e6840, transparent 46%),
+        radial-gradient(ellipse at 100% 64%, #e54c4c32, transparent 49%),
+        repeating-linear-gradient(96deg, #ffe5b011 0 1px, transparent 3% 13%, #220a1666 17%, transparent 23%),
+        linear-gradient(115deg, #35121c, #712333 48%, #2c101d);
+    box-shadow:
+        inset 0 0 0 2px #522a23, inset 0 0 0 4px #ddad6855,
+        inset 0 0 1.8rem #230a16, 0 0 1.7rem #e7a75520, 0 1.2rem 2.5rem #150710df;
 }
+.circus-banners .circus-performer::before {
+    top: -2.35rem;
+    right: 16%;
+    left: 16%;
+    height: 1.9rem;
+    border: 0;
+    background:
+        repeating-linear-gradient(145deg, #ffe0a0 0 1px, #bc843f 2px 3px, #58311d 4px 5px) left / .24rem 100% no-repeat,
+        repeating-linear-gradient(145deg, #ffe0a0 0 1px, #bc843f 2px 3px, #58311d 4px 5px) right / .24rem 100% no-repeat;
+}
+.circus-banners .circus-performer::after {
+    content: '';
+    position: absolute;
+    inset: -.7rem -.65rem auto;
+    height: .83rem;
+    border: 1px solid #63371e;
+    border-radius: 1rem;
+    background:
+        radial-gradient(circle closest-side, #fff0ae, #b4783a 72%, transparent 76%) left / .8rem 100% no-repeat,
+        radial-gradient(circle closest-side, #fff0ae, #b4783a 72%, transparent 76%) right / .8rem 100% no-repeat,
+        var(--hall-brass);
+    box-shadow: inset 0 1px #ffeabb88, 0 .35rem .64rem #1d090c;
+    pointer-events: none;
+}
+.circus-page-body .circus-banners .circus-performer h3 {
+    position: relative;
+    margin: 0 0 .5rem;
+    padding: .35rem 1.4rem .7rem;
+    background: var(--hall-bulb) center bottom / 1.15rem .7rem repeat-x;
+    color: #ffe1a3;
+}
+.circus-banners .circus-performer h3::before,
+.circus-banners .circus-performer h3::after {
+    content: '';
+    position: absolute;
+    top: .25rem;
+    width: clamp(.85rem, 1.8vw, 1.4rem);
+    height: 1.25rem;
+    border-top: 1px solid #dbad6f;
+    border-left: 1px solid #a1703e;
+    border-radius: 60% 10% 65% 30%;
+    background:
+        radial-gradient(ellipse at 60% 38%, #ffe0a1 0 8%, transparent 12%),
+        radial-gradient(ellipse at 35% 40%, transparent 30%, #d8a461 35% 40%, transparent 46%),
+        radial-gradient(ellipse at 64% 73%, transparent 24%, #805c42 30% 40%, transparent 45%);
+    pointer-events: none;
+}
+.circus-banners .circus-performer h3::before { left: 0; }
+.circus-banners .circus-performer h3::after { right: 0; transform: scaleX(-1); }
+
 .circus-banners .circus-performer-photo {
-    width: min(100%, 22rem);
-    margin: 1.5rem auto;
+    width: min(100%, 25rem);
+    margin: .5rem auto .85rem;
     padding: .4rem;
-    border: 5px double var(--circus-gold);
+    border: 5px double #e2b16f;
     border-radius: 1rem 1rem .25rem .25rem;
-    background: var(--circus-ink);
-    box-shadow: var(--circus-shadow);
+    background: #1c0c10;
+    box-shadow: inset 0 0 0 1px #d0a26880, 0 .6rem 1.1rem #1b0a10bd;
 }
 .circus-page-body .circus-banners .circus-performer-photo img {
     display: block;
@@ -780,7 +1082,7 @@ body.circus-page-body {
     border-radius: .5rem .5rem 0 0;
 }
 .circus-page-body .circus-banners .circus-performer-story p {
-    margin-block: 0 1.25rem;
+    margin-block: 0 .85rem;
     text-align: start;
     overflow-wrap: anywhere;
 }
@@ -789,9 +1091,37 @@ body.circus-page-body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: .75rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--circus-gold);
+    gap: .5rem;
+    padding-block: .7rem .55rem;
+    border-top: 1px solid #be8c51;
+    border-bottom: .28rem solid transparent;
+    border-image: repeating-linear-gradient(90deg, #b07b42 0 2px, #efd091 2px 3px, #6b3c28 3px 5px) 1;
+}
+/* Small brass-and-thread tassels hang below the poster corners. */
+.circus-banners .circus-performer-links::before,
+.circus-banners .circus-performer-links::after {
+    content: '';
+    position: absolute;
+    bottom: -.95rem;
+    width: .88rem;
+    height: 1.4rem;
+    background:
+        radial-gradient(ellipse at 50% 32%, #ffe0a0 0 22%, transparent 28%),
+        linear-gradient(transparent 50%, #74333c69 51% 60%, #26504370 61% 69%, transparent 70%),
+        repeating-linear-gradient(90deg, #935720 0 2px, #efbf72 2px 3px);
+    clip-path: polygon(45% 0, 55% 0, 62% 42%, 85% 94%, 15% 94%, 38% 42%);
+    pointer-events: none;
+}
+.circus-banners .circus-performer-links::before { left: 12%; }
+.circus-banners .circus-performer-links::after { right: 12%; }
+.circus-banners .circus-hall-icon-definitions,
+.circus-banners .circus-hall-link-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 .circus-banners .circus-performer-links a {
     display: inline-flex;
@@ -799,241 +1129,1624 @@ body.circus-page-body {
     justify-content: center;
     min-height: 44px;
     max-width: 100%;
-    padding: .65rem 1rem;
-    border: 1px solid var(--circus-gold);
-    border-radius: .25rem;
-    background: var(--circus-cream);
-    color: #641c27;
+    border: 1px solid #e3ba7b;
+    box-shadow: inset 0 1px #ffe0a54f, 0 3px 4px #160a11a6;
+    color: #ffe6b5;
+}
+.circus-banners .circus-hall-social {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border-radius: 50%;
+    background: var(--hall-social-background);
+}
+.circus-banners .circus-hall-social-facebook { --hall-social-background: linear-gradient(#2667bb, #173d78); }
+.circus-banners .circus-hall-social-instagram { --hall-social-background: linear-gradient(145deg, #593077, #a42b60 58%, #af5529); }
+.circus-banners .circus-hall-social-tiktok { --hall-social-background: linear-gradient(145deg, #263c42, #10121a 58%, #4a202e); }
+.circus-banners .circus-hall-social-youtube { --hall-social-background: linear-gradient(#b92a34, #7e1723); }
+.circus-banners .circus-hall-social svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #fff8ea;
+}
+.circus-banners .circus-hall-social-tiktok svg {
+    filter: drop-shadow(-1px 0 #25f4ee) drop-shadow(1px 0 #fe2c55);
+}
+.circus-banners .circus-performer-links .circus-hall-ticket {
+    --hall-ticket-velvet: #5e2637;
+    --hall-ticket-shadow: #32141f;
+    gap: .42rem;
+    min-width: 0;
+    padding: .38rem .7rem;
+    border: 3px double #e0af70;
+    border-radius: .75rem .24rem;
+    background:
+        radial-gradient(ellipse at 50% 0, #efbd773d, transparent 68%),
+        repeating-linear-gradient(90deg, #ffd79c0a 0 1px, transparent 1px 3px),
+        linear-gradient(var(--hall-ticket-velvet), var(--hall-ticket-shadow));
+    box-shadow: inset 0 0 0 1px #ffdfa643, 0 3px 0 #260f19, 0 5px 8px #160a11ab;
     font-weight: bold;
     text-align: center;
     overflow-wrap: anywhere;
     text-underline-offset: .2em;
 }
-.circus-banners .circus-performer-links a:hover { background: var(--circus-gold); }
+.circus-banners .circus-hall-ticket::before,
+.circus-banners .circus-hall-ticket::after {
+    content: '';
+    width: .52rem;
+    height: .52rem;
+    flex: 0 0 .52rem;
+    background: linear-gradient(#fff0bc, #bf8a4f);
+    clip-path: polygon(50% 0, 59% 39%, 100% 50%, 59% 61%, 50% 100%, 41% 61%, 0 50%, 41% 39%);
+}
+.circus-banners .circus-performer-links .circus-hall-fundraiser {
+    --hall-ticket-velvet: #315847;
+    --hall-ticket-shadow: #152e28;
+}
+.circus-banners .circus-performer-links a:is(:hover, :focus-visible) {
+    border-color: #fff1ce;
+    box-shadow: inset 0 1px #ffe0a585, 0 0 .72rem #ffbd6359;
+}
+.circus-banners .circus-performer-links .circus-hall-ticket:is(:hover, :focus-visible) {
+    border-color: #fff1ce;
+    box-shadow: inset 0 1px #ffe0a585, 0 0 .72rem #ffbd6359;
+}
+.circus-banners .circus-hall-tito-website {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    min-width: 0;
+}
+.circus-banners .circus-hall-lighting { display: none; }
+.circus-banners .circus-hall-lighting-defs { position: absolute; }
+.circus-banners .circus-hall-spotlight {
+    position: absolute;
+    inset: 1.5rem 0 auto;
+    width: 100%;
+    max-width: 11.3rem;
+    height: auto;
+    margin-inline: auto;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #f6b1632e, transparent 67%);
+    filter: drop-shadow(0 .23rem .38rem #190d16cc);
+    pointer-events: none;
+}
+.circus-banners .circus-hall-spotlight-sweep {
+    transform-origin: 30.8% 48.7%;
+    animation: circus-hall-spotlight-sweep var(--hall-sweep-time) ease-in-out var(--hall-sweep-delay) infinite;
+}
+.circus-banners .circus-hall-spotlight-beam {
+    opacity: .91;
+    animation: circus-hall-beam-glow var(--hall-sweep-time) ease-in-out var(--hall-sweep-delay) infinite;
+}
+.circus-banners .circus-hall-spotlight-accent { color: #852b45; opacity: .12; }
+.circus-banners .circus-hall-spotlight-final-left {
+    grid-area: 4 / 1 / 5 / 2;
+    --hall-sweep-time: 8s;
+    --hall-sweep-delay: -2s;
+}
+.circus-banners .circus-hall-spotlight-final-right {
+    grid-area: 4 / 4 / 5 / 5;
+    --hall-sweep-time: 8.5s;
+    --hall-sweep-delay: -4s;
+}
+.circus-banners .circus-hall-spotlight-final-right .circus-hall-spotlight-direction {
+    transform: translateX(296px) scaleX(-1);
+}
+.circus-banners .circus-hall-spotlight-final-right .circus-hall-spotlight-sweep { animation-direction: reverse; }
+@media (max-width: 1099px) {
+    .circus-banners .circus-hall-lighting { display: contents; }
+    .circus-banners .circus-hall-lighting > .circus-hall-spotlight:not(.circus-hall-spotlight-final) { display: none; }
+    .circus-banners .circus-hall-spotlight-final {
+        --hall-side-fixture-width: clamp(1.6rem, 3vw, 2rem);
+        top: 1.5rem;
+        width: var(--hall-side-fixture-width);
+        margin-inline: 0;
+    }
+}
+@media (min-width: 700px) and (max-width: 1099px) {
+    .circus-banners .circus-hall-spotlight-final-left {
+        inset-inline: calc(-1 * var(--hall-side-fixture-width) - .12rem) auto;
+    }
+    .circus-banners .circus-hall-spotlight-final-right {
+        grid-area: 4 / 2 / 5 / 3;
+        inset-inline: auto calc(-1 * var(--hall-side-fixture-width) - .12rem);
+    }
+    [dir="rtl"] .circus-banners .circus-hall-spotlight-final-left .circus-hall-spotlight-direction {
+        transform: translateX(296px) scaleX(-1);
+    }
+    [dir="rtl"] .circus-banners .circus-hall-spotlight-final-right .circus-hall-spotlight-direction { transform: none; }
+}
+@media (max-width: 699px) {
+    .circus-banners .circus-hall-spotlight-final { --hall-side-fixture-width: 1.25rem; }
+    .circus-banners .circus-hall-spotlight-final-left {
+        grid-area: 7 / 1 / 8 / 2;
+        left: -1.35rem;
+        right: auto;
+    }
+    .circus-banners .circus-hall-spotlight-final-right {
+        grid-area: 8 / 1 / 9 / 2;
+        left: auto;
+        right: -1.35rem;
+    }
+}
+@media (min-width: 1100px) {
+    .circus-banners .circus-hall-gear {
+        outline: 2px solid #b67e48;
+        outline-offset: .25rem;
+        box-shadow: 0 0 1.3rem #ecae6d51, 0 .3rem .45rem #1b0a0c;
+    }
+    .circus-page-body .circus-banners .circus-banners-stations {
+        direction: ltr;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: minmax(0, 13%) repeat(2, minmax(0, 1fr)) minmax(0, 13%);
+        gap: 3.4rem 2rem;
+    }
+    .circus-banners .circus-banners-stations::after {
+        --hall-wing-panel: radial-gradient(ellipse at 50% 20%, #fac47a72, transparent 31%),
+            repeating-linear-gradient(90deg, #9a67404a 0 1px, transparent 1px 8px),
+            linear-gradient(90deg, #472330, #9a6a46 4%, #25392f 8% 92%, #9a6a46 96%, #472330);
+        content: '';
+        position: absolute;
+        z-index: -2;
+        inset: 3.3rem 0 .6rem;
+        background: var(--hall-wing-panel) left / 14% 100% no-repeat,
+            var(--hall-wing-panel) right / 14% 100% no-repeat;
+        pointer-events: none;
+    }
+    .circus-banners .circus-performer:nth-of-type(-n+3) { grid-column: 2; }
+    .circus-banners .circus-performer:nth-of-type(n+4) { grid-column: 3; }
+    .circus-banners .circus-performer[aria-labelledby="circus-majoud-heading"] { grid-area: 4 / 2; }
+    .circus-banners .circus-performer[aria-labelledby="circus-fufu-heading"] { grid-area: 4 / 3; }
+    [dir="rtl"] .circus-banners .circus-performer { direction: rtl; }
 
-/* Banner Hall developer preview; separate from the preserved performer cards. */
-.circus-page-body .circus-banners .circus-preview-progress {
+    .circus-banners .circus-hall-lighting { display: contents; }
+    .circus-banners .circus-hall-spotlight-left-one { grid-area: 1 / 1 / 2 / 2; --hall-sweep-time: 6.6s; --hall-sweep-delay: -1.1s; }
+    .circus-banners .circus-hall-spotlight-left-two { grid-area: 2 / 1 / 3 / 2; --hall-sweep-time: 9s; --hall-sweep-delay: -3.6s; }
+    .circus-banners .circus-hall-spotlight-left-three { grid-area: 3 / 1 / 4 / 2; --hall-sweep-time: 8s; --hall-sweep-delay: -5.2s; }
+    .circus-banners .circus-hall-spotlight-right-one { grid-area: 1 / 4 / 2 / 5; --hall-sweep-time: 8.5s; --hall-sweep-delay: -2.4s; }
+    .circus-banners .circus-hall-spotlight-right-two { grid-area: 2 / 4 / 3 / 5; --hall-sweep-time: 7.5s; --hall-sweep-delay: -.8s; }
+    .circus-banners .circus-hall-spotlight-right-three { grid-area: 3 / 4 / 4 / 5; --hall-sweep-time: 10s; --hall-sweep-delay: -6s; }
+    .circus-banners :is(.circus-hall-spotlight-right-one, .circus-hall-spotlight-right-two, .circus-hall-spotlight-right-three) .circus-hall-spotlight-direction {
+        transform: translateX(296px) scaleX(-1);
+    }
+    .circus-banners :is(.circus-hall-spotlight-left-two, .circus-hall-spotlight-right-one, .circus-hall-spotlight-right-three) .circus-hall-spotlight-sweep {
+        animation-direction: reverse;
+    }
+    .circus-banners :is(.circus-hall-spotlight-left-two, .circus-hall-spotlight-right-one, .circus-hall-spotlight-right-three) .circus-hall-spotlight-accent { color: #4f986a; }
+}
+@keyframes circus-hall-spotlight-sweep {
+    0%, 100% { transform: rotate(-14deg); }
+    44% { transform: rotate(14deg); }
+}
+@keyframes circus-hall-beam-glow {
+    0%, 100% { opacity: .86; }
+    46% { opacity: .98; }
+}
+@keyframes circus-hall-wall-shimmer {
+    from { background-position: left top, right .78rem, left 10%, right 75%, center, center, center; }
+    to { background-position: left top, right .78rem, left 85%, right 18%, center, center, center; }
+}
+@keyframes circus-hall-canopy-shimmer {
+    from { background-position: center top, left top, right top, left top; }
+    to { background-position: center top, right top, left top, left top; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-banners .circus-hall-spotlight-sweep,
+    .circus-banners .circus-hall-spotlight-beam,
+    .circus-banners .circus-banners-stations::before,
+    .circus-banners .circus-hall-canopy { animation: none; }
+}
+@media (max-width: 699px) {
+    .circus-page-body .circus-banners .circus-banners-stations {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3rem;
+        padding-inline: .6rem;
+    }
+    .circus-banners .circus-hall-gear,
+    .circus-banners .circus-banners-stations::before { display: none; }
+    .circus-page-body .circus-banners .circus-performer h3 { background-size: 1.75rem .7rem; }
+}
+
+.circus-page-body .circus-banners .circus-hall-exit {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    width: fit-content;
+    min-height: 3.55rem;
+    max-width: 100%;
+    margin: .4rem auto .95rem;
+    padding: .8rem clamp(2.5rem, 7vw, 4.1rem);
+    border: 4px double #e8b675;
+    border-radius: 1.35rem .65rem;
+    background:
+        var(--hall-bulb) center top / 1.15rem .72rem repeat-x,
+        var(--hall-bulb) center bottom / 1.15rem .72rem repeat-x,
+        radial-gradient(ellipse at 50% 10%, #a54254, #6e2035 47%, #361220);
+    box-shadow: inset 0 0 0 2px #713f35, inset 0 0 1.15rem #250c18, 0 .3rem 0 #4a261f, 0 .55rem .85rem #1c0b14;
+    color: #fff0cb;
+    font-family: Georgia, serif;
+    line-height: 1.35;
+    text-align: center;
+    white-space: normal;
+    transition: transform .22s ease-out, box-shadow .22s ease-out;
+}
+.circus-banners .circus-hall-exit-arrow {
+    position: absolute;
+    top: 50%;
+    left: clamp(.45rem, 2vw, 1.1rem);
+    width: clamp(1.65rem, 4vw, 2.6rem);
+    height: auto;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.circus-banners .circus-hall-exit::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 -.7rem;
+    width: .75rem;
+    height: .9rem;
+    margin-inline: auto;
+    background: repeating-linear-gradient(90deg, #c28b54 0 2px, #f9d594 2px 3px, #7f492e 3px 4px);
+    clip-path: polygon(39% 0, 61% 0, 85% 90%, 50% 100%, 15% 90%);
+    pointer-events: none;
+}
+.circus-page-body .circus-banners .circus-hall-exit:is(:hover, :focus-visible) {
+    color: #fff4d8;
+    box-shadow: inset 0 0 0 2px #9b6250, 0 .35rem 0 #4a261f, 0 0 1.15rem #ffd08575;
+}
+.circus-banners .circus-hall-exit:focus-visible {
+    outline: 3px solid #fff0b6;
+    outline-offset: 5px;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-banners .circus-hall-exit:hover { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-page-body .circus-banners .circus-hall-exit { transition: none; }
+}
+
+/* Popcorn Stand · concession counter and school support. */
+.circus-page-body main.circus-popcorn {
+    --popcorn-brass: linear-gradient(#673c25, #e4b274 21%, #ffdda0 40%, #a96a38 67%, #51291f);
+    --popcorn-bulb: radial-gradient(circle, #fff5cc 0 13%, #ffd187 22%, #e99a4c6e 39%, transparent 68%);
+    width: min(100%, 1350px);
+    background: radial-gradient(ellipse at 50% 4%, #f8ad6649, transparent 34%),
+        repeating-linear-gradient(98deg, #d18a550d 0 1px, transparent 1px 13px),
+        linear-gradient(110deg, #260e18, #5e2034 48%, #271218);
+    box-shadow: inset 0 0 4rem #1d0b13;
+}
+.circus-popcorn .popcorn-marquee {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 52rem);
+    padding: clamp(1rem, 3vw, 2rem) clamp(.6rem, 3vw, 1.75rem);
+    border: 5px solid transparent;
+    border-radius: 43% 43% .75rem .75rem / 54% 54% .75rem .75rem;
+    background: var(--popcorn-bulb) left bottom / 1.2rem .9rem repeat-x padding-box,
+        radial-gradient(ellipse at 50% 25%, #a33b46, #5c1d32 59%, #2d101c) padding-box,
+        var(--popcorn-brass) border-box;
+    box-shadow: inset 0 0 0 2px #dcaa6a77, 0 .35rem #583019, 0 .8rem 1.6rem #1c0c15;
+}
+.circus-page-body .circus-popcorn .popcorn-marquee h2 {
+    margin: 0;
+    color: #ffe7ac;
+    text-shadow: 0 2px #793f2a, 0 4px .35rem #2c111b;
+}
+.circus-popcorn .popcorn-counter {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    margin-top: -1.45rem;
+    border: 5px double #c89454;
+    border-radius: .75rem .75rem 1.25rem 1.25rem;
+    background: linear-gradient(110deg, #361922, #542528 48%, #284335);
+    box-shadow: inset 0 0 1.7rem #220e15, 0 1rem 1.8rem #1a0b15b5;
+}
+.circus-popcorn .popcorn-awning {
+    --popcorn-stripe: repeating-linear-gradient(90deg, #982c40 0 1.65rem, #f6ddb5 1.65rem 3.3rem);
+    position: relative;
+    height: clamp(3rem, 6vw, 4.7rem);
+    border-bottom: .2rem solid #b4824b;
+    border-radius: .45rem .45rem 0 0;
+    background: var(--popcorn-bulb) left bottom / 1.45rem .8rem repeat-x,
+        linear-gradient(#3d202a76, #fff2c71a 31%, transparent 60%, #32172299),
+        var(--popcorn-stripe);
+    box-shadow: inset 0 2px #ffe7b577, 0 .52rem .8rem #211217a8;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-awning::before {
+    content: '';
+    position: absolute;
+    inset: auto 0 -.85rem;
+    height: .95rem;
+    background: linear-gradient(#48223018, #3217227d), var(--popcorn-stripe);
+    mask: radial-gradient(ellipse 55% 98% at 50% 0, #000 96%, transparent) left top / 3.3rem 100% repeat-x;
+}
+.circus-popcorn .popcorn-awning::after {
+    content: '';
+    position: absolute;
+    inset: auto 3% -1.28rem;
+    height: 1.35rem;
+    background:
+        radial-gradient(ellipse closest-side, #ffdaa1 0 19%, #a36b3d 28% 76%, transparent 84%) left top / .85rem .48rem no-repeat,
+        radial-gradient(ellipse closest-side, #ffdaa1 0 19%, #a36b3d 28% 76%, transparent 84%) right top / .85rem .48rem no-repeat,
+        radial-gradient(ellipse closest-side, #c98e53 0 35%, #78364a 48% 78%, transparent 86%) left bottom / .85rem 1rem no-repeat,
+        radial-gradient(ellipse closest-side, #c98e53 0 35%, #78364a 48% 78%, transparent 86%) right bottom / .85rem 1rem no-repeat;
+    filter: drop-shadow(0 .15rem .12rem #301821);
+}
+.circus-popcorn .popcorn-counter-display {
+    --popcorn-art-height: clamp(7.4rem, 15vw, 12.5rem);
+    --popcorn-surface-back: .8rem;
+    --popcorn-surface-depth: 1.42rem;
+    --popcorn-apron: linear-gradient(#d19a5e 0 2px, #9e6238 3px 5px, #593327 6px, #341c20 100%);
+    --popcorn-walnut: repeating-linear-gradient(2deg, #fff0af16 0 1px, transparent 2px 13px, #381b2245 14px 17px),
+        radial-gradient(ellipse at 50% 5%, #d69a5e, #a26040 46%, #63382d 94%);
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.17fr) minmax(0, 1fr);
+    align-items: start;
+    direction: ltr;
+    gap: clamp(.35rem, 2vw, 2rem);
+    padding: 0 clamp(.4rem, 2vw, 1.4rem) 1.45rem;
+    border-bottom: .48rem ridge #af794c;
+    background:
+        radial-gradient(ellipse at 50% 6%, #ecac6b59, transparent 48%),
+        linear-gradient(90deg, #180c16e0, transparent 32% 68%, #180c16e0),
+        linear-gradient(#23101b6b, transparent 25%, #1d0d16a3),
+        repeating-linear-gradient(90deg, #472234 0 1px, #6c3c3e 2px 3px, #4b252f 4px 2.35rem);
+    box-shadow: inset 0 1rem 1.85rem #1c0b14b8;
+}
+.circus-popcorn .popcorn-counter-display::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: calc(var(--popcorn-art-height) - var(--popcorn-surface-back)) 0 auto;
+    height: var(--popcorn-surface-depth);
+    border-bottom: .2rem ridge #e0af70;
+    background:
+        radial-gradient(ellipse at 14% 47%, #ffdd9d 0 .13rem, transparent .18rem),
+        radial-gradient(ellipse at 27% 59%, #ffe6b4 0 .17rem, transparent .22rem),
+        radial-gradient(ellipse at 81% 40%, #c59a63 0 .19rem, transparent .25rem),
+        radial-gradient(ellipse at 89% 67%, #d8aa70 0 .14rem, transparent .2rem),
+        var(--popcorn-walnut);
+    box-shadow: inset 0 .12rem #ffd99d55, inset 0 -.2rem #6e382c70;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-counter-display::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: calc(var(--popcorn-art-height) + var(--popcorn-surface-depth) - var(--popcorn-surface-back)) 0 auto;
+    height: .95rem;
+    border-bottom: 2px solid #b77d49;
+    background: var(--popcorn-apron);
+    box-shadow: 0 .42rem .65rem #170b14ad;
+    pointer-events: none;
+}
+[dir="rtl"] .circus-popcorn .popcorn-counter-display > :is(.popcorn-treat-toggle, .popcorn-shared-display) {
+    direction: rtl;
+}
+.circus-popcorn .popcorn-treat-toggle {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+.circus-popcorn .popcorn-treat-toggle:focus-visible {
+    outline: 3px solid #fff0bf;
+    outline-offset: -3px;
+    border-radius: .65rem;
+}
+.circus-popcorn .popcorn-treat-art {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    width: 100%;
+    height: var(--popcorn-art-height);
+}
+.circus-popcorn .popcorn-treat-art::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: auto 15% -.13rem;
+    height: .95rem;
+    background: radial-gradient(ellipse, #1a0c16bd 0 12%, #32172263 42%, transparent 69%);
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-treat-art svg {
     display: block;
-    width: min(100%, 36rem);
+    width: min(93%, calc(var(--popcorn-art-height) * .89));
+    height: auto;
+    max-height: 100%;
+    filter: drop-shadow(.2rem .28rem .28rem #210d16a3);
+}
+.circus-popcorn .popcorn-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.circus-popcorn .popcorn-gallery-panel {
+    min-width: 0;
+    margin: .4rem .12rem 0;
+    padding: .44rem .12rem .04rem;
+    border: 2px solid #c58e55;
+    border-radius: .5rem;
+    background: var(--popcorn-walnut);
+    box-shadow: inset 0 .18rem .55rem #3a222c, 0 .38rem .65rem #24131cbd;
+}
+.circus-page-body .circus-popcorn .popcorn-gallery-label {
+    width: fit-content;
+    margin: 0 auto .3rem;
+    padding: .2rem .55rem;
+    border: 1px solid #dbae70;
+    border-radius: .25rem;
+    background: #572337;
+    color: #ffebbb;
+    font-size: .95rem;
+    line-height: 1.35;
+}
+.circus-page-body .circus-popcorn .popcorn-gallery-panel p {
+    color: #fff4d8;
+    padding-inline: .4rem;
+    font-size: .95rem;
+    text-shadow: 0 1px 2px #391b22;
+}
+.circus-popcorn .popcorn-flyers {
+    display: flex;
+    direction: ltr;
+    align-items: start;
+    justify-content: center;
+    margin: .35rem 0 .32rem;
+    padding: .5rem .65rem 1rem;
+    list-style: none;
+}
+.circus-popcorn .popcorn-flyers li {
+    position: relative;
+    flex: 0 1 36%;
+    min-width: 0;
+    transform: rotate(-5deg) translateY(.28rem);
+}
+.circus-popcorn .popcorn-flyers li + li { margin-left: -3%; }
+.circus-popcorn .popcorn-flyers li:nth-child(2) { z-index: 1; transform: rotate(2deg); }
+.circus-popcorn .popcorn-flyers li:nth-child(3) { transform: rotate(-3deg) translateY(.6rem); }
+.circus-popcorn .popcorn-flyers li:is(:hover, :focus-within) { z-index: 2; }
+.circus-popcorn .popcorn-flyer {
+    display: grid;
+    overflow-wrap: anywhere;
+    padding: .28rem .27rem .39rem;
+    border: 1px solid #c48d53;
+    border-radius: .13rem .25rem .12rem .22rem;
+    background: linear-gradient(135deg, #fff9e7, #efd8b5);
+    color: #44262a;
+    text-decoration-color: #7b4438;
+    box-shadow: inset 0 0 0 1px #fffcf0, 1px 2px #b68252, .24rem .38rem .75rem #45231fc9;
+}
+.circus-page-body .circus-popcorn .popcorn-flyer img {
+    display: block;
+    width: 100%;
     max-width: 100%;
     height: auto;
-    margin: 0 auto;
-}
-.circus-banners .circus-developer-note {
-    display: grid;
-    grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(1rem, 3vw, 2rem);
-    width: 100%;
-    min-width: 0;
-    padding: clamp(1rem, 3vw, 1.75rem);
-    border: 1px solid var(--circus-gold);
-    border-radius: 1rem;
-    background: linear-gradient(90deg, #c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
-        linear-gradient(#c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
-        linear-gradient(135deg, #3d2530, #243b39);
-    box-shadow: inset 0 0 0 4px #e5bd7010, 0 8px 20px #160c1033;
-    text-align: start;
-}
-.circus-banners .circus-developer-david { display: block; width: 100%; max-width: 9rem; height: auto; justify-self: center; }
-.circus-banners .circus-developer-copy { display: grid; gap: 1.25rem; min-width: 0; overflow-wrap: anywhere; }
-.circus-banners .circus-developer-copy > div + div { border-top: 1px dashed #e5bd7066; padding-top: 1rem; }
-.circus-page-body .circus-banners .circus-developer-note h2 {
-    margin: 0 0 .75rem;
-    color: var(--circus-gold);
-    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
-    line-height: 1.4;
-    text-align: start;
-}
-.circus-page-body .circus-banners .circus-developer-note p {
-    max-width: none;
-    margin: 0 0 .65rem;
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--circus-cream);
-    text-align: start;
-}
-.circus-banners .circus-developer-copy p:last-child { margin-bottom: 0; }
-.circus-banners .circus-developer-copy [lang="ar"] { font-family: 'Amiri', serif; }
-@media (max-width: 600px) {
-    .circus-banners .circus-developer-note { grid-template-columns: minmax(0, 1fr); }
-    .circus-banners .circus-developer-david { max-width: 7rem; }
-}
-
-/* Phase 4: Popcorn Stand information/support cards only. */
-.circus-popcorn .circus-support-category { width: 100%; min-width: 0; }
-.circus-popcorn .circus-popcorn-support-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
-    gap: 1.5rem;
-    width: 100%;
-}
-.circus-page-body .circus-popcorn .circus-support-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-    border: 4px double var(--circus-gold);
-    background: linear-gradient(#573321, #32141b);
-}
-.circus-popcorn .circus-support-card h4 {
     margin: 0;
-    color: var(--circus-gold);
-    font: bold clamp(1.35rem, 3vw, 1.8rem)/1.35 Georgia, serif;
+    border-radius: .1rem;
 }
-.circus-popcorn .circus-support-ticket {
+.circus-popcorn .popcorn-flyer::before {
+    content: '';
+    position: absolute;
+    left: 46%;
+    top: -.3rem;
+    width: .92rem;
+    height: .45rem;
+    border: 1px solid #88592c;
+    border-radius: .18rem .18rem .25rem .25rem;
+    background: var(--popcorn-brass);
+    box-shadow: 0 .15rem .16rem #482b22a8;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-support {
+    display: grid;
+    justify-items: center;
+    gap: .55rem;
+    min-width: 0;
+}
+.circus-popcorn .popcorn-candy {
+    background: radial-gradient(ellipse at 43% 45%, #ff86b739, transparent 56%),
+        radial-gradient(ellipse at 62% 48%, #92d9f13f, transparent 62%);
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-candy svg {
+    width: min(98%, calc(var(--popcorn-art-height) * 1.04));
+}
+.circus-page-body .circus-popcorn .popcorn-support h3 {
+    padding: .6rem clamp(.55rem, 4vw, 1.4rem);
+    border: 4px double #d8a568;
+    border-radius: 32% 32% .5rem .5rem;
+    background: radial-gradient(ellipse at top, #8f3545, #401726);
+    box-shadow: 0 .28rem .5rem #21111b;
+}
+.circus-popcorn .popcorn-ticket {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
-    max-width: 100%;
+    align-items: center;
     min-height: 44px;
-    padding: 1rem 1.5rem;
-    border: 2px dashed #89562f;
-    border-radius: .4rem;
-    background: var(--circus-cream);
-    color: #641c27;
+    max-width: 100%;
+    padding: .55rem clamp(.55rem, 3vw, 1.1rem);
+    border: 3px double #e4b475;
+    border-radius: .55rem .22rem;
+    background: linear-gradient(#79293d, #441b2b);
+    color: #ffedbe;
     font-weight: bold;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
     text-align: center;
     text-underline-offset: .2em;
-    overflow-wrap: anywhere;
-    box-shadow: var(--circus-shadow);
+    box-shadow: inset 0 1px #ffda8c5c, 0 .24rem .45rem #29151d;
 }
-.circus-popcorn .circus-support-ticket:hover { background: var(--circus-gold); }
-.circus-page-body .circus-popcorn .circus-support-note {
-    font-size: .95rem;
-    color: var(--circus-cream);
+.circus-popcorn .popcorn-fundraiser {
+    min-height: 50px;
+    background: linear-gradient(#3b6b51, #19382d);
+    font-size: 1.08rem;
 }
-
-/* Popcorn Stand final artwork and single school-information entry. */
-.circus-popcorn .circus-popcorn-progress-frame { width: min(100%, 36rem); min-width: 0; margin: 0 auto; padding: .4rem; border: 5px double var(--circus-gold); border-radius: 1rem; background: var(--circus-ink); box-shadow: var(--circus-shadow); }
-.circus-page-body .circus-popcorn .circus-popcorn-progress-frame img { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; border-radius: .5rem; }
-.circus-popcorn .circus-popcorn-school-link { display: block; color: var(--circus-cream); border-radius: .75rem; text-decoration-color: var(--circus-gold); text-underline-offset: .2em; }
-.circus-popcorn .circus-popcorn-school-label { display: block; font-size: 1.1rem; font-weight: bold; line-height: 1.6; overflow-wrap: anywhere; }
-.circus-popcorn .circus-popcorn-school-label > span { display: block; }
-.circus-popcorn .circus-popcorn-school-link svg { transition: transform 200ms ease, filter 200ms ease; }
-.circus-popcorn .circus-popcorn-school-link:is(:hover, :focus-visible) svg { transform: scale(1.03); filter: drop-shadow(0 0 6px #e5bd7066); }
-.circus-popcorn .circus-popcorn-school-link:focus-visible { outline: 3px solid var(--circus-gold); outline-offset: 5px; }
-@media (prefers-reduced-motion: reduce) {
-    .circus-popcorn .circus-popcorn-school-link svg { transition: none; }
-    .circus-popcorn .circus-popcorn-school-link:is(:hover, :focus-visible) svg { transform: none; }
+.circus-popcorn .popcorn-socials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    border-top: 1px solid #c791546f;
+    padding-top: .75rem;
+    margin-top: .25rem;
 }
-
-/* Popcorn Stand Phase 2: decorative concession previews and developer note. */
-.circus-popcorn .circus-developer-note {
+.circus-popcorn .popcorn-social-defs { position: absolute; }
+.circus-popcorn .popcorn-social-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.circus-popcorn .popcorn-socials a {
+    position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(1rem, 3vw, 2rem);
-    width: 100%;
-    min-width: 0;
-    padding: clamp(1rem, 3vw, 1.75rem);
-    border: 1px solid var(--circus-gold);
-    border-radius: 1rem;
-    background: linear-gradient(90deg, #c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
-        linear-gradient(#c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
-        linear-gradient(135deg, #3d2530, #243b39);
-    box-shadow: inset 0 0 0 4px #e5bd7010, 0 8px 20px #160c1033;
-    text-align: start;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e4b475;
+    border-radius: 50%;
+    background: var(--popcorn-social);
+    color: #fff8e7;
+    box-shadow: inset 0 1px #ffe0a45c, 0 .22rem .35rem #21111a;
 }
-.circus-popcorn .circus-developer-david { display: block; width: 100%; max-width: 9rem; height: auto; justify-self: center; }
-.circus-popcorn .circus-developer-copy { display: grid; gap: 1.25rem; min-width: 0; overflow-wrap: anywhere; }
-.circus-popcorn .circus-developer-copy > div + div { border-top: 1px dashed #e5bd7066; padding-top: 1rem; }
-.circus-page-body .circus-popcorn .circus-developer-note h2 {
-    margin: 0 0 .75rem;
-    color: var(--circus-gold);
-    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
-    line-height: 1.4;
-    text-align: start;
+.circus-popcorn .popcorn-socials a svg { width: 1.25rem; height: 1.25rem; }
+.circus-popcorn .popcorn-social-facebook { --popcorn-social: linear-gradient(#2866aa, #193866); }
+.circus-popcorn .popcorn-social-instagram { --popcorn-social: linear-gradient(145deg, #654080, #9e315e 62%, #a35a36); }
+.circus-popcorn :is(.popcorn-ticket, .popcorn-socials a):is(:hover, :focus-visible) {
+    border-color: #fff0c2;
+    box-shadow: 0 0 .75rem #efb76a84;
 }
-.circus-page-body .circus-popcorn .circus-developer-note p {
-    max-width: none;
-    margin: 0 0 .65rem;
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--circus-cream);
-    text-align: start;
+.circus-popcorn .popcorn-kernel-spill {
+    display: flex;
+    gap: .48rem;
+    padding: .42rem .3rem .48rem;
+    border: 0;
+    margin: 0;
 }
-.circus-popcorn .circus-developer-copy p:last-child { margin-bottom: 0; }
-.circus-popcorn .circus-developer-copy [lang="ar"] { font-family: 'Amiri', serif; }
-@media (max-width: 600px) {
-    .circus-popcorn .circus-developer-note { grid-template-columns: minmax(0, 1fr); }
-    .circus-popcorn .circus-developer-david { max-width: 7rem; }
+.circus-popcorn .popcorn-kernel-spill a {
+    --popcorn-kernel-y: -.2rem;
+    --popcorn-kernel-tilt: -10deg;
+    width: clamp(44px, 12vw, 52px);
+    height: clamp(44px, 12vw, 52px);
+    border: 1px solid #d1a466;
+    border-radius: 40% 46% 35% 43% / 39% 38% 48% 46%;
+    background:
+        radial-gradient(ellipse at 27% 24%, #fff9dc 0 17%, transparent 47%),
+        radial-gradient(ellipse at 72% 18%, #fff0bf 0 18%, transparent 48%),
+        radial-gradient(ellipse at 24% 74%, #ffe9ac 0 23%, transparent 52%),
+        radial-gradient(ellipse at 70% 76%, #efc775 0 18%, #cb914f 81%);
+    box-shadow: inset 0 1px #fff4cf, inset -.22rem -.16rem .35rem #9a5b3952, 0 .35rem .55rem #2a131c;
+    color: var(--popcorn-icon-color);
+    transform: translateY(var(--popcorn-kernel-y)) rotate(var(--popcorn-kernel-tilt));
+}
+.circus-popcorn .popcorn-kernel-spill .popcorn-social-facebook { --popcorn-icon-color: #173e76; }
+.circus-popcorn .popcorn-kernel-spill .popcorn-social-instagram {
+    --popcorn-icon-color: #83325e;
+    --popcorn-kernel-y: .45rem;
+    --popcorn-kernel-tilt: 12deg;
+    border-radius: 47% 35% 41% 37%;
+}
+.circus-popcorn .popcorn-kernel-spill .popcorn-social-website {
+    --popcorn-icon-color: #583741;
+    --popcorn-kernel-y: -.08rem;
+    --popcorn-kernel-tilt: -5deg;
+    border-radius: 37% 48% 39% 42%;
+}
+.circus-popcorn .popcorn-kernel-spill a:is(:hover, :focus-visible) {
+    border-color: #fff3cf;
+    box-shadow: inset 0 1px #fff5d2, 0 .3rem .65rem #2b1420, 0 0 .55rem #ffd68c77;
+}
+@media (max-width: 900px) {
+    .circus-popcorn .popcorn-flyers { gap: .25rem; padding-inline: .3rem; }
+    .circus-popcorn .popcorn-flyers li + li { margin-left: 0; }
+    .circus-popcorn .popcorn-flyers li:nth-child(n) { transform: none; }
+}
+@media (max-width: 700px) {
+    .circus-popcorn .popcorn-counter-display {
+        --popcorn-art-height: clamp(5.6rem, 22vw, 9rem);
+        gap: .75rem .2rem;
+        padding-inline: .3rem;
+    }
+    .circus-popcorn .popcorn-flyers { gap: .25rem; }
+    .circus-popcorn .popcorn-flyers li { flex-basis: 32%; }
 }
 
-.circus-popcorn .circus-concession-previews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1rem; width: 100%; min-width: 0; }
-.circus-popcorn .circus-concession-preview { min-width: 0; margin: 0; }
-.circus-popcorn .circus-concession-preview svg { display: block; width: 100%; max-width: 14rem; height: auto; margin: 0 auto; }
-.circus-popcorn .circus-concession-preview figcaption { color: var(--circus-cream); font-weight: bold; font-size: 1.1rem; line-height: 1.6; overflow-wrap: anywhere; }
-.circus-popcorn .circus-concession-preview figcaption span { display: block; }
-@media (max-width: 800px) {
-    .circus-popcorn .circus-concession-previews { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .circus-popcorn .circus-concession-preview:last-child { grid-column: 1 / -1; width: 50%; justify-self: center; }
+/* Popcorn Stand rebuilding campaign booth. */
+.circus-popcorn .popcorn-rebuild {
+    position: relative;
+    width: min(calc(100% - 1rem), 55rem);
+    margin: clamp(1.4rem, 4vw, 2.9rem) auto .6rem;
+    border: 6px ridge #d7a969;
+    border-radius: .8rem .8rem 1.1rem 1.1rem;
+    background:
+        var(--popcorn-bulb) left bottom / 1.25rem .85rem repeat-x,
+        radial-gradient(ellipse at 50% 0, #ffd18d67, transparent 68%),
+        repeating-linear-gradient(2deg, #47252145 0 1px, transparent 2px 17px),
+        linear-gradient(115deg, #4f2629, #733d2d 52%, #3a2025);
+    box-shadow: inset 0 0 0 2px #f4c68452, inset 0 0 1.3rem #29141b,
+        0 -.2rem #57362b, 0 .4rem 0 #563123, 0 .85rem 1.4rem #24131c;
+}
+.circus-page-body .circus-popcorn .popcorn-rebuild h3 {
+    margin: .65rem .65rem .15rem;
+    font: bold clamp(1rem, 2.4vw, 1.32rem)/1.3 Georgia, serif;
+    color: #ffe7ad;
+    text-shadow: 0 2px #562331, 0 .2rem .4rem #341620;
+}
+.circus-popcorn .popcorn-rebuild-display {
+    display: grid;
+    grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(.55rem, 2.5vw, 1.2rem);
+    padding: clamp(.55rem, 2vw, .92rem);
+    border-bottom: .45rem ridge #c28b4f;
+    border-radius: 0 0 .7rem .7rem;
+}
+.circus-popcorn .popcorn-rebuild-flyer {
+    display: block;
+    width: min(100%, 24rem);
+    justify-self: center;
+    padding: clamp(.25rem, 1vw, .55rem);
+    border: 1px solid #ce995c;
+    border-radius: .25rem;
+    background: linear-gradient(135deg, #fff4d9, #d8af7c);
+    box-shadow: .25rem .4rem .8rem #301920a8;
+}
+.circus-page-body .circus-popcorn .popcorn-rebuild-flyer img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: .1rem;
+}
+.circus-popcorn .popcorn-rebuild-details {
+    display: grid;
+    justify-items: center;
+    gap: .45rem;
+    min-width: 0;
+}
+.circus-page-body .circus-popcorn .popcorn-rebuild-details p {
+    font-size: .96rem;
+    line-height: 1.52;
+}
+@media (max-width: 650px) {
+    .circus-popcorn .popcorn-rebuild-display {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.circus-popcorn .popcorn-counter::before,
+.circus-popcorn .popcorn-counter::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: .25rem;
+    width: 1.55rem;
+    height: 1.55rem;
+    border: 1px solid #825229;
+    border-radius: .14rem .14rem 58%;
+    background: radial-gradient(circle at 33% 33%, #ffedb5 0 11%, #784c2c 13% 17%, transparent 19%),
+        radial-gradient(circle at 63% 54%, #ffd790 0 8%, #794e2c 10% 14%, transparent 16%), var(--popcorn-brass);
+    box-shadow: 0 .2rem .3rem #381e21;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-counter::before { left: .3rem; }
+.circus-popcorn .popcorn-counter::after { right: .3rem; transform: scaleX(-1); }
+
+@media (prefers-reduced-motion: no-preference) {
+    .circus-popcorn .popcorn-flyers li,
+    .circus-popcorn .popcorn-kernel-spill a { transition: transform 180ms ease-out; }
+    .circus-popcorn .popcorn-flyers li:is(:hover, :focus-within) { transform: translateY(-.25rem); }
+    .circus-popcorn .popcorn-kernel-spill a:is(:hover, :focus-visible) {
+        transform: translateY(calc(var(--popcorn-kernel-y) - .35rem)) rotate(0);
+    }
+}
+
+/* Popcorn Stand wagon hardware and support plaque. */
+.circus-popcorn .popcorn-counter-display {
+    padding-bottom: clamp(3rem, 5vw, 4.65rem);
+    border-bottom: .65rem ridge #d6a060;
+    background:
+        var(--popcorn-bulb) left bottom / 1.45rem .85rem repeat-x,
+        linear-gradient(90deg, #2c111cbb, transparent 28% 72%, #2c111cbb) left bottom / 100% 31% no-repeat,
+        repeating-linear-gradient(90deg, #82283b 0 .8rem, #692234 .82rem 1.45rem) left bottom / 100% 31% no-repeat,
+        radial-gradient(ellipse at 50% 5%, #ffaa5266, transparent 53%),
+        linear-gradient(90deg, #1c0c17d9, transparent 33% 67%, #1c0c17d9),
+        repeating-linear-gradient(90deg, #361822 0 1px, #72423b 2px 3px, #4e272c 4px 2.35rem);
+}
+.circus-popcorn .popcorn-wagon-lantern {
+    position: absolute;
+    z-index: 1;
+    top: clamp(.25rem, 1vw, .85rem);
+    width: clamp(1.75rem, 5.5vw, 4.5rem);
+    height: auto;
+    filter: drop-shadow(0 0 .68rem #ffc568a6) drop-shadow(.15rem .2rem .22rem #2a1017);
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-wagon-lantern-left { left: .3rem; }
+.circus-popcorn .popcorn-wagon-lantern-right { right: .3rem; transform: scaleX(-1); }
+.circus-popcorn .popcorn-wagon-wheel {
+    position: absolute;
+    bottom: -.55rem;
+    width: clamp(3.5rem, 11vw, 8.5rem);
+    aspect-ratio: 1;
+    border: .35rem ridge #b7814d;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, #4d2b23 0 5%, #b47b42 6% 12%, #ffdb90 13% 16%, #7a4628 17% 20%, transparent 21%),
+        radial-gradient(circle, transparent 0 56%, #4c3028 57% 59%, #c1884b 60% 66%, #613a27 68% 72%, #d1a16c 73%),
+        repeating-conic-gradient(from 6deg, #5a321e 0 2deg, #c48f57 3deg 8deg, #f5c580 9deg 10deg, #7c4829 11deg 13deg, #24131c 14deg 45deg);
+    box-shadow: inset 0 0 .5rem #1e1014, 0 .4rem .65rem #200e17;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-wagon-wheel-left { left: clamp(.4rem, 2.4vw, 2rem); }
+.circus-popcorn .popcorn-wagon-wheel-right { right: clamp(.4rem, 2.4vw, 2rem); }
+@media (max-width: 700px) {
+    .circus-popcorn .popcorn-counter-display { padding-bottom: 3.25rem; }
+    .circus-popcorn .popcorn-wagon-lantern { width: 2rem; }
+}
+
+/* Compact wagon controls and shared lower display. */
+.circus-popcorn .popcorn-counter { margin-top: clamp(-2rem, -2vw, -1.1rem); }
+.circus-popcorn .popcorn-marquee {
+    box-shadow: inset 0 0 0 2px #d9a862, inset 0 0 0 5px #421d27, 0 .4rem #532b1c, 0 .8rem 1.6rem #1c0c15;
+}
+.circus-popcorn .popcorn-marquee::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid #d8a65c;
+    border-radius: inherit;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-marquee-bulbs { position: absolute; inset: 0; pointer-events: none; }
+.circus-popcorn .popcorn-marquee-bulbs i {
+    position: absolute;
+    width: clamp(.3rem, 1vw, .62rem);
+    aspect-ratio: 1;
+    border: 1px solid #b88148;
+    border-radius: 50%;
+    background: #ffe8aa;
+    box-shadow: 0 0 .55rem #ffb952ce;
+    transform: translate(-50%, -50%);
+}
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(1) { left: 10%; top: 28%; }
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(2) { left: 18%; top: 15%; }
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(3) { left: 28%; top: 8%; }
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(4) { left: 39%; top: 3%; }
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(5) { left: 50%; top: 1%; }
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(6) { left: 61%; top: 3%; }
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(7) { left: 72%; top: 8%; }
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(8) { left: 82%; top: 15%; }
+.circus-popcorn .popcorn-marquee-bulbs i:nth-child(9) { left: 90%; top: 28%; }
+.circus-popcorn .popcorn-candy-sign {
+    position: absolute;
+    left: 50%;
+    bottom: .28rem;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 100%;
+    padding: .17rem clamp(.12rem, 1vw, .5rem);
+    border: 3px double #e1b370;
+    border-radius: .35rem .15rem;
+    background: #601d31;
+    box-shadow: 0 2px 3px #1f1016;
+    color: #ffe9b2;
+    font: bold clamp(.61rem, 1.3vw, .95rem)/1.1 Georgia, serif;
+    overflow-wrap: anywhere;
+}
+.circus-popcorn .popcorn-shared-display {
+    grid-column: 1 / -1;
+    position: relative;
+    width: min(100%, 52rem);
+    justify-self: center;
+    min-width: 0;
+    padding: .5rem;
+    border: 5px double #d1a064;
+    border-radius: .75rem .35rem;
+    background: radial-gradient(ellipse at 50% 0, #8c4c43, #32141f 70%);
+    box-shadow: inset 0 0 1.25rem #1f0b15, 0 .4rem .8rem #200d17;
+}
+.circus-popcorn .popcorn-shared-display[hidden],
+.circus-popcorn .popcorn-shared-display [hidden] { display: none; }
+.circus-popcorn .popcorn-display-scroll {
+    max-height: min(47vh, 22rem);
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: .2rem .2rem .55rem;
+    scrollbar-color: #d0a168 #341623;
+}
+.circus-popcorn .popcorn-display-close:focus-visible {
+    outline: 3px solid #fff0bf;
+    outline-offset: 2px;
+}
+.circus-popcorn .popcorn-shared-display .popcorn-rebuild {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0;
+    border-width: 2px;
+}
+.circus-popcorn .popcorn-display-scroll .popcorn-flyers { width: min(100%, 34rem); margin-inline: auto; }
+.circus-popcorn .popcorn-display-scroll .popcorn-gallery-panel { margin-top: 0; }
+.circus-popcorn .popcorn-wagon-wheel { width: clamp(2.75rem, 7vw, 6.5rem); }
+.circus-popcorn .popcorn-wagon-lantern { width: clamp(1.37rem, 3.8vw, 3.45rem); }
+.circus-popcorn .popcorn-counter {
+    isolation: isolate;
+}
+.circus-popcorn .popcorn-counter::after {
+    box-shadow: 0 .2rem .3rem #381e21, 0 0 1rem #b7804b5c;
+}
+@keyframes popcorn-wagon-settle {
+    from { translate: 0 -.55rem; opacity: .7; }
+    to { translate: 0 0; opacity: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-popcorn .popcorn-gallery-panel:not([hidden]) .popcorn-flyers li {
+        animation: popcorn-wagon-settle .36s ease-out both;
+    }
+    .circus-popcorn .popcorn-gallery-panel:not([hidden]) .popcorn-flyers li:nth-child(2) { animation-delay: .065s; }
+    .circus-popcorn .popcorn-gallery-panel:not([hidden]) .popcorn-flyers li:nth-child(3) { animation-delay: .13s; }
+}
+@media (max-width: 700px) {
+    .circus-popcorn .popcorn-display-scroll .popcorn-flyers {
+        justify-content: start;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+    }
+    .circus-popcorn .popcorn-display-scroll .popcorn-flyers li {
+        flex: 0 0 min(69%, 12.25rem);
+        scroll-snap-align: start;
+    }
+}
+
+/* Dark fairground atmosphere and brass flourishes within the wagon. */
+.circus-page-body main.circus-popcorn {
+    background:
+        radial-gradient(ellipse at 51% 15%, #994f3c84, transparent 49%),
+        radial-gradient(ellipse at 94% 22%, #4c39494f, transparent 30%),
+        linear-gradient(#181829, #351828 53%, #1a161c);
+}
+.circus-popcorn::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 1.2rem;
+    right: .3rem;
+    width: min(32%, 22rem);
+    aspect-ratio: 1 / .85;
+    background:
+        linear-gradient(transparent, #1b12219c 77%, #1b1221),
+        repeating-conic-gradient(at 53% 4%, #5e283b 0 11deg, #805947 11deg 24deg);
+    clip-path: polygon(53% 2%, 64% 6%, 57% 13%, 53% 11%, 55% 18%, 98% 65%, 92% 68%, 97% 100%, 4% 100%, 12% 68%, 6% 65%, 51% 19%);
+    opacity: .62;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-marquee::before,
+.circus-popcorn .popcorn-shared-display::before {
+    content: '';
+    position: absolute;
+    inset: .45rem;
+    background:
+        radial-gradient(ellipse at 28% 48%, transparent 27%, #cb9558 30% 34%, transparent 37%) left bottom / 2.75rem 1.25rem no-repeat,
+        radial-gradient(ellipse at 72% 48%, transparent 27%, #cb9558 30% 34%, transparent 37%) right bottom / 2.75rem 1.25rem no-repeat;
+    pointer-events: none;
+}
+
+/* Popcorn Stand Phase 2: reflected light, carved body and grounded wheels. */
+.circus-popcorn .popcorn-counter-display {
+    --popcorn-walnut:
+        repeating-linear-gradient(2deg, #ffeeaa18 0 1px, transparent 2px 11px, #47242356 12px 15px),
+        linear-gradient(90deg, #51312666, transparent 24% 74%, #5131267a),
+        linear-gradient(#e0a568, #aa6b44 49%, #663e30);
+    --popcorn-apron: linear-gradient(#f0bb77 0 1px, #a46737 2px 4px, #673d2a 5px 7px, #47272a 8px, #2b151c 100%);
+    background:
+        var(--popcorn-bulb) center bottom / 1.65rem .8rem repeat-x,
+        radial-gradient(ellipse at 2% 17%, #ffb65d65, transparent 62%) left top / 29% var(--popcorn-art-height) no-repeat,
+        radial-gradient(ellipse at 98% 17%, #ffb65d65, transparent 62%) right top / 29% var(--popcorn-art-height) no-repeat,
+        linear-gradient(90deg, #3917249c, transparent 19% 81%, #3917249c) bottom / 100% 33% no-repeat,
+        repeating-linear-gradient(90deg, #853149 0 2px, #65263b 4px 1.5rem, #461e30 1.6rem) bottom / 100% 33% no-repeat,
+        radial-gradient(ellipse at 50% 3%, #e7a65c64, transparent 54%),
+        linear-gradient(90deg, #180a15d9, transparent 29% 71%, #180a15d9),
+        repeating-linear-gradient(90deg, #381a25 0 1px, #815046 2px 3px, #502a32 4px 2.35rem);
+    box-shadow: inset 0 .65rem 1.4rem #28111ac9,
+        inset .38rem 0 #9c65436b, inset -.38rem 0 #9c65436b,
+        inset 0 -1rem 1.4rem #431823b3;
+}
+.circus-popcorn .popcorn-counter-display::before {
+    box-shadow: inset 0 1px #ffd99d9c, inset 0 -.16rem #60382d75;
+}
+.circus-popcorn .popcorn-counter-display::after {
+    box-shadow: 0 .18rem #321a21, 0 .55rem .63rem #1a0d17c9;
+}
+.circus-popcorn .popcorn-marquee {
+    box-shadow: inset 0 0 0 2px #dab072, inset 0 0 0 5px #411e29,
+        0 .35rem #5d341f, 0 .65rem 1.25rem #1c0c15, 0 0 1.5rem #fb9d5559;
+}
+.circus-popcorn .popcorn-marquee-bulbs i {
+    background: radial-gradient(circle at 43% 38%, #fffad9 0 22%, #ffe29d 40%, #c78542 68%, #794622);
+    box-shadow: 0 0 .55rem #ffc16aaf, 0 0 0 1px #4f2b25;
+}
+.circus-popcorn .popcorn-wagon-lantern {
+    filter: drop-shadow(0 0 .7rem #ffcb7ac2) drop-shadow(.15rem .26rem .25rem #24101b);
+}
+.circus-popcorn .popcorn-wagon-wheel {
+    border-color: #bd8c57;
+    box-shadow: inset 0 0 0 2px #f9cc8866, inset 0 0 .55rem #1c1117, 0 .32rem .58rem #1c0d16;
+}
+.circus-popcorn .popcorn-wagon-wheel::before,
+.circus-popcorn .popcorn-wagon-wheel::after {
+    content: '';
+    position: absolute;
+}
+.circus-popcorn .popcorn-wagon-wheel::before {
+    z-index: -1;
+    inset: 40% -24% auto 39%;
+    height: 20%;
+    border: 2px ridge #aa7248;
+    border-radius: .3rem;
+    background: var(--popcorn-apron);
+    box-shadow: 0 .24rem .32rem #1d0b16;
+}
+.circus-popcorn .popcorn-wagon-wheel-right::before { inset: 40% 39% auto -24%; }
+.circus-popcorn .popcorn-wagon-wheel::after {
+    inset: auto -22% -.58rem;
+    height: .72rem;
+    z-index: -1;
+    background: radial-gradient(ellipse, #120b15d6, #1d101a66 47%, transparent 71%);
+}
+.circus-popcorn .popcorn-counter {
+    box-shadow: inset 0 0 1.7rem #220e15, 0 .52rem #371c26, 0 1.2rem 1.7rem #160d18cc;
+}
+.circus-page-body main.circus-popcorn {
+    background:
+        radial-gradient(ellipse at 50% 13%, #e09a5130, transparent 56%),
+        radial-gradient(ellipse at 50% 86%, #281822, transparent 72%),
+        linear-gradient(#181729, #2e1827 56%, #20161d);
+}
+.circus-popcorn::before {
+    top: .7rem;
+    background:
+        radial-gradient(ellipse at 67% 73%, #f3b86262, transparent 51%),
+        linear-gradient(transparent, #1b1221b5 86%),
+        repeating-conic-gradient(at 53% 4%, #652c41 0 11deg, #8b654d 11deg 24deg);
+}
+.circus-popcorn .popcorn-shared-display {
+    background: radial-gradient(ellipse at 50% 0, #b9774c61, transparent 66%), linear-gradient(#5c2b36, #341923);
+    box-shadow: inset 0 .3rem #9b613f54, inset 0 .4rem 1.15rem #1f0b15, 0 .4rem .8rem #200d17;
 }
 @media (max-width: 480px) {
-    .circus-popcorn .circus-concession-previews { grid-template-columns: minmax(0, 1fr); }
-    .circus-popcorn .circus-concession-preview:last-child { grid-column: auto; width: 100%; }
+    .circus-popcorn .popcorn-wagon-lantern { width: 1.25rem; }
+    .circus-popcorn .popcorn-display-scroll { max-height: min(42vh, 19rem); }
 }
 
-/* Main Event construction artwork: centered, uncropped, circus-gold framing. */
-.circus-ring .circus-ring-progress-frame {
-    width: min(100%, 36rem);
-    min-width: 0;
-    margin: 0 auto;
-    padding: .4rem;
-    border: 5px double var(--circus-gold);
-    border-radius: 1rem;
-    background: var(--circus-ink);
-    box-shadow: var(--circus-shadow);
+/* Popcorn Stand Phase 3: drawer, engraving and restrained activation. */
+.circus-popcorn .popcorn-shared-display {
+    isolation: isolate;
+    margin-block: .12rem .26rem;
+    padding: .35rem .55rem .5rem;
+    border: 6px ridge #c99a60;
+    background:
+        radial-gradient(ellipse at 50% 0, #efac663f, transparent 58%),
+        repeating-linear-gradient(1deg, #50243447 0 1px, transparent 2px 11px),
+        linear-gradient(#552938, #291520);
+    box-shadow: inset 0 0 0 1px #eab7775e, inset 0 .36rem 1.08rem #170b17,
+        0 .24rem #70412d, 0 .55rem .8rem #210e18;
 }
-.circus-page-body .circus-ring .circus-ring-progress-frame img {
+.circus-popcorn .popcorn-display-scroll {
+    min-width: 0;
+    max-height: min(43vh, 20rem);
+    scrollbar-gutter: stable;
+}
+.circus-popcorn .popcorn-display-scroll .popcorn-flyers {
+    gap: .15rem;
+    width: min(100%, 32.5rem);
+    padding-block: .4rem .55rem;
+    padding-inline: .42rem;
+}
+.circus-popcorn .popcorn-display-scroll .popcorn-flyers li + li { margin-left: -1%; }
+.circus-popcorn .popcorn-treat-art::after {
+    inset-inline: 19%;
+    background: radial-gradient(ellipse, #160a14d9 0 14%, #391e256b 43%, transparent 72%);
+}
+.circus-popcorn .popcorn-marquee::before {
+    background:
+        radial-gradient(ellipse at 28% 53%, transparent 27%, #c68d54 29% 33%, transparent 36%) left .18rem bottom / 2.4rem 1rem no-repeat,
+        radial-gradient(ellipse at 72% 53%, transparent 27%, #c68d54 29% 33%, transparent 36%) right .18rem bottom / 2.4rem 1rem no-repeat;
+    filter: drop-shadow(0 1px #713c2c) drop-shadow(0 -1px #f0be79a8);
+}
+.circus-popcorn .popcorn-counter-display {
+    background:
+        var(--popcorn-bulb) center bottom / 1.65rem .8rem repeat-x,
+        radial-gradient(circle, #ffe0a2 0 8%, #ab713b 14% 20%, transparent 27%) left .45rem bottom .9rem / .95rem .9rem repeat-x,
+        radial-gradient(ellipse at 50% 100%, #eeab5740, transparent 72%) bottom / 100% 30% no-repeat,
+        radial-gradient(ellipse at 2% 17%, #ffb65d65, transparent 62%) left top / 29% var(--popcorn-art-height) no-repeat,
+        radial-gradient(ellipse at 98% 17%, #ffb65d65, transparent 62%) right top / 29% var(--popcorn-art-height) no-repeat,
+        repeating-linear-gradient(90deg, #853149 0 2px, #65263b 4px 1.5rem, #461e30 1.6rem) bottom / 100% 33% no-repeat,
+        radial-gradient(ellipse at 50% 3%, #e7a65c64, transparent 54%),
+        linear-gradient(90deg, #180a15d9, transparent 29% 71%, #180a15d9),
+        repeating-linear-gradient(90deg, #381a25 0 1px, #815046 2px 3px, #502a32 4px 2.35rem);
+    box-shadow: inset 0 .65rem 1.4rem #28111ac9, inset .38rem 0 #9c654385,
+        inset -.38rem 0 #9c654385, inset 0 -1rem 1.4rem #431823b3;
+}
+.circus-popcorn .popcorn-wagon-wheel::before {
+    background: radial-gradient(circle closest-side, #f0c484 0 40%, #80502f 47% 65%, transparent 74%) center / .64rem .64rem no-repeat,
+        var(--popcorn-apron);
+}
+@keyframes popcorn-wagon-drawer-open {
+    from { translate: 0 -.28rem; opacity: .78; }
+    to { translate: 0 0; opacity: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-popcorn .popcorn-shared-display:not([hidden]) { animation: popcorn-wagon-drawer-open .25s ease-out both; }
+}
+@media (max-width: 700px) {
+    .circus-popcorn .popcorn-display-scroll { max-height: min(42vh, 18rem); }
+    .circus-popcorn .popcorn-display-scroll .popcorn-flyers li + li { margin-left: 0; }
+}
+
+/* Popcorn Stand Phase 4: interactive seals and bounded spills. */
+.circus-popcorn .popcorn-treat-toggle {
+    min-height: 44px;
+    padding-bottom: .65rem;
+    -webkit-tap-highlight-color: #ffd58438;
+}
+.circus-popcorn .popcorn-treat-art svg { overflow: hidden; }
+.circus-popcorn .popcorn-peace-light { filter: drop-shadow(0 0 2px #ffc061bd); }
+.circus-popcorn .popcorn-treat-toggle:is(:hover, :focus-visible, [aria-expanded="true"]) .popcorn-peace-light {
+    stroke: #fff1bd;
+    filter: drop-shadow(0 0 4px #ffca75);
+}
+.circus-popcorn .popcorn-spill { display: none; pointer-events: none; }
+@keyframes popcorn-wagon-bucket-bounce {
+    0%, 64%, 100% { transform: translateY(0) scale(1); }
+    71% { transform: translateY(-15px) scale(.96, 1.075); }
+    79% { transform: translateY(0) scale(1.09, .9); }
+    86% { transform: translateY(-6px) scale(.98, 1.03); }
+    93% { transform: translateY(0) scale(1); }
+}
+@keyframes popcorn-wagon-candy-turn {
+    0%, 39%, 73%, 100% { transform: rotate(0) scaleX(1); }
+    48% { transform: rotate(-9deg) scaleX(.62) translateY(-6px); }
+    56% { transform: rotate(6deg) scaleX(-.98) translateY(-7px); }
+    65% { transform: rotate(5deg) scaleX(.67) translateY(-3px); }
+}
+@keyframes popcorn-wagon-peanut-pulse {
+    0%, 66%, 100% { transform: rotate(0) scale(1); }
+    74% { transform: translateX(-6px) rotate(-5deg) scale(1.065, .94); }
+    83% { transform: translateX(6px) rotate(4deg) scale(.955, 1.055); }
+    91% { transform: rotate(-1.3deg) scale(1.02, .985); }
+}
+@keyframes popcorn-wagon-peace-glow {
+    0%, 48%, 100% { opacity: .84; }
+    58%, 68% { opacity: 1; filter: drop-shadow(0 0 5px #ffd387); }
+    82% { opacity: .58; }
+}
+@keyframes popcorn-wagon-spill {
+    0%, 63% { translate: 0 0; rotate: 0deg; opacity: 0; }
+    66% { opacity: 1; }
+    70% { translate: calc(var(--spill-x) * .3) var(--spill-hop); rotate: 32deg; }
+    78% { translate: calc(var(--spill-x) * .62) 136px; rotate: 130deg; animation-timing-function: ease-out; }
+    83% { translate: calc(var(--spill-x) * .75) calc(136px + var(--spill-rebound)); rotate: 182deg; animation-timing-function: ease-in; }
+    88% { translate: calc(var(--spill-x) * .85) 143px; rotate: 226deg; animation-timing-function: ease-out; }
+    91% { translate: calc(var(--spill-x) * .92) 139px; rotate: 253deg; opacity: 1; }
+    95%, 100% { translate: var(--spill-x) 166px; rotate: 300deg; opacity: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-popcorn .popcorn-treat-motion {
+        transform-box: view-box;
+        transform-origin: 50% 93%;
+    }
+    .circus-popcorn .popcorn-treat-popcorn .popcorn-treat-motion { animation: popcorn-wagon-bucket-bounce 7.8s ease-in-out infinite; }
+    .circus-popcorn .popcorn-treat-school .popcorn-treat-motion {
+        transform-origin: 50% 65%;
+        animation: popcorn-wagon-candy-turn 10s ease-in-out infinite;
+    }
+    .circus-popcorn .popcorn-treat-peanuts .popcorn-treat-motion { animation: popcorn-wagon-peanut-pulse 9.3s ease-in-out -2s infinite; }
+    .circus-popcorn .popcorn-peace-light { animation: popcorn-wagon-peace-glow 4.4s ease-in-out infinite; }
+    .circus-popcorn .popcorn-treat-school .popcorn-peace-light { animation: popcorn-wagon-candy-seal 10s ease-in-out infinite; }
+    .circus-popcorn .popcorn-candy-sparkle { animation: popcorn-wagon-candy-sparkle 10s ease-in-out infinite; }
+    .circus-popcorn .popcorn-spill { display: inline; }
+    .circus-popcorn .popcorn-spill-piece {
+        --spill-x: -78px;
+        --spill-hop: -21px;
+        --spill-rebound: -25px;
+        opacity: 0;
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: popcorn-wagon-spill 7.8s ease-in-out infinite;
+    }
+    .circus-popcorn .popcorn-spill-piece-2 {
+        --spill-x: 72px;
+        --spill-hop: -28px;
+        --spill-rebound: -19px;
+        animation-delay: -.17s;
+    }
+    .circus-popcorn .popcorn-spill-piece-3 {
+        --spill-x: 89px;
+        --spill-hop: -13px;
+        --spill-rebound: -16px;
+        animation-delay: -.33s;
+    }
+    .circus-popcorn .popcorn-spill-piece-4 {
+        --spill-x: -94px;
+        --spill-hop: -16px;
+        --spill-rebound: -14px;
+        animation-delay: -.48s;
+    }
+    .circus-popcorn .popcorn-spill-piece-5 {
+        --spill-x: 54px;
+        --spill-hop: -32px;
+        --spill-rebound: -22px;
+        animation-delay: -.63s;
+    }
+    .circus-popcorn .popcorn-treat-peanuts .popcorn-spill-piece {
+        animation-duration: 9.3s;
+        animation-delay: -2.12s;
+    }
+    .circus-popcorn .popcorn-treat-peanuts .popcorn-spill-piece-2 { animation-delay: -2.42s; }
+    .circus-popcorn .popcorn-treat-peanuts .popcorn-spill-piece-3 { animation-delay: -2.7s; }
+    .circus-popcorn .popcorn-treat-peanuts .popcorn-spill-piece-4 { animation-delay: -2.86s; }
+    .circus-popcorn .popcorn-treat-peanuts .popcorn-spill-piece-5 { animation-delay: -3.02s; }
+}
+@media (max-width: 700px) {
+    .circus-popcorn :is(.popcorn-spill-piece-4, .popcorn-spill-piece-5) { display: none; }
+    .circus-popcorn .popcorn-spill-piece-1 { --spill-x: -47px; }
+    .circus-popcorn .popcorn-spill-piece-2 { --spill-x: 42px; }
+    .circus-popcorn .popcorn-spill-piece-3 { --spill-x: 58px; }
+}
+
+/* Popcorn Stand recessed drawer, school display, and kernel back control. */
+.circus-popcorn .popcorn-shared-display:not([hidden]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, auto) auto;
+    row-gap: .25rem;
+    border: 4px ridge #d2a36a;
+    background:
+        linear-gradient(#edaf6849, transparent .8rem, transparent calc(100% - .45rem), #9f603c73),
+        repeating-linear-gradient(91deg, #a763412a 0 1px, transparent 2px 1.95rem, #27121c72 2rem 2.08rem),
+        radial-gradient(ellipse at 49% 0, #a359405f, transparent 63%),
+        linear-gradient(#4d2635, #281420);
+    box-shadow: inset 0 0 0 1px #e8b777a0, inset 0 0 0 3px #48271f,
+        inset 0 .5rem 1.25rem #170c16dc, 0 .26rem #633a27, 0 .55rem .8rem #210e18;
+}
+.circus-popcorn .popcorn-shared-display::before {
+    z-index: -1;
+    inset: .2rem;
+    border: 1px solid #c993586b;
+    border-radius: .43rem .2rem;
+    background:
+        radial-gradient(circle closest-side, #ffe5ac 0 18%, #9f683c 38% 59%, transparent 69%) left .08rem top .08rem / .64rem .64rem no-repeat,
+        radial-gradient(circle closest-side, #ffe5ac 0 18%, #9f683c 38% 59%, transparent 69%) right .08rem top .08rem / .64rem .64rem no-repeat,
+        radial-gradient(ellipse at 25% 52%, transparent 25%, #d3a06b9e 29% 34%, transparent 38%) left bottom / 2.4rem 1.25rem no-repeat,
+        radial-gradient(ellipse at 75% 52%, transparent 25%, #d3a06b9e 29% 34%, transparent 38%) right bottom / 2.4rem 1.25rem no-repeat,
+        var(--popcorn-bulb) center bottom / 1.24rem .54rem repeat-x;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-display-close {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    position: relative;
+    justify-self: right;
+    margin: .14rem .22rem .08rem 0;
+    padding: 0;
+    border: 1px solid #ce9d5b;
+    border-radius: 43% 36% 46% 35% / 41% 46% 35% 45%;
+    background:
+        radial-gradient(ellipse at 27% 23%, #fff9dc 0 19%, transparent 53%),
+        radial-gradient(ellipse at 74% 32%, #ffebae 0 23%, transparent 58%),
+        radial-gradient(ellipse at 42% 75%, #f5cd7a, #b77946 85%);
+    box-shadow: inset 0 1px #fff1c3, inset -.15rem -.18rem .28rem #90533052, 0 .26rem .4rem #241019;
+    color: #542b2d;
+    cursor: pointer;
+}
+.circus-popcorn .popcorn-display-close svg { width: 1.18rem; height: 1.18rem; }
+.circus-popcorn .popcorn-display-close:hover {
+    border-color: #fff1c7;
+    box-shadow: inset 0 1px #fff1c3, 0 .22rem .55rem #ffc67986;
+}
+.circus-popcorn .popcorn-display-scroll:has(> .popcorn-support:not([hidden])) {
+    min-height: 0;
+    max-height: min(52vh, 26rem);
+    max-height: min(52dvh, 26rem);
+    overflow-y: auto;
+    padding: .35rem clamp(.24rem, 1.5vw, .75rem) .65rem;
+    scroll-padding-block: .55rem;
+}
+.circus-popcorn .popcorn-shared-display .popcorn-support {
+    width: min(100%, 45rem);
+    margin-inline: auto;
+    padding: .12rem .22rem .3rem;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    justify-items: stretch;
+    gap: .55rem;
+}
+.circus-popcorn .popcorn-support .popcorn-rebuild {
+    background:
+        radial-gradient(ellipse at 48% 4%, #a3614252, transparent 65%),
+        repeating-linear-gradient(90deg, #a6684121 0 1px, transparent 2px 1.8rem),
+        linear-gradient(#502a32, #2f1722);
+    box-shadow: inset 0 1px #f4c6843d, inset 0 .2rem .75rem #261420, 0 .3rem .48rem #211119;
+}
+.circus-popcorn .popcorn-support .popcorn-rebuild-display {
+    direction: ltr;
+    grid-template-columns: minmax(0, clamp(12rem, 27vw, 15rem)) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(.55rem, 2.5vw, 1rem);
+    padding: .42rem clamp(.42rem, 2vw, .85rem) .62rem;
+    border-bottom-width: .2rem;
+}
+.circus-popcorn .popcorn-support .popcorn-rebuild-flyer {
+    padding: .14rem;
+    border: 2px ridge #d1a16b;
+    background: #f7e0b3;
+    box-shadow: inset 0 0 0 1px #fff4d2, .18rem .24rem .6rem #29131cbc;
+}
+.circus-popcorn .popcorn-support .popcorn-rebuild-details {
+    justify-items: start;
+    gap: .5rem;
+    text-align: start;
+}
+[dir="rtl"] .circus-popcorn .popcorn-support .popcorn-rebuild-details { direction: rtl; }
+.circus-popcorn .popcorn-rebuild > .popcorn-kernel-spill {
+    justify-content: center;
+    margin: .35rem auto .45rem;
+}
+.circus-popcorn .popcorn-campaign-tickets {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .45rem;
+    padding: 0 .5rem .7rem;
+}
+.circus-popcorn .popcorn-campaign-tickets .popcorn-fundraiser {
+    min-height: 44px;
+    border-color: #d6a566;
+    background: linear-gradient(#81374b, #481f32);
+    color: #fff0c7;
+    box-shadow: inset 0 1px #f3c78c66, 0 .24rem .4rem #27131e;
+}
+.circus-popcorn .popcorn-campaign-tickets .popcorn-fundraiser:is(:hover, :focus-visible) {
+    border-color: #fff0c2;
+    box-shadow: 0 0 .7rem #efb76a84;
+}
+.circus-popcorn .popcorn-candy-sparkle { opacity: 0; }
+@keyframes popcorn-wagon-candy-seal {
+    0%, 33%, 100% { opacity: .9; }
+    49%, 63% { opacity: .48; }
+    76%, 87% { opacity: 1; filter: drop-shadow(0 0 6px #ffd387); }
+}
+@keyframes popcorn-wagon-candy-sparkle {
+    0%, 72%, 92%, 100% { opacity: 0; }
+    79%, 85% { opacity: .9; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-popcorn .popcorn-display-close { transition: transform .2s ease-out; }
+    .circus-popcorn .popcorn-display-close:hover { transform: translateY(-.2rem) rotate(-5deg); }
+}
+@media (max-width: 600px) {
+    .circus-popcorn .popcorn-support .popcorn-rebuild-display {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .circus-popcorn .popcorn-support .popcorn-rebuild-flyer { max-width: min(100%, 13.75rem); }
+    .circus-popcorn .popcorn-support .popcorn-rebuild-details {
+        justify-items: center;
+        text-align: center;
+    }
+}
+
+/* Popcorn Stand typography. Arabic continues to use the existing language styles. */
+.circus-page-body main.circus-popcorn {
+    font-family: "Bree Serif", Georgia, serif;
+}
+.circus-popcorn :is(.popcorn-ticket, .popcorn-candy-sign, .popcorn-display-close, .circus-return) .lang-en,
+.circus-popcorn .popcorn-rebuild h3 .lang-en,
+.circus-popcorn .popcorn-campaign-tickets .lang-en {
+    font-family: "Bree Serif", Georgia, serif;
+}
+.circus-popcorn :is(.popcorn-marquee h2, .popcorn-gallery-label) .lang-en {
+    font-family: Rye, Georgia, serif;
+    font-weight: 400;
+    text-shadow: 0 1px #985832, 0 2px 2px #2d1420;
+}
+
+/* Popcorn Stand marquee, recessed display bays and polished counter. */
+.circus-popcorn .popcorn-marquee {
+    box-shadow: inset 0 1px #ffe2a5, inset 0 0 0 2px #bd824c,
+        inset 0 0 0 5px #532434, inset 0 .5rem 1.15rem #2c101c,
+        0 0 0 1px #774a2d, 0 .18rem #c08950, 0 .42rem #4c2923,
+        0 .8rem 1.25rem #190b16d9, 0 0 1.35rem #eba55752;
+}
+.circus-popcorn .popcorn-marquee::after {
+    border-top-color: #ffe7ae;
+    box-shadow: inset 0 1px #f5c47d45;
+}
+.circus-popcorn .popcorn-marquee::before {
+    background:
+        radial-gradient(ellipse, #ffe4a0 0 12%, #ac7340 18% 37%, transparent 44%) left .13rem bottom .15rem / .85rem .85rem no-repeat,
+        radial-gradient(ellipse, #ffe4a0 0 12%, #ac7340 18% 37%, transparent 44%) right .13rem bottom .15rem / .85rem .85rem no-repeat,
+        radial-gradient(ellipse at 25% 55%, transparent 24%, #cf995e 27% 32%, transparent 36%) left .45rem bottom / 2.5rem 1.05rem no-repeat,
+        radial-gradient(ellipse at 75% 55%, transparent 24%, #cf995e 27% 32%, transparent 36%) right .45rem bottom / 2.5rem 1.05rem no-repeat;
+}
+.circus-popcorn .popcorn-treat-art::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    inset: .65rem 5% .82rem;
+    border: 1px solid #c38c56;
+    border-radius: 45% 45% .28rem .28rem / 18% 18% .28rem .28rem;
+    background:
+        radial-gradient(circle, #f2ca87 0 10%, #915a3a 16% 27%, transparent 34%) left .16rem bottom .12rem / .86rem .86rem no-repeat,
+        radial-gradient(circle, #f2ca87 0 10%, #915a3a 16% 27%, transparent 34%) right .16rem bottom .12rem / .86rem .86rem no-repeat,
+        radial-gradient(ellipse at 50% 95%, #f4ab645c, transparent 67%),
+        repeating-linear-gradient(45deg, transparent 0 10px, #c5945e19 11px, transparent 12px 19px),
+        repeating-linear-gradient(-45deg, transparent 0 10px, #3c202885 11px, transparent 12px 19px),
+        repeating-linear-gradient(90deg, #351e22 0 2px, #754834 3px 6px, #4c2827 9px 30px);
+    box-shadow: inset 0 0 0 2px #26131bd9, inset 0 .6rem 1rem #160d16be,
+        inset 0 -.35rem .5rem #482020aa, 0 1px #dcaa695c;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-treat-art::after {
+    background:
+        radial-gradient(ellipse, #180d14df 0 14%, #3c202368 39%, transparent 69%),
+        radial-gradient(ellipse at 50% 74%, #f5c17f7d, transparent 73%);
+}
+.circus-popcorn .popcorn-counter-display {
+    --popcorn-apron: linear-gradient(#ffd794 0 1px, #b9753e 2px 4px, #6d3d2b 5px 8px, #4a2528 9px, #2b161c);
+}
+.circus-popcorn .popcorn-counter-display::before {
+    box-shadow: inset 0 2px #ffe1a27a, inset 0 -2px #97603b, inset 0 -.35rem .45rem #532d2878;
+}
+.circus-popcorn .popcorn-counter-display::after {
+    border-bottom-color: #ae7847;
+    box-shadow: inset 0 1px #eabb768a, 0 .21rem #321a20, 0 .65rem .72rem #160a15d5;
+}
+.circus-popcorn .popcorn-wagon-lantern {
+    filter: drop-shadow(0 0 .43rem #ffd081b8) drop-shadow(0 0 .95rem #d8894e7d) drop-shadow(.15rem .26rem .25rem #24101b);
+}
+@media (max-width: 480px) {
+    .circus-popcorn .popcorn-treat-art::before {
+        inset: .35rem 4% .82rem;
+        background-size: .64rem .64rem, .64rem .64rem, auto, auto, auto, auto;
+    }
+}
+
+.circus-page-body .circus-popcorn .popcorn-exit {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    width: fit-content;
+    min-height: 3.55rem;
+    max-width: 100%;
+    margin: .4rem auto .95rem;
+    padding: .8rem clamp(2.5rem, 7vw, 4.1rem);
+    border: 4px double #e8b675;
+    border-radius: 1.35rem .65rem;
+    background:
+        var(--popcorn-bulb) center top / 1.15rem .72rem repeat-x,
+        var(--popcorn-bulb) center bottom / 1.15rem .72rem repeat-x,
+        radial-gradient(ellipse at 50% 10%, #a54254, #6e2035 47%, #361220);
+    box-shadow: inset 0 0 0 2px #713f35, inset 0 0 1.15rem #250c18, 0 .3rem 0 #4a261f, 0 .55rem .85rem #1c0b14;
+    color: #fff0cb;
+    font-family: Georgia, serif;
+    line-height: 1.35;
+    text-align: center;
+    white-space: normal;
+    transition: transform .22s ease-out, box-shadow .22s ease-out;
+}
+.circus-popcorn .popcorn-exit-arrow {
+    position: absolute;
+    top: 50%;
+    left: clamp(.45rem, 2vw, 1.1rem);
+    width: clamp(1.65rem, 4vw, 2.6rem);
+    height: auto;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-exit::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 -.7rem;
+    width: .75rem;
+    height: .9rem;
+    margin-inline: auto;
+    background: repeating-linear-gradient(90deg, #c28b54 0 2px, #f9d594 2px 3px, #7f492e 3px 4px);
+    clip-path: polygon(39% 0, 61% 0, 85% 90%, 50% 100%, 15% 90%);
+    pointer-events: none;
+}
+.circus-page-body .circus-popcorn .popcorn-exit:is(:hover, :focus-visible) {
+    color: #fff4d8;
+    box-shadow: inset 0 0 0 2px #9b6250, 0 .35rem 0 #4a261f, 0 0 1.15rem #ffd08575;
+}
+.circus-popcorn .popcorn-exit:focus-visible {
+    outline: 3px solid #fff0b6;
+    outline-offset: 5px;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-popcorn .popcorn-exit:hover { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-page-body .circus-popcorn .popcorn-exit { transition: none; }
+}
+
+/* Popcorn Stand stocked alcoves and fairground details. */
+.circus-popcorn .popcorn-fairground {
+    position: absolute;
+    z-index: -1;
+    inset: .15rem 0 auto;
+    width: 100%;
+    height: clamp(8rem, 21vw, 16rem);
+    opacity: .48;
+    filter: drop-shadow(0 0 .26rem #ffbb6d75);
+    pointer-events: none;
+}
+.circus-popcorn::before {
+    background:
+        radial-gradient(ellipse closest-side, #ffd792ac, #bf74408c 53%, transparent 72%) 58% 85% / 19% 36% no-repeat,
+        linear-gradient(transparent, #1b1221b5 86%),
+        repeating-conic-gradient(at 53% 4%, #652c41 0 11deg, #8b654d 11deg 24deg);
+}
+.circus-popcorn::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: auto 2% 1.5rem;
+    height: 19%;
+    background: radial-gradient(ellipse at 50% 40%, #130c16ca, transparent 55%),
+        radial-gradient(ellipse at 87% 70%, #c7895838, transparent 43%);
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-alcove {
+    position: absolute;
+    z-index: -1;
+    inset: .72rem 7% .85rem;
+    border-radius: 45% 45% .2rem .2rem / 19% 19% .2rem .2rem;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 8%, #ffd88e44, transparent 55%),
+        radial-gradient(ellipse at 50% 72%, #e4a66538, transparent 68%);
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-alcove-lights {
+    position: absolute;
+    inset: .5rem 19% auto;
+    height: .65rem;
+    background: var(--popcorn-bulb) center top / .92rem .65rem repeat-x;
+    filter: drop-shadow(0 .18rem .23rem #ed9c53b9);
+}
+.circus-popcorn .popcorn-alcove-shelf {
+    position: absolute;
+    inset-inline: 7%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: .55rem;
+    padding-inline: 6%;
+    padding-bottom: .45rem;
+    border-bottom: 1px solid #d79e5e;
+    border-radius: .08rem;
+    background: linear-gradient(#e4b479 0 1px, #986642 2px 4px, #4f2929 5px);
+    box-shadow: 0 .24rem .45rem #1d1018c7, 0 -.09rem .15rem #f8bb7147;
+}
+.circus-popcorn .popcorn-alcove-shelf-upper { top: 42%; }
+.circus-popcorn .popcorn-alcove-shelf-lower { top: 77%; }
+.circus-popcorn .popcorn-alcove-shelf::after {
+    content: '';
+    position: absolute;
+    inset: 100% .16rem auto;
+    height: .33rem;
+    background:
+        radial-gradient(ellipse at top, #e1b17a 0 37%, #8d5534 47% 62%, transparent 69%) left / .53rem .33rem no-repeat,
+        radial-gradient(ellipse at top, #e1b17a 0 37%, #8d5534 47% 62%, transparent 69%) right / .53rem .33rem no-repeat;
+}
+.circus-popcorn .popcorn-shelf-souvenir-defs {
+    position: absolute;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-alcove-shelf > .popcorn-shelf-souvenir {
+    display: block;
+    flex: 0 0 auto;
+    width: clamp(.48rem, 2.05vw, 1.45rem);
+    aspect-ratio: .78;
+    pointer-events: none;
+}
+.circus-popcorn .popcorn-shelf-souvenir svg {
     display: block;
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    border-radius: .5rem;
+    max-height: 100%;
+    overflow: hidden;
+    filter: drop-shadow(0 .06rem .08rem #241319a6);
+    pointer-events: none;
 }
-
-/* Main Event construction preview: decorative illustrations, no game controls. */
-.circus-ring .circus-developer-note {
-    display: grid;
-    grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(1rem, 3vw, 2rem);
-    width: 100%;
-    min-width: 0;
-    padding: clamp(1rem, 3vw, 1.75rem);
-    border: 1px solid var(--circus-gold);
-    border-radius: 1rem;
-    background: linear-gradient(90deg, #c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
-        linear-gradient(#c6deca09 1px, transparent 1px) 0 0 / 24px 24px,
-        linear-gradient(135deg, #3d2530, #243b39);
-    box-shadow: inset 0 0 0 4px #e5bd7010, 0 8px 20px #160c1033;
-    text-align: start;
+.circus-popcorn .popcorn-alcove-sign {
+    position: absolute;
+    left: 10%;
+    top: 48%;
+    max-width: 45%;
+    padding: .04rem .16rem;
+    border: 1px solid #c39055;
+    border-radius: .09rem;
+    background: linear-gradient(#f3d3a2, #bb8d61);
+    color: #542d2c;
+    box-shadow: 0 .1rem .16rem #341e20;
+    font: bold clamp(.42rem, .85vw, .68rem)/1.25 Georgia, serif;
 }
-.circus-ring .circus-developer-david { display: block; width: 100%; max-width: 9rem; height: auto; justify-self: center; }
-.circus-ring .circus-developer-copy { display: grid; gap: 1.25rem; min-width: 0; overflow-wrap: anywhere; }
-.circus-ring .circus-developer-copy > div + div { border-top: 1px dashed #e5bd7066; padding-top: 1rem; }
-.circus-page-body .circus-ring .circus-developer-note h2 {
-    margin: 0 0 .75rem;
-    color: var(--circus-gold);
-    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
-    line-height: 1.4;
-    text-align: start;
+.circus-popcorn .popcorn-wagon-inlay {
+    position: absolute;
+    z-index: -1;
+    inset: auto 7% .73rem;
+    height: clamp(1.5rem, 3vw, 2.8rem);
+    border: 3px ridge #b47d4c;
+    border-radius: .55rem .22rem;
+    background:
+        radial-gradient(circle, #ffd99b 0 12%, #96643d 18% 25%, transparent 31%) left top / 1rem .7rem repeat-x,
+        radial-gradient(ellipse at 26% 50%, transparent 19%, #b6845973 23% 28%, transparent 31%) left center / 4rem 100% no-repeat,
+        radial-gradient(ellipse at 74% 50%, transparent 19%, #b6845973 23% 28%, transparent 31%) right center / 4rem 100% no-repeat,
+        repeating-linear-gradient(91deg, #bd77613f 0 1px, transparent 2px 8px),
+        linear-gradient(#683148, #441e30 55%, #2d1723);
+    box-shadow: inset 0 .35rem .7rem #220f19, inset 0 -.18rem #d2985a52, 0 .24rem .4rem #230f19b3;
+    pointer-events: none;
 }
-.circus-page-body .circus-ring .circus-developer-note p {
-    max-width: none;
-    margin: 0 0 .65rem;
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--circus-cream);
-    text-align: start;
+.circus-popcorn .popcorn-counter-display::after {
+    box-shadow: inset 0 1px #eabb768a, 0 .21rem #321a20, 0 .72rem .8rem #160a15e0;
 }
-.circus-ring .circus-developer-copy p:last-child { margin-bottom: 0; }
-.circus-ring .circus-developer-copy [lang="ar"] { font-family: 'Amiri', serif; }
-@media (max-width: 600px) {
-    .circus-ring .circus-developer-note { grid-template-columns: minmax(0, 1fr); }
-    .circus-ring .circus-developer-david { max-width: 7rem; }
+.circus-popcorn .popcorn-wagon-wheel::after {
+    background: radial-gradient(ellipse, #100b12e8, #20121b83 44%, transparent 73%);
+}
+@media (max-width: 700px) {
+    .circus-popcorn .popcorn-fairground { opacity: .34; }
+    .circus-popcorn .popcorn-alcove-lights { inset-inline: 27%; background-size: .82rem .65rem; }
+    .circus-popcorn .popcorn-alcove-shelf > span:nth-child(2) { display: none; }
+    .circus-popcorn .popcorn-alcove-shelf { inset-inline: 4%; }
+    .circus-popcorn .popcorn-alcove-sign { left: 6%; }
 }
 
 /* Phase 3A: circular tent interior and six reserved attraction positions. */
@@ -1061,28 +2774,6 @@ body.circus-page-body {
         repeating-linear-gradient(92deg, #130c1644 0, #fff1c418 3%, transparent 7%, #110b163d 11%, transparent 15%),
         linear-gradient(90deg, #4b1627 0%, #853344 16%, #d4bb91 25%, #b99c76 30%, #21483d 39%, #355a49 50%, #21483d 61%, #b99c76 70%, #d4bb91 75%, #853344 84%, #4b1627 100%);
     box-shadow: inset 2px 0 0 #e5bd7066, inset -2px 0 0 #e5bd7066, inset 35px 0 45px #0008, inset -35px 0 45px #0008, inset 0 -22px 28px #170e19aa, 0 18px 24px #0009;
-    pointer-events: none;
-}
-.circus-ring .circus-wall-bay {
-    position: absolute;
-    top: 27%;
-    width: 15%;
-    height: 25%;
-    border: 4px double #e5bd7080;
-    border-radius: 45% 45% 5% 5%;
-    background: #231a1855;
-    box-shadow: inset 0 0 18px #0008;
-}
-.circus-ring .circus-wall-bay--left { left: 12%; transform: rotateY(25deg); }
-.circus-ring .circus-wall-bay--center { left: 42.5%; }
-.circus-ring .circus-wall-bay--right { right: 12%; transform: rotateY(-25deg); }
-.circus-ring .circus-tent-rigging {
-    position: absolute;
-    inset: 0 0 auto;
-    width: 100%;
-    height: 36%;
-    color: var(--circus-gold);
-    filter: drop-shadow(0 0 5px #ffe5a180);
     pointer-events: none;
 }
 .circus-ring .circus-ring-floor {
@@ -1159,8 +2850,6 @@ body.circus-page-body {
 @media (max-width: 700px) {
     .circus-ring .circus-tent-scene { height: auto; border-radius: 40% 40% 1.5rem 1.5rem / 5rem 5rem 1.5rem 1.5rem; }
     .circus-ring .circus-tent-wall { bottom: 0; border-radius: inherit; border-bottom: 0; }
-    .circus-ring .circus-tent-rigging { height: 10rem; }
-    .circus-ring .circus-wall-bay { top: 3rem; height: 4rem; }
     .circus-ring .circus-ring-floor { top: 9rem; bottom: 1rem; height: auto; transform: none; border-width: 6px; border-radius: 45% 45% 30% 30% / 5rem 5rem 4rem 4rem; }
     .circus-ring .circus-attraction-positions { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; height: auto; padding: 9rem 1rem 2rem; }
     .circus-ring .circus-attraction-position { position: relative; inset: auto; width: min(100%, 21rem); }
@@ -1218,13 +2907,62 @@ body.circus-page-body {
 .circus-ring a.circus-attraction-entry:is(:hover, :focus-visible) .circus-station-arch { box-shadow: inset 0 0 15px #e5bd7033, 0 0 10px #e5bd7080; }
 .circus-ring a.circus-attraction-entry:active .circus-attraction-label { box-shadow: inset 0 2px 5px #0008; }
 /* Photo mats sit above the stations, with no image requests or interactive content. */
-.circus-ring .circus-wall-bay { top: 7%; height: 16%; padding: .3rem; border-color: var(--circus-gold); box-shadow: inset 0 0 0 2px #231a18, 3px 5px 8px #0008; }
+.circus-ring .ring-wall-displays {
+    --ring-frame-width: clamp(2.7rem, 8vw, 5.7rem);
+    position: absolute;
+    z-index: 1;
+    inset: .35rem 0 auto;
+    width: min(60%, 40rem);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+}
+.circus-ring .ring-wall-display {
+    position: relative;
+    width: min(100%, var(--ring-frame-width));
+    padding-block-start: clamp(1.05rem, 2.8vw, 2rem);
+}
+.circus-ring .ring-wall-display::before,
+.circus-ring .ring-wall-display::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    margin-inline: auto;
+    pointer-events: none;
+}
+.circus-ring .ring-wall-display::before {
+    z-index: 1;
+    top: 0;
+    width: 34%;
+    height: clamp(.35rem, .8vw, .58rem);
+    border-radius: 45% 45% 22% 22%;
+    background: linear-gradient(90deg, #613921, #d5a15b 48%, #785030);
+    box-shadow: inset 0 -2px #ffdda1, 0 2px 5px #ffc36b7d;
+}
+.circus-ring .ring-wall-display::after {
+    top: clamp(.34rem, .78vw, .55rem);
+    bottom: calc(100% - clamp(1.05rem, 2.8vw, 2rem));
+    width: 88%;
+    background: linear-gradient(#ffdd9a88, #ffda8820 82%, transparent);
+    clip-path: polygon(34% 0, 66% 0, 100% 100%, 0 100%);
+}
+.circus-ring .circus-wall-bay {
+    height: clamp(2.6rem, 6.6vw, 4.8rem);
+    padding: clamp(.12rem, .45vw, .28rem);
+    border: 4px double var(--circus-gold);
+    border-radius: 45% 45% 5% 5%;
+    background: #231a1855;
+    box-shadow: inset 0 0 0 2px #231a18, 3px 5px 8px #0008;
+}
+@media (max-width: 850px) {
+    .circus-ring .ring-wall-displays { width: min(64%, 28rem); }
+}
 .circus-ring .circus-photo-mat { display: block; width: 100%; height: 100%; border: 1px solid #e5bd7066; border-radius: inherit; background: radial-gradient(ellipse, #8b7863, #4c4038); box-shadow: inset 0 0 12px #231a1899; }
 @media (min-width: 701px) and (max-width: 1000px) {
     .circus-ring .circus-station-stage { width: min(100%, 8.5rem); height: 6.5rem; }
 }
 @media (max-width: 700px) {
-    .circus-ring .circus-wall-bay { top: 2.5rem; height: 4rem; }
     .circus-ring .circus-station-stage { width: min(100%, 12rem); height: 9rem; }
     .circus-ring .circus-attraction-entry { padding: 1rem; }
 }
@@ -1291,218 +3029,699 @@ body.circus-page-body {
 .circus-page-body .circus-ring .circus-game-station h3 { margin: 0; }
 .circus-page-body .circus-ring .circus-game-station-description { margin: 0; }
 
-/* Phase 2D: consolidated Grand Entrance architecture; destination pages use earlier rules. */
+/* Gaza Circus School Grand Entrance: facade, doorways and foreground. */
 body.circus-entrance-body {
-    background: #111111;
+    background: #15101a;
     height: auto;
     max-height: none;
     overflow-y: auto;
 }
-.circus-entrance {
-    --stage-red: #CE1126;
-    --stage-green: #007A3D;
-    --stage-black: #111111;
-    --stage-white: #FFFFFF;
-    --stage-gold: #D4AF37;
-}
 .circus-page-body main.circus-entrance {
+    --entrance-cream: #ffe8b3;
+    --entrance-brass: linear-gradient(105deg, #6c371c, #d58d40 18%, #ffdfa0 38%, #bc7735 51%, #713b20 69%, #e3a963);
+    --entrance-bulb: radial-gradient(circle, #fff9da 0 14%, #ffd279 22%, #eeb36388 37%, transparent 65%);
     width: min(100%, 1500px);
-    height: auto;
-    max-height: none;
-    overflow: visible;
+    gap: .65rem;
+    padding: clamp(.55rem, 2.1vw, 1.65rem);
     flex-shrink: 0;
-    background: radial-gradient(ellipse at 15% 0, #d4af3726, transparent 48%), radial-gradient(ellipse at 85% 0, #d4af3726, transparent 48%), linear-gradient(#211819, #111 65%);
-    border: 1px solid #d4af3766;
-    box-shadow: inset 0 0 35px #d4af3710, 0 15px 40px #0008;
+    background:
+        radial-gradient(ellipse at 16% 12%, #69518d63, transparent 28%),
+        radial-gradient(ellipse at 84% 7%, #386f8c67, transparent 29%),
+        radial-gradient(ellipse at 50% 45%, #712835, #1c1422 78%);
 }
-.circus-entrance .circus-curtain {
-    background: linear-gradient(180deg, #18030888, transparent 20%, #19030988), repeating-linear-gradient(90deg, #310710 0%, #761323 8%, #b13242 13%, #691021 21%, #27060d 30%);
-    box-shadow: inset 0 0 45px #140207, inset 0 -8px 12px #d4af3740;
-}
-.circus-page-body .circus-entrance .circus-marquee {
+.circus-entrance .entrance-facade {
     position: relative;
     isolation: isolate;
-    overflow: hidden;
-    padding: clamp(1rem, 2.5vw, 1.8rem) clamp(1.5rem, 5vw, 3.5rem);
-    background: radial-gradient(ellipse at 50% 0, #d4af3733, transparent 65%), linear-gradient(#40111d, #160b0e);
-    border-color: var(--stage-gold);
-    outline-color: var(--stage-red);
-    box-shadow: inset 0 0 0 3px #211011, inset 0 0 26px #d4af3726, 0 0 22px #d4af3720, 0 14px 30px #000a;
-}
-.circus-page-body .circus-entrance .circus-marquee h2 {
-    margin-bottom: .5rem;
-    font-size: clamp(1.45rem, 3.5vw, 2.7rem);
-    line-height: 1.2;
-    color: var(--stage-gold);
-}
-.circus-page-body .circus-entrance .circus-show-subtitle { font-size: clamp(1rem, 2vw, 1.35rem); color: var(--stage-white); }
-.circus-entrance .circus-marquee::before,
-.circus-entrance .circus-marquee::after {
-    content: '';
-    position: absolute;
-    inset-block: 0;
-    width: clamp(.65rem, 3vw, 2rem);
-    background: repeating-linear-gradient(90deg, #30060e, #9b2337 30%, #5c0d1e 60%, #21050b);
-    border-inline: 2px solid var(--stage-gold);
-    box-shadow: 0 0 12px #000b, inset 0 -5px 5px #d4af3766;
-    pointer-events: none;
-}
-.circus-entrance .circus-marquee::before { left: 0; }
-.circus-entrance .circus-marquee::after { right: 0; }
-.circus-entrance .circus-destinations {
-    position: relative;
-    isolation: isolate;
-    height: auto;
-    max-height: none;
-    overflow: visible;
-    flex-shrink: 0;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
-    grid-template-areas: 'banners main popcorn';
-    align-items: end;
-    gap: clamp(1.5rem, 4vw, 3rem);
-    padding: 2.5rem clamp(.75rem, 2vw, 1.5rem) 6rem;
-    direction: ltr;
-    background: radial-gradient(ellipse at 50% 100%, #ad7c3433, transparent 68%);
-}
-/* Low oval beneath the center threshold, rather than an empty backdrop. */
-.circus-entrance .circus-destinations::before {
-    content: '';
-    position: absolute;
-    inset: 55% 0 0;
-    height: auto;
-    z-index: -1;
-    border: 4px double var(--stage-gold);
-    border-radius: 50% 50% 12% 12% / 25% 25% 8% 8%;
-    background: radial-gradient(circle, #dcc39933 .6px, transparent 1px) 0 0 / 7px 9px, radial-gradient(ellipse at 50% 40%, #947143, #4b3929 60%, #211813);
-    box-shadow: inset 0 8px 15px #0009, inset 0 -3px 8px #dabb7e55, 0 10px 20px #0009;
-    pointer-events: none;
-}
-/* Complete illustrated entrances replace the retired CSS tent scenery. */
-.circus-entrance .circus-ticket {
-    display: block;
-    position: relative;
+    display: grid;
+    justify-items: center;
+    width: 100%;
     min-width: 0;
-    min-height: 0;
-    width: 100%;
-    padding: .25rem;
-    border: 2px solid var(--stage-gold);
-    border-radius: .5rem;
-    background: #160c10;
-    box-shadow: 0 12px 24px #0009;
-    overflow-wrap: anywhere;
-    overflow: visible;
-    z-index: 0;
-    transform-origin: center top;
-    transition: transform 300ms ease, filter 300ms ease;
+    padding: clamp(3.1rem, 8vw, 7.5rem) clamp(.25rem, 4.5vw, 4.65rem) 0;
+    direction: ltr;
 }
-.circus-entrance .circus-ticket::before,
-.circus-entrance .circus-ticket::after { content: none; }
-.circus-page-body .circus-entrance .circus-entrance-artwork {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    border: 0;
-    border-radius: .25rem;
-    box-shadow: none;
-}
-/* Live bilingual link names stay accessible without covering embedded artwork text. */
-.circus-entrance .circus-entrance-label {
+.circus-entrance :is(.entrance-defs, .entrance-canvas, .entrance-stringlights, .entrance-ornament) {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border: 0;
+    pointer-events: none;
 }
-.circus-entrance .circus-attraction-banners { grid-area: banners; rotate: -3deg; }
-.circus-entrance .circus-attraction-main { grid-area: main; }
-.circus-entrance .circus-attraction-popcorn { grid-area: popcorn; rotate: 3deg; }
-/* Scale the border and artwork together, growing down away from the marquee. */
-.circus-entrance .circus-ticket:is(:hover, :focus-visible) {
-    transform: scale(1.16);
-    box-shadow: 0 12px 24px #0009;
-    filter: drop-shadow(0 0 10px #d4af3766);
-    z-index: 1;
+.circus-entrance .entrance-canvas {
+    z-index: -2;
+    inset: 0 0 3%;
+    clip-path: polygon(50% 0, 57% 5%, 70% 12%, 87% 20%, 100% 29%, 100% 100%, 0 100%, 0 29%, 13% 20%, 30% 12%, 43% 5%);
+    background:
+        linear-gradient(transparent 17%, #250d198a 46%, #240c17bc 95%),
+        repeating-conic-gradient(from 116deg at 50% 0, #78273b 0 4deg, #bb4350 4deg 8deg, #fbdfb0 8deg 12deg, #3c7656 12deg 16deg, #254d3b 16deg 20deg);
 }
-.circus-entrance .circus-ticket:focus-visible { outline: 3px solid #fff5d6; outline-offset: 6px; }
-/* Persistent framing remains behind the foyer after the animated curtains open. */
-.circus-page-body main.circus-entrance::before,
-.circus-page-body main.circus-entrance::after {
-    content: '';
-    position: absolute;
+.circus-entrance .entrance-stringlights {
     z-index: -1;
     top: 0;
-    bottom: 0;
-    width: clamp(.6rem, 3vw, 2.4rem);
+    width: 100%;
+    height: clamp(4rem, 15vw, 11rem);
+    filter: drop-shadow(0 0 .42rem #ffa55caf);
+}
+.circus-entrance .entrance-ornament { height: auto; z-index: 2; filter: drop-shadow(0 .22rem .25rem #33121cb5); }
+.circus-entrance .entrance-ornament.entrance-left { left: 0; }
+.circus-entrance .entrance-ornament.entrance-right { right: 0; transform: scaleX(-1); }
+.circus-entrance .entrance-flag { width: clamp(2.45rem, 10vw, 8rem); aspect-ratio: 125 / 100; top: 1%; }
+.circus-entrance .entrance-flag.entrance-left { left: 16%; }
+.circus-entrance .entrance-flag.entrance-right { right: 16%; }
+.circus-entrance .entrance-kite { width: clamp(1.8rem, 6vw, 4.8rem); aspect-ratio: 80 / 118; top: 18%; }
+.circus-entrance .entrance-balloons { width: clamp(1.75rem, 5vw, 4.4rem); aspect-ratio: 87 / 116; top: 58%; }
+.circus-entrance .entrance-peace { width: clamp(1.5rem, 4.5vw, 3.65rem); aspect-ratio: 1; bottom: 14%; }
+.circus-entrance .entrance-smile { width: clamp(1.35rem, 4vw, 3.35rem); aspect-ratio: 1; bottom: 7.7%; }
+.circus-entrance .entrance-lantern {
+    width: clamp(1.4rem, 4.2vw, 3.3rem);
+    aspect-ratio: 60 / 112;
+    top: 40%;
+    filter: drop-shadow(0 0 .5rem #ffbb757c) drop-shadow(0 .22rem .2rem #32141c);
+}
+.circus-entrance .entrance-marquee {
+    position: relative;
+    z-index: 3;
+    width: min(94%, 69rem);
+    padding: clamp(1.03rem, 3vw, 2.5rem) clamp(.6rem, 7vw, 6.7rem) clamp(.9rem, 2vw, 1.75rem);
+    border: clamp(4px, .7vw, 10px) solid transparent;
+    border-radius: 43% 43% 9% 9% / 29% 29% 18% 18%;
     background:
-        repeating-linear-gradient(90deg, #edc974 0 2px, #926018 2px 3px) center 34% / .5rem 1.5rem no-repeat,
-        radial-gradient(ellipse, #ffe5a1, #a37326) center 32% / .65rem .65rem no-repeat,
-        linear-gradient(160deg, transparent 0 28%, #ecc86b 29% 30%, #785018 31%, transparent 32%),
-        repeating-linear-gradient(95deg, #350711 0%, #a82439 20%, #5f0d20 36%, #d33b4c 48%, #420816 66%);
-    border-inline: 2px solid #ba8c35;
-    border-radius: 0 0 45% 45%;
-    box-shadow: inset 0 0 14px #1b0309, 0 0 12px #0009;
+        var(--entrance-bulb) top center / 1.32rem .85rem repeat-x padding-box,
+        var(--entrance-bulb) bottom center / 1.32rem .85rem repeat-x padding-box,
+        repeating-linear-gradient(102deg, #e88d6c09 0 1px, transparent 2px 8px) padding-box,
+        radial-gradient(ellipse at 50% 20%, #a83244, #651c32 56%, #321722) padding-box,
+        var(--entrance-brass) border-box;
+    box-shadow: inset 0 0 0 2px #e8ba7494, inset 0 0 1.35rem #321020, 0 .33rem #713923,
+        0 .72rem 1.45rem #29101c, 0 0 1.9rem #eea05267;
+}
+.circus-page-body .circus-entrance .entrance-marquee h2 {
+    margin: 0;
+    color: var(--entrance-cream);
+    font: 900 clamp(1.55rem, 5.45vw, 5rem)/1.07 Georgia, serif;
+    text-shadow: 0 1px #fff4cf, 0 3px #9f5837, 0 5px .4rem #361924;
+}
+.circus-entrance :is(.entrance-marquee h2, .entrance-door-name) span { display: block; }
+.circus-entrance .entrance-marquee h2 [lang="ar"] {
+    font: 700 .94em/1.15 Amiri, Georgia, serif;
+}
+.circus-entrance .entrance-crest {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: clamp(2.15rem, 6.2vw, 5.3rem);
+    aspect-ratio: 1;
+    height: auto;
+    transform: translate(-50%, -64%);
+    filter: drop-shadow(0 .22rem .24rem #441c22);
     pointer-events: none;
 }
-.circus-page-body main.circus-entrance::before { left: 0; }
-.circus-page-body main.circus-entrance::after { right: 0; transform: scaleX(-1); }
-/* The exit has its own normal-flow row at the stage's bottom right. */
-.circus-page-body .circus-entrance .circus-soccer-exit {
-    display: inline-flex;
-    align-self: flex-end;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    min-height: 44px;
-    padding: 2px;
-    border: 2px solid var(--stage-gold);
+.circus-entrance .entrance-filigree {
+    position: absolute;
+    inset: 8% auto auto .2rem;
+    width: clamp(1.1rem, 8vw, 6.4rem);
+    height: 84%;
+    pointer-events: none;
+}
+.circus-entrance .entrance-filigree.entrance-right { left: auto; right: .2rem; transform: scaleX(-1); }
+.circus-entrance .entrance-bunting {
+    display: flex;
+    justify-content: space-around;
+    width: 94%;
+    height: clamp(1rem, 2.7vw, 2.35rem);
+    padding-inline: 2%;
+    border-top: 1px solid #e6b876;
+    pointer-events: none;
+}
+.circus-entrance .entrance-bunting i {
+    width: 5%;
+    height: 87%;
+    background: linear-gradient(#cc4a51, #7a2338);
+    clip-path: polygon(0 0,100% 0,50% 100%);
+    filter: drop-shadow(0 .15rem .12rem #26121a);
+}
+.circus-entrance .entrance-bunting i:nth-child(4n+2) { background: linear-gradient(#f9e7c4, #bc956d); }
+.circus-entrance .entrance-bunting i:nth-child(4n+3) { background: linear-gradient(#528b67, #244637); }
+.circus-entrance .entrance-bunting i:nth-child(4n+4) { background: linear-gradient(#4f404b, #241b25); }
+.circus-entrance .entrance-doors {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.24fr) minmax(0, 1fr);
+    align-items: end;
+    gap: clamp(.15rem, .95vw, .85rem);
+    width: 100%;
+}
+.circus-entrance .entrance-door {
+    position: relative;
+    isolation: isolate;
+    display: block;
+    min-width: 0;
+    padding: clamp(2.1rem, 5.6vw, 4.75rem) clamp(.42rem, 2.3vw, 1.85rem) 0;
+    color: var(--entrance-cream);
+    text-decoration: none;
+}
+.circus-entrance .entrance-door-frame {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border: clamp(3px, .57vw, 8px) solid transparent;
+    border-radius: 48% 48% .19rem .19rem / 39% 39% .19rem .19rem;
+    background:
+        var(--entrance-bulb) center top / 1.15rem .78rem repeat-x padding-box,
+        radial-gradient(ellipse at 50% 14%, #a5414e, #431a29 60%, #25151d) padding-box,
+        var(--entrance-brass) border-box;
+    box-shadow: inset 0 0 0 2px #f3ca838c, inset 0 .34rem .9rem #381620,
+        0 .24rem #714528, 0 .45rem .78rem #2a1420;
+    pointer-events: none;
+}
+.circus-entrance .entrance-door-frame::before,
+.circus-entrance .entrance-door-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: clamp(.45rem, 1.85vw, 1.5rem);
+    height: 68%;
+    border-block: 3px ridge #e3b774;
+    border-radius: .26rem;
+    background:
+        linear-gradient(transparent 6%, #f4d390 7% 9%, transparent 10% 90%, #e7b56c 91% 93%, transparent 94%),
+        repeating-linear-gradient(90deg, #5d351f 0 2px, #ca8a4b 3px 5px, #f4cd84 6px 7px, #a7683b 8px 10px);
+    box-shadow: .12rem .15rem .28rem #291219;
+}
+.circus-entrance .entrance-door-frame::before { left: -.15rem; }
+.circus-entrance .entrance-door-frame::after { right: -.15rem; }
+.circus-entrance .entrance-door-emblem {
+    position: absolute;
+    z-index: 2;
+    top: .15rem;
+    left: 50%;
+    width: clamp(1.75rem, 4.65vw, 3.85rem);
+    height: auto;
+    aspect-ratio: 1;
+    padding: .14rem;
+    transform: translateX(-50%);
+    border: 2px ridge #e7bc79;
     border-radius: 50%;
-    background: #fffdf6;
-    box-shadow: 0 3px 10px #0006;
-    transition: transform 200ms ease, box-shadow 200ms ease;
+    background: radial-gradient(#692639, #321724);
+    filter: drop-shadow(0 .13rem .18rem #351925);
+    pointer-events: none;
 }
-.circus-entrance .circus-soccer-exit svg { display: block; width: 100%; height: 100%; }
+.circus-entrance .entrance-door-name {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    justify-items: center;
+    color: #ffe6ac;
+    font: 700 clamp(.98rem, 2.65vw, 2.5rem)/1.13 Georgia, serif;
+    text-align: center;
+    text-shadow: 0 2px #68352a, 0 3px .24rem #321622;
+}
+.circus-entrance .entrance-door-ring .entrance-door-name { font-size: clamp(1.04rem, 3.1vw, 2.9rem); }
+.circus-entrance .entrance-door-name [lang="ar"] {
+    margin: 0 auto;
+    padding: 0 clamp(.3rem, 1.55vw, 1.15rem);
+    border: 1px solid #e4b474;
+    border-radius: 28% 28% 16% 16% / 26% 26% 14% 14%;
+    background: linear-gradient(#fbe6b7, #e1aa6d);
+    color: #412639;
+    font: 700 .94em/1.15 Amiri, Georgia, serif;
+    text-shadow: none;
+    box-shadow: 0 .18rem .3rem #2c1520;
+}
+.circus-entrance .entrance-door-interior {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: clamp(8.6rem, 19vw, 19rem);
+    border: 2px ridge #d19a5d;
+    border-radius: 44% 44% 0 0 / 21% 21% 0 0;
+    background: #2e1724;
+    box-shadow: inset 0 .45rem 1.2rem #291421;
+}
+.circus-entrance .entrance-door-ring .entrance-door-interior { height: clamp(9.6rem, 22vw, 22rem); }
+.circus-entrance .entrance-door-interior svg { display: block; width: 100%; height: 100%; }
+.circus-entrance .entrance-drape {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 43%;
+    background:
+        linear-gradient(transparent 56%, #d7a067 57% 60%, transparent 62%),
+        repeating-linear-gradient(94deg, #481427, #a23249 13%, #661d32 25%, #501327 36%);
+    clip-path: polygon(0 0,100% 0,82% 19%,56% 39%,35% 58%,47% 79%,69% 100%,0 100%);
+    filter: drop-shadow(0 .14rem .2rem #24101a);
+    pointer-events: none;
+}
+.circus-entrance .entrance-drape::after {
+    content: '';
+    position: absolute;
+    top: 57%;
+    left: 26%;
+    width: 23%;
+    height: 19%;
+    border-radius: 45% 45% .16rem .16rem;
+    background: repeating-linear-gradient(90deg, #af763b 0 2px, #edc783 2px 3px, #965b36 4px 5px);
+}
+.circus-entrance .entrance-drape.entrance-right { left: auto; right: 0; scale: -1 1; }
+.circus-entrance .entrance-door:is(:hover, :focus-visible) .entrance-door-frame {
+    box-shadow: inset 0 0 0 2px #fff0ae, 0 0 1.05rem #ffd0849c;
+}
+.circus-entrance .entrance-door:focus-visible,
+.circus-page-body .circus-entrance .circus-soccer-exit:focus-visible {
+    outline: 3px solid #fff0c4;
+    outline-offset: 4px;
+}
+.circus-entrance .entrance-platform {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    height: clamp(2.35rem, 7vw, 6rem);
+    border: 2px ridge #deaa6d;
+    border-radius: 0 0 .48rem .48rem;
+    background:
+        var(--entrance-bulb) center bottom / 2rem 1.15rem repeat-x,
+        linear-gradient(transparent 63%, #693726 64% 69%, #d09352 70% 73%, #593027 74%),
+        repeating-conic-gradient(from 141deg at 50% 0, #ab673d 0 2deg, #e0a561 2deg 2.4deg, #b47549 2.4deg 4.4deg);
+    box-shadow: inset 0 .35rem .48rem #4c292d93, 0 .38rem #422723, 0 .7rem 1rem #1c1119;
+    pointer-events: none;
+}
+.circus-entrance .entrance-carpet {
+    position: absolute;
+    inset: 0 30% -.12rem;
+    clip-path: polygon(24% 0,76% 0,100% 100%,0 100%);
+    background:
+        linear-gradient(transparent 54%, #e9a2646e 55% 57%, #3c172578 58% 65%, transparent 66%),
+        repeating-linear-gradient(45deg, transparent 0 8px, #f3bb6d2e 9px 10px),
+        repeating-linear-gradient(-45deg, transparent 0 8px, #f3bb6d2b 9px 10px),
+        linear-gradient(90deg, #814033 5%, #ecc57f 10%, #43805d 15%, #d69a5a 20%, #a12c46 25% 75%, #d69a5a 80%, #43805d 85%, #ecc57f 90%, #814033 95%);
+}
+.circus-page-body .circus-entrance .circus-soccer-exit {
+    position: relative;
+    align-self: end;
+    margin: .5rem .15rem 0;
+    display: inline-flex;
+    gap: .52rem;
+    min-height: 44px;
+    padding: .28rem .6rem;
+    border: 3px double #dfaf70;
+    border-radius: .5rem .25rem;
+    background: linear-gradient(#3b6d55, #193c34);
+    color: #fff0bf;
+    box-shadow: inset 0 1px #ffe1a642, 0 .27rem .45rem #301820;
+    direction: ltr;
+}
+[dir="rtl"] .circus-page-body .circus-entrance .circus-soccer-exit { align-self: start; }
+.circus-entrance .circus-soccer-exit svg { width: 1.75rem; height: 1.75rem; flex: 0 0 auto; }
 .circus-page-body .circus-entrance .circus-soccer-exit:is(:hover, :focus-visible) {
-    transform: scale(1.06);
-    background: #fffdf6;
-    box-shadow: 0 0 12px #d4af3766;
+    background: linear-gradient(#4b8062, #23473b);
+    box-shadow: 0 0 .68rem #f9c78475;
 }
-.circus-page-body .circus-entrance .circus-soccer-exit:focus-visible { outline: 3px solid #fff5d6; outline-offset: 5px; }
-/* Miniature foyer: keep all three entrances together at every width. */
-@media (max-width: 1050px) {
-    .circus-page-body main.circus-entrance { padding: clamp(.6rem, 2vw, 1.5rem); }
-    .circus-entrance .circus-destinations {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
-        grid-template-areas: 'banners main popcorn';
-        gap: clamp(.6rem, 3vw, 2rem);
-        padding: 1.5rem .5rem clamp(2.5rem, 8vw, 5rem);
+@keyframes circus-entrance-bulb-glow {
+    50% { filter: drop-shadow(0 0 .65rem #ffc275d1); }
+}
+@keyframes circus-entrance-fabric-sway {
+    50% { rotate: 2deg; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-entrance .entrance-stringlights { animation: circus-entrance-bulb-glow 7s ease-in-out infinite; }
+    .circus-entrance :is(.entrance-flag, .entrance-kite) {
+        transform-origin: 50% 12%;
+        animation: circus-entrance-fabric-sway 6s ease-in-out infinite;
     }
-    .circus-entrance .circus-ticket { rotate: 0deg; max-width: none; }
-    .circus-page-body .circus-entrance .circus-marquee { padding: clamp(.7rem, 2vw, 1.25rem) clamp(.9rem, 3vw, 2rem); }
-    .circus-page-body .circus-entrance .circus-marquee h2 { font-size: clamp(.95rem, 3vw, 2rem); }
-    .circus-page-body .circus-entrance .circus-show-subtitle { font-size: clamp(.75rem, 2vw, 1.1rem); }
+    .circus-entrance .entrance-kite { animation-delay: -2.4s; }
+    .circus-entrance .entrance-drape { transition: translate .34s ease-out; }
+    .circus-entrance .entrance-door:is(:hover, :focus-visible) .entrance-drape.entrance-left { translate: -6% 0; }
+    .circus-entrance .entrance-door:is(:hover, :focus-visible) .entrance-drape.entrance-right { translate: 6% 0; }
 }
-@media (max-width: 480px) {
-    .circus-entrance .circus-ticket { padding: .1rem; border-width: 1px; border-radius: .3rem; }
+@media (max-width: 650px) {
+    .circus-entrance .entrance-facade { padding-inline: .35rem; }
+    .circus-entrance .entrance-marquee { width: 97%; }
+    .circus-entrance .entrance-doors {
+        width: min(100%, 24rem);
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+    }
+    .circus-entrance .entrance-door { padding: 2.7rem .95rem 0; }
+    .circus-entrance .entrance-door-emblem { width: 2.45rem; }
+    .circus-entrance .entrance-door-name { font-size: 1.37rem; }
+    .circus-entrance .entrance-door-ring .entrance-door-name { font-size: 1.68rem; }
+    .circus-entrance .entrance-door-interior { height: 8.8rem; }
+    .circus-entrance .entrance-door-ring .entrance-door-interior { height: 10rem; }
+    .circus-entrance .entrance-ornament:not(.entrance-flag) { display: none; }
+    .circus-entrance .entrance-bunting i:nth-child(even) { display: none; }
+    .circus-entrance .entrance-bunting i { width: 8%; }
 }
-/* Touch feedback avoids a sticky hover zoom; keyboard focus remains visible. */
-@media (hover: none), (pointer: coarse) {
-    .circus-entrance .circus-ticket:hover { transform: none; filter: none; }
-    .circus-entrance .circus-ticket:focus-visible { transform: none; }
-    .circus-entrance .circus-ticket:active { transform: scale(.97); filter: drop-shadow(0 0 6px #d4af3766); }
+
+/* Curved marquee bulbs and short velvet valances inside each arch. */
+.circus-entrance .entrance-marquee-bulbs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
-@media (prefers-reduced-motion: reduce) {
-    .circus-entrance .circus-ticket { transition: none; }
-    .circus-entrance .circus-ticket:is(:hover, :focus-visible, :active) { transform: none; }
-    .circus-page-body .circus-entrance .circus-soccer-exit { transition: none; }
-    .circus-page-body .circus-entrance .circus-soccer-exit:is(:hover, :focus-visible) { transform: none; }
+.circus-entrance .entrance-marquee-bulbs i {
+    position: absolute;
+    left: var(--bulb-x);
+    top: var(--bulb-y);
+    width: clamp(.3rem, 1.02vw, .72rem);
+    aspect-ratio: 1;
+    border: 1px solid #ab763c;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff9de 0 24%, #ffcf79 45%, #976036 74%);
+    box-shadow: 0 0 .46rem #ffc87db5;
+    transform: translate(-50%, -50%);
+}
+.circus-entrance .entrance-door-interior::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 30%;
+    background:
+        radial-gradient(ellipse 52% 75% at 50% 0, #772639 0 48%, #a64653 66%, #dba765 71% 75%, transparent 77%)
+        left top / 34% 100% repeat-x;
+    pointer-events: none;
+}
+@keyframes circus-entrance-marquee-twinkle {
+    0%, 100% { box-shadow: 0 0 .36rem #ffc87d82; }
+    52% { box-shadow: 0 0 .6rem #ffd68bc7, inset 0 0 .16rem #fff1bc; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-entrance .entrance-marquee-bulbs i {
+        animation: circus-entrance-marquee-twinkle 8s ease-in-out var(--bulb-delay) infinite;
+    }
+}
+
+/* Grand Entrance Phase 2: recessed arches, velvet and timber details. */
+.circus-entrance .entrance-door-frame {
+    background:
+        var(--entrance-bulb) center top / 1.15rem .78rem repeat-x padding-box,
+        var(--entrance-bulb) left center / .68rem 1.15rem repeat-y padding-box,
+        var(--entrance-bulb) right center / .68rem 1.15rem repeat-y padding-box,
+        repeating-linear-gradient(106deg, #ca925219 0 1px, transparent 2px 8px) padding-box,
+        radial-gradient(ellipse at 50% 5%, #b35a57, #6a273b 29%, #371827 70%) padding-box,
+        var(--entrance-brass) border-box;
+    box-shadow: inset 0 0 0 1px #ffe3a7, inset 0 0 0 4px #80472e,
+        inset 0 0 0 6px #dbac6d79, inset 0 .52rem 1.15rem #321521,
+        0 .25rem #714528, 0 .62rem .8rem #261622;
+}
+.circus-entrance .entrance-door-frame::before,
+.circus-entrance .entrance-door-frame::after {
+    background:
+        radial-gradient(ellipse, #ffe0a0 0 10%, #bf884d 19% 34%, transparent 43%) center top / 100% 1.5rem no-repeat,
+        radial-gradient(ellipse, #e1af72 0 10%, #77472e 19% 40%, transparent 49%) center bottom / 100% 1.5rem no-repeat,
+        linear-gradient(transparent 6%, #f4d390 7% 9%, transparent 10% 90%, #e7b56c 91% 93%, transparent 94%),
+        repeating-linear-gradient(90deg, #522f20, #ad7144 3px, #e6b974 5px, #8a522d 7px, #683c24 10px);
+    box-shadow: inset 1px 0 #ffe1a37a, inset -2px 0 #512c2575, .16rem .3rem .35rem #23111d;
+}
+.circus-entrance .entrance-door-interior {
+    border: 3px ridge #d6a46a;
+    box-shadow: inset 0 .78rem 1.35rem #261320;
+}
+.circus-entrance .entrance-door-interior::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 1px #f2cb7ca1, inset 0 .55rem .75rem #261421ad,
+        inset .48rem 0 .65rem #27142075, inset -.48rem 0 .65rem #27142075,
+        inset 0 -.18rem #ffcf8170;
+    pointer-events: none;
+}
+.circus-entrance .entrance-drape {
+    width: 41%;
+    background:
+        linear-gradient(transparent 54%, #a86d42 55%, #f9d895 57%, #c28b4e 59%, transparent 61%),
+        radial-gradient(ellipse at 46% 18%, #e36a686b, transparent 64%),
+        repeating-linear-gradient(99deg, #390e26, #8c253c 11%, #ae414f 16%, #6a1d34 24%, #46132a 33%);
+    clip-path: url(#entrance-curtain-curve);
+    filter: drop-shadow(0 .15rem .22rem #20101b);
+}
+.circus-entrance .entrance-drape::after {
+    top: 56%;
+    left: 25%;
+    width: 26%;
+    height: 23%;
+    background:
+        radial-gradient(ellipse at 50% 11%, #ffeab0 0 17%, #ad7440 30% 40%, transparent 46%),
+        repeating-linear-gradient(90deg, #915d37 0 1px, #efc77e 2px, #b8814a 3px);
+    clip-path: polygon(37% 0,63% 0,71% 30%,97% 91%,83% 100%,68% 91%,51% 100%,34% 92%,14% 100%,3% 91%,29% 30%);
+}
+.circus-entrance .entrance-door-interior::after {
+    background:
+        radial-gradient(ellipse 52% 76% at 50% 0, #5f1c34 0 31%, #8e2c42 47%, #b75058 60%,
+        #936041 67%, #edc686 71%, #ad7441 75%, transparent 79%) left top / 34% 100% repeat-x;
+}
+.circus-entrance .entrance-door:is(:hover, :focus-visible) .entrance-door-frame {
+    box-shadow: inset 0 0 0 1px #fff0ae, inset 0 0 0 4px #ab7140,
+        inset 0 .52rem 1rem #401624, 0 .3rem #714528, 0 0 1.05rem #ffd0849c;
+}
+.circus-entrance .entrance-platform {
+    background:
+        var(--entrance-bulb) center bottom / 2rem 1.15rem repeat-x,
+        linear-gradient(#21121b88, transparent 37%, transparent 62%, #532a25 65% 68%, #e0aa67 69% 71%, #6b3a29 73%),
+        repeating-linear-gradient(0deg, transparent 0 9px, #5e392f49 10px, transparent 11px 14px),
+        repeating-conic-gradient(from 141deg at 50% 0, #a66842 0 2deg, #e8ac66 2deg 2.4deg, #a86a47 2.4deg 4.4deg);
+    box-shadow: inset 0 .48rem .52rem #311923b0, inset 0 -1px #ffd396ae, 0 .33rem #542f26, 0 .68rem 1rem #1c1119;
+}
+.circus-entrance .entrance-carpet {
+    box-shadow: inset 0 1px #e7bb7a, inset 0 .36rem .53rem #532033;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-entrance .entrance-door-ring .entrance-door-interior svg {
+        animation: circus-entrance-ring-lamplight 9s ease-in-out infinite alternate;
+    }
+}
+@keyframes circus-entrance-ring-lamplight {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.12); }
+}
+
+/* Grand Entrance Phase 3: compact facade, cosmic sky and richer seams. */
+.circus-page-body main.circus-entrance {
+    min-height: 0;
+    gap: .42rem;
+    padding-block: clamp(.4rem, 1.2vw, .9rem);
+    background:
+        conic-gradient(from 135deg at 10% 2%, #8b70c543, transparent 48deg),
+        conic-gradient(from 185deg at 90% 0, #5da9ad4a, transparent 46deg),
+        radial-gradient(ellipse at 50% 17%, #c57c4c5e, transparent 50%),
+        radial-gradient(ellipse at 13% 5%, #4a396f9d, transparent 45%),
+        radial-gradient(ellipse at 89% 10%, #24566794, transparent 49%),
+        linear-gradient(#111a32, #2b1931 49%, #251420);
+}
+.circus-entrance .entrance-sky {
+    position: absolute;
+    z-index: -1;
+    inset: 0 0 auto;
+    width: 100%;
+    height: clamp(6rem, 19vw, 15rem);
+    overflow: hidden;
+    pointer-events: none;
+}
+.circus-entrance .entrance-sky-stars { filter: drop-shadow(0 0 .2rem #edc2a88c); }
+.circus-entrance .entrance-sky-planet { filter: drop-shadow(0 0 .45rem #cf9add8a); }
+.circus-entrance .entrance-shooting-star { opacity: .62; }
+.circus-entrance .entrance-canvas {
+    background:
+        radial-gradient(ellipse at 50% 16%, #ffcb7c6b, transparent 49%),
+        linear-gradient(transparent 14%, #2a102374 47%, #1c101bd9 96%),
+        repeating-linear-gradient(99deg, #ffe5aa0c 0 1px, transparent 2px 4px),
+        repeating-conic-gradient(from 116deg at 50% 0, #ffe1a845 0 .4deg, transparent .5deg 3.8deg, #210f215e 4deg 4.5deg, transparent 5deg 8deg),
+        repeating-conic-gradient(from 116deg at 50% 0, #651f36 0 4deg, #c24353 4deg 8deg,
+            #ffe7bf 8deg 12deg, #4c8760 12deg 16deg, #243d35 16deg 20deg, #211c29 20deg 22deg);
+}
+.circus-entrance .entrance-facade { padding-top: clamp(2.3rem, 5.45vw, 5rem); }
+.circus-entrance .entrance-marquee {
+    padding-block: clamp(.75rem, 1.55vw, 1.4rem) clamp(.72rem, 1.2vw, 1.05rem);
+    box-shadow: inset 0 0 0 2px #e8ba74a8, inset 0 0 1.35rem #321020, 0 .27rem #713923,
+        0 .58rem 1.15rem #29101c, 0 .15rem 1.65rem #f2a35a68;
+}
+.circus-page-body .circus-entrance .entrance-marquee h2 {
+    font-size: clamp(1.33rem, 4.2vw, 3.9rem);
+}
+.circus-entrance :is(.entrance-marquee h2, .entrance-door-name) [lang="en"] {
+    font-family: Rye, Georgia, serif;
+    font-weight: 400;
+}
+.circus-entrance .entrance-crest { width: clamp(1.92rem, 4.9vw, 4.1rem); }
+.circus-entrance .entrance-bunting { height: clamp(.8rem, 1.95vw, 1.65rem); }
+.circus-entrance .entrance-door { padding-top: clamp(1.7rem, 4.2vw, 3.55rem); }
+.circus-entrance .entrance-door-emblem { width: clamp(1.6rem, 3.55vw, 3.1rem); }
+.circus-entrance .entrance-door-name { font-size: clamp(.88rem, 2.03vw, 1.95rem); }
+.circus-entrance .entrance-door-ring .entrance-door-name { font-size: clamp(.96rem, 2.45vw, 2.32rem); }
+.circus-entrance .entrance-door-interior {
+    height: clamp(7.1rem, 14vw, 15rem);
+    box-shadow: inset 0 .65rem 1rem #1e111f, 0 .11rem .46rem #eead654d;
+}
+.circus-entrance .entrance-door-ring .entrance-door-interior { height: clamp(8.1rem, 16.5vw, 17rem); }
+.circus-entrance .entrance-door-interior::before {
+    box-shadow: inset 0 1px #fff0b897, inset 0 .55rem .65rem #2d1424bd,
+        inset .55rem 0 .7rem #27142086, inset -.55rem 0 .7rem #27142086,
+        inset 0 -.15rem .7rem #f9b96e72;
+}
+.circus-entrance .entrance-door-frame {
+    box-shadow: inset 0 0 0 1px #ffe3a7, inset 0 0 0 4px #80472e,
+        inset 0 0 0 6px #dbac6d85, inset 0 .65rem 1.15rem #321521,
+        0 .23rem #714528, 0 .45rem .66rem #211220;
+}
+.circus-entrance .entrance-door-frame::before,
+.circus-entrance .entrance-door-frame::after {
+    border-top-color: #f3cf85;
+    box-shadow: inset 1px 0 #ffe1a386, inset -2px 0 #512c2585, .17rem .24rem .36rem #23111d;
+}
+.circus-entrance .entrance-door-name::before,
+.circus-entrance .entrance-door-name::after {
+    content: '';
+    position: absolute;
+    top: .48em;
+    width: clamp(.35rem, 1vw, .68rem);
+    aspect-ratio: 1;
+    background: linear-gradient(#fff1bd, #d78d48);
+    clip-path: polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);
+    pointer-events: none;
+}
+.circus-entrance .entrance-door-name::before { left: .15rem; }
+.circus-entrance .entrance-door-name::after { right: .15rem; }
+.circus-entrance .entrance-drape {
+    background:
+        linear-gradient(transparent 54%, #a86d42 55%, #f9d895 57%, #c28b4e 59%, transparent 61%),
+        radial-gradient(ellipse at 53% 16%, #ec7c6f74, transparent 62%),
+        repeating-linear-gradient(99deg, #360c24, #8e203b 10%, #bd4650 15%, #681833 24%, #400f27 35%);
+}
+.circus-entrance .entrance-lantern {
+    filter: drop-shadow(0 0 .42rem #ffce868c) drop-shadow(0 .23rem .25rem #32141c);
+}
+.circus-entrance .entrance-platform { height: clamp(1.85rem, 5.4vw, 4.4rem); }
+.circus-page-body .circus-entrance .circus-soccer-exit { margin-top: .26rem; }
+
+@keyframes circus-entrance-shooting-star {
+    0%, 66%, 100% { opacity: 0; transform: translateX(0); }
+    72% { opacity: .89; }
+    83% { opacity: 0; transform: translateX(86px); }
+}
+@keyframes circus-entrance-sky-twinkle {
+    50% { opacity: .56; }
+}
+@keyframes circus-entrance-planet-drift {
+    50% { translate: 0 -3px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-entrance .entrance-shooting-star { animation: circus-entrance-shooting-star 13s linear infinite; }
+    .circus-entrance .entrance-shooting-star-two { animation-delay: -4.5s; }
+    .circus-entrance .entrance-shooting-star-three { animation-delay: -8.8s; }
+    .circus-entrance .entrance-sky-stars { animation: circus-entrance-sky-twinkle 7s ease-in-out infinite; }
+    .circus-entrance .entrance-sky-planet { animation: circus-entrance-planet-drift 9s ease-in-out infinite; }
+    .circus-entrance .entrance-sky-planet-late { animation-delay: -4s; }
+}
+@media (max-width: 650px) {
+    .circus-entrance .entrance-door { padding-top: 2.32rem; }
+    .circus-entrance .entrance-door-emblem { width: 2.1rem; }
+    .circus-entrance .entrance-door-name { font-size: 1.18rem; }
+    .circus-entrance .entrance-door-ring .entrance-door-name { font-size: 1.38rem; }
+    .circus-entrance .entrance-door-interior { height: 7.6rem; }
+    .circus-entrance .entrance-door-ring .entrance-door-interior { height: 8.55rem; }
+    .circus-entrance .entrance-door-interior > svg {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        aspect-ratio: 320 / 220;
+        margin-inline: auto;
+    }
+    .circus-entrance .entrance-drape { width: 26%; }
+    .circus-entrance .entrance-drape.entrance-left { left: -3%; }
+    .circus-entrance .entrance-drape.entrance-right { right: -3%; }
+    .circus-entrance .entrance-door-name::before,
+    .circus-entrance .entrance-door-name::after { display: none; }
+}
+
+/* Grand Entrance Phase 4: tightrope motion inside the Main Ring arch. */
+.circus-entrance .entrance-ring-rig { pointer-events: none; }
+.circus-entrance .entrance-ring-acrobat {
+    transform-box: fill-box;
+    transform-origin: 50% 99%;
+}
+.circus-entrance .entrance-ring-rope {
+    transform-box: fill-box;
+    transform-origin: center top;
+}
+@keyframes circus-entrance-acrobat-balance {
+    0%, 100% { transform: translateX(-1px) rotate(-4deg); }
+    48% { transform: translateX(1px) rotate(5deg); }
+    72% { transform: translateX(0) rotate(1deg); }
+}
+@keyframes circus-entrance-rope-sway {
+    0%, 100% { transform: scaleY(.96); }
+    50% { transform: scaleY(1.06); }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .circus-entrance .entrance-ring-acrobat { animation: circus-entrance-acrobat-balance 6.8s ease-in-out infinite; }
+    .circus-entrance .entrance-ring-rope { animation: circus-entrance-rope-sway 6.8s ease-in-out infinite; }
+}
+
+/* Grand Entrance Phase 5: material grain and reflected night lighting. */
+.circus-page-body main.circus-entrance {
+    background:
+        conic-gradient(from 135deg at 10% 2%, #8b70c540, transparent 45deg),
+        conic-gradient(from 185deg at 90% 0, #5da9ad40, transparent 43deg),
+        radial-gradient(ellipse at 49% 22%, #d88c5264, transparent 51%),
+        radial-gradient(ellipse at 15% 12%, #4c3c786e, transparent 48%),
+        radial-gradient(ellipse at 85% 7%, #2d648366, transparent 51%),
+        radial-gradient(ellipse at 69% 4%, #6e4c8142, transparent 55%),
+        linear-gradient(#0f1830, #2c1932 52%, #211421);
+}
+.circus-entrance .entrance-canvas {
+    background:
+        radial-gradient(ellipse at 50% 15%, #ffd89a72, transparent 45%),
+        linear-gradient(transparent 13%, #2a10238a 45%, #1c101bdf 96%),
+        repeating-linear-gradient(98deg, #ffe7ad10 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(7deg, #291b302a 0 1px, transparent 1px 4px),
+        repeating-conic-gradient(from 116deg at 50% 0, #ffe2a076 0 .1deg, #ca8f5e32 .1deg .22deg,
+            transparent .25deg 3.5deg, #24112359 3.6deg 4.6deg, #270f2243 4.7deg 5deg, transparent 5.1deg 8deg),
+        repeating-conic-gradient(from 116deg at 50% 0, #651f36 0 4deg, #c24353 4deg 8deg,
+            #ffe7bf 8deg 12deg, #4c8760 12deg 16deg, #243d35 16deg 20deg, #211c29 20deg 22deg);
+}
+.circus-entrance .entrance-marquee {
+    background:
+        var(--entrance-bulb) top center / 1.32rem .85rem repeat-x padding-box,
+        var(--entrance-bulb) bottom center / 1.32rem .85rem repeat-x padding-box,
+        radial-gradient(ellipse at 49% 0, #e07a5d4d, transparent 46%) padding-box,
+        repeating-linear-gradient(103deg, #ed9b8011 0 1px, transparent 1px 4px) padding-box,
+        radial-gradient(ellipse at 49% 19%, #9f3045, #601e34 57%, #301624) padding-box,
+        repeating-linear-gradient(115deg, #512b2a20 0 1px, transparent 1px 5px) border-box,
+        var(--entrance-brass) border-box;
+    box-shadow: inset 0 0 0 1px #ffe5a2bb, inset 0 0 0 3px #b47a4a8f,
+        inset 0 .35rem 1.25rem #2c101cb3, 0 .27rem #663622, 0 .6rem 1.25rem #241221,
+        0 .13rem 1.25rem #e49b5a55;
+}
+.circus-entrance .entrance-marquee-bulbs i:nth-child(3n + 1) { background-color: #ffcf83; border-color: #c29556; }
+.circus-entrance .entrance-marquee-bulbs i:nth-child(3n + 2) { opacity: .83; }
+.circus-entrance .entrance-drape {
+    background:
+        linear-gradient(transparent 54%, #875539 55%, #f6d397 57%, #b57c45 59%, transparent 61%),
+        radial-gradient(ellipse at 46% 25%, #ea87756a, transparent 60%),
+        repeating-linear-gradient(6deg, #f4b3870e 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(99deg, #340c25, #84213d 9%, #b94655 14%, #621832 23%, #3b0e28 33%);
+    filter: drop-shadow(.12rem .24rem .25rem #21111d);
+}
+.circus-entrance .entrance-drape::after {
+    background:
+        radial-gradient(ellipse at 46% 12%, #fff0b6 0 15%, #c89a60 23% 34%, #865335 38% 44%, transparent 48%),
+        repeating-linear-gradient(91deg, #8c5938 0 1px, #e0b275 2px, #f0cb82 3px, #b77d4a 4px);
+}
+.circus-entrance :is(.entrance-hall-lamps, .entrance-stand-lamps) {
+    filter: drop-shadow(0 0 2px #ffca83b8);
+}
+.circus-entrance .entrance-platform {
+    background:
+        var(--entrance-bulb) center bottom / 2rem 1.15rem repeat-x,
+        linear-gradient(#20111c9c, transparent 32%, transparent 61%, #532a25 65% 68%, #e0aa67 69% 71%, #6b3a29 73%),
+        radial-gradient(ellipse at 50% 73%, #f2b87080, transparent 58%),
+        repeating-linear-gradient(1deg, transparent 0 4px, #5d352d4d 5px, #ecaf712e 6px, transparent 7px 11px),
+        repeating-conic-gradient(from 141deg at 50% 0, #a66842 0 2deg, #e8ac66 2deg 2.4deg, #a86a47 2.4deg 4.4deg);
+    box-shadow: inset 0 .42rem .52rem #321b25c0, inset .5rem 0 .7rem #3a201f9c,
+        inset -.5rem 0 .7rem #3a201f9c, inset 0 -1px #ffd396ae, 0 .33rem #542f26, 0 .68rem 1rem #1c1119;
+}
+.circus-entrance .entrance-carpet::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(90deg, #4f1b323d 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(2deg, #e7a86c26 0 1px, transparent 1px 3px);
+    pointer-events: none;
 }
 
 .circus-intro-dialog {
@@ -1550,7 +3769,6 @@ body.circus-entrance-body {
     pointer-events: none;
 }
 .circus-ring .circus-ring-floor { z-index: 2; }
-.circus-ring .circus-tent-rigging { z-index: 3; }
 .circus-ring .circus-attraction-nav { z-index: 4; }
 .circus-ring :is(.circus-attraction-position--memory, .circus-attraction-position--dance, .circus-attraction-position--jigsaw) .circus-station-character { inset: 2% 0 10%; }
 .circus-ring .circus-station-character :is(.circus-aloosh-attraction-art, .circus-ring-performer-art) { max-width: 10rem; filter: drop-shadow(0 3px 2px #160c1044); }
@@ -1658,7 +3876,6 @@ body.circus-entrance-body {
 .circus-ring .circus-attraction-position--juggling .circus-tito-open-art { position: absolute; bottom: 0; right: 0; width: 83%; height: 8.5rem; pointer-events: none; }
 .circus-ring .circus-attraction-position--juggling .circus-station-character { inset: 0; z-index: 2; }
 .circus-ring .circus-attraction-position--juggling .circus-tito-attraction-art { max-width: 11rem; }
-.circus-ring .circus-tito-barrel { position: absolute; bottom: 0; left: 0; width: 32%; height: auto; max-height: 4.8rem; z-index: 1; pointer-events: none; filter: drop-shadow(0 3px 2px #25131544); }
 .circus-ring .circus-tito-ribbon {
     position: absolute; top: .3rem; left: 0; width: 84%; min-height: 4.4rem;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -1720,7 +3937,6 @@ body.circus-entrance-body {
     box-shadow: inset 0 2px 1px #fff6, inset 0 -3px 5px #87572955, 0 3px 0 #89582f, 0 0 10px #f3cf7455;
     overflow-wrap: anywhere;
 }
-.circus-ring .circus-keyhole-mark { display: block; width: 10px; height: 15px; margin-bottom: 3px; background: #633f30; clip-path: polygon(20% 0, 80% 0, 100% 35%, 70% 55%, 95% 100%, 5% 100%, 30% 55%, 0 35%); }
 .circus-ring .circus-key-plaque .lang-ar { font-family: Amiri, Georgia, serif; line-height: 1.5; }
 .circus-ring .circus-key-plaque:hover { color: #241523; text-decoration: underline; text-underline-offset: .15em; }
 .circus-ring .circus-key-plaque:focus-visible { outline: 3px solid #fff0a4; outline-offset: 5px; }
@@ -1927,65 +4143,14 @@ body.circus-entrance-body {
     translate: 0 -2px;
 }
 .circus-ring .circus-attraction-positions a:focus-visible { outline: 3px solid #fff0a4; outline-offset: 5px; }
-/* A delicate inscription sits on the open sandy floor, outside attraction links. */
-.circus-ring .circus-dust-support {
-    position: absolute; z-index: 5; top: 53%; left: 34%; width: 32%;
-    text-align: center; color: #fff0c8; pointer-events: none;
-}
-.circus-ring .circus-dust-inscription { margin: 0; font: italic 700 clamp(12px, 1.1vw, 15px)/1.5 Georgia, 'Times New Roman', serif; text-shadow: 0 1px 0 #795026, 0 2px 3px #75471e88, 0 0 7px #ffe3a555; }
-.circus-ring .circus-dust-inscription > span { display: block; }
-.circus-ring .circus-dust-inscription [lang='ar'] { font-family: Amiri, Georgia, serif; font-style: normal; line-height: 1.6; }
-.circus-ring .circus-dust-flag-link { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 66px; min-height: 44px; margin-top: 4px; pointer-events: auto; border-radius: 8px; text-decoration: none; transition: transform .3s ease, filter .3s ease; }
-.circus-ring .circus-dust-flag-link svg { display: block; width: 66px; height: 44px; overflow: visible; pointer-events: none; filter: drop-shadow(0 2px 2px #63462155); }
-.circus-ring .circus-dust-flag-fabric { transform-origin: 10px 30px; animation: circus-support-flag-wave 7s ease-in-out infinite; }
-.circus-ring .circus-dust-flag-link:is(:hover, :focus-visible) { transform: scale(1.05); filter: drop-shadow(0 0 5px #ffe29c88); }
-.circus-ring .circus-dust-flag-link:is(:hover, :focus-visible) .circus-dust-flag-fabric { animation-name: circus-support-flag-wave-more; }
-.circus-ring .circus-dust-flag-link:focus-visible { outline: 3px solid #fff0a4; outline-offset: 4px; }
-.circus-ring .circus-dust-flag-sparkles { opacity: .35; transition: opacity .3s ease; }
-.circus-ring .circus-dust-flag-link:is(:hover, :focus-visible) .circus-dust-flag-sparkles { opacity: 1; }
-.circus-ring .circus-dust-particles { position: absolute; inset: -6px; pointer-events: none; }
-.circus-ring .circus-dust-particles i { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #fff1b6; box-shadow: 0 0 5px #ffe0a0; animation: circus-support-dust 8s ease-in-out infinite; }
-.circus-ring .circus-dust-particles i:nth-child(1) { left: 4%; top: 20%; }
-.circus-ring .circus-dust-particles i:nth-child(2) { left: 30%; top: 0; animation-delay: -2s; }
-.circus-ring .circus-dust-particles i:nth-child(3) { right: 3%; top: 35%; animation-delay: -4s; }
-.circus-ring .circus-dust-particles i:nth-child(4) { left: 12%; bottom: 5%; animation-delay: -6s; }
-.circus-ring .circus-dust-particles i:nth-child(5) { right: 15%; bottom: 15%; animation-delay: -3s; }
-@keyframes circus-support-flag-wave { 0%, 100% { transform: skewY(-2deg) rotate(-1deg); } 50% { transform: skewY(2deg) rotate(1deg); } }
-@keyframes circus-support-flag-wave-more { 0%, 100% { transform: skewY(-4deg) rotate(-2deg); } 50% { transform: skewY(4deg) rotate(2deg); } }
-@keyframes circus-support-dust { 0%, 100% { transform: translateY(0); opacity: .35; } 50% { transform: translateY(-4px); opacity: .8; } }
-@media (min-width: 701px) and (max-width: 1000px) {
-    .circus-ring .circus-dust-support { left: 33%; width: 34%; top: 53%; }
-}
+
 @media (max-width: 700px) {
     .circus-ring .circus-attraction-nav { display: flex; flex-direction: column; }
-    .circus-ring .circus-dust-support { position: relative; inset: auto; order: 1; width: min(85%, 22rem); margin: 0 auto 1.5rem; }
-    .circus-ring .circus-dust-inscription { font-size: 13px; }
+
 }
 @media (prefers-reduced-motion: reduce) {
     .circus-ring .circus-attraction-positions a > :is(.lang-en, .lang-ar) { transition: none; translate: none; }
-    .circus-ring .circus-dust-flag-fabric, .circus-ring .circus-dust-particles i { animation: none; transform: none; }
-    .circus-ring .circus-dust-flag-link, .circus-ring .circus-dust-flag-sparkles { transition: none; }
-    .circus-ring .circus-dust-flag-link:is(:hover, :focus-visible) { transform: none; }
-}
 
-/* Center support component only — clearer lettering and global language toggle. */
-.circus-ring .circus-dust-support { top: 59%; }
-.circus-ring .circus-dust-inscription {
-    color: #fff2d0; font-size: clamp(16px, 1.45vw, 20px); line-height: 1.5;
-    text-shadow: 0 1px 0 #ad7b3c, 0 2px 2px #59391cb3, 0 0 9px #ffe2a466;
-}
-.circus-ring .circus-dust-inscription > .hidden { display: none; }
-.circus-ring .circus-dust-flag-link { animation: circus-support-flag-float 7s ease-in-out infinite; }
-@keyframes circus-support-flag-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -3px; } }
-@media (min-width: 701px) and (max-width: 1000px) {
-    .circus-ring .circus-dust-support { top: 59%; }
-}
-@media (max-width: 700px) {
-    .circus-ring .circus-dust-support { top: auto; margin-top: .5rem; }
-    .circus-ring .circus-dust-inscription { font-size: 16px; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .circus-ring .circus-dust-flag-link { animation: none; translate: none; }
 }
 
 /* Three upper alcove decorations; existing frame geometry is unchanged. */
@@ -2000,118 +4165,29 @@ body.circus-entrance-body {
 
 /* Bleacher/lighting polish without changing scenery bounds or attraction layout. */
 .circus-ring .circus-soft-spotlight { animation: circus-soft-spotlight-glow 12s ease-in-out var(--spot-delay, 0s) infinite alternate; }
-.circus-ring .circus-dust-inscription {
-    font-family: Georgia, 'Palatino Linotype', Palatino, serif;
-    font-size: clamp(18px, 1.65vw, 23px); color: #fff5d4; font-weight: 700;
-    text-shadow: 1px 1px 0 #792e42, -1px -1px 0 #792e4266, 0 2px 3px #4e1836bb, 0 0 9px #ffda8488;
-}
-.circus-ring .circus-dust-inscription [lang='ar'] { font-family: Amiri, Georgia, serif; }
-.circus-ring .circus-dust-particles i { width: 3px; height: 3px; box-shadow: 0 0 6px #ffdc80, 0 0 2px #fff4c0; }
+
 @keyframes circus-soft-spotlight-glow { from { opacity: .5; } to { opacity: .9; } }
-@media (max-width: 700px) {
-    .circus-ring .circus-dust-inscription { font-size: 18px; }
-}
 @media (prefers-reduced-motion: reduce) {
     .circus-ring .circus-soft-spotlight { animation: none; opacity: .7; }
 }
 
 /* Center inscription only — brighter two-part invitation, unchanged flag/layout. */
-.circus-ring .circus-dust-inscription {
-    font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
-    font-size: clamp(21px, 2.05vw, 29px); line-height: 1.35; font-weight: 700;
-    text-shadow: 1px 2px 0 #77243d, -1px -1px 0 #6b203b88, 0 3px 4px #48132fbb, 0 0 10px #ffd26d66;
-}
-.circus-ring .circus-dust-question { display: block; color: #ffe169; }
-.circus-ring .circus-dust-invitation { display: block; margin-top: .15em; color: #ffb0ac; }
-.circus-ring .circus-dust-inscription [lang='ar'] { font-family: Amiri, Georgia, serif; }
-.circus-ring .circus-dust-particles i:nth-child(6),
-.circus-ring .circus-dust-particles i:nth-child(7) { width: 7px; height: 7px; border-radius: 0; background: #ffe493; clip-path: polygon(50% 0, 64% 35%, 100% 50%, 64% 65%, 50% 100%, 36% 65%, 0 50%, 36% 35%); }
-.circus-ring .circus-dust-particles i:nth-child(6) { left: -2%; top: 45%; animation-delay: -1s; }
-.circus-ring .circus-dust-particles i:nth-child(7) { right: 0; bottom: 22%; animation-delay: -5s; }
-@media (max-width: 700px) {
-    .circus-ring .circus-dust-inscription { font-size: clamp(19px, 4.7vw, 23px); }
-}
 
 /* Background only: receding seating, wall reflections and diffuse brass lights. */
 .circus-ring .circus-tent-wall::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(ellipse at 50% 22%, transparent 30%, #130c1d33 75%), linear-gradient(110deg, #ffdc9510, transparent 25% 75%, #b7e3dc0c); }
-.circus-ring .circus-dimensional-beam { transform-origin: 0 30px; animation: circus-dimensional-beam-drift 22s ease-in-out var(--beam-phase, 0s) infinite alternate; }
-@keyframes circus-dimensional-beam-drift { from { transform: rotate(-3deg); opacity: .5; } to { transform: rotate(3deg); opacity: .85; } }
-@media (prefers-reduced-motion: reduce) {
-    .circus-ring .circus-dimensional-beam { animation: none; transform: none; opacity: .7; }
-}
 
 /* Grandstand depth and ornamental center lettering; geometry remains unchanged. */
 .circus-ring .circus-seat-tier { filter: drop-shadow(0 2px 1px #100b1744); }
-.circus-ring .circus-brass-lens-glow { filter: drop-shadow(0 0 4px #ffe7b788); }
 .circus-ring .circus-spectator-seating { background: radial-gradient(ellipse at 50% 20%, #ffd38b0d, transparent 70%); }
-.circus-ring .circus-dust-inscription {
-    font-family: 'Bodoni MT', Didot, 'Palatino Linotype', Georgia, serif;
-    font-style: normal; font-weight: 900; font-size: clamp(28px, 2.5vw, 40px); line-height: 1.12;
-    text-shadow: -1px -1px 0 #171019, 1px -1px 0 #171019, -1px 1px 0 #171019, 1px 1px 0 #171019, 2px 3px 0 #171019, 3px 4px 2px #17101999;
-}
-.circus-ring .circus-dust-question { color: #fff8e8; -webkit-text-stroke: .5px #171019; text-shadow: 0 -1px #fff, -1px -1px #171019, 1px -1px #171019, -1px 1px #171019, 1px 1px #171019, 2px 3px #171019, 3px 4px 2px #17101988; }
-.circus-ring .circus-dust-invitation { margin-top: .3em; color: #efc86c; -webkit-text-stroke: .5px #171019; text-shadow: 0 -1px #fff5ce, -1px -1px #171019, 1px -1px #171019, -1px 1px #171019, 1px 1px #171019, 2px 3px #171019, 3px 4px #805629, 4px 5px 2px #17101988; }
-@supports (background-clip: text) {
-    .circus-ring .circus-dust-invitation { background: linear-gradient(#fff0b0, #e2b654 45%, #c08c33 65%, #ffe2a0); background-clip: text; color: transparent; }
-}
-@media (min-width: 1200px) {
-    .circus-ring .circus-dust-inscription { font-size: clamp(34px, 2.5vw, 40px); }
-}
-@media (max-width: 700px) {
-    .circus-ring .circus-dust-inscription { font-size: clamp(24px, 6vw, 30px); }
-}
 
 /* Center support typography only — upright Victorian-poster black/ivory/gold. */
-.circus-ring .circus-dust-inscription,
-.circus-ring .circus-dust-inscription .circus-dust-question,
-.circus-ring .circus-dust-inscription .circus-dust-invitation {
-    font-family: Rockwell, 'Bodoni MT', 'Book Antiqua', Georgia, serif;
-    font-style: normal; font-weight: 900; font-synthesis: weight;
-    line-height: 1.15; letter-spacing: .015em;
-}
-.circus-ring .circus-dust-inscription { font-size: clamp(26px, 2.5vw, 34px); }
-.circus-ring .circus-dust-inscription .circus-dust-question {
-    color: #fff8e7; background: none; -webkit-text-fill-color: #fff8e7;
-    -webkit-text-stroke: .7px #000;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
-        0 2px 0 #000, 1px 3px 0 #d4aa50, 2px 4px 0 #956b21, 3px 5px 2px #0009;
-}
-.circus-ring .circus-dust-inscription .circus-dust-invitation {
-    margin-top: .35em; font-size: 1.08em;
-    color: #edc66a; background: none; -webkit-text-fill-color: #edc66a;
-    -webkit-text-stroke: .7px #000;
-    text-shadow: 0 -1px 0 #fff8e7, -1px -1px 0 #000, 1px -1px 0 #000,
-        -1px 1px 0 #000, 1px 1px 0 #000, 1px 3px 0 #000, 2px 4px 0 #000, 3px 5px 2px #0009;
-}
-.circus-ring .circus-dust-inscription [lang='ar'],
-.circus-ring .circus-dust-inscription [lang='ar'] .circus-dust-question,
-.circus-ring .circus-dust-inscription [lang='ar'] .circus-dust-invitation {
-    font-family: Amiri, 'Traditional Arabic', Georgia, serif; font-style: normal;
-    letter-spacing: normal; line-height: 1.4;
-}
-@supports (background-clip: text) {
-    .circus-ring .circus-dust-inscription .circus-dust-invitation {
-        background: linear-gradient(#fff3bc 0%, #efce79 30%, #bc8b2e 58%, #f4d686 80%, #dfb653 100%);
-        background-clip: text; -webkit-background-clip: text;
-        color: transparent; -webkit-text-fill-color: transparent;
-    }
-}
-@media (min-width: 1200px) {
-    .circus-ring .circus-dust-inscription { font-size: clamp(30px, 2.5vw, 33px); }
-}
-@media (max-width: 700px) {
-    .circus-ring .circus-dust-inscription { font-size: clamp(23px, 5.8vw, 28px); }
-}
 
 /* Unified ring-only English showbill lettering; Arabic and global chrome retained. */
 main.circus-ring {
     --ring-showbill: 'Rye', Rockwell, 'Book Antiqua', Georgia, serif;
 }
 main.circus-ring :is(h1, h2, h3) > .lang-en,
-main.circus-ring #ring-developer-heading,
-main.circus-ring .circus-attraction-positions a > .lang-en,
-main.circus-ring .circus-dust-inscription > .lang-en,
-main.circus-ring .circus-dust-inscription > .lang-en > span {
+main.circus-ring .circus-attraction-positions a > .lang-en {
     font-family: var(--ring-showbill); font-style: normal; font-weight: 400;
     letter-spacing: .015em; overflow-wrap: anywhere;
 }
@@ -2126,62 +4202,17 @@ main.circus-ring .circus-attraction-positions a > .lang-en {
 main.circus-ring .circus-key-plaque > .lang-en {
     color: #24151a; text-shadow: 0 1px 0 #fff0b8;
 }
-main.circus-ring .circus-dust-inscription { font-style: normal; font-size: clamp(30px, 2.7vw, 40px); }
-main.circus-ring .circus-dust-inscription > .lang-en > .circus-dust-question { font-size: 1em; line-height: 1.2; }
-main.circus-ring .circus-dust-inscription > .lang-en > .circus-dust-invitation { font-size: 1.12em; line-height: 1.2; }
+
 main.circus-ring .circus-attraction-positions a:is(:hover, :focus-visible) > .lang-en {
     color: #ffe6a0; text-shadow: 0 -1px 0 #fff6, 1px 2px 0 #171019, 0 0 8px #e9c26f77;
-}
-@media (max-width: 1000px) {
-    main.circus-ring .circus-dust-inscription { font-size: clamp(25px, 3vw, 32px); }
-}
-@media (max-width: 700px) {
-    main.circus-ring .circus-dust-inscription { font-size: clamp(26px, 6.3vw, 34px); }
 }
 
 /* Architectural light details only; no dimensions or attraction transforms. */
 .circus-ring .circus-seating-lights { filter: drop-shadow(0 0 2px #ffdc8480); }
-.circus-ring .circus-architectural-dust { pointer-events: none; animation: circus-architectural-dust-float 14s ease-in-out infinite alternate; }
-@keyframes circus-architectural-dust-float { from { transform: translate(0, 0); opacity: .25; } to { transform: translate(2px, -5px); opacity: .55; } }
-@media (prefers-reduced-motion: reduce) {
-    .circus-ring .circus-architectural-dust { animation: none; transform: none; opacity: .4; }
-}
-
-/* Center-message size correction only: two text rows plus the existing flag. */
-main.circus-ring .circus-dust-support {
-    left: 31%; width: 38%; top: 59%; max-width: 25rem;
-}
-main.circus-ring .circus-dust-inscription {
-    font-size: clamp(14px, 1.35vw, 20px); line-height: 1.15;
-}
-main.circus-ring .circus-dust-inscription > .lang-en > .circus-dust-question,
-main.circus-ring .circus-dust-inscription > .lang-en > .circus-dust-invitation,
-main.circus-ring .circus-dust-inscription [lang='ar'],
-main.circus-ring .circus-dust-inscription [lang='ar'] .circus-dust-question,
-main.circus-ring .circus-dust-inscription [lang='ar'] .circus-dust-invitation {
-    font-size: 1em; line-height: 1.15;
-}
-main.circus-ring .circus-dust-inscription .circus-dust-invitation { margin-top: .12em; }
-main.circus-ring .circus-dust-flag-link { margin-top: 2px; }
-@media (min-width: 701px) and (max-width: 1000px) {
-    main.circus-ring .circus-dust-support { left: 29%; width: 42%; }
-}
-@media (max-width: 700px) {
-    main.circus-ring .circus-dust-support { position: relative; left: auto; top: auto; width: min(90%, 25rem); max-width: 25rem; margin: .25rem auto 1rem; }
-    main.circus-ring .circus-dust-inscription { font-size: clamp(14px, 3.2vw, 18px); }
-}
-@media (min-width: 701px) {
-    main.circus-ring .circus-dust-support { left: 50%; translate: -50% 0; }
-}
 
 /* Traditional architecture only; keep all existing geometry and typography. */
 .circus-ring .circus-wall-drapery { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: drop-shadow(2px 4px 4px #170e1b66); }
-main.circus-ring .circus-dust-inscription .circus-dust-question,
-main.circus-ring .circus-dust-inscription .circus-dust-invitation {
-    -webkit-text-stroke: .2px #2c2119;
-    text-shadow: -.4px 0 #2c211999, .4px 0 #2c211999, 0 .5px 1px #2c211966, 0 0 5px #d6b56b55;
-}
-.circus-ring .circus-tent-rigging { filter: drop-shadow(0 0 3px #e9cd8b33); }
+
 .circus-ring .circus-aloosh-open-art,
 .circus-ring .circus-tito-open-art,
 .circus-ring .circus-dj-duet-art,
@@ -2192,10 +4223,7 @@ main.circus-ring .circus-dust-inscription .circus-dust-invitation {
 }
 
 /* Atmosphere pass: discreet flag-colored first-line shadow, structural depth. */
-main.circus-ring .circus-dust-inscription .circus-dust-question {
-    color: #fff8e7; -webkit-text-fill-color: #fff8e7; -webkit-text-stroke: 0;
-    text-shadow: -.7px .5px 0 #b42e3f, .7px -.4px 0 #187347, 0 0 4px #dcc28044;
-}
+
 .circus-ring .circus-seat-tier { filter: drop-shadow(0 3px 2px #160d1b66); }
 .circus-ring .circus-wall-drapery { filter: drop-shadow(2px 5px 5px #170e1b88); }
 .circus-ring .circus-aloosh-open-art,
@@ -2212,4 +4240,834 @@ main.circus-ring .circus-dust-inscription .circus-dust-question {
         repeating-conic-gradient(from -40deg at 50% -20%, #110b1526 0deg 4deg, #fff0bb0c 6deg 8deg, transparent 10deg 18deg);
     box-shadow: inset 0 9px 18px #160c1644; pointer-events: none;
 }
-.circus-ring .circus-structural-ropes { filter: drop-shadow(1px 2px 1px #24151c55); }
+
+/* Main Ring opening: compact title and layered scenery finishes. */
+.circus-page-body main.circus-ring {
+    gap: clamp(.62rem, 1.35vw, 1rem);
+    padding-block-start: clamp(.62rem, 1.7vw, 1.35rem);
+}
+.circus-page-body .circus-ring .circus-intro {
+    padding-block: clamp(.5rem, 1.6vw, 1.15rem);
+}
+.circus-page-body .circus-ring .circus-intro h2 {
+    margin: 0;
+    font-size: clamp(1.55rem, 3.8vw, 3.05rem);
+}
+.circus-page-body .circus-ring .circus-tent-heading {
+    margin-bottom: .48rem;
+}
+.circus-ring .circus-wall-drapery { filter: drop-shadow(2px 5px 5px #160d1bc7); }
+.circus-ring .circus-tent-wall::after {
+    background:
+        radial-gradient(ellipse at 50% 80%, #d0905840, transparent 54%),
+        radial-gradient(ellipse at 50% 30%, transparent 34%, #1c102552 79%),
+        linear-gradient(180deg, transparent 65%, #26132153);
+}
+.circus-ring .circus-ring-floor::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(ellipse at 26% 56%, #ffdfa43b, transparent 22%),
+        radial-gradient(ellipse at 51% 51%, #ffe2aa35, transparent 24%),
+        radial-gradient(ellipse at 74% 56%, #ffdda33b, transparent 22%),
+        radial-gradient(ellipse at 50% 119%, #60372242, transparent 52%),
+        radial-gradient(circle at 22% 47%, #f8d38f53 0 .55px, transparent 1px) 0 0 / 13px 17px,
+        radial-gradient(circle at 73% 68%, #a76d3d48 0 .55px, transparent 1px) 0 0 / 17px 13px;
+    box-shadow: inset 0 0 1.15rem #7e4b2a74, inset 0 1px #ffe6acb3;
+    pointer-events: none;
+}
+.circus-ring .circus-ring-floor-stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Main Ring — reference-inspired arena */
+.circus-ring .circus-tent-scene {
+    height: clamp(42rem, 64vw, 49rem);
+    border: 5px ridge #d6984d;
+    border-radius: 44% 44% 2rem 2rem / 7% 7% 2rem 2rem;
+    background:
+        radial-gradient(ellipse at 50% 83%, #f8af5944, transparent 65%),
+        repeating-linear-gradient(175deg, #d6924922 0 1px, transparent 2px 15px, #210b0aaa 16px 18px),
+        repeating-linear-gradient(9deg, #321412 0 4px, #542719 6px 12px, #462018 14px 22px);
+    box-shadow: inset 0 0 3rem #190710, 0 1rem 2rem #170812a0;
+}
+.circus-ring .circus-tent-wall {
+    background:
+        radial-gradient(ellipse at 50% 17%, #f5ae5a38, transparent 55%),
+        radial-gradient(ellipse at 50% 90%, #4b2145, transparent 56%),
+        repeating-linear-gradient(90deg, #250710 0, #530e22 2%, #8d1d32 3%, #3f091b 5%);
+    border-color: #b47b3d;
+}
+.circus-ring .ring-marquee {
+    position: absolute;
+    z-index: 4;
+    inset: clamp(1rem, 2.7vw, 2.4rem) 0 auto;
+    width: min(58%, 34rem);
+    margin-inline: auto;
+    padding: .85rem .65rem .55rem;
+    border: 5px ridge #e7b65e;
+    border-radius: 50% 50% .8rem .8rem / 42% 42% .8rem .8rem;
+    background:
+        radial-gradient(ellipse at 50% 12%, #9b3242, transparent 75%),
+        repeating-linear-gradient(95deg, #fff0ab08 0 2px, transparent 3px 8px),
+        #511024;
+    box-shadow: inset 0 0 0 2px #6e301a, inset 0 -7px 14px #240710, 0 .45rem .9rem #21060e;
+    text-align: center;
+}
+.circus-ring .ring-marquee h2 {
+    margin: 0;
+    color: #fff1cb;
+    font-size: clamp(1.35rem, 3.5vw, 3rem);
+    line-height: 1.35;
+    text-shadow: 0 1px #b7783f, 0 3px 3px #290a13;
+}
+.circus-ring .ring-marquee svg {
+    position: absolute;
+    inset: auto 2% 96%;
+    width: 96%;
+    overflow: visible;
+    pointer-events: none;
+}
+.circus-ring .ring-bulbs {
+    fill: none;
+    stroke: #fff3ba;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 0 13;
+    filter: drop-shadow(0 0 3px #ff9f33);
+}
+.circus-ring .circus-spectator-seating {
+    top: 16%;
+    height: 27%;
+    filter: drop-shadow(0 .55rem .4rem #15080e);
+}
+.circus-ring .ring-audience {
+    position: absolute;
+    z-index: 2;
+    top: 11%;
+    inset-inline: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+.circus-ring .ring-lantern { filter: drop-shadow(0 0 9px #ffae4b); }
+.circus-ring .ring-wave {
+    transform-box: fill-box;
+    transform-origin: 15% 95%;
+    animation: ring-spectator-wave 4s ease-in-out infinite alternate;
+}
+.circus-ring .ring-wave--right { animation-delay: -2.5s; }
+@keyframes ring-spectator-wave {
+    from { rotate: -6deg; }
+    to { rotate: 9deg; }
+}
+.circus-ring .circus-ring-floor {
+    left: 4%;
+    top: 38%;
+    width: 92%;
+    height: 50%;
+    border: 7px ridge #edba65;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 50% 38%, #f1cf94, #93623b);
+    box-shadow: 0 5px 0 #a96428, 0 13px 0 #64172a, 0 18px 0 #b2783e, 0 29px 24px #190811c9;
+}
+.circus-ring .ring-inlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    opacity: .78;
+    pointer-events: none;
+}
+.circus-ring .circus-ring-floor::before {
+    z-index: 1;
+    background:
+        radial-gradient(ellipse at 50% 39%, #ffdb8f48, transparent 55%),
+        radial-gradient(ellipse at 50% 60%, transparent 52%, #2b1416b0),
+        radial-gradient(circle, #ffe8b660 0 .55px, transparent 1px) 0 0 / 7px 11px,
+        radial-gradient(circle, #38201977 0 .6px, transparent 1.3px) 0 0 / 11px 13px;
+    box-shadow: inset 0 0 1rem #4c2d24;
+}
+.circus-ring .circus-ring-floor::after {
+    position: absolute;
+    content: '';
+    inset: 1%;
+    z-index: 1;
+    border: 3px dotted #ffe4a0;
+    border-radius: inherit;
+    filter: drop-shadow(0 0 4px #ffae45);
+    pointer-events: none;
+}
+.circus-ring .circus-ring-floor-stars { z-index: 2; }
+.circus-ring .ring-props {
+    position: absolute;
+    z-index: 3;
+    left: 14%;
+    bottom: 10%;
+    width: 72%;
+    height: clamp(2.4rem, 5.5vw, 4.5rem);
+    pointer-events: none;
+}
+.circus-ring .circus-attraction-positions a.ring-game-plaque,
+.circus-ring .ring-side-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: .55rem .7rem;
+    border: 3px ridge #ecc072;
+    border-radius: .72rem;
+    background:
+        radial-gradient(circle, #ffe8a0 0 1px, #e89e4666 2px, transparent 3px) top center / 12px 5px repeat-x,
+        linear-gradient(#8d2438, #430d21);
+    box-shadow: inset 0 -3px 6px #200913, 0 4px 8px #180a12b0;
+    color: #fff3ce;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 2px 2px #2a0b15;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+.circus-ring .circus-attraction-positions a.ring-game-plaque > :is(.lang-en, .lang-ar) { color: inherit; }
+.circus-ring .circus-attraction-positions a.ring-game-plaque:is(:hover, :focus-visible),
+.circus-ring .ring-side-links a:is(:hover, :focus-visible) {
+    color: #fff7df;
+    border-color: #ffe6a0;
+    box-shadow: inset 0 -3px 6px #200913, 0 0 .7rem #ffc66c88;
+}
+.circus-ring .ring-side-links {
+    position: absolute;
+    z-index: 5;
+    inset: auto 4% 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .55rem;
+}
+.circus-ring .ring-side-links a { gap: .35rem; font-size: .9rem; }
+.circus-ring .ring-side-links a:focus-visible { outline: 2px solid #fff0ad; outline-offset: 3px; }
+.circus-ring .ring-side-links svg { width: 1.8rem; height: 1.8rem; flex: none; pointer-events: none; }
+
+@media (max-width: 850px) {
+    .circus-ring .circus-tent-scene { height: auto; }
+    .circus-ring .ring-marquee { width: min(72%, 28rem); }
+    .circus-ring .circus-spectator-seating { top: 5.8rem; height: clamp(4rem, 16vw, 8rem); transform: none; }
+    .circus-ring .ring-audience { top: 4.1rem; height: clamp(4.5rem, 18vw, 8rem); }
+    .circus-ring .circus-ring-floor { top: 10rem; bottom: 5rem; height: auto; transform: none; border-radius: 46% 46% 36% 36% / 12% 12% 12% 12%; }
+    .circus-ring .circus-attraction-nav { display: flex; flex-direction: column; height: auto; }
+    .circus-ring .circus-attraction-positions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        gap: .75rem;
+        height: auto;
+        padding: clamp(9rem, 23vw, 14rem) 5% .75rem;
+    }
+    .circus-ring .circus-attraction-positions .circus-attraction-position { position: relative; inset: auto; width: 100%; }
+
+    .circus-ring .ring-side-links { position: relative; inset: auto; padding: 0 .65rem 1rem; }
+    .circus-ring .ring-props { display: none; }
+}
+@media (max-width: 480px) {
+    .circus-ring .circus-attraction-positions { grid-template-columns: minmax(0, 1fr); max-width: 23rem; align-self: center; width: 100%; }
+    .circus-ring .ring-marquee { width: 80%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .ring-wave { animation: none; }
+}
+.circus-ring .circus-aloosh-bubble.ring-game-plaque::before { content: none; }
+
+/* Main Ring — compact rear-wall marquee and continuous stage */
+.circus-main-ring-page {
+    background:
+        radial-gradient(ellipse at 50% 14%, #ab593936, transparent 60%),
+        linear-gradient(90deg, #180c15, #37212b 20%, #411225 50%, #37212b 80%, #180c15);
+}
+.circus-page-body main.circus-ring {
+    --ring-showbill: Baskerville, 'Palatino Linotype', Georgia, serif;
+    padding: clamp(.3rem, .85vw, .75rem);
+    background:
+        linear-gradient(90deg, transparent, #361021 3%, #122b24 10%, #3b1227 25% 75%, #122b24 90%, #361021 97%, transparent),
+        repeating-linear-gradient(100deg, #6b2332 0 .85rem, #b99870 .85rem 1.7rem);
+    box-shadow: inset 0 0 .8rem #1e0916;
+}
+.circus-ring .circus-tent-scene { height: auto; border-width: 4px; }
+.circus-ring .circus-tent-wall {
+    background:
+        radial-gradient(ellipse at 50% 12%, #e9995a55, transparent 47%),
+        linear-gradient(90deg, #210b17, transparent 20% 80%, #210b17),
+        repeating-linear-gradient(88deg, #ffffff06 0 1px, transparent 1px 4px),
+        linear-gradient(90deg, #521224 0 11%, #19372d 16%, #471426 26% 74%, #19372d 84%, #521224 89%);
+}
+.circus-ring .ring-marquee {
+    top: clamp(.65rem, 1.15vw, 1.1rem);
+    width: min(57%, 26rem);
+    padding: .36rem .55rem .34rem;
+    border-width: 4px;
+    background: radial-gradient(ellipse at 50% 12%, #892b40, #4a0f23 78%);
+    box-shadow: inset 0 0 0 1px #f5cc7f62, inset 0 -5px 9px #260811, 0 4px 0 #613b22, 0 6px 12px #1e0811, 0 0 1.2rem #f9ac3660;
+}
+.circus-page-body main.circus-ring .ring-marquee h2 {
+    margin: 0;
+    color: #ffebc5;
+    font-size: clamp(1.25rem, 3vw, 2.5rem);
+    line-height: 1.18;
+    text-shadow: 0 1px #803f25, 0 2px 3px #490f22;
+}
+main.circus-ring .ring-marquee h2 > .lang-en {
+    font-weight: 700;
+    letter-spacing: .035em;
+    text-shadow: 0 -1px #fff0c455, 0 2px 3px #490f22;
+}
+.circus-ring .ring-marquee .ring-marquee-crest { bottom: 89%; }
+main.circus-ring .circus-attraction-positions a > .lang-en,
+main.circus-ring .ring-side-links a > .lang-en {
+    color: #ffedca;
+    font: 700 clamp(.92rem, 1.45vw, 1.12rem)/1.25 var(--ring-showbill);
+    letter-spacing: .015em;
+    text-shadow: 0 1px 2px #3b1020;
+}
+
+.circus-ring .circus-attraction-nav { height: auto; }
+.circus-ring .circus-attraction-positions {
+    display: grid;
+    align-items: center;
+    gap: clamp(.35rem, 1vw, .8rem);
+    height: auto;
+    padding: clamp(7rem, 13vw, 9rem) 7% .55rem;
+}
+.circus-ring .circus-attraction-positions .circus-attraction-position {
+    position: relative;
+    inset: auto;
+    width: 100%;
+}
+.circus-ring .circus-attraction-position--memory .circus-aloosh-performance,
+.circus-ring .circus-attraction-position--juggling .circus-tito-performance {
+    min-height: clamp(10.5rem, 19vw, 12rem);
+}
+.circus-ring .ring-side-links {
+    position: relative;
+    inset: auto;
+    padding: .2rem .65rem .75rem;
+}
+@media (min-width: 851px) {
+    .circus-ring .circus-attraction-positions {
+        grid-template-columns: minmax(0, 1fr) minmax(8rem, .6fr) minmax(0, 1fr);
+    }
+    .circus-ring .circus-attraction-position--memory { grid-area: 1 / 1; }
+    .circus-ring .circus-attraction-position--juggling { grid-area: 1 / 3; }
+    .circus-ring .circus-attraction-position--dance { grid-area: 2 / 3; }
+    .circus-ring .circus-attraction-position--jigsaw { grid-area: 2 / 1; }
+
+    .circus-ring .circus-ring-floor { top: 34%; height: 55%; }
+}
+@media (max-width: 850px) {
+    .circus-ring .ring-marquee { width: min(74%, 24rem); }
+    .circus-ring .circus-attraction-positions { padding: clamp(8rem, 20vw, 11rem) 5% .35rem; }
+
+}
+@media (max-width: 480px) {
+    .circus-ring .ring-marquee { width: 78%; }
+    .circus-ring .ring-side-links { gap: .35rem; }
+}
+
+/* Main Ring — occupied bleachers and theatrical lighting */
+.circus-page-body main.circus-ring {
+    background:
+        repeating-linear-gradient(108deg, #73293a 0 6px, #bca07b 6px 12px) top left / .65rem 2.8rem no-repeat,
+        repeating-linear-gradient(72deg, #73293a 0 6px, #bca07b 6px 12px) top right / .65rem 2.8rem no-repeat,
+        radial-gradient(ellipse at 50% 2%, #c87a4444, transparent 55%),
+        repeating-linear-gradient(45deg, #a57a5138 0 1px, transparent 2px 6px) left / .65rem 100% no-repeat,
+        repeating-linear-gradient(-45deg, #a57a5138 0 1px, transparent 2px 6px) right / .65rem 100% no-repeat,
+        linear-gradient(90deg, #410f27, #1a382d 2%, #4b251f 4%, #c99a51 4.2%, #3b1027 5% 95%, #c99a51 95.8%, #4b251f 96%, #1a382d 98%, #410f27);
+}
+.circus-ring .circus-tent-wall::after {
+    background:
+        radial-gradient(ellipse at 50% 45%, #e9a56035, transparent 54%),
+        radial-gradient(ellipse at 50% 53%, transparent 30%, #221330a6 77%),
+        linear-gradient(0deg, #2a102e8c, transparent 45%);
+}
+.circus-ring .circus-spectator-seating {
+    background: radial-gradient(ellipse at 50% 23%, #eab57826, transparent 63%);
+}
+.circus-ring .circus-seating-lights {
+    stroke: #ffe6a1;
+    filter: drop-shadow(0 0 3px #ffaa54a0);
+}
+.circus-ring .ring-marquee {
+    background: radial-gradient(ellipse at 50% 10%, #a03848, #591326 66%, #350c1c);
+    box-shadow: inset 0 0 0 1px #fadb8a88, inset 0 -5px 9px #270c1c, 0 4px 0 #6d4225, 0 7px 12px #1d0a19, 0 0 .9rem #ffb24e60;
+}
+main.circus-ring .ring-marquee h2 > .lang-en {
+    color: #fff1cc;
+    text-shadow: 0 -1px #fff2cc55, 0 1px #9b5a33, 0 2px 3px #390d20;
+}
+.circus-ring .circus-ring-floor {
+    border-color: #f5d18a #c18647 #9d592e #d59d56;
+    box-shadow: 0 4px 0 #bf7a37, 0 11px 0 #66182d, 0 16px 0 #a7703d, 0 25px 24px #1d0b16d9;
+}
+.circus-ring .circus-ring-floor::before {
+    background:
+        radial-gradient(ellipse at 25% 40%, #ffc8754c, transparent 27%),
+        radial-gradient(ellipse at 75% 40%, #ffd58b47, transparent 29%),
+        radial-gradient(ellipse at 50% 65%, transparent 47%, #2c15288c),
+        radial-gradient(circle, #ffe8b655 0 .5px, transparent 1px) 0 0 / 7px 11px,
+        radial-gradient(circle, #38201960 0 .6px, transparent 1.25px) 0 0 / 11px 13px;
+}
+.circus-ring .circus-attraction-positions .circus-attraction-position {
+    isolation: isolate;
+}
+.circus-ring .circus-attraction-positions .circus-attraction-position::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: auto 10% -.15rem;
+    height: 60%;
+    background:
+        radial-gradient(ellipse 37% 11% at 50% 86%, #23101c83, transparent 95%),
+        radial-gradient(ellipse 50% 30% at 50% 79%, #ffcb724b, transparent 95%);
+    pointer-events: none;
+}
+.circus-ring .circus-attraction-positions a.ring-game-plaque {
+    background:
+        radial-gradient(circle, #fff1bc 0 1px, #de914e80 1.8px, transparent 3px) top center / 12px 5px repeat-x,
+        radial-gradient(ellipse at 50% 0%, #ab3e4e, #53132b 75%);
+    box-shadow: inset 0 0 0 1px #f5cc694d, inset 0 -3px 5px #250b19, 0 4px 8px #200b19b0;
+}
+.circus-ring .circus-attraction-positions a.ring-game-plaque:is(:hover, :focus-visible) {
+    box-shadow: inset 0 0 0 1px #ffe6a0, 0 0 .65rem #f7be6688;
+}
+.circus-ring .ring-marquee-crest .ring-bulbs { animation: ring-lamp-shimmer 5s ease-in-out infinite alternate; }
+.circus-ring .ring-lantern-swing {
+    transform-origin: 0 -36px;
+    animation: ring-ornament-sway 7s ease-in-out infinite alternate;
+}
+.circus-ring .ring-lantern-swing--right { animation-delay: -3s; }
+@keyframes ring-lamp-shimmer {
+    from { opacity: .77; }
+    to { opacity: 1; }
+}
+@keyframes ring-ornament-sway {
+    from { rotate: -1.25deg; }
+    to { rotate: 1.25deg; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring :is(.ring-marquee-crest .ring-bulbs, .ring-lantern-swing) { animation: none; }
+}
+
+/* Main Ring — open center and aerial performance */
+body.circus-main-ring-page {
+    background:
+        radial-gradient(ellipse at 50% 14%, #a75f4438, transparent 58%),
+        linear-gradient(90deg, #231116, #153129 10%, #391326 22% 78%, #153129 90%, #231116),
+        #241019;
+}
+.circus-page-body main.circus-ring {
+    background:
+        radial-gradient(ellipse at 50% 5%, #c47d463c, transparent 56%),
+        repeating-linear-gradient(90deg, #180a1688 0, #6b2a361b .75rem, #ffbc7d16 1.15rem, #1c0b1880 2rem),
+        linear-gradient(90deg, #35101f, #1b3227 3%, #b1864d 3.2%, #3c1125 4% 96%, #b1864d 96.8%, #1b3227 97%, #35101f);
+}
+.circus-ring .circus-tent-wall::after {
+    background:
+        radial-gradient(ellipse at 50% 21%, #f1a45236, transparent 44%),
+        radial-gradient(ellipse at 50% 68%, #ac78672d, transparent 55%),
+        radial-gradient(ellipse at center, transparent 32%, #241133b8 83%);
+}
+.circus-ring .ring-marquee { z-index: 5; }
+.circus-ring .circus-spectator-seating { filter: drop-shadow(0 .55rem .42rem #170c18b8); }
+.circus-ring .ring-audience { z-index: 2; }
+.circus-ring .ring-side-links {
+    align-items: flex-end;
+    column-gap: clamp(.65rem, 3vw, 2.2rem);
+}
+.circus-ring .ring-side-links a {
+    flex-direction: column;
+    min-width: min(6rem, 100%);
+    max-width: 100%;
+    gap: .12rem;
+    padding: .15rem .3rem .22rem;
+    border: 0;
+    border-radius: .45rem;
+    background: transparent;
+    box-shadow: none;
+    filter: drop-shadow(0 3px 2px #210b15);
+}
+.circus-ring .ring-side-links a:is(:hover, :focus-visible) {
+    background: #5a233951;
+    box-shadow: none;
+    color: #fff2ca;
+}
+.circus-ring .ring-side-links svg { width: 2.2rem; height: 2.2rem; }
+.circus-ring .ring-side-links a:last-child svg { width: 1.55rem; height: 1.55rem; }
+@media (min-width: 851px) {
+    .circus-ring .circus-attraction-positions {
+        direction: ltr;
+        grid-template-columns: minmax(0, 1fr) minmax(9rem, .72fr) minmax(0, 1fr);
+    }
+    .circus-ring .circus-attraction-position--memory { translate: 5% 0; }
+    .circus-ring .circus-attraction-position--juggling { translate: -5% 0; }
+}
+@media (max-width: 540px) {
+    .circus-ring .ring-side-links a { min-width: 0; }
+}
+
+/* Main Ring — separate proscenium, open bleachers, and closer stations */
+.circus-ring .ring-proscenium {
+    position: relative;
+    padding: .45rem .55rem .25rem;
+    border: 3px ridge #b78142;
+    border-bottom-width: 2px;
+    border-radius: 47% 47% .35rem .35rem / 85% 85% .35rem .35rem;
+    background:
+        radial-gradient(ellipse at 50% 115%, #dd8d4b55, transparent 58%),
+        repeating-linear-gradient(94deg, #21101bc9 0, #561a33 14px, #2b1021 33px);
+    box-shadow: inset 0 -5px 9px #1e0b1a;
+}
+.circus-ring .ring-proscenium .ring-marquee {
+    position: relative;
+    inset: auto;
+    width: min(64%, 22rem);
+    padding: .24rem .5rem;
+    border: 4px ridge #e2b465;
+    box-shadow: inset 0 0 0 1px #ffdf986e, inset 0 -5px 9px #280a1a, 0 3px 0 #61361e, 0 4px 10px #150918;
+}
+.circus-page-body main.circus-ring .ring-proscenium h2 { font-size: clamp(1.15rem, 2.4vw, 2rem); }
+.circus-ring .circus-tent-scene { border-top-width: 2px; border-radius: .55rem .55rem 2rem 2rem; }
+.circus-ring .circus-spectator-seating { top: clamp(2.1rem, 5.4vw, 4rem); }
+.circus-ring .ring-audience { top: clamp(.6rem, 2vw, 1.25rem); }
+.circus-ring .circus-tent-wall::before {
+    background:
+        radial-gradient(ellipse at 50% 7%, #ffc67d25, transparent 58%),
+        repeating-linear-gradient(94deg, #26122688 0 4px, #d87c7925 7px, transparent 12px 26px);
+}
+.circus-ring .circus-ring-floor::before {
+    background:
+        radial-gradient(ellipse at 50% 42%, #ffd6915e, transparent 39%),
+        radial-gradient(ellipse at 23% 72%, #ffc48036, transparent 27%),
+        radial-gradient(ellipse at 76% 68%, #ffc48039, transparent 28%),
+        radial-gradient(circle, #ffe8ae55 0 .5px, transparent 1px) 0 0 / 7px 11px,
+        radial-gradient(circle, #2513225c 0 .45px, transparent 1px) 0 0 / 11px 13px;
+    box-shadow: inset 0 0 1.2rem #401f24a0;
+}
+.circus-ring .circus-attraction-positions {
+    padding-block-start: clamp(5.7rem, 10vw, 7.1rem);
+}
+.circus-ring .circus-attraction-positions :is(.circus-aloosh-performance, .circus-tito-performance) {
+    position: relative;
+    inset-block-start: clamp(.45rem, 1vw, .8rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    min-height: 0;
+    gap: .15rem;
+}
+.circus-ring .circus-attraction-positions :is(.circus-aloosh-open-art, .circus-tito-open-art) {
+    position: relative;
+    inset: auto;
+    width: 91%;
+    height: clamp(7.2rem, 13vw, 8.5rem);
+}
+.circus-ring .circus-attraction-positions :is(.circus-aloosh-bubble, .circus-tito-ribbon).ring-game-plaque {
+    position: relative;
+    inset: auto;
+    width: min(92%, 15rem);
+    min-height: 44px;
+}
+.circus-ring .circus-attraction-positions .circus-attraction-position::before {
+    inset: auto 8% .55rem;
+    background:
+        radial-gradient(ellipse 34% 12% at 50% 64%, #230e19a6, transparent 98%),
+        radial-gradient(ellipse 51% 30% at 50% 61%, #ffca7252, transparent 99%);
+}
+@media (min-width: 851px) {
+    .circus-ring .circus-attraction-positions {
+        grid-template-columns: minmax(0, 1fr) minmax(2rem, .22fr) minmax(0, 1fr);
+        padding-inline: clamp(1.75rem, 15%, 11rem);
+    }
+    .circus-ring .circus-attraction-position--memory,
+    .circus-ring .circus-attraction-position--juggling { translate: none; }
+    .circus-ring .circus-ring-floor { transform: rotateX(21deg); }
+}
+@media (max-width: 850px) {
+    .circus-ring .circus-attraction-positions { padding-block-start: clamp(6rem, 14vw, 7.3rem); }
+}
+@media (max-width: 480px) {
+    .circus-ring .ring-proscenium .ring-marquee { width: min(82%, 16rem); }
+    .circus-ring .ring-audience { top: 1.25rem; }
+}
+
+/* Main Ring — puppet audience, lantern light, and illustrated navigation */
+.circus-ring .ring-audience { z-index: 2; }
+.circus-ring .ring-puppet-fabric {
+    transform-box: fill-box;
+    transform-origin: left center;
+    animation: ring-fabric-breathe 6s ease-in-out infinite alternate;
+}
+@keyframes ring-fabric-breathe {
+    from { transform: skewY(-1.2deg); }
+    to { transform: skewY(1.2deg); }
+}
+.circus-ring .ring-lantern {
+    filter: drop-shadow(0 0 3px #ffd073a8) drop-shadow(0 2px 6px #e1974959);
+}
+.circus-ring .ring-proscenium {
+    background:
+        radial-gradient(ellipse at 50% 100%, #e6a25466, transparent 57%),
+        repeating-linear-gradient(94deg, #21101bd9 0, #641e38 14px, #2b1021 33px);
+}
+.circus-ring .circus-tent-wall::after {
+    background:
+        radial-gradient(ellipse at 50% 12%, #ffbc653b, transparent 47%),
+        radial-gradient(ellipse at 50% 62%, #96566a25, transparent 43%),
+        radial-gradient(ellipse at 50% 43%, transparent 38%, #2c153cb0 87%);
+}
+.circus-ring .circus-seating-lights { filter: drop-shadow(0 0 2px #ffb95296); }
+.circus-ring .circus-attraction-positions .circus-attraction-position::before {
+    background:
+        radial-gradient(ellipse 35% 13% at 50% 65%, #201122a0, transparent 98%),
+        radial-gradient(ellipse 53% 33% at 50% 61%, #ffd0845e, transparent 99%);
+}
+.circus-ring .circus-ring-floor::before {
+    background:
+        radial-gradient(ellipse at 50% 36%, #ffd89f59, transparent 36%),
+        radial-gradient(ellipse at 24% 61%, #ffc16d39, transparent 26%),
+        radial-gradient(ellipse at 77% 63%, #ffcb7840, transparent 27%),
+        radial-gradient(circle, #ffe8ae51 0 .5px, transparent 1px) 0 0 / 7px 11px,
+        radial-gradient(circle, #2513225c 0 .45px, transparent 1px) 0 0 / 11px 13px;
+}
+.circus-ring .circus-ring-floor-stars {
+    animation: ring-lamp-shimmer 8s ease-in-out infinite alternate;
+}
+.circus-ring .ring-side-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+    align-items: end;
+    direction: ltr;
+    gap: clamp(.15rem, 2vw, .65rem);
+    padding: 0 4% .36rem;
+}
+.circus-ring .ring-side-links a {
+    position: relative;
+    min-width: 0;
+    min-height: 44px;
+    width: min(100%, 6.35rem);
+    padding: 0;
+    transition: transform .24s ease, filter .24s ease;
+}
+.circus-ring .ring-side-links a svg,
+.circus-ring .ring-side-links a:last-child svg {
+    display: block;
+    width: 100%;
+    height: clamp(2.75rem, 5.6vw, 3.25rem);
+}
+.circus-ring .ring-side-links a:is(:hover, :focus-visible) {
+    background: transparent;
+    transform: translateY(-2px) scale(1.035);
+    filter: drop-shadow(0 3px 2px #210b15) drop-shadow(0 0 5px #efb35788);
+}
+.circus-ring .ring-side-links .ring-link-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring :is(.ring-puppet-fabric, .circus-ring-floor-stars) { animation: none; }
+    .circus-ring .ring-side-links a { transition: none; }
+    .circus-ring .ring-side-links a:is(:hover, :focus-visible) { transform: none; }
+}
+
+/* Main Ring — gilt showbill, compact plaques, and miniature attractions */
+.circus-ring .ring-proscenium { padding-block-start: clamp(1.35rem, 2.2vw, 1.8rem); }
+.circus-ring .ring-proscenium .ring-marquee {
+    border-color: #f4cb77 #bb793b #9f5b31 #d79a4c;
+    background:
+        radial-gradient(ellipse at 50% 0%, #ad3a4c, transparent 70%),
+        linear-gradient(#691b31, #450c20);
+    box-shadow: inset 0 0 0 1px #ffe5a0a6, inset 0 0 0 3px #a46138, inset 0 -7px 10px #280a1a, 0 3px 0 #6b3e23, 0 5px 9px #1a0814;
+}
+.circus-ring .ring-proscenium .ring-marquee-crest {
+    inset: auto -18% 78%;
+    width: 136%;
+    height: clamp(1.85rem, 3.7vw, 2.75rem);
+    filter: drop-shadow(0 3px 2px #230911);
+}
+main.circus-ring .ring-marquee h2 > .lang-en {
+    color: #fff0c6;
+    text-shadow: 0 -1px #fff4d280, 0 1px #995630, 0 3px 3px #331020;
+}
+.circus-ring .circus-spectator-seating { filter: drop-shadow(0 .5rem .35rem #1e0b17c2); }
+.circus-ring .circus-tent-scene {
+    background:
+        radial-gradient(ellipse at 50% 75%, #e9a95842, transparent 58%),
+        repeating-linear-gradient(176deg, transparent 0 13px, #a16c4329 14px, #240e17aa 15px 17px),
+        repeating-linear-gradient(8deg, #3d201d 0 4px, #6b3a27 7px 14px, #4e251d 16px 22px);
+}
+.circus-ring .circus-ring-floor {
+    box-shadow: 0 4px 0 #d99b4a, 0 7px 0 #7a4b2b, 0 12px 0 #6c2033, 0 16px 0 #b6793b, 0 24px 22px #1c0c16d9;
+}
+.circus-ring .circus-ring-floor::after { border-color: #ffe1a0; filter: drop-shadow(0 0 3px #f9a945b0); }
+/* The notched ticket sits inside a full-height, focusable link. */
+.circus-ring .circus-attraction-positions a.ring-game-plaque {
+    position: relative;
+    isolation: isolate;
+    width: fit-content;
+    max-width: min(94%, 10rem);
+    min-height: 44px;
+    padding: .35rem 1.05rem;
+    border: 0;
+    border-radius: .32rem;
+    background: none;
+    box-shadow: none;
+    color: #fff0ce;
+    animation: none;
+    transition: transform .2s ease;
+}
+.circus-ring .circus-attraction-positions a.ring-game-plaque::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: .23rem 0;
+    width: auto;
+    height: auto;
+    border: 1px solid #ddb16a;
+    border-radius: .42rem;
+    background:
+        radial-gradient(circle at .55rem 50%, #ffdc8f 0 1.25px, transparent 1.9px),
+        radial-gradient(circle at calc(100% - .55rem) 50%, #ffdc8f 0 1.25px, transparent 1.9px),
+        linear-gradient(#8b2d40, #57142b 68%, #411020);
+    box-shadow: inset 0 0 0 2px #532033, inset 0 0 0 3px #d49c584f;
+    mask-image: radial-gradient(circle at left center, transparent .18rem, #000 .21rem),
+        radial-gradient(circle at right center, transparent .18rem, #000 .21rem);
+    mask-composite: intersect;
+    transform: none;
+    pointer-events: none;
+}
+.circus-ring .circus-attraction-positions a.ring-game-plaque::after { content: none; }
+.circus-ring .circus-attraction-positions a.ring-game-plaque:is(:hover, :focus-visible) {
+    background: none;
+    box-shadow: none;
+    transform: translateY(-2px);
+}
+.circus-ring .circus-attraction-positions a.ring-game-plaque:is(:hover, :focus-visible)::before {
+    border-color: #ffe3a0;
+    background-color: #84293c;
+    box-shadow: inset 0 0 .7rem #ffc66a5c, inset 0 0 0 2px #bc784a;
+}
+main.circus-ring .circus-attraction-positions a.ring-game-plaque > :is(.lang-en, .lang-ar) {
+    color: #fff0ce;
+    font-size: clamp(.79rem, 1.2vw, .93rem);
+    line-height: 1.26;
+    translate: none;
+}
+.circus-ring .circus-attraction-position--memory .circus-aloosh-attraction-art { overflow: visible; }
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .circus-attraction-positions a.ring-game-plaque { transition: none; }
+    .circus-ring .circus-attraction-positions a.ring-game-plaque:is(:hover, :focus-visible) { transform: none; }
+}
+@media (min-width: 851px) {
+    .circus-ring .circus-attraction-positions { padding-block-start: clamp(5.7rem, 9vw, 6.45rem); }
+    .circus-ring .circus-attraction-position--memory { translate: 4% 0; }
+    .circus-ring .circus-attraction-position--juggling { translate: -4% 0; }
+}
+
+/* Main Ring — curtain edge and shooting stars */
+@media (width > 850px) {
+    .circus-ring .ring-proscenium { border-color: transparent transparent #b78142; }
+}
+.circus-ring .ring-shooting-stars {
+    position: absolute;
+    inset: 0;
+    overflow: clip;
+    pointer-events: none;
+}
+.circus-ring .ring-shooting-stars--outer {
+    z-index: -1;
+    inset-inline: min(0px, calc((100% - 100vw) / 2 + 1rem));
+}
+.circus-ring .ring-shooting-stars--curtain { border-radius: inherit; }
+.circus-ring .ring-shooting-stars > span {
+    position: absolute;
+    top: var(--star-top);
+    left: var(--star-left);
+    width: var(--star-length, clamp(1.25rem, 4.7vw, 4.4rem));
+    height: 2px;
+    color: var(--star-color);
+    opacity: 0;
+    transform: rotate(32deg);
+    animation: ring-shooting-star var(--star-period) linear var(--star-delay) infinite;
+}
+.circus-ring .ring-shooting-stars > span::before {
+    content: '';
+    position: absolute;
+    inset: -1px 0;
+    background: linear-gradient(90deg, transparent, currentColor);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+.circus-ring .ring-shooting-stars > span::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff7ea;
+    box-shadow: 0 0 5px 1px currentColor;
+}
+.circus-ring .ring-shooting-stars--outer > :nth-child(1) {
+    --star-top: 14%; --star-left: 1%; --star-color: #36ffe2; --star-period: 15s; --star-delay: -2s;
+}
+.circus-ring .ring-shooting-stars--outer > :nth-child(2) {
+    --star-top: 28%; --star-left: 93%; --star-color: #5fa8ff; --star-period: 19s; --star-delay: -13s; --star-length: clamp(1rem, 3vw, 2.8rem);
+}
+.circus-ring .ring-shooting-stars--outer > :nth-child(3) {
+    --star-top: 42%; --star-left: 2%; --star-color: #ff4a70; --star-period: 17s; --star-delay: -5s;
+}
+.circus-ring .ring-shooting-stars--outer > :nth-child(4) {
+    --star-top: 51%; --star-left: 92%; --star-color: #ffc75a; --star-period: 21s; --star-delay: -18s; --star-length: clamp(1rem, 3vw, 2.8rem);
+}
+.circus-ring .ring-shooting-stars--outer > :nth-child(5) {
+    --star-top: 63%; --star-left: 1%; --star-color: #83ff67; --star-period: 19s; --star-delay: -9s;
+}
+.circus-ring .ring-shooting-stars--outer > :nth-child(6) {
+    --star-top: 69%; --star-left: 94%; --star-color: #ff79ce; --star-period: 16s; --star-delay: -11s; --star-length: clamp(1rem, 3vw, 2.8rem);
+}
+.circus-ring .ring-shooting-stars--outer > :nth-child(7) {
+    --star-top: 79%; --star-left: 2%; --star-color: #5fa8ff; --star-period: 23s; --star-delay: -20s;
+}
+.circus-ring .ring-shooting-stars--outer > :nth-child(8) {
+    --star-top: 84%; --star-left: 91%; --star-color: #36ffe2; --star-period: 18s; --star-delay: -7s; --star-length: clamp(1rem, 3vw, 2.8rem);
+}
+.circus-ring .ring-shooting-stars--curtain > :nth-child(1) {
+    --star-top: 17%; --star-left: 8%; --star-color: #83ff67; --star-period: 16s; --star-delay: -4s;
+}
+.circus-ring .ring-shooting-stars--curtain > :nth-child(2) {
+    --star-top: 15%; --star-left: 83%; --star-color: #ff79ce; --star-period: 19s; --star-delay: -9s; --star-length: clamp(1rem, 3vw, 2.8rem);
+}
+.circus-ring .ring-shooting-stars--curtain > :nth-child(3) {
+    --star-top: 49%; --star-left: 3%; --star-color: #5fa8ff; --star-period: 17s; --star-delay: -13s;
+}
+.circus-ring .ring-shooting-stars--curtain > :nth-child(4) {
+    --star-top: 40%; --star-left: 87%; --star-color: #ffc75a; --star-period: 23s; --star-delay: -15s; --star-length: clamp(1rem, 3vw, 2.8rem);
+}
+@keyframes ring-shooting-star {
+    0% { opacity: 0; transform: translate(-.7rem, -.45rem) rotate(32deg); }
+    3%, 6% { opacity: .72; }
+    11%, 100% { opacity: 0; transform: translate(clamp(.6rem, 2.6vw, 2rem), clamp(.4rem, 1.65vw, 1.25rem)) rotate(32deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circus-ring .ring-shooting-stars > span { animation: none; opacity: .32; }
+}
