@@ -1,7 +1,11 @@
+/* The font request is limited to the English manifest title.--keep this right here--i dont like it and im going through all the fonts on the planet till i find the right one. */
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&text=Ship%27s%20Manifest&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&text=MPGA%20Quarters%20Navigation%20Table&display=swap");
+
 /* 
    Author: Leslie Brockman
    Date: 10-26-2026
-   Date modified: 10/21/2026
+   Date modified: 11/22/2026
 */
 :where(body.ticket-page) h2 {
 font-family: var(--font-ar);
@@ -476,13 +480,6 @@ background: var(--primary-green);
 background: transparent;
 }
 
-:where(body.ticket-page) .ticket-middle {
-display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    align-items: start;
-}
-
 :where(body.ticket-page) .ticket-col-land,
 :where(body.ticket-page) .ticket-col-gsf {
 min-width: 0;
@@ -507,14 +504,6 @@ width: min(100%, 1040px);
         padding-right: 0.75rem;
 }
 
-:where(body.ticket-page) .ticket-middle {
-grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-:where(body.ticket-page) .ticket-col-gsf {
-grid-column: 1 / -1;
-}
-
 :where(body.ticket-page) .ticket-gallery-scroll figure {
 flex: 0 0 320px;
 }
@@ -529,11 +518,6 @@ height: 320px;
 width: min(100%, 900px);
         padding-left: 0.75rem;
         padding-right: 0.75rem;
-}
-
-:where(body.ticket-page) .ticket-middle {
-grid-template-columns: 1fr;
-        gap: 1.25rem;
 }
 
 :where(body.ticket-page) .ticket-gallery-scroll {
@@ -566,11 +550,6 @@ width: 100%;
 font-size: 1.6rem;
         line-height: 1.2;
         word-break: break-word;
-}
-
-:where(body.ticket-page) .ticket-middle {
-grid-template-columns: 1fr;
-        gap: 1rem;
 }
 
 :where(body.ticket-page) .ticket-copy-block {
@@ -619,11 +598,6 @@ font-size: 1.35rem;
         line-height: 1.2;
         word-break: break-word;
         margin: 0;
-}
-
-:where(body.ticket-page) .ticket-middle {
-grid-template-columns: 1fr;
-        gap: 0.9rem;
 }
 
 :where(body.ticket-page) :where(main).ticket-page h2,
@@ -1243,8 +1217,29 @@ animation: none;
 }
 
 
-/* Ticket body only; feature backgrounds remain unchanged. */
-body.ticket-page { background-color: #d5d5b7; }
+/* Mediterranean water outside the cabin. Background paint adds no layout boxes. */
+body.ticket-page {
+    background-color: #123f45;
+    background-image:
+        radial-gradient(ellipse at 42% 11%, #e5b77a42, #b9a87c19 21%, transparent 52%),
+        repeating-linear-gradient(178deg, transparent 0 11px, #a8cbc127 13px, transparent 15px 25px),
+        repeating-linear-gradient(2deg, transparent 0 21px, #0b292d62 26px, #48797530 32px, transparent 39px 55px),
+        linear-gradient(154deg, #367477, #225d65 31%, #184850 64%, #102f36);
+    background-size: 125% 100%, 115% 100%, 110% 100%, 100% 100%;
+    background-position: 50% 0, 24% 0, 65% 0, 0 0;
+    background-repeat: no-repeat;
+}
+
+@keyframes ticket-mediterranean-drift {
+    from { background-position: 50% 0, 24% 0, 65% 0, 0 0; }
+    to { background-position: 55% 0, 40% 0, 54% 0, 0 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    body.ticket-page {
+        animation: ticket-mediterranean-drift 34s ease-in-out infinite alternate;
+    }
+}
 
 /* Keep the mobile control above the positioned title in their shared grid row. */
 @media (max-width: 768px) {
@@ -1255,94 +1250,263 @@ body.ticket-page { background-color: #d5d5b7; }
 }
 
 /* Featured flotilla directory; isolated from existing galleries and convoy. */
-.flotilla-missions {
-    width: 100%;
-    max-width: 1200px;
-    margin-block-end: 2.5rem;
-    color: var(--dark);
-    font-family: var(--font-en);
+/* Captain's register with two in-flow faces per organization. */
+.ticket-page :is(.flotilla-missions, .april-navigation-chart, .ticket-game, .ticket-scrapbook:where(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy, #scrapbook-global-sumud)) > .ticket-panel-heading {
+    display: grid;
+    justify-items: center;
+    justify-content: stretch;
+    gap: 0.65rem;
 }
-.flotilla-missions .flotilla-missions-grid {
+
+.ticket-page :is(.flotilla-missions, .april-navigation-chart, .ticket-game, .ticket-scrapbook:where(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy)) > .ticket-panel-heading h2 {
+    max-inline-size: 100%;
+    color: #6b461f;
+    text-align: center;
+    text-shadow: 0 1px #f9e1a5, 0 -1px #432d1e;
+}
+
+.ticket-page :is(#flotilla-directory-title, #april-flotillas-2027-title, #sail-to-gaza-title, #scrapbook-freedom-flotilla-title, #scrapbook-freedom-convoy-title) > .lang-en {
+    font-family: "Snell Roundhand", "Segoe Script", "Apple Chancery", Georgia, serif;
+    font-style: italic;
+}
+
+.ticket-page :is(.flotilla-missions, .april-navigation-chart, .ticket-game, .ticket-scrapbook:where(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy)) > .ticket-panel-heading h2::after {
+    display: block;
+    width: min(9rem, 55%);
+    height: 0.4rem;
+    margin: 0.48rem auto 0;
+    background:
+        radial-gradient(circle, #a7773d 0 2px, transparent 3px),
+        linear-gradient(90deg, transparent, #a67c4c 40% 60%, transparent) center / 100% 1px no-repeat;
+    content: "";
+}
+
+.ticket-page .flotilla-missions-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin-block-end: 1.5rem;
+    gap: clamp(0.65rem, 2vw, 1.2rem);
 }
-.flotilla-missions .flotilla-missions-card {
+
+.ticket-page .flotilla-missions-card {
+    min-width: 0;
+    perspective: 850px;
+}
+
+.ticket-page .flotilla-card-turner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 560ms ease-in-out;
+}
+
+.ticket-page .flotilla-missions-card[data-flipped] .flotilla-card-turner {
+    transform: rotateY(180deg);
+}
+
+.ticket-page .flotilla-card-face {
+    --card-paper: #efdbb1;
+    --card-rivet: radial-gradient(circle, #edcb8d 0 1px, #805730 1.5px 2px, transparent 2.8px);
+    grid-area: 1 / 1;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    gap: 0.75rem;
     min-width: 0;
-    padding: 1.25rem;
-    background: var(--panel-bg);
-    border: var(--panel-border);
-    border-radius: var(--panel-radius);
-    box-shadow: var(--panel-shadow);
+    padding: clamp(0.85rem, 1.8vw, 1.2rem);
+    border: 2px solid #7e5534;
+    border-radius: 0.48rem;
+    background:
+        var(--card-rivet) left 0.3rem top 0.3rem / 0.48rem 0.48rem no-repeat,
+        var(--card-rivet) right 0.3rem top 0.3rem / 0.48rem 0.48rem no-repeat,
+        var(--card-rivet) left 0.3rem bottom 0.3rem / 0.48rem 0.48rem no-repeat,
+        var(--card-rivet) right 0.3rem bottom 0.3rem / 0.48rem 0.48rem no-repeat,
+        linear-gradient(135deg, #b57e52 28%, transparent 31%) left top / 1.1rem 1.1rem no-repeat,
+        linear-gradient(225deg, #ba8a58 28%, transparent 31%) right top / 1.1rem 1.1rem no-repeat,
+        linear-gradient(45deg, #9d6d48 28%, transparent 31%) left bottom / 1.1rem 1.1rem no-repeat,
+        linear-gradient(315deg, #b37d50 28%, transparent 31%) right bottom / 1.1rem 1.1rem no-repeat,
+        repeating-linear-gradient(169deg, #865b3210 0 1px, transparent 1px 5px),
+        radial-gradient(ellipse at 35% 20%, #fff0ceaa, transparent 67%),
+        var(--card-paper);
+    color: #3c291b;
+    box-shadow: inset 0 0 0 1px #edc68c, inset 0 0 0 4px #a97647,
+        inset 0 0 0 5px #e1b982, inset 0 0 1rem #7e502d66,
+        0 3px #533322, 0 0.45rem 0.65rem #55352166;
+    backface-visibility: hidden;
     overflow-wrap: anywhere;
 }
-.flotilla-missions .flotilla-missions-card :is(.lang-en, .lang-ar) {
-    text-align: center;
+
+.ticket-page .flotilla-card-back {
+    --card-paper: #e8cca1;
+    transform: rotateY(180deg);
 }
-.flotilla-missions .flotilla-missions-image { margin: 0 0 1rem; }
-.flotilla-missions .flotilla-missions-image img {
+
+.ticket-page .flotilla-card-face[inert] {
+    pointer-events: none;
+}
+
+.ticket-page .flotilla-card-face h3 {
+    margin: 0;
+    color: inherit;
+    font-size: 1.15rem;
+}
+
+.ticket-page .flotilla-card-back p {
+    max-inline-size: min(100%, 42ch);
+    margin: 0;
+    font: 400 1rem / 1.65 Georgia, "Times New Roman", serif;
+}
+
+.ticket-page .flotilla-card-back p > span {
+    display: block;
+    text-align: start;
+}
+
+.ticket-page .flotilla-card-back > .site-button {
+    width: min(100%, 14rem);
+    min-height: 44px;
+    margin-block-start: auto;
+    padding: 0.48rem 0.88rem;
+    border: 2px solid #68422b;
+    border-radius: 0.36rem;
+    background:
+        radial-gradient(circle at 0.38rem 0.38rem, #fce6af 1px, #9a713e 2px, transparent 3px),
+        radial-gradient(circle at calc(100% - 0.38rem) calc(100% - 0.38rem), #fce6af 1px, #9a713e 2px, transparent 3px),
+        linear-gradient(160deg, #ead09a, #c79859 66%, #a67543);
+    color: #302013;
+    box-shadow: inset 0 1px #f8e0ae, inset 0 0 0 2px #d4a871,
+        0 3px #6f452d, 0 0.25rem 0.45rem #57382170;
+    text-align: center;
+    transform: none;
+    transition: none;
+}
+
+.ticket-page .flotilla-card-back > .site-button:active {
+    box-shadow: inset 0 2px 4px #62402499, 0 1px #6f452d;
+}
+
+.ticket-page .flotilla-missions-image {
+    width: 75%;
+    margin: 0;
+}
+
+.ticket-page .flotilla-missions-image img {
     display: block;
     width: 100%;
     max-width: 100%;
     height: auto;
-    aspect-ratio: 2 / 1;
+    margin: 0;
     object-fit: contain;
-    margin: 0 0 0.5rem;
 }
-.flotilla-missions .flotilla-missions-image figcaption { font-size: 0.85rem; }
-.flotilla-missions h3 { margin-block: 0.5rem 1rem; font-size: 1.3rem; }
-.flotilla-missions p { max-width: none; font-size: 1rem; line-height: 1.6; }
-.flotilla-missions .flotilla-missions-social {
-    margin-block-start: auto;
-    text-align: center;
-}
-.flotilla-missions > [data-flotilla-open] {
-    display: block;
-    width: fit-content;
-    margin-inline: auto;
-}
-.flotilla-missions .flotilla-missions-button {
-    padding: 0.75rem 1.25rem;
+
+.ticket-page :is(.flotilla-missions, .april-navigation-chart, .ticket-game, .ticket-scrapbook:where(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy, #scrapbook-global-sumud)) .ticket-panel-close {
     min-height: 44px;
-    border: 2px solid var(--button-border);
-    border-radius: var(--panel-radius);
-    background: var(--button-background);
-    color: var(--button-text);
+    padding: 0.45rem 0.85rem;
+    border: 1px solid #916536;
+    border-radius: 0.35rem;
+    background: linear-gradient(165deg, #ebce92, #ba8b4f 82%, #947044);
+    color: #302013;
     font: inherit;
+    font-weight: 700;
+    box-shadow: inset 0 1px #fff0bc, 0 2px 3px #4b301d66;
     cursor: pointer;
 }
-.flotilla-missions .flotilla-missions-button:hover { background: var(--button-hover-background); }
-.flotilla-missions :focus-visible { outline: 3px solid var(--button-focus); outline-offset: 4px; }
-.flotilla-missions dialog {
-    width: min(600px, calc(100% - 2rem));
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 1.5rem;
-    background: #d5d5b7;
-    color: var(--dark);
-    border: var(--panel-border);
-    border-radius: var(--panel-radius);
-    box-shadow: var(--panel-shadow);
-    text-align: start;
+
+.ticket-page .flotilla-card-flip {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 auto;
+    margin-block-start: auto;
+    padding: 0;
+    border: 2px solid #8c633b;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, #38241a 0 47%, #785131 48% 55%, transparent 56%),
+        radial-gradient(circle at 50% 9%, #ffedb1 0 1px, transparent 2px),
+        radial-gradient(circle at 50% 91%, #d5ae6b 0 1px, transparent 2px),
+        linear-gradient(145deg, #efcf91, #997044 58%, #ddb176);
+    color: #f2d291;
+    box-shadow: inset 0 1px #ffdea1, 0 0.2rem 0.3rem #3b231bae;
+    cursor: pointer;
 }
-.flotilla-missions #flotilla-directory .flotilla-missions-coming-soon {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-inline: auto;
+
+.ticket-page .flotilla-card-back > .flotilla-card-flip { margin-block-start: 0; }
+
+.ticket-page .flotilla-card-arrow {
+    width: 1.38rem;
+    height: 1.38rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
 }
-.flotilla-missions dialog::backdrop { background: rgb(17 17 17 / 65%); }
-.flotilla-missions dialog h3 { margin-block-start: 1.5rem; }
-html[lang="ar"] .flotilla-missions { direction: rtl; }
+
+.ticket-page .flotilla-card-back .flotilla-card-arrow { scale: -1 1; }
+
+.ticket-page .flotilla-card-flip-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.ticket-page .flotilla-card-face :is(.flotilla-card-flip, .site-button):focus-visible {
+    outline: 3px solid #164c70;
+    outline-offset: 3px;
+    filter: brightness(1.1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ticket-page .flotilla-card-face :is(.flotilla-card-flip, .site-button):hover { filter: brightness(1.12); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ticket-page .flotilla-card-face :is(.flotilla-card-flip, .site-button) {
+        transition: translate 150ms ease, filter 150ms ease;
+    }
+
+    .ticket-page .flotilla-card-face > .site-button:focus-visible { translate: 0 -1px; }
+    .ticket-page .flotilla-card-back > .site-button:active { translate: 0 1px; }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+    .ticket-page .flotilla-card-face :is(.flotilla-card-flip, .site-button):hover:not(:active) { translate: 0 -1px; }
+}
+
+.ticket-page :is(.flotilla-missions, .april-navigation-chart, .ticket-game, .ticket-scrapbook:where(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy, #scrapbook-global-sumud)) .ticket-panel-close {
+    padding-inline: 1.25rem;
+    background:
+        radial-gradient(circle at 0.4rem 50%, #f9e2a5 1px, #8c6137 2px, transparent 3px),
+        radial-gradient(circle at calc(100% - 0.4rem) 50%, #f9e2a5 1px, #8c6137 2px, transparent 3px),
+        linear-gradient(165deg, #ebce92, #ba8b4f 82%, #947044);
+}
+
+.ticket-page :is(.flotilla-missions, .april-navigation-chart, .ticket-game, .ticket-scrapbook:where(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy, #scrapbook-global-sumud)) .ticket-panel-close:hover { filter: brightness(1.07); }
+
 @media (max-width: 991px) {
-    .flotilla-missions .flotilla-missions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ticket-page .flotilla-missions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
 @media (max-width: 768px) {
-    .flotilla-missions .flotilla-missions-grid { grid-template-columns: minmax(0, 1fr); }
+    .ticket-page .flotilla-missions-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticket-page .flotilla-missions-card .flotilla-card-turner,
+    .ticket-page .flotilla-missions-card[data-flipped] .flotilla-card-turner,
+    .ticket-page .flotilla-card-back {
+        transform: none;
+        transition: none;
+    }
+
+    .ticket-page .flotilla-card-face[inert] { visibility: hidden; }
 }
 
 /* Featured social icons mirror styles/creators.css without loading page-wide rules. */
@@ -1393,24 +1557,33 @@ html[lang="ar"] .flotilla-missions { direction: rtl; }
 }
 
 /* Intro gallery: keep image order left-to-right in both language modes. */
-.flotilla-missions > #flotilla-missions-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-}
-.flotilla-missions .flotilla-missions-gallery {
+#scrapbook-global-sumud .flotilla-missions-gallery {
     position: relative;
     display: flex;
     flex-wrap: nowrap;
     gap: 1rem;
     padding: 1rem;
-    margin: 1rem 6px 2rem;
-    background: #000000;
-    box-shadow: 0 0 0 6px #c00000, 0 8px 22px rgba(0, 0, 0, 0.35);
+    margin: 0.75rem auto;
     border-radius: var(--panel-radius);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     direction: ltr;
 }
-.flotilla-missions .flotilla-missions-gallery-label {
+#scrapbook-global-sumud :is(.flotilla-missions-gallery, .ticket-gallery-scroll) {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    padding: clamp(0.55rem, 2vw, 0.9rem);
+    border: 2px solid #af804e;
+    background: linear-gradient(125deg, #5d3625, #362019);
+    box-shadow: inset 0 0 0 2px #d3aa71, inset 0 0 0 4px #4d2c1d, 0 3px 8px #43281d69;
+}
+
+#scrapbook-global-sumud .ticket-gallery-scroll > figure {
+    max-inline-size: 100%;
+}
+
+#scrapbook-global-sumud .flotilla-missions-gallery-label {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1419,12 +1592,12 @@ html[lang="ar"] .flotilla-missions { direction: rtl; }
     clip-path: inset(50%);
     white-space: nowrap;
 }
-.flotilla-missions .flotilla-missions-gallery > img {
+#scrapbook-global-sumud .flotilla-missions-gallery > img {
     display: block;
     flex: 0 0 auto;
     width: auto;
-    max-width: none;
-    height: clamp(220px, 32vw, 340px);
+    max-width: 100%;
+    height: clamp(9rem, 32vw, 21.25rem);
     object-fit: contain;
     margin: 0;
     border: 0;
@@ -1433,4 +1606,1881 @@ html[lang="ar"] .flotilla-missions { direction: rtl; }
     box-shadow: none;
     transform: none;
     transition: none;
+}
+
+/* Phase 2 / Pass 1: cabin architecture and the view beyond the glass. */
+.ticket-page .captains-quarters {
+    --cabin-view-height: clamp(18rem, 33vw, 25rem);
+    --cabin-window-top: clamp(1.5rem, 3.6vw, 3rem);
+    --cabin-window-inset: clamp(3rem, 11vw, 9rem);
+    --cabin-window-gap: clamp(1rem, 4vw, 3rem);
+    --cabin-window-proportion: 0.8;
+    --cabin-window-height: calc((var(--cabin-view-height) - var(--cabin-window-top) - 1rem) * var(--cabin-window-proportion));
+    --cabin-scene-height: calc(var(--cabin-window-top) + var(--cabin-window-height) + 0.55rem);
+    position: relative;
+    width: 100%;
+    padding: var(--cabin-scene-height) clamp(0.75rem, 3vw, 2rem) clamp(0.75rem, 3vw, 2rem);
+}
+
+.ticket-page .captains-quarters-environment,
+.ticket-page .navigation-table-instruments {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.ticket-page .captains-quarters-environment {
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid #9e6d42;
+    border-radius: var(--panel-radius);
+    background: #251210;
+    box-shadow: 0 1rem 2rem #26141155;
+}
+
+.ticket-page .ship-cabin-background,
+.ticket-page .ship-cabin-framing {
+    position: absolute;
+    inset: 0;
+}
+
+.ticket-page .ship-cabin-background {
+    /* Side pilasters, recessed panel rails, then the grain of the mahogany. */
+    background:
+        linear-gradient(90deg, #110807c4, transparent 16% 84%, #110807c4),
+        repeating-linear-gradient(0deg, transparent 0 7.75rem, #170b09 7.75rem 7.9rem, #a2603d55 7.9rem 8rem),
+        repeating-linear-gradient(93deg, #f8a6790c 0 1px, transparent 1px 5px, #0e05051f 5px 7px, transparent 7px 13px),
+        linear-gradient(90deg, #2b1411, #6a3428 26%, #45211c 50%, #643227 74%, #281310);
+}
+
+.ticket-page .ship-cabin-framing {
+    inset: 0.45rem;
+    border: 2px solid #9f6b40;
+    border-radius: inherit;
+    box-shadow:
+        inset 0 0 0 3px #2c130f,
+        inset 0 0 0 6px #6f3e2d,
+        inset 0 0 3rem 0.8rem #180b09cf;
+    /* Copper pipes at the sides, carved flutes, and a lantern glow on each wall. */
+    background:
+        linear-gradient(90deg, #442014, #a35c3c 34%, #e1a077 55%, #632d22) left clamp(0.5rem, 4%, 2rem) top / 0.45rem var(--cabin-scene-height) no-repeat,
+        linear-gradient(90deg, #442014, #a35c3c 34%, #e1a077 55%, #632d22) right clamp(0.5rem, 4%, 2rem) top / 0.45rem var(--cabin-scene-height) no-repeat,
+        radial-gradient(ellipse 23% 10rem at 7% calc(var(--cabin-scene-height) * 0.58), #f7aa4966, transparent),
+        radial-gradient(ellipse 23% 10rem at 93% calc(var(--cabin-scene-height) * 0.58), #f7aa4955, transparent),
+        repeating-linear-gradient(90deg, #210d0a, #55291e 3px, #86523b 6px, #35170f 8px) top / 100% 0.9rem no-repeat;
+}
+
+.ticket-page .ship-cabin-framing::before,
+.ticket-page .ship-cabin-framing::after {
+    position: absolute;
+    content: "";
+}
+
+.ticket-page .ship-cabin-framing::before {
+    inset: calc(var(--cabin-scene-height) * 0.47) auto auto 7%;
+    width: clamp(0.65rem, 1.5vw, 1.15rem);
+    aspect-ratio: 2 / 3;
+    border: 2px solid #b47e45;
+    border-block-width: 4px;
+    border-radius: 36% 36% 25% 25%;
+    background: linear-gradient(90deg, #9f5b31, #ffe2a0 44% 62%, #ba7d42);
+    box-shadow: 0 0 1.4rem 0.45rem #ffba5977;
+}
+
+.ticket-page .ship-cabin-framing::after {
+    inset: calc(var(--cabin-scene-height) * 0.55) 6% auto auto;
+    width: clamp(0.85rem, 2.5vw, 1.65rem);
+    aspect-ratio: 1;
+    border: 3px dashed #b58248;
+    border-radius: 50%;
+    background: radial-gradient(circle, #e8bb79 11%, #271411 14% 34%, #885432 37% 58%, #492311 61%);
+    box-shadow: 0.15rem 0.2rem 0.3rem #1e0c0b;
+}
+
+.ticket-page .ship-cabin-windows {
+    position: absolute;
+    inset: var(--cabin-window-top) 0 auto;
+    width: calc((100% - 2 * var(--cabin-window-inset)) * var(--cabin-window-proportion));
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--cabin-window-gap);
+    height: var(--cabin-window-height);
+    direction: ltr;
+}
+
+.ticket-page .ship-cabin-arched-window {
+    --window-mullion: clamp(0.28rem, 0.7vw, 0.55rem);
+    --horizon: 60%;
+    --light-position: 58%;
+    --sun: #fff6ce;
+    --coastline-profile: polygon(0 96%, 18% 86%, 36% 55%, 56% 42%, 70% 25%, 86% 35%, 100% 12%, 100% 100%, 0 100%);
+    position: relative;
+    overflow: hidden;
+    border: clamp(0.45rem, 1.2vw, 0.9rem) solid #4f281d;
+    border-radius: 50% 50% 0.65rem 0.65rem / 46% 46% 0.65rem 0.65rem;
+    background: #ffc38e;
+    box-shadow:
+        0 0 0 1px #e5af6c,
+        0 0 0 clamp(0.22rem, 0.65vw, 0.45rem) #825034,
+        0 0 0 clamp(0.26rem, 0.78vw, 0.5rem) #2a130f,
+        0 0.55rem 1rem 0.25rem #180a08b3;
+}
+
+.ticket-page .ship-cabin-arched-window:nth-child(2) {
+    --light-position: 0%;
+    --sun: transparent;
+    --coastline-profile: polygon(0 12%, 14% 22%, 29% 12%, 44% 29%, 59% 24%, 74% 45%, 87% 47%, 100% 54%, 100% 100%, 0 100%);
+}
+
+.ticket-page .mediterranean-sunrise {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at var(--light-position) 55%, var(--sun) 0 0.65rem, transparent 0.76rem),
+        radial-gradient(ellipse at var(--light-position) 55%, #fff0abcc, transparent 52%),
+        radial-gradient(ellipse 40% 9% at 75% 33%, #f4b1b0b0, transparent),
+        radial-gradient(ellipse 60% 8% at 20% 45%, #f5b8adcc, transparent),
+        linear-gradient(#ce929d, #ffc59e 41%, #ffe1aa var(--horizon), #8ea9a7 var(--horizon), #4c8e91 77%, #21565f);
+}
+
+.ticket-page .mediterranean-sunrise::after {
+    position: absolute;
+    inset: var(--horizon) 0 0;
+    content: "";
+    background:
+        radial-gradient(ellipse 17% 75% at var(--light-position) 0%, #fff0afde, #f7bc6e70 53%, transparent),
+        repeating-linear-gradient(177deg, transparent 0 4px, #e7ded02b 5px 6px, transparent 7px 11px);
+    opacity: 0.82;
+}
+
+.ticket-page .distant-gaza-coastline {
+    position: absolute;
+    inset: calc(var(--horizon) - 0.85rem) 0 auto;
+    height: 0.95rem;
+    clip-path: var(--coastline-profile);
+    background: linear-gradient(#947c82, #778a8b);
+    opacity: 0.62;
+}
+
+/* Single pole on the land in the right window, below the glass and mullions. */
+.ticket-page .gaza-coast-flag {
+    position: absolute;
+    left: 74%;
+    bottom: calc(100% - var(--horizon) + 0.38rem);
+    width: 1px;
+    height: clamp(0.55rem, 1.15vw, 0.95rem);
+    background: #664937;
+    box-shadow: 1px 0 #f8d4955e;
+    pointer-events: none;
+}
+
+.ticket-page .gaza-coast-flag::before {
+    position: absolute;
+    inset: 0 auto auto 1px;
+    width: clamp(0.5rem, 0.9vw, 0.82rem);
+    aspect-ratio: 2 / 1;
+    background:
+        linear-gradient(128deg, #f7cd9345, transparent 60%),
+        conic-gradient(from 45deg at left center, #be303c 0deg 90deg, transparent 90deg) left / 50% 100% no-repeat,
+        linear-gradient(#211d1b 0 33.33%, #fff1dc 33.33% 66.66%, #326646 66.66%);
+    transform-origin: left center;
+    content: "";
+}
+
+@keyframes ticket-coast-flag-wave {
+    0%, 100% { transform: skewY(-4deg) scaleX(0.97); }
+    50% { transform: skewY(5deg) scaleX(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ticket-page .gaza-coast-flag::before {
+        animation: ticket-coast-flag-wave 4.8s ease-in-out infinite;
+    }
+}
+
+.ticket-page .ship-cabin-arched-window::after {
+    position: absolute;
+    inset: 0;
+    border: 1px solid #e2b179;
+    border-radius: inherit;
+    content: "";
+    /* The crossbar and mullion sit on the interior side of the glass. */
+    background:
+        linear-gradient(90deg, #452418, #d09b5e 25%, #69402a 65%, #382017) center / var(--window-mullion) 100% no-repeat,
+        linear-gradient(#4a271b, #c39155 27%, #583324 70%) center 46% / 100% var(--window-mullion) no-repeat,
+        linear-gradient(120deg, transparent 25%, #fff5d525 37%, transparent 52%);
+    box-shadow: inset 0 0 1rem 0.18rem #3e221dbf, inset 0 0 0 3px #1c100d55;
+}
+
+.ticket-page .captains-quarters :is(#captains-quarters-title, #navigation-table-title) {
+    color: #edd0a0;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    text-shadow: 0 -1px #ffe7b6, 0 1px #9b5d36, 0 2px #49261b, 0 4px 5px #190b0a;
+    overflow-wrap: anywhere;
+}
+
+.ticket-page .captains-quarters #captains-quarters-title {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.48rem, 3.8vw, 2.7rem);
+}
+
+.ticket-page .captains-quarters #navigation-table-title {
+    color: #e5bd86;
+    font-size: clamp(1.04rem, 2.7vw, 1.85rem);
+}
+
+.ticket-page .captains-quarters :is(#captains-quarters-title, #navigation-table-title) > .lang-en {
+    font-family: "Cinzel Decorative", Georgia, serif;
+    letter-spacing: 0.045em;
+}
+
+.ticket-page .captains-quarters :is(#captains-quarters-title, #navigation-table-title) > .lang-ar {
+    font-family: var(--font-ar);
+}
+
+@media (max-width: 991px) {
+    .ticket-page .captains-quarters {
+        --cabin-view-height: clamp(15rem, 39vw, 20rem);
+        --cabin-window-inset: clamp(1.7rem, 10vw, 5.5rem);
+        --cabin-window-proportion: 0.9;
+    }
+}
+
+@media (max-width: 575px) {
+    .ticket-page .captains-quarters {
+        --cabin-view-height: clamp(11rem, 47vw, 15rem);
+        --cabin-window-top: 1rem;
+        --cabin-window-inset: clamp(0.95rem, 6vw, 2rem);
+        --cabin-window-gap: 0.75rem;
+        --cabin-window-proportion: 1;
+    }
+
+    .ticket-page .ship-cabin-framing {
+        background: linear-gradient(90deg, #bf753a3d, transparent 25% 75%, #bf753a3d);
+    }
+
+    .ticket-page .ship-cabin-framing::before,
+    .ticket-page .ship-cabin-framing::after {
+        display: none;
+    }
+}
+
+@keyframes ticket-cabin-water-glimmer {
+    from { opacity: 0.76; }
+    to { opacity: 0.94; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ticket-page .mediterranean-sunrise::after {
+        animation: ticket-cabin-water-glimmer 9s ease-in-out 2 alternate;
+    }
+}
+
+/* Phase 4 / Pass 5: rock the complete cabin as one scene. */
+.ticket-page .captains-quarters { --cabin-sway-angle: 1.2deg; }
+
+@keyframes captainsGentleSway {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(calc(-1 * var(--cabin-sway-angle))) translateY(-1.5px); }
+    75% { transform: rotate(var(--cabin-sway-angle)) translateY(1.5px); }
+}
+
+@media (max-width: 991px) {
+    .ticket-page .captains-quarters { --cabin-sway-angle: 0.8deg; }
+}
+
+@media (max-width: 575px) {
+    .ticket-page .captains-quarters { --cabin-sway-angle: 0.4deg; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    /* Keep the reading scene untransformed so the convoy overlay is viewport-fixed. */
+    .ticket-page .captains-quarters:not(:has(.ticket-panel:not([hidden]))) {
+        transform-origin: center;
+        animation: captainsGentleSway 7s ease-in-out infinite;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticket-page .captains-quarters {
+        animation: none;
+        transform: none;
+    }
+}
+
+.ticket-page .navigation-table {
+    position: relative;
+}
+
+/* Phase 3 / Pass 6: the desk and the artifacts resting on it. */
+.ticket-page .navigation-table-surface {
+    position: relative;
+    display: grid;
+    gap: 1.15rem;
+    padding: clamp(1.15rem, 3.5vw, 2.65rem);
+    border: 2px solid #c89153;
+    border-block-end: 1.15rem solid #38180f;
+    border-radius: 1.2rem 1.2rem 2.1rem 2.1rem;
+    background:
+        radial-gradient(ellipse at 16% -8%, #ffc0737f, transparent 54%),
+        linear-gradient(0deg, #28110c64, transparent 29%),
+        linear-gradient(90deg, #190a08b8, transparent 18% 79%, #190a08b8),
+        repeating-linear-gradient(176deg, #e8a06445 0 1px, transparent 2px 5px, #230c0b5e 6px 8px, transparent 9px 15px),
+        repeating-linear-gradient(178deg, #672b1f 0 2rem, #743324 2rem 4.15rem, #32130e 4.15rem 4.24rem, #bf7c4859 4.24rem 4.32rem);
+    box-shadow:
+        inset 0 0 0 2px #32140d,
+        inset 0 0 0 5px #e5b778,
+        inset 0 0 0 8px #6b3b23,
+        inset 0 -1rem 1.1rem #210c0ac4,
+        0 3px #b07946,
+        0 0.65rem #29100b,
+        0 1.15rem 1.5rem #130706ca;
+    color: #fff1cf;
+}
+
+.ticket-page .navigation-table-surface::before,
+.ticket-page .navigation-table-surface::after {
+    position: absolute;
+    inset-inline: 0;
+    height: 2.6rem;
+    border-radius: inherit;
+    pointer-events: none;
+    content: "";
+    background:
+        radial-gradient(circle at 0.7rem 0.7rem, #fff0b3 1px, #72451e 3px, transparent 4px),
+        radial-gradient(circle at calc(100% - 0.7rem) 0.7rem, #fff0b3 1px, #72451e 3px, transparent 4px),
+        linear-gradient(135deg, #805526, #f3cf85 43%, #99612e 62%, transparent 64%) left / 2.6rem 100% no-repeat,
+        linear-gradient(225deg, #805526, #f3cf85 43%, #99612e 62%, transparent 64%) right / 2.6rem 100% no-repeat;
+}
+
+.ticket-page .navigation-table-surface::before { inset-block-start: 0; }
+.ticket-page .navigation-table-surface::after { inset-block-end: 0; rotate: 180deg; }
+
+.ticket-page .navigation-table-surface > h3,
+.ticket-page .navigation-table-scrapbooks > h4 {
+    margin: 0;
+    color: inherit;
+    text-shadow: 0 2px 3px #240d08;
+}
+
+/* Mechanical fittings occupy the existing desk rim and corner clearances. */
+.ticket-page .desk-mechanisms {
+    --desk-copper: linear-gradient(90deg, #47251b, #a75d39 27%, #dda071 48%, #8b492e 72%, #442018);
+    --desk-aged-brass: linear-gradient(145deg, #f1cd8a, #ac743b 46%, #68421e 77%, #ca9453);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.ticket-page .desk-mechanisms::before,
+.ticket-page .desk-mechanisms::after {
+    position: absolute;
+    inset-block: 2.35rem 2.25rem;
+    width: 0.7rem;
+    border-block: 0.35rem solid #ad7946;
+    border-radius: 0.42rem;
+    background:
+        radial-gradient(circle, #fff1af 0 1px, #51311d 1.5px, transparent 2px) center top / 100% 5.3rem repeat-y,
+        repeating-linear-gradient(0deg, transparent 0 2.38rem, #6b4828 2.38rem 2.48rem, #d9aa69 2.48rem 2.8rem, #7d532f 2.8rem 2.9rem, transparent 2.9rem 5.3rem),
+        var(--desk-copper) center / 0.39rem 100% no-repeat;
+    box-shadow: 0 0.13rem 0.2rem #1e0b08b5, inset 0 1px 1px #f3c38385;
+    content: "";
+}
+
+.ticket-page .desk-mechanisms::before { left: 0.56rem; }
+.ticket-page .desk-mechanisms::after { right: 0.56rem; }
+
+.ticket-page .desk-gear-mount {
+    --gear-face: radial-gradient(circle, #24160f 0 14%, #dfa561 17% 28%, #6e471f 30% 36%, #c08a4c 38% 55%, #785024 59% 69%, #e4b878 72%);
+    position: absolute;
+    top: 0.38rem;
+    left: 1.4rem;
+    width: 4.75rem;
+    height: 1.95rem;
+    border: 1px solid #bd8a50;
+    border-radius: 0.4rem 0.8rem 0.6rem 0.7rem;
+    background:
+        radial-gradient(circle at 0.35rem 0.32rem, #ffdfa0 1px, #644019 1.7px, transparent 2.5px),
+        radial-gradient(circle at calc(100% - 0.35rem) calc(100% - 0.32rem), #ffdfa0 1px, #644019 1.7px, transparent 2.5px),
+        radial-gradient(circle closest-side, #2b1b11 0 20%, #dfab6a 24% 42%, #794a23 46% 64%, #c89959 68% 89%, transparent 93%) 75% 70% / 0.86rem 0.86rem no-repeat,
+        linear-gradient(155deg, #4b2d1c, #1c130e 52%, #684224);
+    box-shadow: inset 0 0 0 2px #90602e, 0.12rem 0.22rem 0.35rem #1f0a06b5;
+}
+
+.ticket-page .desk-gear-mount::before,
+.ticket-page .desk-gear-mount::after {
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--gear-face);
+    outline: 2px dotted #c39758;
+    box-shadow: 0.12rem 0.16rem 0.18rem #100904;
+    content: "";
+}
+
+.ticket-page .desk-gear-mount::before {
+    inset: 0.22rem auto auto 0.55rem;
+    width: 1.4rem;
+}
+
+.ticket-page .desk-gear-mount::after {
+    inset: 0.13rem auto auto 1.94rem;
+    width: 0.95rem;
+}
+
+.ticket-page .desk-gear-mount--aft {
+    --gear-face: radial-gradient(circle, #2e1a13 0 13%, #c78d57 16% 27%, #51341f 30% 42%, #98613a 45% 63%, #614022 66% 76%, #ab794a 79%);
+    inset: auto 1.4rem 0.33rem auto;
+    width: 3.65rem;
+    height: 1.65rem;
+    background:
+        radial-gradient(circle at 90% 23%, #e1ae76 1px, #50311b 2px, transparent 3px),
+        var(--desk-copper) center / 90% 0.22rem no-repeat,
+        linear-gradient(145deg, #613b26, #261710 58%, #805031);
+}
+
+.ticket-page .desk-gear-mount--aft::before { width: 1.03rem; }
+.ticket-page .desk-gear-mount--aft::after { width: 0.74rem; }
+
+.ticket-page .desk-pressure-gauge {
+    position: absolute;
+    bottom: 0.28rem;
+    left: 1.5rem;
+    width: 1.88rem;
+    aspect-ratio: 1;
+    border: 0.2rem solid #b88c53;
+    border-radius: 50%;
+    background:
+        linear-gradient(148deg, #fff8db9c 0 24%, transparent 30%),
+        conic-gradient(from 28deg, #3b2b1b 0 4deg, transparent 5deg) center / 77% 77% no-repeat,
+        radial-gradient(circle, #493323 0 7%, #eedebb 9% 57%, transparent 58%),
+        repeating-conic-gradient(#6a5135 0deg 3deg, #e8d7b1 3deg 30deg);
+    box-shadow: inset 0 0 0 1px #77502b, 0 0 0 1px #efd19a, 0.12rem 0.23rem 0.32rem #1e0a08c7;
+}
+
+.ticket-page .desk-pressure-gauge::after {
+    position: absolute;
+    top: 44%;
+    right: 100%;
+    width: 0.65rem;
+    height: 0.29rem;
+    border: 1px solid #714628;
+    border-radius: 0.1rem;
+    background: var(--desk-aged-brass);
+    content: "";
+}
+
+@media (max-width: 1049px) {
+    .ticket-page .desk-gear-mount--aft,
+    .ticket-page .desk-mechanisms::after { display: none; }
+
+    .ticket-page .desk-gear-mount { scale: 0.8; transform-origin: left top; }
+}
+
+@media (max-width: 768px) {
+    .ticket-page .desk-mechanisms { display: none; }
+}
+
+.ticket-page .navigation-table-surface .navigation-table-instruments {
+    --instrument-brass: linear-gradient(135deg, #775023, #f1ce83 32%, #b38345 62%, #e0b76e);
+    position: relative;
+    inset: auto;
+    display: grid;
+    grid-template-columns: minmax(2.75rem, 1fr) minmax(0, 6fr) minmax(2.75rem, 1fr);
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 1.35rem);
+    max-inline-size: 54rem;
+    width: 100%;
+    margin: 0 auto;
+    direction: ltr;
+    pointer-events: none;
+}
+
+.ticket-page .desk-chart {
+    position: relative;
+    min-block-size: clamp(7rem, 15vw, 10.5rem);
+    border: 1px solid #966838;
+    border-radius: 0.58rem 0.72rem 0.51rem 0.69rem / 0.85rem 0.67rem 0.69rem 0.55rem;
+    background:
+        linear-gradient(90deg, #886139, #edce99 36%, #fff1c6 51%, #ac7f46 80%, #704a2e) left / 5% 100% no-repeat,
+        linear-gradient(270deg, #855833, #e3bf84 34%, #f6dda9 52%, #a67842 81%, #65442b) right / 5% 100% no-repeat,
+        radial-gradient(ellipse at 100% 96%, #86592c67, transparent 54%),
+        radial-gradient(ellipse at 9% 2%, #fff1c7b3, transparent 68%),
+        repeating-linear-gradient(173deg, #8059370e 0 1px, transparent 1px 4px),
+        #dfc294;
+    box-shadow: inset 0 0 0 2px #f3d29c79, inset 0 0 0.9rem #71401d85,
+        0 2px #967144, 0 4px #624026, 0.22rem 0.5rem 0.7rem #210d0ac4;
+}
+
+.ticket-page .desk-chart::before,
+.ticket-page .desk-chart::after {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    content: "";
+}
+
+.ticket-page .desk-chart::before {
+    inset: 0.18rem;
+    background:
+        radial-gradient(circle, #f4d495 0 1px, #92622c 2px, transparent 3px) left top / 0.55rem 0.55rem no-repeat,
+        radial-gradient(circle, #f4d495 0 1px, #92622c 2px, transparent 3px) right bottom / 0.55rem 0.55rem no-repeat,
+        linear-gradient(90deg, transparent 49.6%, #73553529 50%, #fff1c94d 50.4%, transparent 50.8%);
+}
+
+.ticket-page .desk-chart::after {
+    inset: 13% auto 13% 0.2rem;
+    width: clamp(0.26rem, 0.65vw, 0.48rem);
+    rotate: 10deg;
+    border-inline: 1px solid #672127;
+    background: linear-gradient(90deg, #781b23, #b8494c 40%, #932831);
+    box-shadow: 1px 1px 3px #41221770;
+}
+
+.ticket-page .desk-chart-map {
+    position: absolute;
+    inset: 4% 6%;
+    width: 88%;
+    height: 92%;
+    direction: ltr;
+    pointer-events: none;
+}
+
+.ticket-page .desk-map-sea { fill: #94a89a; stroke: #7d6649; }
+.ticket-page .desk-map-land { fill: #e1c99f; stroke: #726047; stroke-width: 1.25; stroke-linejoin: round; }
+.ticket-page .desk-map-grid { fill: none; stroke: #655b45; stroke-width: 0.6; opacity: 0.48; }
+.ticket-page .desk-map-rhumbs { fill: none; stroke: #735338; stroke-width: 0.75; stroke-dasharray: 2 2; opacity: 0.62; }
+.ticket-page .desk-map-rose { fill: #c69956; stroke: #674e32; stroke-width: 1; }
+.ticket-page .desk-map-gaza { stroke: #852d32; stroke-width: 1.7; }
+
+.ticket-page .desk-map-gaza text {
+    fill: #612229;
+    stroke: #ead4ae;
+    stroke-width: 2.4;
+    paint-order: stroke;
+    font: 700 16px Georgia, serif;
+}
+
+.ticket-page .desk-map-gaza .lang-ar { font-family: var(--font-ar); }
+
+@media (max-width: 575px) {
+    .ticket-page .desk-map-minor,
+    .ticket-page .desk-map-rhumbs { display: none; }
+
+    .ticket-page .desk-map-gaza text { font-size: 19px; }
+}
+
+.ticket-page .desk-compass,
+.ticket-page .desk-gauge {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 4.7rem;
+    aspect-ratio: 1;
+    border: 1px solid #e1b972;
+    border-radius: 50%;
+    background: var(--instrument-brass);
+    box-shadow: inset 0 0 0 2px #755127, 0.2rem 0.45rem 0.6rem #220e0ac7;
+}
+
+.ticket-page .desk-compass::before,
+.ticket-page .desk-gauge::before {
+    width: 74%;
+    aspect-ratio: 1;
+    border: 1px solid #78522d;
+    border-radius: 50%;
+    content: "";
+}
+
+.ticket-page .desk-compass::before {
+    background:
+        conic-gradient(from 22.5deg, transparent 0 8%, #8b3430 8% 12%, transparent 12% 22%, #735538 22% 27%, transparent 27% 47%, #735538 47% 52%, transparent 52% 72%, #735538 72% 77%, transparent 77%),
+        radial-gradient(circle, #725035 0 8%, transparent 9% 54%, #86653e 55% 58%, transparent 60%),
+        #edcf92;
+}
+
+.ticket-page .desk-gauge::before {
+    background:
+        linear-gradient(125deg, transparent 48%, #8b3430 49% 51%, transparent 52%) center / 61% 61% no-repeat,
+        radial-gradient(circle, #a1783f 0 8%, #ecd49e 9% 53%, transparent 54%),
+        repeating-conic-gradient(#96734a 0deg 4deg, #ecd49e 4deg 20deg);
+}
+
+.ticket-page .desk-instrument-cluster {
+    display: grid;
+    justify-items: center;
+    gap: 0.6rem;
+}
+
+.ticket-page .desk-sextant {
+    width: min(100%, 4.5rem);
+    aspect-ratio: 1.35;
+    border-block-end: 0.32rem solid #d9a65a;
+    border-radius: 0 0 45% 45%;
+    background:
+        linear-gradient(63deg, transparent 46%, #e4bc74 48% 52%, transparent 54%),
+        linear-gradient(117deg, transparent 46%, #bb8444 48% 52%, transparent 54%);
+    filter: drop-shadow(0.15rem 0.25rem 0.14rem #240c08);
+}
+
+.ticket-page .desk-ruler {
+    position: absolute;
+    inset: auto 19% 0 auto;
+    width: clamp(4rem, 22%, 10rem);
+    height: 0.55rem;
+    rotate: -8deg;
+    border: 1px solid #ac773b;
+    border-radius: 2px;
+    background:
+        repeating-linear-gradient(90deg, #634218 0 1px, transparent 1px 6px) top / 100% 50% no-repeat,
+        var(--instrument-brass);
+    box-shadow: 0.14rem 0.24rem 0.38rem #250e0ab0;
+}
+
+.ticket-page .desk-gear {
+    position: absolute;
+    inset: auto auto 1% 9%;
+    width: 1.05rem;
+    aspect-ratio: 1;
+    border: 3px dotted #dcad67;
+    border-radius: 50%;
+    background: radial-gradient(circle, #432419 0 23%, #ad763f 25% 58%, #52311d 60%);
+}
+
+/* Give the ledger, chart, journals and model separate silhouettes. */
+.ticket-page .navigation-table-objects {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: clamp(0.95rem, 2vw, 1.45rem);
+    min-width: 0;
+    width: 100%;
+    max-inline-size: 58rem;
+    margin-inline: auto;
+}
+
+.ticket-page .navigation-table-scrapbooks {
+    grid-column: 1 / -1;
+    min-width: 0;
+}
+
+.ticket-page .navigation-table-scrapbooks > h4 {
+    width: fit-content;
+    max-inline-size: 100%;
+    margin-inline: auto;
+    padding: 0.19rem 0.9rem;
+    border: 1px solid #9c723f;
+    border-radius: 0.22rem;
+    background:
+        radial-gradient(circle at 0.35rem 50%, #ffe8aa 1px, #77532f 2px, transparent 3px),
+        radial-gradient(circle at calc(100% - 0.35rem) 50%, #ffe8aa 1px, #77532f 2px, transparent 3px),
+        linear-gradient(165deg, #a87846, #e7ca92 37%, #bd955c 76%, #9e7545);
+    color: #372417;
+    text-shadow: 0 1px #eed39e;
+    box-shadow: inset 0 1px #f1d39a, 0 2px 4px #1e0a08a6;
+    font-size: 0.9rem;
+}
+
+.ticket-page .navigation-table-scrapbooks > h4 .lang-en {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 0.055em;
+}
+
+.ticket-page .navigation-table-scrapbooks ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: 0.95rem;
+    margin: 0.65rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ticket-page .navigation-table-objects .table-object {
+    appearance: none;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+    padding: 1rem;
+    color: inherit;
+    font: inherit;
+    font-weight: 700;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+.ticket-page .table-object small {
+    display: block;
+    margin-block-start: 0.3rem;
+    font-weight: 500;
+}
+
+.ticket-page .table-object::before,
+.ticket-page .table-object::after,
+.ticket-page .table-chart-year,
+.ticket-page .table-ship-model {
+    pointer-events: none;
+}
+
+/* Leather, spine bands, brass corners and a layered paper fore edge. */
+.ticket-page .navigation-table-objects .table-object--manifest {
+    --cover: #64392b;
+    --binding: #27120f;
+    min-height: 6rem;
+    padding-inline: 1rem 1.45rem;
+    border: 1px solid #b18351;
+    border-inline-start: 0.75rem solid var(--binding);
+    border-block-end: 0.55rem solid #eddbb5;
+    border-radius: 0.25rem 0.72rem 0.62rem 0.22rem;
+    background:
+        linear-gradient(135deg, #ddba77 35%, transparent 37%) left top / 1.1rem 1.1rem no-repeat,
+        linear-gradient(315deg, #c79b59 35%, transparent 37%) right bottom / 1.1rem 1.1rem no-repeat,
+        linear-gradient(180deg, #ffd58b40, transparent 26%),
+        repeating-linear-gradient(114deg, #fff3c91e 0 1px, transparent 1px 4px, #0a04052e 4px 5px),
+        linear-gradient(145deg, var(--cover), var(--binding));
+    color: #ffe8b5;
+    text-shadow: 0 -1px #fff0c557, 0 1px 1px #160a07;
+    box-shadow:
+        inset 0 0 0 2px #eac17f55,
+        0 2px #865f41,
+        0 4px #e6cda3,
+        0 6px #60402c,
+        0 0.5rem 0.6rem #1c080aa8;
+}
+
+.ticket-page :is(.table-object--manifest, .table-object--scrapbook)::before {
+    position: absolute;
+    inset-block: 12%;
+    inset-inline-start: -0.67rem;
+    width: 0.58rem;
+    background: linear-gradient(180deg, transparent 14%, #dfb577 15% 19%, transparent 20% 81%, #dfb577 82% 86%, transparent 87%);
+    content: "";
+}
+
+.ticket-page .navigation-table-objects .table-object--manifest {
+    --binding: #24130e;
+    --manifest-contact: 0.12rem 0.62rem 0.78rem #190a089e;
+    --manifest-medallion-size: 1.32rem;
+    --manifest-medallion-end: 0.37rem;
+    --manifest-medallion-bottom: 0.27rem;
+    max-inline-size: 21rem;
+    min-height: 8.4rem;
+    justify-self: center;
+    padding: 1.05rem 1.5rem 1.35rem;
+    border-block-end: 0.62rem solid #ecd7ad;
+    background:
+        radial-gradient(circle at 0.37rem 0.38rem, #fff0b3 1px, #593319 2px, transparent 2.8px),
+        radial-gradient(circle at calc(100% - 0.37rem) 0.38rem, #fff0b3 1px, #593319 2px, transparent 2.8px),
+        radial-gradient(circle at 0.37rem calc(100% - 0.38rem), #eccc88 1px, #593319 2px, transparent 2.8px),
+        radial-gradient(circle at calc(100% - 0.37rem) calc(100% - 0.38rem), #eccc88 1px, #593319 2px, transparent 2.8px),
+        linear-gradient(135deg, #e8bc78, #9d6d3b 36%, transparent 39%) left top / 1rem 1rem no-repeat,
+        linear-gradient(225deg, #e8bc78, #9d6d3b 36%, transparent 39%) right top / 1rem 1rem no-repeat,
+        linear-gradient(45deg, #c99c5c, #775029 36%, transparent 39%) left bottom / 1rem 1rem no-repeat,
+        linear-gradient(315deg, #c99c5c, #775029 36%, transparent 39%) right bottom / 1rem 1rem no-repeat,
+        radial-gradient(ellipse at 15% 0%, #e9a05c56, transparent 62%),
+        radial-gradient(ellipse at 95% 85%, #1b0a078c, transparent 62%),
+        radial-gradient(ellipse at 33% 62%, #a36c4630, transparent 44%),
+        radial-gradient(ellipse at 20% 37%, #e1a97633 1px, transparent 2px) 0 1px / 7px 9px,
+        radial-gradient(ellipse at 71% 20%, #1909078a 0.6px, transparent 1.8px) 2px 3px / 11px 13px,
+        linear-gradient(116deg, #603626, #47251a 50%, #2c1711);
+    color: #3d2518;
+    text-shadow: none;
+    box-shadow:
+        inset 0 0 0 2px #170a08a6,
+        inset 0 0 0 4px #9863338f,
+        inset 0 0 0 5px #e2b47b75,
+        inset 0 0 0 7px #240f0d68,
+        0 2px #987352,
+        0 3px #f7e7c7,
+        0 5px #ae8e66,
+        0 6px #573725,
+        var(--manifest-contact);
+}
+
+.ticket-page .table-object--manifest::before {
+    background:
+        linear-gradient(180deg, transparent 11%, #76512a 12%, #f8d79b 15%, #785129 19%, transparent 20% 79%, #76512a 80%, #f3c782 84%, #785129 88%, transparent 89%),
+        radial-gradient(ellipse at 18% 36%, #e5a96832, transparent 66%),
+        linear-gradient(90deg, #180c08, #5d3623 60%, #2c160e);
+    box-shadow: 1px 0 2px #180a07a0;
+}
+
+.ticket-page .table-object--manifest .manifest-nameplate {
+    --manifest-rivet: radial-gradient(circle at 42% 37%, #f4d59a 0 0.8px, #9b7248 1.2px 1.7px, #6043239c 2px, transparent 2.65px);
+    display: block;
+    min-width: 0;
+    padding: 0.25rem 0.46rem;
+    border: 1px solid #886033;
+    border-block-start-color: #d6ab68;
+    border-radius: 0.36rem;
+    background:
+        var(--manifest-rivet) left 0.13rem top 0.13rem / 0.35rem 0.35rem no-repeat,
+        var(--manifest-rivet) right 0.13rem top 0.13rem / 0.35rem 0.35rem no-repeat,
+        var(--manifest-rivet) left 0.13rem bottom 0.13rem / 0.35rem 0.35rem no-repeat,
+        var(--manifest-rivet) right 0.13rem bottom 0.13rem / 0.35rem 0.35rem no-repeat,
+        radial-gradient(ellipse at 0 0, #60412352, transparent 36%),
+        radial-gradient(ellipse at 100% 100%, #533a254a, transparent 39%),
+        linear-gradient(180deg, #f6d8a454, transparent 44%),
+        repeating-linear-gradient(0deg, #432a1610 0 1px, #ffe6a821 1px 2px, transparent 2px 4px),
+        linear-gradient(108deg, #a47749, #e2c18e 22%, #cba36e 70%, #a87846);
+    box-shadow: inset 0 1px #f0d298, inset 0 -1px #775333, inset 0 0 0 2px #8a603849, 0 3px 5px #170b07ba;
+    color: #332012;
+    text-align: center;
+    text-shadow: 0 1px #fbe5ae9c;
+}
+
+.ticket-page .manifest-nameplate > :is(.lang-en, .lang-ar) {
+    display: block;
+    text-align: center;
+}
+
+.ticket-page .manifest-nameplate > .lang-en {
+    font-family: "Pinyon Script", "Snell Roundhand", "Edwardian Script ITC", "Segoe Script", cursive;
+    font-size: clamp(1.12rem, 2.15vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: normal;
+    color: #392216;
+    text-shadow: 0 -0.45px #251309, 0 0.7px #f6d9a2b3;
+    text-wrap: balance;
+}
+
+.ticket-page .manifest-nameplate > small .lang-en {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 0.015em;
+}
+
+.ticket-page .manifest-nameplate > small {
+    margin-block-start: 0.28rem;
+    line-height: 1.35;
+}
+
+.ticket-page .table-object--manifest .manifest-nameplate > small::after {
+    position: absolute;
+    inset-block-start: 42%;
+    inset-inline-end: 0.13rem;
+    width: 1rem;
+    height: 0.68rem;
+    border: 1px solid #6d471f;
+    border-radius: 0.22rem 0.09rem 0.09rem 0.22rem;
+    background:
+        radial-gradient(circle at 28% 50%, #fff0b4 1px, #674522 2px, transparent 2.5px),
+        linear-gradient(#f0d293, #9b6937 52%, #c09554);
+    box-shadow: 0 2px 3px #1b0b08ae;
+    pointer-events: none;
+    content: "";
+}
+
+.ticket-page .table-object--manifest::after {
+    position: absolute;
+    inset-block-end: var(--manifest-medallion-bottom);
+    inset-inline-end: var(--manifest-medallion-end);
+    width: var(--manifest-medallion-size);
+    aspect-ratio: 1;
+    border: 1px solid #71502e;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, #3c2618 0 52%, transparent 55%),
+        linear-gradient(145deg, #f3d391, #9c6836 51%, #d6af6b 80%, #79512e);
+    box-shadow: inset 0 1px #f4d18a, inset 0 -1px #62401f, 1px 2px 3px #170906ad;
+    content: "";
+}
+
+/* The three strokes meet at the center of the recessed brass ring. */
+.ticket-page .manifest-nameplate::after {
+    --peace-glyph-inset: calc(var(--manifest-medallion-size) * 0.19);
+    position: absolute;
+    z-index: 1;
+    inset-block-end: calc(var(--manifest-medallion-bottom) + var(--peace-glyph-inset));
+    inset-inline-end: calc(var(--manifest-medallion-end) + var(--peace-glyph-inset));
+    width: calc(var(--manifest-medallion-size) * 0.62);
+    aspect-ratio: 1;
+    clip-path: polygon(44% 0, 56% 0, 56% 46%, 88% 78%, 81% 88%, 56% 63%, 56% 100%, 44% 100%, 44% 63%, 19% 88%, 12% 78%, 44% 46%);
+    background: linear-gradient(#ffe5a1, #d2a361 64%, #aa743f);
+    pointer-events: none;
+    content: "";
+}
+
+.ticket-page .navigation-table-objects .table-object--manifest[aria-expanded="true"] {
+    border-block-start-color: #edbc70;
+}
+
+.ticket-page .navigation-table-objects .table-object--manifest:focus-visible {
+    --manifest-contact: 0 0.7rem 0.85rem #150705ca;
+    filter: brightness(1.07);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ticket-page .navigation-table-objects .table-object--manifest:hover {
+        --manifest-contact: 0 0.7rem 0.85rem #150705ca;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ticket-page .navigation-table-objects .table-object--manifest:focus-visible {
+        translate: 0 -2px;
+    }
+}
+
+@media (max-width: 575px) {
+    .ticket-page .manifest-nameplate { overflow-wrap: anywhere; }
+    .ticket-page .table-object--manifest .manifest-nameplate > small::after { width: 0.83rem; }
+}
+
+.ticket-page .navigation-table-objects .table-object--chart {
+    max-inline-size: 25rem;
+    min-height: 8.25rem;
+    justify-self: center;
+    padding: 1.35rem 1.85rem 2rem;
+    border: 1px solid #a07747;
+    border-radius: 1.1rem 0.65rem 1rem 0.55rem / 50% 45% 45% 50%;
+    background:
+        radial-gradient(circle at 0.85rem 50%, #fff4c5 1px, #e1b975 3px, #795126 6px, transparent 7px),
+        radial-gradient(circle at calc(100% - 0.85rem) 50%, #fff4c5 1px, #e1b975 3px, #795126 6px, transparent 7px),
+        linear-gradient(90deg, #745132, #fae4b8 0.42rem, #9b683a 0.8rem, transparent 1rem calc(100% - 1rem), #9d6c3b calc(100% - 0.8rem), #f8e3b5 calc(100% - 0.4rem), #745132),
+        repeating-linear-gradient(0deg, transparent 0 13px, #65462f27 13px 14px),
+        repeating-linear-gradient(90deg, transparent 0 17px, #65462f27 17px 18px),
+        radial-gradient(ellipse, #faecc8 30%, #cea267);
+    color: #3b2317;
+    box-shadow: 0.12rem 0.62rem 0.6rem #210c09af, inset 0 -0.35rem 0.6rem #87563465;
+}
+
+.ticket-page .table-chart-year {
+    position: absolute;
+    inset: auto auto 0.55rem 1.25rem;
+    font: 700 0.65rem Georgia, serif;
+    letter-spacing: 0.08em;
+}
+
+.ticket-page .table-object--chart::before {
+    position: absolute;
+    inset: auto 31% 0.55rem;
+    height: 1rem;
+    background:
+        linear-gradient(30deg, transparent 46%, #755234 47% 52%, transparent 53%) center / 1rem 100% no-repeat,
+        linear-gradient(120deg, transparent 46%, #755234 47% 52%, transparent 53%) center / 1rem 100% no-repeat,
+        repeating-linear-gradient(90deg, #755234 0 3px, transparent 3px 7px) center / 100% 1px no-repeat;
+    content: "";
+}
+
+.ticket-page .table-chart-ribbon {
+    position: absolute;
+    inset-block-end: 0.35rem;
+    inset-inline-end: 1.08rem;
+    width: clamp(1.05rem, 2vw, 1.5rem);
+    height: auto;
+    rotate: 14deg;
+    filter: drop-shadow(1px 2px 1px #4b25187d);
+    pointer-events: none;
+}
+
+/* Worn leather covers with recessed, engraved picture plates. */
+.ticket-page .navigation-table-objects .table-object--scrapbook {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 0.3rem;
+    height: 100%;
+    min-height: 7.65rem;
+    padding: 0.62rem 1.15rem 0.55rem 0.72rem;
+    border: 1px solid #947149;
+    border-inline-start: 0.75rem solid var(--binding);
+    border-block-end: 0.52rem solid #e0c79b;
+    border-radius: 0.24rem 0.62rem 0.45rem 0.32rem / 0.34rem 0.48rem 0.51rem 0.22rem;
+    background:
+        linear-gradient(225deg, #c39c64 25%, transparent 29%) right top / 0.62rem 0.62rem no-repeat,
+        linear-gradient(45deg, #b08752 25%, transparent 29%) left bottom / 0.62rem 0.62rem no-repeat,
+        linear-gradient(135deg, #d6b276, #8e693d 37%, transparent 40%) left top / 0.85rem 0.85rem no-repeat,
+        linear-gradient(315deg, #b78e55, #79603d 37%, transparent 40%) right bottom / 0.82rem 0.82rem no-repeat,
+        linear-gradient(151deg, transparent 45%, #e8bd8a24 48% 49%, transparent 51%) 0.82rem 0.68rem / 1.9rem 0.35rem no-repeat,
+        radial-gradient(ellipse at 15% 10%, #eab26a54, transparent 52%),
+        radial-gradient(ellipse at 88% 86%, #0c0809bc, transparent 62%),
+        radial-gradient(ellipse at 24% 37%, #efc78f2c 0.45px, transparent 1.15px) 0 0 / 6px 7px,
+        radial-gradient(ellipse at 72% 64%, #10070780 0.5px, transparent 1.3px) 2px 3px / 9px 11px,
+        linear-gradient(145deg, var(--cover), var(--binding));
+    color: #ffebbf;
+    text-shadow: 0 1px #21120e;
+    box-shadow: inset 0 0 0 2px #170c09a0, inset 0 0 0 3px #c397618c,
+        inset 0 0 0 5px #42241cab, 0 2px #8e6e4b, 0 4px #f2dcb2,
+        0 6px #66452d, var(--scrapbook-shadow, 0 0.47rem 0.6rem #180a08aa);
+}
+
+.ticket-page .table-object--scrapbook[aria-controls="scrapbook-freedom-flotilla"] {
+    --cover: #743749;
+    --binding: #391c25;
+}
+
+.ticket-page .table-object--scrapbook[aria-controls="scrapbook-freedom-convoy"] {
+    --cover: #405742;
+    --binding: #223326;
+}
+
+.ticket-page .table-object--scrapbook[aria-controls="scrapbook-global-sumud"] {
+    --cover: #45423d;
+    --binding: #22211e;
+}
+
+.ticket-page .table-object--scrapbook > .lang-en {
+    font: 600 0.86rem / 1.25 Georgia, "Times New Roman", serif;
+    text-wrap: balance;
+}
+
+.ticket-page .table-object--scrapbook > .lang-ar {
+    font-size: 0.94rem;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.ticket-page .scrapbook-cover-engraving {
+    display: block;
+    width: min(100%, 3.75rem);
+    height: auto;
+    aspect-ratio: 64 / 44;
+    border: 1px solid #ad8750;
+    border-radius: 0.19rem;
+    background:
+        repeating-linear-gradient(161deg, transparent 0 4px, #86603b17 5px, transparent 6px 9px),
+        radial-gradient(ellipse, #ded0a7, #bea071);
+    color: #654a32;
+    box-shadow: inset 0 0 0 2px #f3d79a80, inset 0 0 0.4rem #684320b0, 0 0 0 1px #51331d, 0 2px 4px #1c0c08;
+    pointer-events: none;
+}
+
+.ticket-page .scrapbook-cover-year {
+    color: #edc17c;
+    font: 700 0.76rem / 1 Georgia, "Times New Roman", serif;
+    letter-spacing: 0.16em;
+    text-shadow: 0 -1px #2c1711, 0 1px #c2986359;
+    pointer-events: none;
+}
+
+.ticket-page .table-object--scrapbook::before {
+    background:
+        repeating-linear-gradient(0deg, transparent 0 0.28rem, #e2be8275 0.28rem 0.36rem, transparent 0.36rem 0.46rem) center / 1px 100% no-repeat,
+        linear-gradient(0deg, transparent 10%, #c59b60 12% 17%, transparent 19% 78%, #bf955b 80% 85%, transparent 87%),
+        linear-gradient(90deg, #20110d, var(--binding) 48%, #d5a9716b);
+    box-shadow: 1px 0 2px #1b0c09b0;
+}
+
+.ticket-page .table-object--scrapbook::after {
+    position: absolute;
+    inset-block-start: calc(50% - 0.31rem);
+    inset-inline-end: 0.2rem;
+    width: 0.78rem;
+    height: 0.62rem;
+    border: 1px solid #81532b;
+    border-radius: 0.14rem;
+    background:
+        radial-gradient(circle at 62% 50%, #54391e 1px, transparent 2px),
+        linear-gradient(110deg, #5f492f44, transparent 41%), linear-gradient(#ebd09c, #76522e 60%, #ba9057);
+    box-shadow: 0 2px 3px #130809a0;
+    content: "";
+}
+
+.ticket-page .navigation-table-objects .table-object--scrapbook:focus-visible {
+    --scrapbook-shadow: 0 0.63rem 0.72rem #140805b5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ticket-page .navigation-table-objects .table-object--scrapbook:hover {
+        --scrapbook-shadow: 0 0.63rem 0.72rem #140805b5;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ticket-page .navigation-table-objects .table-object--scrapbook:focus-visible {
+        translate: 0 -2px;
+    }
+}
+
+.ticket-page .navigation-table-objects .table-object--ship {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 15.5rem);
+    padding: 0 0.7rem 0.65rem;
+    border: 1px solid transparent;
+    border-radius: 0.42rem;
+    background: linear-gradient(110deg, #ac793b, #f4d393 39%, #c39855 72%, #996b32) bottom / 100% calc(100% - 5.48rem) no-repeat;
+    color: #352115;
+    text-shadow: 0 1px #fff2be;
+    box-shadow: 0 0.3rem #63411e;
+}
+
+.ticket-page .table-ship-plaque {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+.ticket-page .table-ship-plaque .lang-en {
+    font-family: "Snell Roundhand", "Segoe Script", "Apple Chancery", Georgia, serif;
+    font-style: italic;
+    font-size: 1.04rem;
+}
+
+.ticket-page .table-ship-mast-flag {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1.22rem;
+    height: auto;
+    pointer-events: none;
+}
+
+.ticket-page .table-ship-model {
+    position: relative;
+    display: block;
+    width: min(100%, 9rem);
+    height: 5.5rem;
+    margin: 0 auto 0.3rem;
+    direction: ltr;
+    filter: drop-shadow(0.18rem 0.38rem 0.22rem #23100ab3);
+}
+
+.ticket-page .table-object--ship:focus-visible .table-ship-model {
+    outline: 2px solid #fff4d4;
+    outline-offset: 3px;
+    border-radius: 0.35rem;
+    filter: drop-shadow(0.18rem 0.38rem 0.22rem #23100ab3) drop-shadow(0 0 0.42rem #efb75fa6);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ticket-page .table-object--ship:hover .table-ship-model {
+        filter: drop-shadow(0.18rem 0.38rem 0.22rem #23100ab3) drop-shadow(0 0 0.42rem #efb75fa6);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ticket-page .table-object--ship .table-ship-model {
+        transition: translate 150ms ease, filter 150ms ease;
+    }
+
+    .ticket-page .table-object--ship:focus-visible .table-ship-model { translate: 0 -2px; }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+    .ticket-page .table-object--ship:hover .table-ship-model { translate: 0 -2px; }
+}
+
+.ticket-page .table-ship-sails {
+    position: absolute;
+    inset: 0 0 1.15rem;
+    background:
+        linear-gradient(90deg, #482a1b, #b5844f 50%, #55341e) 50% 0 / 0.21rem 100% no-repeat,
+        linear-gradient(90deg, #482a1b, #9d7146 50%, #55341e) 28% 58% / 0.16rem 70% no-repeat;
+}
+
+.ticket-page .table-ship-sails::before,
+.ticket-page .table-ship-sails::after {
+    position: absolute;
+    inset: 18% 13% 4% 51%;
+    clip-path: polygon(0 0, 42% 28%, 76% 59%, 100% 88%, 48% 96%, 0 100%, 8% 57%);
+    background:
+        linear-gradient(96deg, #1e170e5e, transparent 18%, #fff4cf4f 43%, transparent 61%, #22140e4a),
+        repeating-linear-gradient(100deg, transparent 0 9px, #221a163b 9px 10px, transparent 10px 14px),
+        linear-gradient(180deg, #252520 0 29%, #f1dfba 29% 62%, #426b50 62%);
+    content: "";
+}
+
+.ticket-page .table-ship-sails::after {
+    inset: 30% 45% 8% 29%;
+    background-color: #973740;
+    background-image: linear-gradient(102deg, #54202a, #bd5258 42%, #80323c 79%);
+}
+
+.ticket-page .table-ship-hull {
+    position: absolute;
+    inset: auto 0 0.5rem;
+    height: 1.23rem;
+    clip-path: polygon(0 15%, 50% 20%, 100% 0, 87% 68%, 75% 97%, 22% 100%, 10% 70%);
+    background:
+        linear-gradient(0deg, #3e2418 0 15%, transparent 16% 77%, #d6ab62 81% 90%, transparent 89%),
+        repeating-linear-gradient(0deg, #3f2017 0 2px, #744227 2px 4px, #9e6238 4px 5px);
+}
+
+.ticket-page .table-ship-stand {
+    position: absolute;
+    inset: auto 20% 0;
+    height: 0.65rem;
+    border-radius: 30% 30% 0.18rem 0.18rem;
+    background: linear-gradient(#74502d, #f0cc83 34%, #a4743b 57%, #d7ad65 73%, #654221);
+}
+
+/* Balance the ledger and mission chart around the exposed plotting chart. */
+@media (min-width: 1050px) {
+    .ticket-page .navigation-table-surface {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.85fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 1.15rem clamp(0.9rem, 1.8vw, 1.5rem);
+    }
+
+    .ticket-page .navigation-table-surface > h3 { grid-column: 1 / -1; }
+
+    .ticket-page .navigation-table-surface .navigation-table-instruments {
+        grid-column: 2;
+        grid-row: 2;
+        grid-template-columns: 2.3rem minmax(0, 1fr) 2.3rem;
+        gap: 0.6rem;
+    }
+
+    .ticket-page .desk-chart { min-block-size: clamp(10rem, 14vw, 13rem); }
+
+    /* The wrapper has no semantics. Its contents retain their DOM and tab order. */
+    .ticket-page .navigation-table-objects { display: contents; }
+
+    .ticket-page .navigation-table-objects > .table-object--manifest {
+        grid-column: 1;
+        grid-row: 2;
+        z-index: 1;
+    }
+
+    .ticket-page .navigation-table-objects > .table-object--chart {
+        grid-column: 3;
+        grid-row: 2;
+        z-index: 1;
+    }
+
+    .ticket-page .navigation-table-scrapbooks {
+        grid-row: 3;
+        width: min(100%, 46rem);
+        justify-self: center;
+        z-index: 1;
+    }
+
+    .ticket-page .navigation-table-objects > .table-object--ship {
+        grid-row: 4;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 991px) {
+    .ticket-page :is(.desk-sextant, .desk-gear) { display: none; }
+}
+
+@media (max-width: 575px) {
+    .ticket-page .navigation-table-surface { padding-inline: 0.9rem; }
+
+    .ticket-page .navigation-table-surface .navigation-table-instruments {
+        grid-template-columns: 2.05rem minmax(0, 1fr);
+    }
+
+    .ticket-page .desk-instrument-cluster { display: none; }
+    .ticket-page .navigation-table-objects { grid-template-columns: minmax(0, 1fr); }
+}
+
+.ticket-page .navigation-table-objects .table-object:not(:where(.table-object--ship))[aria-expanded="true"] {
+    outline: 2px solid #ffcf73;
+    outline-offset: 3px;
+}
+
+.ticket-page .navigation-table-objects .table-object:not(:where(.table-object--ship)):focus-visible {
+    outline: 3px solid #fff4d4;
+    outline-offset: 6px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ticket-page .navigation-table-objects .table-object:not(:where(.table-object--ship)):hover { filter: brightness(1.09) drop-shadow(0 2px 2px #1d09085e); }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .ticket-page .navigation-table-objects .table-object:not(:where(.table-object--ship)) {
+        transition: translate 150ms ease, filter 150ms ease;
+    }
+
+    .ticket-page .navigation-table-objects .table-object:not(:where(.table-object--ship)):hover { translate: 0 -2px; }
+}
+
+.ticket-page .ticket-panel-close {
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 2px solid #79572e;
+    border-radius: 0.5rem;
+    background: #fff5dc;
+    color: #30231a;
+    font: inherit;
+    cursor: pointer;
+}
+
+.ticket-page .navigation-table :focus-visible:not(:where(.table-object--ship)) {
+    outline: 3px solid #174e77;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+.ticket-page .ticket-panel[hidden] {
+    display: none;
+}
+
+/* Phase 3 / Pass 3: parchment interiors with leather bindings and brass fittings. */
+.ticket-page .ticket-panel {
+    --journal-leather: #704932;
+    --journal-ink: #382619;
+    --journal-rule: #9d7446;
+    --journal-edge: clamp(0.35rem, 1.2vw, 0.85rem);
+    box-sizing: border-box;
+    width: 100%;
+    max-block-size: 75vh;
+    max-block-size: 75dvh;
+    overflow: auto;
+    overflow-wrap: anywhere;
+    margin-block: 0.75rem 0;
+    padding: clamp(0.8rem, 3vw, 2rem);
+    border: 1px solid #b68c55;
+    border-inline-start: var(--journal-edge) solid var(--journal-leather);
+    border-radius: 0.45rem 0.85rem 0.8rem 0.45rem;
+    background-color: #f5e7c8;
+    background-image:
+        radial-gradient(circle at 0.45rem 0.45rem, #fce2a1 0 1px, #926337 2px 3px, transparent 4px),
+        radial-gradient(circle at calc(100% - 0.45rem) 0.45rem, #fce2a1 0 1px, #926337 2px 3px, transparent 4px),
+        linear-gradient(135deg, #a97641 30%, #e6c689 32% 39%, transparent 41%) left top / 1.4rem 1.4rem no-repeat,
+        linear-gradient(225deg, #a97641 30%, #e6c689 32% 39%, transparent 41%) right top / 1.4rem 1.4rem no-repeat,
+        repeating-linear-gradient(171deg, #7f54210b 0 1px, transparent 1px 6px),
+        linear-gradient(115deg, #ebd3a6, #fff3d8 30%, #f9ebcd 76%, #e7cea0);
+    color: var(--journal-ink);
+    box-shadow: inset 0 0 1rem #80502650, 0 3px #c9a678, 0 6px var(--journal-leather), 0 0.8rem 1.4rem #250f0bad;
+}
+
+.ticket-page .ticket-panel-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-block-end: 1.25rem;
+    padding-block-end: 0.85rem;
+    border-block-end: 3px double var(--journal-rule);
+}
+
+.ticket-page .ticket-panel-heading > h2 {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    text-align: start;
+}
+
+.ticket-page .ticket-panel-close {
+    flex-shrink: 0;
+    max-inline-size: 100%;
+}
+
+/* A working chart for the April mission notes. */
+.ticket-page .april-mission-sections {
+    padding: clamp(0.75rem, 2vw, 1.25rem);
+    border: 1px solid #a07b4d85;
+    background:
+        radial-gradient(circle, #f0d194 0 1px, #9b7143 2px, transparent 3px) left top / 0.65rem 0.65rem no-repeat,
+        radial-gradient(circle, #f0d194 0 1px, #9b7143 2px, transparent 3px) right top / 0.65rem 0.65rem no-repeat,
+        radial-gradient(circle, #f0d194 0 1px, #9b7143 2px, transparent 3px) left bottom / 0.65rem 0.65rem no-repeat,
+        radial-gradient(circle, #f0d194 0 1px, #9b7143 2px, transparent 3px) right bottom / 0.65rem 0.65rem no-repeat,
+        repeating-linear-gradient(90deg, #7a563b55 0 1px, transparent 1px 12px) center top / 96% 0.25rem no-repeat,
+        repeating-linear-gradient(0deg, transparent 0 20px, #8c673a19 20px 21px),
+        repeating-linear-gradient(90deg, transparent 0 20px, #8c673a19 20px 21px),
+        linear-gradient(121deg, transparent 46%, #76592d19 46.15%, transparent 46.3%),
+        radial-gradient(ellipse, #fff6e1a3 54%, #ad78472e),
+        #f3dfb8;
+    box-shadow: inset 0 0 0.8rem #855a343b;
+    font-size: 0.98rem;
+}
+
+.ticket-page .april-mission-sections > section + section,
+.ticket-page .april-mission-update + .april-mission-update {
+    margin-block-start: 0.7rem;
+    padding-block-start: 0.65rem;
+    border-block-start: 1px solid #a07b4d85;
+}
+
+.ticket-page .april-mission-sections :is(h3, h4) {
+    margin: 0 0 0.3rem;
+    color: var(--journal-ink);
+    text-align: start;
+}
+
+.ticket-page .april-mission-sections > section:first-child > h3 {
+    padding-inline: 1.3rem;
+    background:
+        linear-gradient(45deg, transparent 46%, #8d673c6b 48% 52%, transparent 54%) left center / 1rem 1rem no-repeat,
+        linear-gradient(135deg, transparent 46%, #8d673c6b 48% 52%, transparent 54%) left center / 1rem 1rem no-repeat,
+        radial-gradient(circle, transparent 48%, #8d673c6b 53% 58%, transparent 62%) left center / 1rem 1rem no-repeat;
+}
+
+.ticket-page .april-mission-date {
+    display: block;
+    margin-block-end: 0.65rem;
+    color: #67482e;
+    font-size: 0.88rem;
+}
+
+.ticket-page .april-mission-update p {
+    max-width: 72ch;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.ticket-page .april-mission-update p > span {
+    display: block;
+    text-align: start;
+}
+
+.ticket-page .april-mission-sections :is(ol, ul) {
+    margin: 0;
+    padding-inline-start: 1.3rem;
+    line-height: 1.5;
+}
+
+.ticket-page .april-mission-sections li + li {
+    margin-block-start: 0.2rem;
+}
+
+.ticket-page .april-mission-sources {
+    margin-block-start: 0.75rem;
+    padding-block-start: 0.6rem;
+    border-block-start: 1px solid #a07b4d85;
+    font-size: 0.92rem;
+}
+
+.ticket-page .april-mission-sources a {
+    color: #61411e;
+    text-decoration: underline;
+    text-decoration-color: #9a6f3a;
+    text-underline-offset: 0.18em;
+}
+
+.ticket-page .april-mission-requests ul {
+    font-size: 0.92rem;
+}
+
+.ticket-page .april-mission-requests .april-requests-note {
+    margin: 0.4rem 0 0;
+    color: #61452f;
+    font-size: 0.82rem;
+    font-style: italic;
+    overflow-wrap: anywhere;
+}
+
+/* Sail to Gaza game entrance. */
+.ticket-page .ticket-game .game-countdown {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.25rem, 1vw, 0.75rem);
+    width: min(100%, 38rem);
+    margin-inline: auto;
+    padding: clamp(0.45rem, 2vw, 1.2rem);
+    border: 3px double #c4975c;
+    border-radius: 0.6rem;
+    background:
+        radial-gradient(circle at 0.4rem 0.4rem, #e6bc81 1px, #704627 2px, transparent 3px),
+        radial-gradient(circle at calc(100% - 0.4rem) 0.4rem, #e6bc81 1px, #704627 2px, transparent 3px),
+        linear-gradient(130deg, #643823, #2b160f 70%);
+    box-shadow: inset 0 0 0 1px #8e623a, 0 4px 8px #50301871;
+}
+
+.ticket-page .game-countdown-unit {
+    min-width: 0;
+    padding: 0.35rem 0.15rem;
+    border: 1px solid #af7b43;
+    border-radius: 0.2rem;
+    background: linear-gradient(#ad7a46, #e7c38b 29%, #c8955c 66%, #a36e3c);
+    box-shadow: inset 0 1px #f9dca2, inset 0 -2px #725037;
+    color: #382218;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.ticket-page .game-countdown-unit > span:first-child {
+    display: block;
+    border: 1px solid #603e26;
+    border-radius: 0.17rem;
+    background: linear-gradient(#2d1b13 48%, #583a25 50%, #39251a 52%);
+    color: #ffe3ae;
+    font: 700 clamp(0.98rem, 3.8vw, 2.1rem) / 1.35 Georgia, serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.ticket-page .game-countdown-unit > span:not(:first-child) {
+    font-size: clamp(0.65rem, 1.6vw, 0.86rem);
+    font-weight: 700;
+}
+
+.ticket-page .ticket-game .game-countdown-caption {
+    max-width: 58ch;
+    margin: 0.75rem auto 1rem;
+    color: #65452f;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.ticket-page .ticket-game .game-coming-soon {
+    margin: 0;
+    color: #805826;
+    font-size: clamp(1.55rem, 5vw, 2.6rem);
+    text-shadow: 0 1px #ffe8b4, 0 -1px #49311d;
+}
+
+.ticket-page .ticket-game .game-coming-soon > .lang-en {
+    font-family: "Snell Roundhand", "Segoe Script", "Apple Chancery", Georgia, serif;
+    font-style: italic;
+}
+
+.ticket-page .ticket-game .game-intro {
+    margin: 0.4rem auto 0.8rem;
+    font-size: 1rem;
+}
+
+.ticket-page .ticket-game .game-sailing-scene {
+    --game-boat-width: clamp(4.1rem, 23%, 9rem);
+    position: relative;
+    width: min(100%, 38rem);
+    min-height: clamp(6rem, 24vw, 11rem);
+    overflow: hidden;
+    margin: 0 auto 0.9rem;
+    border: 3px double #ad7d4a;
+    border-radius: 0.5rem;
+    background: linear-gradient(#e8bc91, #f3d7a8 47%, #6a9a94 48%, #285760);
+    box-shadow: inset 0 0 0.75rem #53382178, 0 3px 6px #53331c59;
+    direction: ltr;
+    pointer-events: none;
+}
+
+.ticket-page .game-sailing-scene::before {
+    position: absolute;
+    inset: 48% 0 0;
+    background:
+        radial-gradient(ellipse at 64% 0%, #ffdb9287, transparent 58%),
+        repeating-linear-gradient(178deg, transparent 0 7px, #b9d6bf57 8px, transparent 9px 16px);
+    background-size: 120% 100%;
+    content: "";
+}
+
+.ticket-page .game-sailboat {
+    position: absolute;
+    left: calc((100% - var(--game-boat-width)) / 2);
+    bottom: 24%;
+    width: var(--game-boat-width);
+    height: auto;
+    filter: drop-shadow(0 2px 1px #24413b91);
+}
+
+.ticket-page .game-sail-canvas {
+    transform-box: fill-box;
+    transform-origin: left center;
+}
+
+.ticket-page .game-countdown-gear {
+    width: 0.9rem;
+    aspect-ratio: 1;
+    margin: 0.45rem auto 0;
+    border: 2px dotted #b6804f;
+    border-radius: 50%;
+    background: radial-gradient(circle, #41261c 0 24%, #c5935f 27% 47%, #895433 49%);
+}
+
+.ticket-page .game-play {
+    display: block;
+    max-width: 100%;
+    min-height: 44px;
+    margin: 0 auto;
+    padding: 0.6rem 1.35rem;
+    border: 3px double #c6a06b;
+    border-radius: 0.4rem;
+    background:
+        radial-gradient(circle at 0.45rem 50%, #e0b782 1px, #674026 2px, transparent 3px),
+        radial-gradient(circle at calc(100% - 0.45rem) 50%, #e0b782 1px, #674026 2px, transparent 3px),
+        linear-gradient(#71482e, #382117);
+    color: #f4d49c;
+    font: inherit;
+    box-shadow: inset 0 1px #b98755, 0 3px #5e3a27;
+}
+
+.ticket-page .ticket-game .game-availability {
+    margin: 0.45rem auto 0;
+    font-size: 0.85rem;
+}
+
+@keyframes ticket-game-sail {
+    0% { left: 4%; opacity: 0; }
+    12%, 88% { opacity: 1; }
+    100% { left: calc(96% - var(--game-boat-width)); opacity: 0; }
+}
+
+@keyframes ticket-game-waves {
+    to { background-position: 100% center; }
+}
+
+@keyframes ticket-game-canvas {
+    to { transform: skewY(-4deg) scaleX(0.94); }
+}
+
+@keyframes ticket-game-clockwork {
+    to { rotate: 360deg; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ticket-page .game-sailboat { animation: ticket-game-sail 21s linear infinite; }
+    .ticket-page .game-sailing-scene::before { animation: ticket-game-waves 18s ease-in-out infinite alternate; }
+    .ticket-page .game-sail-canvas { animation: ticket-game-canvas 3.8s ease-in-out infinite alternate; }
+    .ticket-page .game-countdown-gear { animation: ticket-game-clockwork 16s linear infinite; }
+}
+
+/* Shared paper, individual leather bindings. Route and modal retain their layout. */
+.ticket-page #scrapbook-freedom-flotilla { --journal-leather: #562838; }
+.ticket-page #scrapbook-global-sumud { --journal-leather: #29374c; }
+
+/* Global Sumud's archive fittings share the desk's brass and mahogany. */
+.ticket-page #scrapbook-global-sumud-title {
+    color: #6b461f;
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+    text-align: center;
+    text-shadow: 0 1px #f9e1a5, 0 -1px #432d1e;
+}
+
+.ticket-page #scrapbook-global-sumud-title > .lang-en {
+    font-family: "Snell Roundhand", "Segoe Script", "Apple Chancery", Georgia, serif;
+    font-style: italic;
+}
+
+.ticket-page #scrapbook-global-sumud .sumud-archive-divider {
+    width: min(100%, 39rem);
+    height: 0.9rem;
+    margin: 0.75rem auto;
+    border: 0;
+    background:
+        linear-gradient(45deg, transparent 46%, #775136 47% 53%, transparent 54%) center / 0.7rem 0.7rem no-repeat,
+        linear-gradient(135deg, transparent 46%, #775136 47% 53%, transparent 54%) center / 0.7rem 0.7rem no-repeat,
+        radial-gradient(circle, #f2dbac 0 30%, #926e49 32% 39%, transparent 42%) center / 0.9rem 0.9rem no-repeat,
+        linear-gradient(90deg, transparent, #b08a58 18% 82%, transparent) center / 100% 1px no-repeat;
+}
+
+.ticket-page #scrapbook-global-sumud .sumud-video-frame {
+    width: min(100%, 650px);
+    margin: 0 auto 0.55rem;
+    padding: clamp(0.5rem, 2vw, 0.85rem);
+    border: 2px solid #a87949;
+    border-radius: 0.45rem;
+    background:
+        linear-gradient(135deg, #b48b51 30%, transparent 34%) top left / 1.25rem 1.25rem no-repeat,
+        linear-gradient(225deg, #dab881 30%, transparent 34%) top right / 1.25rem 1.25rem no-repeat,
+        linear-gradient(45deg, #b48b51 30%, transparent 34%) bottom left / 1.25rem 1.25rem no-repeat,
+        linear-gradient(315deg, #d8b17b 30%, transparent 34%) bottom right / 1.25rem 1.25rem no-repeat,
+        linear-gradient(115deg, #623521, #361e16);
+    box-shadow: inset 0 0 0 1px #edc790, inset 0 0 0 4px #4a2b1c, 0 3px 6px #53321d61;
+}
+
+.ticket-page #scrapbook-global-sumud .sumud-video-frame iframe {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    border: 1px solid #a67d4f;
+    background: #e2c9a0;
+    box-shadow: 0 0 0 1px #ead1a5, 0 1px 4px #1d0f09;
+}
+
+@media (max-width: 575px) {
+    .ticket-page #scrapbook-global-sumud {
+        padding-inline: 0.66rem;
+    }
+
+}
+
+
+.ticket-page .ticket-scrapbook :is(.ticket-feature-intro, .ticket-copy-block, .land-convoy-intro-copy > div:last-child) {
+    max-inline-size: 76ch;
+    margin-inline: auto;
+}
+
+.ticket-page .ticket-scrapbook .ticket-feature-discussion {
+    border: 1px solid var(--journal-rule);
+    border-block-start: 3px double var(--journal-rule);
+    background: #fcf0d4;
+    color: var(--journal-ink);
+    box-shadow: inset 0 0 0.65rem #9e714533;
+    text-shadow: none;
+}
+
+.ticket-page .ticket-scrapbook .ticket-feature-discussion p {
+    margin: 0.75rem auto;
+}
+
+.ticket-page .ticket-scrapbook :is(.ticket-feature-video-card, .ticket-gallery-scroll figure) {
+    border: 1px solid #b28e5e;
+    background: #f6e4c0;
+    color: var(--journal-ink);
+    box-shadow: 0 2px 5px #4b302633;
+}
+
+html[lang="ar"] .ticket-page .navigation-table {
+    direction: rtl;
+}
+
+/* Freedom Convoy journal shell. The historical report keeps its own theme. */
+.ticket-page #scrapbook-freedom-convoy {
+    --journal-leather: #2b221b;
+    border-block: 2px solid #ba8f54;
+    border-inline-end: 2px solid #9f7548;
+    background-image:
+        radial-gradient(circle at 0.55rem 0.55rem, #f3d193 1px, #725135 2px, transparent 3.5px),
+        radial-gradient(circle at calc(100% - 0.55rem) 0.55rem, #f3d193 1px, #725135 2px, transparent 3.5px),
+        linear-gradient(135deg, #855d38, #d4aa69 32%, transparent 37%) left top / 1.7rem 1.7rem no-repeat,
+        linear-gradient(225deg, #855d38, #d4aa69 32%, transparent 37%) right top / 1.7rem 1.7rem no-repeat,
+        repeating-linear-gradient(171deg, #80562b10 0 1px, transparent 1px 6px),
+        linear-gradient(125deg, #e2c79d, #fbefd2 37%, #f6e6c6 76%, #e3c797);
+    box-shadow: inset 0 0 0 2px #7d5633, inset 0 0 0 4px #d6b17a,
+        inset 0 0 0.9rem #85563070, 0 3px #b08b60, 0 6px #2c1d17, 0 0.8rem 1.4rem #21100caa;
+}
+
+.ticket-page #scrapbook-freedom-convoy .land-convoy-route-scroll {
+    --convoy-route-height-ratio: 0.76;
+    direction: ltr;
+}
+
+.ticket-page #scrapbook-freedom-convoy .land-convoy-route {
+    width: 100%;
+    min-width: 700px;
+    height: 460px;
+}
+
+.ticket-page #scrapbook-freedom-convoy .land-convoy-route-line {
+    height: calc(560px * var(--convoy-route-height-ratio));
+}
+
+.ticket-page #scrapbook-freedom-convoy .land-convoy-stop {
+    top: calc(var(--stop-y) * var(--convoy-route-height-ratio) - 29px);
+    width: calc(100% / 6 - 0.4rem);
+}
+
+.ticket-page #scrapbook-freedom-convoy .land-convoy-marker {
+    top: calc(var(--marker-y) * var(--convoy-route-height-ratio));
+}
+
+.ticket-page #scrapbook-freedom-convoy .land-convoy-marker > img {
+    max-height: calc(64px * var(--convoy-route-height-ratio));
+}
+
+@media (min-width: 1050px) {
+    .ticket-page #scrapbook-freedom-convoy .land-convoy-route-scroll {
+        width: clamp(700px, 74%, 810px);
+        max-width: 100%;
+    }
+}
+
+html[lang="ar"] .ticket-page #scrapbook-freedom-convoy .land-convoy-stop-label {
+    direction: rtl;
+}
+
+/* The Freedom reports use block text runs so the first-line indent has room to wrap. */
+.ticket-page :is(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy),
+.ticket-page #scrapbook-freedom-flotilla :is(.ticket-feature, .ticket-feature-intro, .ticket-feature-discussion),
+.ticket-page #scrapbook-freedom-convoy :is(.ticket-col-land, .land-convoy, .land-convoy-intro, .land-convoy-intro-copy, .land-convoy-details, .land-convoy-journey, .land-convoy-journey-heading) {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.ticket-page #scrapbook-freedom-flotilla .ticket-feature-intro,
+.ticket-page #scrapbook-freedom-convoy .land-convoy-intro-copy > div:last-child {
+    max-width: min(100%, 76ch);
+}
+
+.ticket-page #scrapbook-freedom-convoy :is(.land-convoy-intro-copy, .land-convoy-details, .land-convoy-journey-heading) > * {
+    min-width: 0;
+    max-inline-size: min(100%, 76ch);
+}
+
+.ticket-page :is(
+    #scrapbook-freedom-flotilla .ticket-feature-discussion p,
+    #scrapbook-freedom-convoy :is(.land-convoy-intro, .land-convoy-journey) p:not(.land-convoy-eyebrow, .land-convoy-details p)
+):has(> :is(.lang-en, .lang-ar)) {
+    width: 100%;
+    max-width: 72ch;
+    margin: 0 0 0.75em;
+    margin-inline: auto;
+    line-height: 1.65;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.ticket-page :is(
+    #scrapbook-freedom-flotilla .ticket-feature-discussion p,
+    #scrapbook-freedom-convoy :is(.land-convoy-intro, .land-convoy-journey) p:not(.land-convoy-eyebrow, .land-convoy-details p)
+) > :is(.lang-en, .lang-ar) {
+    display: block;
+    max-width: 100%;
+    text-indent: 1.25em;
+    /* Earlier ticket-wide rules force alignment on the language spans. */
+    text-align: start !important;
+}
+
+.ticket-page :is(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy) p > .lang-en {
+    direction: ltr;
+}
+
+.ticket-page :is(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy) p > .lang-ar {
+    direction: rtl;
+}
+
+/* Keep the two Freedom journals readable inside their narrow page frames. */
+@media (max-width: 768px) {
+    .ticket-page :is(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy) {
+        min-inline-size: 0;
+        max-inline-size: 100%;
+        padding-inline: clamp(0.55rem, 2vw, 0.9rem);
+        overflow-wrap: break-word;
+    }
+
+    .ticket-page :is(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy) > .ticket-panel-heading {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ticket-page :is(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy) > .ticket-panel-heading > * {
+        min-inline-size: 0;
+        max-inline-size: 100%;
+        white-space: normal;
+    }
+
+    .ticket-page :is(#scrapbook-freedom-flotilla, #scrapbook-freedom-convoy) > .ticket-panel-heading h2 {
+        font-size: clamp(1.3rem, 4vw, 1.7rem);
+    }
+
+    .ticket-page #scrapbook-freedom-flotilla :is(.ticket-feature, .ticket-feature-intro, .ticket-feature-discussion),
+    .ticket-page #scrapbook-freedom-convoy .land-convoy {
+        padding-inline: clamp(0.45rem, 2vw, 0.9rem);
+    }
+
+    .ticket-page #scrapbook-freedom-flotilla .ticket-feature-discussion :is(h2, h3),
+    .ticket-page #scrapbook-freedom-convoy .land-convoy :is(h2, h3) {
+        padding-inline: 0;
+        font-size: clamp(1.12rem, 3.6vw, 1.45rem);
+    }
+
+    .ticket-page #scrapbook-freedom-convoy .land-convoy-route-scroll {
+        min-inline-size: 0;
+        max-inline-size: 100%;
+    }
+
+    .ticket-page #scrapbook-freedom-convoy .land-convoy .land-convoy-official-pending {
+        max-inline-size: 100%;
+        padding-inline: 0.55rem;
+        white-space: normal;
+    }
+
+    .ticket-page #scrapbook-freedom-convoy .land-convoy-modal-dialog h3 {
+        padding-right: 2.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticket-page .navigation-table :is(.ticket-panel, .ticket-gallery-scroll, .flotilla-missions-gallery, .land-convoy-route-scroll) {
+        scroll-behavior: auto;
+    }
+
+    .ticket-page .navigation-table :is(.table-object, .ticket-panel-close) {
+        animation: none;
+        transition: none;
+    }
 }
