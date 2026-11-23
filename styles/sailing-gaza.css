@@ -1,6 +1,6 @@
 
   /* Author: Leslie Brockman */
-  /* Date modified: 11/22/2026 */
+  /* Date modified: 11/23/2026 */
   /* Description: Sailing Gaza game styles */
   
 :root {
@@ -17,9 +17,10 @@
 *, *::after, *::before { box-sizing: border-box; }
 [hidden] { display: none !important; }
 
-body {
+body.sailing-gaza-page {
   margin: 0;
   min-height: 100vh;
+  line-height: normal;
   background:
     radial-gradient(ellipse at 50% 6%, #fff4cc 0, transparent 55%),
     repeating-linear-gradient(173deg, transparent 0 38px, #ffffff46 40px 42px, transparent 44px 75px),
@@ -127,9 +128,26 @@ body:has(#play:not([hidden])) {
 #play :is(.hud, .progress, .instruction-notes) { font-family: "Alegreya Sans", system-ui, sans-serif; }
 #play h2 { color: #ffe2a1; text-shadow: 0 2px #321d15; }
 #play :focus-visible { outline-color: #83d8e4; }
-h1, h2, h3, .tagline { margin-block: 0.25rem; font-family: Georgia, serif; line-height: 1.1; }
-h2 { font-size: clamp(1.05rem, 3vw, 1.8rem); }
-p { line-height: 1.55; }
+:where(.game) :is(h1, h2, h3, .tagline) { margin: 0.25rem 0; font-family: Georgia, serif; line-height: 1.1; }
+:where(.game) h2 { font-size: clamp(1.05rem, 3vw, 1.8rem); }
+:where(.game) p { line-height: 1.55; text-indent: 0; }
+
+.sailing-gaza-page .game { color: var(--ink); font-family: system-ui, sans-serif; direction: ltr; }
+.sailing-gaza-page .game .lang-ar { font-family: Tahoma, Arial, sans-serif; text-align: inherit; }
+html[lang="ar"] .sailing-gaza-page .game :is(h1, h2, h3, p, legend, label, #captain, .boat-name, .captains-choice,
+  #captain-display, #captain-prefix, summary > span, button:not([data-direction]), .rescue-name, #voyage-note, #interception-warning strong, .peace-bank, #voyage-score dt) {
+  font-family: Tahoma, Arial, sans-serif;
+  letter-spacing: normal;
+}
+html[lang="ar"] .sailing-gaza-page .game :is(h1, h2, h3, p, legend, #captain, .boat-name, .captains-choice,
+  summary > span, button:not([data-direction]), #voyage-note, #interception-warning strong) {
+  direction: rtl;
+}
+html[lang="ar"] .sailing-gaza-page .game :is(#captain-display, #captain-prefix) { unicode-bidi: isolate; }
+html[lang="ar"] .sailing-gaza-page .game svg text { letter-spacing: normal; }
+html[lang="ar"] .sailing-gaza-page svg tspan.lang-ar { direction: rtl; unicode-bidi: isolate; font-family: Tahoma, Arial, sans-serif; }
+.sailing-gaza-page [data-global-chrome] .lang-ar { font-family: Tahoma, Arial, sans-serif; }
+
 
 /* Captain's welcome station. Gameplay keeps its own surface and background. */
 body:has(#setup:not([hidden])) {
@@ -461,7 +479,7 @@ body:has(#setup:not([hidden])) {
   .setup .boat-choice:hover svg { translate: 0 -4px; }
 }
 
-button {
+:where(.game) button {
   min-height: 44px;
   padding: 0.42rem 0.8rem;
   border: 2px solid #8b5d33;
@@ -472,9 +490,9 @@ button {
   font-weight: 750;
   cursor: pointer;
 }
-button:not(:disabled):hover { background: #ffe7ab; }
-button:disabled { opacity: 0.62; cursor: default; }
-:focus-visible { outline: 3px solid #146984; outline-offset: 3px; }
+:where(.game) button:not(:disabled):hover { background: #ffe7ab; }
+:where(.game) button:disabled { opacity: 0.62; cursor: default; }
+:where(.game) :focus-visible { outline: 3px solid #146984; outline-offset: 3px; }
 .primary { background: linear-gradient(#ffecaf, #e9ae61); padding-inline: 1.1rem; box-shadow: 0 3px #84572d; }
 .setup .primary {
   min-height: 53px;
@@ -828,7 +846,7 @@ button:disabled { opacity: 0.62; cursor: default; }
   font-weight: 800;
   text-shadow: -1px 0 0.35rem #a93742, 1px 0 0.35rem #258351, 0 1px #231516;
 }
-#swarm-guidance span { font-size: 1.25em; vertical-align: -0.05em; }
+#swarm-guidance .swarm-eyes { font-size: 1.25em; vertical-align: -0.05em; }
 .blockade-message:has(#swarm-guidance:not([hidden])) {
   --plaque-metal: #e3b36c;
   --plaque-copper: #ae6350;
