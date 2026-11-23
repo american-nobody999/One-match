@@ -1,7 +1,7 @@
 
 <!--
 Author: Leslie Brockman
-Date modified: 11/22/2026
+Date modified: 11/23/2026
 Description: Sailing Gaza game page
 Happy Birthday Saleh. I promise. We keep moving forward.
 -->
@@ -11,10 +11,50 @@ Happy Birthday Saleh. I promise. We keep moving forward.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sailing to Gaza | MPGA</title>
+  <link rel="stylesheet" href="styles/styles2.css">
   <link rel="stylesheet" href="styles/sailing-gaza.css">
+  <script src="js/main.js" defer></script>
   <script src="js/sailing-gaza.js" defer></script>
 </head>
-<body>
+<body class="sailing-gaza-page">
+  <header class="site-header" data-global-chrome>
+      <div class="header-container">
+
+  <!-- Existing  wordmark and decorative botanical SVGs. Do not touch the SVGS. EVER. -->
+        <div class="header-logo mpga-wordmark">
+          <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg><span>MPGA</span><svg viewBox="0 0 100 80" aria-hidden="true" focusable="false"><path d="M12 69Q47 52 83 12" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor"><ellipse cx="32" cy="49" rx="7" ry="18" transform="rotate(-42 32 49)"/><ellipse cx="57" cy="46" rx="7" ry="18" transform="rotate(55 57 46)"/><ellipse cx="57" cy="23" rx="6" ry="15" transform="rotate(-32 57 23)"/><ellipse cx="80" cy="24" rx="6" ry="15" transform="rotate(50 80 24)"/></g></svg></div>
+
+          <div class="header-center">
+              <h1 class="site-title state-title">
+                  <span class="lang-en">State of Palestine</span>
+                  <span class="lang-ar hidden" lang="ar" dir="rtl">دولة فلسطين</span>
+              </h1>
+              <nav class="main-nav" aria-label="Main navigation" data-aria-label-en="Main navigation" data-aria-label-ar="التنقل الرئيسي">
+              <ul class="nav-menu">
+                <li><a href="index.html" class="nav-btn">
+                      <span class="lang-en">Home</span>
+                      <span class="lang-ar hidden" lang="ar" dir="rtl">الرئيسية</span>
+                </a></li>
+                <li><a href="mpga.html" class="nav-btn">
+                        <span class="lang-en">MPGA</span>
+                        <span class="lang-ar hidden" lang="ar" dir="rtl">MPGA</span>
+                </a></li>
+                <li><a href="about.html" class="nav-btn">
+                      <span class="lang-en">About Us</span>
+                      <span class="lang-ar hidden" lang="ar" dir="rtl">من نحن</span>
+                </a></li>
+              </ul>
+            </nav>
+          </div>
+              <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language" data-aria-label-en="Toggle language" data-aria-label-ar="تبديل اللغة">
+                      English | العربية
+              </button>
+  <!-- Hamburger for Mobile--DO NOT TOUCH THIS!!!!!--EVER!-->
+              <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" data-aria-label-en="Toggle navigation" data-aria-label-ar="فتح أو إغلاق قائمة التنقل" aria-expanded="false">
+                  ☰
+              </button>
+        </div>
+  </header>
   <!-- Self-contained sprites shared by the picker, sea and arrival scene. -->
   <svg class="sprite-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
@@ -251,7 +291,7 @@ Happy Birthday Saleh. I promise. We keep moving forward.
         <path d="M6 74h106l-14 15H24Z" fill="#9d6a4e" stroke="#583b2f" stroke-width="2"/>
         <path d="M14 79h90" stroke="#e7b974" stroke-width="2"/>
         <rect x="36" y="49" width="38" height="13" rx="2" fill="#ffe7a7" stroke="#885539"/>
-        <text x="55" y="58" text-anchor="middle" font-size="8" font-weight="800" fill="#643d33">PEACE</text>
+        <text x="55" y="58" text-anchor="middle" font-size="8" font-weight="800" fill="#643d33"><tspan class="lang-en" lang="en" dir="ltr">PEACE</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">سلام</tspan></text>
         <path d="M5 92q10-4 20 0m72 0q10-4 16 0" fill="none" stroke="#d3f6ed" stroke-width="2"/>
       </symbol>
       <linearGradient id="dolphin-skin" x2="0" y2="1">
@@ -349,7 +389,7 @@ Happy Birthday Saleh. I promise. We keep moving forward.
         <path d="M36 39q13 4 22 2l12-3 5 16q-19 9-34 3Z" fill="#126fe0" stroke="#103c70" stroke-width="1.6"/>
         <path d="m38 43 4 12m27-12 3 10" stroke="#abd7ff" stroke-width="1.2"/>
         <circle cx="43" cy="44" r="1.2" fill="#f4c887"/><circle cx="68" cy="44" r="1.2" fill="#f4c887"/>
-        <text x="55" y="53.5" text-anchor="middle" fill="#fff" font-size="11.6" font-family="system-ui, sans-serif" font-weight="900" textLength="33" lengthAdjust="spacingAndGlyphs">PRESS</text>
+        <text x="55" y="53.5" text-anchor="middle" fill="#fff" font-size="11.6" font-family="system-ui, sans-serif" font-weight="900" textLength="33" lengthAdjust="spacingAndGlyphs"><tspan class="lang-en" lang="en" dir="ltr">PRESS</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">صحافة</tspan></text>
       </symbol>
       <symbol id="rescue-protesters-art" viewBox="0 0 112 72">
         <ellipse cx="56" cy="67" rx="52" ry="4" fill="#241821" opacity=".44"/>
@@ -522,7 +562,7 @@ Happy Birthday Saleh. I promise. We keep moving forward.
     </g>
     <circle cx="97" cy="95" r="4.2" fill="#f2c88b" stroke="#735039"/>
     <g fill="#d1aa75" font-family="Georgia, serif" font-size="9">
-      <text x="92" y="27">N</text><text x="30" y="105">W</text><text x="149" y="105">E</text>
+      <text x="92" y="27"><tspan class="lang-en" lang="en" dir="ltr">N</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">ش</tspan></text><text x="30" y="105"><tspan class="lang-en" lang="en" dir="ltr">W</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">غ</tspan></text><text x="149" y="105"><tspan class="lang-en" lang="en" dir="ltr">E</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">ق</tspan></text>
       <text x="48" y="194">30°</text><text x="92" y="181">35°</text><text x="132" y="192">40°</text>
     </g>
     <path d="M57 213h57v101H57Z" fill="#27424a" stroke="url(#machine-copper)" stroke-width="2.4"/>
@@ -559,35 +599,35 @@ Happy Birthday Saleh. I promise. We keep moving forward.
       <svg class="welcome-desk-machinery welcome-desk-machinery--port" viewBox="0 0 170 395" aria-hidden="true" focusable="false"><use href="#welcome-desk-machinery" width="170" height="395"/></svg>
       <svg class="welcome-desk-machinery welcome-desk-machinery--starboard" viewBox="0 0 170 395" aria-hidden="true" focusable="false"><use href="#welcome-desk-machinery" width="170" height="395"/></svg>
       <header>
-        <h1 id="game-title">SAILING TO GAZA</h1>
-        <p class="tagline">A Little Boat. A Big Mission.</p>
+        <h1 id="game-title"><span class="lang-en" lang="en" dir="ltr">SAILING TO GAZA</span><span class="lang-ar hidden" lang="ar" dir="rtl">الإبحار إلى غزة</span></h1>
+        <p class="tagline"><span class="lang-en" lang="en" dir="ltr">A Little Boat. A Big Mission.</span><span class="lang-ar hidden" lang="ar" dir="rtl">قارب صغير. مهمة كبيرة.</span></p>
       </header>
       <form id="setup-form">
         <svg class="welcome-chart-rose welcome-chart-rose--port" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><use href="#welcome-compass-etching" width="96" height="96"/></svg>
         <svg class="welcome-chart-rose welcome-chart-rose--starboard" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><use href="#welcome-compass-etching" width="96" height="96"/></svg>
-        <label for="captain">Captain’s name</label>
-        <input id="captain" name="captain" maxlength="8" placeholder="Captain" autocomplete="off">
+        <label for="captain"><span class="lang-en" lang="en" dir="ltr">Captain’s name</span><span class="lang-ar hidden" lang="ar" dir="rtl">اسم القبطان</span></label>
+        <input id="captain" name="captain" maxlength="8" placeholder="Captain" data-placeholder-en="Captain" data-placeholder-ar="القبطان" autocomplete="off">
         <fieldset>
-          <legend>Choose your boat</legend>
+          <legend><span class="lang-en" lang="en" dir="ltr">Choose your boat</span><span class="lang-ar hidden" lang="ar" dir="rtl">اختر قاربك</span></legend>
           <div class="fleet">
-            <label class="boat-choice"><input type="radio" name="boat" value="sunbeam" checked><svg viewBox="0 0 80 66" aria-hidden="true"><use href="#boat-sunbeam"/></svg><span class="boat-name">Kate Tenacity</span><span class="captains-choice" aria-hidden="true">✓ CAPTAIN'S CHOICE</span></label>
-            <label class="boat-choice"><input type="radio" name="boat" value="seaglass"><svg viewBox="0 0 80 66" aria-hidden="true"><use href="#boat-seaglass"/></svg><span class="boat-name">Handala II</span><span class="captains-choice" aria-hidden="true">✓ CAPTAIN'S CHOICE</span></label>
-            <label class="boat-choice"><input type="radio" name="boat" value="stargazer"><svg viewBox="0 0 80 66" aria-hidden="true"><use href="#boat-stargazer"/></svg><span class="boat-name">MPGA</span><span class="captains-choice" aria-hidden="true">✓ CAPTAIN'S CHOICE</span></label>
+            <label class="boat-choice"><input type="radio" name="boat" value="sunbeam" checked><svg viewBox="0 0 80 66" aria-hidden="true"><use href="#boat-sunbeam"/></svg><span class="boat-name"><span class="lang-en" lang="en" dir="ltr">Kate Tenacity</span><span class="lang-ar hidden" lang="ar" dir="rtl">كيت تيناسيتي</span></span><span class="captains-choice" aria-hidden="true"><span class="lang-en" lang="en" dir="ltr">✓ CAPTAIN'S CHOICE</span><span class="lang-ar hidden" lang="ar" dir="rtl">✓ اختيار القبطان</span></span></label>
+            <label class="boat-choice"><input type="radio" name="boat" value="seaglass"><svg viewBox="0 0 80 66" aria-hidden="true"><use href="#boat-seaglass"/></svg><span class="boat-name"><span class="lang-en" lang="en" dir="ltr">Handala II</span><span class="lang-ar hidden" lang="ar" dir="rtl">حنظلة ٢</span></span><span class="captains-choice" aria-hidden="true"><span class="lang-en" lang="en" dir="ltr">✓ CAPTAIN'S CHOICE</span><span class="lang-ar hidden" lang="ar" dir="rtl">✓ اختيار القبطان</span></span></label>
+            <label class="boat-choice"><input type="radio" name="boat" value="stargazer"><svg viewBox="0 0 80 66" aria-hidden="true"><use href="#boat-stargazer"/></svg><span class="boat-name"><span class="lang-en" lang="en" dir="ltr">MPGA</span><span class="lang-ar hidden" lang="ar" dir="rtl">إم بي جي إيه</span></span><span class="captains-choice" aria-hidden="true"><span class="lang-en" lang="en" dir="ltr">✓ CAPTAIN'S CHOICE</span><span class="lang-ar hidden" lang="ar" dir="rtl">✓ اختيار القبطان</span></span></label>
           </div>
         </fieldset>
         <div class="welcome-instructions">
-          <h2>⚙️ CAPTAIN'S NAVIGATION DESK ⚙️</h2>
-          <p class="welcome-desk-subtitle">Three vessels. Three checkpoints. One destination.</p>
-          <p>❤️ 3 Lives • 🚩 Collect Flags • 🛟 Call for Help</p>
+          <h2><span class="lang-en" lang="en" dir="ltr">⚙️ CAPTAIN'S NAVIGATION DESK ⚙️</span><span class="lang-ar hidden" lang="ar" dir="rtl">⚙️ مكتب ملاحة القبطان ⚙️</span></h2>
+          <p class="welcome-desk-subtitle"><span class="lang-en" lang="en" dir="ltr">Three vessels. Three checkpoints. One destination.</span><span class="lang-ar hidden" lang="ar" dir="rtl">ثلاث سفن. ثلاث نقاط تفتيش. وجهة واحدة.</span></p>
+          <p><span class="lang-en" lang="en" dir="ltr">❤️ 3 Lives • 🚩 Collect Flags • 🛟 Call for Help</span><span class="lang-ar hidden" lang="ar" dir="rtl">❤️ ٣ أرواح • 🚩 اجمع الأعلام • 🛟 اطلب المساعدة</span></p>
         </div>
-        <button class="primary" type="submit">SET SAIL!</button>
+        <button class="primary" type="submit"><span class="lang-en" lang="en" dir="ltr">SET SAIL!</span><span class="lang-ar hidden" lang="ar" dir="rtl">أبحر!</span></button>
       </form>
     </section>
 
     <section id="play" aria-labelledby="level-title" hidden>
       <header class="game-head">
         <h2 id="level-title" tabindex="-1"></h2>
-        <div class="toolbar"><button id="pause" type="button">Pause</button><button id="restart" type="button">Restart</button><button id="harbor" type="button">BACK TO HARBOR</button></div>
+        <div class="toolbar"><button id="pause" type="button"><span class="lang-en" lang="en" dir="ltr">Pause</span><span class="lang-ar hidden" lang="ar" dir="rtl">إيقاف مؤقت</span></button><button id="restart" type="button"><span class="lang-en" lang="en" dir="ltr">Restart</span><span class="lang-ar hidden" lang="ar" dir="rtl">ابدأ من جديد</span></button><button id="harbor" type="button"><span class="lang-en" lang="en" dir="ltr">BACK TO HARBOR</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى الميناء</span></button></div>
       </header>
       <details class="game-instructions">
         <summary>
@@ -608,24 +648,24 @@ Happy Birthday Saleh. I promise. We keep moving forward.
               <circle cx="33" cy="11" r="2.1" fill="#383039" stroke="#85523c" stroke-width=".6"/>
             </g>
           </svg>
-          <span>HOW TO PLAY</span>
+          <span><span class="lang-en" lang="en" dir="ltr">HOW TO PLAY</span><span class="lang-ar hidden" lang="ar" dir="rtl">طريقة اللعب</span></span>
         </summary>
         <div class="instruction-notes">
-          <section><h3>STEER YOUR BOAT</h3><p>Move your mouse, drag with your finger, or use the arrow keys or WASD.</p></section>
-          <section><h3>COLLECT FLAGS</h3><p>Gather flags to unlock rescue powers and earn extra lives.</p></section>
-          <section><h3>CLEAR THE CHECKPOINTS</h3><p>Save enough flags to call the right helper at each checkpoint!</p></section>
-          <section><h3>YOUR RESCUE POWERS</h3><p>Protesters: 1 flag • SOS: 3 flags (5 at Checkpoint 2) • Eagle: 5 flags • Extra Life: 4 flags</p></section>
-          <section><h3>CAPTAIN'S HINT</h3><p>Collect flags and save enough to call the right helper at each checkpoint!</p><p><strong id="checkpoint-rescue-hint"></strong></p></section>
-          <label class="mouse-follow"><input id="mouse-follow" type="checkbox"> Follow the mouse without clicking</label>
+          <section><h3><span class="lang-en" lang="en" dir="ltr">STEER YOUR BOAT</span><span class="lang-ar hidden" lang="ar" dir="rtl">وجّه قاربك</span></h3><p><span class="lang-en" lang="en" dir="ltr">Move your mouse, drag with your finger, or use the arrow keys or WASD.</span><span class="lang-ar hidden" lang="ar" dir="rtl">حرّك الفأرة، أو اسحب بإصبعك، أو استخدم مفاتيح الأسهم أو WASD.</span></p></section>
+          <section><h3><span class="lang-en" lang="en" dir="ltr">COLLECT FLAGS</span><span class="lang-ar hidden" lang="ar" dir="rtl">اجمع الأعلام</span></h3><p><span class="lang-en" lang="en" dir="ltr">Gather flags to unlock rescue powers and earn extra lives.</span><span class="lang-ar hidden" lang="ar" dir="rtl">اجمع الأعلام لتفعيل وسائل الإنقاذ والحصول على أرواح إضافية.</span></p></section>
+          <section><h3><span class="lang-en" lang="en" dir="ltr">CLEAR THE CHECKPOINTS</span><span class="lang-ar hidden" lang="ar" dir="rtl">اجتز نقاط التفتيش</span></h3><p><span class="lang-en" lang="en" dir="ltr">Save enough flags to call the right helper at each checkpoint!</span><span class="lang-ar hidden" lang="ar" dir="rtl">احتفظ بأعلام كافية لطلب المساعدة المناسبة عند كل نقطة تفتيش!</span></p></section>
+          <section><h3><span class="lang-en" lang="en" dir="ltr">YOUR RESCUE POWERS</span><span class="lang-ar hidden" lang="ar" dir="rtl">وسائل الإنقاذ</span></h3><p><span class="lang-en" lang="en" dir="ltr">Protesters: 1 flag • SOS: 3 flags (5 at Checkpoint 2) • Eagle: 5 flags • Extra Life: 4 flags</span><span class="lang-ar hidden" lang="ar" dir="rtl">المتظاهرون: علم واحد • الاستغاثة: ٣ أعلام (٥ عند نقطة التفتيش الثانية) • النسر: ٥ أعلام • روح إضافية: ٤ أعلام</span></p></section>
+          <section><h3><span class="lang-en" lang="en" dir="ltr">CAPTAIN'S HINT</span><span class="lang-ar hidden" lang="ar" dir="rtl">تلميح القبطان</span></h3><p><span class="lang-en" lang="en" dir="ltr">Collect flags and save enough to call the right helper at each checkpoint!</span><span class="lang-ar hidden" lang="ar" dir="rtl">اجمع الأعلام واحتفظ بما يكفي لطلب المساعدة المناسبة عند كل نقطة تفتيش!</span></p><p><strong id="checkpoint-rescue-hint"></strong></p></section>
+          <label class="mouse-follow"><input id="mouse-follow" type="checkbox"> <span class="lang-en" lang="en" dir="ltr">Follow the mouse without clicking</span><span class="lang-ar hidden" lang="ar" dir="rtl">اتبع مؤشر الفأرة دون النقر</span></label>
         </div>
       </details>
       <div class="hud">
-        <span><span id="captain-prefix"></span><strong id="captain-display"></strong></span>
+        <span><span id="captain-prefix"></span><bdi><strong id="captain-display"></strong></bdi></span>
         <span id="heart-display" role="img"></span>
-        <span id="star-bank"><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> <strong id="star-display">0</strong><span class="game-assistive-text"> flags</span></span>
-        <span class="peace-bank"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#peace-coin" width="40" height="40"/></svg><span class="game-assistive-text">Peace Coins </span><strong id="peace-display">0</strong> / 25</span>
+        <span id="star-bank"><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> <strong id="star-display">0</strong><span class="game-assistive-text"> <span class="lang-en" lang="en" dir="ltr">flags</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعلام</span></span></span>
+        <span class="peace-bank"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#peace-coin" width="40" height="40"/></svg><span class="game-assistive-text"><span class="lang-en" lang="en" dir="ltr">Peace Coins</span><span class="lang-ar hidden" lang="ar" dir="rtl">عملات السلام</span> </span><strong id="peace-display">0</strong> / 25</span>
       </div>
-      <div class="progress"><label for="progress">Checkpoint progress</label><div class="progress-track"><progress id="progress" max="100" value="0"></progress><span id="halfway-marker" class="halfway-marker" aria-hidden="true"></span></div></div>
+      <div class="progress"><label for="progress"><span class="lang-en" lang="en" dir="ltr">Checkpoint progress</span><span class="lang-ar hidden" lang="ar" dir="rtl">التقدّم نحو نقطة التفتيش</span></label><div class="progress-track"><progress id="progress" max="100" value="0"></progress><span id="halfway-marker" class="halfway-marker" aria-hidden="true"></span></div></div>
       <div class="ocean-frame">
         <svg id="ocean" viewBox="0 0 720 400" aria-hidden="true">
           <defs>
@@ -647,74 +687,74 @@ Happy Birthday Saleh. I promise. We keep moving forward.
           </g>
           <g id="helpers"></g>
         </svg>
-        <div class="steering" aria-label="Steering controls">
-          <button data-direction="up" aria-label="Steer up" type="button">▲</button>
-          <button data-direction="left" aria-label="Steer left" type="button">◀</button>
-          <button data-direction="down" aria-label="Steer down" type="button">▼</button>
-          <button data-direction="right" aria-label="Steer right" type="button">▶</button>
+        <div class="steering" aria-label="Steering controls" data-aria-label-en="Steering controls" data-aria-label-ar="أدوات توجيه القارب">
+          <button data-direction="up" aria-label="Steer up" data-aria-label-en="Steer up" data-aria-label-ar="وجّه القارب إلى الأعلى" type="button">▲</button>
+          <button data-direction="left" aria-label="Steer left" data-aria-label-en="Steer left" data-aria-label-ar="وجّه القارب إلى اليسار" type="button">◀</button>
+          <button data-direction="down" aria-label="Steer down" data-aria-label-en="Steer down" data-aria-label-ar="وجّه القارب إلى الأسفل" type="button">▼</button>
+          <button data-direction="right" aria-label="Steer right" data-aria-label-en="Steer right" data-aria-label-ar="وجّه القارب إلى اليمين" type="button">▶</button>
         </div>
         <section id="checkpoint-card" class="sea-sign message-plaque" data-message-tone="success" hidden aria-labelledby="checkpoint-title">
-          <p id="checkpoint-people-power" class="checkpoint-kicker" hidden>PEOPLE POWER</p>
-          <h3 id="checkpoint-title" tabindex="-1">CHECKPOINT CLEARED!</h3>
+          <p id="checkpoint-people-power" class="checkpoint-kicker" hidden><span class="lang-en" lang="en" dir="ltr">PEOPLE POWER</span><span class="lang-ar hidden" lang="ar" dir="rtl">قوة الشعب</span></p>
+          <h3 id="checkpoint-title" tabindex="-1"><span class="lang-en" lang="en" dir="ltr">CHECKPOINT CLEARED!</span><span class="lang-ar hidden" lang="ar" dir="rtl">تم اجتياز نقطة التفتيش!</span></h3>
           <p class="checkpoint-medallions" aria-hidden="true">☮️ ☮️ ☮️</p>
-          <p>3 Bonus Flags Earned!</p>
-          <p id="siege-celebration" hidden>THE SOS WAS HEARD!</p>
-          <button id="next-level" class="primary" type="button">KEEP SAILING!</button>
+          <p><span class="lang-en" lang="en" dir="ltr">3 Bonus Flags Earned!</span><span class="lang-ar hidden" lang="ar" dir="rtl">حصلت على ٣ أعلام إضافية!</span></p>
+          <p id="siege-celebration" hidden><span class="lang-en" lang="en" dir="ltr">THE SOS WAS HEARD!</span><span class="lang-ar hidden" lang="ar" dir="rtl">تم سماع نداء الاستغاثة!</span></p>
+          <button id="next-level" class="primary" type="button"><span class="lang-en" lang="en" dir="ltr">KEEP SAILING!</span><span class="lang-ar hidden" lang="ar" dir="rtl">واصل الإبحار!</span></button>
         </section>
       </div>
       <div id="flag-achievement" class="game-message message-plaque flag-achievement" data-message-tone="success" role="status" hidden>
         <div class="flag-achievement-emblems" aria-hidden="true"><span>☮</span><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg><span>☮</span><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg><span>☮</span></div>
-        <h3>GREAT JOB, CAPTAIN!</h3>
-        <p><strong>YOU COLLECTED EVERY FLAG!</strong></p>
-        <p>Every flag counts. Keep sailing!</p>
+        <h3><span class="lang-en" lang="en" dir="ltr">GREAT JOB, CAPTAIN!</span><span class="lang-ar hidden" lang="ar" dir="rtl">أحسنت يا قبطان!</span></h3>
+        <p><strong><span class="lang-en" lang="en" dir="ltr">YOU COLLECTED EVERY FLAG!</span><span class="lang-ar hidden" lang="ar" dir="rtl">جمعت كل الأعلام!</span></strong></p>
+        <p><span class="lang-en" lang="en" dir="ltr">Every flag counts. Keep sailing!</span><span class="lang-ar hidden" lang="ar" dir="rtl">لكل علم أهميته. واصل الإبحار!</span></p>
       </div>
       <div id="voyage-note" class="game-message message-plaque voyage-note" role="status" hidden><svg class="message-siren" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><use href="#message-siren" width="32" height="28"/></svg><strong></strong><span></span></div>
       <div id="blockade-message" class="game-message message-plaque blockade-message" data-message-tone="caution" hidden>
-        <p id="people-power-guidance">People are in the Streets—We Need Everyone—Join a Protest, make your voice heard</p>
+        <p id="people-power-guidance"><span class="lang-en" lang="en" dir="ltr">People are in the Streets—We Need Everyone—Join a Protest, make your voice heard</span><span class="lang-ar hidden" lang="ar" dir="rtl">الناس في الشوارع، ونحتاج إلى الجميع. شارك في مظاهرة وأسمع صوتك.</span></p>
         <p id="checkpoint-guidance" hidden></p>
-        <p id="swarm-guidance" hidden>ALL EYES <span>👀</span> ON PALESTINE! Get in the Boat!</p>
+        <p id="swarm-guidance" hidden><span class="lang-en" lang="en" dir="ltr">ALL EYES</span><span class="lang-ar hidden" lang="ar" dir="rtl">كل الأنظار</span> <span class="swarm-eyes">👀</span> <span class="lang-en" lang="en" dir="ltr">ON PALESTINE! Get in the Boat!</span><span class="lang-ar hidden" lang="ar" dir="rtl">على فلسطين! اصعد إلى القارب!</span></p>
         <div id="interception-warning" role="status" hidden>
           <span class="interception-hardware" aria-hidden="true">
             <svg class="interception-gear" viewBox="0 0 80 80" focusable="false"><use href="#machine-gear" width="80" height="80"/></svg>
             <svg class="interception-beacon" viewBox="0 0 32 28" focusable="false"><use href="#message-siren" width="32" height="28"/></svg>
           </span>
-          <strong>🚨 INTERCEPTION IMMEDIATE — SOS! SOS! 🚨</strong>
+          <strong><span class="lang-en" lang="en" dir="ltr">🚨 INTERCEPTION IMMEDIATE — SOS! SOS! 🚨</span><span class="lang-ar hidden" lang="ar" dir="rtl">🚨 اعتراض وشيك — استغاثة! استغاثة! 🚨</span></strong>
           <span class="interception-hardware" aria-hidden="true">
             <svg class="interception-gear" viewBox="0 0 80 80" focusable="false"><use href="#machine-gear" width="80" height="80"/></svg>
             <svg class="interception-beacon" viewBox="0 0 32 28" focusable="false"><use href="#message-siren" width="32" height="28"/></svg>
           </span>
         </div>
-        <button id="return-halfway" type="button" hidden>Return to halfway</button>
+        <button id="return-halfway" type="button" hidden><span class="lang-en" lang="en" dir="ltr">Return to halfway</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى منتصف المرحلة</span></button>
       </div>
       <p id="status" class="game-message message-plaque" tabindex="-1" role="status" aria-live="polite"><svg class="message-siren" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><use href="#message-siren" width="32" height="28"/></svg><span id="status-copy"></span></p>
-      <div class="rescue-dash" aria-label="Rescue powers">
+      <div class="rescue-dash" aria-label="Rescue powers" data-aria-label-en="Rescue powers" data-aria-label-ar="وسائل الإنقاذ">
         <button data-rescue="protesters" type="button" aria-describedby="rescue-protesters-state">
           <svg class="rescue-icon" viewBox="0 0 112 72" aria-hidden="true" focusable="false"><use href="#rescue-protesters-art" width="112" height="72"/></svg>
-          <span class="rescue-name">PROTESTERS</span><small><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> 1<span class="game-assistive-text"> flag</span></small><span class="rescue-state game-assistive-text" aria-hidden="true" id="rescue-protesters-state"></span>
+          <span class="rescue-name"><span class="lang-en" lang="en" dir="ltr">PROTESTERS</span><span class="lang-ar hidden" lang="ar" dir="rtl">المتظاهرون</span></span><small><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> 1<span class="game-assistive-text"> <span class="lang-en" lang="en" dir="ltr">flag</span><span class="lang-ar hidden" lang="ar" dir="rtl">علم</span></span></small><span class="rescue-state game-assistive-text" aria-hidden="true" id="rescue-protesters-state"></span>
         </button>
         <button data-rescue="turkiye" type="button" aria-describedby="rescue-turkiye-state" aria-haspopup="dialog" aria-controls="sos-panel">
           <svg class="rescue-icon" viewBox="0 0 112 72" aria-hidden="true" focusable="false"><use href="#sos-radio" width="112" height="72"/></svg>
-          <span class="rescue-name">SOS</span><small><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> <span id="sos-cost">3</span><span class="game-assistive-text"> flags</span></small><span class="rescue-state game-assistive-text" aria-hidden="true" id="rescue-turkiye-state"></span>
+          <span class="rescue-name"><span class="lang-en" lang="en" dir="ltr">SOS</span><span class="lang-ar hidden" lang="ar" dir="rtl">استغاثة</span></span><small><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> <span id="sos-cost">3</span><span class="game-assistive-text"> <span class="lang-en" lang="en" dir="ltr">flags</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعلام</span></span></small><span class="rescue-state game-assistive-text" aria-hidden="true" id="rescue-turkiye-state"></span>
         </button>
         <button data-rescue="eagle" type="button" aria-describedby="rescue-eagle-state">
           <svg class="rescue-icon" viewBox="0 0 112 72" aria-hidden="true" focusable="false"><use href="#helper-eagle" width="112" height="72"/></svg>
-          <span class="rescue-name">MPGA EAGLE</span><small><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> 5<span class="game-assistive-text"> flags</span></small><span class="rescue-state game-assistive-text" aria-hidden="true" id="rescue-eagle-state"></span>
+          <span class="rescue-name"><span class="lang-en" lang="en" dir="ltr">MPGA EAGLE</span><span class="lang-ar hidden" lang="ar" dir="rtl">نسر إم بي جي إيه</span></span><small><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> 5<span class="game-assistive-text"> <span class="lang-en" lang="en" dir="ltr">flags</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعلام</span></span></small><span class="rescue-state game-assistive-text" aria-hidden="true" id="rescue-eagle-state"></span>
         </button>
         <button id="extra-life" type="button" aria-describedby="rescue-life-state">
           <svg class="rescue-icon" viewBox="0 0 112 72" aria-hidden="true" focusable="false"><use href="#rescue-heart" width="112" height="72"/></svg>
-          <span class="rescue-name">EXTRA LIFE</span><small><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> 4<span class="game-assistive-text"> flags</span></small><span class="rescue-state game-assistive-text" aria-hidden="true" id="rescue-life-state"></span>
+          <span class="rescue-name"><span class="lang-en" lang="en" dir="ltr">EXTRA LIFE</span><span class="lang-ar hidden" lang="ar" dir="rtl">روح إضافية</span></span><small><svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> 4<span class="game-assistive-text"> <span class="lang-en" lang="en" dir="ltr">flags</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعلام</span></span></small><span class="rescue-state game-assistive-text" aria-hidden="true" id="rescue-life-state"></span>
         </button>
       </div>
       <dialog id="sos-panel" class="sos-panel" aria-labelledby="sos-title" aria-describedby="sos-prompt">
-        <h3 id="sos-title">SEND AN SOS!</h3>
-        <p id="sos-prompt">Who will answer your call?</p>
+        <h3 id="sos-title"><span class="lang-en" lang="en" dir="ltr">SEND AN SOS!</span><span class="lang-ar hidden" lang="ar" dir="rtl">أرسل نداء استغاثة!</span></h3>
+        <p id="sos-prompt"><span class="lang-en" lang="en" dir="ltr">Who will answer your call?</span><span class="lang-ar hidden" lang="ar" dir="rtl">من سيستجيب لندائك؟</span></p>
         <div class="sos-countries">
-          <button type="button" data-sos-country="cyprus"><svg viewBox="0 0 60 40" aria-hidden="true"><use href="#sos-cyprus" width="60" height="40"/></svg>Cyprus</button>
-          <button type="button" data-sos-country="greece"><svg viewBox="0 0 60 40" aria-hidden="true"><use href="#sos-greece" width="60" height="40"/></svg>Greece</button>
-          <button type="button" data-sos-country="turkey"><svg viewBox="0 0 60 40" aria-hidden="true"><use href="#sos-turkey" width="60" height="40"/></svg>Türkiye</button>
+          <button type="button" data-sos-country="cyprus"><svg viewBox="0 0 60 40" aria-hidden="true"><use href="#sos-cyprus" width="60" height="40"/></svg><span class="lang-en" lang="en" dir="ltr">Cyprus</span><span class="lang-ar hidden" lang="ar" dir="rtl">قبرص</span></button>
+          <button type="button" data-sos-country="greece"><svg viewBox="0 0 60 40" aria-hidden="true"><use href="#sos-greece" width="60" height="40"/></svg><span class="lang-en" lang="en" dir="ltr">Greece</span><span class="lang-ar hidden" lang="ar" dir="rtl">اليونان</span></button>
+          <button type="button" data-sos-country="turkey"><svg viewBox="0 0 60 40" aria-hidden="true"><use href="#sos-turkey" width="60" height="40"/></svg><span class="lang-en" lang="en" dir="ltr">Türkiye</span><span class="lang-ar hidden" lang="ar" dir="rtl">تركيا</span></button>
         </div>
         <p id="sos-response" class="message-plaque" data-message-tone="sos" tabindex="-1" role="status" aria-live="polite"><svg class="message-siren" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><use href="#message-siren" width="32" height="28"/></svg><span id="sos-response-copy"></span></p>
-        <form method="dialog"><button type="submit" value="cancel">CANCEL</button></form>
+        <form method="dialog"><button type="submit" value="cancel"><span class="lang-en" lang="en" dir="ltr">CANCEL</span><span class="lang-ar hidden" lang="ar" dir="rtl">إلغاء</span></button></form>
       </dialog>
       <dialog id="emergency-panel" class="sos-panel emergency-panel" aria-labelledby="emergency-title" aria-describedby="emergency-message">
         <svg class="emergency-signal" viewBox="0 0 300 82" aria-hidden="true" focusable="false">
@@ -752,22 +792,22 @@ Happy Birthday Saleh. I promise. We keep moving forward.
           <path d="M141 63l2-.3m1-6 1.5 1m4.5-4v2m6 1-1.5 1m4.5 5-2-.3" stroke="#f4d39f" stroke-linecap="round"/>
           <path class="emergency-needle" d="M150 62l5-5" stroke="#ff8b74" stroke-width="1.3" stroke-linecap="round"/>
           <circle cx="150" cy="62" r="1.4" fill="#e5b979"/>
-          <text x="150" y="69" fill="#ffe3ac" text-anchor="middle" font-size="4.4" font-family="Georgia, serif" letter-spacing=".25">DISTRESS</text>
+          <text x="150" y="69" fill="#ffe3ac" text-anchor="middle" font-size="4.4" font-family="Georgia, serif" letter-spacing=".25"><tspan class="lang-en" lang="en" dir="ltr">DISTRESS</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">استغاثة</tspan></text>
         </svg>
         <div class="message-plaque emergency-copy" data-message-tone="sos">
-          <h3 id="emergency-title">MAYDAY! MAYDAY!</h3>
-          <p id="emergency-message">Captain, your boat needs help! Send an SOS to get back on the water!</p>
-          <p id="emergency-shortfall" hidden>You need 3 flags to send an SOS.</p>
+          <h3 id="emergency-title"><span class="lang-en" lang="en" dir="ltr">MAYDAY! MAYDAY!</span><span class="lang-ar hidden" lang="ar" dir="rtl">استغاثة! استغاثة!</span></h3>
+          <p id="emergency-message"><span class="lang-en" lang="en" dir="ltr">Captain, your boat needs help! Send an SOS to get back on the water!</span><span class="lang-ar hidden" lang="ar" dir="rtl">يا قبطان، قاربك بحاجة إلى المساعدة! أرسل نداء استغاثة لتعود إلى الإبحار!</span></p>
+          <p id="emergency-shortfall" hidden><span class="lang-en" lang="en" dir="ltr">You need 3 flags to send an SOS.</span><span class="lang-ar hidden" lang="ar" dir="rtl">تحتاج إلى ٣ أعلام لإرسال نداء استغاثة.</span></p>
         </div>
         <div class="emergency-actions">
-          <button id="emergency-send" type="button"><span aria-hidden="true">📡</span> SEND SOS — <svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> 3<span class="game-assistive-text"> flags</span></button>
-          <button id="emergency-end" type="button">END VOYAGE</button>
+          <button id="emergency-send" type="button"><span aria-hidden="true">📡</span> <span class="lang-en" lang="en" dir="ltr">SEND SOS —</span><span class="lang-ar hidden" lang="ar" dir="rtl">أرسل نداء استغاثة —</span> <svg class="flag-unit-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#aid-flag" width="40" height="40"/></svg> 3<span class="game-assistive-text"> <span class="lang-en" lang="en" dir="ltr">flags</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعلام</span></span></button>
+          <button id="emergency-end" type="button"><span class="lang-en" lang="en" dir="ltr">END VOYAGE</span><span class="lang-ar hidden" lang="ar" dir="rtl">إنهاء الرحلة</span></button>
         </div>
       </dialog>
     </section>
 
     <section id="finish" class="finish" aria-labelledby="finish-title" hidden>
-      <svg id="arrival" viewBox="0 0 720 400" role="img" aria-label="The captain's boat docks on a Gaza beach beside a mechanical aid crane and a Palestinian flagpole." tabindex="-1" hidden>
+      <svg id="arrival" viewBox="0 0 720 400" role="img" aria-label="The captain's boat docks on a Gaza beach beside a mechanical aid crane and a Palestinian flagpole." data-aria-label-en="The captain's boat docks on a Gaza beach beside a mechanical aid crane and a Palestinian flagpole." data-aria-label-ar="يرسو قارب القبطان على شاطئ غزة بجانب رافعة للمساعدات وسارية علم فلسطيني." tabindex="-1" hidden>
         <defs>
           <linearGradient id="landing-sky" x2=".1" y2="1"><stop stop-color="#444075"/><stop offset=".54" stop-color="#d58591"/><stop offset="1" stop-color="#ffe2a4"/></linearGradient>
           <linearGradient id="landing-water" x2=".18" y2="1"><stop stop-color="#376d85"/><stop offset=".56" stop-color="#4baea5"/><stop offset="1" stop-color="#227077"/></linearGradient>
@@ -895,7 +935,7 @@ Happy Birthday Saleh. I promise. We keep moving forward.
           <path d="M-42 17v36m86-36v36" stroke="#5e3a32" stroke-width="5"/>
           <rect x="-66" y="-11" width="132" height="31" rx="4" fill="url(#machine-brass)" stroke="#683b31" stroke-width="3"/>
           <rect x="-60" y="-5" width="120" height="19" rx="2" fill="#431f25" stroke="#efc78c"/>
-          <text x="0" y="8" fill="#ffe2a9" font-family="Georgia, serif" font-size="10.5" font-weight="bold" letter-spacing=".7" text-anchor="middle">WELCOME TO GAZA</text>
+          <text x="0" y="8" fill="#ffe2a9" font-family="Georgia, serif" font-size="10.5" font-weight="bold" letter-spacing=".7" text-anchor="middle"><tspan class="lang-en" lang="en" dir="ltr">WELCOME TO GAZA</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">أهلًا بكم في غزة</tspan></text>
         </g>
         <g class="landing-crane" aria-hidden="true">
           <path d="M394 311V167L284 147l107-13 45 29-31 7v141Z" fill="url(#machine-brass)" stroke="#58372d" stroke-width="3"/>
@@ -914,9 +954,9 @@ Happy Birthday Saleh. I promise. We keep moving forward.
         </g>
         <use class="landing-workers" href="#helper-people" x="479" y="253" width="89" height="72"/>
         <use class="landing-workers landing-workers--near" href="#helper-people" x="325" y="295" width="65" height="53"/>
-        <g id="landing-food" class="landing-load" transform="translate(444 317)"><use href="#landing-crate"/><path d="M-23-7q2-5 6-4l1 3-2 2Zm2-4-2-4m1 2 2-2m-2 3-2-1" fill="#cd9349" stroke="#96602f" stroke-width=".65"/><text x="2" y="-6.8">FOOD AID</text></g>
-        <g id="landing-water-crate" class="landing-load" transform="translate(504 337)"><use href="#landing-crate"/><path d="M-20-14q-4 5-4 7a4 4 0 0 0 8 0q0-2-4-7Z" fill="#438cc3" stroke="#265b83" stroke-width=".7"/><text x="2" y="-6.8" textLength="35" lengthAdjust="spacingAndGlyphs">CLEAN WATER</text></g>
-        <g id="landing-medical" class="landing-load" transform="translate(504 317)"><use href="#landing-crate"/><path d="M-21-13h2v2h2v2h-2v2h-2v-2h-2v-2h2Z" fill="#ab2937"/><text x="2" y="-6.8" textLength="35" lengthAdjust="spacingAndGlyphs">MEDICAL AID</text></g>
+        <g id="landing-food" class="landing-load" transform="translate(444 317)"><use href="#landing-crate"/><path d="M-23-7q2-5 6-4l1 3-2 2Zm2-4-2-4m1 2 2-2m-2 3-2-1" fill="#cd9349" stroke="#96602f" stroke-width=".65"/><text x="2" y="-6.8"><tspan class="lang-en" lang="en" dir="ltr">FOOD AID</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">مساعدات غذائية</tspan></text></g>
+        <g id="landing-water-crate" class="landing-load" transform="translate(504 337)"><use href="#landing-crate"/><path d="M-20-14q-4 5-4 7a4 4 0 0 0 8 0q0-2-4-7Z" fill="#438cc3" stroke="#265b83" stroke-width=".7"/><text x="2" y="-6.8" textLength="35" lengthAdjust="spacingAndGlyphs"><tspan class="lang-en" lang="en" dir="ltr">CLEAN WATER</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">مياه نظيفة</tspan></text></g>
+        <g id="landing-medical" class="landing-load" transform="translate(504 317)"><use href="#landing-crate"/><path d="M-21-13h2v2h2v2h-2v2h-2v-2h-2v-2h2Z" fill="#ab2937"/><text x="2" y="-6.8" textLength="35" lengthAdjust="spacingAndGlyphs"><tspan class="lang-en" lang="en" dir="ltr">MEDICAL AID</tspan><tspan class="lang-ar hidden" lang="ar" dir="rtl">مساعدات طبية</tspan></text></g>
         <g class="landing-flagpole" aria-hidden="true">
           <path d="M617 133v182" stroke="#58342b" stroke-width="9" stroke-linecap="round"/>
           <path d="M617 133v182" stroke="url(#machine-brass)" stroke-width="6" stroke-linecap="round"/>
@@ -944,24 +984,69 @@ Happy Birthday Saleh. I promise. We keep moving forward.
       </svg>
       <div id="finish-panel">
         <div id="finish-copy" class="message-plaque"><svg class="message-siren" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><use href="#message-siren" width="32" height="28"/></svg>
-          <p id="finish-kicker" hidden>🇵🇸 THE FLAG IS FLYING! 🇵🇸</p>
+          <p id="finish-kicker" hidden><span class="lang-en" lang="en" dir="ltr">🇵🇸 THE FLAG IS FLYING! 🇵🇸</span><span class="lang-ar hidden" lang="ar" dir="rtl">🇵🇸 العلم يرفرف! 🇵🇸</span></p>
           <h2 id="finish-title" tabindex="-1"></h2>
           <button id="finish-action" class="primary" type="button"></button>
           <p id="finish-message"></p>
         </div>
-        <section id="flag-ceremony" class="message-plaque" data-message-tone="success" hidden aria-label="Flag-raising ceremony">
-          <button id="raise-flag" class="primary" type="button">RAISE THE FLAG — 🕊️ 1 PEACE COIN</button>
+        <section id="flag-ceremony" class="message-plaque" data-message-tone="success" hidden aria-label="Flag-raising ceremony" data-aria-label-en="Flag-raising ceremony" data-aria-label-ar="مراسم رفع العلم">
+          <button id="raise-flag" class="primary" type="button"><span class="lang-en" lang="en" dir="ltr">RAISE THE FLAG — 🕊️ 1 PEACE COIN</span><span class="lang-ar hidden" lang="ar" dir="rtl">ارفع العلم — 🕊️ عملة سلام واحدة</span></button>
           <p id="ceremony-note" role="status"></p>
         </section>
         <section id="voyage-score" class="message-plaque" data-message-tone="success" aria-labelledby="voyage-score-title" hidden>
-          <h3 id="voyage-score-title">FINAL VOYAGE SCORE</h3>
+          <h3 id="voyage-score-title"><span class="lang-en" lang="en" dir="ltr">FINAL VOYAGE SCORE</span><span class="lang-ar hidden" lang="ar" dir="rtl">النتيجة النهائية للرحلة</span></h3>
           <dl>
-            <div><dt><svg viewBox="0 0 48 30" aria-hidden="true" focusable="false"><use href="#palestine-flag" width="48" height="30"/></svg> FLAGS:</dt><dd id="final-flags"></dd></div>
-            <div><dt><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#peace-coin" width="40" height="40"/></svg> PEACE COINS:</dt><dd id="final-coins"></dd></div>
+            <div><dt><svg viewBox="0 0 48 30" aria-hidden="true" focusable="false"><use href="#palestine-flag" width="48" height="30"/></svg> <span class="lang-en" lang="en" dir="ltr">FLAGS:</span><span class="lang-ar hidden" lang="ar" dir="rtl">الأعلام:</span></dt><dd id="final-flags"></dd></div>
+            <div><dt><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><use href="#peace-coin" width="40" height="40"/></svg> <span class="lang-en" lang="en" dir="ltr">PEACE COINS:</span><span class="lang-ar hidden" lang="ar" dir="rtl">عملات السلام:</span></dt><dd id="final-coins"></dd></div>
           </dl>
         </section>
       </div>
     </section>
   </main>
+  <footer class="site-footer" data-global-chrome>
+        <div class="footer-container">
+        <div class="footer-row">
+          <a href="legal.html" class="footer-btn footer-btn-left">
+            <span class="lang-en">Legal</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">قانوني</span>
+          </a>
+
+          <div class="footer-content">
+            <svg class="footer-flourish" viewBox="0 0 140 32" aria-hidden="true" focusable="false">
+              <g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+                <g>
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+                <g transform="translate(140 0) scale(-1 1)">
+                  <path d="M70 25Q38 27 10 9" fill="none"/>
+                  <ellipse cx="20" cy="12" rx="7" ry="2.5" transform="rotate(25 20 12)"/>
+                  <ellipse cx="33" cy="12" rx="7" ry="2.5" transform="rotate(55 33 12)"/>
+                  <ellipse cx="37" cy="23" rx="7" ry="2.5" transform="rotate(-10 37 23)"/>
+                  <ellipse cx="50" cy="18" rx="7" ry="2.5" transform="rotate(55 50 18)"/>
+                  <ellipse cx="56" cy="26" rx="7" ry="2.5"/>
+                </g>
+              </g>
+            </svg>
+            <p class="footer-text">
+              <span class="lang-en">From the Ashes, a State Rises</span>
+              <span class="lang-ar hidden" lang="ar" dir="rtl">من الرماد، تنهض دولة</span>
+            </p>
+            <p class="copyright">
+              <span class="lang-en">&copy; 2026 <span class="footer-name">American Nobody</span>999 ✌️ 🇵🇸 🧭 👈</span>
+              <span class="lang-ar hidden" lang="ar" dir="rtl">&copy; 2026 <span class="footer-name">أمريكان نوبودي</span>999 ✌️ 🇵🇸 🧭 👈</span>
+            </p>
+          </div>
+          <a href="contact.html" class="footer-btn footer-btn-right">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-ar hidden" lang="ar" dir="rtl">اتصل بنا</span>
+          </a>
+            </div>
+        </div>
+  </footer>
 </body>
 </html>
