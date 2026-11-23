@@ -1,7 +1,7 @@
 /* Global Styles 
    Author: Leslie Brockman
    Date: 10-30-2026
-   Date modified: 11/22/2026
+   Date modified: 11/23/2026
 */
 
 
@@ -10,7 +10,7 @@
    01. DESIGN TOKENS
    ===================================== */
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) [data-global-chrome] {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) [data-global-chrome] {
     --chrome-olive: #303c22;
     --chrome-panel: linear-gradient(165deg, #3a4628 0%, #303c22 48%, #252f1c 100%);
     --chrome-gold: #C9AA65;
@@ -161,8 +161,8 @@ h4 {
    04. ACCESSIBILITY & UTILITIES
    ===================================== */
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) [data-global-chrome] a:focus-visible,
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) [data-global-chrome] button:focus-visible {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) [data-global-chrome] a:focus-visible,
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) [data-global-chrome] button:focus-visible {
     outline: 3px solid var(--chrome-gold);
     outline-offset: 4px;
 }
@@ -178,14 +178,14 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
 
 /* The opt-in scope intentionally matches/exceeds legacy theme specificity.
    Remove this migration scope only after the legacy chrome is retired. */
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] {
     padding: 20px 10px;
     border: 0;
     background: #242424 var(--chrome-frame) center / cover no-repeat;
     box-shadow: none;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .header-container {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .header-container {
     position: relative;
     display: grid;
     /* Equal side tracks keep the middle centered regardless of control widths. */
@@ -205,7 +205,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     box-shadow: var(--chrome-panel-shadow);
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .mpga-wordmark {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .mpga-wordmark {
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -220,18 +220,18 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     white-space: nowrap;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .mpga-wordmark svg {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .mpga-wordmark svg {
     width: 27.5px;
     height: 31.25px;
     flex-shrink: 0;
     filter: var(--chrome-botanical-highlight);
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .mpga-wordmark svg:first-child {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .mpga-wordmark svg:first-child {
     transform: scaleX(-1);
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .mpga-wordmark > span {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .mpga-wordmark > span {
     color: var(--chrome-wordmark-ink);
     /* Unsupported strokes fall back to the four fine gold shadow offsets.
        Stroke-first painting preserves the near-black interior on thin serifs. */
@@ -240,7 +240,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     text-shadow: var(--chrome-wordmark-highlight);
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .header-center {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .header-center {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -251,7 +251,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     width: auto;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .site-title {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .site-title {
     margin: 0 0 .5rem;
     color: var(--chrome-gold);
     font-family: Georgia, 'Amiri', serif;
@@ -264,7 +264,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
 }
 
 /* Only the bilingual slogan receives the red accent, not the MPGA wordmark. */
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .state-title {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .state-title {
     position: relative;
     width: 100%;
     text-shadow: var(--chrome-slogan-shadow);
@@ -272,7 +272,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
 
 /* Anchor to the heading itself: the mobile parent uses display: contents.
    Absolute placement uses existing spacing without adding another grid item. */
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .state-title::after {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .state-title::after {
     content: "";
     position: absolute;
     inset-inline-start: 30%;
@@ -287,7 +287,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
    06. GLOBAL NAVIGATION
    ===================================== */
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .main-nav {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .main-nav {
     display: block;
     position: static;
     width: 100%;
@@ -297,7 +297,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     background: transparent;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-menu {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -309,8 +309,8 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     list-style: none;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-btn,
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .lang-toggle {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-btn,
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .lang-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -335,28 +335,28 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     cursor: pointer;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .lang-toggle {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .lang-toggle {
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-btn.active {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-btn.active {
     color: var(--chrome-gold);
     font-weight: 700;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-btn:hover {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-btn:hover {
     color: var(--chrome-nav-hover);
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .lang-toggle:hover {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .lang-toggle:hover {
     color: var(--chrome-gold);
     text-decoration: underline;
     text-underline-offset: .35rem;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .menu-toggle {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .menu-toggle {
     display: none;
     width: auto;
     min-width: 44px;
@@ -378,14 +378,14 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
    07. GLOBAL FOOTER
    ===================================== */
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] {
     text-align: center;
     padding: 20px 10px;
     border: 0;
     background: #242424 var(--chrome-frame) center / cover no-repeat;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-container {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-container {
     width: 100%;
     max-width: none;
     min-width: 0;
@@ -397,7 +397,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     box-shadow: var(--chrome-panel-shadow);
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-row {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
     align-items: center;
@@ -405,7 +405,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     gap: 1rem;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-content {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -419,7 +419,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     overflow-wrap: anywhere;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-text {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-text {
     margin: 0;
     font-family: Georgia, 'Amiri', serif;
     font-size: 1.1rem;
@@ -428,7 +428,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
 }
 
 /* Decorative branches stay centered within the existing text column. */
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-flourish {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-flourish {
     display: block;
     width: clamp(96px, 10vw, 128px);
     max-width: 100%;
@@ -441,12 +441,12 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
 
 /* Inner wrappers isolate the name from copyright metadata and emoji glyphs.
    Their parent language spans retain the shared visibility behavior. */
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-name {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-name {
     color: var(--chrome-footer-name);
     text-shadow: var(--chrome-footer-name-shadow);
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .copyright {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .copyright {
     margin: 0;
     color: var(--chrome-link);
     font-family: var(--chrome-font);
@@ -456,7 +456,7 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     opacity: 1;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-btn {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-btn {
     cursor: pointer;
     flex-shrink: 0;
     display: inline-flex;
@@ -486,11 +486,11 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
     transition: color .2s ease;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-btn-right {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-btn-right {
     justify-self: end;
 }
 
-body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-btn:hover {
+body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-btn:hover {
     color: var(--chrome-nav-hover);
 }
 
@@ -656,48 +656,48 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
         overflow-x: hidden;
     }
 
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .header-container {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .header-container {
         grid-template-columns: minmax(0, 1fr) auto;
         justify-content: center;
         gap: .5rem;
     }
 
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .header-center {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .header-center {
         /* Expose the existing heading/nav as grid items without changing JS hooks. */
         display: contents;
     }
 
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .lang-toggle {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .lang-toggle {
         grid-column: 2;
         padding-inline: .25rem;
     }
 
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .site-title {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .site-title {
         grid-column: 1 / -1;
         grid-row: 2;
         margin: 0;
         padding-inline: 48px;
     }
 
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .menu-toggle {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .menu-toggle {
         display: block;
         grid-column: 2;
         grid-row: 2;
         justify-self: end;
     }
 
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .main-nav {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .main-nav {
         display: none;
         grid-column: 1 / -1;
         grid-row: 3;
     }
 
     /* .active is toggled by main.js; keep closed navigation out of tab order. */
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .main-nav.active {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .main-nav.active {
         display: block;
     }
 
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-menu {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-header[data-global-chrome] .nav-menu {
         flex-direction: column;
         gap: .25rem;
     }
@@ -705,11 +705,11 @@ body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-ame
 
 /* Footer — stack in DOM order so visual and keyboard link order agree. */
 @media (max-width: 768px) {
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-row {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-row {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-btn {
+    body:is(.home-page, .ok-palestine-page, .ok-humanity-page, .ticket-page, .sailing-gaza-page, .ok-america-page, .ok-israelis-page, .quests-page, .world-leaders-page, .united-page, .edu-page, .feature-hero-page, .mpga-page, .about-page, .hero-page, .link-page, .faith-page, .faithi-page, .faithc-page, .face-page, .letter-page, .art-page, .drinking-games-page, .leslie-page, .reddoor-page, .legal-page, .contact-page, .circus-page-body, .eighth-front-page, .arcade-page) .site-footer[data-global-chrome] .footer-btn {
         justify-self: center;
     }
 }
