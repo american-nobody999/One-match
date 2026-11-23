@@ -1,5 +1,5 @@
 //Author: Leslie Brockman
-//Date modified: 11/22/2026
+//Date modified: 11/23/2026
 //Description: Sailing Gaza game configuration and constants
 
 (() => {
@@ -26,31 +26,31 @@
   const SIEGE_BOUNDARY = 64;
   const SWARM_BOUNDARY = 75;
   const SIEGE_REPLIES = {
-    cyprus: ['YOUR SOS WAS RECEIVED.', "IT'S BEING IGNORED."],
-    greece: ['YOUR SOS WAS HEARD.', 'IT IS ACTIVELY BEING FORWARDED TO THE NEXT COUNTRY WITH A SPINE.'],
-    turkey: ['SOS ANSWERED!', 'TÜRKİYE IS ON THE WAY!']
+    cyprus: [["YOUR SOS WAS RECEIVED.", "تم تلقي نداء استغاثتك."], ["IT'S BEING IGNORED.", "يجري تجاهله."]],
+    greece: [["YOUR SOS WAS HEARD.", "تم سماع نداء استغاثتك."], ["IT IS ACTIVELY BEING FORWARDED TO THE NEXT COUNTRY WITH A SPINE.", "يجري تحويله إلى أول دولة تملك الشجاعة للاستجابة."]],
+    turkey: [["SOS ANSWERED!", "تمت الاستجابة لنداء الاستغاثة!"], ["TÜRKİYE IS ON THE WAY!", "تركيا في الطريق!"]]
   };
   const SVG_NS = 'http://www.w3.org/2000/svg';
 
   const RESCUES = {
-    protesters: { cost: 1, enemy: 'blockade', name: 'Protesters', sprite: 'blockade-protesters', message: 'The protesters arrive by boat and organize a peaceful passage!' },
-    turkiye: { cost: 3, enemy: 'ship', name: 'SOS', sprite: 'helper-turkiye', message: 'Türkiye is on the way! Clear the waters!' },
-    eagle: { cost: 5, enemy: 'drone', name: 'MPGA Eagle', sprite: 'helper-eagle', message: 'The eagle squadron ushers the drones away!' }
+    protesters: { cost: 1, enemy: 'blockade', name: ["Protesters", "المتظاهرون"], sprite: 'blockade-protesters', message: ["The protesters arrive by boat and organize a peaceful passage!", "وصل المتظاهرون بالقوارب ونظّموا عبورًا سلميًا!"] },
+    turkiye: { cost: 3, enemy: 'ship', name: ["SOS", "الاستغاثة"], sprite: 'helper-turkiye', message: ["Türkiye is on the way! Clear the waters!", "تركيا في الطريق! أفسحوا المجال في المياه!"] },
+    eagle: { cost: 5, enemy: 'drone', name: ["MPGA Eagle", "نسر إم بي جي إيه"], sprite: 'helper-eagle', message: ["The eagle squadron ushers the drones away!", "سرب النسور يبعد الطائرات المسيّرة!"] }
   };
 
   // One staggered group is three slow ships, two medium ships, one speedboat and one drone.
   const PATROL_GROUP = ['slow', 'medium', 'slow', 'fast', 'medium', 'slow', 'drone'];
   const ADVANCED_PATROL_GROUP = [...PATROL_GROUP, 'drone'];
   const SOS_REPLIES = {
-    cyprus: 'Signal received! Try another frequency, Captain!',
-    greece: 'Message received! Keep searching for help!'
+    cyprus: ["Signal received! Try another frequency, Captain!", "وصلت الإشارة! جرّب ترددًا آخر يا قبطان!"],
+    greece: ["Message received! Keep searching for help!", "وصلت الرسالة! واصل البحث عن المساعدة!"]
   };
 
   const LEVEL_ONE_PATROL = [...PATROL_GROUP, 'medium', 'slow', 'fast', 'medium'];
   const LEVELS = [
-    { title: 'CHECKPOINT ONE: PEOPLE POWER', seconds: 52, patrol: LEVEL_ONE_PATROL, limit: 3, speed: 1, rescue: 'protesters' },
-    { title: 'CHECKPOINT TWO: SHIP BLOCKADE', seconds: 66, patrol: ADVANCED_PATROL_GROUP, groups: 2, limit: 4, speed: 1.12, rescue: 'turkiye', gate: 'command' },
-    { title: 'FINAL APPROACH: THE GIANT DRONE', seconds: 81, patrol: ADVANCED_PATROL_GROUP, groups: 3, limit: 5, speed: 1.23, rescue: 'eagle', gate: 'drone' }
+    { title: ["CHECKPOINT ONE: PEOPLE POWER", "نقطة التفتيش الأولى: قوة الشعب"], seconds: 52, patrol: LEVEL_ONE_PATROL, limit: 3, speed: 1, rescue: 'protesters' },
+    { title: ["CHECKPOINT TWO: SHIP BLOCKADE", "نقطة التفتيش الثانية: الحصار البحري"], seconds: 66, patrol: ADVANCED_PATROL_GROUP, groups: 2, limit: 4, speed: 1.12, rescue: 'turkiye', gate: 'command' },
+    { title: ["FINAL APPROACH: THE GIANT DRONE", "الاقتراب الأخير: الطائرة المسيّرة العملاقة"], seconds: 81, patrol: ADVANCED_PATROL_GROUP, groups: 3, limit: 5, speed: 1.23, rescue: 'eagle', gate: 'drone' }
   ];
 
   const SPRITES = {
@@ -68,6 +68,34 @@
   ]);
 
   const $ = id => document.getElementById(id);
+  const localizedCopy = new Map();
+  const isArabic = () => document.documentElement.lang === 'ar';
+  const localized = copy => copy[isArabic() ? 1 : 0];
+
+  function setCopy(node, copy) {
+    localizedCopy.set(node, copy);
+    const value = localized(copy);
+    if (node.textContent !== value) node.textContent = value;
+  }
+
+  function applyLanguage() {
+    const language = isArabic() ? 'ar' : 'en';
+    document.title = localized(['Sailing to Gaza | MPGA', 'الإبحار إلى غزة | إم بي جي إيه']);
+    for (const [node, copy] of localizedCopy) {
+      if (node.isConnected) setCopy(node, copy);
+      else localizedCopy.delete(node);
+    }
+    for (const element of document.querySelectorAll('[data-aria-label-en], [data-placeholder-en]')) {
+      for (const name of ['aria-label', 'placeholder']) {
+        const value = element.getAttribute('data-' + name + '-' + language);
+        if (value !== null) element.setAttribute(name, value);
+      }
+    }
+  }
+
+  new MutationObserver(applyLanguage).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  applyLanguage();
+
   const landingCargo = [
     { node: $('landing-food'), from: [305, 271], to: [444, 317] },
     { node: $('landing-water-crate'), from: [303, 283], to: [504, 337] },
@@ -109,6 +137,7 @@
   const atNavalSiege = () => state.level === 1 && state.phase === 'checkpoint';
   const atDroneSwarm = () => state.level === 2 && state.phase === 'checkpoint';
   const starSlot = index => state.level === 0 && index < LEVEL_ONE_STAR_TARGET ? { starSlot: index } : {};
+  const arabicFlags = count => count === 1 ? 'علم واحد' : count === 2 ? 'علمان' : count + ' أعلام';
   const checkpointCost = () => level().rescue === 'turkiye' ? CHECKPOINT_SOS_COST : RESCUES[level().rescue].cost;
   const rescueCost = key => key === 'turkiye' && state.phase === 'checkpoint' && level().rescue === key
     ? CHECKPOINT_SOS_COST : RESCUES[key].cost;
@@ -123,15 +152,15 @@
     statusEntrance?.cancel();
     ui.status.classList.remove('message-fading');
     ui.status.removeAttribute('data-message-tone');
-    ui.statusCopy.textContent = '';
+    setCopy(ui.statusCopy, ['', '']);
   }
 
   function announce(message, briefly = false, tone = 'information') {
     window.clearTimeout(noticeTimeout);
     ui.status.classList.remove('message-fading');
     ui.status.dataset.messageTone = tone;
-    const changed = ui.statusCopy.textContent !== message;
-    ui.statusCopy.textContent = message;
+    const changed = ui.statusCopy.textContent !== localized(message);
+    setCopy(ui.statusCopy, message);
     if (changed) {
       statusEntrance?.cancel();
       if (!reducedMotion.matches && ui.status.animate) {
@@ -165,8 +194,8 @@
   function showVoyageNote(heading, detail, tone = 'information', duration = 3600) {
     clearVoyageNote();
     ui.note.dataset.messageTone = tone;
-    ui.note.querySelector('strong').textContent = heading;
-    ui.note.querySelector('span').textContent = detail;
+    setCopy(ui.note.querySelector('strong'), heading);
+    setCopy(ui.note.querySelector('span'), detail);
     ui.note.hidden = false;
     scheduleVoyageNoteDismissal(ui.note, duration);
   }
@@ -209,7 +238,7 @@
     const active = playing();
     ui.play.dataset.paused = String(state.paused || ui.sos.open || state.phase === 'emergency');
     ui.play.dataset.steering = String(active);
-    ui.pause.textContent = state.paused ? 'Resume' : 'Pause';
+    setCopy(ui.pause, state.paused ? ['Resume', 'استئناف'] : ['Pause', 'إيقاف مؤقت']);
     ui.pause.disabled = state.phase === 'celebration';
     for (const button of ui.steering) button.disabled = !active;
     ui.halfwayMarker.classList.toggle('saved', state.halfway?.level === state.level);
@@ -235,10 +264,15 @@
     setControlState(ui.extraLife, fullLives ? 'All hearts are full' : lifeShort ? 'Not enough flags' : active ? 'Ready' : 'On standby');
   }
 
+  const ARABIC_CONTROL_STATES = {
+    'Activating': 'جارٍ التفعيل', 'Not enough flags': 'الأعلام غير كافية',
+    'On standby': 'في وضع الاستعداد', 'Ready': 'جاهز', 'All hearts are full': 'كل الأرواح مكتملة'
+  };
+
   function setControlState(button, label) {
     button.dataset.controlState = label;
     const status = button.querySelector('.rescue-state');
-    if (status.textContent !== label) status.textContent = label;
+    setCopy(status, [label, ARABIC_CONTROL_STATES[label]]);
   }
 
   function renderHUD() {
@@ -251,7 +285,9 @@
       heart.setAttribute('aria-hidden', 'true');
       ui.hearts.append(heart);
     }
-    ui.hearts.setAttribute('aria-label', state.lives + ' of ' + MAX_LIVES + ' hearts remaining');
+    ui.hearts.dataset.ariaLabelEn = state.lives + ' of ' + MAX_LIVES + ' hearts remaining';
+    ui.hearts.dataset.ariaLabelAr = 'الأرواح المتبقية: ' + state.lives + ' من ' + MAX_LIVES;
+    ui.hearts.setAttribute('aria-label', isArabic() ? ui.hearts.dataset.ariaLabelAr : ui.hearts.dataset.ariaLabelEn);
     syncControls();
   }
 
@@ -460,14 +496,16 @@
     state.player.y = clamp(halfway?.y ?? HEIGHT / 2, BOAT_BOUNDS.y, HEIGHT - BOAT_BOUNDS.y);
     place(ui.player, state.player.x, state.player.y);
     ui.player.classList.remove('damaged', 'cheering');
-    ui.title.textContent = 'Level ' + (index + 1) + ' · ' + level().title;
+    const [titleEn, titleAr] = level().title;
+    setCopy(ui.title, ['Level ' + (index + 1) + ' · ' + titleEn, 'المستوى ' + (index + 1) + ' · ' + titleAr]);
     ui.progress.value = state.distance / level().seconds * 100;
     clearCelebration();
     clearVoyageNote();
     const requiredRescue = RESCUES[level().rescue];
     const cost = checkpointCost();
     const unit = cost === 1 ? 'flag' : 'flags';
-    ui.checkpointHint.textContent = requiredRescue.name + ' — ' + cost + ' ' + unit + '.';
+    const [nameEn, nameAr] = requiredRescue.name;
+    setCopy(ui.checkpointHint, [nameEn + ' — ' + cost + ' ' + unit + '.', nameAr + ' — ' + arabicFlags(cost) + '.']);
     clearStatus();
     renderHUD();
     ui.title.focus();
@@ -478,8 +516,8 @@
     resetFinale();
     Object.assign(state, { stars: 0, lives: MAX_LIVES, highestUnlocked: 0, cleared: new Set(), levelOneCollected: new Set(), collectedCoins: new Set(), peaceBalance: 0, flagsCollected: 0 });
     ui.peaceDisplay.textContent = 0;
-    ui.captainPrefix.textContent = state.captain ? 'Captain ' : '';
-    ui.captain.textContent = state.captain || 'Captain';
+    setCopy(ui.captainPrefix, state.captain ? ['Captain ', 'القبطان '] : ['', '']);
+    setCopy(ui.captain, state.captain ? [state.captain, state.captain] : ['Captain', 'القبطان']);
     ui.boat.setAttribute('href', '#boat-' + state.boat);
     ui.setup.hidden = true;
     ui.finish.hidden = true;
@@ -613,7 +651,15 @@
     }
     ui.progress.value = 100;
     const cost = checkpointCost();
-    ui.checkpointGuidance.textContent = (atNavalSiege() || atDroneSwarm()) ? '' : 'Checkpoint reached. Call ' + rescue.name + ' for ' + cost + ' flags. If you are short, collect the flags that appear.';
+    if (atNavalSiege() || atDroneSwarm()) {
+      setCopy(ui.checkpointGuidance, ['', '']);
+    } else {
+      const [nameEn, nameAr] = rescue.name;
+      setCopy(ui.checkpointGuidance, [
+        'Checkpoint reached. Call ' + nameEn + ' for ' + cost + ' flags. If you are short, collect the flags that appear.',
+        'وصلت إلى نقطة التفتيش. اطلب مساعدة ' + nameAr + ' مقابل ' + arabicFlags(cost) + '. إذا لم تكفِ أعلامك، فاجمع الأعلام التي تظهر.'
+      ]);
+    }
     clearStatus();
     supplyCheckpointStar();
     syncControls();
@@ -637,7 +683,10 @@
       return true;
     }
     state.pendingSpend = key;
-    announce('Spending now leaves fewer than ' + needed + ' flags for this checkpoint. Press the same control again to confirm.', false, 'caution');
+    announce([
+      'Spending now leaves fewer than ' + needed + ' flags for this checkpoint. Press the same control again to confirm.',
+      'إذا أنفقت أعلامك الآن، فلن يتبقى ما يكفي لنقطة التفتيش (' + arabicFlags(needed) + '). اضغط الزر نفسه مرة أخرى للتأكيد.'
+    ], false, 'caution');
     return false;
   }
 
@@ -647,7 +696,7 @@
   }
 
   function prematureRescue() {
-    announce("We don't need them yet!", true, 'caution');
+    announce(["We don't need them yet!", "لا نحتاج إليهم بعد!"], true, 'caution');
   }
 
   function returnToHalfway() {
@@ -671,7 +720,7 @@
       return;
     }
     returnToHalfway();
-    showVoyageNote('WRONG RESCUE, CAPTAIN!', 'One heart lost. Returning to halfway!', 'warning');
+    showVoyageNote(["WRONG RESCUE, CAPTAIN!", "خيار الإنقاذ غير مناسب يا قبطان!"], ["One heart lost. Returning to halfway!", "فقدت روحًا واحدة. العودة إلى منتصف المرحلة!"], 'warning');
   }
 
   function retreatTargets(targets, blockade = false) {
@@ -694,7 +743,10 @@
     const targets = matchingRescueTargets(key);
     if (!targets.length) {
       state.pendingSpend = null;
-      if (state.phase === 'checkpoint') announce(power.name + ' has no matching obstacle here. No flags were used.', false, 'caution');
+      if (state.phase === 'checkpoint') announce([
+        power.name[0] + ' has no matching obstacle here. No flags were used.',
+        'لا يوجد عائق يستدعي مساعدة ' + power.name[1] + ' هنا. لم تُخصم أي أعلام.'
+      ], false, 'caution');
       else {
         if (fromSOS) ui.sos.close();
         prematureRescue();
@@ -800,7 +852,7 @@
     if (!approveSpend('life', EXTRA_LIFE_COST, false)) return;
     state.stars -= EXTRA_LIFE_COST;
     state.lives++;
-    announce('One heart restored.', true, 'success');
+    announce(["One heart restored.", "استعدت روحًا واحدة."], true, 'success');
     renderHUD();
   }
 
@@ -818,11 +870,11 @@
     clearVoyageNote();
     const siege = state.level === 1;
     ui.siegeCelebration.hidden = !siege;
-    ui.checkpointTitle.textContent = siege ? 'CHECKPOINT TWO CLEARED!' : 'CHECKPOINT CLEARED!';
-    ui.next.textContent = siege ? 'KEEP SAILING, CAPTAIN!' : 'KEEP SAILING!';
+    setCopy(ui.checkpointTitle, siege ? ["CHECKPOINT TWO CLEARED!", "تم اجتياز نقطة التفتيش الثانية!"] : ["CHECKPOINT CLEARED!", "تم اجتياز نقطة التفتيش!"]);
+    setCopy(ui.next, siege ? ["KEEP SAILING, CAPTAIN!", "واصل الإبحار يا قبطان!"] : ["KEEP SAILING!", "واصل الإبحار!"]);
     ui.peoplePower.hidden = state.level !== 0;
     ui.card.hidden = false;
-    announce('Checkpoint cleared! Three bonus flags.', false, 'success');
+    announce(["Checkpoint cleared! Three bonus flags.", "تم اجتياز نقطة التفتيش! حصلت على ثلاثة أعلام إضافية."], false, 'success');
     renderHUD();
     animateBonus();
     ui.checkpointTitle.focus();
@@ -887,7 +939,7 @@
     state.lives = 1;
     startLevel(state.level, state.halfway);
     state.invulnerable = 2;
-    announce('SOS ANSWERED! BACK TO SAILING!', true, 'success');
+    announce(["SOS ANSWERED! BACK TO SAILING!", "تمت الاستجابة لنداء الاستغاثة! عُد إلى الإبحار!"], true, 'success');
     startLoop();
   }
 
@@ -908,18 +960,18 @@
     ui.arrival.toggleAttribute('hidden', !won);
     ui.arrivalBoat.setAttribute('href', '#boat-' + state.boat);
     ui.finishCopy.dataset.messageTone = won ? 'success' : 'warning';
-    ui.finishTitle.textContent = won ? 'THE AID HAS REACHED GAZA!' : 'GAME OVER';
-    ui.finishMessage.textContent = won ? '' : 'Even brave captains need another try. Your boat is ready when you are!';
+    setCopy(ui.finishTitle, won ? ["THE AID HAS REACHED GAZA!", "وصلت المساعدات إلى غزة!"] : ["GAME OVER", "انتهت اللعبة"]);
+    setCopy(ui.finishMessage, won ? ['', ''] : ["Even brave captains need another try. Your boat is ready when you are!", "حتى القباطنة الشجعان يحتاجون إلى محاولة أخرى. قاربك جاهز عندما تكون مستعدًا!"]);
     ui.finishKicker.hidden = true;
     ui.finishPanel.hidden = won;
     ui.ceremony.hidden = true;
     ui.raiseFlag.hidden = !won || state.peaceBalance < 1;
     ui.finishAction.disabled = false;
     ui.voyageScore.hidden = true;
-    ui.ceremonyNote.textContent = state.peaceBalance
-      ? ''
-      : 'You need 1 Peace Coin to raise the flag. Sail again to collect one!';
-    ui.finishAction.textContent = won ? '← DO ANOTHER AID RUN' : 'RETRY';
+    setCopy(ui.ceremonyNote, state.peaceBalance
+      ? ['', '']
+      : ["You need 1 Peace Coin to raise the flag. Sail again to collect one!", "تحتاج إلى عملة سلام واحدة لرفع العلم. أبحر مجددًا لجمع عملة!"]);
+    setCopy(ui.finishAction, won ? ["← DO ANOTHER AID RUN", "← ابدأ رحلة مساعدات أخرى"] : ["RETRY", "حاول مجددًا"]);
     if (won) {
       setFinaleStage('arrival');
       ui.arrival.scrollIntoView({ block: 'start' });
@@ -996,7 +1048,7 @@
       setFinaleStage('flag-raised');
       floatLandingPeaceSigns();
       ui.finishKicker.hidden = false;
-      ui.finishTitle.textContent = 'Mission Complete, Captain!';
+      setCopy(ui.finishTitle, ["Mission Complete, Captain!", "اكتملت المهمة يا قبطان!"]);
       ui.ceremony.hidden = true;
       showVoyageScore();
       recordPeaceBest(state.peaceBalance);
@@ -1123,7 +1175,7 @@
           } else {
             state.lives--;
             state.invulnerable = 1.5;
-            announce('Watch out! One heart lost.', true, 'warning');
+            announce(["Watch out! One heart lost.", "انتبه! فقدت روحًا واحدة."], true, 'warning');
           }
           renderHUD();
         }
@@ -1148,7 +1200,7 @@
           activeSailingTime: state.level === 1 ? level().seconds / 2 : state.activeSailingTime,
           starDue: state.starDue, starIndex: state.starIndex, hazardIndex: state.hazardIndex, hazardDue: state.hazardDue };
         syncControls();
-        showVoyageNote('HALFWAY THERE, CAPTAIN!', 'Checkpoint saved!', 'success', 2400);
+        showVoyageNote(["HALFWAY THERE, CAPTAIN!", "بلغت منتصف المرحلة يا قبطان!"], ["Checkpoint saved!", "تم حفظ نقطة التفتيش!"], 'success', 2400);
       }
       if (progress >= 1) enterCheckpoint();
       else {
@@ -1200,8 +1252,8 @@
     state.pendingSpend = null;
     clearInput();
     syncControls();
-    announce(paused ? 'Paused. Press Resume when you are ready.' :
-      state.phase === 'checkpoint' ? 'Checkpoint ready. Collect flags or call the required rescue.' : 'Back at sea. Keep sailing!', !paused);
+    announce(paused ? ["Paused. Press Resume when you are ready.", "اللعبة متوقفة مؤقتًا. اضغط «استئناف» عندما تكون مستعدًا."] :
+      state.phase === 'checkpoint' ? ["Checkpoint ready. Collect flags or call the required rescue.", "أنت عند نقطة التفتيش. اجمع الأعلام أو اطلب الإنقاذ المطلوب."] : ["Back at sea. Keep sailing!", "عدت إلى البحر. واصل الإبحار!"], !paused);
   }
 
   const sosButton = ui.rescues.find(button => button.dataset.rescue === 'turkiye');
@@ -1276,7 +1328,8 @@
     }
     clearInput();
     state.pendingSpend = null;
-    ui.sosResponseCopy.textContent = '';
+    for (const child of ui.sosResponseCopy.children) localizedCopy.delete(child);
+    setCopy(ui.sosResponseCopy, ['', '']);
     ui.sosResponse.dataset.messageTone = 'sos';
     ui.sos.returnValue = '';
     ui.sos.toggleAttribute('data-naval-siege', early || atNavalSiege());
@@ -1310,9 +1363,10 @@
     ui.sosResponse.dataset.messageTone = country === 'greece' ? 'caution' : 'sos';
     const [heading, detail] = SIEGE_REPLIES[country];
     const title = document.createElement('strong');
-    title.textContent = heading;
+    setCopy(title, heading);
     const message = document.createElement('span');
-    message.textContent = detail;
+    setCopy(message, detail);
+    localizedCopy.delete(ui.sosResponseCopy);
     ui.sosResponseCopy.replaceChildren(title, message);
     ui.sosResponse.focus();
     renderHUD();
@@ -1335,7 +1389,7 @@
     const targets = state.entities.filter(entity => entity.boss).sort((left, right) => right.stopX - left.stopX);
     state.siegeRide = { node, time: 0, targets, effects: [] };
     state.stars -= CHECKPOINT_SOS_COST;
-    announce(SIEGE_REPLIES.turkey.join(' '), false, 'success');
+    announce([0, 1].map(index => SIEGE_REPLIES.turkey.map(copy => copy[index]).join(' ')), false, 'success');
     ui.status.focus({ preventScroll: true });
     renderHUD();
   }
@@ -1399,16 +1453,16 @@
         selectSiegeCountry(button.dataset.sosCountry);
       } else if (beforeNavalSiege() && button.dataset.sosCountry === 'turkey') {
         ui.sosResponse.dataset.messageTone = 'information';
-        ui.sosResponseCopy.textContent = "We don't need them quite yet—keep sailing.";
+        setCopy(ui.sosResponseCopy, ["We don't need them quite yet—keep sailing.", "لا نحتاج إليهم الآن — واصل الإبحار."]);
       } else if (state.phase === 'checkpoint' && level().rescue !== 'turkiye' && !state.paused) {
         wrongCheckpointRescue('turkiye');
       } else if (button.dataset.sosCountry === 'turkey') {
-        if (state.paused) ui.sosResponseCopy.textContent = 'Close the radio panel and press Resume to continue.';
+        if (state.paused) setCopy(ui.sosResponseCopy, ["Close the radio panel and press Resume to continue.", "أغلق لوحة اللاسلكي واضغط «استئناف» للمتابعة."]);
         else callRescue('turkiye');
       } else {
         state.pendingSpend = null;
         ui.sosResponse.dataset.messageTone = 'sos';
-        ui.sosResponseCopy.textContent = SOS_REPLIES[button.dataset.sosCountry];
+        setCopy(ui.sosResponseCopy, SOS_REPLIES[button.dataset.sosCountry]);
       }
     });
   }
@@ -1456,6 +1510,7 @@
   }
 
   window.addEventListener('keydown', event => {
+    if (event.target instanceof Element && event.target.closest('[data-global-chrome]')) return;
     const key = event.key.toLowerCase();
     const direction = KEY_DIRECTIONS.get(key);
     if (!direction || !playing() || event.ctrlKey || event.metaKey || event.altKey) return;
