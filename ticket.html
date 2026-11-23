@@ -2,11 +2,12 @@
 MPAG: Golden Ticket page
 Leslie Brockman
 Date last modified: 2026-10-26
-This page is to keep track of the Flotilla groups and to keep the public informed of the progress of the flotilla and the humanitarian aid being sent to Palestine. The page will be updated regularly with the latest information and updates from the flotilla groups. The page will also include links to relevant news articles and social media posts related to the flotilla and the humanitarian aid being sent to Palestine.
+You owe me Tacos. Also, You have to have the chat and live stream, whether its one boat or 1000. I will contuine working and expanding on my end to get more attention. As always, Palestine remains the focus and the priority.
 Does my coding standards bother you?
 good.
 I hope so.
 no one told you to come in here nosing around my 1s and 0s.
+I also limited my use of Dev AI agents in writing this code to be respectful of those who don't like AI and would prefer human. Why it took so damn long. Theres probley a million errors I missed.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@ no one told you to come in here nosing around my 1s and 0s.
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <!-- Styles -->
     <link rel="stylesheet" href="styles/styles2.css?v=20261007-2">
-    <link rel="stylesheet" href="styles/ticket.css?v=20261007-2">
+    <link rel="stylesheet" href="styles/ticket.css?v=20261122-phase5-11">
 </head>
 
 <body class="ticket-page">
@@ -69,84 +70,252 @@ no one told you to come in here nosing around my 1s and 0s.
   </header>
 
 <main class="ticket-page">
-    <!-- Featured directory: all images, descriptions, and social URLs await owner verification. -->
-    <section class="flotilla-missions" aria-labelledby="flotilla-missions-title">
-        <h2 id="flotilla-missions-title"><span class="lang-en" lang="en" dir="ltr">Flotilla Missions</span><span class="lang-ar hidden" lang="ar" dir="rtl">مهمات أساطيل الحرية</span></h2>
-        <div class="flotilla-missions-gallery" role="region" tabindex="0" aria-labelledby="flotilla-missions-gallery-label" dir="ltr">
-            <span id="flotilla-missions-gallery-label" class="flotilla-missions-gallery-label"><span class="lang-en" lang="en" dir="ltr">Flotilla mission image gallery — scroll horizontally</span><span class="lang-ar hidden" lang="ar" dir="rtl">معرض صور مهمات الأسطول — مرّر أفقيًا</span></span>
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/30-1.jpg" alt="Flotilla mission gallery image 1" loading="lazy">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/30-2.jpg" alt="Flotilla mission gallery image 2" loading="lazy">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/30-3.jpg" alt="Flotilla mission gallery image 3" loading="lazy">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/30-4.jpg" alt="Flotilla mission gallery image 4" loading="lazy">
+    <section class="captains-quarters" aria-labelledby="captains-quarters-title">
+      <div class="captains-quarters-environment" aria-hidden="true">
+        <div class="ship-cabin-background"></div>
+        <div class="ship-cabin-framing"></div>
+        <div class="ship-cabin-windows">
+          <div class="ship-cabin-arched-window">
+            <div class="mediterranean-sunrise"></div>
+            <div class="distant-gaza-coastline"></div>
+          </div>
+          <div class="ship-cabin-arched-window">
+            <div class="mediterranean-sunrise"></div>
+            <div class="distant-gaza-coastline"></div>
+            <span class="gaza-coast-flag" aria-hidden="true"></span>
+          </div>
         </div>
+      </div>
+
+      <div class="navigation-table" data-ticket-table>
+        <h2 id="captains-quarters-title"><span class="lang-en" lang="en" dir="ltr">MPGA Quarters</span><span class="lang-ar hidden" lang="ar" dir="rtl">مقصورة &#x2066;MPGA&#x2069;</span></h2>
+        <div class="navigation-table-surface" role="group" aria-labelledby="navigation-table-title">
+          <h3 id="navigation-table-title"><span class="lang-en" lang="en" dir="ltr">MPGA Navigation Table</span><span class="lang-ar hidden" lang="ar" dir="rtl">طاولة ملاحة &#x2066;MPGA&#x2069;</span></h3>
+          <div class="desk-mechanisms" aria-hidden="true">
+            <span class="desk-gear-mount"></span>
+            <span class="desk-gear-mount desk-gear-mount--aft"></span>
+            <span class="desk-pressure-gauge"></span>
+          </div>
+          <div class="navigation-table-instruments" aria-hidden="true">
+            <span class="desk-compass"></span>
+            <div class="desk-chart">
+              <!-- Schematic eastern Mediterranean coastline, generalized for decoration. -->
+              <svg class="desk-chart-map" viewBox="0 0 320 180" aria-hidden="true" focusable="false">
+                <rect class="desk-map-sea" x="1" y="1" width="318" height="178" rx="2"/>
+                <g class="desk-map-land">
+                  <!-- Southern Italy, the Adriatic, Greece, Anatolia and the Levant. -->
+                  <path d="M1 1H319V147L301 157Q303 147 309 139L312 117L316 102L309 91L311 76L301 82L294 71L277 76L258 72L245 76L234 71L226 68L219 56L212 53L209 41L198 35L184 40L179 48L169 43L163 49L165 59L174 65L170 77L162 72L154 80L149 73L142 70L151 61L143 58L134 48L126 38L119 30L102 20L88 7L73 1H56L63 12L76 23L91 31L102 39L107 51L98 47L91 42L88 53L78 64L74 59L82 48L77 39L67 32L58 23L49 13L44 1Z"/>
+                  <!-- North African coast, from Tunisia to the Nile Delta and Sinai. -->
+                  <path d="M1 91L13 82L24 82L19 94L25 102L23 114L35 125L50 128L61 136L72 136L85 143L98 148L115 147L127 133L140 130L156 135L175 137L195 143L214 144L235 147L250 141L263 141L277 148L286 149L301 157L319 147V179H1Z"/>
+                  <path d="M43 62L57 58L76 61L69 70L65 79L58 75L49 70Z M172 96L184 94L194 97L206 96L214 101L200 104L186 102L177 104Z M264 104L274 101L286 102L297 96L291 105L280 111L269 109Z"/>
+                  <path class="desk-map-minor" d="M187 72L191 70L194 74L190 77Z M202 78L207 77L208 81L203 83Z M221 87L227 85L227 89L222 91Z"/>
+                </g>
+                <path class="desk-map-grid" d="M40 2V178M80 2V178M120 2V178M160 2V178M200 2V178M240 2V178M280 2V178M2 36H318M2 72H318M2 108H318M2 144H318"/>
+                <path class="desk-map-rhumbs" d="M39 82L244 132M39 82L118 8M39 82L109 157M39 82L225 67"/>
+                <g class="desk-map-rose" transform="translate(39 82)">
+                  <circle r="15" fill="none"/>
+                  <path d="M0-19L3-3L19 0L3 3L0 19L-3 3L-19 0L-3-3Z"/>
+                  <circle r="2.3"/>
+                </g>
+                <g class="desk-map-gaza">
+                  <circle cx="301" cy="157" r="8.5" fill="none"/>
+                  <path d="M301 157L301 143L308 145L301 148M294 150L281 128" fill="none"/>
+                  <text class="lang-en" lang="en" x="278" y="126" text-anchor="end">Gaza</text>
+                  <text class="lang-ar hidden" lang="ar" x="256" y="126" text-anchor="start" direction="rtl">غزة</text>
+                </g>
+              </svg>
+            </div>
+            <div class="desk-instrument-cluster">
+              <span class="desk-sextant"></span>
+              <span class="desk-gauge"></span>
+            </div>
+            <span class="desk-ruler"></span>
+            <span class="desk-gear"></span>
+          </div>
+          <div class="navigation-table-objects">
+            <button class="table-object table-object--manifest" type="button" data-ticket-open aria-controls="flotilla-directory" aria-expanded="false"><span class="manifest-nameplate"><span class="lang-en" lang="en" dir="ltr">Ship's Manifest</span><span class="lang-ar hidden" lang="ar" dir="rtl">سجل السفينة</span><small><span class="lang-en" lang="en" dir="ltr">Flotilla Organization Directory</span><span class="lang-ar hidden" lang="ar" dir="rtl">دليل منظمات الأساطيل</span></small></span></button>
+            <button class="table-object table-object--chart" type="button" data-ticket-open aria-controls="april-flotillas-2027" aria-expanded="false"><span class="table-chart-year" aria-hidden="true">2027</span><span class="lang-en" lang="en" dir="ltr">Navigation Chart</span><span class="lang-ar hidden" lang="ar" dir="rtl">خريطة الملاحة</span><small><span class="lang-en" lang="en" dir="ltr">Upcoming April 2027 Mission</span><span class="lang-ar hidden" lang="ar" dir="rtl">مهمة أبريل ٢٠٢٧ القادمة</span></small><svg class="table-chart-ribbon" viewBox="0 0 32 40" aria-hidden="true" focusable="false">
+              <path fill="#78232b" d="M16 5C10 4 8 8 10 13c2 5 10 12 18 22l-6 4C17 30 7 22 4 14 0 5 7 0 16 0c7 0 12 4 11 10l-6 1c0-4-2-6-5-6Z"/>
+              <path fill="#a3343e" d="M16 0c9 0 14 6 11 14-3 8-12 16-17 25l-6-4c7-10 15-17 17-23 2-5-1-7-5-7-3 0-6 1-7 4C9 4 12 1 16 0Z"/>
+              <path fill="none" stroke="#e28581" stroke-width=".95" d="M19 2c6 1 8 6 6 11-2 6-9 13-15 21M5 10c0 5 3 10 7 14"/>
+            </svg></button>
+            <div class="navigation-table-scrapbooks" role="group" aria-labelledby="navigation-table-scrapbooks-title">
+              <h4 id="navigation-table-scrapbooks-title"><span class="lang-en" lang="en" dir="ltr">Scrapbooks</span><span class="lang-ar hidden" lang="ar" dir="rtl">سجلات الذكريات</span></h4>
+              <ul>
+                <li><button class="table-object table-object--scrapbook" type="button" data-ticket-open aria-controls="scrapbook-freedom-flotilla" aria-expanded="false"><span class="lang-en" lang="en" dir="ltr">Freedom Flotilla Coalition</span><span class="lang-ar hidden" lang="ar" dir="rtl">ائتلاف أسطول الحرية</span>
+                  <svg class="scrapbook-cover-engraving" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+                    <g fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="32" cy="9" r="3"/><path d="M32 12v25m-8-19h16M15 26l2 6 5-4m27-2-2 6-5-4M17 32q6 8 15 8t15-8M11 35l5 3m37-3-5 3"/>
+                      <path d="M6 5h3M55 5h3M6 39h3M55 39h3" opacity=".72"/>
+                    </g>
+                  </svg>
+                  <span class="scrapbook-cover-year" aria-hidden="true" dir="ltr">2026</span>
+                </button></li>
+                <li><button class="table-object table-object--scrapbook" type="button" data-ticket-open aria-controls="scrapbook-freedom-convoy" aria-expanded="false"><span class="lang-en" lang="en" dir="ltr">Freedom Convoy USA</span><span class="lang-ar hidden" lang="ar" dir="rtl">قافلة الحرية الأمريكية</span>
+                  <svg class="scrapbook-cover-engraving" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+                    <g fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="32" cy="22" r="14"/><circle cx="32" cy="22" r="10.5"/><circle cx="32" cy="22" r="3"/><path d="M32 11v8m0 6v8M21 22h8m6 0h8M24 14l6 6m4 4 6 6m0-16-6 6m-4 4-6 6M10 37h12m20 0h12"/>
+                      <path d="M6 5h3M55 5h3M6 39h3M55 39h3" opacity=".72"/>
+                    </g>
+                  </svg>
+                  <span class="scrapbook-cover-year" aria-hidden="true" dir="ltr">2026</span>
+                </button></li>
+                <li><button class="table-object table-object--scrapbook" type="button" data-ticket-open aria-controls="scrapbook-global-sumud" aria-expanded="false"><span class="lang-en" lang="en" dir="ltr">Global Sumud Flotilla</span><span class="lang-ar hidden" lang="ar" dir="rtl">أسطول الصمود العالمي</span>
+                  <svg class="scrapbook-cover-engraving" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+                    <g fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 30h44l-7 7H19zM29 30V8m0 4-11 15h11m0-14 13 14H30m-16 13q5-3 10 0t10 0 10 0 9-1"/><path d="M30 8h14v2H30Z" fill="#25201c" stroke="none"/><path d="M30 10h14v2H30Z" fill="#f1e3c1" stroke="none"/><path d="M30 12h14v2H30Z" fill="#3d6346" stroke="none"/><path d="m30 8 5 3-5 3Z" fill="#8c3540" stroke="none"/>
+                      <path d="M6 5h3M55 5h3M6 39h3M55 39h3" opacity=".72"/>
+                    </g>
+                  </svg>
+                  <span class="scrapbook-cover-year" aria-hidden="true" dir="ltr">2026</span>
+                </button></li>
+              </ul>
+            </div>
+            <button class="table-object table-object--ship" type="button" data-ticket-open aria-controls="sail-to-gaza" aria-expanded="false"><span class="table-ship-model" aria-hidden="true"><svg class="table-ship-mast-flag" viewBox="0 0 26 13" aria-hidden="true" focusable="false">
+              <path fill="#f4e9d6" d="M0 0h26v13H0z"/>
+              <path fill="none" stroke="#a33e43" d="M0 .5h26m-26 2h26m-26 2h26m-26 2h26m-26 2h26m-26 2h26m-26 2h26"/>
+              <path fill="#33445f" d="M0 0h11v7H0z"/>
+              <path fill="none" stroke="#fff8e5" stroke-width=".8" stroke-linecap="round" d="M2 1.5h.1m3.3 0h.1m3.3 0h.1M3.7 3.5h.1m3.3 0h.1M2 5.5h.1m3.3 0h.1m3.3 0h.1"/>
+            </svg><span class="table-ship-sails"></span><span class="table-ship-hull"></span><span class="table-ship-stand"></span></span><span class="table-ship-plaque"><span class="lang-en" lang="en" dir="ltr">Sail to Gaza</span><span class="lang-ar hidden" lang="ar" dir="rtl">الإبحار إلى غزة</span></span></button>
+          </div>
+        </div>
+
+        <div class="navigation-table-panels">
+          <section class="ticket-panel flotilla-missions" id="flotilla-directory" data-ticket-panel aria-labelledby="flotilla-directory-title" hidden>
+            <header class="ticket-panel-heading">
+              <h2 id="flotilla-directory-title" tabindex="-1"><span class="lang-en" lang="en" dir="ltr">Flotilla Organization Directory</span><span class="lang-ar hidden" lang="ar" dir="rtl">دليل منظمات الأساطيل</span></h2>
+              <button type="button" class="ticket-panel-close" data-ticket-close><span class="lang-en" lang="en" dir="ltr">Back to the Desk</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مكتب القبطان</span></button>
+            </header>
+            <!-- Featured directory: all images, descriptions, and social URLs await owner verification. -->
         <div class="flotilla-missions-grid">
-            <article class="flotilla-missions-card" aria-labelledby="mission-global-sumud">
-                <figure class="flotilla-missions-image">
+            <article class="flotilla-missions-card" aria-labelledby="mission-global-sumud" data-flotilla-card>
+                <div class="flotilla-card-turner">
+                    <div class="flotilla-card-face" id="mission-global-sumud-front">
+                        <h3 id="mission-global-sumud"><span class="lang-en" lang="en" dir="ltr">Global Sumud Flotilla</span><span class="lang-ar hidden" lang="ar" dir="rtl">أسطول الصمود العالمي</span></h3>
+                        <figure class="flotilla-missions-image">
                     <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/gfs-logo.jpg" alt="Global Sumud Flotilla logo" width="600" height="300" loading="lazy">
                 </figure>
-                <h3 id="mission-global-sumud"><span class="lang-en" lang="en" dir="ltr">Global Sumud Flotilla</span><span class="lang-ar hidden" lang="ar" dir="rtl">أسطول الصمود العالمي</span></h3>
-                <p><span class="lang-en" lang="en" dir="ltr">The Global Sumud Flotilla is an international, civilian-led movement bringing together activists, humanitarian volunteers, and solidarity organizations working to challenge the blockade of Gaza and advocate for humanitarian access and Palestinian rights. Its mission emphasizes peaceful, nonviolent collective action and international solidarity.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أسطول الصمود العالمي حركة دولية يقودها مدنيون، تجمع ناشطين ومتطوعين في المجال الإنساني ومنظمات تضامنية تعمل على تحدي الحصار المفروض على غزة والدعوة إلى إيصال المساعدات الإنسانية وحماية حقوق الفلسطينيين. وتركز مهمته على العمل الجماعي السلمي وغير العنيف والتضامن الدولي.</span></p>
-                <div class="flotilla-missions-social">
-                    <!-- Owner-supplied accounts; owner confirmation required before publication. -->
+                        <!-- Owner-supplied accounts; owner confirmation required before publication. -->
                     <div class="flotilla-missions-social-links">
                         <a class="social-link" href="https://www.instagram.com/globalsumudflotilla/" target="_blank" rel="noopener noreferrer" aria-label="Global Sumud Flotilla — Instagram / أسطول الصمود العالمي — إنستغرام"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
                         <a class="social-link" href="https://www.youtube.com/@globalsumudflotilla" target="_blank" rel="noopener noreferrer" aria-label="Global Sumud Flotilla — YouTube / أسطول الصمود العالمي — يوتيوب"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="m10 9 6 3-6 3z" fill="#303c22"/></svg></a>
                         <a class="social-link" href="https://x.com/gbsumudflotilla" target="_blank" rel="noopener noreferrer" aria-label="Global Sumud Flotilla — X / أسطول الصمود العالمي — إكس"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.4-8.5L.8 2h6.5l4.5 6.8zM17.9 20h1.7L6.3 4H4.5z"/></svg></a>
                     </div>
-                    <a class="site-button" href="https://globalsumudflotilla.org/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Official Website</span><span class="lang-ar hidden" lang="ar" dir="rtl">الموقع الرسمي</span></a>
+                        <button class="flotilla-card-flip" type="button" data-flotilla-flip aria-controls="mission-global-sumud-back" aria-expanded="false"><svg class="flotilla-card-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 9a7.5 7.5 0 1 0 .55 5.5M19 4v5h-5"/></svg><span class="flotilla-card-flip-label"><span class="lang-en" lang="en" dir="ltr">Turn card over</span><span class="lang-ar hidden" lang="ar" dir="rtl">اقلب البطاقة</span></span></button>
+                    </div>
+                    <div class="flotilla-card-face flotilla-card-back" id="mission-global-sumud-back" inert aria-hidden="true">
+                        <p><span class="lang-en" lang="en" dir="ltr">The Global Sumud Flotilla is an international, civilian-led movement bringing together activists, humanitarian volunteers, and solidarity organizations working to challenge the blockade of Gaza and advocate for humanitarian access and Palestinian rights. Its mission emphasizes peaceful, nonviolent collective action and international solidarity.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أسطول الصمود العالمي حركة دولية يقودها مدنيون، تجمع ناشطين ومتطوعين في المجال الإنساني ومنظمات تضامنية تعمل على تحدي الحصار المفروض على غزة والدعوة إلى إيصال المساعدات الإنسانية وحماية حقوق الفلسطينيين. وتركز مهمته على العمل الجماعي السلمي وغير العنيف والتضامن الدولي.</span></p>
+                        <a class="site-button" href="https://globalsumudflotilla.org/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Official Website</span><span class="lang-ar hidden" lang="ar" dir="rtl">الموقع الرسمي</span></a>
+                        <button class="flotilla-card-flip" type="button" data-flotilla-flip aria-controls="mission-global-sumud-front" aria-expanded="true"><svg class="flotilla-card-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 9a7.5 7.5 0 1 0 .55 5.5M19 4v5h-5"/></svg><span class="flotilla-card-flip-label"><span class="lang-en" lang="en" dir="ltr">Return to front</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعد البطاقة إلى وجهها</span></span></button>
+                    </div>
                 </div>
             </article>
-            <article class="flotilla-missions-card" aria-labelledby="mission-freedom-flotilla">
-                <figure class="flotilla-missions-image">
+            <article class="flotilla-missions-card" aria-labelledby="mission-freedom-flotilla" data-flotilla-card>
+                <div class="flotilla-card-turner">
+                    <div class="flotilla-card-face" id="mission-freedom-flotilla-front">
+                        <h3 id="mission-freedom-flotilla"><span class="lang-en" lang="en" dir="ltr">Freedom Flotilla Coalition</span><span class="lang-ar hidden" lang="ar" dir="rtl">ائتلاف أسطول الحرية</span></h3>
+                        <figure class="flotilla-missions-image">
                     <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ffc2.png" alt="Freedom Flotilla Coalition image" width="600" height="300" loading="lazy">
                 </figure>
-                <h3 id="mission-freedom-flotilla"><span class="lang-en" lang="en" dir="ltr">Freedom Flotilla Coalition</span><span class="lang-ar hidden" lang="ar" dir="rtl">ائتلاف أسطول الحرية</span></h3>
-                <p><span class="lang-en" lang="en" dir="ltr">The Freedom Flotilla Coalition is an international network of grassroots organizations that organize peaceful civilian maritime missions to challenge the blockade of Gaza. Through its voyages, the coalition seeks to raise international awareness, advocate for humanitarian access, and support Palestinian rights and freedom of movement. Its work brings together volunteers, activists, and solidarity organizations from around the world.</span><span class="lang-ar hidden" lang="ar" dir="rtl">ائتلاف أسطول الحرية هو شبكة دولية من المنظمات الشعبية التي تنظم مهمات بحرية مدنية سلمية لتحدي الحصار المفروض على غزة. ويسعى الائتلاف من خلال رحلاته البحرية إلى زيادة الوعي الدولي، والدعوة إلى وصول المساعدات الإنسانية، ودعم حقوق الفلسطينيين وحرية تنقلهم. ويجمع عمله متطوعين وناشطين ومنظمات تضامنية من مختلف أنحاء العالم.</span></p>
-                <div class="flotilla-missions-social">
-                    <!-- Owner-selected links; pending final manual verification. -->
+                        <!-- Owner-selected links; pending final manual verification. -->
                     <div class="flotilla-missions-social-links">
                         <a class="social-link" href="https://www.instagram.com/gazafreedomflotilla/" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on Instagram / ائتلاف أسطول الحرية — إنستغرام"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
                         <a class="social-link" href="https://www.facebook.com/FreedomFlotillaCoalition/" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on Facebook / ائتلاف أسطول الحرية — فيسبوك"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.4A24 24 0 0 0 15 1c-3 0-5 1.8-5 5v3H7v4h3v8z"/></svg></a>
                         <a class="social-link" href="https://x.com/GazaFFlotilla" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on X / ائتلاف أسطول الحرية — إكس"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.4-8.5L.8 2h6.5l4.5 6.8zM17.9 20h1.7L6.3 4H4.5z"/></svg></a>
                         <a class="social-link" href="https://www.youtube.com/@freedomflotillacoalition6166/videos" target="_blank" rel="noopener noreferrer" aria-label="Freedom Flotilla Coalition on YouTube / ائتلاف أسطول الحرية — يوتيوب"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="m10 9 6 3-6 3z" fill="#303c22"/></svg></a>
                     </div>
-                    <a class="site-button" href="https://freedomflotilla.org/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Official Website</span><span class="lang-ar hidden" lang="ar" dir="rtl">الموقع الرسمي</span></a>
+                        <button class="flotilla-card-flip" type="button" data-flotilla-flip aria-controls="mission-freedom-flotilla-back" aria-expanded="false"><svg class="flotilla-card-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 9a7.5 7.5 0 1 0 .55 5.5M19 4v5h-5"/></svg><span class="flotilla-card-flip-label"><span class="lang-en" lang="en" dir="ltr">Turn card over</span><span class="lang-ar hidden" lang="ar" dir="rtl">اقلب البطاقة</span></span></button>
+                    </div>
+                    <div class="flotilla-card-face flotilla-card-back" id="mission-freedom-flotilla-back" inert aria-hidden="true">
+                        <p><span class="lang-en" lang="en" dir="ltr">The Freedom Flotilla Coalition is an international network of grassroots organizations that organize peaceful civilian maritime missions to challenge the blockade of Gaza. Through its voyages, the coalition seeks to raise international awareness, advocate for humanitarian access, and support Palestinian rights and freedom of movement. Its work brings together volunteers, activists, and solidarity organizations from around the world.</span><span class="lang-ar hidden" lang="ar" dir="rtl">ائتلاف أسطول الحرية هو شبكة دولية من المنظمات الشعبية التي تنظم مهمات بحرية مدنية سلمية لتحدي الحصار المفروض على غزة. ويسعى الائتلاف من خلال رحلاته البحرية إلى زيادة الوعي الدولي، والدعوة إلى وصول المساعدات الإنسانية، ودعم حقوق الفلسطينيين وحرية تنقلهم. ويجمع عمله متطوعين وناشطين ومنظمات تضامنية من مختلف أنحاء العالم.</span></p>
+                        <a class="site-button" href="https://freedomflotilla.org/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Official Website</span><span class="lang-ar hidden" lang="ar" dir="rtl">الموقع الرسمي</span></a>
+                        <button class="flotilla-card-flip" type="button" data-flotilla-flip aria-controls="mission-freedom-flotilla-front" aria-expanded="true"><svg class="flotilla-card-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 9a7.5 7.5 0 1 0 .55 5.5M19 4v5h-5"/></svg><span class="flotilla-card-flip-label"><span class="lang-en" lang="en" dir="ltr">Return to front</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعد البطاقة إلى وجهها</span></span></button>
+                    </div>
                 </div>
             </article>
-            <article class="flotilla-missions-card" aria-labelledby="mission-thousand-madleens">
-                <figure class="flotilla-missions-image">
+            <article class="flotilla-missions-card" aria-labelledby="mission-thousand-madleens" data-flotilla-card>
+                <div class="flotilla-card-turner">
+                    <div class="flotilla-card-face" id="mission-thousand-madleens-front">
+                        <h3 id="mission-thousand-madleens"><span class="lang-en" lang="en" dir="ltr">Thousand Madleens to Gaza</span><span class="lang-ar hidden" lang="ar" dir="rtl">ألف مادلين إلى غزة</span></h3>
+                        <figure class="flotilla-missions-image">
                     <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/1000.jpg" alt="Thousand Madleens to Gaza organization image" width="600" height="300" loading="lazy">
                 </figure>
-                <h3 id="mission-thousand-madleens"><span class="lang-en" lang="en" dir="ltr">Thousand Madleens to Gaza</span><span class="lang-ar hidden" lang="ar" dir="rtl">ألف مادلين إلى غزة</span></h3>
-                <p><span class="lang-en" lang="en" dir="ltr">Thousand Madleens to Gaza is an international, civilian-led movement organizing peaceful maritime missions to challenge the blockade of Gaza. Bringing together volunteers, sailors, activists, and solidarity groups from around the world, the movement works to defend Palestinian rights, raise international awareness, and mobilize collective action. Its mission emphasizes nonviolent resistance, international solidarity, and freedom for the Palestinian people.</span><span class="lang-ar hidden" lang="ar" dir="rtl">ألف مادلين إلى غزة حركة دولية يقودها مدنيون، وتنظم مهمات بحرية سلمية لتحدي الحصار المفروض على غزة. وتجمع الحركة متطوعين وبحارة وناشطين ومجموعات تضامنية من مختلف أنحاء العالم للدفاع عن حقوق الفلسطينيين، وزيادة الوعي الدولي، وحشد العمل الجماعي. وتركز مهمتها على المقاومة السلمية والتضامن الدولي وحرية الشعب الفلسطيني.</span></p>
-                <div class="flotilla-missions-social">
-                    <!-- Links supplied by the website owner for inclusion. -->
+                        <!-- Links supplied by the website owner for inclusion. -->
                     <div class="flotilla-missions-social-links">
                         <a class="social-link" href="https://www.instagram.com/thousandmadleenstogaza" target="_blank" rel="noopener noreferrer" aria-label="Thousand Madleens to Gaza — Instagram / ألف مادلين إلى غزة — إنستغرام"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
                         <a class="social-link" href="https://www.tiktok.com/@thousandmadleenstogaza" target="_blank" rel="noopener noreferrer" aria-label="Thousand Madleens to Gaza — TikTok / ألف مادلين إلى غزة — تيك توك"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 1h-3.5v14.4a3 3 0 1 1-2.6-3V8.8a6.6 6.6 0 1 0 6.1 6.6V8.1a9 9 0 0 0 5.4 1.8V6.4A5.5 5.5 0 0 1 16.6 1z"/></svg></a>
                         <a class="social-link" href="https://t.me/+v6lnoZFReKlkZjM8" target="_blank" rel="noopener noreferrer" aria-label="Thousand Madleens to Gaza — Telegram / ألف مادلين إلى غزة — تيليغرام"><svg class="creator-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m21.5 3-3.3 17c-.2 1-1 1.2-1.8.6l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.3L5.6 13.2l-4.9-1.5c-1-.3-1-1 .2-1.5L20 2.8c.9-.3 1.7.2 1.5.2z"/></svg></a>
                     </div>
-                    <a class="site-button" href="https://thousandmadleens.org/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Official Website</span><span class="lang-ar hidden" lang="ar" dir="rtl">الموقع الرسمي</span></a>
+                        <button class="flotilla-card-flip" type="button" data-flotilla-flip aria-controls="mission-thousand-madleens-back" aria-expanded="false"><svg class="flotilla-card-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 9a7.5 7.5 0 1 0 .55 5.5M19 4v5h-5"/></svg><span class="flotilla-card-flip-label"><span class="lang-en" lang="en" dir="ltr">Turn card over</span><span class="lang-ar hidden" lang="ar" dir="rtl">اقلب البطاقة</span></span></button>
+                    </div>
+                    <div class="flotilla-card-face flotilla-card-back" id="mission-thousand-madleens-back" inert aria-hidden="true">
+                        <p><span class="lang-en" lang="en" dir="ltr">Thousand Madleens to Gaza is an international, civilian-led movement organizing peaceful maritime missions to challenge the blockade of Gaza. Bringing together volunteers, sailors, activists, and solidarity groups from around the world, the movement works to defend Palestinian rights, raise international awareness, and mobilize collective action. Its mission emphasizes nonviolent resistance, international solidarity, and freedom for the Palestinian people.</span><span class="lang-ar hidden" lang="ar" dir="rtl">ألف مادلين إلى غزة حركة دولية يقودها مدنيون، وتنظم مهمات بحرية سلمية لتحدي الحصار المفروض على غزة. وتجمع الحركة متطوعين وبحارة وناشطين ومجموعات تضامنية من مختلف أنحاء العالم للدفاع عن حقوق الفلسطينيين، وزيادة الوعي الدولي، وحشد العمل الجماعي. وتركز مهمتها على المقاومة السلمية والتضامن الدولي وحرية الشعب الفلسطيني.</span></p>
+                        <a class="site-button" href="https://thousandmadleens.org/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Official Website</span><span class="lang-ar hidden" lang="ar" dir="rtl">الموقع الرسمي</span></a>
+                        <button class="flotilla-card-flip" type="button" data-flotilla-flip aria-controls="mission-thousand-madleens-front" aria-expanded="true"><svg class="flotilla-card-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 9a7.5 7.5 0 1 0 .55 5.5M19 4v5h-5"/></svg><span class="flotilla-card-flip-label"><span class="lang-en" lang="en" dir="ltr">Return to front</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعد البطاقة إلى وجهها</span></span></button>
+                    </div>
                 </div>
             </article>
         </div>
-        <button class="flotilla-missions-button" type="button" data-flotilla-open aria-haspopup="dialog" aria-controls="flotilla-directory"><span class="lang-en" lang="en" dir="ltr">Explore More Flotillas</span><span class="lang-ar hidden" lang="ar" dir="rtl">استكشف المزيد من أساطيل الحرية</span></button>
-        <dialog id="flotilla-directory" aria-labelledby="flotilla-directory-title">
-            <button class="flotilla-missions-button" type="button" data-flotilla-close autofocus><span class="lang-en" lang="en" dir="ltr">Close directory</span><span class="lang-ar hidden" lang="ar" dir="rtl">إغلاق الدليل</span></button>
-            <h3 id="flotilla-directory-title"><span class="lang-en" lang="en" dir="ltr">More Coming Soon</span><span class="lang-ar hidden" lang="ar" dir="rtl">المزيد قريبًا</span></h3>
-            <img class="flotilla-missions-coming-soon" src="images/001.jpg" alt="More flotilla missions coming soon">
-        </dialog>
-    </section>
+          </section>
+          <section class="ticket-panel april-navigation-chart" id="april-flotillas-2027" data-ticket-panel aria-labelledby="april-flotillas-2027-title" hidden>
+            <header class="ticket-panel-heading">
+              <h2 id="april-flotillas-2027-title" tabindex="-1"><span class="lang-en" lang="en" dir="ltr">April 2027: Going Back</span><span class="lang-ar hidden" lang="ar" dir="rtl">أبريل ٢٠٢٧: سنعود</span></h2>
+              <button type="button" class="ticket-panel-close" data-ticket-close><span class="lang-en" lang="en" dir="ltr">Back to the Desk</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مكتب القبطان</span></button>
+            </header>
+            <div class="april-mission-sections">
+              <section id="mission-updates-2027">
+                <h3><span class="lang-en" lang="en" dir="ltr">Mission Updates</span><span class="lang-ar hidden" lang="ar" dir="rtl">مستجدات المهمات</span></h3>
+                <time class="april-mission-date" datetime="2026-11-22"><span class="lang-en" lang="en" dir="ltr">November 22, 2026</span><span class="lang-ar hidden" lang="ar" dir="rtl">٢٢ نوفمبر ٢٠٢٦</span></time>
+                <article class="april-mission-update">
+                  <h4><span class="lang-en" lang="en" dir="ltr">Freedom Flotilla Coalition — Spring 2027</span><span class="lang-ar hidden" lang="ar" dir="rtl">ائتلاف أسطول الحرية — ربيع ٢٠٢٧</span></h4>
+                  <p><span class="lang-en" lang="en" dir="ltr">The Freedom Flotilla Coalition has announced plans for another attempt to reach Gaza in spring 2027. Its October 2026 voyage concluded in Sicily following mechanical difficulties, repairs, and a narrowing sailing window. Organizers are continuing preparations for the next mission. An exact departure date has not been announced.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعلن ائتلاف أسطول الحرية عن خطط لمحاولة جديدة للوصول إلى غزة في ربيع ٢٠٢٧. انتهت رحلته في أكتوبر ٢٠٢٦ في صقلية بعد أعطال ميكانيكية وإصلاحات وتقلّص الفترة المتاحة للإبحار. ويواصل المنظمون الاستعداد للمهمة المقبلة، ولم يُعلن عن موعد محدد للمغادرة.</span></p>
+                </article>
+                <article class="april-mission-update">
+                  <h4><span class="lang-en" lang="en" dir="ltr">Global Sumud Flotilla</span><span class="lang-ar hidden" lang="ar" dir="rtl">أسطول الصمود العالمي</span></h4>
+                  <p><span class="lang-en" lang="en" dir="ltr">The organization continues international mobilization and solidarity efforts. A specific April 2027 sailing schedule has not been confirmed.</span><span class="lang-ar hidden" lang="ar" dir="rtl">تواصل المنظمة جهود التعبئة الدولية والتضامن. ولم يُؤكَّد جدول محدد للإبحار في أبريل ٢٠٢٧.</span></p>
+                </article>
+                <article class="april-mission-update">
+                  <h4><span class="lang-en" lang="en" dir="ltr">Thousand Madleens to Gaza</span><span class="lang-ar hidden" lang="ar" dir="rtl">ألف مادلين إلى غزة</span></h4>
+                  <p><span class="lang-en" lang="en" dir="ltr">The movement is raising funds, preparing boats, recruiting sailors, and organizing its next fleet. A specific April 2027 departure date has not been confirmed.</span><span class="lang-ar hidden" lang="ar" dir="rtl">تجمع الحركة الأموال وتجهّز القوارب وتستقطب البحّارة وتنظّم أسطولها المقبل. ولم يُؤكَّد موعد محدد للمغادرة في أبريل ٢٠٢٧.</span></p>
+                </article>
+                <section class="april-mission-sources" id="official-sources-2027">
+                  <h4><span class="lang-en" lang="en" dir="ltr">Mission Sources</span><span class="lang-ar hidden" lang="ar" dir="rtl">مصادر المهمات</span></h4>
+                  <ul>
+                    <li><a href="https://freedomflotilla.org/2026/10/17/the-mission-continues-a-renewed-attempt-to-reach-gaza-planned-for-2027/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Freedom Flotilla Coalition</span><span class="lang-ar hidden" lang="ar" dir="rtl">ائتلاف أسطول الحرية</span></a></li>
+                    <li><a href="https://globalsumudflotilla.org/press/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Global Sumud Flotilla</span><span class="lang-ar hidden" lang="ar" dir="rtl">أسطول الصمود العالمي</span></a></li>
+                    <li><a href="https://thousandmadleens.org/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en" dir="ltr">Thousand Madleens to Gaza</span><span class="lang-ar hidden" lang="ar" dir="rtl">ألف مادلين إلى غزة</span></a></li>
+                  </ul>
+                </section>
+              </section>
+              <section id="mpga-participation-2027">
+                <h3><span class="lang-en" lang="en" dir="ltr">MPGA Participation</span><span class="lang-ar hidden" lang="ar" dir="rtl">مشاركة MPGA</span></h3>
+                <ol>
+                  <li><span class="lang-en" lang="en" dir="ltr">MPGA is going with.</span><span class="lang-ar hidden" lang="ar" dir="rtl">ستذهب MPGA معهم.</span></li>
+                  <li><span class="lang-en" lang="en" dir="ltr">You are not MPGA Priority Flotillas. Palestine is. Get ready.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أنتم لستم الأساطيل ذات الأولوية لدى MPGA. فلسطين هي الأولوية. استعدّوا.</span></li>
+                  <li><span class="lang-en" lang="en" dir="ltr">I am being nice.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أنا أتعامل بلطف.</span></li>
+                </ol>
+              </section>
+              <section class="april-mission-requests" id="mpga-requests-2027">
+                <h3><span class="lang-en" lang="en" dir="ltr">MPGA Requests</span><span class="lang-ar hidden" lang="ar" dir="rtl">طلبات MPGA</span></h3>
+                <ul>
+                  <li><span class="lang-en" lang="en" dir="ltr">Solar panels</span><span class="lang-ar hidden" lang="ar" dir="rtl">ألواح شمسية</span></li>
+                  <li><span class="lang-en" lang="en" dir="ltr">Batteries</span><span class="lang-ar hidden" lang="ar" dir="rtl">بطاريات</span></li>
+                  <li><span class="lang-en" lang="en" dir="ltr">Rubbing alcohol or antiseptic</span><span class="lang-ar hidden" lang="ar" dir="rtl">كحول للتطهير أو مطهّر</span></li>
+                  <li><span class="lang-en" lang="en" dir="ltr">Bracelet kits</span><span class="lang-ar hidden" lang="ar" dir="rtl">أطقم لصنع الأساور</span></li>
+                  <li><span class="lang-en" lang="en" dir="ltr">Soap</span><span class="lang-ar hidden" lang="ar" dir="rtl">صابون</span></li>
+                  <li><span class="lang-en" lang="en" dir="ltr">Feminine hygiene products</span><span class="lang-ar hidden" lang="ar" dir="rtl">منتجات النظافة النسائية</span></li>
+                </ul>
+                <p class="april-requests-note"><span class="lang-en" lang="en" dir="ltr">I know we are limited on space, I'm keeping it short.</span><span class="lang-ar hidden" lang="ar" dir="rtl">أعلم أن المساحة محدودة، لذا سأختصر.</span></p>
+              </section>
+            </div>
+          </section>
+          <section class="ticket-panel ticket-scrapbook" id="scrapbook-freedom-flotilla" data-ticket-panel aria-labelledby="scrapbook-freedom-flotilla-title" hidden>
+            <header class="ticket-panel-heading">
+              <h2 id="scrapbook-freedom-flotilla-title" tabindex="-1"><span class="lang-en" lang="en" dir="ltr">Freedom Flotilla Coalition</span><span class="lang-ar hidden" lang="ar" dir="rtl">ائتلاف أسطول الحرية</span></h2>
+              <button type="button" class="ticket-panel-close" data-ticket-close><span class="lang-en" lang="en" dir="ltr">Back to the Desk</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مكتب القبطان</span></button>
+            </header>
     <div class="ticket-feature">
         <div class="ticket-feature-intro">
-            <h2>
-                <span class="lang-en">Happy Birthday Frank</span>
-                <span class="lang-ar hidden">عيد ميلاد سعيد فرانك</span>
-            </h2>
-            <h3><strong>
-                <span class="lang-en">October 18 2026</span>
-                <span class="lang-ar hidden">18 أكتوبر 2026</span>
-            </strong></h3>
             <div class="ticket-feature-discussion">
                 <h2>
                     <span class="lang-en">MPGA Discussion Board</span>
@@ -212,15 +381,6 @@ no one told you to come in here nosing around my 1s and 0s.
                     <span class="lang-ar hidden">إم بي جي إيه مستعدة عندما تكون أنت مستعدًا.</span>
                 </figcaption>
             </figure>
-            <figure class="ticket-feature-video-card">
-                <div class="ticket-feature-video-frame">
-                    <iframe src="https://www.youtube-nocookie.com/embed/rQHhNs8UqzM" title="Flotilla video update 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <figcaption>
-                    <span class="lang-en">I havent seen you since the chats, I miss all of so much. See you soon.</span>
-                    <span class="lang-ar hidden">لم أرَك منذ الدردشات، أفتقدكم جميعًا كثيرًا. أراك قريبًا.</span>
-                </figcaption>
-            </figure>
         </div>
 
 
@@ -234,6 +394,40 @@ no one told you to come in here nosing around my 1s and 0s.
     </div>
     </div>
 
+<!--Freedom Flotillas, Kate (Frank) keep this here for now, we going to use this for placeholder on the Land convoy to DC. Freedom move to the top, but leave this for now
+    <div class="ticket-col-ffc"
+      <div class="ticket-gallery-scroll" role="region" aria-label="Scrollable image gallery">
+        <figure>
+          <a href="https://freedomflotilla.org/" class="ticket-gallery-link">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ffc-logo.png" alt="FFC gallery image 1" loading="lazy">
+          </a>
+          <figcaption>
+            <span class="lang-en">MPGA is coming too!</span>
+            <span class="lang-ar hidden">MPGA قادمة أيضًا!</span>
+          </figcaption>
+        </figure>
+       
+        <figure>
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ffc-1.jpg" alt="FFC gallery image 2" loading="lazy">
+          <figcaption>
+            <span class="lang-en">I'm going with Kate!</span>
+            <span class="lang-ar hidden">سأذهب مع كيت!</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ffc2.webp" alt="FFC gallery image 3" loading="lazy">
+          <figcaption>
+            <span class="lang-en">See you in the Chats folks!</span>
+            <span class="lang-ar hidden">أراكم في الدردشات يا جماعة!</span>
+          </figcaption>
+        </figure>
+      -->
+          </section>
+          <section class="ticket-panel ticket-scrapbook" id="scrapbook-freedom-convoy" data-ticket-panel aria-labelledby="scrapbook-freedom-convoy-title" hidden>
+            <header class="ticket-panel-heading">
+              <h2 id="scrapbook-freedom-convoy-title" tabindex="-1"><span class="lang-en" lang="en" dir="ltr">Freedom Convoy USA</span><span class="lang-ar hidden" lang="ar" dir="rtl">قافلة الحرية الأمريكية</span></h2>
+              <button type="button" class="ticket-panel-close" data-ticket-close><span class="lang-en" lang="en" dir="ltr">Back to the Desk</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مكتب القبطان</span></button>
+            </header>
   <div class="ticket-col-land">
     <section class="land-convoy" aria-labelledby="land-convoy-title">
       <div class="land-convoy-intro">
@@ -272,7 +466,8 @@ no one told you to come in here nosing around my 1s and 0s.
         </div>
 
         <p class="land-convoy-route-note"><span class="lang-en">Select a numbered star for public details. Schematic route — spacing does not indicate exact locations or distances.</span><span class="lang-ar hidden">اختر نجمة مرقمة للاطلاع على التفاصيل المعلنة. المسار تخطيطي، ولا تعكس المسافات فيه المواقع أو المسافات الفعلية بدقة. الحالة: قادمة / حالية / مكتملة.</span></p>
-        <div class="land-convoy-route-scroll" role="region" aria-label="Public convoy journey" tabindex="0">
+        <p class="land-convoy-route-note" id="convoy-route-scroll-hint"><span class="lang-en" lang="en" dir="ltr">Scroll the route horizontally if some stops are out of view.</span><span class="lang-ar hidden" lang="ar" dir="rtl">مرّر المسار أفقيًا إذا كانت بعض المحطات خارج نطاق العرض.</span></p>
+        <div class="land-convoy-route-scroll" role="region" aria-label="Public convoy journey" aria-describedby="convoy-route-scroll-hint" tabindex="0">
         <div class="land-convoy-route" data-land-convoy-route>
           <svg class="land-convoy-route-line" viewBox="0 0 1080 560" preserveAspectRatio="none" aria-hidden="true" fill="none"><polyline fill="none" stroke="#8b5838" stroke-width="3" stroke-dasharray="6 8" stroke-linejoin="round" stroke-linecap="round" points="90,100 90,260 90,420 270,420 270,260 270,100 450,100 450,260 450,420 630,420 630,260 630,100 810,100 810,260 810,420 990,420 990,260 990,100" /></svg>
           <!-- Edit each button's data fields manually. events accepts pipe-separated activities; source-links accepts pipe-separated public URLs.
@@ -418,7 +613,6 @@ no one told you to come in here nosing around my 1s and 0s.
     </section>
   </div>
 
-  <div class="ticket-middle">
    <!-- Palestine Land convoy
     <div class="ticket-col-land">
       <div class="ticket-gallery-scroll" role="region" aria-label="Scrollable image gallery">
@@ -470,41 +664,22 @@ no one told you to come in here nosing around my 1s and 0s.
         <span class="lang-en">Put your Arm Around us, Get us Safely to Palestine.</span>
         <span class="lang-ar hidden">أحطنا بذراعك وأوصلنا بأمان إلى فلسطين.</span>
       </h3>
-      </div>
-
-<!--Freedom Flotillas, Kate (Frank) keep this here for now, we going to use this for placeholder on the Land convoy to DC. Freedom move to the top, but leave this for now
-    <div class="ticket-col-ffc"
-      <div class="ticket-gallery-scroll" role="region" aria-label="Scrollable image gallery">
-        <figure>
-          <a href="https://freedomflotilla.org/" class="ticket-gallery-link">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ffc-logo.png" alt="FFC gallery image 1" loading="lazy">
-          </a>
-          <figcaption>
-            <span class="lang-en">MPGA is coming too!</span>
-            <span class="lang-ar hidden">MPGA قادمة أيضًا!</span>
-          </figcaption>
-        </figure>
-       
-        <figure>
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ffc-1.jpg" alt="FFC gallery image 2" loading="lazy">
-          <figcaption>
-            <span class="lang-en">I'm going with Kate!</span>
-            <span class="lang-ar hidden">سأذهب مع كيت!</span>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/ffc2.webp" alt="FFC gallery image 3" loading="lazy">
-          <figcaption>
-            <span class="lang-en">See you in the Chats folks!</span>
-            <span class="lang-ar hidden">أراكم في الدردشات يا جماعة!</span>
-          </figcaption>
-        </figure>
-      -->
-
-
-
+          </section>
+          <section class="ticket-panel ticket-scrapbook" id="scrapbook-global-sumud" data-ticket-panel aria-labelledby="scrapbook-global-sumud-title" hidden>
+            <header class="ticket-panel-heading">
+              <h2 id="scrapbook-global-sumud-title" tabindex="-1"><span class="lang-en" lang="en" dir="ltr">Global Sumud Flotilla</span><span class="lang-ar hidden" lang="ar" dir="rtl">أسطول الصمود العالمي</span></h2>
+              <button type="button" class="ticket-panel-close" data-ticket-close><span class="lang-en" lang="en" dir="ltr">Back to the Desk</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مكتب القبطان</span></button>
+            </header>
+        <div class="flotilla-missions-gallery" role="region" tabindex="0" aria-labelledby="flotilla-missions-gallery-label" dir="ltr">
+            <span id="flotilla-missions-gallery-label" class="flotilla-missions-gallery-label"><span class="lang-en" lang="en" dir="ltr">Flotilla mission image gallery — scroll horizontally</span><span class="lang-ar hidden" lang="ar" dir="rtl">معرض صور مهمات الأسطول — مرّر أفقيًا</span></span>
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/30-1.jpg" alt="Flotilla mission gallery image 1" loading="lazy">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/30-2.jpg" alt="Flotilla mission gallery image 2" loading="lazy">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/30-3.jpg" alt="Flotilla mission gallery image 3" loading="lazy">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/ticket/30-4.jpg" alt="Flotilla mission gallery image 4" loading="lazy">
+        </div>
 <!--Global Sumud Flotillas, Alabina-->
     <div class="ticket-col-gsf">
+      <hr class="sumud-archive-divider" aria-hidden="true">
       <div class="ticket-copy-block">
         <p>
           <span class="lang-en">Join the Flamingo Revolution!</span>
@@ -512,10 +687,6 @@ no one told you to come in here nosing around my 1s and 0s.
         </p>
       </div>
 
-      <h3>
-        <span class="lang-en">GSF Updates</span>
-        <span class="lang-ar hidden">تحديثات الأسطول العالمي للصمود</span>
-      </h3>
       <div class="ticket-gallery-scroll" role="region" aria-label="Scrollable image gallery">
         <figure>
           <a href="https://globalsumudflotilla.org/" class="ticket-gallery-link">
@@ -591,11 +762,8 @@ no one told you to come in here nosing around my 1s and 0s.
         </figure>
       </div>
 
-      <h3>
-        <span class="lang-en">Live Stream: Coming Soon</span>
-        <span class="lang-ar hidden">البث المباشر: قريبًا</span>
-      </h3>
-      <div class="ticket-video-wrap">
+      <hr class="sumud-archive-divider" aria-hidden="true">
+      <div class="ticket-video-wrap sumud-video-frame">
         <iframe
           src="https://www.youtube.com/embed/x4mRkm8wnEI"
           title="GSF video update"
@@ -606,6 +774,47 @@ no one told you to come in here nosing around my 1s and 0s.
         </iframe>
       </div>
     </div>
+          </section>
+          <section class="ticket-panel ticket-game" id="sail-to-gaza" data-ticket-panel aria-labelledby="sail-to-gaza-title" hidden data-ticket-game>
+            <header class="ticket-panel-heading">
+              <h2 id="sail-to-gaza-title" tabindex="-1"><span class="lang-en" lang="en" dir="ltr">Sail to Gaza</span><span class="lang-ar hidden" lang="ar" dir="rtl">الإبحار إلى غزة</span></h2>
+              <button type="button" class="ticket-panel-close" data-ticket-close><span class="lang-en" lang="en" dir="ltr">Back to the Desk</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مكتب القبطان</span></button>
+            </header>
+            <div class="game-countdown" role="timer" aria-live="off" aria-describedby="game-countdown-caption">
+              <div class="game-countdown-unit"><span data-game-countdown="days" dir="ltr">00</span><span class="lang-en" lang="en" dir="ltr">DAYS</span><span class="lang-ar hidden" lang="ar" dir="rtl">أيام</span></div>
+              <div class="game-countdown-unit"><span data-game-countdown="hours" dir="ltr">00</span><span class="lang-en" lang="en" dir="ltr">HOURS</span><span class="lang-ar hidden" lang="ar" dir="rtl">ساعات</span></div>
+              <div class="game-countdown-unit"><span data-game-countdown="minutes" dir="ltr">00</span><span class="lang-en" lang="en" dir="ltr">MINUTES</span><span class="lang-ar hidden" lang="ar" dir="rtl">دقائق</span></div>
+              <div class="game-countdown-unit"><span data-game-countdown="seconds" dir="ltr">00</span><span class="lang-en" lang="en" dir="ltr">SECONDS</span><span class="lang-ar hidden" lang="ar" dir="rtl">ثوانٍ</span></div>
+            </div>
+            <div class="game-countdown-gear" aria-hidden="true"></div>
+            <p class="game-countdown-caption" id="game-countdown-caption"><span class="lang-en" lang="en" dir="ltr">Provisional countdown to April 1, 2027. Official sailing date to be announced.</span><span class="lang-ar hidden" lang="ar" dir="rtl">عدّ تنازلي مبدئي حتى ١ أبريل ٢٠٢٧. سيُعلن عن موعد الإبحار الرسمي لاحقًا.</span></p>
+            <h3 class="game-coming-soon"><span class="lang-en" lang="en" dir="ltr">Coming Soon</span><span class="lang-ar hidden" lang="ar" dir="rtl">قريبًا</span></h3>
+            <p class="game-intro"><span class="lang-en" lang="en" dir="ltr">While we wait, enjoy this game and then go support them.</span><span class="lang-ar hidden" lang="ar" dir="rtl">بينما ننتظر، استمتعوا بهذه اللعبة ثم اذهبوا لدعمهم.</span></p>
+            <div class="game-sailing-scene" aria-hidden="true">
+              <svg class="game-sailboat" viewBox="0 0 156 94" focusable="false">
+                <path d="M2 81q22-7 45 0t43 0m-62 7q18-4 34 0" fill="none" stroke="#d4e3ce" stroke-width="2" stroke-linecap="round"/>
+                <path d="M79 71V10" stroke="#593b25" stroke-width="3"/>
+                <g class="game-sail-canvas">
+                  <path d="M75 18Q51 33 40 64q20-3 35 4Z" fill="#a94448" stroke="#65372b"/>
+                  <path d="M84 21q19 12 28 23H83Z" fill="#292922"/>
+                  <path d="M83 44h29l8 10H82Z" fill="#f1e2bf"/>
+                  <path d="M82 54h38l10 13q-22-5-49 1Z" fill="#3f684b"/>
+                  <path d="M83 21q4 23-2 47m3-28q16 13 33 15M70 33q-11 10-16 23" fill="none" stroke="#b58d60" stroke-opacity=".62"/>
+                </g>
+                <path d="M80 9h24v4H80Z" fill="#262522"/>
+                <path d="M80 13h24v4H80Z" fill="#f6e7c8"/>
+                <path d="M80 17h24v4H80Z" fill="#3b674b"/>
+                <path d="m80 9 10 6-10 6Z" fill="#a94448"/>
+                <path d="M35 70q49 7 107-4-8 16-25 19H55Z" fill="#583122" stroke="#382017"/>
+                <path d="M39 73q48 6 98-3M48 79q43 3 80-2" fill="none" stroke="#c3985e"/>
+              </svg>
+            </div>
+            <button class="game-play" type="button" disabled aria-describedby="game-availability"><span class="lang-en" lang="en" dir="ltr">Play Sail to Gaza</span><span class="lang-ar hidden" lang="ar" dir="rtl">العب الإبحار إلى غزة</span></button>
+            <p class="game-availability" id="game-availability"><span class="lang-en" lang="en" dir="ltr">Game coming soon</span><span class="lang-ar hidden" lang="ar" dir="rtl">اللعبة قادمة قريبًا</span></p>
+          </section>
+        </div>
+      </div>
+    </section>
 </main>
 
   <footer class="site-footer" data-global-chrome>
@@ -655,6 +864,6 @@ no one told you to come in here nosing around my 1s and 0s.
   </footer>
 
   <script src="js/main.js?v=20261007-2"></script>
-  <script src="js/ticket-missions.js?v=20261026-1"></script>
+  <script src="js/ticket-missions.js?v=20261122-phase5-11"></script>
 </body>
 </html>
