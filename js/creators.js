@@ -1,5 +1,5 @@
 //Author:Leslie Brockman
-//Date last modified: 2026-11-21
+//Date last modified: 2026-11-24
 "use strict";
 
 const creators = [
@@ -82,14 +82,14 @@ const creators = [
   },
   {
     "id": "creator-8",
-    "name": "Mohmmaud Mk",
-    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Mohmmaud Mk</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">محمود إم كيه</span>",
-    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/mk.jpg\" alt=\"Mohmmaud Mk\" loading=\"lazy\">",
-    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Mohmmaud Mk is a Palestinian digital creator who uses his platform to raise awareness and express solidarity with Palestine. Through his online presence, he shares messages of resilience, hope, and support for the Palestinian people.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">محمود إم كيه صانع محتوى رقمي فلسطيني يستخدم منصته لنشر الوعي والتعبير عن التضامن مع فلسطين. ومن خلال حضوره على الإنترنت، يشارك رسائل الصمود والأمل والدعم للشعب الفلسطيني.</span></p>",
-    "linksHTML": "<div class=\"creator-support-buttons\">\n          <a class=\"site-button\" href=\"https://www.gofundme.com/f/hope-from-under-the-rubble\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support the Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم صانع المحتوى</span></a>\n        </div>\n        <div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/mohmmaud.mk\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a></div>",
+    "name": "Arafat & Abu Hamouda",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Arafat &amp; Abu Hamouda</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">عرفات وأبو حمودة</span>",
+    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/Aboys.jpg\" alt=\"Arafat and Abu Hamouda / عرفات وأبو حمودة\" loading=\"lazy\">",
+    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Arafat and Abu Hamouda are Palestinian creative partners who use acting, rap music, and community journalism to celebrate everyday life in Palestine. Together, they produce entertaining videos, visit local businesses, and create promotional clips highlighting the people and businesses helping their communities grow. Their work combines humor, music, and storytelling with a shared commitment to showcasing Palestinian talent, entrepreneurship, and progress. Through their videos, Arafat and Abu Hamouda remind audiences that Palestinian communities are filled with creativity, ambition, and stories worth sharing.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">عرفات وأبو حمودة هما شريكان إبداعيان فلسطينيان يستخدمان التمثيل وموسيقى الراب والصحافة المجتمعية للاحتفال بالحياة اليومية في فلسطين. معًا، ينتجان مقاطع فيديو ترفيهية، ويزوران الأعمال المحلية، ويصنعان مقاطع ترويجية تسلط الضوء على الأشخاص والأعمال التي تساعد مجتمعاتهم على النمو. يجمع عملهم بين الفكاهة والموسيقى وسرد القصص مع الالتزام المشترك بعرض المواهب الفلسطينية وريادة الأعمال والتقدم. من خلال مقاطع الفيديو الخاصة بهم، يذكر عرفات وأبو حمودة الجمهور بأن المجتمعات الفلسطينية مليئة بالإبداع والطموح والقصص التي تستحق المشاركة.</span></p>",
+    "linksHTML": "<div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook — Arafat and Abu Hamouda\" href=\"https://www.facebook.com/arafat.abuhamouda\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"creator-social-icon\" src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg\" alt=\"\" width=\"24\" height=\"24\" loading=\"lazy\"></a></div><section aria-labelledby=\"creator-8-video-heading\"><h2 id=\"creator-8-video-heading\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Show me what you know about beats Boys</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">أرني ما تعرفه عن بيت بويز</span></h2><iframe data-creator-video=\"https://www.youtube-nocookie.com/embed/LoQHL09L724\" title=\"Featured Hero video / فيديو البطل المميز\" allow=\"accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen width=\"200\" height=\"200\"></iframe></section>",
     "section": "Creators and Daily Voices",
     "sectionHTML": "\n      <span class=\"lang-en\">Creators and Daily Voices</span>\n      <span class=\"lang-ar\">صنّاع المحتوى وأصوات الحياة اليومية</span>\n    ",
-    "nameAr": "محمود إم كيه"
+    "nameAr": "عرفات وأبو حمودة"
   },
   {
     "id": "creator-9",
@@ -797,6 +797,16 @@ function renderSocialIcons(linksHTML) {
         return card;
     });
 
+    function syncCreatorVideo(card) {
+        const frame = card.querySelector('[data-creator-video]');
+        if (!frame) return;
+        if (card.hidden || !card.classList.contains('is-flipped')) {
+            frame.removeAttribute('src');
+        } else if (!frame.hasAttribute('src')) {
+            frame.src = frame.dataset.creatorVideo;
+        }
+    }
+
     // Delegate native button clicks so pointer and keyboard activation share one handler.
     results.addEventListener('click', event => {
         const button = event.target.closest('button[data-featured-flip]');
@@ -819,6 +829,7 @@ function renderSocialIcons(linksHTML) {
         nextButton.focus();
         inactiveFace.inert = true;
         inactiveFace.setAttribute('aria-hidden', 'true');
+        syncCreatorVideo(card);
     });
 
     const all = document.createElement('option');
@@ -845,7 +856,10 @@ function renderSocialIcons(linksHTML) {
         const pages = Math.ceil(matches.length / pageSize);
         page = Math.max(0, Math.min(page, Math.max(0, pages - 1)));
         const visible = new Set(matches.slice(page * pageSize, (page + 1) * pageSize).map(creator => creator.id));
-        cards.forEach(card => { card.hidden = !visible.has(card.id); });
+        cards.forEach(card => {
+            card.hidden = !visible.has(card.id);
+            syncCreatorVideo(card);
+        });
         empty.hidden = matches.length !== 0;
         previous.disabled = page === 0;
         next.disabled = page + 1 >= pages;
