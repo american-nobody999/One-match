@@ -1,5 +1,5 @@
 // Author: Leslie Brockman
-//date modified: 2026-11-19
+//date modified: 2026-11-24
 // Weekly archive: add a record at the beginning; use null for undocumented dates.
 // Bilingual fields accept plain text or text/emphasis runs. Links use HTTPS URLs.
 "use strict";
@@ -97,70 +97,6 @@ window.MPGAFeaturedHeroes = [
                 "videoIds": []
             }
         ]
-    },
-    {
-        "id": "mohannad",
-        "featuredDate": "2026-11-06",
-        "dateLabels": {
-            "en": "November 6, 2026",
-            "ar": "٦ نوفمبر ٢٠٢٦"
-        },
-        "names": {
-            "en": "Mohannad",
-            "ar": "مهند"
-        },
-        "portrait": {
-            "url": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/featured/mt.jpg",
-            "alt": "Portrait of Mohannad from Gaza / صورة مهند من غزة"
-        },
-        "biography": [
-            {
-                "en": "Mohannad is a Palestinian filmmaker, athlete, and digital content creator from Gaza. Through his social media presence, he shares his creativity, personality, and passion for filmmaking while connecting with people around the world.",
-                "ar": "مهند صانع أفلام ورياضي وصانع محتوى رقمي فلسطيني من غزة. ومن خلال حضوره على وسائل التواصل الاجتماعي، يشارك إبداعه وشخصيته وشغفه بصناعة الأفلام، ويتواصل مع الناس في مختلف أنحاء العالم."
-            },
-            {
-                "en": "Follow Mohannad on Facebook to discover his videos, creative projects, and the stories he chooses to share. You can also visit the fundraising page provided to support Mohannad and his family in Gaza.",
-                "ar": "تابع مهند على فيسبوك لاكتشاف مقاطع الفيديو ومشاريعه الإبداعية والقصص التي يختار مشاركتها. ويمكنك أيضًا زيارة صفحة جمع التبرعات المقدمة لدعم مهند وعائلته في غزة."
-            }
-        ],
-        "socialLinks": [
-            {
-                "url": "https://www.facebook.com/profile.php?id=61594428160534",
-                "label": "Facebook / فيسبوك",
-                "icon": {
-                    "url": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg",
-                    "alt": ""
-                }
-            }
-        ],
-        "supportLinks": [
-            {
-                "id": "mohannad-support-1",
-                "url": "https://www.gofundme.com/f/help-muhannad-and-his-family-in-gaza",
-                "label": {
-                    "en": "Visit His Fundraiser",
-                    "ar": "زيارة صفحة جمع التبرعات"
-                }
-            }
-        ],
-        "videos": [],
-        "sections": [
-            {
-                "heading": {
-                    "en": "Support Mohannad and His Family",
-                    "ar": "ادعم مهند وعائلته"
-                },
-                "paragraphs": [],
-                "linkIds": [
-                    "mohannad-support-1"
-                ],
-                "videoIds": []
-            }
-        ],
-        "storyHeading": {
-            "en": "Watch Mohannad's Tricks",
-            "ar": "شاهد حيل مهند"
-        }
     },
     {
         "id": "imadmah-mahmoud",
@@ -319,61 +255,6 @@ window.MPGAFeaturedHeroes = [
                     "hussam-alshurafa-support-1"
                 ],
                 "videoIds": []
-            }
-        ]
-    },
-    {
-        "id": "arafat-abu-hamouda",
-        "featuredDate": "2026-10-23",
-        "dateLabels": {
-            "en": "October 23, 2026",
-            "ar": "٢٣ أكتوبر ٢٠٢٦"
-        },
-        "names": {
-            "en": "Arafat & Abu Hamouda",
-            "ar": "عرفات وأبو حمودة"
-        },
-        "portrait": {
-            "url": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/Aboys.jpg",
-            "alt": "Arafat and Abu Hamouda / عرفات وأبو حمودة"
-        },
-        "biography": [
-            {
-                "en": "Arafat and Abu Hamouda are Palestinian creative partners who use acting, rap music, and community journalism to celebrate everyday life in Palestine. Together, they produce entertaining videos, visit local businesses, and create promotional clips highlighting the people and businesses helping their communities grow. Their work combines humor, music, and storytelling with a shared commitment to showcasing Palestinian talent, entrepreneurship, and progress. Through their videos, Arafat and Abu Hamouda remind audiences that Palestinian communities are filled with creativity, ambition, and stories worth sharing.",
-                "ar": "عرفات وأبو حمودة هما شريكان إبداعيان فلسطينيان يستخدمان التمثيل وموسيقى الراب والصحافة المجتمعية للاحتفال بالحياة اليومية في فلسطين. معًا، ينتجان مقاطع فيديو ترفيهية، ويزوران الأعمال المحلية، ويصنعان مقاطع ترويجية تسلط الضوء على الأشخاص والأعمال التي تساعد مجتمعاتهم على النمو. يجمع عملهم بين الفكاهة والموسيقى وسرد القصص مع الالتزام المشترك بعرض المواهب الفلسطينية وريادة الأعمال والتقدم. من خلال مقاطع الفيديو الخاصة بهم، يذكر عرفات وأبو حمودة الجمهور بأن المجتمعات الفلسطينية مليئة بالإبداع والطموح والقصص التي تستحق المشاركة."
-            }
-        ],
-        "socialLinks": [
-            {
-                "url": "https://www.facebook.com/arafat.abuhamouda",
-                "label": "Facebook — Arafat and Abu Hamouda",
-                "icon": {
-                    "url": "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/social/facebook.jpeg",
-                    "alt": ""
-                }
-            }
-        ],
-        "supportLinks": [],
-        "videos": [
-            {
-                "id": "arafat-abu-hamouda-video-1",
-                "url": "https://www.youtube-nocookie.com/embed/LoQHL09L724",
-                "title": "Featured Hero video / فيديو البطل المميز",
-                "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
-                "referrerPolicy": "strict-origin-when-cross-origin"
-            }
-        ],
-        "sections": [
-            {
-                "heading": {
-                    "en": "Show me what you know about beats Boys",
-                    "ar": "أرني ما تعرفه عن بيت بويز"
-                },
-                "paragraphs": [],
-                "linkIds": [],
-                "videoIds": [
-                    "arafat-abu-hamouda-video-1"
-                ]
             }
         ]
     }
