@@ -1,5 +1,5 @@
 /* author: Leslie Brockman */
-/* date modified: 10/23/2026 */
+/* date modified: 11-25/2026 */
 body.link-page {
     background-color: #D9E2CE;
 }
@@ -67,8 +67,8 @@ body.link-page {
     position: relative;
     isolation: isolate;
     width: 100%;
-    margin: 1rem auto 2rem;
-    padding: 1.5rem clamp(.75rem, 3vw, 2rem) 4rem;
+    margin: .75rem auto 1.25rem;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2.75rem);
     border-radius: 48% 48% 2rem 2rem / 7% 7% 2rem 2rem;
     background-color: #dce3cd;
     background-image: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/olivetree.jpg");
@@ -76,76 +76,65 @@ body.link-page {
     background-size: cover;
     background-repeat: no-repeat;
 }
-.link-page .olive-picking-instruction {
-    position: relative;
-    z-index: 2;
-    color: #374626;
-    font-size: clamp(1.5rem, 3.5vw, 2.3rem);
-    text-shadow: 0 2px 0 #fff9e9;
-}
-/* 2. Interactive olive links: content controls height in either language. */
+/* 2. Interactive olive */
 .link-page .creators-destination-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     justify-items: center;
-    align-items: start;
-    gap: 4rem;
     width: 100%;
-    margin: 7rem auto 0;
 }
 .link-page .creators-destination-card.olive-link {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    display: block;
     width: 100%;
     max-width: 19rem;
     aspect-ratio: 1 / 1.9;
-    min-height: 36rem;
     min-width: 0;
-    padding: 5.5rem clamp(1.75rem, 4vw, 2.5rem);
-    border: 2px solid #cbb276;
-    border-radius: 50% / 48% 48% 52% 52%;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
     background-image: var(--olive-link-artwork);
-    background-size: cover;
+    background-size: contain;
     background-origin: padding-box;
-    overflow: hidden;
+    overflow: visible;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff9e8;
-    text-shadow: 0 1px 3px #000, 0 0 6px #0009;
-    box-shadow: inset 10px 8px 22px #e7df9b30, inset -12px -16px 22px #14230d70, 0 14px 22px #2a351e40;
+    color: #f0d38e;
+    text-shadow: 0 1px 2px #171b0e, 0 0 6px #171b0ecc;
+    box-shadow: none;
+    filter: drop-shadow(1px 10px 9px #23301c70);
     overflow-wrap: anywhere;
     transform-origin: 50% -1.8rem;
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition: transform .2s ease, filter .2s ease;
     cursor: pointer;
-}
-.link-page .olive-link[href="featured.html"] {
-    --olive-link-artwork: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/lefto.png");
 }
 .link-page .olive-link[href="creators.html"] {
     --olive-link-artwork: url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/righto.png");
 }
-.link-page .olive-link h2 {
-    margin: 0;
-    padding: 0;
-    color: inherit;
-    font-size: clamp(1.4rem, 3vw, 1.9rem);
+.link-page .olive-tree-scene .creators-directory-heading {
+    margin: 0 0 0.5rem;
+    color: #f0d38e;
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 400;
+    line-height: 1.2;
+    text-shadow: 0 -1px #fff2bd, 0 2px #402c15, 0 4px 9px #15190dee;
 }
-.link-page .olive-link p {
-    margin: 0;
-    color: inherit;
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
-    line-height: 1.65;
-    text-indent: 0;
+.link-page .creators-directory-heading .lang-en {
+    font-family: "Uncial Antiqua", Georgia, serif;
+    font-weight: 400;
+    font-synthesis: none;
 }
+.link-page .creators-directory-heading .lang-ar { font-family: "Amiri", serif; }
 .link-page .olive-arrow {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    translate: -50% -50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     width: 2.75rem;
     height: 2.75rem;
     border: 1px solid #e8c975;
@@ -154,37 +143,30 @@ body.link-page {
     font-size: 2rem;
     line-height: 1;
 }
-.link-page .olive-link:has(.lang-ar:not(.hidden)) .olive-arrow { transform: scaleX(-1); }
+.link-page .olive-tree-scene:has(.creators-directory-heading .lang-ar:not(.hidden)) .olive-arrow { transform: scaleX(-1); }
 
 /* 3. Hover, keyboard focus, and press states */
 @media (hover: hover) {
     .link-page .olive-link:hover {
         transform: translateY(-6px) rotate(-2deg) scale(1.025);
-        box-shadow: inset 10px 8px 22px #e7df9b40, 0 18px 30px #29351c70, 0 0 18px #d4b56c60;
+        filter: drop-shadow(5px 15px 12px #23301c79);
     }
 }
 .link-page .olive-link:focus-visible {
     outline: 4px solid #fff7d5;
     outline-offset: 5px;
-    box-shadow: 0 0 0 10px #344720, 0 18px 30px #29351c70;
 }
-.link-page .olive-link:active { transform: translateY(3px) scale(.98); }
-
-/* 4. Responsive adjustments */
-@media (min-width: 769px) {
-    .link-page .creators-destination-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(3rem, 10vw, 9rem);
-    }
-    .link-page .olive-link:nth-child(2) { margin-top: 3rem; }
-}
-@media (max-width: 768px) {
-    .link-page .olive-tree-scene { padding-bottom: 3rem; }
+.link-page .olive-link:active {
+    transform: translateY(3px) scale(.98);
+    filter: drop-shadow(0 6px 6px #23301c66);
 }
 
-/* 5. Reduced motion: preserve all navigation and focus feedback. */
+/* 4. Reduced motion: preserve navigation and focus feedback. */
 @media (prefers-reduced-motion: reduce) {
-    .link-page .olive-link { transition: none; animation: none; }
+    .link-page .olive-link { transition: none; }
     .link-page .olive-link:hover,
-    .link-page .olive-link:active { transform: none; }
+    .link-page .olive-link:active {
+        transform: none;
+        filter: drop-shadow(1px 10px 9px #23301c70);
+    }
 }
