@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman —
-   Date modified: 11/19/2026
+   Date modified: 11/25/2026
    Portrait archive and full-story viewer. */
 .featured-page {
     background: #e9e4d6;
@@ -30,12 +30,12 @@
     font-size: 1.15rem;
     color: #675438;
 }
-.featured-page .featured-gallery {
+:is(.featured-page, [data-featured-exhibition]) .featured-gallery {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(.85rem, 2vw, 1.5rem);
 }
-.featured-page .featured-card {
+:is(.featured-page, [data-featured-exhibition]) .featured-card {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -49,7 +49,7 @@
     text-align: center;
     overflow-wrap: anywhere;
 }
-.featured-page .featured-card-portrait {
+:is(.featured-page, [data-featured-exhibition]) .featured-card-portrait {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 5;
@@ -57,17 +57,17 @@
     border-radius: .45rem;
     background: #ddd8c8;
 }
-.featured-page .featured-card h3 {
+:is(.featured-page, [data-featured-exhibition]) .featured-card h3 {
     margin: 0;
     font: 700 clamp(1.1rem, 2vw, 1.4rem)/1.45 Georgia, serif;
 }
-.featured-page .featured-date {
+:is(.featured-page, [data-featured-exhibition]) .featured-date {
     margin: 0;
     color: #685638;
     font-size: .85rem;
     line-height: 1.65;
 }
-.featured-page .featured-button {
+:is(.featured-page, [data-featured-exhibition]) .featured-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -88,15 +88,15 @@
     cursor: pointer;
     transition: background-color .15s ease;
 }
-.featured-page .featured-card .featured-button {
+:is(.featured-page, [data-featured-exhibition]) .featured-card .featured-button {
     margin-top: auto;
 }
-.featured-page .featured-button:hover,
-.featured-page .featured-button[aria-expanded="true"] {
+:is(.featured-page, [data-featured-exhibition]) .featured-button:hover,
+:is(.featured-page, [data-featured-exhibition]) .featured-button[aria-expanded="true"] {
     background: #744133;
     border-color: #744133;
 }
-.featured-page .featured-story {
+:is(.featured-page, [data-featured-exhibition]) .featured-story {
     position: relative;
     min-width: 0;
     margin-top: 2rem;
@@ -109,24 +109,24 @@
     scroll-margin-top: 2rem;
     overflow-wrap: anywhere;
 }
-.featured-page .featured-close {
+:is(.featured-page, [data-featured-exhibition]) .featured-close {
     display: flex;
     margin-inline-start: auto;
     margin-bottom: 1.5rem;
     background: transparent;
     color: #35482f;
 }
-.featured-page .featured-close:hover {
+:is(.featured-page, [data-featured-exhibition]) .featured-close:hover {
     color: #fff9e8;
 }
-.featured-page .featured-story-intro {
+:is(.featured-page, [data-featured-exhibition]) .featured-story-intro {
     display: flex;
     align-items: center;
     gap: clamp(1rem, 3vw, 2rem);
     max-width: 48rem;
     margin: 0 auto 2rem;
 }
-.featured-page .featured-story-portrait {
+:is(.featured-page, [data-featured-exhibition]) .featured-story-portrait {
     display: block;
     width: 9rem;
     max-width: 35%;
@@ -136,34 +136,34 @@
     border-radius: .5rem;
     background: #e9e4d6;
 }
-.featured-page .featured-story h2 {
+:is(.featured-page, [data-featured-exhibition]) .featured-story h2 {
     margin: 0 0 .65rem;
     font: 700 clamp(1.5rem, 3vw, 2.3rem)/1.4 Georgia, serif;
 }
-.featured-page .featured-story h3 {
+:is(.featured-page, [data-featured-exhibition]) .featured-story h3 {
     margin: 1rem 0;
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     line-height: 1.5;
 }
-.featured-page .featured-story-body {
+:is(.featured-page, [data-featured-exhibition]) .featured-story-body {
     max-width: 44rem;
     margin-inline: auto;
 }
-.featured-page .featured-story-body p {
+:is(.featured-page, [data-featured-exhibition]) .featured-story-body p {
     margin: 0 0 1.25rem;
     font-size: clamp(1rem, 1.5vw, 1.15rem);
     line-height: 1.9;
     text-align: start;
 }
-.featured-page .featured-socials,
-.featured-page .featured-support-links {
+:is(.featured-page, [data-featured-exhibition]) .featured-socials,
+:is(.featured-page, [data-featured-exhibition]) .featured-support-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: .85rem;
     margin-block: 1.25rem;
 }
-.featured-page .featured-social-link {
+:is(.featured-page, [data-featured-exhibition]) .featured-social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -173,18 +173,18 @@
     border-radius: .45rem;
     background: #fff;
 }
-.featured-page .featured-social-icon {
+:is(.featured-page, [data-featured-exhibition]) .featured-social-icon {
     width: 36px;
     height: 36px;
     object-fit: contain;
     border-radius: .2rem;
 }
-.featured-page .featured-story-section {
+:is(.featured-page, [data-featured-exhibition]) .featured-story-section {
     margin-top: 1.75rem;
     padding-top: 1rem;
     border-top: 1px solid #d9c9aa;
 }
-.featured-page .featured-video {
+:is(.featured-page, [data-featured-exhibition]) .featured-video {
     display: block;
     width: 100%;
     height: auto;
@@ -193,38 +193,133 @@
     border-radius: .5rem;
     background: #303c22;
 }
-.featured-page .link-page-main :is(button, a, [tabindex]):focus-visible {
+:is(.featured-page .link-page-main, [data-featured-exhibition]) :is(button, a, [tabindex]):focus-visible {
     outline: 3px solid #99462c;
     outline-offset: 4px;
 }
-.featured-page .link-page-main .lang-ar {
+:is(.featured-page .link-page-main, [data-featured-exhibition]) .lang-ar {
     font-family: 'Amiri', Tahoma, serif;
     direction: rtl;
     letter-spacing: normal;
     line-height: 1.9;
 }
-.featured-page .link-page-main .lang-en,
-.featured-page .link-page-main .lang-ar {
+:is(.featured-page .link-page-main, [data-featured-exhibition]) .lang-en,
+:is(.featured-page .link-page-main, [data-featured-exhibition]) .lang-ar {
     display: block;
 }
-.featured-page .link-page-main .hidden,
-.featured-page .link-page-main [hidden] {
+:is(.featured-page .link-page-main, [data-featured-exhibition]) .hidden,
+:is(.featured-page .link-page-main, [data-featured-exhibition]) [hidden] {
     display: none !important;
 }
 @media (max-width: 900px) {
-    .featured-page .featured-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    :is(.featured-page, [data-featured-exhibition]) .featured-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 480px) {
-    .featured-page .featured-gallery { grid-template-columns: minmax(0, 1fr); }
-    .featured-page .featured-card { width: min(100%, 20rem); justify-self: center; }
-    .featured-page .featured-story-intro { flex-direction: column; align-items: start; }
-    .featured-page .featured-story-portrait { width: 8rem; max-width: 100%; }
+    :is(.featured-page, [data-featured-exhibition]) .featured-gallery { grid-template-columns: minmax(0, 1fr); }
+    :is(.featured-page, [data-featured-exhibition]) .featured-card { width: min(100%, 20rem); justify-self: center; }
+    :is(.featured-page, [data-featured-exhibition]) .featured-story-intro { flex-direction: column; align-items: start; }
+    :is(.featured-page, [data-featured-exhibition]) .featured-story-portrait { width: 8rem; max-width: 100%; }
 }
 /* Retain the existing mobile control stacking above the positioned title. */
 @media (max-width: 768px) {
     .featured-page .site-header[data-global-chrome] .menu-toggle { position: relative; z-index: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
-    .featured-page .featured-button { transition: none; }
+    :is(.featured-page, [data-featured-exhibition]) .featured-button { transition: none; }
     .featured-page .link-page-main { scroll-behavior: auto; }
+}
+
+/* Compact story viewer, enabled by the host exhibition. */
+.featured-story[data-featured-compact] {
+    box-sizing: border-box;
+    padding: clamp(0.8rem, 2vw, 1.4rem);
+}
+
+[data-featured-compact] .featured-story-intro {
+    gap: 0.85rem;
+    margin-block-end: 0.85rem;
+}
+
+[data-featured-compact] .featured-story-portrait {
+    width: 7.5rem;
+}
+
+[data-featured-compact] :is(.featured-story-intro > div, .featured-story-body) {
+    min-width: 0;
+}
+
+[data-featured-compact].featured-story h2 {
+    margin-block-end: 0.25rem;
+    font-size: clamp(1.15rem, 2.5vw, 1.65rem);
+}
+
+[data-featured-compact].featured-story h3 {
+    margin-block: 0.45rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+[data-featured-compact] .featured-story-body p {
+    margin-block-end: 0.65rem;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+[data-featured-compact] .featured-story-section {
+    margin-block-start: 1rem;
+    padding-block-start: 0.65rem;
+}
+
+[data-featured-compact] .featured-story-body > .featured-card-portrait {
+    box-sizing: border-box;
+    width: min(100%, 24rem);
+    height: auto;
+    aspect-ratio: auto;
+    margin: 0.75rem auto;
+    object-fit: contain;
+}
+
+[data-featured-compact] .featured-video {
+    box-sizing: border-box;
+    width: min(100%, 36rem);
+    margin-inline: auto;
+}
+
+[data-featured-compact] :is(.featured-socials, .featured-support-links) {
+    gap: 0.55rem;
+    margin-block: 0.65rem;
+}
+
+[data-featured-compact] .featured-socials:empty { display: none; }
+
+[data-featured-compact] .featured-social-icon {
+    width: 28px;
+    height: 28px;
+}
+
+[data-featured-compact] .featured-social-link {
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+}
+
+[data-featured-compact] .featured-support-links .featured-button:is(:link, :visited) {
+    border-color: #b08d57;
+    background: #164435;
+    color: #fff5de;
+    box-shadow: inset 0 1px #f4ecd83d, 0 2px 3px #2b201f55;
+}
+
+[data-featured-compact] .featured-support-links .featured-button:is(:hover, :focus-visible) {
+    border-color: #b08d57;
+    background: #41291f;
+    color: #fff5de;
+}
+
+@media (max-width: 480px) {
+    .featured-story[data-featured-compact] { padding: 0.7rem; }
+    [data-featured-compact] .featured-story-intro {
+        align-items: center;
+        text-align: center;
+    }
+    [data-featured-compact] .featured-story-portrait { width: 6.75rem; }
 }
