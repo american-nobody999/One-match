@@ -1,11 +1,12 @@
 // Author: Leslie Brockman
-//date modified: 2026-11-24
+//date modified: 2026-11-25
 // Weekly archive: add a record at the beginning; use null for undocumented dates.
 // Bilingual fields accept plain text or text/emphasis runs. Links use HTTPS URLs.
 "use strict";
 window.MPGAFeaturedHeroes = [
     {
         "id": "moh-at",
+        "gallery": "digital-art",
         "featuredDate": "2026-11-13",
         "dateLabels": {
             "en": "November 13, 2026",
@@ -100,6 +101,7 @@ window.MPGAFeaturedHeroes = [
     },
     {
         "id": "imadmah-mahmoud",
+        "gallery": "authors",
         "featuredDate": "2026-10-30",
         "dateLabels": {
             "en": "October 30, 2026",
@@ -169,6 +171,7 @@ window.MPGAFeaturedHeroes = [
     },
     {
         "id": "hussam-alshurafa",
+        "gallery": "authors",
         "featuredDate": null,
         "dateLabels": null,
         "names": {
