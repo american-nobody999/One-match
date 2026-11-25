@@ -2,7 +2,7 @@
 Author: Leslie Brockman
 Date: 10-21-2026
 We keep moving forward. All our ways.
-Date Modified: 11-11-2026
+Date Modified: 11-25-2026
 
 */
 /* American Nobody Archives: manifest index + validated monthly HTML fragments. */
