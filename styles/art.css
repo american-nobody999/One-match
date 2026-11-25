@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman
-   Date modified: 10/21/2026 */
+   Date modified: 11/25/2026 */
 :where(.art-page) .section-subtitle {
 text-align: center;
     font-size: 1.35rem;
@@ -445,3 +445,927 @@ body.art-page { background-color: #D9E2CE; }
 .art-page .art-main { overflow-wrap: anywhere; }
 
 .art-page :is(.lang-ar, .gallery-title-ar, .h3-ar, .p-ar) { direction: rtl; }
+
+/* Museum entrance */
+.art-page .art-main {
+    --museum-brass-light: #f6d9a0;
+    --museum-brass: #ae7b43;
+    --museum-wall: #e7d6b8;
+    --museum-wall-shadow: #b49873;
+    --museum-wood: #513028;
+    --museum-wood-dark: #281c20;
+    --museum-stone: #d8c7ae;
+    --museum-stone-seam: #74645950;
+    --museum-shadow: #38291f59;
+    --museum-spacing: clamp(0.85rem, 3vw, 2.25rem);
+    --museum-door-width: 14rem;
+    --museum-door-height: clamp(10rem, 24vw, 15rem);
+}
+
+.art-page .museum-entrance {
+    --entrance-emerald: #006B3C;
+    --entrance-red: #CE1126;
+    --entrance-ivory: #F4ECD8;
+    --entrance-charcoal: #171717;
+    --entrance-brass: #B08D57;
+    --entrance-gold: #E8C478;
+    width: min(100%, 72rem);
+    margin-block-end: var(--museum-spacing);
+    border: 1px solid var(--museum-brass);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    color: #352620;
+    background: var(--museum-wall);
+    box-shadow: 0 0.8rem 2rem var(--museum-shadow);
+}
+
+.art-page .museum-heading {
+    padding: calc(var(--museum-spacing) * 0.65) var(--museum-spacing);
+    border-block-end: 5px double var(--entrance-brass);
+    background:
+        radial-gradient(ellipse at center top, #006b3c70, transparent 75%),
+        linear-gradient(150deg, #263d32, var(--entrance-charcoal));
+    color: var(--entrance-ivory);
+}
+
+.art-page .museum-heading h1 {
+    margin: 0;
+    color: var(--entrance-gold);
+    font-size: clamp(1.16rem, 3.5vw, 2.25rem);
+    line-height: 1.18;
+    text-shadow: 0 -1px #171717, 0 1px #f4ecd84d, 0 2px 4px #0009;
+}
+
+.art-page .museum-heading h1 .lang-en { letter-spacing: 0.02em; }
+
+.art-page :is(.museum-heading h1, .museum-gallery-plaque, .museum-room-heading) > .lang-en,
+.art-page :is(.museum-doorway, .museum-room-heading) > .museum-gallery-number {
+    font-family: "Uncial Antiqua", Georgia, serif;
+    font-weight: 400;
+    font-synthesis: none;
+}
+
+.art-page :is(.museum-heading, .museum-gallery-plaque, .museum-room-heading) .lang-ar {
+    font-family: "Amiri", serif;
+    font-weight: 700;
+}
+
+.art-page .museum-intro {
+    margin: 0.4rem auto 0;
+    text-indent: 0;
+    font-size: clamp(0.9rem, 2.15vw, 1.08rem);
+}
+
+.art-page .museum-entrance .lang-ar { text-align: center; }
+
+.art-page .museum-lobby {
+    --museum-floor-depth: clamp(2.6rem, 5vw, 4rem);
+    --museum-frieze:
+        repeating-conic-gradient(from 45deg, transparent 0 25%, #f4ecd8b3 0 50%) center / 0.9rem 0.9rem,
+        repeating-linear-gradient(90deg, #ce11268c 0 0.45rem, #171717b3 0.45rem 0.9rem, #006b3ca6 0.9rem 1.35rem, var(--entrance-brass) 1.35rem 1.8rem) center / 1.8rem 100%;
+    position: relative;
+    isolation: isolate;
+    padding: calc(var(--museum-spacing) + 1rem) var(--museum-spacing) calc(var(--museum-floor-depth) + 0.8rem);
+    background:
+        linear-gradient(90deg, #64482d45, transparent 17% 83%, #64482d45),
+        radial-gradient(ellipse at top, #fff3d5b8, transparent 72%),
+        repeating-linear-gradient(0deg, #694c3452 0 1px, #fff2ce65 1px 3px, transparent 3px 3.7rem, #815e4124 4rem),
+        repeating-linear-gradient(90deg, #74563a40 0 1px, #fff5dc52 1px 3px, #d6b58a15 3px 6rem, #96705212 6rem 12rem),
+        linear-gradient(var(--museum-wall), var(--museum-wall-shadow));
+}
+
+.art-page .museum-lobby::after {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 0.85rem;
+    border-block: 2px ridge var(--entrance-brass);
+    background: var(--museum-frieze);
+    box-shadow: 0 3px 6px #51362040;
+    content: "";
+    pointer-events: none;
+}
+
+.art-page .museum-lobby::before {
+    position: absolute;
+    z-index: -1;
+    inset: auto 0 0;
+    height: var(--museum-floor-depth);
+    box-sizing: border-box;
+    border-block-start: 3px ridge var(--entrance-brass);
+    background:
+        linear-gradient(180deg, #17171769, transparent 54%, #fff0d84a),
+        repeating-linear-gradient(0deg, var(--museum-stone-seam) 0 1px, transparent 1px 1.6rem),
+        repeating-conic-gradient(from 45deg, var(--entrance-ivory) 0 25%, transparent 0 50%) center / 3.2rem 1.6rem,
+        conic-gradient(from 45deg, #537258 0 25%, #974f55 0 50%, var(--entrance-brass) 0 75%, var(--museum-stone) 0) center / 3.2rem 1.6rem;
+    content: "";
+    pointer-events: none;
+}
+
+.art-page .museum-gallery-grid::after {
+    position: absolute;
+    inset: auto 0 var(--museum-floor-depth);
+    height: 0.5rem;
+    background: var(--museum-frieze);
+    box-shadow: 0 -1px var(--entrance-gold), 0 2px 4px #17171755;
+    content: "";
+    pointer-events: none;
+}
+
+.art-page .museum-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--museum-spacing);
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.art-page .museum-gallery-grid > li {
+    position: relative;
+    min-width: 0;
+    background: radial-gradient(ellipse 62% 58% at 50% 2%, #ffe5a9db, #f4cf8a38 57%, transparent);
+}
+
+.art-page .museum-gallery-grid > li::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: calc(var(--museum-spacing) / -2);
+    width: min(1.65rem, calc(var(--museum-spacing) - 0.3rem));
+    translate: 50% 0;
+    border-radius: 0.18rem;
+    background:
+        repeating-conic-gradient(from 45deg, #674d3866 0 25%, transparent 0 50%) center 0.32rem / 0.38rem 0.38rem repeat-x,
+        linear-gradient(#f4ecd8, var(--entrance-brass) 30%, #755139 68%, var(--entrance-gold) 80%, #755139) top / 100% 0.95rem no-repeat,
+        linear-gradient(#735035, var(--entrance-gold) 22%, #8f6847 25% 45%, #d1ad79 48% 64%, #735035 68%, var(--entrance-brass)) bottom / 100% 1.15rem no-repeat,
+        linear-gradient(90deg, #62482f85, transparent 32% 55%, #4c342caf) center / 74% 100% no-repeat,
+        repeating-linear-gradient(90deg, #dec59e 0 2px, #9f805c 2px 3.5px, #ebd5af 3.5px 5px) center / 74% 100% no-repeat;
+    filter: drop-shadow(3px 2px 3px #543b2a73);
+    content: "";
+    pointer-events: none;
+}
+
+.art-page .museum-gallery-grid > li:dir(rtl)::after { translate: -50% 0; }
+
+.art-page .museum-gallery-door {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, var(--museum-door-width));
+    height: 100%;
+    margin-inline: auto;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: center;
+}
+
+.art-page .museum-gallery-door:disabled { opacity: 1; }
+
+.art-page .museum-doorway {
+    --museum-door-color: #315747;
+    --museum-rivet: radial-gradient(circle at 36% 28%, var(--entrance-ivory), var(--entrance-brass) 37%, #583925 53%, transparent 64%);
+    position: relative;
+    display: grid;
+    place-items: start center;
+    height: var(--museum-door-height);
+    padding: 1.05rem 0.35rem 0;
+    border: clamp(0.32rem, 1vw, 0.72rem) solid #ac8a64;
+    border-color: var(--entrance-gold) var(--entrance-brass) #6b4a35 #c29364;
+    border-radius: 49% 49% 0.25rem 0.25rem / 32% 32% 0.25rem 0.25rem;
+    background:
+        var(--museum-rivet) 50% 0.26rem / 0.3rem 0.3rem no-repeat,
+        var(--museum-rivet) 24% 5.5% / 0.3rem 0.3rem no-repeat,
+        var(--museum-rivet) 76% 5.5% / 0.3rem 0.3rem no-repeat,
+        var(--museum-rivet) 7% 19% / 0.3rem 0.3rem no-repeat,
+        var(--museum-rivet) 93% 19% / 0.3rem 0.3rem no-repeat,
+        linear-gradient(90deg, transparent 49%, #241f21 49% 51%, transparent 51%),
+        repeating-linear-gradient(90deg, #ffffff12 0 1px, transparent 1px 7px, #1d161b26 7px 10px, transparent 10px 15px),
+        repeating-linear-gradient(88deg, transparent 0 5px, #fff0d50c 5px 6px, transparent 6px 18px),
+        linear-gradient(135deg, var(--museum-door-color), var(--museum-wood-dark));
+    box-shadow: inset 0 0 0 1px var(--entrance-gold), inset 0 0 0 3px #815436, inset 0 0 1.5rem #171717e0,
+        0 0 0 1px #553a2c, 0 0 0 3px var(--entrance-brass), 0 0 0 4px #e5c999, 0 0.5rem 0.8rem #34241f75;
+}
+
+.art-page .museum-gallery-door:is([data-gallery="folk-art"], [data-gallery="authors"]) .museum-doorway {
+    --museum-door-color: var(--museum-wood);
+}
+.art-page .museum-gallery-door[data-gallery="photography"] .museum-doorway { --museum-door-color: #304749; }
+.art-page .museum-gallery-door[data-gallery="mixed-media"] .museum-doorway { --museum-door-color: #654044; }
+
+.art-page .museum-doorway::before {
+    position: absolute;
+    inset: 0.6rem;
+    border: 1px solid #d2ab765e;
+    border-radius: inherit;
+    background:
+        repeating-conic-gradient(var(--entrance-gold) 0 25%, #745036 0 50%) left bottom / 0.5rem 0.5rem no-repeat,
+        repeating-conic-gradient(var(--entrance-gold) 0 25%, #745036 0 50%) right bottom / 0.5rem 0.5rem no-repeat,
+        linear-gradient(#694832, var(--entrance-gold), #735039) left 46% / 0.5rem 0.28rem no-repeat,
+        linear-gradient(#694832, var(--entrance-gold), #735039) right 46% / 0.5rem 0.28rem no-repeat,
+        linear-gradient(135deg, #f6d6a234, #1c131640 65%, #f6d6a223) 10% 72% / 36% 54% no-repeat,
+        linear-gradient(135deg, #f6d6a234, #1c131640 65%, #f6d6a223) 90% 72% / 36% 54% no-repeat;
+    box-shadow: inset 0 0 0 1px #382419a6;
+    content: "";
+}
+
+.art-page .museum-doorway::after {
+    position: absolute;
+    inset: 64% 0 auto;
+    height: 0.85rem;
+    background:
+        radial-gradient(circle at 37% 27%, #ffe6b8, #b27a42 32%, #573623 53%, transparent 58%) 44% center / 0.85rem 0.85rem no-repeat,
+        radial-gradient(circle at 37% 27%, #ffe6b8, #b27a42 32%, #573623 53%, transparent 58%) 56% center / 0.85rem 0.85rem no-repeat,
+        radial-gradient(ellipse, #30231e 29%, var(--entrance-gold) 49%, #71472a 65%, transparent 70%) 44% center / 1.05rem 100% no-repeat,
+        radial-gradient(ellipse, #30231e 29%, var(--entrance-gold) 49%, #71472a 65%, transparent 70%) 56% center / 1.05rem 100% no-repeat;
+    filter: drop-shadow(0 2px 1px #201512aa);
+    content: "";
+}
+
+.art-page .museum-gallery-number {
+    z-index: 1;
+    min-width: 2.1rem;
+    padding-inline: 0.3rem;
+    border: 1px solid var(--museum-brass);
+    border-radius: 50%;
+    background: var(--museum-wood-dark);
+    color: var(--museum-brass-light);
+}
+
+.art-page .museum-doorway .museum-gallery-number {
+    background:
+        radial-gradient(ellipse, var(--museum-wood-dark) 52%, transparent 58%),
+        repeating-conic-gradient(var(--entrance-gold) 0 10deg, var(--entrance-brass) 10deg 18deg, #674731 18deg 24deg);
+    box-shadow: inset 0 0 0 1px var(--entrance-gold), 0 2px 3px #22171b99;
+}
+
+.art-page .museum-gallery-plaque {
+    --plaque-rivet: radial-gradient(circle at 34% 28%, #fff2ce, #8c5b36 55%, transparent 65%);
+    display: grid;
+    place-items: center;
+    min-height: 48px;
+    padding: 0.32rem 0.85rem;
+    border: 3px double #815831;
+    border-radius: 0.22rem;
+    background:
+        var(--plaque-rivet) left 0.15rem top 0.15rem / 0.35rem 0.35rem no-repeat,
+        var(--plaque-rivet) right 0.15rem top 0.15rem / 0.35rem 0.35rem no-repeat,
+        var(--plaque-rivet) left 0.15rem bottom 0.15rem / 0.35rem 0.35rem no-repeat,
+        var(--plaque-rivet) right 0.15rem bottom 0.15rem / 0.35rem 0.35rem no-repeat,
+        repeating-linear-gradient(0deg, #fff3cf21 0 1px, transparent 1px 3px),
+        linear-gradient(var(--entrance-brass), var(--entrance-gold) 26%, #f5db9d 48%, var(--entrance-brass));
+    color: #2d1d13;
+    box-shadow: inset 0 1px #fff0c6, inset 0 -1px #835631, 0 3px 5px var(--museum-shadow);
+    text-shadow: 0 1px #fff0c699;
+    font-size: clamp(0.85rem, 1.35vw, 0.98rem);
+    line-height: 1.25;
+    text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .art-page .museum-gallery-door :is(.museum-doorway, .museum-gallery-plaque) {
+        transition: filter 180ms ease;
+    }
+}
+
+.art-page .museum-gallery-door:enabled:is(:hover, :focus-visible) :is(.museum-doorway, .museum-gallery-plaque) {
+    filter: brightness(1.1);
+}
+
+.art-page .museum-gallery-door:focus-visible {
+    outline: 2px solid #55351f;
+    outline-offset: 4px;
+}
+
+@media (min-width: 821px) {
+    .art-page .museum-gallery-grid > li:nth-child(3n)::after { content: none; }
+}
+
+@media (max-width: 820px) {
+    .art-page .museum-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .art-page .museum-gallery-grid > li:nth-child(2n)::after { content: none; }
+}
+
+@media (max-width: 520px) {
+    .art-page .museum-gallery-grid { grid-template-columns: minmax(0, 1fr); }
+    .art-page .museum-gallery-grid > li::after { content: none; }
+    .art-page .museum-entrance { --museum-door-height: 12rem; }
+}
+
+/* Shared room foundation and visibility. */
+.art-page :is(.museum-entrance, .museum-gallery-room)[hidden] {
+    display: none;
+}
+
+.art-page .museum-gallery-room {
+    --room-wall: #25483c;
+    --room-panel: #18352f;
+    --room-trim: #422a25;
+    --room-floor: #353331;
+    --room-floor-seam: #ae8b654f;
+    --room-light: #ffe0a356;
+    --room-edge-light: #a3e0cd26;
+    --room-frame: #342623;
+    --room-frame-mat: #f2e3cb;
+    --room-wood: #5e392d;
+    --room-motif: linear-gradient(transparent, transparent);
+    --room-floor-height: 24%;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 72rem);
+    min-width: 0;
+    min-height: clamp(25rem, 56vw, 37rem);
+    padding: clamp(4rem, 9vw, 6.5rem) var(--museum-spacing) var(--museum-spacing);
+    border: 6px double var(--museum-brass);
+    border-radius: 0.75rem;
+    overflow: clip;
+    background:
+        linear-gradient(90deg, var(--room-trim) 0 1.5%, transparent 3% 97%, var(--room-trim) 98.5%),
+        linear-gradient(var(--museum-brass), var(--room-trim) 0.4rem, var(--room-trim) 0.75rem, var(--museum-brass) 0.8rem, transparent 0.9rem),
+        radial-gradient(ellipse at 50% 0, var(--room-light), transparent 60%),
+        var(--room-motif),
+        repeating-linear-gradient(90deg, transparent 0 19.6%, #fff2c327 19.7% 20%, var(--room-trim) 20% 20.4%, transparent 20.5% 25%),
+        linear-gradient(164deg, var(--room-wall), var(--room-panel));
+    color: #fff2d5;
+    box-shadow: inset 0 0 0 1px var(--museum-wall-shadow), 0 0.8rem 2rem var(--museum-shadow);
+}
+
+.art-page .museum-gallery-room::before {
+    position: absolute;
+    z-index: -1;
+    inset: auto 0 0;
+    height: var(--room-floor-height);
+    border-block-start: 8px ridge var(--room-trim);
+    background:
+        linear-gradient(180deg, #130e17b3, transparent 55%, var(--room-edge-light)),
+        repeating-linear-gradient(0deg, transparent 0 1.45rem, var(--room-floor-seam) 1.5rem 1.55rem),
+        repeating-conic-gradient(from 72deg at 50% -95%, var(--room-floor) 0 14deg, var(--room-floor-seam) 14deg 14.5deg);
+    content: "";
+    pointer-events: none;
+}
+
+.art-page .museum-spotlight {
+    position: absolute;
+    z-index: -1;
+    inset: 0.9rem 7% auto;
+    height: min(68%, 21rem);
+    background:
+        radial-gradient(ellipse, #fff0b3 8%, var(--museum-brass) 46%, transparent 69%) 22% 0 / 2rem 0.9rem no-repeat,
+        radial-gradient(ellipse, #fff0b3 8%, var(--museum-brass) 46%, transparent 69%) 78% 0 / 2rem 0.9rem no-repeat,
+        linear-gradient(90deg, transparent, var(--room-trim) 12% 88%, transparent) center 0.2rem / 100% 0.28rem no-repeat,
+        radial-gradient(ellipse at 24% 0, var(--room-light), transparent 48%),
+        radial-gradient(ellipse at 76% 0, var(--room-light), transparent 48%);
+    pointer-events: none;
+}
+
+.art-page #folk-art.museum-gallery-room {
+    --room-wall: #eed6ad;
+    --room-panel: #caab80;
+    --room-trim: #6c5035;
+    --room-floor: #aa765c;
+    --room-floor-seam: #51372852;
+    --room-light: #ffedb399;
+    --room-edge-light: #ffd18d3b;
+    --room-frame: #705232;
+    --room-wood: #775737;
+    --room-motif:
+        repeating-conic-gradient(from 45deg, #923f47 0 25%, #f4dbaa 0 50%) center 2rem / 1rem 0.65rem repeat-x,
+        radial-gradient(ellipse at 50% 100%, transparent 62%, #986b483f 63% 65%, transparent 66%) center top / 33.333% 73% repeat-x;
+    color: #382619;
+}
+
+.art-page #authors.museum-gallery-room {
+    --room-wall: #4a5141;
+    --room-panel: #44272d;
+    --room-trim: #41271f;
+    --room-floor: #674332;
+    --room-floor-seam: #d8a26d46;
+    --room-light: #ffd99365;
+    --room-edge-light: #ffcb782e;
+    --room-wood: #714630;
+    --room-motif:
+        repeating-linear-gradient(0deg, transparent 0 2.6rem, #c992574d 2.6rem 2.7rem, #36251fea 2.7rem 3rem) left 5% top 35% / 19% 60% no-repeat,
+        repeating-linear-gradient(0deg, transparent 0 2.6rem, #c992574d 2.6rem 2.7rem, #36251fea 2.7rem 3rem) right 5% top 35% / 19% 60% no-repeat;
+}
+
+.art-page #photography.museum-gallery-room {
+    --room-wall: #485458;
+    --room-panel: #272d32;
+    --room-trim: #222225;
+    --room-floor: #77736d;
+    --room-floor-seam: #d9d4c356;
+    --room-light: #fff4da4f;
+    --room-edge-light: #fff5e923;
+    --room-frame: #212127;
+    --room-frame-mat: #fbf2e0;
+}
+
+.art-page #photography > .museum-artist-exhibitions > .image-gallery-section :is(p, figcaption) {
+    color: #292929;
+}
+
+.art-page #photography > .museum-artist-exhibitions > .image-gallery-section .image-container h3 {
+    color: #263D30;
+}
+
+.art-page #mixed-media.museum-gallery-room {
+    --room-wall: #914e3f;
+    --room-panel: #633b34;
+    --room-trim: #3c4938;
+    --room-floor: #755a43;
+    --room-floor-seam: #bf9a684f;
+    --room-light: #ffd4977a;
+    --room-edge-light: #b8c5893b;
+    --room-frame: #50392d;
+    --room-wood: #64513a;
+    --room-motif: repeating-linear-gradient(164deg, transparent 0 6px, #ffcb8b13 6px 7px);
+}
+
+.art-page #mixed-media > .museum-artist-exhibitions > .image-gallery-section > .section-intro {
+    color: #292929;
+}
+
+.art-page #mixed-media > .museum-artist-exhibitions > .image-gallery-section .image-container > :is(h3, p) {
+    color: #263D30;
+}
+
+.art-page .museum-room-heading {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.45rem 0.8rem;
+    border: 3px double var(--museum-brass-light);
+    border-radius: 0.28rem;
+    background: linear-gradient(var(--museum-wood), var(--museum-wood-dark));
+    color: var(--museum-brass-light);
+    font-size: clamp(1.25rem, 4vw, 2.4rem);
+}
+
+.art-page .museum-room-heading .museum-gallery-number {
+    display: inline-block;
+    margin-inline-end: 0.5rem;
+    font-size: 0.75em;
+}
+
+.art-page .museum-room-intro {
+    margin: 0.75rem auto;
+    text-indent: 0;
+    font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+}
+
+.art-page .museum-gallery-room .lang-ar { text-align: center; }
+
+.art-page .museum-gallery-room :is(.museum-artist-exhibitions, .museum-permanent-collection):not(:empty) {
+    width: 100%;
+    margin-block: var(--museum-spacing);
+}
+
+.art-page .museum-exhibition {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    align-items: start;
+    gap: var(--museum-spacing);
+}
+
+.art-page .museum-artist-profile {
+    grid-column: 1 / -1;
+    padding: var(--museum-spacing);
+    border-inline-start: 3px solid var(--museum-brass);
+    background: var(--room-frame-mat);
+    color: #34251e;
+    text-align: start;
+}
+
+.art-page .museum-artwork { min-width: 0; margin: 0; }
+
+.art-page :is(.museum-artwork-frame, .museum-video-display, .museum-book-display) {
+    padding: clamp(0.6rem, 2vw, 1.35rem);
+    border: 4px ridge var(--room-frame);
+    background: var(--room-frame-mat);
+    box-shadow: 0 0 0 1px var(--museum-brass), 0 0.5rem 0.9rem var(--museum-shadow);
+}
+
+.art-page .museum-gallery-room :is(.museum-artwork-frame, .museum-video-display, .museum-book-display, .museum-artist-profile) :is(img, video) {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+.art-page .museum-video-display iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.art-page .museum-artwork-plaque {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.65rem auto 0;
+    padding: 0.4rem 0.75rem;
+    border: 3px double var(--museum-brass);
+    background: var(--room-frame-mat);
+    color: #34251e;
+}
+
+.art-page .museum-display-pedestal {
+    padding: 0.8rem 0.75rem 1.35rem;
+    border-block: 0.3rem ridge var(--museum-brass);
+    background: linear-gradient(100deg, var(--room-wood), var(--room-frame));
+    box-shadow: 0 0.6rem 1rem var(--museum-shadow);
+}
+
+.art-page .museum-poetry-display {
+    padding: var(--museum-spacing);
+    border: 1px solid var(--museum-brass);
+    background: radial-gradient(ellipse at top, #fff7df, var(--room-frame-mat));
+    color: #34251e;
+    text-align: start;
+}
+
+.art-page #digital-art.museum-gallery-room .museum-artwork-frame {
+    box-shadow: 0 0 0 1px var(--museum-brass), 0 0 1.25rem var(--room-edge-light);
+}
+
+.art-page #mixed-media.museum-gallery-room .museum-artwork:nth-child(even) .museum-artwork-frame {
+    border-color: var(--room-trim);
+}
+
+.art-page .museum-back-btn {
+    min-height: 44px;
+    max-width: 100%;
+    margin-top: auto;
+    padding: 0.4rem 0.85rem;
+    border: 3px double var(--museum-brass);
+    border-radius: 0.3rem;
+    background: linear-gradient(var(--museum-brass-light), #cc9a61);
+    color: #332117;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.art-page .museum-gallery-door:enabled { cursor: pointer; }
+
+.art-page :is(.museum-gallery-door, .museum-back-btn, .museum-room-heading):focus-visible {
+    outline: 3px solid #214d40;
+    outline-offset: 5px;
+}
+
+
+@media (max-width: 820px) {
+    .art-page .museum-gallery-room { --museum-spacing: clamp(0.8rem, 3vw, 1.5rem); }
+}
+
+@media (max-width: 520px) {
+    .art-page .museum-gallery-room {
+        --room-floor-height: 19%;
+        padding-block-start: 3.2rem;
+    }
+    .art-page #authors.museum-gallery-room { --room-motif: linear-gradient(transparent, transparent); }
+    .art-page .museum-exhibition { grid-template-columns: minmax(0, 1fr); }
+}
+
+.art-page .museum-gallery-door[data-gallery="artists"] .museum-doorway {
+    --museum-door-color: #475430;
+}
+
+.art-page #artists.museum-gallery-room {
+    --room-wall: #475435;
+    --room-panel: #303d29;
+    --room-trim: #4a2e24;
+    --room-floor: #573e30;
+    --room-wood: #67432e;
+}
+
+.art-page #artists .museum-artist-exhibitions {
+    min-width: 0;
+}
+
+.art-page #artists .video-gallery-section {
+    width: 100%;
+    margin-inline: auto;
+    background: var(--museum-wall);
+    color: #352620;
+}
+
+
+
+/* This is first phase of the art page styling: future design for 3D carsoul spinning effects, movements and interactive animations are in progress.
+we want to enhance the visual experience with interactive elements and dynamic layouts.
+Issue is also keeping it mobile friendly. Most of the audience is restricted to cell phone usage, so responsive design and touch interactions are crucial.
+maintainability also key componet as we add more artists and galleries to the page, ensuring that the code remains organized and easy to update.  We aim to create a scalable and flexible design system for future enhancements.
+ I don't know, this is where I stuck my notes on this project for now.  Featred.html is being retired, we should just keep the creators in creators.css, the artists and poets in their spots, and continue building the interactive museum experience here.
+ There are also lots of musicicans and performers that we may want to feature in the future, so the design should be flexible enough to accommodate different types of media and content.
+ We are going to design an olive as a trophey to show they were a featured-hero of the week, making it a recognizable and consistent visual element throughout the website experience.
+ What else--
+ */
+.art-page #folk-art > .museum-artist-exhibitions:not(:empty) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: var(--museum-spacing);
+    min-width: 0;
+}
+
+.art-page #folk-art > .museum-artist-exhibitions > .section {
+    margin: 0;
+    padding: clamp(1rem, 2vw, 1.55rem);
+    background: var(--museum-wall);
+    color: #352620;
+}
+
+.art-page #folk-art :is(.image-gallery, .video-gallery) {
+    --art-item-width: 100%;
+    gap: 0.65rem;
+    padding: 0.35rem;
+}
+
+.art-page #folk-art .image-gallery .image-container img {
+    display: block;
+    height: clamp(10rem, 24vw, 17rem);
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (min-width: 960px) {
+    .art-page #folk-art > .museum-artist-exhibitions:not(:empty) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .art-page #folk-art .image-gallery {
+        --art-item-width: calc((100% - 0.65rem) / 2);
+    }
+
+    .art-page #folk-art .image-gallery .image-container img {
+        height: clamp(9rem, 13vw, 13rem);
+    }
+}
+
+.art-page #digital-art.museum-gallery-room {
+    --room-wall: #16483a;
+    --room-panel: #102b25;
+    --room-trim: #45291e;
+    --digital-brass: #b08d57;
+    --digital-gold: #e8c478;
+    --digital-rivet: radial-gradient(circle at 35% 30%, #fff1c8, #b08d57 34%, #56351f 55%, transparent 62%);
+    box-sizing: border-box;
+    width: min(96%, 85rem);
+    padding-block-start: clamp(2.8rem, 5vw, 4.1rem);
+    border: clamp(0.45rem, 1.1vw, 0.85rem) solid transparent;
+    background:
+        linear-gradient(90deg, #0c1d18bb, transparent 19% 81%, #0c1d18bb) padding-box,
+        linear-gradient(#e4bf7a, #725036 18%, #302019 31% 62%, #bd9155 78%, #533622) top / 100% 1.25rem no-repeat padding-box,
+        repeating-conic-gradient(from 45deg, #e8c4783d 0 25%, transparent 0 50%, #a4505152 0 75%, #f4ecd837 0) center 1.25rem / 0.75rem 0.65rem repeat-x padding-box,
+        linear-gradient(#e6ba75, #643d28 48%, #ad814a 76%, #302019) left 1.2rem / 1.25rem 0.65rem no-repeat padding-box,
+        linear-gradient(#e6ba75, #643d28 48%, #ad814a 76%, #302019) right 1.2rem / 1.25rem 0.65rem no-repeat padding-box,
+        linear-gradient(#805632, #e2b875 37%, #8f633e 56%, #302019) left bottom / 1.25rem 0.9rem no-repeat padding-box,
+        linear-gradient(#805632, #e2b875 37%, #8f633e 56%, #302019) right bottom / 1.25rem 0.9rem no-repeat padding-box,
+        linear-gradient(90deg, #211613, #754e35 38%, #40281e 71%, #261713) left / 0.85rem 100% no-repeat padding-box,
+        linear-gradient(270deg, #211613, #754e35 38%, #40281e 71%, #261713) right / 0.85rem 100% no-repeat padding-box,
+        repeating-linear-gradient(90deg, #a87c47 0 1px, #795934 1px 3px, #081b16 3px 8px, transparent 8px 24.5%, #07201a 24.5% 25%) padding-box,
+        linear-gradient(160deg, var(--room-wall), var(--room-panel) 70%, #081b17) padding-box,
+        repeating-linear-gradient(93deg, #23171555 0 2px, transparent 2px 7px) border-box,
+        linear-gradient(135deg, #7c533a, #30201a 30%, #5e3b28 54%, #241713 80%, #8e6443) border-box;
+    box-shadow: inset 0 0 0 1px #f1cd89, inset 0 0 0 4px #795432,
+        0 0 0 1px #d2a96a, 0 0 0 3px #4b3123, 0 0.8rem 2rem #24191170;
+}
+
+.art-page #digital-art.museum-gallery-room::after {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        var(--digital-rivet) left 0.2rem top 0.2rem / 0.48rem 0.48rem no-repeat,
+        var(--digital-rivet) right 0.2rem top 0.2rem / 0.48rem 0.48rem no-repeat,
+        var(--digital-rivet) left 0.2rem bottom 0.2rem / 0.48rem 0.48rem no-repeat,
+        var(--digital-rivet) right 0.2rem bottom 0.2rem / 0.48rem 0.48rem no-repeat,
+        conic-gradient(from 90deg at 0 0, var(--digital-brass) 0 25%, transparent 0) left top / 1rem 1rem no-repeat,
+        conic-gradient(from 180deg at 100% 0, var(--digital-brass) 0 25%, transparent 0) right top / 1rem 1rem no-repeat,
+        conic-gradient(from 0deg at 0 100%, var(--digital-brass) 0 25%, transparent 0) left bottom / 1rem 1rem no-repeat,
+        conic-gradient(from 270deg at 100% 100%, var(--digital-brass) 0 25%, transparent 0) right bottom / 1rem 1rem no-repeat;
+    content: "";
+    pointer-events: none;
+}
+
+.art-page #digital-art .museum-spotlight {
+    --digital-fixture: linear-gradient(#664023, var(--digital-gold) 35%, #91663d 58%, #382418 65%, #ffdb95);
+    inset: 1.65rem 3% auto;
+    height: min(72%, 29rem);
+    background:
+        var(--digital-fixture) 26% 0 / 2.25rem 0.75rem no-repeat,
+        var(--digital-fixture) 82% 0 / 2.25rem 0.75rem no-repeat,
+        radial-gradient(ellipse at 26% 5%, #ffe0a766, #ffc98423 44%, transparent 72%) left / 65% 100% no-repeat,
+        radial-gradient(ellipse at 74% 5%, #ffe0a75e, #ffc98423 44%, transparent 72%) right / 42% 100% no-repeat;
+}
+
+.art-page #digital-art > .museum-artist-exhibitions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: var(--museum-spacing);
+    min-width: 0;
+}
+
+.art-page #digital-art [data-featured-exhibition] { display: contents; }
+
+.art-page #digital-art .museum-artist-exhibitions > .video-gallery-section {
+    margin: 0;
+    border-color: var(--digital-gold);
+    background:
+        var(--digital-rivet) left 0.45rem top 0.45rem / 0.75rem 0.75rem no-repeat,
+        var(--digital-rivet) right 0.45rem top 0.45rem / 0.75rem 0.75rem no-repeat,
+        var(--digital-rivet) left 0.45rem bottom 0.45rem / 0.75rem 0.75rem no-repeat,
+        var(--digital-rivet) right 0.45rem bottom 0.45rem / 0.75rem 0.75rem no-repeat,
+        var(--museum-wall);
+    color: #352620;
+    outline: 1px solid #775035;
+    box-shadow: inset 0 0 0 1px #30211a, inset 0 0 0 3px var(--digital-brass),
+        inset 0 0 0 4px #30211a, inset 0 0 0 5px #91434a, inset 0 0 0 6px #f4ecd8,
+        inset 0 0 0 7px #315a45, inset 0 0 1.15rem #50352172, 0 0.55rem 1.15rem #081e1790;
+}
+
+.art-page #digital-art .featured-card {
+    border-color: var(--digital-gold);
+    box-shadow: inset 0 0 0 2px #624128, inset 0 0 0 4px var(--digital-brass),
+        0 0 0 2px #523421, 0 0.55rem 1.15rem #081e1780;
+}
+
+.art-page #digital-art .video-gallery-section :is(h2 > .gallery-title-en, .section-subtitle > .lang-en) {
+    font-family: "Uncial Antiqua", Georgia, serif;
+    font-weight: 400;
+    font-synthesis: none;
+}
+
+.art-page #digital-art .video-gallery-section :is(h2 > .gallery-title-ar, .section-subtitle > .lang-ar) {
+    font-family: "Amiri", serif;
+}
+
+.art-page #digital-art .video-gallery { --art-item-width: 100%; }
+
+.art-page #digital-art .featured-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 19rem);
+    justify-self: center;
+}
+
+.art-page #digital-art :is(.featured-card, .featured-story) { color: #303c22; }
+
+.art-page #digital-art .featured-story {
+    grid-column: 1 / -1;
+    margin: 0;
+    text-align: start;
+}
+
+.art-page #digital-art :is(.featured-gallery, .featured-story) img:not(.featured-story-body > .featured-card-portrait) {
+    margin: 0;
+    border: 0;
+}
+
+.art-page #digital-art .featured-card-portrait { max-width: 100%; }
+
+.art-page #digital-art :is(.featured-gallery, .featured-story) p { text-indent: 0; }
+
+@media (min-width: 880px) {
+    .art-page #digital-art > .museum-artist-exhibitions {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 19rem);
+        gap: clamp(1.5rem, 3vw, 3rem);
+    }
+}
+
+@media (max-width: 879px) {
+    .art-page #digital-art .museum-spotlight {
+        background:
+            var(--digital-fixture) center top / 2rem 0.75rem no-repeat,
+            radial-gradient(ellipse at 50% 5%, #ffe0a766, #ffc98423 44%, transparent 72%);
+    }
+}
+
+.art-page #authors > .museum-artist-exhibitions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: var(--museum-spacing);
+    min-width: 0;
+}
+
+.art-page #authors [data-featured-exhibition] { display: contents; }
+
+.art-page #authors .museum-artist-exhibitions > .image-gallery-section {
+    margin: 0;
+    background: var(--museum-wall);
+    color: #352620;
+}
+
+.art-page #authors .image-gallery { --art-item-width: 100%; }
+
+.art-page #authors .featured-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 19rem);
+    justify-self: center;
+}
+
+.art-page #authors .featured-card { width: 100%; }
+.art-page #authors :is(.featured-card, .featured-story) { color: #303c22; }
+
+.art-page #authors .featured-story {
+    grid-column: 1 / -1;
+    margin: 0;
+    text-align: start;
+}
+
+.art-page #authors :is(.featured-gallery, .featured-story) img:not(.featured-story-body > .featured-card-portrait) {
+    margin: 0;
+    border: 0;
+}
+
+.art-page #authors .featured-card-portrait { max-width: 100%; }
+
+.art-page #authors :is(.featured-gallery, .featured-story) p { text-indent: 0; }
+
+@media (min-width: 600px) {
+    .art-page #authors .featured-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: min(100%, 39rem);
+    }
+}
+
+@media (min-width: 1040px) {
+    .art-page #authors > .museum-artist-exhibitions {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    }
+}
+
+/* Museum finish for the compact Featured Hero story viewer. */
+.art-page :is(#digital-art, #authors) .featured-story[data-featured-compact] {
+    --story-brass: #b08d57;
+    --story-gold: #e8c478;
+    width: min(100%, 56rem);
+    justify-self: center;
+    border: 4px double var(--story-brass);
+    background:
+        radial-gradient(circle, var(--story-gold), #735033 55%, transparent 63%) left 0.18rem top 0.18rem / 0.42rem 0.42rem no-repeat,
+        radial-gradient(circle, var(--story-gold), #735033 55%, transparent 63%) right 0.18rem top 0.18rem / 0.42rem 0.42rem no-repeat,
+        radial-gradient(circle, var(--story-gold), #735033 55%, transparent 63%) left 0.18rem bottom 0.18rem / 0.42rem 0.42rem no-repeat,
+        radial-gradient(circle, var(--story-gold), #735033 55%, transparent 63%) right 0.18rem bottom 0.18rem / 0.42rem 0.42rem no-repeat,
+        linear-gradient(145deg, #faf1dd, #f5e9d1);
+    color: #2b2925;
+    box-shadow: 0 0 0 2px #463026, 0 0.5rem 1.25rem #17150f55, inset 0 0 0.9rem #a47d4750;
+}
+
+.art-page :is(#digital-art, #authors) [data-featured-compact] :is(h2, h3) { color: #234538; }
+
+.art-page :is(#digital-art, #authors) [data-featured-compact] :is(h2, h3) > .lang-en {
+    font-family: "Uncial Antiqua", Georgia, serif;
+    font-weight: 400;
+    font-synthesis: none;
+}
+
+.art-page :is(#digital-art, #authors) [data-featured-compact] :is(h2, h3) > .lang-ar {
+    font-family: "Amiri", serif;
+}
+
+.art-page :is(#digital-art, #authors) [data-featured-compact] .featured-story-section {
+    border-top: 1px solid #a47d4c;
+    box-shadow: inset 0 1px #fff6dd;
+    background: linear-gradient(90deg, #75444a, var(--story-brass) 30% 70%, #35594b) top / 3rem 2px no-repeat;
+}
+
+.art-page :is(#digital-art, #authors) [data-featured-compact] .featured-story-body > .featured-card-portrait {
+    padding: 0.3rem;
+    border: 3px double #8d653e;
+    background: #f7edd5;
+    box-shadow: 0 0 0 1px #4e3427, 0 3px 6px #4e342746;
+}
+
+.art-page :is(#digital-art, #authors) [data-featured-compact] .featured-close {
+    min-height: 44px;
+    margin-block-end: 0.65rem;
+    padding: 0.35rem 0.7rem;
+    border: 3px double #785337;
+    background: linear-gradient(#f5db9e, var(--story-brass));
+    color: #342219;
+    text-shadow: 0 1px #f9e7bd;
+    box-shadow: 0 2px 4px #39271d55, inset 0 1px #fff0c6;
+}
+
+.art-page :is(#digital-art, #authors) [data-featured-compact] .featured-close:is(:hover, :focus-visible) {
+    border-color: #76424a;
+    box-shadow: 0 2px 5px #39271d70, inset 0 -3px #496951;
+}
+
+.art-page :is(#digital-art, #authors) [data-featured-compact] .featured-social-link {
+    border: 3px double #87603d;
+    background: linear-gradient(#faefd4, #dcc598);
+    box-shadow: 0 2px 3px #39271d40;
+}
