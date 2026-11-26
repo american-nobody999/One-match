@@ -1,7 +1,7 @@
 
 /*
    Author: Leslie Brockman
-   Date: 11-19-2026
+   Date: 11-25-2026
 */
 /* Drinking Games shell and Weekly Song Dedication. */
 :where(.drinking-games-page) main {
@@ -499,6 +499,13 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 .drinking-games-page #game-room-dialog .dialog-top {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
+    gap: .5rem;
+    margin-bottom: .75rem;
+}
+.drinking-games-page #game-room-dialog {
+    min-width: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .drinking-games-page #game-room-dialog #game-room-title {
     min-width: 0;
@@ -528,36 +535,83 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 
 .drinking-games-page #game-room-dialog .game-room-tiles {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: .75rem;
+    min-width: 0;
 }
-@media (min-width: 48rem) {
+@media (max-width: 60rem) {
     .drinking-games-page #game-room-dialog .game-room-tiles {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+@media (max-width: 37.5rem) {
+    .drinking-games-page #game-room-dialog .game-room-tiles {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
 .drinking-games-page #game-room-dialog .game-card {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
+    gap: .6rem;
+    min-width: 0;
+    padding: .75rem;
     text-align: center;
+}
+.drinking-games-page #game-room-dialog .game-card > h3 {
+    order: 0;
+    min-height: 2.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: anywhere;
+}
+.drinking-games-page #game-room-dialog .game-card:first-child::before {
+    content: "";
+    order: 0;
+    flex: 0 0 2.5rem;
 }
 .drinking-games-page #game-room-dialog .game-card:is(:hover, :focus-within) {
     box-shadow: 0 .5rem 1.5rem #15151555;
 }
 .drinking-games-page #game-room-dialog .game-card h3 {
-    margin: 0;
     color: #FF4FA3;
 }
 .drinking-games-page #game-room-dialog .game-room-popup-artwork {
+    order: 1;
     display: block;
     width: 100%;
-    max-width: 400px;
-    height: auto;
+    max-width: 100%;
+    height: 260px;
     margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
 }
-.drinking-games-page #game-room-dialog .game-card > .lounge-button { margin-block-start: auto; }
+.drinking-games-page #game-room-dialog .game-card > .lounge-note {
+    order: 2;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    font-size: .98rem;
+    line-height: 1.55;
+}
+.drinking-games-page #game-room-dialog .game-card > .lounge-button {
+    order: 3;
+    margin-block-start: auto;
+}
+@media (max-width: 60rem) {
+    .drinking-games-page #game-room-dialog .game-room-popup-artwork {
+        height: 220px;
+    }
+}
+@media (max-width: 37.5rem) {
+    .drinking-games-page #game-room-dialog .game-room-popup-artwork {
+        height: 200px;
+    }
+}
 
 .drinking-games-page #game-room-dialog .lounge-note {
     margin: 0;
@@ -1344,3 +1398,60 @@ min-width: 0;
 @media (max-width: 1199px) { .drinking-games-page #your-famous .scrollable-gallery { padding: .9rem 0 1.1rem; gap: 1.25rem; } }
 @media (max-width: 991px) { .drinking-games-page #your-famous .gallery-card { flex: 0 0 min(200px, 100%); width: min(200px, 100%); max-width: 100%; min-width: 0; height: auto; } }
 @media (max-width: 767px) { .drinking-games-page #your-famous .scrollable-gallery { padding: .75rem 0 1rem; gap: 1rem; } }
+
+/* Israel Katz weekly card: natural-height illustration and compact sources. */
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday [data-loser-face="back"] > h3 {
+    margin: .25rem auto 1rem;
+    color: #ffe2a0;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-featured-art {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    margin-bottom: .75rem;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-featured-art img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: min(60vh, 34rem);
+    object-fit: contain;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-description {
+    max-width: 56rem;
+    padding: .25rem;
+    border-inline-start: 0;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-editorial-label {
+    margin: .5rem 0;
+    color: #ffe2a0;
+    font-weight: 700;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-editorial-headline {
+    margin: .35rem 0;
+    color: #fff5df;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-editorial-tagline {
+    margin: .25rem 0 1rem;
+    color: #ebd4a3;
+    font-style: italic;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-description h4 {
+    margin: 1rem 0 .5rem;
+    color: #ffe2a0;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-sources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: .45rem;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-sources p {
+    min-width: 0;
+    margin: 0;
+}
+.drinking-games-page #loser-of-the-week .loser-week-card-doomsday .loser-week-sources .loser-source-link {
+    min-height: 0;
+    padding: .45rem .6rem;
+}
