@@ -1,7 +1,7 @@
 /**
  * Author: Leslie Brockman
  * Arcade Page
- * Date modified: 11-18-2026
+ * Date modified: 11-25-2026
  * Description: CSS styling for the arcade page.
  */
 body.arcade-page {
@@ -9,7 +9,7 @@ body.arcade-page {
 }
 
 .arcade-page .arcade-main {
-    width: min(100%, 1200px);
+    width: min(100%, 1440px);
     margin-inline: auto;
     padding: clamp(1rem, 4vw, 3rem);
     overflow-wrap: anywhere;
@@ -220,7 +220,7 @@ body.arcade-page {
 }
 .arcade-page .arcade-main::before { left: 0; top: 5rem; }
 .arcade-page .arcade-main::after { right: 0; bottom: 3rem; transform: rotate(24deg); }
-.arcade-page .arcade-game-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.8rem, 1.8vw, 1.4rem); align-items: stretch; }
+.arcade-page .arcade-game-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.8rem, 1.8vw, 1.4rem); align-items: stretch; }
 .arcade-page .arcade-game-card {
     padding: clamp(.7rem, 1.2vw, 1rem); border-color: #579c62;
     background: linear-gradient(100deg, #050a06, #243027 8%, #101711 16% 84%, #243027 92%, #050a06);
