@@ -1,7 +1,7 @@
 <!--
 MPAG: Art page
 Leslie Brockman
-Date last modified: 2026-10-21
+Date last modified: 2026-11-25
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +15,11 @@ Date last modified: 2026-10-21
     
 <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&amp;display=swap" rel="stylesheet">
     
 <!-- Styles -->
     <link rel="stylesheet" href="styles/styles2.css">
+    <link rel="stylesheet" href="styles/featured.css">
     <link rel="stylesheet" href="styles/art.css">
 </head>
 
@@ -63,68 +65,58 @@ Date last modified: 2026-10-21
   </header>
 
   <main class="art-main">
-    
-    <!-- Section 1: Artists Video Gallery -->
-    <section class="section video-gallery-section">
-
-      <h2>
-        <span class="gallery-title-en">Artists of Palestine</span>
-        <span class="gallery-title-ar hidden">فنانو فلسطين</span>
-      </h2>
-      <h3 class="section-subtitle">
-        <span class="lang-en">Featured Artists</span>
-        <span class="lang-ar hidden">فنانون مميزون</span>
-      </h3>
-      <p class="section-intro">
-        <span class="lang-en">A rotating gallery of visual stories and artist voices from Palestine.</span>
-        <span class="lang-ar hidden">معرض متجدد لقصص بصرية وأصوات فنية من فلسطين.</span>
-      </p>
-      <div class="video-gallery">
-        <div class="video-container">
-          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_50.mp4" controls preload="none"></video>
-          <div class="video-overlay hidden">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
-            <button class="replay-btn">⟲</button>
-          </div>
-          <button class="initial-play-btn">▶</button>
-        </div>
-        <div class="video-container">
-          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_52.mp4" controls preload="none"></video>
-          <div class="video-overlay hidden">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
-            <button class="replay-btn">⟲</button>
-          </div>
-          <button class="initial-play-btn">▶</button>
-        </div>
-        <div class="video-container">
-          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/01272026_25.mp4" controls preload="none"></video>
-          <div class="video-overlay hidden">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
-            <button class="replay-btn">⟲</button>
-          </div>
-          <button class="initial-play-btn">▶</button>
-        </div>
-        <div class="video-container">
-          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_49.mp4" controls preload="none"></video>
-          <div class="video-overlay hidden">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
-            <button class="replay-btn">⟲</button>
-          </div>
-          <button class="initial-play-btn">▶</button>
-        </div>
-        <div class="video-container">
-          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_10.mp4" controls preload="none"></video>
-          <div class="video-overlay hidden">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
-            <button class="replay-btn">⟲</button>
-          </div>
-          <button class="initial-play-btn">▶</button>
-        </div>
-        
+    <section class="museum-entrance" aria-labelledby="museum-heading">
+      <header class="museum-heading">
+        <h1 id="museum-heading"><span class="lang-en" lang="en" dir="ltr">Palestinian Museum of Art &amp; Culture</span><span class="lang-ar hidden" lang="ar" dir="rtl">متحف الفن والثقافة الفلسطينية</span></h1>
+        <p class="museum-intro"><span class="lang-en" lang="en" dir="ltr">Explore the creativity, culture, and stories of Palestine.</span><span class="lang-ar hidden" lang="ar" dir="rtl">اكتشف إبداع فلسطين وثقافتها وقصصها.</span></p>
+      </header>
+      <div class="museum-lobby">
+        <ol class="museum-gallery-grid" role="list">
+          <li>
+            <button type="button" class="museum-gallery-door" data-gallery="digital-art" disabled>
+              <span class="museum-doorway" aria-hidden="true"><span class="museum-gallery-number">I</span></span>
+              <span class="museum-gallery-plaque"><span class="lang-en" lang="en" dir="ltr">Digital Art</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفن الرقمي</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="museum-gallery-door" data-gallery="folk-art" disabled>
+              <span class="museum-doorway" aria-hidden="true"><span class="museum-gallery-number">II</span></span>
+              <span class="museum-gallery-plaque"><span class="lang-en" lang="en" dir="ltr">Folk Art</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفن الشعبي</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="museum-gallery-door" data-gallery="authors" disabled>
+              <span class="museum-doorway" aria-hidden="true"><span class="museum-gallery-number">III</span></span>
+              <span class="museum-gallery-plaque"><span class="lang-en" lang="en" dir="ltr">Authors — Books &amp; Poetry</span><span class="lang-ar hidden" lang="ar" dir="rtl">الكتّاب — الكتب والشعر</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="museum-gallery-door" data-gallery="photography" disabled>
+              <span class="museum-doorway" aria-hidden="true"><span class="museum-gallery-number">IV</span></span>
+              <span class="museum-gallery-plaque"><span class="lang-en" lang="en" dir="ltr">Photography</span><span class="lang-ar hidden" lang="ar" dir="rtl">التصوير الفوتوغرافي</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="museum-gallery-door" data-gallery="mixed-media" disabled>
+              <span class="museum-doorway" aria-hidden="true"><span class="museum-gallery-number">V</span></span>
+              <span class="museum-gallery-plaque"><span class="lang-en" lang="en" dir="ltr">Mixed Media</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفنون متعددة الوسائط</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="museum-gallery-door" data-gallery="artists" disabled>
+              <span class="museum-doorway" aria-hidden="true"><span class="museum-gallery-number">VI</span></span>
+              <span class="museum-gallery-plaque"><span class="lang-en" lang="en" dir="ltr">The Artists</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفنانون</span></span>
+            </button>
+          </li>
+        </ol>
       </div>
     </section>
-
-   <!-- Section 2: Digital Art Video Gallery --> 
+    
+    <section class="museum-gallery-room" id="digital-art" aria-labelledby="digital-art-heading" hidden>
+      <div class="museum-spotlight" aria-hidden="true"></div>
+      <h2 class="museum-room-heading" id="digital-art-heading" tabindex="-1"><span class="museum-gallery-number" aria-hidden="true">I</span><span class="lang-en" lang="en" dir="ltr">Digital Art</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفن الرقمي</span></h2>
+      <p class="museum-room-intro"><span class="lang-en" lang="en" dir="ltr">Explore Palestinian art made with digital tools.</span><span class="lang-ar hidden" lang="ar" dir="rtl">استكشف الفن الفلسطيني المصنوع بأدوات رقمية.</span></p>
+      <div class="museum-artist-exhibitions">
     <section class="section video-gallery-section">
       <h2>
         <span class="gallery-title-en">Digital Art of Palestine</span>
@@ -161,20 +153,28 @@ Date last modified: 2026-10-21
           </div>
           <button class="initial-play-btn">▶</button>
         </div>
-        <div class="video-container">
-          <video controls preload="none">
-            <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02062026_31.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-overlay hidden">
-            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
-            <button class="replay-btn">⟲</button>
-          </div>
-          <button class="initial-play-btn">▶</button>
-        </div>
       </div>
     </section>
-  <!-- Section 3: Folk Art Image Gallery -->
+        <div data-featured-exhibition>
+          <div class="featured-gallery" data-featured-gallery="digital-art"></div>
+          <section class="featured-story" id="digital-art-featured-story" data-featured-story data-featured-compact aria-labelledby="digital-art-featured-story-heading" hidden>
+            <button type="button" class="featured-button featured-close" data-featured-close>
+              <span class="lang-en" lang="en" dir="ltr"><span aria-hidden="true">←</span> Back to Gallery</span>
+              <span class="lang-ar hidden" lang="ar" dir="rtl"><span aria-hidden="true">→</span> العودة إلى المعرض</span>
+            </button>
+            <article data-featured-story-content></article>
+          </section>
+        </div>
+      </div>
+      <div class="museum-permanent-collection"></div>
+      <button type="button" class="museum-back-btn"><span class="lang-en" lang="en" dir="ltr">Back to Museum Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل المتحف</span></button>
+    </section>
+
+    <section class="museum-gallery-room" id="folk-art" aria-labelledby="folk-art-heading" hidden>
+      <div class="museum-spotlight" aria-hidden="true"></div>
+      <h2 class="museum-room-heading" id="folk-art-heading" tabindex="-1"><span class="museum-gallery-number" aria-hidden="true">II</span><span class="lang-en" lang="en" dir="ltr">Folk Art</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفن الشعبي</span></h2>
+      <p class="museum-room-intro"><span class="lang-en" lang="en" dir="ltr">Explore Palestinian traditions through folk art.</span><span class="lang-ar hidden" lang="ar" dir="rtl">استكشف التقاليد الفلسطينية من خلال الفن الشعبي.</span></p>
+      <div class="museum-artist-exhibitions">
     <section class="section image-gallery-section">
       <h2 class="section-title">
         <span class="lang-en">Folk Art of Palestine</span>
@@ -214,8 +214,106 @@ Date last modified: 2026-10-21
           </p>
           -->
         </div>
+      </div>
+    </section>
+
+    <section class="section video-gallery-section">
+      <h2>
+        <span class="gallery-title-en">Music From Palestine</span>
+        <span class="gallery-title-ar hidden">الموسيقى من فلسطين</span>
+      </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Music Sessions</span>
+        <span class="lang-ar hidden">جلسات موسيقية</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">Songs and performances rooted in culture, grief, and hope.</span>
+        <span class="lang-ar hidden">أغانٍ وعروض متجذرة في الثقافة والحزن والأمل.</span>
+      </p>
+      <div class="video-gallery">
+        <div class="video-container">
+          <video controls preload="none">
+            <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_15.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay hidden">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
+            <button class="replay-btn">⟲</button>
+          </div>
+          <button class="initial-play-btn">▶</button>
+        </div>
+        <div class="video-container">
+          <video controls preload="none">
+            <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay hidden">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
+            <button class="replay-btn">⟲</button>
+          </div>
+          <button class="initial-play-btn">▶</button>
+        </div>
+        <div class="video-container">
+          <video controls preload="none">
+            <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_15.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay hidden">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
+            <button class="replay-btn">⟲</button>
+          </div>
+          <button class="initial-play-btn">▶</button>
+        </div>
+      </div>
+    </section>
+      </div>
+      <div class="museum-permanent-collection"></div>
+      <button type="button" class="museum-back-btn"><span class="lang-en" lang="en" dir="ltr">Back to Museum Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل المتحف</span></button>
+    </section>
+
+    <section class="museum-gallery-room" id="authors" aria-labelledby="authors-heading" hidden>
+      <div class="museum-spotlight" aria-hidden="true"></div>
+      <h2 class="museum-room-heading" id="authors-heading" tabindex="-1"><span class="museum-gallery-number" aria-hidden="true">III</span><span class="lang-en" lang="en" dir="ltr">Authors — Books &amp; Poetry</span><span class="lang-ar hidden" lang="ar" dir="rtl">الكتّاب — الكتب والشعر</span></h2>
+      <p class="museum-room-intro"><span class="lang-en" lang="en" dir="ltr">Discover Palestinian voices in books and poetry.</span><span class="lang-ar hidden" lang="ar" dir="rtl">اكتشف أصواتًا فلسطينية في الكتب والشعر.</span></p>
+      <div class="museum-artist-exhibitions">
+    <section class="section image-gallery-section">
+      <h2>
+        <span class="gallery-title-en">Poetry From Palestine</span>
+        <span class="gallery-title-ar hidden">الشعر من فلسطين</span>
+      </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Poetry Collection</span>
+        <span class="lang-ar hidden">مجموعة شعرية</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">Poems and spoken lines carrying longing, faith, and steadfastness.</span>
+        <span class="lang-ar hidden">قصائد ونصوص تحمل الشوق والإيمان والصمود.</span>
+      </p>
+      <div class="image-gallery">
         <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0001.jpg" alt="Folk Art" loading="lazy">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/906.jpg" alt="poetry" loading="lazy">
+          <h3>
+            <span class="h3-en">Mohammed Moussa</span>
+            <span class="h3-ar hidden">محمد موسى</span>
+          </h3>
+          <p>
+            <span class="p-en">The Prayer of A Stranger</span>
+            <span class="p-ar hidden">صلاة الغريب</span>
+          </p>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/907.jpg" alt="poetry" loading="lazy">
+          <h3>
+            <span class="h3-en">Mohammed Moussa</span>
+            <span class="h3-ar hidden">محمد موسى</span>
+          </h3>
+          <p>
+            <span class="p-en">Home</span>
+            <span class="p-ar hidden">الوطن</span>
+          </p>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0001.jpg" alt="poetry" loading="lazy">
           <h3>
             <span class="h3-en">Name of Artist</span>
             <span class="h3-ar hidden">اسم الفنان</span>
@@ -227,7 +325,108 @@ Date last modified: 2026-10-21
         </div>
       </div>
     </section>
-  <!-- Section 4: Mixed Media Image Gallery -->
+        <div data-featured-exhibition>
+          <div class="featured-gallery" data-featured-gallery="authors"></div>
+          <section class="featured-story" id="authors-featured-story" data-featured-story data-featured-compact aria-labelledby="authors-featured-story-heading" hidden>
+            <button type="button" class="featured-button featured-close" data-featured-close>
+              <span class="lang-en" lang="en" dir="ltr"><span aria-hidden="true">←</span> Back to Gallery</span>
+              <span class="lang-ar hidden" lang="ar" dir="rtl"><span aria-hidden="true">→</span> العودة إلى المعرض</span>
+            </button>
+            <article data-featured-story-content></article>
+          </section>
+        </div>
+      </div>
+      <div class="museum-permanent-collection"></div>
+      <button type="button" class="museum-back-btn"><span class="lang-en" lang="en" dir="ltr">Back to Museum Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل المتحف</span></button>
+    </section>
+
+    <section class="museum-gallery-room" id="photography" aria-labelledby="photography-heading" hidden>
+      <div class="museum-spotlight" aria-hidden="true"></div>
+      <h2 class="museum-room-heading" id="photography-heading" tabindex="-1"><span class="museum-gallery-number" aria-hidden="true">IV</span><span class="lang-en" lang="en" dir="ltr">Photography</span><span class="lang-ar hidden" lang="ar" dir="rtl">التصوير الفوتوغرافي</span></h2>
+      <p class="museum-room-intro"><span class="lang-en" lang="en" dir="ltr">See Palestine through the eyes of its photographers.</span><span class="lang-ar hidden" lang="ar" dir="rtl">شاهد فلسطين بعيون مصوّريها.</span></p>
+      <div class="museum-artist-exhibitions">
+    <section class="section image-gallery-section">
+      <h2>
+        <span class="gallery-title-en">Photography of Palestine</span>
+        <span class="gallery-title-ar hidden">التصوير الفوتوغرافي لفلسطين</span>
+      </h2>
+      <h3 class="section-subtitle">
+        <span class="lang-en">Photo Archive</span>
+        <span class="lang-ar hidden">أرشيف الصور</span>
+      </h3>
+      <p class="section-intro">
+        <span class="lang-en">A visual record of daily life, landscape, and witness in Palestine.</span>
+        <span class="lang-ar hidden">سجل بصري للحياة اليومية والمشهد والشهادة في فلسطين.</span>
+      </p>
+      <div class="image-gallery">
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/911.jpg" alt="Photography" loading="lazy">
+          <h3>
+            <span class="h3-en">Unknown</span>
+            <span class="h3-ar hidden">غير معروف</span>
+          </h3>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/900.jpg" alt="Photography" loading="lazy">
+          <h3>
+            <span class="h3-en">Unknown</span>
+            <span class="h3-ar hidden">غير معروف</span>
+          </h3>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/909.jpg" alt="Photography" loading="lazy">
+          <h3>
+            <span class="h3-en">Unknown</span>
+            <span class="h3-ar hidden">غير معروف</span>
+          </h3>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/901.jpg" alt="Photography" loading="lazy">
+          <h3>
+            <span class="h3-en">Unknown</span>
+            <span class="h3-ar hidden">غير معروف</span>
+          </h3>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/902.jpg" alt="Photography" loading="lazy">
+          <h3>
+            <span class="h3-en">Unknown</span>
+            <span class="h3-ar hidden">غير معروف</span>
+          </h3>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/903.jpg" alt="Photography" loading="lazy">
+          <h3>
+            <span class="h3-en">Unknown</span>
+            <span class="h3-ar hidden">غير معروف</span>
+          </h3>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/904.jpg" alt="Photography" loading="lazy">
+          <h3>
+            <span class="h3-en">Unknown</span>
+            <span class="h3-ar hidden">غير معروف</span>
+          </h3>
+        </div>
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/905.jpg" alt="Photography" loading="lazy">
+          <h3>
+            <span class="h3-en">Unknown</span>
+            <span class="h3-ar hidden">غير معروف</span>
+          </h3>
+        </div>
+      </div>
+    </section>
+      </div>
+      <div class="museum-permanent-collection"></div>
+      <button type="button" class="museum-back-btn"><span class="lang-en" lang="en" dir="ltr">Back to Museum Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل المتحف</span></button>
+    </section>
+
+    <section class="museum-gallery-room" id="mixed-media" aria-labelledby="mixed-media-heading" hidden>
+      <div class="museum-spotlight" aria-hidden="true"></div>
+      <h2 class="museum-room-heading" id="mixed-media-heading" tabindex="-1"><span class="museum-gallery-number" aria-hidden="true">V</span><span class="lang-en" lang="en" dir="ltr">Mixed Media</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفنون متعددة الوسائط</span></h2>
+      <p class="museum-room-intro"><span class="lang-en" lang="en" dir="ltr">Explore works that bring different materials and media together.</span><span class="lang-ar hidden" lang="ar" dir="rtl">استكشف أعمالًا تجمع بين مواد ووسائط فنية مختلفة.</span></p>
+      <div class="museum-artist-exhibitions">
     <section class="section image-gallery-section">
       <h2 class="section-title">
         <span class="lang-en">Mixed Media Art of Palestine</span>
@@ -336,152 +535,32 @@ Date last modified: 2026-10-21
         </div>
       </div>
     </section>
-
-    <!-- Section 5: Photography Image Gallery -->
-    <section class="section image-gallery-section">
-      <h2>
-        <span class="gallery-title-en">Photography of Palestine</span>
-        <span class="gallery-title-ar hidden">التصوير الفوتوغرافي لفلسطين</span>
-      </h2>
-      <h3 class="section-subtitle">
-        <span class="lang-en">Photo Archive</span>
-        <span class="lang-ar hidden">أرشيف الصور</span>
-      </h3>
-      <p class="section-intro">
-        <span class="lang-en">A visual record of daily life, landscape, and witness in Palestine.</span>
-        <span class="lang-ar hidden">سجل بصري للحياة اليومية والمشهد والشهادة في فلسطين.</span>
-      </p>
-      <div class="image-gallery">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/911.jpg" alt="Photography" loading="lazy">
-          <h3>
-            <span class="h3-en">Unknown</span>
-            <span class="h3-ar hidden">غير معروف</span>
-          </h3>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/900.jpg" alt="Photography" loading="lazy">
-          <h3>
-            <span class="h3-en">Unknown</span>
-            <span class="h3-ar hidden">غير معروف</span>
-          </h3>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/909.jpg" alt="Photography" loading="lazy">
-          <h3>
-            <span class="h3-en">Unknown</span>
-            <span class="h3-ar hidden">غير معروف</span>
-          </h3>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/901.jpg" alt="Photography" loading="lazy">
-          <h3>
-            <span class="h3-en">Unknown</span>
-            <span class="h3-ar hidden">غير معروف</span>
-          </h3>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/902.jpg" alt="Photography" loading="lazy">
-          <h3>
-            <span class="h3-en">Unknown</span>
-            <span class="h3-ar hidden">غير معروف</span>
-          </h3>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/903.jpg" alt="Photography" loading="lazy">
-          <h3>
-            <span class="h3-en">Unknown</span>
-            <span class="h3-ar hidden">غير معروف</span>
-          </h3>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/904.jpg" alt="Photography" loading="lazy">
-          <h3>
-            <span class="h3-en">Unknown</span>
-            <span class="h3-ar hidden">غير معروف</span>
-          </h3>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/905.jpg" alt="Photography" loading="lazy">
-          <h3>
-            <span class="h3-en">Unknown</span>
-            <span class="h3-ar hidden">غير معروف</span>
-          </h3>
-        </div>
       </div>
+      <div class="museum-permanent-collection"></div>
+      <button type="button" class="museum-back-btn"><span class="lang-en" lang="en" dir="ltr">Back to Museum Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل المتحف</span></button>
     </section>
 
-    <!-- Section 6: Poetry Image Gallery -->
-    <section class="section image-gallery-section">
-      <h2>
-        <span class="gallery-title-en">Poetry From Palestine</span>
-        <span class="gallery-title-ar hidden">الشعر من فلسطين</span>
-      </h2>
-      <h3 class="section-subtitle">
-        <span class="lang-en">Poetry Collection</span>
-        <span class="lang-ar hidden">مجموعة شعرية</span>
-      </h3>
-      <p class="section-intro">
-        <span class="lang-en">Poems and spoken lines carrying longing, faith, and steadfastness.</span>
-        <span class="lang-ar hidden">قصائد ونصوص تحمل الشوق والإيمان والصمود.</span>
-      </p>
-      <div class="image-gallery">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/906.jpg" alt="poetry" loading="lazy">
-          <h3>
-            <span class="h3-en">Mohammed Moussa</span>
-            <span class="h3-ar hidden">محمد موسى</span>
-          </h3>
-          <p>
-            <span class="p-en">The Prayer of A Stranger</span>
-            <span class="p-ar hidden">صلاة الغريب</span>
-          </p>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/907.jpg" alt="poetry" loading="lazy">
-          <h3>
-            <span class="h3-en">Mohammed Moussa</span>
-            <span class="h3-ar hidden">محمد موسى</span>
-          </h3>
-          <p>
-            <span class="p-en">Home</span>
-            <span class="p-ar hidden">الوطن</span>
-          </p>
-        </div>
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0001.jpg" alt="poetry" loading="lazy">
-          <h3>
-            <span class="h3-en">Name of Artist</span>
-            <span class="h3-ar hidden">اسم الفنان</span>
-          </h3>
-          <p>
-            <span class="p-en">Name of piece</span>
-            <span class="p-ar hidden">اسم العمل</span>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 7: Music Video Gallery -->
+    <section class="museum-gallery-room" id="artists" aria-labelledby="artists-heading" hidden>
+      <div class="museum-spotlight" aria-hidden="true"></div>
+      <h2 class="museum-room-heading" id="artists-heading" tabindex="-1"><span class="museum-gallery-number" aria-hidden="true">VI</span><span class="lang-en" lang="en" dir="ltr">The Artists</span><span class="lang-ar hidden" lang="ar" dir="rtl">الفنانون</span></h2>
+      <div class="museum-artist-exhibitions">
     <section class="section video-gallery-section">
+
       <h2>
-        <span class="gallery-title-en">Music From Palestine</span>
-        <span class="gallery-title-ar hidden">الموسيقى من فلسطين</span>
+        <span class="gallery-title-en">Artists of Palestine</span>
+        <span class="gallery-title-ar hidden">فنانو فلسطين</span>
       </h2>
       <h3 class="section-subtitle">
-        <span class="lang-en">Music Sessions</span>
-        <span class="lang-ar hidden">جلسات موسيقية</span>
+        <span class="lang-en">Featured Artists</span>
+        <span class="lang-ar hidden">فنانون مميزون</span>
       </h3>
       <p class="section-intro">
-        <span class="lang-en">Songs and performances rooted in culture, grief, and hope.</span>
-        <span class="lang-ar hidden">أغانٍ وعروض متجذرة في الثقافة والحزن والأمل.</span>
+        <span class="lang-en">A rotating gallery of visual stories and artist voices from Palestine.</span>
+        <span class="lang-ar hidden">معرض متجدد لقصص بصرية وأصوات فنية من فلسطين.</span>
       </p>
       <div class="video-gallery">
         <div class="video-container">
-          <video controls preload="none">
-            <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_15.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_50.mp4" controls preload="none"></video>
           <div class="video-overlay hidden">
             <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
             <button class="replay-btn">⟲</button>
@@ -489,10 +568,7 @@ Date last modified: 2026-10-21
           <button class="initial-play-btn">▶</button>
         </div>
         <div class="video-container">
-          <video controls preload="none">
-            <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_6.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/20260216_52.mp4" controls preload="none"></video>
           <div class="video-overlay hidden">
             <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
             <button class="replay-btn">⟲</button>
@@ -500,19 +576,37 @@ Date last modified: 2026-10-21
           <button class="initial-play-btn">▶</button>
         </div>
         <div class="video-container">
-          <video controls preload="none">
-            <source src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_15.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/01272026_25.mp4" controls preload="none"></video>
           <div class="video-overlay hidden">
             <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
             <button class="replay-btn">⟲</button>
           </div>
           <button class="initial-play-btn">▶</button>
         </div>
+        <div class="video-container">
+          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video/02012026_49.mp4" controls preload="none"></video>
+          <div class="video-overlay hidden">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
+            <button class="replay-btn">⟲</button>
+          </div>
+          <button class="initial-play-btn">▶</button>
+        </div>
+        <div class="video-container">
+          <video src="https://raw.githubusercontent.com/american-nobody999/two-match-video/main/video2/02062026_10.mp4" controls preload="none"></video>
+          <div class="video-overlay hidden">
+            <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/0009.jpg" alt="overlay">
+            <button class="replay-btn">⟲</button>
+          </div>
+          <button class="initial-play-btn">▶</button>
+        </div>
+        
       </div>
     </section>
-    
+      </div>
+      <div class="museum-permanent-collection"></div>
+      <button type="button" class="museum-back-btn"><span class="lang-en" lang="en" dir="ltr">Back to Museum Entrance</span><span class="lang-ar hidden" lang="ar" dir="rtl">العودة إلى مدخل المتحف</span></button>
+    </section>
+
   </main>
 
    <footer class="site-footer" data-global-chrome>
@@ -562,6 +656,9 @@ Date last modified: 2026-10-21
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/featured-data.js"></script>
+  <script src="js/featured.js"></script>
+  <script src="js/art.js"></script>
 </body>
 </html>
 
