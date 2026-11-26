@@ -1,6 +1,6 @@
 "use strict";
 //Author: Leslie Brockman
-//Date: 11-19-2026
+//Date: 11-25-2026
 // The lounge owns its dialogs and wheel; main.js owns language and navigation.
 (() => {
     const page = document.querySelector('.drinking-games-page');
@@ -494,6 +494,51 @@
     ];
     const featured = root.querySelector('[data-current-loser]');
     const currentLoser = {
+        id: 'israel-katz-2026-11-27',
+        nameEn: 'Israel Katz',
+        nameAr: 'يسرائيل كاتس',
+        awardDate: '2026-11-27',
+        frontHeading: { en: 'Israel Katz', ar: 'يسرائيل كاتس' },
+        frontCopy: [
+            { en: 'Israeli Defense Minister', ar: 'وزير الدفاع الإسرائيلي' }
+        ],
+        frontImages: [
+            { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/loser34.jpg', altEn: 'Israel Katz, Israeli Defense Minister', altAr: 'يسرائيل كاتس، وزير الدفاع الإسرائيلي' }
+        ],
+        backArtwork: {
+            src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/doom.jpg',
+            altEn: 'Illustration of a perpetual doomsday clock',
+            altAr: 'رسم توضيحي لساعة يوم القيامة التي لا تتوقف'
+        },
+        storyHeadingEn: 'The Perpetual Doomsday Clock',
+        storyHeadingAr: 'ساعة يوم القيامة التي لا تتوقف',
+        editorialLabelEn: 'MPGA editorial satire — not a direct quotation or factual countdown.',
+        editorialLabelAr: 'سخرية تحريرية من MPGA — ليست اقتباسًا مباشرًا ولا عدًّا تنازليًا حقيقيًا.',
+        editorialHeadlineEn: 'New threat. Same clock.',
+        editorialHeadlineAr: 'تهديد جديد، والساعة نفسها.',
+        editorialTaglineEn: 'Batteries apparently last thirty years.',
+        editorialTaglineAr: 'يبدو أن البطاريات تدوم ثلاثين عاماً.',
+        reportHeadingEn: 'Documented reporting',
+        reportHeadingAr: 'التقارير الموثقة',
+        story: [
+            { en: 'On November 24, 2026, Israeli Defense Minister Israel Katz alleged that Iran was developing chemical weapons, citing intelligence shared with the United States. Katz did not publicly disclose the location or exact stage of the alleged program. The Jerusalem Post reported that Iran had not yet acquired the capability to attack Israel with such weapons. Iranian officials rejected the allegations.', ar: 'في 24 نوفمبر 2026، ادّعى وزير الدفاع الإسرائيلي يسرائيل كاتس أن إيران تعمل على تطوير أسلحة كيميائية، مستنداً إلى معلومات استخباراتية تمت مشاركتها مع الولايات المتحدة. ولم يكشف كاتس علناً عن موقع البرنامج المزعوم أو المرحلة الدقيقة التي بلغها. وأفادت صحيفة جيروزاليم بوست بأن إيران لم تكتسب بعد القدرة على مهاجمة إسرائيل بهذه الأسلحة. وقد رفض المسؤولون الإيرانيون هذه الاتهامات.' },
+            { en: 'Iran denies allegations that it is developing chemical weapons. However, Human Rights Watch and Amnesty International have documented Israel\'s use of white phosphorus munitions in Gaza, Palestine, and Lebanon, including in populated civilian areas. White phosphorus is classified as an incendiary weapon when used for its burning effects, rather than a chemical weapon, but its indiscriminate use against civilians is prohibited under international humanitarian law.', ar: 'تنفي إيران الاتهامات بأنها تعمل على تطوير أسلحة كيميائية. ومع ذلك، وثّقت منظمة هيومن رايتس ووتش ومنظمة العفو الدولية استخدام إسرائيل لذخائر الفوسفور الأبيض في غزة، فلسطين، ولبنان، بما في ذلك مناطق مدنية مأهولة بالسكان. ويُصنّف الفوسفور الأبيض كسلاح حارق عند استخدامه لإحداث الحروق، وليس كسلاح كيميائي، إلا أن استخدامه العشوائي ضد المدنيين محظور بموجب القانون الدولي الإنساني.' }
+        ],
+        sourcesHeadingEn: 'Sources',
+        sourcesHeadingAr: 'المصادر',
+        sources: [
+            { url: 'https://www.foxnews.com/world/israel-raises-prospect-preemptive-strike-emerging-iranian-chemical-weapons-threat', labelEn: 'Fox News — November 24, 2026', labelAr: 'فوكس نيوز — 24 نوفمبر 2026' },
+            { url: 'https://www.jpost.com/israel-news/defense-news/article-915994', labelEn: 'The Jerusalem Post — November 24, 2026', labelAr: 'جيروزاليم بوست — 24 نوفمبر 2026' },
+            { url: 'https://www.timesofisrael.com/amid-politicized-debate-in-us-and-israel-katz-warns-iran-developing-chemical-weapons/', labelEn: 'The Times of Israel — November 24, 2026', labelAr: 'تايمز أوف إسرائيل — 24 نوفمبر 2026' },
+            { url: 'https://iranwire.com/en/news/160769-araghchi-accuses-israel-of-trying-to-drag-us-into-new-war-over-chemical-weapons-claims/', labelEn: 'IranWire — November 26, 2026', labelAr: 'إيران واير — 26 نوفمبر 2026' },
+            { url: 'https://www.hrw.org/news/2023/10/12/questions-and-answers-israels-use-white-phosphorus-gaza-and-lebanon', labelEn: 'Human Rights Watch — Gaza and Lebanon, October 12, 2023', labelAr: 'هيومن رايتس ووتش — غزة ولبنان، 12 أكتوبر 2023' },
+            { url: 'https://www.amnesty.org/en/latest/news/2023/10/lebanon-evidence-of-israels-unlawful-use-of-white-phosphorus-in-southern-lebanon-as-cross-border-hostilities-escalate/', labelEn: 'Amnesty International — Lebanon, October 31, 2023', labelAr: 'منظمة العفو الدولية — لبنان، 31 أكتوبر 2023' },
+            { url: 'https://www.hrw.org/news/2024/06/05/lebanon-israels-white-phosphorous-use-risks-civilian-harm', labelEn: 'Human Rights Watch — Lebanon, June 5, 2024', labelAr: 'هيومن رايتس ووتش — لبنان، 5 يونيو 2024' },
+            { url: 'https://www.hrw.org/news/2026/03/09/lebanon-israel-unlawfully-using-white-phosphorus', labelEn: 'Human Rights Watch — Lebanon, March 9, 2026', labelAr: 'هيومن رايتس ووتش — لبنان، 9 مارس 2026' }
+        ]
+    };
+    previousLosers.unshift({
+        ...currentLoser,
         id: 'yinon-levi-2026-11-19',
         nameEn: 'Yinon Levi',
         nameAr: 'ينون ليفي',
@@ -507,6 +552,7 @@
             { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/l1.jpg', altEn: 'First portrait accompanying the Umm al-Khair feature', altAr: 'الصورة الشخصية الأولى المرافقة لموضوع أم الخير' },
             { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/l2.jpg', altEn: 'Second portrait accompanying the Umm al-Khair feature', altAr: 'الصورة الشخصية الثانية المرافقة لموضوع أم الخير' }
         ],
+        backArtwork: undefined,
         backImages: [
             { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/111.jpg', altEn: 'First image accompanying the Umm al-Khair reporting', altAr: 'الصورة الأولى المرافقة للتغطية عن أم الخير' },
             { src: 'https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/loser/113.jpg', altEn: 'Second image accompanying the Umm al-Khair reporting', altAr: 'الصورة الثانية المرافقة للتغطية عن أم الخير' },
@@ -514,6 +560,14 @@
         ],
         storyHeadingEn: 'Awdah Hathaleen — Umm al-Khair',
         storyHeadingAr: 'عودة الهذالين — أم الخير',
+        editorialLabelEn: undefined,
+        editorialLabelAr: undefined,
+        editorialHeadlineEn: undefined,
+        editorialHeadlineAr: undefined,
+        editorialTaglineEn: undefined,
+        editorialTaglineAr: undefined,
+        reportHeadingEn: undefined,
+        reportHeadingAr: undefined,
         story: [
             { en: 'On July 28, 2025, Palestinian teacher and human rights defender Awdah Hathaleen was fatally shot during a confrontation involving Israeli settlers in Umm al-Khair, in the occupied West Bank, Palestine.', ar: 'في ٢٨ يوليو ٢٠٢٥، قُتل المعلّم الفلسطيني والمدافع عن حقوق الإنسان عودة الهذالين بالرصاص خلال مواجهة شارك فيها مستوطنون إسرائيليون في أم الخير، في الضفة الغربية المحتلة، فلسطين.' },
             { en: 'Al-Haq and Amnesty International reviewed video evidence and identified Israeli settler Yinon Levi as the person who fired the fatal shot.', ar: 'راجعت مؤسسة الحق ومنظمة العفو الدولية تسجيلات الفيديو، وحدّدتا المستوطن الإسرائيلي ينون ليفي بوصفه من أطلق الرصاصة القاتلة.' },
@@ -531,7 +585,7 @@
             { url: 'https://www.timesofisrael.com/extremist-settler-charged-with-reckless-homicide-over-death-of-palestinian-activist/', labelEn: 'The Times of Israel — August 2026 indictment reporting', labelAr: 'تايمز أوف إسرائيل — تغطية لائحة الاتهام في أغسطس ٢٠٢٦' },
             { url: 'https://www.amnesty.org.au/wp-content/uploads/2026/06/Amnesty-International-Report-Erasing-anything-Palestinian.pdf', labelEn: 'Amnesty International — Documentation of displacement and outpost activity', labelAr: 'منظمة العفو الدولية — توثيق التهجير ونشاط البؤر الاستيطانية' }
         ]
-    };
+    });
     const grid = root.querySelector('[data-trophy-grid]');
     const archive = root.querySelector('[data-archived-loser]');
     let activeTrophy = null;
@@ -580,8 +634,11 @@
     function ready(winner) {
         return winner && winner.id && winner.nameEn && winner.nameAr && winner.awardDate
             && /^\d{4}-\d{2}-\d{2}$/.test(winner.awardDate)
-            && winner.frontImages?.length === 2 && winner.backImages?.length === 3
-            && [...winner.frontImages, ...winner.backImages].every(image => image.src && image.altEn && image.altAr)
+            && winner.frontImages?.length >= 1 && winner.frontImages.length <= 2
+            && winner.frontImages.every(image => image.src && image.altEn && image.altAr)
+            && (winner.backArtwork
+                ? winner.backArtwork.src && winner.backArtwork.altEn && winner.backArtwork.altAr
+                : winner.backImages?.length === 3 && winner.backImages.every(image => image.src && image.altEn && image.altAr))
             && winner.story?.length && winner.story.every(p => p.en && p.ar)
             && winner.sources?.length && winner.sources.every(s => s.url && s.labelEn && s.labelAr);
     }
@@ -611,7 +668,7 @@
         } else {
             if (!ready(winner)) return;
             const card = document.createElement('div');
-            card.className = 'loser-week-card';
+            card.className = winner.backArtwork ? 'loser-week-card loser-week-card-doomsday' : 'loser-week-card';
             card.dataset.loserCard = '';
             const front = document.createElement('div');
             front.id = `loser-${winner.id}-front`;
@@ -629,11 +686,28 @@
             back.id = `loser-${winner.id}-back`;
             back.className = 'loser-week-face';
             back.dataset.loserFace = 'back';
-            back.append(imageGallery(winner.backImages));
+            if (winner.backArtwork && winner.storyHeadingEn && winner.storyHeadingAr) {
+                back.append(element('h3', winner.storyHeadingEn, winner.storyHeadingAr));
+            }
+            const backImages = imageGallery(winner.backArtwork ? [winner.backArtwork] : winner.backImages);
+            if (winner.backArtwork) backImages.classList.add('loser-week-featured-art');
+            back.append(backImages);
             const story = document.createElement('div');
             story.className = 'loser-week-description';
-            if (winner.storyHeadingEn && winner.storyHeadingAr) {
+            if (!winner.backArtwork && winner.storyHeadingEn && winner.storyHeadingAr) {
                 story.append(element('h3', winner.storyHeadingEn, winner.storyHeadingAr));
+            }
+            if (winner.editorialLabelEn && winner.editorialLabelAr) {
+                story.append(element('p', winner.editorialLabelEn, winner.editorialLabelAr, 'loser-week-editorial-label'));
+            }
+            if (winner.editorialHeadlineEn && winner.editorialHeadlineAr) {
+                story.append(element('p', winner.editorialHeadlineEn, winner.editorialHeadlineAr, 'loser-week-editorial-headline'));
+            }
+            if (winner.editorialTaglineEn && winner.editorialTaglineAr) {
+                story.append(element('p', winner.editorialTaglineEn, winner.editorialTaglineAr, 'loser-week-editorial-tagline'));
+            }
+            if (winner.reportHeadingEn && winner.reportHeadingAr) {
+                story.append(element('h4', winner.reportHeadingEn, winner.reportHeadingAr));
             }
             winner.story.forEach(p => {
                 const paragraph = document.createElement('p');
@@ -643,6 +717,8 @@
             if (winner.sourcesHeadingEn && winner.sourcesHeadingAr) {
                 story.append(element('h4', winner.sourcesHeadingEn, winner.sourcesHeadingAr));
             }
+            const sources = document.createElement('div');
+            sources.className = 'loser-week-sources';
             winner.sources.forEach(source => {
                 const link = element('a', source.labelEn, source.labelAr, 'loser-source-link');
                 link.href = source.url;
@@ -652,8 +728,9 @@
                 }
                 const paragraph = document.createElement('p');
                 paragraph.append(link);
-                story.append(paragraph);
+                sources.append(paragraph);
             });
+            story.append(sources);
             back.append(story);
             [['back', front, back.id, winner.flipLabelEn || pendingLoser.flipLabelEn, winner.flipLabelAr || pendingLoser.flipLabelAr],
              ['front', back, front.id, 'Back', 'رجوع']].forEach(([face, parent, controls, en, ar]) => {
