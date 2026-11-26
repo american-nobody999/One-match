@@ -1,5 +1,5 @@
 /* Author: Leslie Brockman
-   Date modified: 10/30/2026 */
+   Date modified: 11-25-2026 */
 .hero-page .journalist-menu-toggle {
 display: none;
 }
@@ -1242,14 +1242,29 @@ html[lang="ar"] .hero-page :is(#journalists-gallery, #sources-gallery.research-s
     align-self: center;
 }
 .hero-page .hero-section-2 > #journalists-gallery { width: min(100%, 1100px); }
+.hero-page .hero-section-2:has(> #section-journalists) {
+    --press-gold: #e8ca87;
+    --press-brass: #ad834d;
+    --press-bronze: #503722;
+    --press-rivet: radial-gradient(circle at 36% 30%, #f7df9e, #ad834d 36%, #382414 55%, transparent 63%);
+    gap: .85rem;
+}
 .hero-page #section-journalists {
     max-width: none;
     margin: 0;
-    min-height: clamp(280px, 35vw, 440px);
-    padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
+    gap: .35rem;
+    padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 3rem);
+    border: 5px double var(--press-brass);
+    border-radius: .65rem;
+    background:
+        var(--press-rivet) left .35rem top .35rem / .7rem .7rem no-repeat,
+        var(--press-rivet) right .35rem top .35rem / .7rem .7rem no-repeat,
+        var(--press-rivet) left .35rem bottom .35rem / .7rem .7rem no-repeat,
+        var(--press-rivet) right .35rem bottom .35rem / .7rem .7rem no-repeat,
+        linear-gradient(#0008, #000a),
+        url("https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/background_camera.jpg") center / cover no-repeat;
+    box-shadow: inset 0 0 0 2px var(--press-bronze), inset 0 0 0 3px #e8ca8770,
+        inset 0 0 1.3rem #181008aa, 0 .4rem .85rem #33211755;
 }
 @media (max-width: 768px) {
     .hero-page .hero-section-2 > :not(#section-journalists) { max-width: calc(100% - 1.5rem); }
@@ -1270,7 +1285,12 @@ html[lang="ar"] .hero-page :is(#journalists-gallery, #sources-gallery.research-s
     color: #303c22;
     text-shadow: none;
 }
-.hero-page .hero-main #section-journalists h2 { color: #fff6d9; text-shadow: 0 2px 4px #0006; }
+.hero-page .hero-main #section-journalists h2 {
+    margin-block: 0;
+    font-size: clamp(1.65rem, 3.8vw, 2.85rem);
+    color: #fff6d9;
+    text-shadow: 0 2px 4px #000b;
+}
 .hero-page .hero-main :is(#section-journalists p, .sources-header p) {
     font-family: Georgia, "Palatino Linotype", serif;
     font-style: italic;
@@ -1278,7 +1298,35 @@ html[lang="ar"] .hero-page :is(#journalists-gallery, #sources-gallery.research-s
     color: #26351e;
     text-shadow: none;
 }
-.hero-page .hero-main #section-journalists p { color: #fff6d9; }
+.hero-page .hero-main #section-journalists p {
+    max-width: 68ch;
+    margin-block: 0;
+    font-size: clamp(.98rem, 1.65vw, 1.15rem);
+    line-height: 1.55;
+    color: #fff6d9;
+}
+.hero-page .hero-main .journalist-directory-header h3 {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto .35rem;
+    padding: .5rem clamp(.9rem, 3vw, 1.8rem);
+    border: 4px double var(--press-brass);
+    border-radius: .45rem;
+    background:
+        var(--press-rivet) left .18rem center / .55rem .55rem no-repeat,
+        var(--press-rivet) right .18rem center / .55rem .55rem no-repeat,
+        linear-gradient(#59402c, #2d2118);
+    font-size: clamp(1.35rem, 3vw, 2.15rem);
+    color: #FFF4D6;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.65);
+    box-shadow: inset 0 1px #e8ca8770, 0 .22rem .48rem #33211755;
+}
+.hero-page .hero-main .journalist-directory-header { margin: 0; }
+.hero-page .hero-main .journalist-directory-header p {
+    margin: 0 auto;
+    font-size: clamp(.95rem, 1.5vw, 1.08rem);
+    line-height: 1.5;
+}
 .hero-page .hero-main .sources-header p span { color: inherit; text-shadow: none; }
 .hero-page .hero-main :is(h2, h3, p) .lang-ar {
     font-family: var(--font-ar), serif;
@@ -1316,18 +1364,20 @@ html[lang="ar"] .hero-page :is(#journalists-gallery, #sources-gallery.research-s
 
 /* Journalist-only dimensional card treatment. */
 .hero-page #journalists-gallery > article.source-card {
-    background: linear-gradient(145deg, #fff9eb, #f0f2e4);
-    border: 1px solid #171b13;
+    background: linear-gradient(145deg, #fff9eb, #f1e4c8);
+    border: 4px double var(--press-brass);
     border-radius: 20px;
     padding: clamp(1.1rem, 3.5vw, 2.5rem);
-    box-shadow: inset 0 0 0 3px #c9aa6570, 0 8px 0 -4px #596447, 0 16px 30px -12px #17200f66;
+    box-shadow: inset 0 0 0 1px var(--press-bronze), inset 0 0 0 3px #e8ca8770,
+        inset 0 0 1rem #5c3b2129, 0 12px 22px -9px #30201470;
     transition: transform .2s ease, box-shadow .2s ease;
 }
 .hero-page #journalists-gallery > article.source-card:hover {
-    background: linear-gradient(145deg, #fff9eb, #f0f2e4);
-    border-color: #171b13;
+    background: linear-gradient(145deg, #fff9eb, #f1e4c8);
+    border-color: #bc9659;
     transform: translateY(-3px);
-    box-shadow: inset 0 0 0 3px #c9aa6588, 0 10px 0 -4px #596447, 0 20px 36px -12px #17200f77;
+    box-shadow: inset 0 0 0 1px var(--press-bronze), inset 0 0 0 3px #e8ca8799,
+        inset 0 0 1rem #5c3b2129, 0 15px 24px -9px #30201480;
 }
 .hero-page #journalists-gallery > article.source-card .card-image {
     width: 100%;
@@ -1351,9 +1401,10 @@ html[lang="ar"] .hero-page :is(#journalists-gallery, #sources-gallery.research-s
     object-fit: contain;
     box-sizing: border-box;
     margin: 0 auto;
-    border: 2px solid #303c22;
+    border: 3px double var(--press-brass);
     border-radius: 12px;
-    box-shadow: 0 0 0 1px #c9aa65, 0 8px 18px -8px #17200f88;
+    box-shadow: 0 0 0 1px var(--press-bronze), 0 0 0 2px var(--press-gold),
+        0 7px 14px -6px #30201480;
 }
 .hero-page #journalists-gallery > article.source-card .card-title {
     color: var(--accent-red);
@@ -1449,22 +1500,28 @@ html[lang="ar"] .hero-page :is(#journalist-select, #research-select, #memorial-s
     .hero-page :is(#journalist-select, #research-select, #memorial-select) { appearance: auto; background-image: none; }
 }
 
-/* Offset layers on the existing bordered journalist image, not the card. */
-.hero-page #journalists-gallery > article.source-card .card-image {
-    padding-right: 9px;
-    padding-bottom: 9px;
-    box-sizing: border-box;
+/* Journalist filing control keeps the native select indicator and interaction. */
+.hero-page #journalist-select {
+    appearance: auto;
+    background-image: none;
 }
-.hero-page #journalists-gallery > article.source-card .card-image img {
-    box-shadow: 5px 5px 0 #c8102e, 9px 9px 0 #111111;
+.hero-page #journalist-select:not(:disabled) {
+    border: 3px double var(--press-brass);
+    background-color: #fbf1d8;
+    color: #303c22;
+    box-shadow: inset 0 1px 5px #50372250, 0 1px 3px #50372238;
+}
+.hero-page #journalist-select:focus-visible {
+    outline: 3px solid #704c2a;
+    outline-offset: 3px;
 }
 @media (max-width: 480px) {
-    .hero-page #journalists-gallery > article.source-card .card-image {
-        padding-right: 6px;
-        padding-bottom: 6px;
-    }
+    .hero-page #section-journalists,
+    .hero-page .hero-main .journalist-directory-header h3,
+    .hero-page #journalists-gallery > article.source-card { border-width: 3px; }
     .hero-page #journalists-gallery > article.source-card .card-image img {
-        box-shadow: 3px 3px 0 #c8102e, 6px 6px 0 #111111;
+        border-width: 2px;
+        border-style: solid;
     }
 }
 
@@ -1504,4 +1561,12 @@ html[lang="ar"] .hero-page :is(#journalist-select, #research-select, #memorial-s
     border: 0;
     object-fit: contain;
     background: #fff;
+}
+
+/* Journalist Directory nameplate text contrast */
+.hero-page .hero-main .journalist-directory-header h3,
+.hero-page .hero-main .journalist-directory-header h3 .lang-en,
+.hero-page .hero-main .journalist-directory-header h3 .lang-ar {
+    color: #FFF4D6 !important;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.65);
 }
