@@ -1,5 +1,5 @@
 // Author: Leeslie Brockman
-// Date:2026-10-30
+// Date:2026-11-25
 "use strict";
 function initHeroDirectory({galleryId, prefix}) {
     const gallery = document.getElementById(galleryId);
