@@ -1,5 +1,5 @@
 //Author:Leslie Brockman
-//Date last modified: 2026-11-25
+//Date last modified: 2026-11-26
 "use strict";
 
 const creators = [
@@ -724,6 +724,28 @@ const creators = [
     "linksHTML": "<div class=\"creator-support-buttons\"><a class=\"site-button\" href=\"https://chuffed.org/project/122630-emergency-help-mustafa-and-his-family-in-gaza\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support Mustafa on Chuffed</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعم مصطفى عبر تشافد</span></a></div><div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/profile.php?id=61591998930918\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a><a class=\"social-link\" aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/mustafaa_family2/\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:instagram}}</a></div>",
     "section": "Palestinian Creator",
     "sectionHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Palestinian Creator</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">صانع محتوى فلسطيني</span>"
+  },
+  {
+    "id": "creator-66",
+    "name": "Rafah",
+    "nameAr": "رفح",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Rafah</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">رفح</span>",
+    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/rafah.jpg\" alt=\"Rafah / رفح\" loading=\"lazy\">",
+    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Rafah is a little girl living in Gaza whose account offers a glimpse into childhood in Palestine. Her father runs the Myuz psychological support center, helping children find moments of happiness, creativity, play and emotional healing amid incredibly difficult circumstances.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">رفح طفلة صغيرة تعيش في غزة، ويقدم حسابها لمحة عن حياة الأطفال في فلسطين. يدير والدها مركز ميوز للدعم النفسي، الذي يساعد الأطفال على إيجاد لحظات من الفرح والإبداع واللعب والتعافي النفسي في ظل ظروف بالغة الصعوبة.</span></p><p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Follow Rafah's journey and discover the meaningful work her father is doing to support Gaza's children. Every child deserves a childhood filled with laughter, love and hope.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">تابعوا رحلة رفح وتعرّفوا على العمل الإنساني الذي يقوم به والدها لدعم أطفال غزة. فكل طفل يستحق طفولة مليئة بالضحك والحب والأمل.</span></p>",
+    "linksHTML": "<div class=\"creator-support-buttons\"><a class=\"site-button\" href=\"https://www.gofundme.com/f/xaryc-bring-smiles-to-gazas-children-support-myuzs-center\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support Myuz Gaza</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعموا ميوز غزة</span></a></div><div class=\"social-links\"><a class=\"social-link\" aria-label=\"Instagram / إنستغرام\" href=\"https://www.instagram.com/rahaf_gaza1/\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:instagram}}</a><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/MyuzGaza\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a><a class=\"social-link\" aria-label=\"PayPal / باي بال\" href=\"https://www.paypal.com/paypalme/dalallchamma\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:paypal}}</a></div>",
+    "section": "Creators and Daily Voices",
+    "sectionHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Creators and Daily Voices</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">صنّاع المحتوى وأصوات الحياة اليومية</span>"
+  },
+  {
+    "id": "creator-67",
+    "name": "Rima Sultan",
+    "nameAr": "ريما سلطان",
+    "nameHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Rima Sultan</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ريما سلطان</span>",
+    "portraitHTML": "<img src=\"https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/link/rima.jpg\" alt=\"Rima Sultan / ريما سلطان\" loading=\"lazy\">",
+    "biographyHTML": "<p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Rima Sultan is a father and digital creator living in Gaza, sharing glimpses of everyday life and fatherhood in Palestine. Through his account, he offers a personal perspective on the experiences of families living through extraordinarily difficult circumstances.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ريما سلطان أب وصانع محتوى رقمي يعيش في غزة، يشارك لمحات من الحياة اليومية وتجربة الأبوة في فلسطين. ومن خلال حسابه، يقدم رؤية شخصية لتجارب العائلات التي تعيش في ظل ظروف بالغة الصعوبة.</span></p><p><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Behind every story is a family with hopes, dreams and a future worth protecting. Follow his journey, listen to his voice and visit his campaign to learn how you can support his family.</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">وراء كل قصة عائلة تحمل آمالاً وأحلاماً ومستقبلاً يستحق الحماية. تابعوا رحلته واستمعوا إلى صوته وزوروا حملته للتعرف على سبل دعم عائلته.</span></p>",
+    "linksHTML": "<div class=\"creator-support-buttons\"><a class=\"site-button\" href=\"https://chuffed.org/project/sultan\" target=\"_blank\" rel=\"noopener noreferrer\"><span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Support Rima Sultan</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">ادعموا ريما سلطان</span></a></div><div class=\"social-links\"><a class=\"social-link\" aria-label=\"Facebook / فيسبوك\" href=\"https://www.facebook.com/profile.php?id=61594736910646\" target=\"_blank\" rel=\"noopener noreferrer\">{{social:facebook}}</a></div>",
+    "section": "Creators and Daily Voices",
+    "sectionHTML": "<span class=\"lang-en\" lang=\"en\" dir=\"ltr\">Creators and Daily Voices</span><span class=\"lang-ar hidden\" lang=\"ar\" dir=\"rtl\">صنّاع المحتوى وأصوات الحياة اليومية</span>"
   }
 ];
 
