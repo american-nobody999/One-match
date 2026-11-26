@@ -1,7 +1,7 @@
 <!--
 MPAG: Circus page
 Leslie Brockman
-Date last modified: 2026-11-21
+Date last modified: 2026-11-25
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +17,9 @@ Date last modified: 2026-11-21
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles2.css">
-    <link rel="stylesheet" href="styles/circus.css">
-    <link rel="stylesheet" href="styles/virus.css">
+    <link rel="stylesheet" href="/styles/styles2.css">
+    <link rel="stylesheet" href="/styles/circus.css">
+    <link rel="stylesheet" href="/styles/virus.css">
 </head>
 
 <body class="home-page circus-page-body">
@@ -213,6 +213,26 @@ Date last modified: 2026-11-21
         </g>
       </svg>
       <svg class="circus-hall-spotlight circus-hall-spotlight-final circus-hall-spotlight-final-right" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-simsim-left" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
+        <g class="circus-hall-spotlight-direction">
+          <use href="#hall-spotlight-mount"></use>
+          <g class="circus-hall-spotlight-sweep">
+            <path class="circus-hall-spotlight-beam" d="M143 84 Q186 85 244 58 Q250 92 244 130 Q186 104 143 104Z" fill="url(#hall-spotlight-beam)"/>
+            <path class="circus-hall-spotlight-accent" d="M145 91 229 70 229 119 145 99Z" fill="currentColor"/>
+            <use href="#hall-spotlight-housing"></use>
+          </g>
+        </g>
+      </svg>
+      <svg class="circus-hall-spotlight circus-hall-spotlight-simsim-right" viewBox="36 38 224 115" aria-hidden="true" focusable="false">
         <g class="circus-hall-spotlight-direction">
           <use href="#hall-spotlight-mount"></use>
           <g class="circus-hall-spotlight-sweep">
@@ -436,6 +456,24 @@ Date last modified: 2026-11-21
         </a>
       </div>
     </article>
+    <article class="section circus-poster circus-performer circus-performer-simsim" aria-labelledby="circus-simsim-heading">
+      <h3 id="circus-simsim-heading"><span class="lang-en">Uncle Simsim</span>
+      <span class="lang-ar hidden" lang="ar" dir="rtl">العم سمسم</span></h3>
+      <figure class="circus-performer-photo">
+        <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/edu/circus/sim.jpg" alt="Uncle Simsim, Gaza circus performer." loading="lazy">
+      </figure>
+      <div class="circus-performer-story">
+        <p><span class="lang-en">Meet Uncle Simsim, another wonderful member of Gaza's community of entertainers bringing smiles, laughter, and moments of joy to Palestinian children. Follow Uncle Simsim on Instagram and help celebrate the importance of childhood, creativity, and play in Gaza.</span>
+        <span class="lang-ar hidden" lang="ar" dir="rtl">تعرّفوا على العم سمسم، أحد الفنانين الرائعين في غزة الذين يرسمون الابتسامات وينشرون الضحك ولحظات الفرح بين الأطفال الفلسطينيين. تابعوا العم سمسم على إنستغرام وشاركونا الاحتفاء بأهمية الطفولة والإبداع واللعب في غزة.</span></p>
+      </div>
+      <div class="circus-performer-links">
+        <a href="https://www.instagram.com/uncle_simsim_gaza/" target="_blank" rel="noopener noreferrer" class="circus-hall-social circus-hall-social-instagram">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#circus-icon-instagram"></use></svg>
+          <span class="circus-hall-link-name lang-en">Instagram — Uncle Simsim</span>
+          <span class="circus-hall-link-name lang-ar hidden" lang="ar" dir="rtl">إنستغرام — العم سمسم</span>
+        </a>
+      </div>
+    </article>
   </div>
   <a class="circus-return site-button circus-hall-exit" href="circus.html">
     <svg class="circus-hall-exit-arrow" viewBox="0 0 48 30" aria-hidden="true" focusable="false">
@@ -492,6 +530,6 @@ Date last modified: 2026-11-21
         </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
