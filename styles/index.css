@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-19-2026
-   Date modified: 11/21/2026
+   Date modified: 11/27/2026
 */
 
 /* ===================================== */
@@ -1079,4 +1079,9 @@ html:not([lang="ar"]) .home-page .explore-card-title { color: #f1dca6; text-shad
 @media (max-width: 650px) {
     .home-page .weekly-dispatch { background: linear-gradient(145deg, #0a2118, #1b5035 50%, #07110d); }
     .home-page .explore-grid { background: linear-gradient(145deg, #092b20, #080d0b 65%, #123d2b); }
+}
+
+.home-page .weekly-dispatch-feature[data-dispatch-card="winter-campaign"] .weekly-dispatch-category,
+.home-page .weekly-dispatch-feature[data-dispatch-card="featured-hero"] :is(.weekly-dispatch-category, .weekly-dispatch-week, .weekly-dispatch-headline) {
+    text-align: center;
 }
