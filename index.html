@@ -1,7 +1,7 @@
 <!--
 MPGA:Home page
 Leslie Brockman
-Date last modified: 2026-11-21
+Date last modified: 2026-11-27
 These are my rocks, can you dig it?
 Can you hear me yet?
 Palestine State Recognized
@@ -21,11 +21,10 @@ Still here. I am not going Anywhere. Reference above comments.
     <meta name="description" content="Bilingual educational and advocacy platform featuring stories, journalism, historical resources, cultural content, and community voices.">
     <title>Make Palestine Great Again - MPGA</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;family=Amiri:wght@700&amp;family=Cinzel+Decorative:wght@700&amp;family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;600;700&amp;family=Orbitron:wght@400;700;900&amp;display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/united/ele1.jpg" fetchpriority="high">
 
    <link rel="stylesheet" href="styles/styles2.css">
    <link rel="stylesheet" href="styles/index.css">
@@ -99,7 +98,7 @@ Still here. I am not going Anywhere. Reference above comments.
         <div class="weekly-dispatch-layout">
         <div class="weekly-dispatch-feature" hidden>
           <div class="weekly-dispatch-media">
-            <img class="weekly-dispatch-image" alt="">
+            <img class="weekly-dispatch-image" alt="" loading="eager" decoding="async" fetchpriority="high">
             <button type="button" class="weekly-dispatch-pause" data-dispatch-action="pause" aria-label="Pause automatic rotation" disabled><span aria-hidden="true">❚❚</span> Pause</button>
           </div>
           <div class="weekly-dispatch-info">
@@ -121,13 +120,13 @@ Still here. I am not going Anywhere. Reference above comments.
 
       <div class="explore-grid">
         <article class="explore-card explore-card-mission">
-          <a href="leslie-updates.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/mission.png" alt="Mission Control artwork / تصميم مركز التحكم" loading="lazy"></a>
+          <a href="leslie-updates.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/mission.png" alt="Mission Control artwork / تصميم مركز التحكم" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Mission Control</span><span class="lang-ar hidden">مركز التحكم</span></h4>
           <a href="leslie-updates.html" class="site-button explore-button"><span class="lang-en">See the Madness</span><span class="lang-ar hidden">شاهد الجنون</span><span aria-hidden="true">→</span></a>
         </article>
 
         <article class="explore-card explore-card-feature">
-          <a href="ok-palestine.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/okp.png" alt="OK Palestine / فلسطين بخير" loading="lazy"></a>
+          <a href="ok-palestine.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/okp.png" alt="OK Palestine / فلسطين بخير" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">OK Palestine</span><span class="lang-ar hidden">فلسطين بخير</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Weekly update for Palestine.</span>
@@ -137,7 +136,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="ok-humanity.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/humanity.png" alt="OK Humanity artwork / عمل فني" loading="lazy"></a>
+          <a href="ok-humanity.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/humanity.png" alt="OK Humanity artwork / عمل فني" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">OK Humanity</span><span class="lang-ar hidden">حسنًا، يا إنسانية</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">A closer look at humanity, compassion, and our shared responsibilities.</span>
@@ -147,7 +146,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="ok-america.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/mindyourown.png" alt="OK America artwork / عمل فني" loading="lazy"></a>
+          <a href="ok-america.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/mindyourown.png" alt="OK America artwork / عمل فني" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">OK America</span><span class="lang-ar hidden">حسنًا، يا أمريكا</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Conversations and reflections with America, its people, and its responsibilities.</span>
@@ -158,7 +157,7 @@ Still here. I am not going Anywhere. Reference above comments.
 
         <article class="explore-card">
           <!-- PLACEHOLDER ARTWORK: replace images/placeholders/ok-israelis.svg when final artwork is ready. -->
-          <a href="ok-israelis.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/I001.png" alt="OK Israelis artwork placeholder / صورة مؤقتة" loading="lazy"></a>
+          <a href="ok-israelis.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/I001.png" alt="OK Israelis artwork placeholder / صورة مؤقتة" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">OK Israelis</span><span class="lang-ar hidden">حسنًا، يا إسرائيليين</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">A conversation with Israeli citizens about leadership, accountability, and peace.</span>
@@ -168,7 +167,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="united.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/united.png" alt="United community artwork / أعمال فنية للمجتمع المتحد" loading="lazy"></a>
+          <a href="united.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/united.png" alt="United community artwork / أعمال فنية للمجتمع المتحد" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">United</span><span class="lang-ar hidden">متحدون</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Palestinian grassroots connections.</span>
@@ -178,7 +177,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="world_leader.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/5647.jpg" alt="Explore World Leaders" loading="lazy"></a>
+          <a href="world_leader.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/5647.jpg" alt="Explore World Leaders" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">World Leaders</span><span class="lang-ar hidden">قادة العالم</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Explore messages and conversations addressed to world leaders.</span>
@@ -188,7 +187,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="featured-hero.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/fhero.png" alt="Featured Hero artwork / عمل فني للبطل المميز" loading="lazy"></a>
+          <a href="featured-hero.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/fhero.png" alt="Featured Hero artwork / عمل فني للبطل المميز" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Featured Hero</span><span class="lang-ar hidden">البطل المميز</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Meet individuals whose actions and voices deserve recognition.</span>
@@ -198,7 +197,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10008.jpg" alt="Explore Online School" loading="lazy"></div>
+          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10008.jpg" alt="Explore Online School" loading="lazy" decoding="async"></div>
           <h4 class="explore-card-title"><span class="lang-en">Online School</span><span class="lang-ar hidden">المدرسة الإلكترونية</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Explore educational activities and opportunities to learn.</span>
@@ -208,7 +207,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10004.jpg" alt="Explore Heroes" loading="lazy"></div>
+          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10004.jpg" alt="Explore Heroes" loading="lazy" decoding="async"></div>
           <h4 class="explore-card-title"><span class="lang-en">Palestinian Heroes</span><span class="lang-ar hidden">أبطال فلسطينيون</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Discover Palestinian journalists and other voices sharing their stories.</span>
@@ -218,7 +217,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10003.jpg" alt="Explore Influencers" loading="lazy"></div>
+          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10003.jpg" alt="Explore Influencers" loading="lazy" decoding="async"></div>
           <h4 class="explore-card-title"><span class="lang-en">Palestinian Influencers</span><span class="lang-ar hidden">المؤثرون الفلسطينيون</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Meet Palestinian creators and discover their work and platforms.</span>
@@ -228,7 +227,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10005.jpg" alt="Explore Speak" loading="lazy"></div>
+          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10005.jpg" alt="Explore Speak" loading="lazy" decoding="async"></div>
           <h4 class="explore-card-title"><span class="lang-en">Palestine Speak</span><span class="lang-ar hidden">صوت فلسطين</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Hear Palestinian perspectives, experiences, and personal stories.</span>
@@ -238,7 +237,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10009.jpg" alt="Explore Art" loading="lazy"></div>
+          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10009.jpg" alt="Explore Art" loading="lazy" decoding="async"></div>
           <h4 class="explore-card-title"><span class="lang-en">Art of Palestine</span><span class="lang-ar hidden">فن فلسطين</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Discover creativity and artistic expression inspired by Palestine.</span>
@@ -248,7 +247,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10006.jpg" alt="Explore Faith" loading="lazy"></div>
+          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/maint/10006.jpg" alt="Explore Faith" loading="lazy" decoding="async"></div>
           <h4 class="explore-card-title"><span class="lang-en">Palestine Faith</span><span class="lang-ar hidden">إيمان فلسطين</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Explore faith, traditions, and the spiritual heritage of Palestine.</span>
@@ -258,7 +257,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="archives/index.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/american.png" alt="American Nobody Archives artwork / صورة أرشيف أمريكان نوبودي" loading="lazy"></a>
+          <a href="archives/index.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/american.png" alt="American Nobody Archives artwork / صورة أرشيف أمريكان نوبودي" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">American Nobody Archives</span><span class="lang-ar hidden" lang="ar" dir="rtl">أرشيف أمريكان نوبودي</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Explore the American Nobody archives. Our stories, messages, and weekly records, preserved through time.</span>
@@ -272,7 +271,8 @@ Still here. I am not going Anywhere. Reference above comments.
             <img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/14.png"
                  alt="Palestine Flag"
                  class="div-img"
-                 loading="lazy">
+                 loading="lazy"
+                 decoding="async">
           </a>
           <h4 class="explore-card-title">
             <a href="docs.html" target="_blank" rel="noopener noreferrer">
@@ -288,7 +288,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="ticket.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/thisway.jpg" alt="Golden Ticket: this way to Palestine / التذكرة الذهبية إلى فلسطين" loading="lazy"></a>
+          <a href="ticket.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/thisway.jpg" alt="Golden Ticket: this way to Palestine / التذكرة الذهبية إلى فلسطين" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Golden Ticket</span><span class="lang-ar hidden">التذكرة الذهبية</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Follow the journeys, missions, and people standing with Palestine.</span>
@@ -298,7 +298,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card explore-card-feature">
-          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/One-match/main/images/rose3.png" alt="Enter The Rose Garden, a garden of remembrance" loading="lazy"></div>
+          <div class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/One-match/main/images/rose3.png" alt="Enter The Rose Garden, a garden of remembrance" loading="lazy" decoding="async"></div>
           <h4 class="explore-card-title"><span class="lang-en">The Rose Garden</span><span class="lang-ar hidden">حديقة الورود</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Enter a peaceful place of remembrance, reflection, and love.</span>
@@ -308,7 +308,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="quests.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/quest.png" alt="Leslie’s Quests artwork / أعمال فنية لمهام ليزلي" loading="lazy"></a>
+          <a href="quests.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1016/quest.png" alt="Leslie’s Quests artwork / أعمال فنية لمهام ليزلي" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Leslie's Quests</span><span class="lang-ar hidden">مهام ليزلي</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Pick a quest. There's something you can help with.</span>
@@ -318,7 +318,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="arcade.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/aracade.png" alt="Ahmed Myuz of the Myuz Center for Psychological Support in Gaza" loading="lazy"></a>
+          <a href="arcade.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/aracade.png" alt="Ahmed Myuz of the Myuz Center for Psychological Support in Gaza" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Leslie's Arcade</span><span class="lang-ar hidden">صالة ألعاب ليزلي</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">I'm better at this than you are.</span>
@@ -332,7 +332,8 @@ Still here. I am not going Anywhere. Reference above comments.
                         src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/shots.png"
                         alt="Drinking Games / ألعاب الشرب"
                         class="interactive-wiggle"
-                        loading="lazy"></a>
+                        loading="lazy"
+                        decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Drinking Games</span><span class="lang-ar hidden">ألعاب الشرب</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">A playful corner of the site with a little humor and mischief for the humanitarians.</span>
@@ -345,7 +346,8 @@ Still here. I am not going Anywhere. Reference above comments.
           <a href="leslie.html" class="explore-image-frame"><img
                         src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/1019/leslie.png"
                         alt="Leslie / ليزلي"
-                        loading="lazy"></a>
+                        loading="lazy"
+                        decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Leslie</span><span class="lang-ar hidden">ليزلي</span></h4>
           <p class="explore-card-description leslie-description">
             <span class="lang-en">My website, my page. Get to know the person behind American Nobody.</span>
@@ -356,7 +358,7 @@ Still here. I am not going Anywhere. Reference above comments.
 
 
         <article class="explore-card explore-card-feature">
-          <a href="reddoor.html" target="_blank" rel="noopener" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/legal/2128.jpg" alt="Open the Red Door Security Repository" loading="lazy"></a>
+          <a href="reddoor.html" target="_blank" rel="noopener" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/legal/2128.jpg" alt="Open the Red Door Security Repository" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Red Door Security Repository</span><span class="lang-ar hidden">مستودع أمن الباب الأحمر</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Coming Soon</span>
@@ -366,7 +368,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="west-bank.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wb.png" alt="West Bank community explorer artwork / صورة مستكشف مجتمعات الضفة الغربية" loading="lazy"></a>
+          <a href="west-bank.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/wb.png" alt="West Bank community explorer artwork / صورة مستكشف مجتمعات الضفة الغربية" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">The West Bank</span><span class="lang-ar hidden">الضفة الغربية</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">Explore West Bank communities, their backgrounds, and selected weekly updates.</span>
@@ -376,7 +378,7 @@ Still here. I am not going Anywhere. Reference above comments.
         </article>
 
         <article class="explore-card">
-          <a href="circus.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/gcs.png" alt="Gaza Circus School artwork / لوحة مدرسة سيرك غزة" loading="lazy"></a>
+          <a href="circus.html" class="explore-image-frame"><img src="https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/index/gcs.png" alt="Gaza Circus School artwork / لوحة مدرسة سيرك غزة" loading="lazy" decoding="async"></a>
           <h4 class="explore-card-title"><span class="lang-en">Big Top</span><span class="lang-ar hidden">السيرك الكبير</span></h4>
           <p class="explore-card-description">
             <span class="lang-en">😊 Enjoy the Show</span>
