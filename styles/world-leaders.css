@@ -1,7 +1,7 @@
 /* 
    Author: Leslie Brockman
    Date: 10-17-2026
-   Date modified: 11/19/2026
+   Date modified: 11/26/2026
 */
 :where(.world-leaders-page) h2 {
 font-family: var(--font-ar);
@@ -391,6 +391,8 @@ html[lang="ar"] .world-leaders-section, html[lang="ar"] .world-leader-modal { di
     padding: clamp(.75rem, 3vw, 1.5rem);
     background: #FFFFFF;
     color: #000000;
+    border: 2px solid #000000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.65);
     text-align: center;
 }
 
