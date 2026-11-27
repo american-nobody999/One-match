@@ -1,6 +1,6 @@
 "use strict";
 // Author: Leslie Brockman
-// Date: 11/20/2026
+// Date: 11/27/2026
 const missionDefinitions = [
   {
     "page": "index.html",
@@ -1335,6 +1335,31 @@ const missionDefinitions = [
     ]
   },
   {
+    "page": "sailing-gaza.html",
+    "title": [
+      "Sailing to Gaza",
+      "الإبحار إلى غزة"
+    ],
+    "description": [
+      "A three-level humanitarian sailing adventure delivering aid to Palestine.",
+      "مغامرة إبحار إنسانية من ثلاثة مستويات لإيصال المساعدات إلى فلسطين."
+    ],
+    "category": "periodic",
+    "weekly": true,
+    "tasks": [
+      {
+        "id": "sailing-gaza:review",
+        "label": [
+          "Review game content, levels, and destinations.",
+          "مراجعة محتوى اللعبة ومستوياتها ووجهاتها."
+        ]
+      }
+    ],
+    "group": [
+      "main"
+    ]
+  },
+  {
     "page": "archive.html",
     "title": [
       "archive.html",
@@ -2431,35 +2456,6 @@ const missionDefinitions = [
     ]
   },
   {
-    "page": null,
-    "id": "planned-big-top",
-    "title": [
-      "🎪 The Big Top",
-      "🎪 الخيمة الكبرى"
-    ],
-    "description": [
-      "Phases 1 through 3 complete. Phases 4 and 5 remain under development.",
-      "اكتملت المراحل من الأولى إلى الثالثة. ولا تزال المرحلتان الرابعة والخامسة قيد التطوير."
-    ],
-    "category": "planned",
-    "weekly": false,
-    "group": [
-      "planned"
-    ],
-    "referencePage": "circus.html",
-    "tasks": [],
-    "plannedTasks": [
-      [
-        "Phase 4: Develop the Popcorn Stand for charities and supporting organizations.",
-        "المرحلة الرابعة: تطوير كشك الفشار للجمعيات الخيرية والمنظمات الداعمة."
-      ],
-      [
-        "Phase 5: Expand the Banner Hall with performers' personal stories and social media.",
-        "المرحلة الخامسة: توسيع قاعة اللافتات لتشمل قصص الفنّانين الشخصية وحساباتهم على وسائل التواصل الاجتماعي."
-      ]
-    ]
-  },
-  {
     "page": "west-bank.html",
     "title": [
       "West Bank Explorer",
@@ -2774,43 +2770,6 @@ const missionDefinitions = [
       "education/math.html",
       "education/science.html",
       "education/history.html"
-    ]
-  },
-  {
-    "page": null,
-    "id": "planned-ticket-humanitarian-missions",
-    "title": [
-      "Ticket — Humanitarian Missions",
-      "التذكرة — المهمات الإنسانية"
-    ],
-    "description": [
-      "Expand the Ticket page with the 2027 Red Ribbon campaign, upcoming flotillas, historical missions, and additional humanitarian groups.",
-      "توسيع صفحة التذكرة بإضافة حملة الشريط الأحمر لعام ٢٠٢٧، والأساطيل القادمة، والمهمات السابقة، ومجموعات إنسانية إضافية."
-    ],
-    "category": "planned",
-    "weekly": false,
-    "group": [
-      "planned"
-    ],
-    "referencePage": "ticket.html",
-    "tasks": [],
-    "plannedTasks": [
-      [
-        "Create \"2027 — Year of the Red Ribbon\" section.",
-        "إنشاء قسم «٢٠٢٧ — عام الشريط الأحمر»."
-      ],
-      [
-        "Create \"Spring 2027 Flotillas\" section.",
-        "إنشاء قسم «أساطيل ربيع ٢٠٢٧»."
-      ],
-      [
-        "Develop a Mission Scrapbook for older missions.",
-        "تطوير ألبوم يوثّق المهمات السابقة."
-      ],
-      [
-        "Add more flotilla groups and humanitarian missions.",
-        "إضافة المزيد من مجموعات الأساطيل والمهمات الإنسانية."
-      ]
     ]
   },
   {
@@ -3362,6 +3321,25 @@ const dependencyDefinitions = [
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/cosmos.png",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/flip.jpg",
       "https://raw.githubusercontent.com/american-nobody999/three-match-image/main/image/arcade/rock.jpg"
+    ]
+  },
+  {
+    "page": "sailing-gaza.html",
+    "mapped": true,
+    "css": [
+      "styles/styles2.css",
+      "styles/sailing-gaza.css"
+    ],
+    "scripts": [
+      "js/main.js",
+      "js/sailing-gaza.js"
+    ],
+    "links": [
+      "about.html",
+      "contact.html",
+      "index.html",
+      "legal.html",
+      "mpga.html"
     ]
   },
   {
